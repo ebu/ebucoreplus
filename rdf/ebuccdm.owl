@@ -22,7 +22,7 @@
                                                                 "Jürgen Grupp, SWR"@de ,
                                                                 "Kim Viljanen, YLE"@fi ,
                                                                 "Masoud Aminipour, not affiliated" ,
-                                                                "Tormod Værvågen, NRK"@no ;
+                                                                "Tormod Værvågen, NRK"@nb ;
                                                  vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebuccdm#" ;
                                                  owl:priorVersion <https://www.ebu.ch/metadata/ontologies/ebuccdm/20182011/ebuccdm.rdf> ;
                                                  owl:versionInfo """Alignment of CCDM wit EBUCore (some EO properties moved up to the
@@ -60,37 +60,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
                            skos:prefLabel "preferred namespace" .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmountCurrency
-ebuccdm:contractCostAmountCurrency rdfs:comment "Range: string or Concept"@en ,
-                                                "The currency of the amount of the ContractCost."@en ;
-                                   rdfs:label "Cost currency"@en ;
-                                   rdf:type owl:AnnotationProperty ;
-                                   rdfs:domain ebuccdm:ContractCost .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#coversConsumptionEvent
-ebuccdm:coversConsumptionEvent rdf:type owl:AnnotationProperty ;
-                               rdfs:domain xsd:anyURI ,
-                                           xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobType
-ebuccdm:productionJobType rdfs:comment "*** Settle on skos?***" ,
-                                       "Range: string or nayURI or skos:ConceptId"@en ,
-                                       "The type of ProductionJob."@en ;
-                          rdfs:label "Production Job type"@en ;
-                          rdf:type owl:AnnotationProperty ;
-                          rdfs:domain ebuccdm:ProductionJob .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceType
-ebuccdm:resonanceType rdfs:comment "Range: anyURI, string or skos ConceptId"@en ,
-                                   "The type of Resonance."@en ;
-                      rdfs:label "Resonance type"@en ;
-                      rdf:type owl:AnnotationProperty ;
-                      rdfs:domain ebuccdm:Resonance .
-
-
 ###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
 vs:term_status rdf:type owl:AnnotationProperty ;
                rdfs:label "Term status" ;
@@ -117,12 +86,52 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountType
+ebuccdm:accountType rdf:type owl:ObjectProperty ;
+                    rdfs:domain ebuccdm:Account ;
+                    rdfs:range skos:Consept ;
+                    rdfs:comment "A type of Account"@en ;
+                    rdfs:label "Account type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountingTo
 ebuccdm:accountingTo rdf:type owl:ObjectProperty ;
                      rdfs:domain ec:Service ;
                      rdfs:range ebuccdm:Account ;
                      rdfs:comment "A Consumer Account for a particular Service."@en ;
                      rdfs:label "Account"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueType
+ebuccdm:assetValueType rdf:type owl:ObjectProperty ;
+                       rdfs:domain ebuccdm:AssetValue ;
+                       rdfs:range skos:Consept ;
+                       rdfs:comment "To type the notion of value associated to an Asset."@en ;
+                       rdfs:label "Asset value type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceType
+ebuccdm:audienceType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ebuccdm:Audience ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "To specify a type of Audience."@en ;
+                     rdfs:label "Audience type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobType
+ebuccdm:auditJobType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ebuccdm:AuditJob ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "To define a type of AuditJob."@en ;
+                     rdfs:label "Audit job type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportType
+ebuccdm:auditReportType rdf:type owl:ObjectProperty ;
+                        rdfs:domain ebuccdm:AuditReport ;
+                        rdfs:range skos:Consept ;
+                        rdfs:comment "To define the type of an AuditReport."@en ;
+                        rdfs:label "Audit report type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#basedOn
@@ -141,6 +150,14 @@ ebuccdm:belongsToTargetAudience rdf:type owl:ObjectProperty ;
                                 rdfs:comment """The parent Audience group to which a Consumer is a member
       of."""@en ;
                                 rdfs:label "Parent audience"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignType
+ebuccdm:campaignType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ebuccdm:Campaign ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "A type of Campaign."@en ;
+                     rdfs:label "Campaign type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#compilesResonanceEvents
@@ -175,9 +192,69 @@ ebuccdm:consumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
                                       rdfs:range ec:Agent .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#coversConsumptionEvent
-ebuccdm:coversConsumptionEvent rdf:type owl:ObjectProperty ;
-                               rdfs:range ebuccdm:ConsumptionEvent .
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileType
+ebuccdm:consumptionDeviceProfileType rdf:type owl:ObjectProperty ;
+                                     rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
+                                     rdfs:range skos:Consept ;
+                                     rdfs:comment "A type of ConsumptionDeviceProfile."@en ;
+                                     rdfs:label "Consumption device profile type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceType
+ebuccdm:consumptionDeviceType rdf:type owl:ObjectProperty ;
+                              rdfs:domain ebuccdm:ConsumptionDevice ;
+                              rdfs:range skos:Consept ;
+                              rdfs:comment "An type of ConsumptionDevice."@en ;
+                              rdfs:label "Consumption device type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventType
+ebuccdm:consumptionEventType rdf:type owl:ObjectProperty ;
+                             rdfs:domain ebuccdm:ConsumptionEvent ;
+                             rdfs:range skos:Consept ;
+                             rdfs:comment "An type of ConsumptionEvent"@en ;
+                             rdfs:label "Consumption event type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceType
+ebuccdm:consumptionLicenceType rdf:type owl:ObjectProperty ;
+                               rdfs:domain ebuccdm:ConsumptionLicence ;
+                               rdfs:range skos:Consept ;
+                               rdfs:comment "The type of ConsumptionLicence."@en ;
+                               rdfs:label "Consumption licence type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmountCurrency
+ebuccdm:contractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                   rdfs:domain ebuccdm:ContractCost ;
+                                   rdfs:range skos:Concept ;
+                                   rdfs:comment "The currency of the amount of the ContractCost."@en ;
+                                   rdfs:label "Cost currency"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostType
+ebuccdm:contractCostType rdf:type owl:ObjectProperty ;
+                         rdfs:domain ebuccdm:ContractCost ;
+                         rdfs:range skos:Consept ;
+                         rdfs:comment "To define the type of ContractCost."@en ;
+                         rdfs:label "Cost type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractType
+ebuccdm:contractType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ebuccdm:Contract ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "To define a type of Contract."@en ;
+                     rdfs:label "contract type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#coversConsumptionDevice
+ebuccdm:coversConsumptionDevice rdf:type owl:ObjectProperty ;
+                                rdfs:domain ebuccdm:ConsumptionLicence ;
+                                rdfs:range ebuccdm:ConsumptionDevice ;
+                                rdfs:comment """To identify a device compatible with the
+      ConsumptionLicence."""@en ;
+                                rdfs:label "Compatible consumption device"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAgentOnStagePosition
@@ -624,6 +701,14 @@ ebuccdm:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
                                  rdfs:label "Contract"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureType
+ebuccdm:measureType rdf:type owl:ObjectProperty ;
+                    rdfs:domain ebuccdm:Measure ;
+                    rdfs:range skos:Consept ;
+                    rdfs:comment "To define a type of Measure."@en ;
+                    rdfs:label "Measure type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measuresAgainstRule
 ebuccdm:measuresAgainstRule rdf:type owl:ObjectProperty ;
                             rdfs:domain ebuccdm:Measure ;
@@ -641,12 +726,46 @@ ebuccdm:offers rdf:type owl:ObjectProperty ;
                rdfs:label "Publication events"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionType
+ebuccdm:onStagePositionType rdf:type owl:ObjectProperty ;
+                            rdfs:domain ebuccdm:OnStagePosition ;
+                            rdfs:range skos:Consept ;
+                            rdfs:comment """To define a type of a set of coordinates defining a position on
+      stage."""@en ;
+                            rdfs:label "On stage position type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#originateFrom
 ebuccdm:originateFrom rdf:type owl:ObjectProperty ;
                       rdfs:domain ec:Rights ;
                       rdfs:range ebuccdm:Contract ;
                       rdfs:comment "The Contract from which the Rights orginate."@en ;
                       rdfs:label "Contract"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceType
+ebuccdm:productionDeviceType rdf:type owl:ObjectProperty ;
+                             rdfs:domain ebuccdm:ProductionDevice ;
+                             rdfs:range skos:Consept ;
+                             rdfs:comment """A type of ProductionDevice e.g. TV-Set, mobile,
+      tablet."""@en ;
+                             rdfs:label "Device type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobType
+ebuccdm:productionJobType rdf:type owl:ObjectProperty ;
+                          rdfs:domain ebuccdm:ProductionJob ;
+                          rdfs:range skos:Concept ;
+                          rdfs:comment "The type of ProductionJob."@en ;
+                          rdfs:label "Production Job type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderType
+ebuccdm:productionOrderType rdf:type owl:ObjectProperty ;
+                            rdfs:domain ebuccdm:ProductionOrder ;
+                            rdfs:range skos:Consept ;
+                            rdfs:comment "The type of production order."@en ;
+                            rdfs:label "Production order type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#referencesRule
@@ -667,6 +786,14 @@ ebuccdm:requiresLicence rdf:type owl:ObjectProperty ;
                         rdfs:label "Required licence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceType
+ebuccdm:resonanceType rdf:type owl:ObjectProperty ;
+                      rdfs:domain ebuccdm:Resonance ;
+                      rdfs:range skos:Consept ;
+                      rdfs:comment "The type of Resonance."@en ;
+                      rdfs:label "Resonance type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resultsIn
 ebuccdm:resultsIn rdf:type owl:ObjectProperty ;
                   rdfs:domain ebuccdm:ConsumptionEvent ;
@@ -674,6 +801,22 @@ ebuccdm:resultsIn rdf:type owl:ObjectProperty ;
                   rdfs:comment """A link between a ResonanceEvent and a
       ConsumptionEvent."""@en ;
                   rdfs:label "Resonance event"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleType
+ebuccdm:ruleType rdf:type owl:ObjectProperty ;
+                 rdfs:domain ebuccdm:Rule ;
+                 rdfs:range skos:Consept ;
+                 rdfs:comment "To define the type of a Rule."@en ;
+                 rdfs:label "Rule type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageType
+ebuccdm:stageType rdf:type owl:ObjectProperty ;
+                  rdfs:domain ebuccdm:Stage ;
+                  rdfs:range skos:Consept ;
+                  rdfs:comment "To define a type of Stage."@en ;
+                  rdfs:label "Stage type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#supportsConsumptionDeviceProfile
@@ -710,6 +853,14 @@ ebuccdm:usesProductionDevice rdf:type owl:ObjectProperty ;
                              rdfs:label "Production device"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentType
+ec:agentType rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Agent ;
+             rdfs:range skos:Consept ;
+             rdfs:comment "To define a type of Agent."@en ;
+             rdfs:label "Agent type."@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
            rdfs:domain ec:Rights ;
@@ -724,6 +875,38 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
               rdfs:comment "The Agent approving the EditorialObject."@en ;
               rdfs:label "Approved by"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactType
+ec:artefactType rdf:type owl:ObjectProperty ;
+                rdfs:domain ec:Artefact ;
+                rdfs:range skos:Consept ;
+                rdfs:comment "To define a type of Artefact."@en ;
+                rdfs:label "Artefact type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetType
+ec:assetType rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Asset ;
+             rdfs:range skos:Consept ;
+             rdfs:comment "The type of Asset."@en ;
+             rdfs:label "Asset type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectType
+ec:editorialObjectType rdf:type owl:ObjectProperty ;
+                       rdfs:domain ec:EditorialObject ;
+                       rdfs:range skos:Consept ;
+                       rdfs:comment "An type attributed to an EditorialObject."@en ;
+                       rdfs:label "Editorial Object Type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventType
+ec:eventType rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Event ;
+             rdfs:range skos:Consept ;
+             rdfs:comment "The type of an Event."@en ;
+             rdfs:label "Event type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#existsAs
@@ -887,6 +1070,15 @@ ec:hasSource rdf:type owl:ObjectProperty ;
              rdfs:label "Source"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageType
+ec:hasStorageType rdf:type owl:ObjectProperty ;
+                  rdfs:domain ec:Resource ;
+                  rdfs:range skos:consept ;
+                  rdfs:comment """To define the type of storage associated with a locator from where a
+      Resource can be accessed."""@en ;
+                  rdfs:label "Storage type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrack
 ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
                     rdfs:domain ec:EditorialObject ;
@@ -984,12 +1176,36 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                rdfs:label "Version"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationType
+ec:locationType rdf:type owl:ObjectProperty ;
+                rdfs:domain ec:Location ;
+                rdfs:range skos:Consept ;
+                rdfs:comment "The type of a Location."@en ;
+                rdfs:label "Location type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType
+ec:mediaResourceType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ec:MediaResource ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "The type of MediaResource."@en ;
+                     rdfs:label "Media Resource type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:domain ec:PublicationEvent ;
             rdfs:range ec:Essence ;
             rdfs:comment "To link an Essence to a PublicationEvent."@en ;
             rdfs:label "Essence"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventType
+ec:publicationEventType rdf:type owl:ObjectProperty ;
+                        rdfs:domain ec:PublicationEvent ;
+                        rdfs:range skos:Consept ;
+                        rdfs:comment "A type of PublicationEvent."@en ;
+                        rdfs:label "Publication event type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishes
@@ -1010,6 +1226,63 @@ ec:represents rdf:type owl:ObjectProperty ;
               rdfs:label "Asset"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceType
+ec:resourceType rdf:type owl:ObjectProperty ;
+                rdfs:domain ec:Resource ;
+                rdfs:range skos:Consept ;
+                rdfs:comment "The type of Resource."@en ;
+                rdfs:label "Resource type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType
+ec:rightsType rdf:type owl:ObjectProperty ;
+              rdfs:domain ec:Rights ;
+              rdfs:range skos:Consept ;
+              rdfs:comment "To specify a type of Rights."@en ;
+              rdfs:label "Rights type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleType
+ec:roleType rdf:type owl:ObjectProperty ;
+            rdfs:domain ec:Role ;
+            rdfs:range skos:Consept ;
+            rdfs:comment "*** This might in the context be better to use skos:inScheme as role are implisitt a subclass of skos:Consept" ,
+                         "To specify a type of Role."@en ;
+            rdfs:label "Role type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceType
+ec:serviceType rdf:type owl:ObjectProperty ;
+               rdfs:domain ec:Service ;
+               rdfs:range skos:Consept ;
+               rdfs:comment "The type of Service."@en ;
+               rdfs:label "Service type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackType
+ec:timelineTrackType rdf:type owl:ObjectProperty ;
+                     rdfs:domain ec:TimelineTrack ;
+                     rdfs:range skos:Consept ;
+                     rdfs:comment "To define a type of TimelineTrack."@en ;
+                     rdfs:label "Timeline track type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
+ec:trackType rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Track ;
+             rdfs:range skos:Consept ;
+             rdfs:comment "The type of Track."@en ;
+             rdfs:label "Track type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionType
+ec:versionType rdf:type owl:ObjectProperty ;
+               rdfs:domain ec:Asset ;
+               rdfs:range skos:Consept ;
+               rdfs:comment "To specify a type of version for an EditorialObject."@en ;
+               rdfs:label "Version type"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -1018,7 +1291,7 @@ ec:represents rdf:type owl:ObjectProperty ;
 ebuccdm:accountDescription rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:Account ;
                            rdfs:range rdfs:Literal ;
-                           rdfs:comment "Description of an Account"@en ;
+                           rdfs:comment "Description of an Account."@en ;
                            rdfs:label "Account description"@en .
 
 
@@ -1040,15 +1313,6 @@ ebuccdm:accountName rdf:type owl:DatatypeProperty ;
                     rdfs:range rdfs:Literal ;
                     rdfs:comment "Name of an Account"@en ;
                     rdfs:label "Account name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountType
-ebuccdm:accountType rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ebuccdm:Account ;
-                    rdfs:range xsd:string ;
-                    rdfs:comment "*** Range skos:Consept ?***" ,
-                                 "A type of Account"@en ;
-                    rdfs:label "Account type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValue
@@ -1096,16 +1360,6 @@ ebuccdm:assetValueName rdf:type owl:DatatypeProperty ;
                        rdfs:range rdfs:Literal ;
                        rdfs:comment "To name the notion of value associated to an Asset."@en ;
                        rdfs:label "Asset value name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueType
-ebuccdm:assetValueType rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ebuccdm:AssetValue ;
-                       rdfs:range xsd:anyURI ,
-                                  xsd:string ;
-                       rdfs:comment "Range: string or Concept"@en ,
-                                    "To type the notion of value associated to an Asset."@en ;
-                       rdfs:label "Asset value type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceAgeHigh
@@ -1182,16 +1436,6 @@ ebuccdm:audienceName rdf:type owl:DatatypeProperty ;
                      rdfs:label "Audience name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceType
-ebuccdm:audienceType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ebuccdm:Audience ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                  "To specify a type of Audience."@en ;
-                     rdfs:label "Audience type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobDescription
 ebuccdm:auditJobDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:AuditJob ;
@@ -1215,16 +1459,6 @@ ebuccdm:auditJobName rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:string ;
                      rdfs:comment "To name an AuditJob."@en ;
                      rdfs:label "Audit job name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobType
-ebuccdm:auditJobType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ebuccdm:AuditJob ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                  "To define a type of AuditJob."@en ;
-                     rdfs:label "Audit job type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDate
@@ -1269,16 +1503,6 @@ ebuccdm:auditReportResults rdf:type owl:DatatypeProperty ;
                            rdfs:label "Audit report results"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportType
-ebuccdm:auditReportType rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ebuccdm:AuditReport ;
-                        rdfs:range xsd:anyURI ,
-                                   xsd:string ;
-                        rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                     "To define the type of an AuditReport."@en ;
-                        rdfs:label "Audit report type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignDescription
 ebuccdm:campaignDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:Campaign ;
@@ -1302,16 +1526,6 @@ ebuccdm:campaignTitle rdf:type owl:DatatypeProperty ;
                       rdfs:range xsd:string ;
                       rdfs:comment "A title given to a Campaign."@en ;
                       rdfs:label "Campaign Title"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignType
-ebuccdm:campaignType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ebuccdm:Campaign ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "A type of Campaign."@en ,
-                                  "Range: anyURI, skos ConceptId or string"@en ;
-                     rdfs:label "Campaign type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumerId
@@ -1394,26 +1608,6 @@ ebuccdm:consumptionDeviceProfileName rdf:type owl:DatatypeProperty ;
                                      rdfs:label "Consumption device profile name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileType
-ebuccdm:consumptionDeviceProfileType rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
-                                     rdfs:range xsd:anyURI ,
-                                                xsd:string ;
-                                     rdfs:comment "A type of ConsumptionDeviceProfile."@en ,
-                                                  "Range: anyURI, skos ConceptId or string"@en ;
-                                     rdfs:label "Consumption device profile type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceType
-ebuccdm:consumptionDeviceType rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ebuccdm:ConsumptionDevice ;
-                              rdfs:range xsd:anyURI ,
-                                         xsd:string ;
-                              rdfs:comment "An type of ConsumptionDevice."@en ,
-                                           "Range: anyURI, skos ConceptId, string"@en ;
-                              rdfs:label "Consumption device type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventDescription
 ebuccdm:consumptionEventDescription rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ebuccdm:ConsumptionEvent ;
@@ -1464,16 +1658,6 @@ ebuccdm:consumptionEventStartDateTime rdf:type owl:DatatypeProperty ;
                                       rdfs:label "Consumption start time"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventType
-ebuccdm:consumptionEventType rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ebuccdm:ConsumptionEvent ;
-                             rdfs:range xsd:anyURI ,
-                                        xsd:string ;
-                             rdfs:comment "An type of ConsumptionEvent."@en ,
-                                          "Range: anyURI, skos ConceptId or string"@en ;
-                             rdfs:label "Consumption event type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceDescription
 ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
                                       rdfs:domain ebuccdm:ConsumptionLicence ;
@@ -1515,16 +1699,6 @@ ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
                                rdfs:label "Consumption licence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceType
-ebuccdm:consumptionLicenceType rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ebuccdm:ConsumptionLicence ;
-                               rdfs:range xsd:anyURI ,
-                                          xsd:string ;
-                               rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                            "The type of ConsumptionLicence."@en ;
-                               rdfs:label "Consumption licence type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmount
 ebuccdm:contractCostAmount rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:ContractCost ;
@@ -1559,16 +1733,6 @@ ebuccdm:contractCostName rdf:type owl:DatatypeProperty ;
                          rdfs:label "ContractCost name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostType
-ebuccdm:contractCostType rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ebuccdm:ContractCost ;
-                         rdfs:range xsd:anyURI ,
-                                    xsd:string ;
-                         rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                      "To define the type of ContractCost."@en ;
-                         rdfs:label "Cost type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractDescription
 ebuccdm:contractDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:Contract ;
@@ -1601,27 +1765,6 @@ ebuccdm:contractName rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:string ;
                      rdfs:comment "The name attributed to a Contract."@en ;
                      rdfs:label "Contract name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractType
-ebuccdm:contractType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ebuccdm:Contract ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                  "To define a type of Contract."@en ;
-                     rdfs:label "contract type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#coversConsumptionDevice
-ebuccdm:coversConsumptionDevice rdf:type owl:DatatypeProperty ;
-                                rdfs:domain ebuccdm:ConsumptionLicence ;
-                                rdfs:range xsd:anyURI ,
-                                           xsd:string ;
-                                rdfs:comment "Range: string or ConsumptionDevice"@en ,
-                                             """To identify a device compatible with the
-      ConsumptionLicence."""@en ;
-                                rdfs:label "Compatible consumption device"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#formatId
@@ -1711,15 +1854,6 @@ ebuccdm:measureName rdf:type owl:DatatypeProperty ;
                     rdfs:range xsd:string ;
                     rdfs:comment "To name a Measure."@en ;
                     rdfs:label "Measure name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureType
-ebuccdm:measureType rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ebuccdm:Measure ;
-                    rdfs:range xsd:anyURI ,
-                               xsd:string ;
-                    rdfs:comment "To define a type of Measure."@en ;
-                    rdfs:label "Measure type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValue
@@ -1829,17 +1963,6 @@ ebuccdm:onStagePositionName rdf:type owl:DatatypeProperty ;
                             rdfs:label "On stage position name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionType
-ebuccdm:onStagePositionType rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ebuccdm:OnStagePosition ;
-                            rdfs:range xsd:anyURI ,
-                                       xsd:string ;
-                            rdfs:comment "Range: anyURI, skos ConceptId or string"@en ,
-                                         """To define a type of a set of coordinates defining a position on
-      stage."""@en ;
-                            rdfs:label "On stage position type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#orderedFlag
 ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:EditorialObject ;
@@ -1881,16 +2004,6 @@ ebuccdm:productionDeviceName rdf:type owl:DatatypeProperty ;
                              rdfs:range xsd:string ;
                              rdfs:comment "A name associated to a ProductionDevice."@en ;
                              rdfs:label "Device name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceType
-ebuccdm:productionDeviceType rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ebuccdm:ProductionDevice ;
-                             rdfs:range xsd:string ;
-                             rdfs:comment """A type of ProductionDevice e.g. TV-Set, mobile,
-      tablet."""@en ,
-                                          "Range: string or anyURI or Concept."@en ;
-                             rdfs:label "Device type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobDescription
@@ -1941,15 +2054,6 @@ ebuccdm:productionOrderName rdf:type owl:DatatypeProperty ;
                             rdfs:range xsd:string ;
                             rdfs:comment "The name given to a production order."@en ;
                             rdfs:label "Production order name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderType
-ebuccdm:productionOrderType rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ebuccdm:ProductionOrder ;
-                            rdfs:range xsd:string ;
-                            rdfs:comment "Range: string or anyURI or Concept."@en ,
-                                         "The type of production order."@en ;
-                            rdfs:label "Production order type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#radioTuner
@@ -2092,16 +2196,6 @@ ebuccdm:ruleStatement rdf:type owl:DatatypeProperty ;
                       rdfs:label "Rule statement"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleType
-ebuccdm:ruleType rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ebuccdm:Rule ;
-                 rdfs:range xsd:anyURI ,
-                            xsd:string ;
-                 rdfs:comment "Range: string or anyURI or Concept."@en ,
-                              "To define the type of a Rule."@en ;
-                 rdfs:label "Rule type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#soundOutput
 ebuccdm:soundOutput rdf:type owl:DatatypeProperty ;
                     rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
@@ -2134,16 +2228,6 @@ ebuccdm:stageName rdf:type owl:DatatypeProperty ;
                   rdfs:range xsd:string ;
                   rdfs:comment "To name a Stage."@en ;
                   rdfs:label "Stage name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageType
-ebuccdm:stageType rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ebuccdm:Stage ;
-                  rdfs:range xsd:anyURI ,
-                             xsd:string ;
-                  rdfs:comment "Range: string or anyURI or Concept."@en ,
-                               "To define a type of Stage."@en ;
-                  rdfs:label "Stage type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#textInput
@@ -2242,15 +2326,6 @@ ec:agentName rdf:type owl:DatatypeProperty ;
              rdfs:label "Agent name."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentType
-ec:agentType rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Agent ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
-             rdfs:comment "To define a type of Agent."@en ;
-             rdfs:label "Agent type."@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDescription
 ec:artefactDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Artefact ;
@@ -2276,16 +2351,6 @@ ec:artefactName rdf:type owl:DatatypeProperty ;
                 rdfs:label "Artefact name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactType
-ec:artefactType rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Artefact ;
-                rdfs:range xsd:anyURI ,
-                           xsd:string ;
-                rdfs:comment "Range: string or anyURI or Concept."@en ,
-                             "To define a type of Artefact."@en ;
-                rdfs:label "Artefact type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetId
 ec:assetId rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Asset ;
@@ -2293,16 +2358,6 @@ ec:assetId rdf:type owl:DatatypeProperty ;
                       xsd:string ;
            rdfs:comment "An identifier attribued to an Asset."@en ;
            rdfs:label "Asset Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetType
-ec:assetType rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Asset ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
-             rdfs:comment "Range: anyURI or skos ConceptId or string"@en ,
-                          "The type of Asset."@en ;
-             rdfs:label "Asset type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description
@@ -2373,16 +2428,6 @@ ec:editorialObjectId rdf:type owl:DatatypeProperty ;
                                 xsd:string ;
                      rdfs:comment "An Id attributed to an EditorialObject."@en ;
                      rdfs:label "Editorial Object Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectType
-ec:editorialObjectType rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:EditorialObject ;
-                       rdfs:range xsd:anyURI ,
-                                  xsd:string ;
-                       rdfs:comment "An type attributed to an EditorialObject."@en ,
-                                    "Range: string or anyURI or Concept."@en ;
-                       rdfs:label "Editorial Object Type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
@@ -2519,16 +2564,6 @@ ec:eventStartTime rdf:type owl:DatatypeProperty ;
                   rdfs:label "Event start time"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventType
-ec:eventType rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Event ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
-             rdfs:comment "Range: string or anyURI or Concept."@en ,
-                          "The type of an Event."@en ;
-             rdfs:label "Event type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#familyName
 ec:familyName rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Person ;
@@ -2629,17 +2664,6 @@ ec:hasRole rdf:type owl:DatatypeProperty ;
            rdfs:label "Role"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageType
-ec:hasStorageType rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Resource ;
-                  rdfs:range xsd:anyURI ,
-                             xsd:string ;
-                  rdfs:comment "Range: string or anyURI or skos ConceptId."@en ,
-                               """To define the type of storage associated with a locator from where a
-      Resource can be accessed."""@en ;
-                  rdfs:label "Storage type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCoveredBy
 ec:isCoveredBy rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Asset ;
@@ -2683,16 +2707,6 @@ ec:locationName rdf:type owl:DatatypeProperty ;
                 rdfs:label "Location name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationType
-ec:locationType rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Location ;
-                rdfs:range xsd:anyURI ,
-                           xsd:string ;
-                rdfs:comment "Range: anyURI, string, skos ConceptId"@en ,
-                             "The type of a Location."@en ;
-                rdfs:label "Location type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locator
 ec:locator rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Resource ;
@@ -2724,15 +2738,6 @@ ec:mediaResourceName rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:string ;
                      rdfs:comment "A name attributed to a MediaResource."@en ;
                      rdfs:label "Media resource name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType
-ec:mediaResourceType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:MediaResource ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "The type of MediaResource."@en ;
-                     rdfs:label "Media Resource type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#orderedFlag
@@ -2767,14 +2772,6 @@ ec:publicationEventId rdf:type owl:DatatypeProperty ;
                                  xsd:string ;
                       rdfs:comment "An identifier attributed to a PublicationEvent."@en ;
                       rdfs:label "Event Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventType
-ec:publicationEventType rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:PublicationEvent ;
-                        rdfs:range xsd:string ;
-                        rdfs:comment "A type of PublicationEvent."@en ;
-                        rdfs:label "Publication event type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanDescription
@@ -2889,15 +2886,6 @@ ec:resourceOffset rdf:type owl:DatatypeProperty ;
                   rdfs:label "Resource offset"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceType
-ec:resourceType rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Resource ;
-                rdfs:range xsd:anyURI ,
-                           xsd:string ;
-                rdfs:comment "The type of Resource."@en ;
-                rdfs:label "Resource type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsDuration
 ec:rightsDuration rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Rights ;
@@ -2960,16 +2948,6 @@ ec:rightsTerritoryIncludes rdf:type owl:DatatypeProperty ;
                            rdfs:label "Applicable territories"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType
-ec:rightsType rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Rights ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string ;
-              rdfs:comment "Range: a string or anyURI or ebucore:Rights."@en ,
-                           "To specify a type of Rights."@en ;
-              rdfs:label "Rights type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleId
 ec:roleId rdf:type owl:DatatypeProperty ;
           rdfs:domain ec:Role ;
@@ -2977,15 +2955,6 @@ ec:roleId rdf:type owl:DatatypeProperty ;
                      xsd:string ;
           rdfs:comment "An Id attributed to a Role."@en ;
           rdfs:label "Role Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleType
-ec:roleType rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Role ;
-            rdfs:range xsd:string ;
-            rdfs:comment "Range: a string or anyURI or ebucore:Role."@en ,
-                         "To specify a type of Role."@en ;
-            rdfs:label "Role type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceDescription
@@ -3021,14 +2990,6 @@ ec:serviceName rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:string ;
                rdfs:comment "An name attributed to a Service."@en ;
                rdfs:label "Service name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceType
-ec:serviceType rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Service ;
-               rdfs:range xsd:string ;
-               rdfs:comment "The type of Service."@en ;
-               rdfs:label "Service type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start
@@ -3131,16 +3092,6 @@ ec:timelineTrackName rdf:type owl:DatatypeProperty ;
                      rdfs:label "Timeline track type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackType
-ec:timelineTrackType rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TimelineTrack ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
-                     rdfs:comment "Range: string or anyURI or Concept."@en ,
-                                  "To define a type of TimelineTrack."@en ;
-                     rdfs:label "Timeline track type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title
 ec:title rdf:type owl:DatatypeProperty ;
          rdfs:domain ec:Asset ;
@@ -3172,26 +3123,6 @@ ec:trackPurpose rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:string ;
                 rdfs:comment "The purpose for which a Track is provided."@en ;
                 rdfs:label "Track purpose"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
-ec:trackType rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Track ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
-             rdfs:comment "Range: string or anyURI or Concept."@en ,
-                          "The type of Track."@en ;
-             rdfs:label "Track type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionType
-ec:versionType rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Asset ;
-               rdfs:range xsd:anyURI ,
-                          xsd:string ;
-               rdfs:comment "Range: string or anyURI or Concept."@en ,
-                            "To specify a type of version for an EditorialObject."@en ;
-               rdfs:label "Version type"@en .
 
 
 #################################################################
@@ -3254,7 +3185,8 @@ ebuccdm:Campaign rdf:type owl:Class ;
 ebuccdm:Consumer rdf:type owl:Class ;
                  rdfs:subClassOf ec:Person ;
                  rdfs:comment """An individual who consumes the Service using a ConsumptionDevice.
-       The Consumer can be associated to an Audience. His actions lead to data around the
+      
+ The Consumer can be associated to an Audience. His actions lead to data around the
       ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service
       via an Account containing information about that Concumer to a varying degree of detaill (e.g.
       age, sex, matrimonial status, address). This is further defined in Consumption Licence when
@@ -3280,9 +3212,11 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
 ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
                          rdfs:comment """A ConsumptionEvent reflecting the consumption of content during a
-      PublicationEvent.  For linear services the ConsumptionEvent and PublicationEvent happen
+      PublicationEvent. 
+ For linear services the ConsumptionEvent and PublicationEvent happen
       at the same time. For non-linear services, the consumer decides about the time of the
-      ConsumptionEvent.  The ConsumptionEvent results into ResonanceEvent aggregated into
+      ConsumptionEvent. 
+ The ConsumptionEvent results into ResonanceEvent aggregated into
       Resonance data."""@en ;
                          rdfs:label "Consumption event"@en .
 
@@ -3291,7 +3225,8 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
 ebuccdm:ConsumptionLicence rdf:type owl:Class ;
                            rdfs:subClassOf owl:Thing ;
                            rdfs:comment """A licence attributed to a Consumer defining the terms for the
-      consumption of content.  The ConsumptionLicence is verified by a mechanism that is
+      consumption of content. 
+ The ConsumptionLicence is verified by a mechanism that is
       usually located in the device and referred to as DRM (Digital Rights
       Management)."""@en ;
                            rdfs:label "Consumption licence"@en .
@@ -3351,7 +3286,8 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
 ebuccdm:ProductionOrder rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing ;
                         rdfs:comment """The act of ordering the creation/production, purchase or reuse of
-      MediaResources.  The terms of a ProductionOrder are defined by Contract."""@en ;
+      MediaResources. 
+ The terms of a ProductionOrder are defined by Contract."""@en ;
                         rdfs:label "Production order"@en .
 
 
@@ -3361,7 +3297,8 @@ ebuccdm:Resonance rdf:type owl:Class ;
                   rdfs:comment """The aggregation of data about the conumption of content by a group
       of Consumers. Represents all countable or noticeable consumption actions by consumers during a
       ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of
-      likes, percentage of votes, number of downloads...  The analysis of the Resonance Data
+      likes, percentage of votes, number of downloads... 
+ The analysis of the Resonance Data
       allows more particularly refining a Campaign strategy and its associated
       PublicationPlan."""@en ;
                   rdfs:label "Resonance"@en .
@@ -3373,8 +3310,10 @@ ebuccdm:ResonanceEvent rdf:type owl:Class ;
                        rdfs:comment """Data about the consumption of content by a Consumer using a
       particular ConsumptionDevice. Represents all individual countable or noticeable actions by
       consumers during a consumptionEvent using a particular ConsumptionDevice, e.g. clicks, likes,
-      comments, votes, tweets preferences, downloads...  All ResonanceEvents are linked to a
-      ConsumptionEvent and the associated Essence or EditorialObject.  ResonanceEvents
+      comments, votes, tweets preferences, downloads... 
+ All ResonanceEvents are linked to a
+      ConsumptionEvent and the associated Essence or EditorialObject. 
+ ResonanceEvents
       represent raw-data, that need to be aggregated (e.g. summed up). Such data can be seen as \"Big
       Data\" and require appropriate technology and techniques (e.g. processing algorithms).The
       aggregationof this data is a set of Resonance results."""@en ;
@@ -3421,7 +3360,8 @@ ec:Asset rdf:type owl:Class ;
       serves as a central reference point to manage rights associated to EditorialObjects,
       MediaResources or Essences, and - by inference - PublicationEvents (distribution and
       exploitation conditions). Remember that the MediaResources or Essences will in this model
-      always be represented by an EditorialObject.  Example: The CCDM model allows the
+      always be represented by an EditorialObject. 
+ Example: The CCDM model allows the
       association of Rights to a related EditorialObject that is represented by one or more
       Essences."""@en ;
          rdfs:label "Asset"@en .
@@ -3471,24 +3411,39 @@ ec:EditorialObject rdf:type owl:Class ;
       realised as a single MediaResource or a collection thereof. An â€œEditorialObjectâ€� describes
       any idea, any story and will be used to transform a concept into an editorial definition of a
       MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
-       An â€œEditorialObjectâ€� is a set of descriptive metadata summarising e.g. editing
+      
+ An â€œEditorialObjectâ€� is a set of descriptive metadata summarising e.g. editing
       decisions. An â€œEditorialObjectâ€� can be a group of EditorialObjects. An
       â€œEditorialObjectâ€� can also be a part of another â€œEditorialObjectâ€�, which is defined by
-      its start time and duration.  EditorialObjects can be ordered either as groups or as
-      items on a timeline.   Examples of simple EditorialObjects: Programme, Item, Shot,
-      Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc.  A simplified
-      use-case:  A TV news broadcast consists of two news items. One news item contains the
+      its start time and duration. 
+ EditorialObjects can be ordered either as groups or as
+      items on a timeline. 
+ 
+ Examples of simple EditorialObjects: Programme, Item, Shot,
+      Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc. 
+ A simplified
+      use-case: 
+ A TV news broadcast consists of two news items. One news item contains the
       last ten seconds of a one minute long interview taken from another source (i.e. 50â€™â€™ >
-      60â€™â€™).   This could be modelled as follows:  Â· The NewsBroadcast is linked
-      to a MediaResource using the instantiates-property  Â· The NewsItems are linked to the
-      NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13  Â· The InterviewPart is
+      60â€™â€™). 
+ 
+ This could be modelled as follows: 
+ Â· The NewsBroadcast is linked
+      to a MediaResource using the instantiates-property 
+ Â· The NewsItems are linked to the
+      NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13 
+ Â· The InterviewPart is
       linked to the NewsItem using the hasMember-property. Start and Duration are properties within
-      the InterviewPart indicating its appearance within the NewsItem2.  Â· The InterviewPart
-      is linked to its original source using the existsAs-property  Â· The Interview
+      the InterviewPart indicating its appearance within the NewsItem2. 
+ Â· The InterviewPart
+      is linked to its original source using the existsAs-property 
+ Â· The Interview
       instantiates a MediaResource, which in turn is linked from the MediaResource of the
-      NewsBroadcast using the hasSource-property  Â· Representation of segmentation:
+      NewsBroadcast using the hasSource-property 
+ Â· Representation of segmentation:
       TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for
-      playout. {@en} """ ;
+      playout. {@en}
+ """ ;
                    rdfs:label "Editorial object"@en .
 
 
@@ -3579,7 +3534,8 @@ ec:PublicationChannel rdf:type owl:Class ;
 ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:subClassOf owl:Thing ;
                     rdfs:comment """To describe any manifestation of an EditorialObject and associated
-      Essence on any media (live, on demand, catch-up TV, etc.).  A PublicationEvent can be
+      Essence on any media (live, on demand, catch-up TV, etc.). 
+ A PublicationEvent can be
       e.g. a scheduled event, a broadcast event (originally not scheduled like \"latest news\"), or
       non-linear on-demand events and live-streaming."""@en ;
                     rdfs:label "Publication Event"@en .
@@ -3592,8 +3548,11 @@ ec:PublicationPlan rdf:type owl:Class ;
       their Audiences). The realisation of a PublicationPlan may require the specific acquisition or
       creation of content defined as a pair of EditorialObjects and Essence, which occurs through
       ProductionOrders. A PublicationPlan can be the result of associated
-      Publication(sub)Plans. Examples:  Example 1: A campaign of commercials for a
-      product, consists of set of planned PublicationEvents. example 2: A fiction film is
+      Publication(sub)Plans.
+ Examples: 
+ Example 1: A campaign of commercials for a
+      product, consists of set of planned PublicationEvents.
+ example 2: A fiction film is
       promoted with several trailers published before the publication of the film."""@en ;
                    rdfs:label "Publication plan"@en .
 
@@ -3655,6 +3614,14 @@ ec:VideoFormat rdf:type owl:Class ;
                rdfs:label "Video format"@en .
 
 
+###  http://www.w3.org/2004/02/skos/core#Consept
+skos:Consept rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#consept
+skos:consept rdf:type owl:Class .
+
+
 #################################################################
 #    Annotations
 #################################################################
@@ -3662,13 +3629,6 @@ ec:VideoFormat rdf:type owl:Class ;
 ebuccdm:consumptionDeviceManufacturer rdfs:comment "Range: anyURI or Agent or string"@en ;
                                       rdfs:label "Consumption device manufacturer"@en ;
                                       rdfs:comment "The manufacturer of a ConsumptionDevice."@en .
-
-
-ebuccdm:coversConsumptionEvent rdfs:comment """To identifiy consumption events in a consumption
-      session."""@en ,
-                                            "*** Change - Wrong domain ***" ,
-                                            "Range: anyURI, ConsumptionEvent or string"@en ;
-                               rdfs:label "Consumption event"@en .
 
 
 ebuccdm:isApprovedBy rdfs:label "Approved by"@en ;
