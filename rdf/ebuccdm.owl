@@ -1439,7 +1439,7 @@ ebuccdm:audienceName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobDescription
 ebuccdm:auditJobDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:AuditJob ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "To describe an AuditJob."@en ;
                             rdfs:label "Audit job description"@en .
 
@@ -1472,7 +1472,7 @@ ebuccdm:auditReportDate rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDescription
 ebuccdm:auditReportDescription rdf:type owl:DatatypeProperty ;
                                rdfs:domain ebuccdm:AuditReport ;
-                               rdfs:range xsd:string ;
+                               rdfs:range rdfs:Literal ;
                                rdfs:comment "To describe an AuditReport."@en ;
                                rdfs:label "Audit report description"@en .
 
@@ -1506,7 +1506,7 @@ ebuccdm:auditReportResults rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignDescription
 ebuccdm:campaignDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:Campaign ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "To describe a Campiagn."@en ;
                             rdfs:label "Campaign description"@en .
 
@@ -1586,7 +1586,7 @@ ebuccdm:consumptionDeviceOS rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileDescription
 ebuccdm:consumptionDeviceProfileDescription rdf:type owl:DatatypeProperty ;
                                             rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
-                                            rdfs:range xsd:string ;
+                                            rdfs:range rdfs:Literal ;
                                             rdfs:comment "The description of a ConsumptionDeviceProfile."@en ;
                                             rdfs:label "Consumption device profile description"@en .
 
@@ -1611,7 +1611,7 @@ ebuccdm:consumptionDeviceProfileName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventDescription
 ebuccdm:consumptionEventDescription rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ebuccdm:ConsumptionEvent ;
-                                    rdfs:range xsd:string ;
+                                    rdfs:range rdfs:Literal ;
                                     rdfs:comment "A description attributed to the ConsumptionEvent."@en ;
                                     rdfs:label "Consumption event description"@en .
 
@@ -1661,7 +1661,7 @@ ebuccdm:consumptionEventStartDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceDescription
 ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
                                       rdfs:domain ebuccdm:ConsumptionLicence ;
-                                      rdfs:range xsd:string ;
+                                      rdfs:range rdfs:Literal ;
                                       rdfs:comment "An Id attributed to a ConsumptionLicence."@en ;
                                       rdfs:label "Consumption licence description"@en .
 
@@ -1710,7 +1710,7 @@ ebuccdm:contractCostAmount rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostDescription
 ebuccdm:contractCostDescription rdf:type owl:DatatypeProperty ;
                                 rdfs:domain ebuccdm:ContractCost ;
-                                rdfs:range xsd:string ;
+                                rdfs:range rdfs:Literal ;
                                 rdfs:comment """To provide additional information on the
       ContractCost."""@en ;
                                 rdfs:label "ContractCost description"@en .
@@ -1736,7 +1736,7 @@ ebuccdm:contractCostName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractDescription
 ebuccdm:contractDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:Contract ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "The description of a Contract."@en ;
                             rdfs:label "Contract description"@en .
 
@@ -1834,7 +1834,7 @@ ebuccdm:isRenderedByConsumptionDevice rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureDescription
 ebuccdm:measureDescription rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:Measure ;
-                           rdfs:range xsd:string ;
+                           rdfs:range rdfs:Literal ;
                            rdfs:comment "To describe a Measure."@en ;
                            rdfs:label "Measure description"@en .
 
@@ -1984,7 +1984,7 @@ ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceDescription
 ebuccdm:productionDeviceDescription rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ebuccdm:ProductionDevice ;
-                                    rdfs:range xsd:string ;
+                                    rdfs:range rdfs:Literal ;
                                     rdfs:comment "A description of a ProductionDevice."@en ;
                                     rdfs:label "Device description"@en .
 
@@ -2009,7 +2009,7 @@ ebuccdm:productionDeviceName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobDescription
 ebuccdm:productionJobDescription rdf:type owl:DatatypeProperty ;
                                  rdfs:domain ebuccdm:ProductionJob ;
-                                 rdfs:range xsd:string ;
+                                 rdfs:range rdfs:Literal ;
                                  rdfs:comment "A description of a ProductionJob."@en ;
                                  rdfs:label "Production Job description"@en .
 
@@ -2034,7 +2034,7 @@ ebuccdm:productionJobName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderDescription
 ebuccdm:productionOrderDescription rdf:type owl:DatatypeProperty ;
                                    rdfs:domain ebuccdm:ProductionOrder ;
-                                   rdfs:range xsd:string ;
+                                   rdfs:range rdfs:Literal ;
                                    rdfs:comment "The description of a production order."@en ;
                                    rdfs:label "Production order description."@en .
 
@@ -2076,7 +2076,7 @@ ebuccdm:readyForPublication rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceDescription
 ebuccdm:resonanceDescription rdf:type owl:DatatypeProperty ;
                              rdfs:domain ebuccdm:Resonance ;
-                             rdfs:range xsd:string ;
+                             rdfs:range rdfs:Literal ;
                              rdfs:comment "The description of a Resonance."@en ;
                              rdfs:label "Resonance description"@en .
 
@@ -2084,7 +2084,7 @@ ebuccdm:resonanceDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventDescription
 ebuccdm:resonanceEventDescription rdf:type owl:DatatypeProperty ;
                                   rdfs:domain ebuccdm:ResonanceEvent ;
-                                  rdfs:range xsd:string ;
+                                  rdfs:range rdfs:Literal ;
                                   rdfs:comment "A description of a ResonanceEvent."@en ;
                                   rdfs:label "Resonance event description"@en .
 
@@ -2150,7 +2150,7 @@ ebuccdm:rightsUsageRestrictions rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleDescription
 ebuccdm:ruleDescription rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:Rule ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         rdfs:comment "To describe a Rule."@en ;
                         rdfs:label "Rule description"@en .
 
@@ -2303,7 +2303,7 @@ ebuccdm:webcam rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDescription
 ec:agentDescription rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Agent ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "To describe an Agent."@en ;
                     rdfs:label "Agent description."@en .
 
@@ -2328,7 +2328,7 @@ ec:agentName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDescription
 ec:artefactDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Artefact ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        rdfs:comment "To describe an Artefact."@en ;
                        rdfs:label "Artefact description"@en .
 
@@ -2362,7 +2362,7 @@ ec:assetId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description
 ec:description rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Asset ;
-               rdfs:range xsd:string ;
+               rdfs:range rdfs:Literal ;
                rdfs:comment "To provide a description for an Asset."@en ;
                rdfs:label "Description"@en .
 
@@ -2485,7 +2485,7 @@ ec:essenceId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventDescription
 ec:eventDescription rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Event ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "the description of an Event."@en ;
                     rdfs:label "Event description"@en .
 
@@ -2684,7 +2684,7 @@ ec:live rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationDescription
 ec:locationDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Location ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        rdfs:comment "The description of a Location."@en ;
                        rdfs:label "Location description"@en .
 
@@ -2717,7 +2717,7 @@ ec:locator rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceDescription
 ec:mediaResourceDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ec:MediaResource ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "The description of a MediaResource."@en ;
                             rdfs:label "Media Resource description"@en .
 
@@ -2776,7 +2776,7 @@ ec:publicationEventId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanDescription
 ec:publicationPlanDescription rdf:type owl:DatatypeProperty ;
                               rdfs:domain ec:PublicationPlan ;
-                              rdfs:range xsd:string ;
+                              rdfs:range rdfs:Literal ;
                               rdfs:comment "A description of a PublicationPlan."@en ;
                               rdfs:label "Publication plan description."@en .
 
@@ -2854,7 +2854,7 @@ ec:publishingEventsLeft rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceDescription
 ec:resourceDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Resource ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        rdfs:comment "The description of a Resource."@en ;
                        rdfs:label "Resource description"@en .
 
@@ -2959,7 +2959,7 @@ ec:roleId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceDescription
 ec:serviceDescription rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:Service ;
-                      rdfs:range xsd:string ;
+                      rdfs:range rdfs:Literal ;
                       rdfs:comment "A description of a Service."@en ;
                       rdfs:label "Service description"@en .
 
@@ -3051,7 +3051,7 @@ ec:storageId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDescription
 ec:timelineTrackDescription rdf:type owl:DatatypeProperty ;
                             rdfs:domain ec:TimelineTrack ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "The description of a TimelineTrack."@en ;
                             rdfs:label "Timeline track description"@en .
 
