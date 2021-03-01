@@ -1431,7 +1431,7 @@ ebuccdm:audienceInterest rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceName
 ebuccdm:audienceName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ebuccdm:Audience ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      rdfs:comment "A name attributed to an Audience."@en ;
                      rdfs:label "Audience name"@en .
 
@@ -1456,7 +1456,7 @@ ebuccdm:auditJobId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobName
 ebuccdm:auditJobName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ebuccdm:AuditJob ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      rdfs:comment "To name an AuditJob."@en ;
                      rdfs:label "Audit job name"@en .
 
@@ -1489,7 +1489,7 @@ ebuccdm:auditReportId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportName
 ebuccdm:auditReportName rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:AuditReport ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         rdfs:comment "To name an AuditReport."@en ;
                         rdfs:label "Audit report name"@en .
 
@@ -1636,7 +1636,7 @@ ebuccdm:consumptionEventId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventName
 ebuccdm:consumptionEventName rdf:type owl:DatatypeProperty ;
                              rdfs:domain ebuccdm:ConsumptionEvent ;
-                             rdfs:range xsd:string ;
+                             rdfs:range rdfs:Literal ;
                              rdfs:comment "A namre attributed to the ConsumptionEvent."@en ;
                              rdfs:label "Consumption event name"@en .
 
@@ -1686,7 +1686,7 @@ ebuccdm:consumptionLicenceLink rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceName
 ebuccdm:consumptionLicenceName rdf:type owl:DatatypeProperty ;
                                rdfs:domain ebuccdm:ConsumptionLicence ;
-                               rdfs:range xsd:string ;
+                               rdfs:range rdfs:Literal ;
                                rdfs:comment "A name attributed to a ConsumptionLicence."@en ;
                                rdfs:label "Consumption licence name"@en .
 
@@ -1728,7 +1728,7 @@ ebuccdm:contractCostId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostName
 ebuccdm:contractCostName rdf:type owl:DatatypeProperty ;
                          rdfs:domain ebuccdm:ContractCost ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          rdfs:comment "To name a particular ContractCost."@en ;
                          rdfs:label "ContractCost name"@en .
 
@@ -1762,7 +1762,7 @@ ebuccdm:contractLink rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractName
 ebuccdm:contractName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ebuccdm:Contract ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      rdfs:comment "The name attributed to a Contract."@en ;
                      rdfs:label "Contract name"@en .
 
@@ -1851,7 +1851,7 @@ ebuccdm:measureId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureName
 ebuccdm:measureName rdf:type owl:DatatypeProperty ;
                     rdfs:domain ebuccdm:Measure ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "To name a Measure."@en ;
                     rdfs:label "Measure name"@en .
 
@@ -1957,7 +1957,7 @@ ebuccdm:onStagePositionId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionName
 ebuccdm:onStagePositionName rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:OnStagePosition ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment """To name a set of coordinates defining a position on
       stage."""@en ;
                             rdfs:label "On stage position name"@en .
@@ -2001,7 +2001,7 @@ ebuccdm:productionDeviceId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceName
 ebuccdm:productionDeviceName rdf:type owl:DatatypeProperty ;
                              rdfs:domain ebuccdm:ProductionDevice ;
-                             rdfs:range xsd:string ;
+                             rdfs:range rdfs:Literal ;
                              rdfs:comment "A name associated to a ProductionDevice."@en ;
                              rdfs:label "Device name"@en .
 
@@ -2026,7 +2026,7 @@ ebuccdm:productionJobId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobName
 ebuccdm:productionJobName rdf:type owl:DatatypeProperty ;
                           rdfs:domain ebuccdm:ProductionJob ;
-                          rdfs:range xsd:string ;
+                          rdfs:range rdfs:Literal ;
                           rdfs:comment "A name attributed to a ProductionJob."@en ;
                           rdfs:label "Production Job name"@en .
 
@@ -2051,7 +2051,7 @@ ebuccdm:productionOrderId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderName
 ebuccdm:productionOrderName rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:ProductionOrder ;
-                            rdfs:range xsd:string ;
+                            rdfs:range rdfs:Literal ;
                             rdfs:comment "The name given to a production order."@en ;
                             rdfs:label "Production order name"@en .
 
@@ -2109,7 +2109,7 @@ ebuccdm:resonanceEventLocator rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventName
 ebuccdm:resonanceEventName rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:ResonanceEvent ;
-                           rdfs:range xsd:string ;
+                           rdfs:range rdfs:Literal ;
                            rdfs:comment "A name attributed to a ResonanceEvent."@en ;
                            rdfs:label "Resonance event name"@en .
 
@@ -2134,7 +2134,7 @@ ebuccdm:resonanceLocator rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceName
 ebuccdm:resonanceName rdf:type owl:DatatypeProperty ;
                       rdfs:domain ebuccdm:Resonance ;
-                      rdfs:range xsd:string ;
+                      rdfs:range rdfs:Literal ;
                       rdfs:comment "An name attributed to a Resonance."@en ;
                       rdfs:label "Resonance name"@en .
 
@@ -2167,7 +2167,7 @@ ebuccdm:ruleId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleName
 ebuccdm:ruleName rdf:type owl:DatatypeProperty ;
                  rdfs:domain ebuccdm:Rule ;
-                 rdfs:range xsd:string ;
+                 rdfs:range rdfs:Literal ;
                  rdfs:comment "To name a Rule."@en ;
                  rdfs:label "Rule name"@en .
 
@@ -2225,7 +2225,7 @@ ebuccdm:stageId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageName
 ebuccdm:stageName rdf:type owl:DatatypeProperty ;
                   rdfs:domain ebuccdm:Stage ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   rdfs:comment "To name a Stage."@en ;
                   rdfs:label "Stage name"@en .
 
@@ -2320,8 +2320,7 @@ ec:agentId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentName
 ec:agentName rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Agent ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
+             rdfs:range rdfs:Literal ;
              rdfs:comment "To name an Agent."@en ;
              rdfs:label "Agent name."@en .
 
@@ -2346,7 +2345,7 @@ ec:artefactId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactName
 ec:artefactName rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Artefact ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 rdfs:comment "To name an Artefact."@en ;
                 rdfs:label "Artefact name"@en .
 
@@ -2535,7 +2534,7 @@ ec:eventId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventName
 ec:eventName rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Event ;
-             rdfs:range xsd:string ;
+             rdfs:range rdfs:Literal ;
              rdfs:comment "A name attributed to an Event."@en ;
              rdfs:label "Event name"@en .
 
@@ -2567,7 +2566,7 @@ ec:eventStartTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#familyName
 ec:familyName rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Person ;
-              rdfs:range xsd:string ;
+              rdfs:range rdfs:Literal ;
               rdfs:comment "The family name of a Person."@en ;
               rdfs:label "Family name"@en .
 
@@ -2600,7 +2599,7 @@ ec:free rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#givenName
 ec:givenName rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Person ;
-             rdfs:range xsd:string ;
+             rdfs:range rdfs:Literal ;
              rdfs:comment "The given name of a Person."@en ;
              rdfs:label "Given name"@en .
 
@@ -2702,7 +2701,7 @@ ec:locationId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationName
 ec:locationName rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Location ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 rdfs:comment "The name attributed to a Location."@en ;
                 rdfs:label "Location name"@en .
 
@@ -2735,7 +2734,7 @@ ec:mediaResourceId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceName
 ec:mediaResourceName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:MediaResource ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      rdfs:comment "A name attributed to a MediaResource."@en ;
                      rdfs:label "Media resource name"@en .
 
@@ -2752,7 +2751,7 @@ ec:orderedFlag rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#organisationName
 ec:organisationName rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Organisation ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "The name of an Organisation."@en ;
                     rdfs:label "Organisation name"@en .
 
@@ -2872,7 +2871,7 @@ ec:resourceId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceName
 ec:resourceName rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Resource ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 rdfs:comment "A name attributed to a Resource."@en ;
                 rdfs:label "Resource name"@en .
 
@@ -2987,7 +2986,7 @@ ec:serviceId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceName
 ec:serviceName rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Service ;
-               rdfs:range xsd:string ;
+               rdfs:range rdfs:Literal ;
                rdfs:comment "An name attributed to a Service."@en ;
                rdfs:label "Service name"@en .
 
@@ -3087,7 +3086,7 @@ ec:timelineTrackId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackName
 ec:timelineTrackName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:TimelineTrack ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      rdfs:comment "To give a name to a TimelineTrack."@en ;
                      rdfs:label "Timeline track type"@en .
 
