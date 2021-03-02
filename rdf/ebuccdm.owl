@@ -1405,8 +1405,11 @@ ebuccdm:audienceExcluding rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceId
 ebuccdm:audienceId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:Audience ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An Id attributed to an Audience."@en ,
                                 "Range: anyURI or string"@en ;
                    rdfs:label "Audience id"@en .
@@ -1447,8 +1450,11 @@ ebuccdm:auditJobDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobId
 ebuccdm:auditJobId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:AuditJob ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "To identify an AuditJob."@en ;
                    rdfs:label "Audit job Id"@en .
 
@@ -1480,8 +1486,11 @@ ebuccdm:auditReportDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportId
 ebuccdm:auditReportId rdf:type owl:DatatypeProperty ;
                       rdfs:domain ebuccdm:AuditReport ;
-                      rdfs:range xsd:anyURI ,
-                                 xsd:string ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:anyURI
+                                                 xsd:string
+                                               )
+                                 ] ;
                       rdfs:comment "To identify an AuditReport."@en ;
                       rdfs:label "Audit report Id"@en .
 
@@ -1514,8 +1523,11 @@ ebuccdm:campaignDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignId
 ebuccdm:campaignId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:Campaign ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An identifier attributed to a Campaign."@en ;
                    rdfs:label "Campaign Id"@en .
 
@@ -1531,8 +1543,11 @@ ebuccdm:campaignTitle rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumerId
 ebuccdm:consumerId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:Consumer ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An Id attributed to a consumer."@en ;
                    rdfs:label "Consumer id"@en .
 
@@ -1556,8 +1571,11 @@ ebuccdm:consumptionDeviceBrowser rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceId
 ebuccdm:consumptionDeviceId rdf:type owl:DatatypeProperty ;
                             rdfs:domain ebuccdm:ConsumptionDevice ;
-                            rdfs:range xsd:anyURI ,
-                                       xsd:string ;
+                            rdfs:range [ rdf:type rdfs:Datatype ;
+                                         owl:unionOf ( xsd:anyURI
+                                                       xsd:string
+                                                     )
+                                       ] ;
                             rdfs:comment "An Id attributed to a ConsumptionDevice."@en ;
                             rdfs:label "Consumption device id"@en .
 
@@ -1594,8 +1612,11 @@ ebuccdm:consumptionDeviceProfileDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileId
 ebuccdm:consumptionDeviceProfileId rdf:type owl:DatatypeProperty ;
                                    rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
-                                   rdfs:range xsd:anyURI ,
-                                              xsd:string ;
+                                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                                owl:unionOf ( xsd:anyURI
+                                                              xsd:string
+                                                            )
+                                              ] ;
                                    rdfs:comment "An Id attributed to a ConsumptionDeviceProfile."@en ;
                                    rdfs:label "Consumption device profile id"@en .
 
@@ -1627,8 +1648,11 @@ ebuccdm:consumptionEventEndDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventId
 ebuccdm:consumptionEventId rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:ConsumptionEvent ;
-                           rdfs:range xsd:anyURI ,
-                                      xsd:string ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
                            rdfs:comment "An Id attributed to the ConsumptionEvent."@en ;
                            rdfs:label "Consumption event Id"@en .
 
@@ -1669,8 +1693,11 @@ ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceId
 ebuccdm:consumptionLicenceId rdf:type owl:DatatypeProperty ;
                              rdfs:domain ebuccdm:ConsumptionLicence ;
-                             rdfs:range xsd:anyURI ,
-                                        xsd:string ;
+                             rdfs:range [ rdf:type rdfs:Datatype ;
+                                          owl:unionOf ( xsd:anyURI
+                                                        xsd:string
+                                                      )
+                                        ] ;
                              rdfs:comment "An Id attributed to a ConsumptionLicence."@en ;
                              rdfs:label "Consumption licence id"@en .
 
@@ -1719,8 +1746,11 @@ ebuccdm:contractCostDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostId
 ebuccdm:contractCostId rdf:type owl:DatatypeProperty ;
                        rdfs:domain ebuccdm:ContractCost ;
-                       rdfs:range xsd:anyURI ,
-                                  xsd:string ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:unionOf ( xsd:anyURI
+                                                  xsd:string
+                                                )
+                                  ] ;
                        rdfs:comment "To identify a specific ContractCost."@en ;
                        rdfs:label "ContractCost id"@en .
 
@@ -1744,8 +1774,11 @@ ebuccdm:contractDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractId
 ebuccdm:contractId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:Contract ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An Id attributed to a Contract."@en ;
                    rdfs:label "Contract Id"@en .
 
@@ -1770,8 +1803,11 @@ ebuccdm:contractName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#formatId
 ebuccdm:formatId rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Format ;
-                 rdfs:range xsd:anyURI ,
-                            xsd:string ;
+                 rdfs:range [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] ;
                  rdfs:comment "An Id attributed to a Format."@en ;
                  rdfs:label "Format Id"@en .
 
@@ -1842,8 +1878,11 @@ ebuccdm:measureDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureId
 ebuccdm:measureId rdf:type owl:DatatypeProperty ;
                   rdfs:domain ebuccdm:Measure ;
-                  rdfs:range xsd:anyURI ,
-                             xsd:string ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:unionOf ( xsd:anyURI
+                                             xsd:string
+                                           )
+                             ] ;
                   rdfs:comment "To identify a Measure."@en ;
                   rdfs:label "Measure Id"@en .
 
@@ -1947,8 +1986,11 @@ ebuccdm:onStagePositionDefinition rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionId
 ebuccdm:onStagePositionId rdf:type owl:DatatypeProperty ;
                           rdfs:domain ebuccdm:OnStagePosition ;
-                          rdfs:range xsd:anyURI ,
-                                     xsd:string ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
                           rdfs:comment """To identify a set of coordinates defining a position on
       stage."""@en ;
                           rdfs:label "On stage position Id"@en .
@@ -1975,7 +2017,11 @@ ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#previousRelatedProductionJobId
 ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
                                        rdfs:domain ebuccdm:ProductionJob ;
-                                       rdfs:range xsd:anyURI ;
+                                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                                    owl:unionOf ( xsd:anyURI
+                                                                  xsd:string
+                                                                )
+                                                  ] ;
                                        rdfs:comment """To identify a previous associated ProductionJob identified by its
       productionJobId."""@en ;
                                        rdfs:label "Previous job Id"@en .
@@ -1992,8 +2038,11 @@ ebuccdm:productionDeviceDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceId
 ebuccdm:productionDeviceId rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:ProductionDevice ;
-                           rdfs:range xsd:anyURI ,
-                                      xsd:string ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
                            rdfs:comment "An Id attributed to a Device."@en ;
                            rdfs:label "Device Id"@en .
 
@@ -2017,8 +2066,11 @@ ebuccdm:productionJobDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobId
 ebuccdm:productionJobId rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:ProductionJob ;
-                        rdfs:range xsd:anyURI ,
-                                   xsd:string ;
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:unionOf ( xsd:anyURI
+                                                   xsd:string
+                                                 )
+                                   ] ;
                         rdfs:comment "An identifier attributed to a ProductionJob."@en ;
                         rdfs:label "Production Job Id"@en .
 
@@ -2042,8 +2094,11 @@ ebuccdm:productionOrderDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderId
 ebuccdm:productionOrderId rdf:type owl:DatatypeProperty ;
                           rdfs:domain ebuccdm:ProductionOrder ;
-                          rdfs:range xsd:anyURI ,
-                                     xsd:string ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
                           rdfs:comment "An identifier attributed to a production order."@en ;
                           rdfs:label "Production order id"@en .
 
@@ -2092,8 +2147,11 @@ ebuccdm:resonanceEventDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventId
 ebuccdm:resonanceEventId rdf:type owl:DatatypeProperty ;
                          rdfs:domain ebuccdm:ResonanceEvent ;
-                         rdfs:range xsd:anyURI ,
-                                    xsd:string ;
+                         rdfs:range [ rdf:type rdfs:Datatype ;
+                                      owl:unionOf ( xsd:anyURI
+                                                    xsd:string
+                                                  )
+                                    ] ;
                          rdfs:comment "An Id attributed to a ResonanceEvent."@en ;
                          rdfs:label "Resonance event id"@en .
 
@@ -2117,8 +2175,11 @@ ebuccdm:resonanceEventName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceId
 ebuccdm:resonanceId rdf:type owl:DatatypeProperty ;
                     rdfs:domain ebuccdm:Resonance ;
-                    rdfs:range xsd:anyURI ,
-                               xsd:string ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( xsd:anyURI
+                                               xsd:string
+                                             )
+                               ] ;
                     rdfs:comment "An Id attributed to a Resonance."@en ;
                     rdfs:label "Resonance id"@en .
 
@@ -2158,8 +2219,11 @@ ebuccdm:ruleDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleId
 ebuccdm:ruleId rdf:type owl:DatatypeProperty ;
                rdfs:domain ebuccdm:Rule ;
-               rdfs:range xsd:anyURI ,
-                          xsd:string ;
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:unionOf ( xsd:anyURI
+                                          xsd:string
+                                        )
+                          ] ;
                rdfs:comment "To identify a Rule."@en ;
                rdfs:label "Rule Id"@en .
 
@@ -2216,8 +2280,11 @@ ebuccdm:stageDefinition rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageId
 ebuccdm:stageId rdf:type owl:DatatypeProperty ;
                 rdfs:domain ebuccdm:Stage ;
-                rdfs:range xsd:anyURI ,
-                           xsd:string ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:unionOf ( xsd:anyURI
+                                           xsd:string
+                                         )
+                           ] ;
                 rdfs:comment "To identify a Stage."@en ;
                 rdfs:label "Stage Id"@en .
 
@@ -2311,8 +2378,11 @@ ec:agentDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentId
 ec:agentId rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Agent ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( xsd:anyURI
+                                      xsd:string
+                                    )
+                      ] ;
            rdfs:comment "An identifier attributed to an Agent."@en ;
            rdfs:label "Agent Id"@en .
 
@@ -2336,8 +2406,11 @@ ec:artefactDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactId
 ec:artefactId rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Artefact ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:unionOf ( xsd:anyURI
+                                         xsd:string
+                                       )
+                         ] ;
               rdfs:comment "To identify an Artefact."@en ;
               rdfs:label "Artefact id"@en .
 
@@ -2353,8 +2426,11 @@ ec:artefactName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetId
 ec:assetId rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Asset ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( xsd:anyURI
+                                      xsd:string
+                                    )
+                      ] ;
            rdfs:comment "An identifier attribued to an Asset."@en ;
            rdfs:label "Asset Id"@en .
 
@@ -2423,8 +2499,11 @@ ec:editUnit rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectId
 ec:editorialObjectId rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:EditorialObject ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:unionOf ( xsd:anyURI
+                                                xsd:string
+                                              )
+                                ] ;
                      rdfs:comment "An Id attributed to an EditorialObject."@en ;
                      rdfs:label "Editorial Object Id"@en .
 
@@ -2477,7 +2556,11 @@ ec:endTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#essenceId
 ec:essenceId rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Essence ;
-             rdfs:range xsd:string ;
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:unionOf ( xsd:anyURI
+                                        xsd:string
+                                      )
+                        ] ;
              rdfs:comment "An Id attributed to an essence."@en ;
              rdfs:label "Essence Id"@en .
 
@@ -2525,8 +2608,11 @@ ec:eventEndTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventId
 ec:eventId rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Event ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( xsd:anyURI
+                                      xsd:string
+                                    )
+                      ] ;
            rdfs:comment "An Id attributed to an Event."@en ;
            rdfs:label "Event Id"@en .
 
@@ -2583,7 +2669,11 @@ ec:firstShowing rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
 ec:formatId rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Format ;
-            rdfs:range xsd:anyURI ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:unionOf ( xsd:anyURI
+                                       xsd:string
+                                     )
+                       ] ;
             rdfs:comment "To identify a Format."@en ;
             rdfs:label "Format Id"@en .
 
@@ -2692,8 +2782,11 @@ ec:locationDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationId
 ec:locationId rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Location ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:unionOf ( xsd:anyURI
+                                         xsd:string
+                                       )
+                         ] ;
               rdfs:comment "An Id attributed to a Location."@en ;
               rdfs:label "Location Id"@en .
 
@@ -2725,8 +2818,11 @@ ec:mediaResourceDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
 ec:mediaResourceId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:MediaResource ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An identifier attributed to a MediaResource."@en ;
                    rdfs:label "Media resource id"@en .
 
@@ -2767,8 +2863,11 @@ ec:publicationEndDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventId
 ec:publicationEventId rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:PublicationEvent ;
-                      rdfs:range xsd:anyURI ,
-                                 xsd:string ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:anyURI
+                                                 xsd:string
+                                               )
+                                 ] ;
                       rdfs:comment "An identifier attributed to a PublicationEvent."@en ;
                       rdfs:label "Event Id"@en .
 
@@ -2792,8 +2891,11 @@ ec:publicationPlanEndDate rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanId
 ec:publicationPlanId rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:PublicationPlan ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:unionOf ( xsd:anyURI
+                                                xsd:string
+                                              )
+                                ] ;
                      rdfs:comment "An identifier attributed to a PublicationPlan."@en ;
                      rdfs:label "publication plan id"@en .
 
@@ -2862,8 +2964,11 @@ ec:resourceDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceId
 ec:resourceId rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Resource ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string ;
+              rdfs:range [ rdf:type rdfs:Datatype ;
+                           owl:unionOf ( xsd:anyURI
+                                         xsd:string
+                                       )
+                         ] ;
               rdfs:comment "An identifier attributed to a Resource."@en ;
               rdfs:label "Resource Id"@en .
 
@@ -2913,8 +3018,11 @@ ec:rightsExpression rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsId
 ec:rightsId rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Rights ;
-            rdfs:range xsd:anyURI ,
-                       xsd:string ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:unionOf ( xsd:anyURI
+                                       xsd:string
+                                     )
+                       ] ;
             rdfs:comment "To attribute an identifier to a set of Rights."@en ;
             rdfs:label "Rights Id"@en .
 
@@ -2950,8 +3058,11 @@ ec:rightsTerritoryIncludes rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleId
 ec:roleId rdf:type owl:DatatypeProperty ;
           rdfs:domain ec:Role ;
-          rdfs:range xsd:anyURI ,
-                     xsd:string ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:unionOf ( xsd:anyURI
+                                     xsd:string
+                                   )
+                     ] ;
           rdfs:comment "An Id attributed to a Role."@en ;
           rdfs:label "Role Id"@en .
 
@@ -2977,8 +3088,11 @@ ec:serviceGenre rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceId
 ec:serviceId rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Service ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:unionOf ( xsd:anyURI
+                                        xsd:string
+                                      )
+                        ] ;
              rdfs:comment "An identifier attributed to a Service."@en ;
              rdfs:label "Service Id"@en .
 
@@ -3041,8 +3155,11 @@ ec:startTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#storageId
 ec:storageId rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Resource ;
-             rdfs:range xsd:anyURI ,
-                        xsd:string ;
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:unionOf ( xsd:anyURI
+                                        xsd:string
+                                      )
+                        ] ;
              rdfs:comment """To identify storage associated with a locator from where a Resource
       can be accessed."""@en ;
              rdfs:label "Storage Id"@en .
@@ -3077,8 +3194,11 @@ ec:timelineTrackEditUnit rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackId
 ec:timelineTrackId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:TimelineTrack ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
                    rdfs:comment "An identifier attributed to a TimelineTrack."@en ;
                    rdfs:label "Timeline track Id"@en .
 
@@ -3102,8 +3222,11 @@ ec:title rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackId
 ec:trackId rdf:type owl:DatatypeProperty ;
            rdfs:domain ec:Track ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:unionOf ( xsd:anyURI
+                                      xsd:string
+                                    )
+                      ] ;
            rdfs:comment "An Id attributed to a Track."@en ;
            rdfs:label "Track Id"@en .
 
