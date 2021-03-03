@@ -969,7 +969,7 @@ ec:existsAs rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedArtefact
 ec:hasAgentRelatedArtefact rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Agent ;
-                           rdfs:range ebuccdm:Artefact ;
+                           rdfs:range ec:Artefact ;
                            rdfs:comment "To associate an Arftefact with an Agent"@en .
 
 
@@ -1040,7 +1040,7 @@ ec:hasEventRelatedLocation rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat
 ec:hasFormat rdf:type owl:ObjectProperty ;
              rdfs:domain ec:Resource ;
-             rdfs:range ebuccdm:Format ;
+             rdfs:range ec:Format ;
              rdfs:comment "To define the Format of a resource."@en ;
              rdfs:label "Format"@en .
 
@@ -1343,8 +1343,7 @@ ec:rightsType rdf:type owl:ObjectProperty ;
 ec:roleType rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Role ;
             rdfs:range skos:Concept ;
-            rdfs:comment "*** This might in the context be better to use skos:inScheme as role are implisitt a subclass of skos:Concept" ,
-                         "To specify a type of Role."@en ;
+            rdfs:comment "To specify a type of Role."@en ;
             rdfs:label "Role type"@en .
 
 
@@ -3268,10 +3267,6 @@ ebuccdm:Account rdf:type owl:Class ;
                 rdfs:label "Account"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Artefact
-ebuccdm:Artefact rdf:type owl:Class .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AssetValue
 ebuccdm:AssetValue rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
@@ -3383,10 +3378,6 @@ ebuccdm:ContractCost rdf:type owl:Class ;
                      rdfs:label "Contract cost"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Format
-ebuccdm:Format rdf:type owl:Class .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Measure
 ebuccdm:Measure rdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing ;
@@ -3476,8 +3467,8 @@ ebuccdm:Stage rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
-         rdfs:comment """An â€œAgentâ€� is either a Contact/Person or Organisation to which
-      is associated a Role corresponding to the contribution the â€œAgentâ€� brings to the
+         rdfs:comment """An «Agent» is either a Contact/Person or Organisation to which
+      is associated a Role corresponding to the contribution the «Agent» brings to the
       realisation of a MediaResource or EditorialObject."""@en ;
          rdfs:label "Agent"@en .
 
@@ -3485,8 +3476,8 @@ ec:Agent rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing ;
-            rdfs:comment """To identify all Artefacts used in a production (costumes, objects,
-      products...)."""@en ;
+            rdfs:comment """To identify all Artefacts used in a production such as costumes, objects,
+      products."""@en ;
             rdfs:label "Artefact"@en .
 
 
@@ -3494,7 +3485,7 @@ ec:Artefact rdf:type owl:Class ;
 ec:Asset rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
          rdfs:comment """Assets are EditorialObjects or Resources with associated Rights. An
-      \"Asset\" is an object to which an identifier will be associated at commissioning time. It
+      «Asset» is an object to which an identifier will be associated at commissioning time. It
       serves as a central reference point to manage rights associated to EditorialObjects,
       MediaResources or Essences, and - by inference - PublicationEvents (distribution and
       exploitation conditions). Remember that the MediaResources or Essences will in this model
@@ -3546,13 +3537,13 @@ ec:DataFormat rdf:type owl:Class ;
 ec:EditorialObject rdf:type owl:Class ;
                    rdfs:subClassOf ec:Asset ;
                    rdfs:comment """An EditorialObject collects all the descriptive information about an object to be
-      realised as a single MediaResource or a collection thereof. An â€œEditorialObjectâ€� describes
+      realised as a single MediaResource or a collection thereof. An «EditorialObject» describes
       any idea, any story and will be used to transform a concept into an editorial definition of a
       MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
       
- An â€œEditorialObjectâ€� is a set of descriptive metadata summarising e.g. editing
-      decisions. An â€œEditorialObjectâ€� can be a group of EditorialObjects. An
-      â€œEditorialObjectâ€� can also be a part of another â€œEditorialObjectâ€�, which is defined by
+ An «EditorialObject» is a set of descriptive metadata summarising e.g. editing
+      decisions. An «EditorialObject» can be a group of EditorialObjects. An
+      «EditorialObject» can also be a part of another «EditorialObject», which is defined by
       its start time and duration. 
  EditorialObjects can be ordered either as groups or as
       items on a timeline. 
@@ -3562,26 +3553,25 @@ ec:EditorialObject rdf:type owl:Class ;
  A simplified
       use-case: 
  A TV news broadcast consists of two news items. One news item contains the
-      last ten seconds of a one minute long interview taken from another source (i.e. 50â€™â€™ >
-      60â€™â€™). 
+      last ten seconds of a one minute long interview taken from another source (i.e. 50\" >
+      60\" ). 
  
  This could be modelled as follows: 
- Â· The NewsBroadcast is linked
+• The NewsBroadcast is linked
       to a MediaResource using the instantiates-property 
- Â· The NewsItems are linked to the
+• The NewsItems are linked to the
       NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13 
- Â· The InterviewPart is
+• The InterviewPart is
       linked to the NewsItem using the hasMember-property. Start and Duration are properties within
       the InterviewPart indicating its appearance within the NewsItem2. 
- Â· The InterviewPart
+• The InterviewPart
       is linked to its original source using the existsAs-property 
- Â· The Interview
+• The Interview
       instantiates a MediaResource, which in turn is linked from the MediaResource of the
       NewsBroadcast using the hasSource-property 
- Â· Representation of segmentation:
+• Representation of segmentation:
       TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for
-      playout. {@en}
- """ ;
+      playout."""@en ;
                    rdfs:label "Editorial object"@en .
 
 
@@ -3620,7 +3610,7 @@ ec:Location rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing ;
             rdfs:comment """A location related to the media resource, e.g. depicted in the
       resource (possibly fictional) or where the resource was created (shooting location), etc. A
-      â€œLocationâ€� is used to define the spatial coverage of the story or recording locations like
+      «Location» is used to define the spatial coverage of the story or recording locations like
       studios or in the field, associated with the EditorialObjects (or Part of
       EditorialObjects)."""@en ,
                          """Note: a type of location shall be defined as a sub-class of
@@ -3717,7 +3707,7 @@ ec:Rights rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Role
 ec:Role rdf:type owl:Class ;
         rdfs:subClassOf skos:Concept ;
-        rdfs:comment """To define Role played by an Agent. A â€œRoleâ€� will be identified
+        rdfs:comment """To define Role played by an Agent. A «Role» will be identified
       e.g. by a Concept from a SKOS Classification Scheme."""@en ;
         rdfs:label "Role"@en .
 
