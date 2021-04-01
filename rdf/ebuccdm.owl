@@ -10,6 +10,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ebuccdm: <http://www.ebu.ch/metadata/ontologies/ebuccdm#> .
 @base <http://www.ebu.ch/metadata/ontologies/ebuccdm> .
 
@@ -259,6 +260,14 @@ ebuccdm:coversConsumptionDevice rdf:type owl:ObjectProperty ;
                                 rdfs:label "Compatible consumption device"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#excludesAudience
+ebuccdm:excludesAudience rdf:type owl:ObjectProperty ;
+                         rdfs:domain ebuccdm:Audience ;
+                         rdfs:range ebuccdm:Audience ;
+                         dcterms:description "A defined audience group that is excluded from the audience"@en ;
+                         rdfs:label "Excludes audience"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAgentOnStagePosition
 ebuccdm:hasAgentOnStagePosition rdf:type owl:ObjectProperty ;
                                 rdfs:domain ec:Agent ;
@@ -316,14 +325,6 @@ ebuccdm:hasAssociatedProductionOrder rdf:type owl:ObjectProperty ;
                                      rdfs:comment """To identify the productionOrders associated with
       PublicationPan."""@en ;
                                      rdfs:label "Production order"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAudienceMember
-ebuccdm:hasAudienceMember rdf:type owl:ObjectProperty ;
-                          rdfs:domain ebuccdm:Audience ;
-                          rdfs:range ebuccdm:Audience ;
-                          rdfs:comment "To identify Audience groups within and Audience."@en ;
-                          rdfs:label "Audience member"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAuditJobRelatedAuditReport
@@ -423,7 +424,6 @@ ebuccdm:hasInputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasMemberAudience
 ebuccdm:hasMemberAudience rdf:type owl:ObjectProperty ;
-                          owl:inverseOf ebuccdm:isMemberOfAudience ;
                           rdfs:domain ebuccdm:Audience ;
                           rdfs:range ebuccdm:Audience ;
                           rdfs:comment """To identify an Audience member of (included in) the current an
@@ -644,6 +644,14 @@ ebuccdm:holdsLicence rdf:type owl:ObjectProperty ;
                      rdfs:label "Consumption Licence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#includesAudience
+ebuccdm:includesAudience rdf:type owl:ObjectProperty ;
+                         rdfs:domain ebuccdm:Audience ;
+                         rdfs:range ebuccdm:Audience ;
+                         dcterms:description "A defined audience group that is included in the audience"@en ;
+                         rdfs:label "Includes audience"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isApprovedBy
 ebuccdm:isApprovedBy rdf:type owl:ObjectProperty ;
                      rdfs:domain ebuccdm:AuditReport ;
@@ -685,15 +693,6 @@ ebuccdm:isMeasuredBy rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
                      rdfs:comment "The Agent who analyses data to define a Resonance."@en ;
                      rdfs:label "Measured by"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isMemberOfAudience
-ebuccdm:isMemberOfAudience rdf:type owl:ObjectProperty ;
-                           rdfs:domain ebuccdm:Audience ;
-                           rdfs:range ebuccdm:Audience ;
-                           rdfs:comment """To identify the parent Audience with which an Audience group is
-      associated."""@en ;
-                           rdfs:label "Parent audience"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isOrderedBy
@@ -1498,15 +1497,6 @@ ebuccdm:audienceDescription rdf:type owl:DatatypeProperty ;
                             rdfs:label "Audience description"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceExcluding
-ebuccdm:audienceExcluding rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ebuccdm:Audience ;
-                          rdfs:range xsd:string ;
-                          rdfs:comment "To identify categories excluded from an Audience."@en ;
-                          rdfs:label "Audience excluded categories"@en ;
-                          skos:changeNote "Schould this have been relationship between to audiencegroups?"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceId
 ebuccdm:audienceId rdf:type owl:DatatypeProperty ;
                    rdfs:domain ebuccdm:Audience ;
@@ -1518,15 +1508,6 @@ ebuccdm:audienceId rdf:type owl:DatatypeProperty ;
                    rdfs:comment "An Id attributed to an Audience."@en ,
                                 "Range: anyURI or string"@en ;
                    rdfs:label "Audience id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceIncluding
-ebuccdm:audienceIncluding rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ebuccdm:Audience ;
-                          rdfs:range xsd:string ;
-                          rdfs:comment "To identify categories belonging to an Audience."@en ;
-                          rdfs:label "Audience categories"@en ;
-                          skos:changeNote "Schould this have been relationship between to audiencegroups?"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceInterest
