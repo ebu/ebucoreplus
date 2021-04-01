@@ -71,8 +71,7 @@ vs:term_status rdf:type owl:AnnotationProperty ;
 #    Datatypes
 #################################################################
 
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
+
 
 
 ###  http://www.w3.org/2001/XMLSchema#duration
@@ -1557,7 +1556,7 @@ ebuccdm:auditJobName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDate
 ebuccdm:auditReportDate rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:AuditReport ;
-                        rdfs:range xsd:date ;
+                        rdfs:range xsd:dateTime ;
                         dcterms:description "The date of release of an AuditReport."@en ;
                         rdfs:label "Audit report date"@en .
 
@@ -2619,7 +2618,7 @@ ec:eventDuration rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndDate
 ec:eventEndDate rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Event ;
-                rdfs:range xsd:date ;
+                rdfs:range xsd:dateTime ;
                 dcterms:description "To define the end date of an Event."@en ;
                 rdfs:label "Event end date"@en .
 
@@ -2663,7 +2662,7 @@ ec:eventName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventStartDate
 ec:eventStartDate rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Event ;
-                  rdfs:range xsd:date ;
+                  rdfs:range xsd:dateTime ;
                   dcterms:description "To define the start date of an Event."@en ;
                   rdfs:label "Event start date"@en .
 
@@ -2866,7 +2865,7 @@ ec:publicationPlanDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanEndDate
 ec:publicationPlanEndDate rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:PublicationPlan ;
-                          rdfs:range xsd:date ;
+                          rdfs:range xsd:dateTime ;
                           dcterms:description "To define the end date of the publication plan."@en ;
                           rdfs:label "End date."@en .
 
@@ -2886,7 +2885,7 @@ ec:publicationPlanId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStartDate
 ec:publicationPlanStartDate rdf:type owl:DatatypeProperty ;
                             rdfs:domain ec:PublicationPlan ;
-                            rdfs:range xsd:date ;
+                            rdfs:range xsd:dateTime ;
                             dcterms:description "To define the start date of the publication plan."@en ;
                             rdfs:label "Start date."@en .
 
