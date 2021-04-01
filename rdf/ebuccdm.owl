@@ -71,9 +71,6 @@ vs:term_status rdf:type owl:AnnotationProperty ;
 #    Datatypes
 #################################################################
 
-
-
-
 ###  http://www.w3.org/2001/XMLSchema#duration
 xsd:duration rdf:type rdfs:Datatype .
 
@@ -735,6 +732,15 @@ ebuccdm:measureType rdf:type owl:ObjectProperty ;
                     rdfs:range skos:Concept ;
                     dcterms:description "To define a type of Measure."@en ;
                     rdfs:label "Measure type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueUnit
+ebuccdm:measureValueUnit rdf:type owl:ObjectProperty ;
+                         rdfs:domain ebuccdm:Measure ;
+                         rdfs:range skos:Concept ;
+                         dcterms:description """To define the unit in which the value of a Measure is expressed,
+      when applicable."""@en ;
+                         rdfs:label "Measure unit"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measuresAgainstRule
@@ -1504,8 +1510,8 @@ ebuccdm:audienceId rdf:type owl:DatatypeProperty ;
                                               xsd:string
                                             )
                               ] ;
-                   dcterms:description "An Id attributed to an Audience."@en ,
-                                       "Range: anyURI or string"@en ;
+                   dcterms:description "An Id attributed to an Audience."@en ;
+                   rdfs:comment "Range: anyURI or string"@en ;
                    rdfs:label "Audience id"@en .
 
 
@@ -1592,7 +1598,7 @@ ebuccdm:auditReportName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportResults
 ebuccdm:auditReportResults rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:AuditReport ;
-                           rdfs:range xsd:string ;
+                           rdfs:range rdfs:Literal ;
                            dcterms:description """To express the combined results of one or more
       AuditJobs."""@en ;
                            rdfs:label "Audit report results"@en .
@@ -1767,7 +1773,7 @@ ebuccdm:consumptionEventStartDateTime rdf:type owl:DatatypeProperty ;
 ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
                                       rdfs:domain ebuccdm:ConsumptionLicence ;
                                       rdfs:range rdfs:Literal ;
-                                      dcterms:description "An Id attributed to a ConsumptionLicence."@en ;
+                                      dcterms:description "The description of a ConsumptionLicence."@en ;
                                       rdfs:label "Consumption licence description"@en .
 
 
@@ -1803,7 +1809,7 @@ ebuccdm:consumptionLicenceName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceText
 ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
                                rdfs:domain ebuccdm:ConsumptionLicence ;
-                               rdfs:range xsd:string ;
+                               rdfs:range rdfs:Literal ;
                                dcterms:description "The terms of a ConsumptionLicence."@en ;
                                rdfs:label "Consumption licence"@en .
 
@@ -1811,7 +1817,7 @@ ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmount
 ebuccdm:contractCostAmount rdf:type owl:DatatypeProperty ;
                            rdfs:domain ebuccdm:ContractCost ;
-                           rdfs:range xsd:string ;
+                           rdfs:range rdfs:Literal ;
                            dcterms:description "The amount of the ContractCost."@en ;
                            rdfs:label "Cost amount"@en .
 
@@ -1908,7 +1914,8 @@ ebuccdm:hasGeoLocation rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#internetConnectivity
-ebuccdm:internetConnectivity rdf:type owl:DatatypeProperty ;
+ebuccdm:internetConnectivity rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
                              rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                              rdfs:range xsd:boolean ;
                              dcterms:description """To indicate if the Service requires Internet
@@ -1947,15 +1954,16 @@ ebuccdm:measureName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValue
 ebuccdm:measureValue rdf:type owl:DatatypeProperty ;
                      rdfs:domain ebuccdm:Measure ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      dcterms:description "To provide the value of a Measure."@en ;
+                     rdfs:comment "The range is Literal. A more specific range can be used for a specific measurement."@en ;
                      rdfs:label "Measure value"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueMax
 ebuccdm:measureValueMax rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:Measure ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         dcterms:description """To define the maximum value of a Measure when
       applicable."""@en ;
                         rdfs:label "Measure maximum value"@en .
@@ -1964,23 +1972,15 @@ ebuccdm:measureValueMax rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueMin
 ebuccdm:measureValueMin rdf:type owl:DatatypeProperty ;
                         rdfs:domain ebuccdm:Measure ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         dcterms:description """To define the minimum value of a Measure when
       applicable."""@en ;
                         rdfs:label "Measure minimum value"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueUnit
-ebuccdm:measureValueUnit rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ebuccdm:Measure ;
-                         rdfs:range xsd:string ;
-                         dcterms:description """To define the unit in which the value of a Measure is expressed,
-      when applicable."""@en ;
-                         rdfs:label "Measure unit"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#microphone
-ebuccdm:microphone rdf:type owl:DatatypeProperty ;
+ebuccdm:microphone rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
                    rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                    rdfs:range xsd:boolean ;
                    dcterms:description "To indicate if the Service requires a microphone."@en ;
@@ -2017,7 +2017,7 @@ ebuccdm:onStagePositionCoordinateZ rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionCoordinatesReferencePoint
 ebuccdm:onStagePositionCoordinatesReferencePoint rdf:type owl:DatatypeProperty ;
                                                  rdfs:domain ebuccdm:OnStagePosition ;
-                                                 rdfs:range xsd:string ;
+                                                 rdfs:range rdfs:Literal ;
                                                  dcterms:description """To define a reference point for a set of coordinates defining a
       position on stage."""@en ;
                                                  rdfs:label "On stage position coordinates reference point"@en .
@@ -2026,7 +2026,7 @@ ebuccdm:onStagePositionCoordinatesReferencePoint rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionDefinition
 ebuccdm:onStagePositionDefinition rdf:type owl:DatatypeProperty ;
                                   rdfs:domain ebuccdm:OnStagePosition ;
-                                  rdfs:range xsd:string ;
+                                  rdfs:range rdfs:Literal ;
                                   dcterms:description """To define a set of coordinates defining a position on
       stage."""@en ;
                                   rdfs:label "On stage position definition"@en .
@@ -2055,7 +2055,8 @@ ebuccdm:onStagePositionName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#orderedFlag
-ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ;
+ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain ec:EditorialObject ;
                     rdfs:range xsd:boolean ;
                     dcterms:description """A flag to signal that a Collection/Group of EditorialObject, itself
@@ -2161,7 +2162,8 @@ ebuccdm:productionOrderName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#radioTuner
-ebuccdm:radioTuner rdf:type owl:DatatypeProperty ;
+ebuccdm:radioTuner rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
                    rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                    rdfs:range xsd:boolean ;
                    dcterms:description "To indicate if the Service requires a radio tuner."@en ;
@@ -2169,7 +2171,8 @@ ebuccdm:radioTuner rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#readyForPublication
-ebuccdm:readyForPublication rdf:type owl:DatatypeProperty ;
+ebuccdm:readyForPublication rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
                             rdfs:domain ec:Essence ;
                             rdfs:range xsd:boolean ;
                             dcterms:description """A flag to indicate that the resource/essence is ready for
@@ -2306,7 +2309,8 @@ ebuccdm:ruleStatement rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#soundOutput
-ebuccdm:soundOutput rdf:type owl:DatatypeProperty ;
+ebuccdm:soundOutput rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                     rdfs:range xsd:boolean ;
                     dcterms:description """A flag to indicate if the Service requires a sound
@@ -2343,7 +2347,8 @@ ebuccdm:stageName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#textInput
-ebuccdm:textInput rdf:type owl:DatatypeProperty ;
+ebuccdm:textInput rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                   rdfs:range xsd:boolean ;
                   dcterms:description """To indicate if the Service requires text input
@@ -2354,29 +2359,34 @@ ebuccdm:textInput rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationEditUnit
 ebuccdm:timelineTrackDurationEditUnit rdf:type owl:DatatypeProperty ;
                                       rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                      rdfs:range xsd:double ;
                                       rdfs:label "Timeline track duration - edit units" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationNormalPlayTime
 ebuccdm:timelineTrackDurationNormalPlayTime rdf:type owl:DatatypeProperty ;
                                             rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                            rdfs:range xsd:time ;
                                             rdfs:label "Timeline track duration - normal play time" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationTimecode
 ebuccdm:timelineTrackDurationTimecode rdf:type owl:DatatypeProperty ;
                                       rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                      rdfs:range xsd:string ;
                                       rdfs:label "Timeline track duration - timecode" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationTimecodeDropFrame
 ebuccdm:timelineTrackDurationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
                                                rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                               rdfs:range xsd:string ;
                                                rdfs:label "Timeline track duration timecode - dropframes" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timeshift
-ebuccdm:timeshift rdf:type owl:DatatypeProperty ;
+ebuccdm:timeshift rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                   rdfs:range xsd:boolean ;
                   dcterms:description """A flag to indicate if the Service requires timeshift
@@ -2385,7 +2395,8 @@ ebuccdm:timeshift rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#videoDisplay
-ebuccdm:videoDisplay rdf:type owl:DatatypeProperty ;
+ebuccdm:videoDisplay rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                      rdfs:range xsd:boolean ;
                      dcterms:description """A flag to indicate if the Service requires a video
@@ -2394,7 +2405,8 @@ ebuccdm:videoDisplay rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#webcam
-ebuccdm:webcam rdf:type owl:DatatypeProperty ;
+ebuccdm:webcam rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain ebuccdm:ConsumptionDeviceProfile ;
                rdfs:range xsd:boolean ;
                dcterms:description "A flag to indicate if the Service requires a webcam."@en ;
@@ -2480,7 +2492,7 @@ ec:description rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration
 ec:duration rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Asset ;
-            rdfs:range xsd:string ;
+            rdfs:range rdfs:Literal ;
             dcterms:description "To give the duration of an EditorialObject."@en ;
             rdfs:label "Duration"@en .
 
@@ -2524,7 +2536,7 @@ ec:durationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit
 ec:editUnit rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Asset ;
-            rdfs:range xsd:string ;
+            rdfs:range rdfs:Literal ;
             dcterms:description """The edit unit on the base of which time is calculated relative to
       the frame or sample rate."""@en ;
             rdfs:label "Edit unit"@en .
@@ -2545,7 +2557,7 @@ ec:editorialObjectId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
 ec:end rdf:type owl:DatatypeProperty ;
        rdfs:domain ec:Asset ;
-       rdfs:range xsd:time ;
+       rdfs:range rdfs:Literal ;
        dcterms:description "To give the end time of an Asset."@en ;
        rdfs:label "End time"@en .
 
@@ -2742,7 +2754,8 @@ ec:hasRightsTargetService rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#live
-ec:live rdf:type owl:DatatypeProperty ;
+ec:live rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to indicate that the event is live."@en ;
@@ -2818,7 +2831,8 @@ ec:mediaResourceName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#orderedFlag
-ec:orderedFlag rdf:type owl:DatatypeProperty ;
+ec:orderedFlag rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain ec:Asset ;
                rdfs:range xsd:boolean ;
                dcterms:description """A flag to indicate if a group is ordered or is an Asset belongs to
@@ -2966,7 +2980,7 @@ ec:resourceName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffset
 ec:resourceOffset rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:EditorialObject ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   dcterms:description """To indicate the offset time at which the Editorial starts within a
       related Resource."""@en ;
                   rdfs:label "Resource offset"@en .
@@ -3029,7 +3043,7 @@ ec:rightsTerritoryExcludes rdf:type owl:DatatypeProperty ;
                            rdfs:label "Excluded territories"@en ;
                            skos:changeNote """Range: string or anyURI or Location or Concept.
 
-Scould we make this object property?"""@en .
+Should we make this object property?"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryIncludes
@@ -3090,7 +3104,7 @@ ec:serviceName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start
 ec:start rdf:type owl:DatatypeProperty ;
          rdfs:domain ec:Asset ;
-         rdfs:range xsd:time ;
+         rdfs:range rdfs:Literal ;
          dcterms:description """To give the start time of an EditorialObject. The time format is
       defined by the edit unit."""@en ;
          rdfs:label "Start time"@en .
@@ -3158,7 +3172,7 @@ ec:timelineTrackDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDuration
 ec:timelineTrackDuration rdf:type owl:DatatypeProperty ;
                          rdfs:domain ec:TimelineTrack ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          dcterms:description """To give the duration of a TimelineTrack. The time format is defined
       by the edit unit."""@en ;
                          rdfs:label "Duration"@en .
@@ -3167,7 +3181,7 @@ ec:timelineTrackDuration rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackEditUnit
 ec:timelineTrackEditUnit rdf:type owl:DatatypeProperty ;
                          rdfs:domain ec:TimelineTrack ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          dcterms:description """To give the time format of a TimelineTrack in edit
       units."""@en ;
                          rdfs:label "Edit unit"@en .
@@ -3216,7 +3230,7 @@ ec:trackId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackName
 ec:trackName rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Track ;
-             rdfs:range xsd:string ;
+             rdfs:range rdfs:Literal ;
              dcterms:description "A name given to a Track."@en ;
              rdfs:label "Track name"@en .
 
@@ -3224,7 +3238,7 @@ ec:trackName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackPurpose
 ec:trackPurpose rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Track ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "The purpose for which a Track is provided."@en ;
                 rdfs:label "Track purpose"@en .
 
