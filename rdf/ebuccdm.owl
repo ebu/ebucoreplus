@@ -3273,7 +3273,8 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description """A group of Consumers or an aggregation of groups of Consumers
       clustered e.g. by class of age , social categories or else."""@en ;
-                 rdfs:label "Audience"@en .
+                 rdfs:label "Audience"@en ,
+                            "Publikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
@@ -3362,7 +3363,8 @@ ebuccdm:Contract rdf:type owl:Class ;
       and used to commission/contract the creation of Resources. A Contract covers the
       ProductionOrder and sales order combined. The contract connects the Rights to any contractual
       parties. A contract defines one of more set of Rights."""@en ;
-                 rdfs:label "Contract"@en .
+                 rdfs:label "Contract"@en ,
+                            "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
