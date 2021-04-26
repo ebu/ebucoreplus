@@ -3257,8 +3257,10 @@ ebuccdm:Account rdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing ;
                 dcterms:description """A registration Account to a Service. Account information can vary
       from one Service to another. Such information covers e.g. a (nick)name, a login, an age, sex,
-      domains of interest or more."""@en ;
-                rdfs:label "Account"@en .
+      domains of interest or more."""@en ,
+                                    "Das Konto, unter dem einen Nutzer bei einem Dienst registriert ist. Die registrierten Informationen zum Konto können je nach Service unterschiedlich sein. Beispiele: (Spitz-)name, Login-Name, Alter, Geschlecht, Interessensgebiete, etc."@de ;
+                rdfs:label "Account"@en ,
+                           "Nutzerkonto"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AssetValue
@@ -3465,16 +3467,20 @@ ec:Agent rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
          dcterms:description """An «Agent» is either a Contact/Person or Organisation to which
       is associated a Role corresponding to the contribution the «Agent» brings to the
-      realisation of a MediaResource or EditorialObject."""@en ;
-         rdfs:label "Agent"@en .
+      realisation of a MediaResource or EditorialObject."""@en ,
+                             "Ein Akteur ist entweder eine Kontaktperson oder eine Organisation, deren Beitrag zur Realisierung eines Inhaltsobjektes oder eines Medienobjektes durch eine Rolle beschrieben wird."@de ;
+         rdfs:label "Agent"@en ,
+                    "Akteur"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing ;
-            dcterms:description """To identify all Artefacts used in a production such as costumes, objects,
+            dcterms:description "Sämtliche Artefakte, die im Rahmen einer Produktion unterschieden werden können, z.B. Produkte, Kostüme, Requisiten"@de ,
+                                """To identify all Artefacts used in a production such as costumes, objects,
       products."""@en ;
-            rdfs:label "Artefact"@en .
+            rdfs:label "Artefact"@en ,
+                       "Artefakt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
@@ -3488,8 +3494,13 @@ ec:Asset rdf:type owl:Class ;
       always be represented by an EditorialObject. 
  Example: The CCDM model allows the
       association of Rights to a related EditorialObject that is represented by one or more
-      Essences."""@en ;
-         rdfs:label "Asset"@en .
+      Essences."""@en ,
+                             """Assets sind Inhaltsobjekte oder Medienobjekte und ihre zugeordneten (Verwertungs-)Rechte.
+Ein Asset erhält durch die Beauftragung einen Identifikator. Es dient als zentrale Referenz, um die Rechte zu verwalten, die mit Inhaltsobjekten, Medienobjekten,  Essenzen sowie Veröffentlichungsereignissen (per Deduktion) verknüpft sind. 
+Achtung: Medienobjekte oder Essenzen werden in diesem Modell immer durch Inhaltsobjekte repräsentiert.
+Beispiel: CCDM gestattet die Verknüpfung von Verwertungsrechten mit einem Inhaltsobjekt, das von einem oder auch mehreren Essenzen repräsentiert wird."""@de ;
+         rdfs:label "Asset"@de ,
+                    "Asset"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioFormat
@@ -3567,8 +3578,15 @@ ec:EditorialObject rdf:type owl:Class ;
       NewsBroadcast using the hasSource-property 
 • Representation of segmentation:
       TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for
-      playout."""@en ;
-                   rdfs:label "Editorial object"@en .
+      playout."""@en ,
+                                       """Ein Inhaltsobjekt versammelt sämtliche deskriptiven informationen über ein Objekt, das als Medienobjekt (oder eine Menge davon) realisiert werden soll. Das Inhaltsobjekt beschreibt eine Idee, eine Geschichte und wird benutzt, um ein Konzept in eine inhaltliche Festlegung eines Medienobjektes zu erreichen, und zwar vor der Herstellung und der Verbreitung.
+
+Ein Inhaltsobjekt besteht aus einer Menge beschreibender Metadaten, z.B. Schnittlisten. Ein Inhaltsobjekt kann eine Gruppe von anderen Inhaltsobjekten sein. Ein Inhaltsobjekt kann auch Teil eines anderen Inhaltsobjektes sein, was durch den Zeitpunkt des Beginns und die Dauer dafiniert wird. Inhaltsobjekte können gruppiert werden or entlang einer Zeitachse angeordnet werden.
+
+Beispiele für einfache Inhaltsobjekte: Sendung, Beitrag, Szene
+Beispiele für Gruppierungen: Marke, Serie, Reihe, Sammlung"""@de ;
+                   rdfs:label "Editorial object"@en ,
+                              "Inhaltsobjekt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence
