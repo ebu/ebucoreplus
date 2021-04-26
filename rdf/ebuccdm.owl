@@ -683,6 +683,15 @@ ebuccdm:isDerivedFrom rdf:type owl:ObjectProperty ;
                       rdfs:label "Source"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isExtractOf
+ebuccdm:isExtractOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain ec:EditorialObject ;
+                    rdfs:range ec:EditorialObject ;
+                    dcterms:description """Used for representing an extract, i. e. the playout of a part or the whole of some archived material on the playout.
+For attributes  like duration and start, the data is placed in the instance representing the abstract. Other metadata is read from the original instance that is extracted."""@en ;
+                    rdfs:label "is extract of"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isMeasuredBy
 ebuccdm:isMeasuredBy rdf:type owl:ObjectProperty ;
                      rdfs:domain ebuccdm:Resonance ;
