@@ -3275,7 +3275,8 @@ ebuccdm:Account rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AssetValue
 ebuccdm:AssetValue rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
-                   dcterms:description "To describe the value associated with an Asset."@en ;
+                   dcterms:description "Beschreibt den Wert eines Assets."@de ,
+                                       "To describe the value associated with an Asset."@en ;
                    rdfs:label "Asset value"@en ,
                               "Assetwert"@de .
 
@@ -3284,7 +3285,8 @@ ebuccdm:AssetValue rdf:type owl:Class ;
 ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description """A group of Consumers or an aggregation of groups of Consumers
-      clustered e.g. by class of age , social categories or else."""@en ;
+      clustered e.g. by class of age , social categories or else."""@en ,
+                                     "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ;
                  rdfs:label "Audience"@en ,
                             "Publikum"@de .
 
@@ -3301,20 +3303,25 @@ ebuccdm:AuditJob rdf:type owl:Class ;
 ebuccdm:AuditReport rdf:type owl:Class ;
                     rdfs:subClassOf owl:Thing ;
                     dcterms:description """An AuditReport aggregates results from related
-      AuditJob."""@en ;
-                    rdfs:label "Audit Report"@en .
+      AuditJob."""@en ,
+                                        "Ein Prüfbericht führt die Ergebnisse von Prüfaufgaben zusammen."@de ;
+                    rdfs:label "Audit Report"@en ,
+                               "Prüfbericht"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Campaign
 ebuccdm:Campaign rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description """A Campaign defines a strategy for publishing content
-      (EditorialObjects and related Resources/MediaResources/Essences to a targeted Audience
+      (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience
       according to a PublicationPlan. Campaign strategies can be refined taking into account the
       analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). 
       Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns,
-      promotional campaigns or else."""@en ;
-                 rdfs:label "Campaign"@en .
+      promotional campaigns or else."""@en ,
+                                     """Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest.
+Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."""@de ;
+                 rdfs:label "Campaign"@en ,
+                            "Kampagne"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Consumer
@@ -3326,22 +3333,30 @@ ebuccdm:Consumer rdf:type owl:Class ;
       ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service
       via an Account containing information about that Concumer to a varying degree of detaill (e.g.
       age, sex, matrimonial status, address). This is further defined in Consumption Licence when
-      applicable."""@en ;
-                 rdfs:label "Consumer"@en .
+      applicable."""@en ,
+                                     """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
+Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzungsereignissen und zu Resonanzereignissen. Ein Nutzer kann für einen Service registriert sein über ein Nutzerkonto, das den Nutzer in unterschiedlichem Detaillierungsgrad repräsentiert (z.B. Alter, Geschlecht, Adresse). Eine Nutzungslizenz definiert die genaueren Nutzungsbedingungen und -möglichkeiten."""@de ;
+                 rdfs:label "Consumer"@en ,
+                            "Nutzer"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDevice
 ebuccdm:ConsumptionDevice rdf:type owl:Class ;
                           rdfs:subClassOf owl:Thing ;
-                          dcterms:description "A device used to consumer content."@en ;
-                          rdfs:label "Device"@en .
+                          dcterms:description "A device used to consume content."@en ;
+                          rdfs:label "Device"@en ,
+                                     "Ein Gerät zur Nutzung eines Medienproduktes."@de ,
+                                     "Endgerät"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDeviceProfile
 ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:subClassOf owl:Thing ;
                                  dcterms:description "The profile of a ConsumptionDevice."@en ;
-                                 rdfs:label "Consumption device profile"@en .
+                                 rdfs:label "Consumption device profile"@en ,
+                                            """Das Profil eines Endgerätes.
+(z.B. Hersteller, Modell, Hardwareausstattung, Softwareausstattung, etc.)"""@de ,
+                                            "Endgeräteprofil"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionEvent
@@ -3353,8 +3368,12 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
       at the same time. For non-linear services, the consumer decides about the time of the
       ConsumptionEvent. 
  The ConsumptionEvent results into ResonanceEvent aggregated into
-      Resonance data."""@en ;
-                         rdfs:label "Consumption event"@en .
+      Resonance data."""@en ,
+                                             """Ein Nutzungsereignis repräsentiert die Nutzung eines Medienanproduktes im Rahmen eines Publikationsereignisses.
+Bei linearen Medienservices finden Nutzungsereignis und Publikationsereignis zur gleichen Zeit statt. Bei nicht-linearen Medienservices entscheidet der Nutzer selbst über den Zeitpunkt des Nutzungsereignisses (im Rahmen des Publikationszeitraums).
+Das Nutzunsereignis führt zu Resonanzereignissen, die zu Resonanzdaten aggregiert werden."""@de ;
+                         rdfs:label "Consumption event"@en ,
+                                    "Nutzungsereignis"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionLicence
@@ -3364,8 +3383,10 @@ ebuccdm:ConsumptionLicence rdf:type owl:Class ;
       consumption of content. 
  The ConsumptionLicence is verified by a mechanism that is
       usually located in the device and referred to as DRM (Digital Rights
-      Management)."""@en ;
-                           rdfs:label "Consumption licence"@en .
+      Management)."""@en ,
+                                               "Eine Nutzungslizenz gehört zu einem Nutzer und legt die Nutzungsbedingungen für ein Produkt fest."@de ;
+                           rdfs:label "Consumption licence"@en ,
+                                      "Nutzungslizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Contract
@@ -3374,7 +3395,8 @@ ebuccdm:Contract rdf:type owl:Class ;
                  dcterms:description """A set of contractual terms involving different parties and Rights
       and used to commission/contract the creation of Resources. A Contract covers the
       ProductionOrder and sales order combined. The contract connects the Rights to any contractual
-      parties. A contract defines one of more set of Rights."""@en ;
+      parties. A contract defines one or more set of Rights."""@en ,
+                                     "Eine Sammlung rechtlicher Regelungen zwischen verschiedenen Parteien und Rechten, die genutzt wird, um die Herstellung von Medieninhalten und ihrer Ressourcen/Medienressourcen/Essenzen zu beauftragen. Ein Vertrag deckt den Produktionsauftrag und den Einkaufsauftrag ab. Der Vertrag definiert die Aufteilung der Verwertungsrechte unter den Vertragspartnern."@de ;
                  rdfs:label "Contract"@en ,
                             "Vertrag"@de .
 
@@ -3382,8 +3404,10 @@ ebuccdm:Contract rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
 ebuccdm:ContractCost rdf:type owl:Class ;
                      rdfs:subClassOf owl:Thing ;
-                     dcterms:description "To identify the costs associated to a Contract."@en ;
-                     rdfs:label "Contract cost"@en .
+                     dcterms:description "Beschreibt die Kosten eines Vertrages."@de ,
+                                         "To identify the costs associated to a Contract."@en ;
+                     rdfs:label "Contract cost"@en ,
+                                "Vertragskosten"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Measure
@@ -3524,7 +3548,9 @@ ec:AudioFormat rdf:type owl:Class ;
 ec:Contact rdf:type owl:Class ;
            rdfs:subClassOf ec:Person ;
            dcterms:description "A Contact e.g. for a Person or Organisation."@en ;
-           rdfs:label "Contact"@en .
+           rdfs:label "Contact"@en ,
+                      "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
+                      "Kontakt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ContainerFormat
@@ -3539,8 +3565,10 @@ ec:ContainerFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Crew
 ec:Crew rdf:type owl:Class ;
         rdfs:subClassOf ec:Agent ;
-        dcterms:description "To identify a member of the crew."@en ;
-        rdfs:label "Crew"@en .
+        dcterms:description "To identify a member of the crew."@en ,
+                            "Zur Identifikation eines Besatzungsmitglieds."@de ;
+        rdfs:label "Besatzung"@de ,
+                   "Crew"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataFormat
@@ -3615,8 +3643,10 @@ ec:Essence rdf:type owl:Class ;
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
          dcterms:description """An Event related to a Resource, e.g. as depicted in the Resource
-      (real or fictional), etc."""@en ;
-         rdfs:label "Event"@en .
+      (real or fictional), etc."""@en ,
+                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ;
+         rdfs:label "Ereignis"@de ,
+                    "Event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format
@@ -3637,9 +3667,12 @@ ec:Location rdf:type owl:Class ;
       «Location» is used to define the spatial coverage of the story or recording locations like
       studios or in the field, associated with the EditorialObjects (or Part of
       EditorialObjects)."""@en ,
+                                """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
+Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in einem Medieninhalt, wie z.b. im Studio, Außenaufnahme."""@de ,
                                 """Note: a type of location shall be defined as a sub-class of
       Location."""@en ;
-            rdfs:label "Location"@en .
+            rdfs:label "Location"@en ,
+                       "Ort"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource
@@ -3655,15 +3688,19 @@ ec:MediaResource rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation
 ec:Organisation rdf:type owl:Class ;
                 rdfs:subClassOf ec:Agent ;
-                dcterms:description "An organisation or moral agent."@en ;
-                rdfs:label "Organisation"@en .
+                dcterms:description "An organisation or moral agent."@en ,
+                                    "Eine Organisation."@de ;
+                rdfs:label "Organisation"@de ,
+                           "Organisation"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
 ec:Person rdf:type owl:Class ;
           rdfs:subClassOf ec:Agent ;
-          dcterms:description "A Person."@en ;
-          rdfs:label "Person"@en .
+          dcterms:description "A Person."@en ,
+                              "Eine Person."@de ;
+          rdfs:label "Person"@de ,
+                     "Person"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource
