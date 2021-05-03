@@ -3276,7 +3276,8 @@ ebuccdm:Account rdf:type owl:Class ;
 ebuccdm:AssetValue rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
                    dcterms:description "To describe the value associated with an Asset."@en ;
-                   rdfs:label "Asset value"@en .
+                   rdfs:label "Asset value"@en ,
+                              "Assetwert"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Audience
