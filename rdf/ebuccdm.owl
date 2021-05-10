@@ -256,6 +256,14 @@ ebuccdm:coversConsumptionDevice rdf:type owl:ObjectProperty ;
                                 rdfs:label "Compatible consumption device"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#createsMetadata
+ebuccdm:createsMetadata rdf:type owl:ObjectProperty ;
+                        rdfs:domain ebuccdm:ProductionJob ;
+                        rdfs:range ec:EditorialObject ;
+                        dcterms:description "Used where a production job, e.g. a face recognition service, yields information that can be described using the EditorialObject class."@en ;
+                        rdfs:label "creates metadata"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#excludesAudience
 ebuccdm:excludesAudience rdf:type owl:ObjectProperty ;
                          rdfs:domain ebuccdm:Audience ;
