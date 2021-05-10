@@ -3758,9 +3758,9 @@ ec:PublicationChannel rdf:type owl:Class ;
                       dcterms:description """A channel through which content is published. It can take a variety
       of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs / DVDs,
       etc."""@en ,
-                                          "Ein Publikationskanal durch welchen Inhalte publiziert werden. Er kann viele Formen annehmen, auch außerhalb von Rundfunk oder Internet Streaming, z.. auch eine physische Verteilung von CDs, DVDs, etc."@de ,
-                                          "Publikationskanal"@de ;
-                      rdfs:label "Publication channel"@en .
+                                          "Ein Publikationskanal durch welchen Inhalte publiziert werden. Er kann viele Formen annehmen, auch außerhalb von Rundfunk oder Internet Streaming, z.. auch eine physische Verteilung von CDs, DVDs, etc."@de ;
+                      rdfs:label "Publication channel"@en ,
+                                 "Publikationskanal"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
