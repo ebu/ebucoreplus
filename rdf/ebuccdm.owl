@@ -2890,7 +2890,7 @@ ec:publicationPlanEndDate rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:PublicationPlan ;
                           rdfs:range xsd:dateTime ;
                           dcterms:description "To define the end date of the publication plan."@en ;
-                          rdfs:label "End date."@en .
+                          rdfs:label "End date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanId
@@ -3663,13 +3663,16 @@ Beispiele für Gruppierungen: Marke, Serie, Reihe, Sammlung"""@de ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence
 ec:Essence rdf:type owl:Class ;
            rdfs:subClassOf ec:MediaResource ;
-           dcterms:description """The actual physical representation of one or more MediaResource
+           dcterms:description """Die echte physische Repräsentation einer oder mehrerer Medienressourcen, die zur Nutzung bearbeitet wurde.  
+Die Essenz ist eine physische Repräsentation einer Medienressource in einem spezillen Format für die Ausspielung oder Publikation. Essenz ist eine Sub-Klasse von Medienressource und erbt deren Eigenschaften. Essenzen treten auf in Form einfacher Dateien oder komplexer Pakete, z.B. wie es von verschiedenen Kameras verschiedener Hersteller geliefert wird."""@de ,
+                               """The actual physical representation of one or more MediaResource
       edited for consumption. The â€œEssenceâ€� is a physical representation of a MediaResource in a
       particular Format destined for play-out or publishing. \"Essence is a subclass of a
       MediaResource and inherits the MediaResource properties. â€œEssenceâ€� can be available in a
       form of a simple file or complex packages (e.g. as delivered by cameras of different
       brands)."""@en ;
-           rdfs:label "Essence"@en .
+           rdfs:label "Essence"@en ,
+                      "Essenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
@@ -3754,7 +3757,9 @@ ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:subClassOf ec:Service ;
                       dcterms:description """A channel through which content is published. It can take a variety
       of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs / DVDs,
-      etc."""@en ;
+      etc."""@en ,
+                                          "Ein Publikationskanal durch welchen Inhalte publiziert werden. Er kann viele Formen annehmen, auch außerhalb von Rundfunk oder Internet Streaming, z.. auch eine physische Verteilung von CDs, DVDs, etc."@de ,
+                                          "Publikationskanal"@de ;
                       rdfs:label "Publication channel"@en .
 
 
@@ -3849,8 +3854,10 @@ ec:TimelineTrack rdf:type owl:Class ;
 ec:Track rdf:type owl:Class ;
          rdfs:subClassOf ec:MediaResource ;
          dcterms:description """E.g. audio, video, timcode and/or data Tracks forming the
-      MediaResource."""@en ;
-         rdfs:label "Track"@en .
+      MediaResource."""@en ,
+                             "z.B. Audio-, Video-, Timecode- und/oder Datenspuren bilden eine Medienressource."@de ;
+         rdfs:label "Spur"@de ,
+                    "Track"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoFormat
