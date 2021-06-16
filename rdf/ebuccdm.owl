@@ -3770,10 +3770,10 @@ ec:PhysicalResource rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
 ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:subClassOf ec:Service ;
-                      dcterms:description """A channel through which content is published. It can take a variety
-      of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs / DVDs,
-      etc."""@en ;
-                      rdfs:label "Publication channel"@en .
+                      dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ;
+                      rdfs:comment "C'est un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD/DVD, etc."@fr ;
+                      rdfs:label "Canal de publication"@fr ,
+                                 "Publication channel"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
