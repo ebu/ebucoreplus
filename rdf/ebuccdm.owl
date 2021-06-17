@@ -50,12 +50,6 @@ cc:licence rdf:type owl:AnnotationProperty ;
            skos:prefLabel "Creative Commons licence" .
 
 
-###  http://purl.org/dc/elements/1.1/contributor
-dc:contributor rdf:type owl:AnnotationProperty ;
-               rdfs:label "Contributor" ;
-               skos:prefLabel "Contributor" .
-
-
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
                            rdfs:label "preferred namespace" ;
@@ -818,6 +812,14 @@ ebuccdm:productionOrderType rdf:type owl:ObjectProperty ;
                             rdfs:range skos:Concept ;
                             dcterms:description "The type of production order."@en ;
                             rdfs:label "Production order type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#provenance
+ebuccdm:provenance rdf:type owl:ObjectProperty ;
+                   rdfs:domain owl:Thing ;
+                   rdfs:range ec:Agent ;
+                   dcterms:description "The person or company that is providing the metadata."@en ;
+                   rdfs:label "Provenance"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#referencesRule
