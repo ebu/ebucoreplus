@@ -22,9 +22,10 @@
                                                                 "Jean-Pierre Evain, EBU"@ch ,
                                                                 "Jürgen Grupp, SWR"@de ,
                                                                 "Kim Viljanen, YLE"@fi ,
-                                                                "Masoud Aminipour, not affiliated" ,
-                                                                "Tormod Værvågen, NRK"@nb ;
+                                                                "Masoud Aminipour, not affiliated" ;
+                                                 dcterms:contributor "Alexandre Rouxel, EBU"@ch ;
                                                  vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebuccdm#" ;
+                                                 rdfs:comment "Tormod Værvågen, NRK"@no ;
                                                  owl:priorVersion <https://www.ebu.ch/metadata/ontologies/ebuccdm/20182011/ebuccdm.rdf> ;
                                                  owl:versionInfo """Alignment of CCDM wit EBUCore (some EO properties moved up to the
       Asset level)."""@en ,
@@ -3275,8 +3276,10 @@ ebuccdm:Account rdf:type owl:Class ;
                 dcterms:description """A registration Account to a Service. Account information can vary
       from one Service to another. Such information covers e.g. a (nick)name, a login, an age, sex,
       domains of interest or more."""@en ,
-                                    "Das Konto, unter dem einen Nutzer bei einem Dienst registriert ist. Die registrierten Informationen zum Konto können je nach Service unterschiedlich sein. Beispiele: (Spitz-)name, Login-Name, Alter, Geschlecht, Interessensgebiete, etc."@de ;
+                                    "Das Konto, unter dem einen Nutzer bei einem Dienst registriert ist. Die registrierten Informationen zum Konto können je nach Service unterschiedlich sein. Beispiele: (Spitz-)name, Login-Name, Alter, Geschlecht, Interessensgebiete, etc."@de ,
+                                    "Un compte d'inscription à un service. Les informations relatives au compte peuvent varier d'un service à l'autre. Ces informations couvrent par exemple un nom, un surnom, un loggin, un âge, le sexe, des domaines d'intérêt."@fr ;
                 rdfs:label "Account"@en ,
+                           "Compte"@en ,
                            "Nutzerkonto"@de .
 
 
@@ -3284,9 +3287,13 @@ ebuccdm:Account rdf:type owl:Class ;
 ebuccdm:AssetValue rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
                    dcterms:description "Beschreibt den Wert eines Assets."@de ,
+
+                                       "Permet de décrire la valeur d'un actif"@fr ,
                                        "To describe the value associated with an Asset."@en ;
                    rdfs:label "Asset value"@en ,
-                              "Assetwert"@de .
+                              "Assetwert"@de ,
+                              "Valeur d'un actif"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Audience
@@ -3296,41 +3303,47 @@ ebuccdm:Audience rdf:type owl:Class ;
       clustered e.g. by class of age , social categories or else."""@en ,
                                      "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ;
                  rdfs:label "Audience"@en ,
-                            "Publikum"@de .
+                            "Audience"@fr ,
+                            "Publikum"@de ,
+                            "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
 ebuccdm:AuditJob rdf:type owl:Class ;
                  rdfs:subClassOf ebuccdm:ProductionJob ;
                  dcterms:description "Eine Prüfaufgabe untersucht die Einhaltung einer Regel durch eine Messung."@de ,
-                                     """The assessment of compliance is made against a Measure associated
-      with a Rule via an AuditJob."""@en ;
+
+                                     "L'évaluation de la conformité est effectuée par rapport à une mesure, Measure, associée à une règle, Rule, via un AuditJob."@fr ,
+                                     "The assessment of compliance is made against a Measure associated with a Rule via an AuditJob."@en ;
                  rdfs:label "Audit Job"@en ,
-                            "Prüfaufgabe"@de .
+                            "Prüfaufgabe"@de ,
+                            "Une tâche d'audit"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditReport
 ebuccdm:AuditReport rdf:type owl:Class ;
                     rdfs:subClassOf owl:Thing ;
-                    dcterms:description """An AuditReport aggregates results from related
-      AuditJob."""@en ,
-                                        "Ein Prüfbericht führt die Ergebnisse von Prüfaufgaben zusammen."@de ;
+
+                    dcterms:description "An AuditReport aggregates results from related AuditJob."@en ,
+                                        "Ein Prüfbericht führt die Ergebnisse von Prüfaufgaben zusammen."@de ,
+                                        "Un rapport d'audit regroupe les résultats des tâche de contrôle auxquelles il est lié."@fr ;
                     rdfs:label "Audit Report"@en ,
-                               "Prüfbericht"@de .
+                               "Prüfbericht"@de ,
+                               "Rapport d'audit"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Campaign
 ebuccdm:Campaign rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
-                 dcterms:description """A Campaign defines a strategy for publishing content
-      (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience
-      according to a PublicationPlan. Campaign strategies can be refined taking into account the
-      analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). 
-      Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns,
-      promotional campaigns or else."""@en ,
+
+                 dcterms:description "A Campaign defines a strategy for publishing content (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience according to a PublicationPlan. Campaign strategies can be refined taking into account the analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns, promotional campaigns or else."@en ,
                                      """Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest.
-Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."""@de ;
-                 rdfs:label "Campaign"@en ,
+Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."""@de ,
+                                     "Une campagne définit une stratégie de publication de contenu (objets éditoriaux et ressources/médias/essence) auprès d'un public cible conformément à un plan de publication. Les stratégies de campagne peuvent être affinées en fonction l'analyse de la Résonance de la Consommation des Evenements associée ( par exemple le nombre de like ou de téléchargements, etc ...). Les campagnes s'appliquent à différentes stratégies de diffusion, on peut citer par exemple les campagnes publicitaires ou les campagnes promotionnelles."@fr ;
+                 rdfs:label "Campagne"@fr ,
+                            "Campaign"@en ,
                             "Kampagne"@de .
 
 
@@ -3354,8 +3367,12 @@ Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzun
 ebuccdm:ConsumptionDevice rdf:type owl:Class ;
                           rdfs:subClassOf owl:Thing ;
                           dcterms:description "A device used to consume content."@en ,
-                                              "Ein Gerät zur Nutzung eines Medienproduktes."@de ;
-                          rdfs:label "Device"@en ,
+
+                                              "Ein Gerät zur Nutzung eines Medienproduktes."@de ,
+                                              "Un appareil utilisé pour consommer un contenu médiatique."@fr ;
+                          rdfs:label "Appareil"@fr ,
+                                     "Device"@en ,
+
                                      "Endgerät"@de .
 
 
@@ -3364,50 +3381,52 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:subClassOf owl:Thing ;
                                  dcterms:description """Das Profil eines Endgerätes.
 (z.B. Hersteller, Modell, Hardwareausstattung, Softwareausstattung, etc.)"""@de ,
+
+                                                     "Profile d'un appareil permettant de consommer du contenu médiatique. Cela peut-être un nom de modèle avec une version de hardware ou de software."@fr ,
                                                      "The profile of a ConsumptionDevice."@en ;
                                  rdfs:label "Consumption device profile"@en ,
-                                            "Endgeräteprofil"@de .
+                                            "Endgeräteprofil"@de ,
+                                            "Profile d'un appareil"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionEvent
 ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
-                         dcterms:description """A ConsumptionEvent reflecting the consumption of content during a
-      PublicationEvent. 
- For linear services the ConsumptionEvent and PublicationEvent happen
-      at the same time. For non-linear services, the consumer decides about the time of the
-      ConsumptionEvent. 
- The ConsumptionEvent results into ResonanceEvent aggregated into
-      Resonance data."""@en ,
+
+                         dcterms:description "A ConsumptionEvent reflecting the consumption of content during a PublicationEvent. For linear services the ConsumptionEvent and PublicationEvent happen at the same time. For non-linear services, the consumer decides about the time of the ConsumptionEvent. The ConsumptionEvent results into ResonanceEvent aggregated into Resonance data."@en ,
                                              """Ein Nutzungsereignis repräsentiert die Nutzung eines Medienanproduktes im Rahmen eines Publikationsereignisses.
 Bei linearen Medienservices finden Nutzungsereignis und Publikationsereignis zur gleichen Zeit statt. Bei nicht-linearen Medienservices entscheidet der Nutzer selbst über den Zeitpunkt des Nutzungsereignisses (im Rahmen des Publikationszeitraums).
-Das Nutzunsereignis führt zu Resonanzereignissen, die zu Resonanzdaten aggregiert werden."""@de ;
+Das Nutzunsereignis führt zu Resonanzereignissen, die zu Resonanzdaten aggregiert werden."""@de ,
+                                             "Un événement de consommation, ConsumptionEvent, décrit la consommation de contenu médiatique durant un évènement de publication, PublicationEvent. Pour les services linéaires, le ConsumptionEvent et le PuclicationEvent, se produisent en même temps. Pour les services non linéaires, le consommateur décide du moment du ConsumptionEvent. Dans  les deux cas, un ConsumptionEvent génère un évènement de raisonance, ResonanceEvent qui est agrégé aux données de raisonance, ResonanceData."@fr ;
                          rdfs:label "Consumption event"@en ,
-                                    "Nutzungsereignis"@de .
+                                    "Nutzungsereignis"@de ,
+                                    "Événement de consommation"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionLicence
 ebuccdm:ConsumptionLicence rdf:type owl:Class ;
                            rdfs:subClassOf owl:Thing ;
-                           dcterms:description """A licence attributed to a Consumer defining the terms for the
-      consumption of content. 
- The ConsumptionLicence is verified by a mechanism that is
-      usually located in the device and referred to as DRM (Digital Rights
-      Management)."""@en ,
-                                               "Eine Nutzungslizenz gehört zu einem Nutzer und legt die Nutzungsbedingungen für ein Produkt fest."@de ;
+
+                           dcterms:description "A licence attributed to a Consumer defining the terms for the consumption of content.  The ConsumptionLicence is verified by a mechanism that is usually located in the device and referred to as DRM (Digital Rights Management)."@en ,
+                                               "Eine Nutzungslizenz gehört zu einem Nutzer und legt die Nutzungsbedingungen für ein Produkt fest."@de ,
+                                               "Licence attribuée à un consommateur, Consumer, définissant les conditions de consommation d'un contenu. La licence de consommation, ConsumptionLicence, est vérifiée par un mécanisme généralement situé dans l'appareil, Device, et appelé DRM (Digital Rights Management)"@fr ;
                            rdfs:label "Consumption licence"@en ,
+                                      "Licence de consommation"@fr ,
+
                                       "Nutzungslizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Contract
 ebuccdm:Contract rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
-                 dcterms:description """A set of contractual terms involving different parties and Rights
-      and used to commission/contract the creation of Resources. A Contract covers the
-      ProductionOrder and sales order combined. The contract connects the Rights to any contractual
-      parties. A contract defines one or more set of Rights."""@en ,
-                                     "Eine Sammlung rechtlicher Regelungen zwischen verschiedenen Parteien und Rechten, die genutzt wird, um die Herstellung von Medieninhalten und ihrer Ressourcen/Medienressourcen/Essenzen zu beauftragen. Ein Vertrag deckt den Produktionsauftrag und den Einkaufsauftrag ab. Der Vertrag definiert die Aufteilung der Verwertungsrechte unter den Vertragspartnern."@de ;
+
+                 dcterms:description "A set of contractual terms involving different parties and Rights and used to commission/contract the creation of Resources. A Contract covers the ProductionOrder and sales order combined. The contract connects the Rights to any contractual parties. A contract defines one or more set of Rights."@en ,
+                                     "Eine Sammlung rechtlicher Regelungen zwischen verschiedenen Parteien und Rechten, die genutzt wird, um die Herstellung von Medieninhalten und ihrer Ressourcen/Medienressourcen/Essenzen zu beauftragen. Ein Vertrag deckt den Produktionsauftrag und den Einkaufsauftrag ab. Der Vertrag definiert die Aufteilung der Verwertungsrechte unter den Vertragspartnern."@de ,
+                                     "Un ensemble de conditions contractuelles impliquant différentes parties et droits, RIghts. Un contrat est utilisé pour commander et contracter la création de ressources. Un Contrat couvre l'ordre de production, ProductionOrder et la commande de vente, combinés. Le contrat relie les droits, Rights, à toutes les parties contractantes. Un contrat définit un ou plusieurs ensembles de droits."@fr ;
+
                  rdfs:label "Contract"@en ,
+                            "Contrat"@fr ,
                             "Vertrag"@de .
 
 
@@ -3415,51 +3434,66 @@ ebuccdm:Contract rdf:type owl:Class ;
 ebuccdm:ContractCost rdf:type owl:Class ;
                      rdfs:subClassOf owl:Thing ;
                      dcterms:description "Beschreibt die Kosten eines Vertrages."@de ,
+
+                                         "Permet d'identifier les coûts associés à un contrat."@fr ,
                                          "To identify the costs associated to a Contract."@en ;
                      rdfs:label "Contract cost"@en ,
+                                "Coût d'un contrat"@fr ,
+
                                 "Vertragskosten"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Measure
 ebuccdm:Measure rdf:type owl:Class ;
                 rdfs:subClassOf owl:Thing ;
-                dcterms:description """A Measure associated to a Rule to assess compliance through
-      AuditJobs."""@en ,
-                                    "Eine Messung zu einer Regel untersucht deren Einhaltung durch Prüfaufgaben."@de ;
+
+                dcterms:description "A Measure associated to a Rule to assess compliance through AuditJobs."@en ,
+                                    "Eine Messung zu einer Regel untersucht deren Einhaltung durch Prüfaufgaben."@de ,
+                                    "Une mesure associée à une règle, Rule, pour évaluer la conformité à travers des AuditJobs."@fr ;
                 rdfs:label "Measure"@en ,
-                           "Messung"@de .
+                           "Messung"@de ,
+                           "Mesure"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#OnStagePosition
 ebuccdm:OnStagePosition rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing ;
                         dcterms:description "Gibt die Position eines Akteurs oder eines Produktionswerkzeuges auf einer Bühne an."@de ,
-                                            """To define the Position of a ProductionDevice or Agent on
-      Stage."""@en ;
+
+                                            "Spécifie la position d'un agent, Agent, ou d'un appareil de production, ProductionDevice sur la scène, Stage."@fr ,
+                                            "To define the Position of a ProductionDevice or Agent on Stage."@en ;
                         rdfs:label "Bühnenposition"@de ,
-                                   "On Stage Position"@en .
+                                   "On Stage Position"@en ,
+                                   "Position sur scène"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionDevice
 ebuccdm:ProductionDevice rdf:type owl:Class ;
                          rdfs:subClassOf owl:Thing ;
-                         dcterms:description """A Device used for creating/processing a
-      MediaResource."""@en ,
-                                             "Ein Werkzeug zur Herstellung oder Bearbeitung einer Medienressource."@de ;
-                         rdfs:label "Production device"@en ,
+
+                         dcterms:description "A Device used for creating/processing a MediaResource."@en ,
+                                             "Ein Werkzeug zur Herstellung oder Bearbeitung einer Medienressource."@de ,
+                                             "Un appareil utilisé pour créer/traiter une resource médiatique, MediaResource."@fr ;
+                         rdfs:label "Appareil de production"@fr ,
+                                    "Production device"@en ,
+
                                     "Produktionswerkzeug"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob
 ebuccdm:ProductionJob rdf:type owl:Class ;
                       rdfs:subClassOf owl:Thing ;
-                      dcterms:description """A job / process to be performed to
-      manipulate/create/modify/store/etc. MediaResources and Essences as defined in an associated
-      EditorialObject. It is ordered by Contract."""@en ,
+
+                      dcterms:description "A job / process to be performed to manipulate/create/modify/store/etc. MediaResources and Essences as defined in an associated EditorialObject. It is ordered by Contract."@en ,
                                           """Eine Aufgabe oder ein Prozess, der ausgeführt wird, um eine Medienressource oder eine Essenz zu erstellen, zu modifizieren, zu speichern o.ä.
-Medienressource und Essenz werden gemäß einen Medieninhalt hergestellt. Die Produktionsaufgabe wird durch einen Vertrag beauftragt."""@de ;
+Medienressource und Essenz werden gemäß einen Medieninhalt hergestellt. Die Produktionsaufgabe wird durch einen Vertrag beauftragt."""@de ,
+                                          "Une tâche / un processus à exécuter pour manipuler/créer/modifier/stocker/etc. des MediaResources et Essences telles que définies dans un EditorialObject. Il est commandé par contrat, Contract."@fr ;
                       rdfs:label "Production job"@en ,
-                                 "Produktionsaufgabe"@de .
+                                 "Produktionsaufgabe"@de ,
+                                 "Tâche de production"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionOrder
@@ -3467,10 +3501,12 @@ ebuccdm:ProductionOrder rdf:type owl:Class ;
                         rdfs:subClassOf owl:Thing ;
                         dcterms:description """Die Beauftragung zur Erstellung, zum Kauf oder zur Wiederverwendung einer Medienressource.
 Die Bedingungen eines Produktionsauftrages sind in einem Vertrag definiert."""@de ,
-                                            """The act of ordering the creation/production, purchase or reuse of
-      MediaResources. 
- The terms of a ProductionOrder are defined by Contract."""@en ;
+
+                                            "L'acte d'ordonner la création/production, l'achat ou la réutilisation de MediaResources. Les termes d'un ProductionOrder sont définis par Contrat."@fr ,
+                                            "The act of ordering the creation/production, purchase or reuse of MediaResources.  The terms of a ProductionOrder are defined by Contract."@en ;
                         rdfs:label "Production order"@en ,
+                                   "Production order"@fr ,
+
                                    "Produktionsauftrag"@de .
 
 
@@ -3480,75 +3516,83 @@ ebuccdm:Resonance rdf:type owl:Class ;
                   dcterms:description """Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern. 
 Repräsentiert alle zählbaren oder erfassbaren Nutzungsaktivitäten durch Nutzer während des Nutzungsereignisses, aber zu nicht-individualisierbaren Ausdrücken zusammengefasst, z.B. click-Zahlen, Anzahl von Likes, Prozentsatz von Stimmen, Anzahl der Downloads, ...
 Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnenstrategie und des verknüpften Publikationsplans."""@de ,
-                                      """The aggregation of data about the conumption of content by a group
-      of Consumers. Represents all countable or noticeable consumption actions by consumers during a
-      ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of
-      likes, percentage of votes, number of downloads... 
- The analysis of the Resonance Data
-      allows more particularly refining a Campaign strategy and its associated
-      PublicationPlan."""@en ;
+
+                                      "La raisonance est une agrégation des données relatives à la consommation de contenu par un groupe de consommateurs. Représente toutes les actions de consommation dénombrables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent agrégées pour former une expression non individuelle, par exemple taux de clics, nombre d'appréciations, pourcentage de votes, nombre de téléchargements, likes, pourcentage de votes, nombre de téléchargements. L'analyse des données de résonance permet plus particulièrement d'affiner une stratégie de Campagne et son plan de publication, PublicationPlan."@fr ,
+                                      """The aggregation of data about the conumption of content by a group of Consumers. Represents all countable or noticeable consumption actions by consumers during a ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of likes, percentage of votes, number of downloads... 
+The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."""@en ;
                   rdfs:label "Resonance"@en ,
-                             "Resonanz"@de .
+                             "Resonanz"@de ,
+                             "Résonance"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ResonanceEvent
 ebuccdm:ResonanceEvent rdf:type owl:Class ;
                        rdfs:subClassOf owl:Thing ;
-                       dcterms:description """Data about the consumption of content by a Consumer using a
-      particular ConsumptionDevice. Represents all individual countable or noticeable actions by
-      consumers during a consumptionEvent using a particular ConsumptionDevice, e.g. clicks, likes,
-      comments, votes, tweets preferences, downloads... 
- All ResonanceEvents are linked to a
-      ConsumptionEvent and the associated Essence or EditorialObject. 
- ResonanceEvents
-      represent raw-data, that need to be aggregated (e.g. summed up). Such data can be seen as \"Big
-      Data\" and require appropriate technology and techniques (e.g. processing algorithms).The
-      aggregationof this data is a set of Resonance results."""@en ,
+
+                       dcterms:description """Data about the consumption of content by a Consumer using a particular ConsumptionDevice. Represents all individual countable or noticeable actions by consumers during a consumptionEvent using a particular ConsumptionDevice, e.g. clicks, likes, comments, votes, tweets preferences, downloads... All ResonanceEvents are linked to a ConsumptionEvent and the associated Essence or EditorialObject. ResonanceEvents represent raw-data, that need to be aggregated (e.g. summed up). Such data can be seen as \"Big
+Data\" and require appropriate technology and techniques (e.g. processing algorithms).The aggregationof this data is a set of Resonance results."""@en ,
                                            """Daten zur Nutzung eines Medienproduktes durch einen Nutzer mit Hilfe eines speziellen Endgerätes.
 Repräsentiert alle individuell zählbaren oder erfassbaren Aktivitäten des Nutzers währen eines Nutzungsereignisses mit Hilfe eines Endgerätes, z.B. Klicks, Likes, Kommntare, Abstimmungen, Tweets, Downloads, etc. 
 Alle Resonanzereignisse sind mit einem Nutzungsereignis verknüpft und dessen Essenz oder Medieninhalt.
-Resonanzereignisse  repräsentieren Rohdaten, die aggregiert werden müssen (z.B. durch Zusammenzählen). Solche Daten können als \"Big Data\" betrachtet werden und erfordern den Einsatz geeigneter Technologien and Verarbeitungsalgorithmen. Die Aggregation dieser Daten führt zu einem Resonanz-Objekt."""@de ;
+Resonanzereignisse  repräsentieren Rohdaten, die aggregiert werden müssen (z.B. durch Zusammenzählen). Solche Daten können als \"Big Data\" betrachtet werden und erfordern den Einsatz geeigneter Technologien and Verarbeitungsalgorithmen. Die Aggregation dieser Daten führt zu einem Resonanz-Objekt."""@de ,
+                                           """Un évènement de résonance est défini comme des données relatives à la consommation de contenu par un consommateur utilisant un dispositif de consommation particulier. 
+Ces données représente toutes les actions individuelles comptabilisables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent utilisant un ConsumptionDevice particulier, par exemple clics, likes, commentaires, votes, préférences tweets, téléchargements. 
+Tous les ResonanceEvents sont liés à un ConsumptionEvent et à l'Essence associée ou à l'EditorialObject associé. 
+Les ResonanceEvents représentent des données brutes, qui doivent être agrégées (par exemple, additionnées). Ces données peuvent être considérées comme des \"big data\" et nécessitent une technologie et des techniques appropriées (par exemple, des algorithmes de traitement).
+L'agrégation de ces données est un ensemble de résultats de résonance."""@fr ;
                        rdfs:label "Resonance event"@en ,
-                                  "Resonanzereignis"@de .
+                                  "Resonanzereignis"@de ,
+                                  "Événement de résonance"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Rule
 ebuccdm:Rule rdf:type owl:Class ;
              rdfs:subClassOf owl:Thing ;
-             dcterms:description """A Rule defined from legal, technical or editorial, or regulatory
-      requirements."""@en ,
+
+             dcterms:description "A Rule defined from legal, technical or editorial, or regulatory requirements."@en ,
                                  "Eine Regel aus gesetzlichen, technischen, inhaltlichen oder regulatorischen Anforderungen."@de ;
              rdfs:label "Regel"@de ,
-                        "Rule"@en .
+                        "Rule"@en ,
+                        "Règle"@fr ,
+                        "Une règle définie à partir de contraintes légales, techniques, éditoriales ou réglementaires."@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Stage
 ebuccdm:Stage rdf:type owl:Class ;
               rdfs:subClassOf owl:Thing ;
-              dcterms:description "Eine Bühne."@de ,
+
+              dcterms:description "Définit une scène."@fr ,
+                                  "Eine Bühne."@de ,
                                   "To define a Stage."@en ;
               rdfs:label "Bühne"@de ,
+                         "Scène"@fr ,
+
                          "Stage"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
-         dcterms:description """An «Agent» is either a Contact/Person or Organisation to which
-      is associated a Role corresponding to the contribution the «Agent» brings to the
-      realisation of a MediaResource or EditorialObject."""@en ,
-                             "Ein Akteur ist entweder eine Kontaktperson oder eine Organisation, deren Beitrag zur Realisierung eines Inhaltsobjektes oder eines Medienobjektes durch eine Rolle beschrieben wird."@de ;
+         dcterms:description "An «Agent» is either a Contact/Person or Organisation to which is associated a Role corresponding to the contribution the «Agent» brings to the realisation of a MediaResource or EditorialObject."@en ,
+                             "Ein Akteur ist entweder eine Kontaktperson oder eine Organisation, deren Beitrag zur Realisierung eines Inhaltsobjektes oder eines Medienobjektes durch eine Rolle beschrieben wird."@de ,
+                             "Un acteur  est un terme général, soit un  contact ou une personne ou une organisation à laquelle est associé un rôle correspondant à la contribution que l'acteur apporte à la réalisation d'une MediaResource ou d'un EditorialObject."@fr ;
          rdfs:label "Agent"@en ,
-                    "Akteur"@de .
+                    "Akteur"@de ,
+                    "Un acteur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing ;
-            dcterms:description "Sämtliche Artefakte, die im Rahmen einer Produktion unterschieden werden können, z.B. Produkte, Kostüme, Requisiten"@de ,
+            dcterms:description "Permet d'identifier tous les artefacts utilisés dans une production tels que les costumes, les objets, accessoires."@fr ,
+                                "Sämtliche Artefakte, die im Rahmen einer Produktion unterschieden werden können, z.B. Produkte, Kostüme, Requisiten"@de ,
                                 """To identify all Artefacts used in a production such as costumes, objects,
-      products."""@en ;
+ products."""@en ;
             rdfs:label "Artefact"@en ,
+                       "Artefact"@fr ,
                        "Artefakt"@de .
 
 
@@ -3567,8 +3611,11 @@ ec:Asset rdf:type owl:Class ;
                              """Assets sind Inhaltsobjekte oder Medienobjekte und ihre zugeordneten (Verwertungs-)Rechte.
 Ein Asset erhält durch die Beauftragung einen Identifikator. Es dient als zentrale Referenz, um die Rechte zu verwalten, die mit Inhaltsobjekten, Medienobjekten,  Essenzen sowie Veröffentlichungsereignissen (per Deduktion) verknüpft sind. 
 Achtung: Medienobjekte oder Essenzen werden in diesem Modell immer durch Inhaltsobjekte repräsentiert.
-Beispiel: CCDM gestattet die Verknüpfung von Verwertungsrechten mit einem Inhaltsobjekt, das von einem oder auch mehreren Essenzen repräsentiert wird."""@de ;
-         rdfs:label "Asset"@de ,
+Beispiel: CCDM gestattet die Verknüpfung von Verwertungsrechten mit einem Inhaltsobjekt, das von einem oder auch mehreren Essenzen repräsentiert wird."""@de ,
+                             """Les actifs sont des EditorialObjects ou des ressources avec des droits associés. Un \"Asset\" est un objet auquel un identifiant sera associé lors de la mise en service. Il sert de point de référence central pour gérer les droits associés aux EditorialObjects, MediaResources ou Essences, et par déduction - les PublicationEvents (conditions de distribution et d'exploitation). Il est a noté que les MediaResources ou Essences seront dans ce modèle toujours représentées par un EditorialObject. 
+Exemple : Le modèle CCDM permet l'association de droits à un EditorialObject connexe représenté par une ou plusieurs essences, Essences."""@fr ;
+         rdfs:label "Actif"@fr ,
+                    "Asset"@de ,
                     "Asset"@en .
 
 
@@ -3606,8 +3653,12 @@ ec:Crew rdf:type owl:Class ;
         rdfs:subClassOf ec:Agent ;
         dcterms:description "To identify a member of the crew."@en ,
                             "Zur Identifikation eines Besatzungsmitglieds."@de ;
+
+        rdfs:comment "Permet d'identifier un membre d'une équipe."@fr ;
         rdfs:label "Besatzung"@de ,
-                   "Crew"@en .
+                   "Crew"@en ,
+                   "Équipe"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataFormat
@@ -3622,26 +3673,11 @@ ec:DataFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
 ec:EditorialObject rdf:type owl:Class ;
                    rdfs:subClassOf ec:Asset ;
-                   dcterms:description """An EditorialObject collects all the descriptive information about an object to be
-      realised as a single MediaResource or a collection thereof. An «EditorialObject» describes
-      any idea, any story and will be used to transform a concept into an editorial definition of a
-      MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
-      
- An «EditorialObject» is a set of descriptive metadata summarising e.g. editing
-      decisions. An «EditorialObject» can be a group of EditorialObjects. An
-      «EditorialObject» can also be a part of another «EditorialObject», which is defined by
-      its start time and duration. 
- EditorialObjects can be ordered either as groups or as
-      items on a timeline. 
- 
- Examples of simple EditorialObjects: Programme, Item, Shot,
-      Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc. 
- A simplified
-      use-case: 
- A TV news broadcast consists of two news items. One news item contains the
-      last ten seconds of a one minute long interview taken from another source (i.e. 50\" >
-      60\" ). 
- 
+                   dcterms:description """An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
+An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline. 
+Examples of simple EditorialObjects: Programme, Item, Shot,Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc. 
+A simplifieduse-case: 
+A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50\" >60\" ). 
  This could be modelled as follows: 
 • The NewsBroadcast is linked
       to a MediaResource using the instantiates-property 
@@ -3664,8 +3700,27 @@ Ein Medieninhalt besteht aus einer Menge beschreibender Metadaten, z.B. Schnittl
 
 Beispiele für einfache Medieninhalte: Sendung, Beitrag, Szene
 Beispiele für Gruppierungen: Marke, Serie, Reihe, Sammlung"""@de ;
+                   rdfs:comment """Un EditorialObject rassemble toutes les informations descriptives d'un objet à réaliser comme une MediaResource ou une collection de MediaResource. Un EditorialObject décrit une idée, une histoire. Il est utilisé pour transformer un concept en une définition éditoriale, une MediaResource avant sa fabrication (domaine de la production) et sa distribution (domaine de la distribution).
+Un EditorialObject est un ensemble de métadonnées descriptives résumant, par exemple, les décisions d'édition. Un EditorialObject peut être un groupe d'EditorialObjects. Un EditorialObject peut également faire partie d'un autre EditorialObject, qui est défini par son heure de début et sa durée. 
+Les objets éditoriaux peuvent être ordonnés soit en tant que groupes, soit en tant qu'éléments sur une ligne de temps. 
+ Exemples d'EditorialObjects simples : Programme, Article, Une prise de vue, Une Partie, etc. 
+Exemples de groupes d'EditorialObjects : Marque, Série, Collection, etc. 
+
+Un cas d'utilisation simplifié : 
+------------------------
+Un journal télévisé se compose de deux éléments d'information. L'un d'entre eux contient les dix dernières secondes d'une interview d'une minute provenant d'une autre source (c'est-à-dire entre la seconde 50 et la seconde 60). 
+Cette situation pourrait être modélisée comme suit : 
+o NewsBroadcast est lié à un MediaResource à l'aide de la propriété instantiates.
+o NewsItems sont liés au NewsBroadcast à l'aide d'un TimelineTrack. Tech 3351 EBU CCDM 13 
+o L'InterviewPart est liée au NewsItem à l'aide de la propriété hasMember. Start et Duration sont des propriétés de l'InterviewPart qui indiquent son apparence dans le NewsItem. 
+o L'InterviewPart est liée à sa source originale à l'aide de la propriété existsAs. 
+o L'interview instancie une MediaResource, qui à son tour est liée à la MediaResource du NewsBroadcast à l'aide de la propriété hasSource. 
+o Représentation de la segmentation : Les TimelineTracks sont préférés aux hasPart-properties, lorsqu'un récapitulatif est nécessaire, par exemple pour la diffusion."""@fr ;
                    rdfs:label "Editorial object"@en ,
-                              "Medieninhalt"@de .
+
+                              "Medieninhalt"@de ,
+                              "Objet éditorial"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence
@@ -3686,38 +3741,44 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
-         dcterms:description """An Event related to a Resource, e.g. as depicted in the Resource
-      (real or fictional), etc."""@en ,
+
+         dcterms:description "An Event related to a Resource, e.g. as depicted in the Resource (real or fictional), etc."@en ,
                              "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ;
          rdfs:label "Ereignis"@de ,
-                    "Event"@en .
+                    "Event"@en ,
+                    "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ,
+                    "Événement"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format
 ec:Format rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ;
-          dcterms:description """A Format can be defined as a collection of audio / video / data and
-      container Formats. A Format can be globally associated to a MediaResource but Specific audio /
-      video / data and container Formats can also be distinctly associated to a MediaResource. The
-      ContainerFormat defines the file / package structure of the MediaResource."""@en ,
-                              "Ein Format wird definiert als eine Sammlung aus Audio-, Video-, Daten- und Containerformaten. Ein Format kann global mit einer Medienressource verknüpft sein, oder auch speziell nach unterschiedlichen Audio-, Video-, Daten- und Containerformaten. Das Containerformat definiert die Datei- bzw. Paketstruktur einer Medienressource."@de ;
+
+          dcterms:description "A Format can be defined as a collection of audio / video / data and container Formats. A Format can be globally associated to a MediaResource but Specific audio / video / data and container Formats can also be distinctly associated to a MediaResource. The ContainerFormat defines the file / package structure of the MediaResource."@en ,
+                              "Ein Format wird definiert als eine Sammlung aus Audio-, Video-, Daten- und Containerformaten. Ein Format kann global mit einer Medienressource verknüpft sein, oder auch speziell nach unterschiedlichen Audio-, Video-, Daten- und Containerformaten. Das Containerformat definiert die Datei- bzw. Paketstruktur einer Medienressource."@de ,
+                              "Un format peut être défini comme une collection de formats audio/vidéo/données et de conteneurs. Un format peut être associé globalement à une ressource multimédia, mais des formats audio/vidéo/données et conteneurs spécifiques peuvent également être associés de manière distincte à une ressource multimédia. Le ContainerFormat définit la structure du fichier / paquet de la MediaResource."@fr ;
           rdfs:label "Format"@de ,
-                     "Format"@en .
+                     "Format"@en ,
+                     "Format"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location
 ec:Location rdf:type owl:Class ;
             rdfs:subClassOf owl:Thing ;
-            dcterms:description """A location related to the media resource, e.g. depicted in the
-      resource (possibly fictional) or where the resource was created (shooting location), etc. A
-      «Location» is used to define the spatial coverage of the story or recording locations like
-      studios or in the field, associated with the EditorialObjects (or Part of
-      EditorialObjects)."""@en ,
+
+            dcterms:description "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc. A «Location» is used to define the spatial coverage of the story or recording locations like studios or in the field, associated with the EditorialObjects (or Part of EditorialObjects)."@en ,
                                 """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
 Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in einem Medieninhalt, wie z.b. im Studio, Außenaufnahme."""@de ,
-                                """Note: a type of location shall be defined as a sub-class of
-      Location."""@en ;
-            rdfs:label "Location"@en ,
+                                "Note: a type of location shall be defined as a sub-class of Location."@en ,
+                                "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ,
+                                """Une localisation est liée à la ressource média, elle peut être décrite dans la ressource et donc être éventuellement fictive. Elle peut aussi représenter le lieu où la ressource a été créée (lieu de tournage).
+Une localisation est utilisée pour définir la couverture spatiale du reportage ou des lieux d'enregistrement comme par exemple : studios ou sur le terrain, associés aux EditorialObjects (ou à une partie des EditorialObjects)."""@fr ;
+            rdfs:label "Localisation"@fr ,
+                       "Location"@en ,
+                       "Location"@fr ,
+
                        "Ort"@de .
 
 
@@ -3737,9 +3798,13 @@ ec:MediaResource rdf:type owl:Class ;
 ec:Organisation rdf:type owl:Class ;
                 rdfs:subClassOf ec:Agent ;
                 dcterms:description "An organisation or moral agent."@en ,
-                                    "Eine Organisation."@de ;
+
+                                    "Eine Organisation."@de ,
+                                    "Une organisation ou une personne morale."@fr ;
                 rdfs:label "Organisation"@de ,
-                           "Organisation"@en .
+                           "Organisation"@en ,
+                           "Organisation"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
@@ -3747,8 +3812,12 @@ ec:Person rdf:type owl:Class ;
           rdfs:subClassOf ec:Agent ;
           dcterms:description "A Person."@en ,
                               "Eine Person."@de ;
+
+          rdfs:comment "Une personne physique."@fr ;
           rdfs:label "Person"@de ,
-                     "Person"@en .
+                     "Person"@en ,
+                     "Personne"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource
@@ -3763,12 +3832,12 @@ ec:PhysicalResource rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
 ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:subClassOf ec:Service ;
-                      dcterms:description """A channel through which content is published. It can take a variety
-      of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs / DVDs,
-      etc."""@en ,
-                                          "Ein Publikationskanal durch welchen Inhalte publiziert werden. Er kann viele Formen annehmen, auch außerhalb von Rundfunk oder Internet Streaming, z.. auch eine physische Verteilung von CDs, DVDs, etc."@de ;
-                      rdfs:label "Publication channel"@en ,
-                                 "Publikationskanal"@de .
+
+                      dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ;
+                      rdfs:comment "C'est un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD/DVD, etc."@fr ;
+                      rdfs:label "Canal de publication"@fr ,
+                                 "Publication channel"@en .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
@@ -3776,55 +3845,63 @@ ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:subClassOf owl:Thing ;
                     dcterms:description """Beschreibt die Bereitstellung eines Medieninhaltes und seiner Essenz durch ein beliebiges Medium.
 Ein Publikationsereignis kann ein geplantes oder ein ungeplantes Ereignis im Rahmen eines linearen Angebot sein, oder eine Abrufmöglichkeit sowie live-streaming im nicht-linearen Angebot."""@de ,
-                                        """To describe any manifestation of an EditorialObject and associated
-      Essence on any media (live, on demand, catch-up TV, etc.). 
- A PublicationEvent can be
-      e.g. a scheduled event, a broadcast event (originally not scheduled like \"latest news\"), or
-      non-linear on-demand events and live-streaming."""@en ;
+
+                                        "Décrit toute apparition, manifestation, d'un objet éditorial, EditorialObjec et d'une essence associée, Essence, sur n'importe quel média (en direct, à la demande, à la télévision, etc.). Un PublicationEvent peut être par exemple, un événement programmé, un événement diffusé (à l'origine non programmé comme les \"dernières nouvelles\"), ou des événements non linéaires à la demande et des diffusions en direct."@fr ,
+                                        """To describe any manifestation of an EditorialObject and associated Essence on any media (live, on demand, catch-up TV, etc.). 
+A PublicationEvent can be e.g. a scheduled event, a broadcast event (originally not scheduled like \"latest news\"), or non-linear on-demand events and live-streaming."""@en ;
                     rdfs:label "Publication Event"@en ,
-                               "Publikationsereignis"@de .
+                               "Publikationsereignis"@de ,
+                               "Événement de publication"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationPlan
 ec:PublicationPlan rdf:type owl:Class ;
                    rdfs:subClassOf owl:Thing ;
-                   dcterms:description """A PublicationPlan describes a schedule of PublicationEvents (and
-      their Audiences). The realisation of a PublicationPlan may require the specific acquisition or
-      creation of content defined as a pair of EditorialObjects and Essence, which occurs through
-      ProductionOrders. A PublicationPlan can be the result of associated
-      Publication(sub)Plans.
- Examples: 
- Example 1: A campaign of commercials for a
-      product, consists of set of planned PublicationEvents.
- example 2: A fiction film is
-      promoted with several trailers published before the publication of the film."""@en ,
+
+                   dcterms:description """A PublicationPlan describes a schedule of PublicationEvents (and their Audiences). The realisation of a PublicationPlan may require the specific acquisition or creation of content defined as a pair of EditorialObjects and Essence, which occurs through ProductionOrders. A PublicationPlan can be the result of associated Publication(sub)Plans.
+
+Examples: 
+
+Example 1: A campaign of commercials for a product, consists of set of planned PublicationEvents.
+Example 2: A fiction film is promoted with several trailers published before the publication of the film."""@en ,
                                        """Ein Publikationsplan beschreibt eine Zeitplan von Publikationsereignissen und ihre Publika. Die Realisierung eines Publikationsplan erfordert möglicherweise den Einkauf oder die Herstellung von Medienprodukten (Medieninhalt mit Essenz), ausgelöst durch einen Produktionsauftrag. Ein Publikationsplan kann aus mehreren Publikationsplänen zusammengesetzt werden.
 Beispiele 1: Eine Werbekampagne für ein neues Produkt besteht aus einer Reihe geplanter Veröffentlichungsereignisse.
-Beispiel 2: Ein Film wird  durch mehrere Trailer beworben, bevor er veröffentlicht wird."""@de ;
-                   rdfs:label "Publication plan"@en ,
+Beispiel 2: Ein Film wird  durch mehrere Trailer beworben, bevor er veröffentlicht wird."""@de ,
+                                       """Un PublicationPlan décrit un calendrier de PublicationEvents ainsi que leurs audiences. La réalisation d'un plan de publication, PublicationPlan, peut nécessiter l'acquisition ou la création spécifique d'un contenu défini comme une paire d'objets éditoriaux, EditorialObjects, et d'essences, d'Essence. Ceci se produit par le biais d'ordres de production, ProductionOrders. 
+Un plan de publication peut être le résultat de plans ou sous plans de publication associés.
+Exemple 1 : Une campagne publicitaire pour un produit consiste en un ensemble d'événements de publication, PublicationPlan, planifiée.
+Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiées avant la publication du film."""@fr ;
+                   rdfs:label "Plan de publication"@fr ,
+                              "Publication plan"@en ,
+
                               "Publikationsplan"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
 ec:Resource rdf:type owl:Class ;
             rdfs:subClassOf ec:Asset ;
-            dcterms:description """A resource used or referred to in the workflow (e.g. a document or
-      image or any objects defined as sub-classes of Resource). It has a locator indicating from
-      where the Resource can be retrieved."""@en ,
+
+            dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Ressource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Ressource). Die Ressource hat einen Locator, der angibt, wo auf die Ressource zugegriffen werden kann."@de ;
+            rdfs:comment "Une ressource est utilisée ou référencé dans un workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de la ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée"@fr ;
             rdfs:label "Resource"@en ,
-                       "Ressource"@de .
+                       "Ressource"@de ,
+                       "Ressource"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights
 ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf owl:Thing ;
-          dcterms:description """The intellectual property or other contractual (e.g. publication)
-      Rights associated to an Asset, a Contract, or a PublicationEvent. Rights originate from a
-      Contract. Rights are associated to EditorialObjects, MediaResource or Essences through the
-      definition of an Asset. Rights have associated RightsHolders."""@en ,
+
+          dcterms:description """Les droits, Rights, de propriété intellectuelle ou autres droits contractuels (par exemple, de publication) associés à un actif, un contrat ou un PublicationEvent. 
+Les droits proviennent d'un contrat, Contract. Les droits sont associés à des EditorialObjects, MediaResource ou Essences par la définition d'un actif, Asset. Les droits sont liés à des détenteurs de droits, RightsHolders."""@fr ,
+                              "The intellectual property or other contractual (e.g. publication) Rights associated to an Asset, a Contract, or a PublicationEvent. Rights originate from a Contract. Rights are associated to EditorialObjects, MediaResource or Essences through the definition of an Asset. Rights have associated RightsHolders."@en ,
                               "Urheber- oder vertragliches Verwertungsrecht an einem Asset, einem Vertrag oder einem Publikationsereignis. Rechte entstammen einem Vertrag. Rechte sind gebunden an einen Medieninhalt, eine Medienressource oder eine Essenz durch die Definition des Assets. Rechte haben zugeordnete Rechteinhaber."@de ;
-          rdfs:label "Recht"@de ,
+          rdfs:label "Droits"@fr ,
+                     "Recht"@de ,
+
                      "Rights"@en .
 
 
@@ -3833,20 +3910,26 @@ ec:Role rdf:type owl:Class ;
         rdfs:subClassOf skos:Concept ;
         dcterms:description """Definiert eine Rolle, die ein Akteur übernimmt.
 Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
-                            """To define Role played by an Agent. A «Role» will be identified
-      e.g. by a Concept from a SKOS Classification Scheme."""@en ;
+
+                            "Permet de définir le rôle, Role,  joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
+                            "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
         rdfs:label "Role"@en ,
-                   "Rolle"@de .
+                   "Rolle"@de ,
+                   "Rôle"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
 ec:Service rdf:type owl:Class ;
            rdfs:subClassOf owl:Thing ;
-           dcterms:description """A Service is a channel or publishing platform that releases the
-      content to a given Audience."""@en ,
+
+           dcterms:description "A Service is a channel or publishing platform that releases the content to a given Audience."@en ,
                                "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ;
+           rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
            rdfs:label "Service"@de ,
-                      "Service"@en .
+                      "Service"@en ,
+                      "Service"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack
@@ -3854,7 +3937,11 @@ ec:TimelineTrack rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description "Definiert den zeitlichen Ablauf von Medieninhalten."@de ,
                                      "To define a timed sequence of EditorialObjects."@en ;
+
+                 rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
                  rdfs:label "Ablaufplan"@de ,
+                            "Piste chronologique"@fr ,
+
                             "Timeline track"@en .
 
 
@@ -3879,6 +3966,20 @@ ec:VideoFormat rdf:type owl:Class ;
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+skos:Collection skos:note "Les collections étiquetées, Labelled collections, peuvent être utilisées lorsque vous souhaitez qu'un ensemble de concepts soit affiché sous un \"node label\" dans la hiérarchie."@fr ;
+                rdfs:label "Collection"@fr .
+
+
+skos:ConceptScheme rdfs:label "Schéma conceptuel"@fr .
+
+
+skos:OrderedCollection rdfs:label "Collection Ordonnée"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
