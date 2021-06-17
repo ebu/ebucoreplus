@@ -25,6 +25,7 @@
                                                                 "Masoud Aminipour, not affiliated" ;
                                                  dcterms:contributor "Alexandre Rouxel, EBU"@ch ;
                                                  vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebuccdm#" ;
+                                                 rdfs:comment "Tormod Værvågen, NRK"@no ;
                                                  owl:priorVersion <https://www.ebu.ch/metadata/ontologies/ebuccdm/20182011/ebuccdm.rdf> ;
                                                  owl:versionInfo """Alignment of CCDM wit EBUCore (some EO properties moved up to the
       Asset level)."""@en ,
