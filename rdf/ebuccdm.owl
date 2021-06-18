@@ -3299,11 +3299,11 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description """A group of Consumers or an aggregation of groups of Consumers
       clustered e.g. by class of age , social categories or else."""@en ,
-                                     "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ;
+                                     "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ,
+                                     "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
-                            "Publikum"@de ,
-                            "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr .
+                            "Publikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
@@ -3688,12 +3688,8 @@ ec:Essence rdf:type owl:Class ;
            rdfs:subClassOf ec:MediaResource ;
            dcterms:description """Die echte physische Repräsentation einer oder mehrerer Medienressourcen, die zur Nutzung bearbeitet wurde.  
 Die Essenz ist eine physische Repräsentation einer Medienressource in einem spezillen Format für die Ausspielung oder Publikation. Essenz ist eine Sub-Klasse von Medienressource und erbt deren Eigenschaften. Essenzen treten auf in Form einfacher Dateien oder komplexer Pakete, z.B. wie es von verschiedenen Kameras verschiedener Hersteller geliefert wird."""@de ,
-                               """The actual physical representation of one or more MediaResource
-      edited for consumption. The â€œEssenceâ€� is a physical representation of a MediaResource in a
-      particular Format destined for play-out or publishing. \"Essence is a subclass of a
-      MediaResource and inherits the MediaResource properties. â€œEssenceâ€� can be available in a
-      form of a simple file or complex packages (e.g. as delivered by cameras of different
-      brands)."""@en ;
+                               """The actual physical representation of one or more MediaResource edited for consumption. The «Essence» is a physical representation of a MediaResource in aparticular Format destined for play-out or publishing.
+\"Essence is a subclass of a MediaResource and inherits the MediaResource properties. «Essence» can be available in a form of a simple file or complex packages (e.g. as delivered by cameras of different brands)"""@en ;
            rdfs:label "Essence"@en ,
                       "Essenz"@de .
 
@@ -3702,10 +3698,10 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
          dcterms:description "An Event related to a Resource, e.g. as depicted in the Resource (real or fictional), etc."@en ,
-                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ;
+                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ,
+                             "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ;
          rdfs:label "Ereignis"@de ,
                     "Event"@en ,
-                    "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ,
                     "Événement"@fr .
 
 
@@ -3726,13 +3722,12 @@ ec:Location rdf:type owl:Class ;
             dcterms:description "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc. A «Location» is used to define the spatial coverage of the story or recording locations like studios or in the field, associated with the EditorialObjects (or Part of EditorialObjects)."@en ,
                                 """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
 Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in einem Medieninhalt, wie z.b. im Studio, Außenaufnahme."""@de ,
-                                "Note: a type of location shall be defined as a sub-class of Location."@en ,
-                                "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ,
                                 """Une localisation est liée à la ressource média, elle peut être décrite dans la ressource et donc être éventuellement fictive. Elle peut aussi représenter le lieu où la ressource a été créée (lieu de tournage).
 Une localisation est utilisée pour définir la couverture spatiale du reportage ou des lieux d'enregistrement comme par exemple : studios ou sur le terrain, associés aux EditorialObjects (ou à une partie des EditorialObjects)."""@fr ;
+            rdfs:comment "Note: a type of location shall be defined as a sub-class of Location."@en ,
+                         "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ;
             rdfs:label "Localisation"@fr ,
                        "Location"@en ,
-                       "Location"@fr ,
                        "Ort"@de .
 
 
