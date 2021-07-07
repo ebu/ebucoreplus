@@ -2999,8 +2999,7 @@ ec:resourceName rdf:type owl:DatatypeProperty ;
 ec:resourceOffset rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:EditorialObject ;
                   rdfs:range rdfs:Literal ;
-                  dcterms:description """To indicate the offset time at which the Editorial starts within a
-      related Resource."""@en ;
+                  dcterms:description "To indicate the offset time at which the Editorial starts within a related Resource. Useful where you describe regions of a timeline in a programme that  is instantiated by by one mediaObject."@en ;
                   rdfs:label "Resource offset"@en .
 
 
