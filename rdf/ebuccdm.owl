@@ -1093,6 +1093,13 @@ ec:hasMember rdf:type owl:ObjectProperty ;
              rdfs:label "Collection member"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPart
+ec:hasPart rdf:type owl:ObjectProperty ;
+           rdfs:domain ec:Asset ;
+           rdfs:range ec:Asset ;
+           skos:note "has part"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:PublicationPlan ;
@@ -1172,6 +1179,22 @@ ec:hasRole rdf:type owl:ObjectProperty ;
            skos:changeNote "*** Check if this can connect to skos:Consept"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasScene
+ec:hasScene rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf ec:hasPart ;
+            rdfs:domain ec:EditorialObject ;
+            rdfs:range ec:Scene ;
+            skos:note "has scene"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasShot
+ec:hasShot rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf ec:hasPart ;
+           rdfs:domain ec:Scene ;
+           rdfs:range ec:Shot ;
+           skos:note "has shot"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSource
 ec:hasSource rdf:type owl:ObjectProperty ;
              rdfs:domain ec:MediaResource ;
@@ -1188,6 +1211,15 @@ ec:hasStorageType rdf:type owl:ObjectProperty ;
                   dcterms:description """To define the type of storage associated with a locator from where a
       Resource can be accessed."""@en ;
                   rdfs:label "Storage type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTake
+ec:hasTake rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf ec:hasPart ;
+           rdfs:domain ec:EditorialObject ;
+           rdfs:range ec:Take ;
+           rdfs:comment "Often it will be the scene that has takes, but in adio music production, the word scene is not used, here the EO will have takes."@en ;
+           skos:note "has take"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrack
@@ -3851,6 +3883,15 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
                    "Rôle"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
+ec:Scene rdf:type owl:Class ;
+         rdfs:subClassOf ec:EditorialObject ;
+         owl:disjointWith ec:Shot ,
+                          ec:Take ;
+         dcterms:description "A sequence of continuous action"@en ;
+         rdfs:label "Scene"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
 ec:Service rdf:type owl:Class ;
            rdfs:subClassOf owl:Thing ;
@@ -3860,6 +3901,21 @@ ec:Service rdf:type owl:Class ;
            rdfs:label "Service"@de ,
                       "Service"@en ,
                       "Service"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
+ec:Shot rdf:type owl:Class ;
+        rdfs:subClassOf ec:EditorialObject ;
+        owl:disjointWith ec:Take ;
+        dcterms:description "A film sequence photographed continuously by one camera"@en ;
+        rdfs:label "Shot"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Take
+ec:Take rdf:type owl:Class ;
+        rdfs:subClassOf ec:EditorialObject ;
+        dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
+        rdfs:label "Take"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack
