@@ -3343,16 +3343,12 @@ Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungser
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Consumer
 ebuccdm:Consumer rdf:type owl:Class ;
                  rdfs:subClassOf ec:Person ;
-                 dcterms:description """An individual who consumes the Service using a ConsumptionDevice.
-      
- The Consumer can be associated to an Audience. His actions lead to data around the
-      ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service
-      via an Account containing information about that Concumer to a varying degree of detaill (e.g.
-      age, sex, matrimonial status, address). This is further defined in Consumption Licence when
-      applicable."""@en ,
+                 dcterms:description "An individual who consumes the Service using a ConsumptionDevice. The Consumer can be associated to an Audience. His actions lead to data around the ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service via an Account containing information about that Concumer to a varying degree of detaill (e.g. age, sex, matrimonial status, address). This is further defined in Consumption Licence when applicable."@en ,
                                      """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
-Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzungsereignissen und zu Resonanzereignissen. Ein Nutzer kann für einen Service registriert sein über ein Nutzerkonto, das den Nutzer in unterschiedlichem Detaillierungsgrad repräsentiert (z.B. Alter, Geschlecht, Adresse). Eine Nutzungslizenz definiert die genaueren Nutzungsbedingungen und -möglichkeiten."""@de ;
-                 rdfs:label "Consumer"@en ,
+Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzungsereignissen und zu Resonanzereignissen. Ein Nutzer kann für einen Service registriert sein über ein Nutzerkonto, das den Nutzer in unterschiedlichem Detaillierungsgrad repräsentiert (z.B. Alter, Geschlecht, Adresse). Eine Nutzungslizenz definiert die genaueren Nutzungsbedingungen und -möglichkeiten."""@de ,
+                                     "Un individu qui consomme le service en utilisant un ConsumptionDevice. Le Consommateur peut être associé à une Audience. Ses actions conduisent à des données autour des ConsumptionEvents et des ResonanceEvents associés. Un consommateur peut être enregistré auprès d'un service par le biais d'un compte contenant des informations plus ou moins détaillées sur ce consommateur (par exemple, âge, sexe, situation matrimoniale, adresse). Ces informations sont définies plus précisément dans la licence de consommation, le cas échéant."@fr ;
+                 rdfs:label "Consommateur"@fr ,
+                            "Consumer"@en ,
                             "Nutzer"@de .
 
 
@@ -3587,16 +3583,20 @@ Exemple : Le modèle CCDM permet l'association de droits à un EditorialObject c
 ec:AudioFormat rdf:type owl:Class ;
                rdfs:subClassOf ec:Format ;
                dcterms:description "Spezifiziert das Audioformat der Medienressource."@de ,
+                                   "Spécifie le format audio."@fr ,
                                    "To specify the format used for audio."@en ;
                rdfs:label "Audio format"@en ,
-                          "Audioformat"@de .
+                          "Audioformat"@de ,
+                          "Format audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact
 ec:Contact rdf:type owl:Class ;
            rdfs:subClassOf ec:Person ;
-           dcterms:description "A Contact e.g. for a Person or Organisation."@en ;
+           dcterms:description "A Contact e.g. for a Person or Organisation."@en ,
+                               "Un contact pour un personne ou une organisation"@fr ;
            rdfs:label "Contact"@en ,
+                      "Contact"@fr ,
                       "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
                       "Kontakt"@de .
 
@@ -3605,11 +3605,11 @@ ec:Contact rdf:type owl:Class ;
 ec:ContainerFormat rdf:type owl:Class ;
                    rdfs:subClassOf ec:Format ;
                    dcterms:description "Definiert das Format des Containers, z.B. imf oder MXF. Es hält Informationen über das Container- oder Verpackungsformat im Gegensatz zum Stream-Encoding Format des Kanals, z.B. mp3, Wave, Quicktime, ogg."@de ,
-                                       """To define the format of a container e.g. imf or MXF. It provides
-      information on the container / wrapper format in complement to the stream encoding information
-      provided in 'channel', (e.g. mp3, wave, Quicktime, ogg)."""@en ;
+                                       "Pour définir le format d'un conteneur, par exemple IMF ou MXF. Il fournit des informations sur le format du conteneur / wrapper en complément des informations sur l'encodage du flux fournies dans 'channel', (par exemple mp3, wave, Quicktime, ogg)."@fr ,
+                                       "To define the format of a container e.g. imf or MXF. It provides information on the container / wrapper format in complement to the stream encoding information provided in 'channel', (e.g. mp3, wave, Quicktime, ogg)."@en ;
                    rdfs:label "Container format"@en ,
-                              "Containerformat"@de .
+                              "Containerformat"@de ,
+                              "Format du conteneur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Crew
@@ -3627,9 +3627,11 @@ ec:Crew rdf:type owl:Class ;
 ec:DataFormat rdf:type owl:Class ;
               rdfs:subClassOf ec:Format ;
               dcterms:description "Spezifiziert das verwendete Datenformat der Medienressource."@de ,
+                                  "Spécifie le format utilisé pour les data"@fr ,
                                   "To specify the format used for data."@en ;
               rdfs:label "Data format"@en ,
-                         "Datenformat"@de .
+                         "Datenformat"@de ,
+                         "Format des data"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
@@ -3741,11 +3743,10 @@ Une localisation est utilisée pour définir la couverture spatiale du reportage
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ;
-                 dcterms:description """An audiovisual MediaResource, which can be composed of one or more
-      Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be
-      realised in Essences in one or more Formats for different delivery medias or
-      platforms."""@en ,
-                                     "Eine audiovisuelle Medienressource, die aus einer oder mehreren Spuren bestehen kann. Die Medienressource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ;
+                 dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
+                                     "Eine audiovisuelle Medienressource, die aus einer oder mehreren Spuren bestehen kann. Die Medienressource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ,
+                                     "Une MediaResource audiovisuelle, qui peut être composée d'une ou plusieurs Pistes. Une ressource multimédia, MediaResource est définie par un objet éditorial EditorialObject, (domaine éditorial), qui peut être réalisé dans des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ;
+                 rdfs:comment "Ressource médiatique" ;
                  rdfs:label "Media resource"@en ,
                             "Medienressource"@de .
 
@@ -3776,9 +3777,11 @@ ec:Person rdf:type owl:Class ;
 ec:PhysicalResource rdf:type owl:Class ;
                     rdfs:subClassOf ec:Resource ;
                     dcterms:description "Beschreibt eine physische Ressource, z.B. ein Tonband."@de ,
+                                        "Pour décrire une ressource physique, par exemple une bande."@fr ,
                                         "To describe a physical resource e.g. a tape."@en ;
                     rdfs:label "Physical resource"@en ,
-                               "Physische Ressource"@de .
+                               "Physische Ressource"@de ,
+                               "Ressource physique"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
