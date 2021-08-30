@@ -1097,7 +1097,7 @@ ec:hasMember rdf:type owl:ObjectProperty ;
 ec:hasPart rdf:type owl:ObjectProperty ;
            rdfs:domain ec:Asset ;
            rdfs:range ec:Asset ;
-           skos:note "has part"@en .
+           rdfs:label "has part"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationEvent
@@ -1184,7 +1184,7 @@ ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
             rdfs:domain ec:EditorialObject ;
             rdfs:range ec:Scene ;
-            skos:note "has scene"@en .
+            rdfs:label "has scene"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasShot
@@ -1192,7 +1192,7 @@ ec:hasShot rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf ec:hasPart ;
            rdfs:domain ec:Scene ;
            rdfs:range ec:Shot ;
-           skos:note "has shot"@en .
+           rdfs:label "has shot"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSource
@@ -1215,11 +1215,11 @@ ec:hasStorageType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTake
 ec:hasTake rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf ec:hasPart ;
            rdfs:domain ec:EditorialObject ;
            rdfs:range ec:Take ;
+           dcterms:description "A particular version of a shot or a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
            rdfs:comment "Often it will be the scene that has takes, but in adio music production, the word scene is not used, here the EO will have takes."@en ;
-           skos:note "has take"@en .
+           rdfs:label "has take"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrack
