@@ -50,12 +50,6 @@ cc:licence rdf:type owl:AnnotationProperty ;
            skos:prefLabel "Creative Commons licence" .
 
 
-###  http://purl.org/dc/elements/1.1/contributor
-dc:contributor rdf:type owl:AnnotationProperty ;
-               rdfs:label "Contributor" ;
-               skos:prefLabel "Contributor" .
-
-
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty ;
                            rdfs:label "preferred namespace" ;
