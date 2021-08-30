@@ -17,6 +17,7 @@
 <http://www.ebu.ch/metadata/ontologies/ebuccdm> rdf:type owl:Ontology ;
                                                  owl:imports <http://www.w3.org/2004/02/skos/core> ;
                                                  cc:licence "http://creativecommons.org/licenses/by-sa/3.0/" ;
+
                                                  dcterms:contributor "Alexandre Rouxel, EBU"@fr-ch ,
                                                                      "Are Tverberg, TV2"@no ,
                                                                      "Dalia R. Levine, HBO"@en-us ,
@@ -26,6 +27,7 @@
                                                                      "Masoud Aminipour, not affiliated" ,
                                                                      "Tormod Værvågen, independant consultant"@no ;
                                                  vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebuccdm#" ;
+
                                                  owl:priorVersion <https://www.ebu.ch/metadata/ontologies/ebuccdm/20182011/ebuccdm.rdf> ;
                                                  owl:versionInfo """Alignment of CCDM wit EBUCore (some EO properties moved up to the
       Asset level)."""@en ,
@@ -37,7 +39,10 @@
       properties."""@en ,
                                                                  """Remove formatName and use skos:prefLabel and
       skos:definition."""@en ,
+
+
                                                                  "Version EBU CCDM 2.2.1a"@en ;
+
                                                  vs:term_status "stable"@en .
 
 #################################################################
@@ -1093,6 +1098,7 @@ ec:hasMember rdf:type owl:ObjectProperty ;
              rdfs:label "Collection member"@en .
 
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPart
 ec:hasPart rdf:type owl:ObjectProperty ;
            rdfs:domain ec:Asset ;
@@ -1179,6 +1185,7 @@ ec:hasRole rdf:type owl:ObjectProperty ;
            skos:changeNote "*** Check if this can connect to skos:Consept"@en .
 
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasScene
 ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
@@ -1213,6 +1220,7 @@ ec:hasStorageType rdf:type owl:ObjectProperty ;
                   rdfs:label "Storage type"@en .
 
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTake
 ec:hasTake rdf:type owl:ObjectProperty ;
            rdfs:domain ec:EditorialObject ;
@@ -1220,6 +1228,7 @@ ec:hasTake rdf:type owl:ObjectProperty ;
            dcterms:description "A particular version of a shot or a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
            rdfs:comment "Often it will be the scene that has takes, but in adio music production, the word scene is not used, here the EO will have takes."@en ;
            rdfs:label "has take"@en .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrack
@@ -3031,7 +3040,8 @@ ec:resourceName rdf:type owl:DatatypeProperty ;
 ec:resourceOffset rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:EditorialObject ;
                   rdfs:range rdfs:Literal ;
-                  dcterms:description "To indicate the offset time at which the Editorial starts within a related Resource. Useful where you describe regions of a timeline in a programme that  is instantiated by by one mediaObject."@en ;
+                  dcterms:description """To indicate the offset time at which the Editorial starts within a
+      related Resource."""@en ;
                   rdfs:label "Resource offset"@en .
 
 
@@ -3330,11 +3340,13 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
                  dcterms:description """A group of Consumers or an aggregation of groups of Consumers
       clustered e.g. by class of age , social categories or else."""@en ,
-                                     "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ,
-                                     "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr ;
+
+                                     "Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä."@de ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
-                            "Publikum"@de .
+                            "Publikum"@de ,
+                            "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
@@ -3374,16 +3386,14 @@ Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungser
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Consumer
 ebuccdm:Consumer rdf:type owl:Class ;
                  rdfs:subClassOf ec:Person ;
-                 dcterms:description """An individual who consumes the Service using a ConsumptionDevice.
-      
- The Consumer can be associated to an Audience. His actions lead to data around the
-      ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service
-      via an Account containing information about that Concumer to a varying degree of detaill (e.g.
-      age, sex, matrimonial status, address). This is further defined in Consumption Licence when
-      applicable."""@en ,
+
+                 dcterms:description "An individual who consumes the Service using a ConsumptionDevice. The Consumer can be associated to an Audience. His actions lead to data around the ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service via an Account containing information about that Concumer to a varying degree of detaill (e.g. age, sex, matrimonial status, address). This is further defined in Consumption Licence when applicable."@en ,
                                      """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
-Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzungsereignissen und zu Resonanzereignissen. Ein Nutzer kann für einen Service registriert sein über ein Nutzerkonto, das den Nutzer in unterschiedlichem Detaillierungsgrad repräsentiert (z.B. Alter, Geschlecht, Adresse). Eine Nutzungslizenz definiert die genaueren Nutzungsbedingungen und -möglichkeiten."""@de ;
-                 rdfs:label "Consumer"@en ,
+Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzungsereignissen und zu Resonanzereignissen. Ein Nutzer kann für einen Service registriert sein über ein Nutzerkonto, das den Nutzer in unterschiedlichem Detaillierungsgrad repräsentiert (z.B. Alter, Geschlecht, Adresse). Eine Nutzungslizenz definiert die genaueren Nutzungsbedingungen und -möglichkeiten."""@de ,
+                                     "Un individu qui consomme le service en utilisant un ConsumptionDevice. Le Consommateur peut être associé à une Audience. Ses actions conduisent à des données autour des ConsumptionEvents et des ResonanceEvents associés. Un consommateur peut être enregistré auprès d'un service par le biais d'un compte contenant des informations plus ou moins détaillées sur ce consommateur (par exemple, âge, sexe, situation matrimoniale, adresse). Ces informations sont définies plus précisément dans la licence de consommation, le cas échéant."@fr ;
+                 rdfs:label "Consommateur"@fr ,
+                            "Consumer"@en ,
+
                             "Nutzer"@de .
 
 
@@ -3618,16 +3628,24 @@ Exemple : Le modèle CCDM permet l'association de droits à un EditorialObject c
 ec:AudioFormat rdf:type owl:Class ;
                rdfs:subClassOf ec:Format ;
                dcterms:description "Spezifiziert das Audioformat der Medienressource."@de ,
+
+                                   "Spécifie le format audio."@fr ,
                                    "To specify the format used for audio."@en ;
                rdfs:label "Audio format"@en ,
-                          "Audioformat"@de .
+                          "Audioformat"@de ,
+                          "Format audio"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact
 ec:Contact rdf:type owl:Class ;
            rdfs:subClassOf ec:Person ;
-           dcterms:description "A Contact e.g. for a Person or Organisation."@en ;
+
+           dcterms:description "A Contact e.g. for a Person or Organisation."@en ,
+                               "Un contact pour un personne ou une organisation"@fr ;
            rdfs:label "Contact"@en ,
+                      "Contact"@fr ,
+
                       "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
                       "Kontakt"@de .
 
@@ -3636,11 +3654,13 @@ ec:Contact rdf:type owl:Class ;
 ec:ContainerFormat rdf:type owl:Class ;
                    rdfs:subClassOf ec:Format ;
                    dcterms:description "Definiert das Format des Containers, z.B. imf oder MXF. Es hält Informationen über das Container- oder Verpackungsformat im Gegensatz zum Stream-Encoding Format des Kanals, z.B. mp3, Wave, Quicktime, ogg."@de ,
-                                       """To define the format of a container e.g. imf or MXF. It provides
-      information on the container / wrapper format in complement to the stream encoding information
-      provided in 'channel', (e.g. mp3, wave, Quicktime, ogg)."""@en ;
+
+                                       "Pour définir le format d'un conteneur, par exemple IMF ou MXF. Il fournit des informations sur le format du conteneur / wrapper en complément des informations sur l'encodage du flux fournies dans 'channel', (par exemple mp3, wave, Quicktime, ogg)."@fr ,
+                                       "To define the format of a container e.g. imf or MXF. It provides information on the container / wrapper format in complement to the stream encoding information provided in 'channel', (e.g. mp3, wave, Quicktime, ogg)."@en ;
                    rdfs:label "Container format"@en ,
-                              "Containerformat"@de .
+                              "Containerformat"@de ,
+                              "Format du conteneur"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Crew
@@ -3658,9 +3678,13 @@ ec:Crew rdf:type owl:Class ;
 ec:DataFormat rdf:type owl:Class ;
               rdfs:subClassOf ec:Format ;
               dcterms:description "Spezifiziert das verwendete Datenformat der Medienressource."@de ,
+
+                                  "Spécifie le format utilisé pour les data"@fr ,
                                   "To specify the format used for data."@en ;
               rdfs:label "Data format"@en ,
-                         "Datenformat"@de .
+                         "Datenformat"@de ,
+                         "Format des data"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
@@ -3717,11 +3741,19 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence
 ec:Essence rdf:type owl:Class ;
            rdfs:subClassOf ec:MediaResource ;
-           dcterms:description """Die echte physische Repräsentation einer oder mehrerer Medienressourcen, die zur Nutzung bearbeitet wurde.  
+
+           dcterms:description "C'est une ressource multimédia, MediaResource,qui peut être composée d'une ou plusieurs Pistes, Tracks. Une ressource multimédia est définie par un objet éditorial d'un domaine éditorial, EditorialObject (Editorial Domain). Cet EditorialObject peut être matérialisé par des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ,
+                               """Die echte physische Repräsentation einer oder mehrerer Medienressourcen, die zur Nutzung bearbeitet wurde.  
 Die Essenz ist eine physische Repräsentation einer Medienressource in einem spezillen Format für die Ausspielung oder Publikation. Essenz ist eine Sub-Klasse von Medienressource und erbt deren Eigenschaften. Essenzen treten auf in Form einfacher Dateien oder komplexer Pakete, z.B. wie es von verschiedenen Kameras verschiedener Hersteller geliefert wird."""@de ,
-                               """The actual physical representation of one or more MediaResource edited for consumption. The «Essence» is a physical representation of a MediaResource in aparticular Format destined for play-out or publishing.
-\"Essence is a subclass of a MediaResource and inherits the MediaResource properties. «Essence» can be available in a form of a simple file or complex packages (e.g. as delivered by cameras of different brands)"""@en ;
-           rdfs:label "Essence"@en ,
+                               """The actual physical representation of one or more MediaResource
+      edited for consumption. The â€œEssenceâ€� is a physical representation of a MediaResource in a
+      particular Format destined for play-out or publishing. \"Essence is a subclass of a
+      MediaResource and inherits the MediaResource properties. â€œEssenceâ€� can be available in a
+      form of a simple file or complex packages (e.g. as delivered by cameras of different
+      brands)."""@en ;
+           rdfs:label "Essence" ,
+                      "Essence"@en ,
+
                       "Essenz"@de .
 
 
@@ -3729,10 +3761,12 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf owl:Thing ;
          dcterms:description "An Event related to a Resource, e.g. as depicted in the Resource (real or fictional), etc."@en ,
-                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ,
-                             "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ;
+
+                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ;
          rdfs:label "Ereignis"@de ,
                     "Event"@en ,
+                    "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ,
+
                     "Événement"@fr .
 
 
@@ -3753,23 +3787,27 @@ ec:Location rdf:type owl:Class ;
             dcterms:description "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc. A «Location» is used to define the spatial coverage of the story or recording locations like studios or in the field, associated with the EditorialObjects (or Part of EditorialObjects)."@en ,
                                 """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
 Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in einem Medieninhalt, wie z.b. im Studio, Außenaufnahme."""@de ,
+
+                                "Note: a type of location shall be defined as a sub-class of Location."@en ,
+                                "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ,
                                 """Une localisation est liée à la ressource média, elle peut être décrite dans la ressource et donc être éventuellement fictive. Elle peut aussi représenter le lieu où la ressource a été créée (lieu de tournage).
 Une localisation est utilisée pour définir la couverture spatiale du reportage ou des lieux d'enregistrement comme par exemple : studios ou sur le terrain, associés aux EditorialObjects (ou à une partie des EditorialObjects)."""@fr ;
-            rdfs:comment "Note: a type of location shall be defined as a sub-class of Location."@en ,
-                         "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ;
             rdfs:label "Localisation"@fr ,
                        "Location"@en ,
+                       "Location"@fr ,
+
                        "Ort"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ;
-                 dcterms:description """An audiovisual MediaResource, which can be composed of one or more
-      Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be
-      realised in Essences in one or more Formats for different delivery medias or
-      platforms."""@en ,
-                                     "Eine audiovisuelle Medienressource, die aus einer oder mehreren Spuren bestehen kann. Die Medienressource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ;
+
+                 dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
+                                     "Eine audiovisuelle Medienressource, die aus einer oder mehreren Spuren bestehen kann. Die Medienressource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ,
+                                     "Une MediaResource audiovisuelle, qui peut être composée d'une ou plusieurs Pistes. Une ressource multimédia, MediaResource est définie par un objet éditorial EditorialObject, (domaine éditorial), qui peut être réalisé dans des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ;
+                 rdfs:comment "Ressource médiatique" ;
+
                  rdfs:label "Media resource"@en ,
                             "Medienressource"@de .
 
@@ -3800,9 +3838,13 @@ ec:Person rdf:type owl:Class ;
 ec:PhysicalResource rdf:type owl:Class ;
                     rdfs:subClassOf ec:Resource ;
                     dcterms:description "Beschreibt eine physische Ressource, z.B. ein Tonband."@de ,
+
+                                        "Pour décrire une ressource physique, par exemple une bande."@fr ,
                                         "To describe a physical resource e.g. a tape."@en ;
                     rdfs:label "Physical resource"@en ,
-                               "Physische Ressource"@de .
+                               "Physische Ressource"@de ,
+                               "Ressource physique"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
@@ -3883,6 +3925,7 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
                    "Rôle"@fr .
 
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
 ec:Scene rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialObject ;
@@ -3890,6 +3933,7 @@ ec:Scene rdf:type owl:Class ;
                           ec:Take ;
          dcterms:description "A sequence of continuous action"@en ;
          rdfs:label "Scene"@en .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
@@ -3901,6 +3945,7 @@ ec:Service rdf:type owl:Class ;
            rdfs:label "Service"@de ,
                       "Service"@en ,
                       "Service"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
@@ -3918,6 +3963,7 @@ ec:Take rdf:type owl:Class ;
         rdfs:label "Take"@en .
 
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack
 ec:TimelineTrack rdf:type owl:Class ;
                  rdfs:subClassOf owl:Thing ;
@@ -3932,10 +3978,14 @@ ec:TimelineTrack rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track
 ec:Track rdf:type owl:Class ;
          rdfs:subClassOf ec:MediaResource ;
-         dcterms:description """E.g. audio, video, timcode and/or data Tracks forming the
+
+         dcterms:description "Cela peut être une piste audio ou  video ou timecode ou data provenant de la resource médiatique, MediaResource."@fr ,
+                             """E.g. audio, video, timcode and/or data Tracks forming the
       MediaResource."""@en ,
                              "z.B. Audio-, Video-, Timecode- und/oder Datenspuren bilden eine Medienressource."@de ;
-         rdfs:label "Spur"@de ,
+         rdfs:label "Piste"@fr ,
+                    "Spur"@de ,
+
                     "Track"@en .
 
 
