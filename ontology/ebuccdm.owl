@@ -20,7 +20,6 @@
                                                  dcterms:contributor "Alexandre Rouxel, EBU"@fr-ch ,
                                                                      "Are Tverberg, TV2"@no ,
                                                                      "Dalia R. Levine, HBO"@en-us ,
-                                                                     "Jean-Pierre Evain, EBU"@fr-ch ,
                                                                      "Jürgen Grupp, SWR"@de ,
                                                                      "Kim Viljanen, YLE"@fi ,
                                                                      "Masoud Aminipour, not affiliated" ,
@@ -629,8 +628,7 @@ ebuccdm:hasSubJob rdf:type owl:ObjectProperty ;
 ebuccdm:hasUsageContract rdf:type owl:ObjectProperty ;
                          rdfs:domain ebuccdm:ProductionDevice ;
                          rdfs:range ebuccdm:Contract ;
-                         dcterms:description """The contractual terms under which a ProductionDevice shall be
-      used."""@en ;
+                         dcterms:description "The contractual terms under which a ProductionDevice shall be used."@en ;
                          rdfs:label "Usage contract"@en .
 
 
@@ -812,6 +810,14 @@ ebuccdm:productionOrderType rdf:type owl:ObjectProperty ;
                             rdfs:range skos:Concept ;
                             dcterms:description "The type of production order."@en ;
                             rdfs:label "Production order type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#provenance
+ebuccdm:provenance rdf:type owl:ObjectProperty ;
+                   rdfs:domain owl:Thing ;
+                   rdfs:range ec:Agent ;
+                   dcterms:description "The person or company that is providing the metadata."@en ;
+                   rdfs:label "Provenance"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#referencesRule
