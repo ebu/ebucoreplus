@@ -37,7 +37,7 @@
       properties."""@en ,
                                                                  """Remove formatName and use skos:prefLabel and
       skos:definition."""@en ,
-                                                                 "Version EBU CCDM 2.2.1a"@en ;
+                                                                 "Version EBU CCDM 2.2.1a1"@en ;
                                                  vs:term_status "stable"@en .
 
 #################################################################
@@ -812,6 +812,14 @@ ebuccdm:productionOrderType rdf:type owl:ObjectProperty ;
                             rdfs:range skos:Concept ;
                             dcterms:description "The type of production order."@en ;
                             rdfs:label "Production order type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#provenance
+ebuccdm:provenance rdf:type owl:ObjectProperty ;
+                   rdfs:domain owl:Thing ;
+                   rdfs:range ec:Agent ;
+                   dcterms:description "The person or company that is providing the metadata."@en ;
+                   rdfs:label "Provenance"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#referencesRule
