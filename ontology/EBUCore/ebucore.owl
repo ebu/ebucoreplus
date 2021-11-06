@@ -12,6 +12,7 @@
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bbcconsepts: <http://www.bbc.co.uk/ontologies/coreconcepts/> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> rdf:type owl:Ontology ;
@@ -81,8 +82,8 @@
                                                                          "Change identifier into hasIdentifier."@en ,
                                                                          "Changed subclasses to dc: with owl:equivalentClass or owl:equivalentProperty."@en ,
                                                                          "Correct misstyped owl:Classes into rdfs:Classes."@en ,
-                                                                         "Correct property actionType into hasActionType of rnage string or ActionType subclass of Concept."@en ,
                                                                          "Correct target of end and start as MediaResource."@en ,
+                                                                         "Corrected property actionType into hasActionType of rnage string or ActionType subclass of Concept."@en ,
                                                                          "Create property Asset / hasCopyright with range string or Copyright. Same correction for all Rights subclasses e.g. AccessConditions"@en ,
                                                                          "Delete formatName and use skos:prefLabel and skos:definition."@en ,
                                                                          "Delete hasAssociatedRights has already covered by isCoveredBy."@en ,
@@ -152,10 +153,10 @@ spin:imports rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/primaryTopic
-<http://www.bbc.co.uk/ontologies/coreconcepts/primaryTopic> rdf:type owl:AnnotationProperty ;
-                                                            dcterms:description "The main subject of interest."@en ;
-                                                            rdfs:label "Primary topic"@en ;
-                                                            rdfs:domain ec:Asset .
+bbcconsepts:primaryTopic rdf:type owl:AnnotationProperty ;
+                         dcterms:description "The main subject of interest."@en ;
+                         rdfs:label "Primary topic"@en ;
+                         rdfs:domain ec:Asset .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#groupId
@@ -254,12 +255,6 @@ xsd:time rdf:type rdfs:Datatype .
 ec:actionId rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Action ;
             rdfs:range ec:Identifier .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionType
-ec:actionType rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Action ;
-              rdfs:range ec:Action_Type .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentId
@@ -492,6 +487,13 @@ ec:hasActionRelatedScene rdf:type owl:ObjectProperty ;
                          dcterms:description "Range: string or Scene."@en ,
                                              "To associate an Action with a Scene."@en ;
                          rdfs:label "Action related scene"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionType
+ec:hasActionType rdf:type owl:ObjectProperty ;
+                 rdfs:domain ec:Action ;
+                 rdfs:range ec:Action_Type ;
+                 rdfs:label "action type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAffiliation
@@ -2634,9 +2636,8 @@ dc:date rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/dc/elements/1.1/description
 dc:description rdf:type owl:DatatypeProperty ;
-               owl:equivalentProperty ec:description ;
                rdfs:domain ec:Asset ;
-               rdfs:range xsd:string ;
+               rdfs:range rdfs:Literal ;
                dcterms:description "A description of an Asset."@en ;
                rdfs:label "Description"@en .
 
@@ -2652,7 +2653,7 @@ dc:rights rdf:type owl:DatatypeProperty ;
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:DatatypeProperty ;
           rdfs:domain ec:MediaResource ;
-          rdfs:range xsd:string ;
+          rdfs:range rdfs:Literal ;
           dcterms:description "To identify a Resource as the source of another Resource."@en ;
           rdfs:label "Source"@en .
 
@@ -2661,7 +2662,7 @@ dc:source rdf:type owl:DatatypeProperty ;
 dc:subject rdf:type owl:DatatypeProperty ;
            owl:equivalentProperty ec:hasSubject ;
            rdfs:domain ec:BusinessObject ;
-           rdfs:range xsd:string ;
+           rdfs:range rdfs:Literal ;
            dcterms:description """To associate a Subject or topic addressed by a
             BusinessObject / Resource."""@en ;
            rdfs:label "Subject"@en .
@@ -2672,7 +2673,7 @@ dc:title rdf:type owl:DatatypeProperty ;
          owl:equivalentProperty ec:mainTitle ,
                                 ec:title ;
          rdfs:domain ec:Asset ;
-         rdfs:range xsd:string ;
+         rdfs:range rdfs:Literal ;
          dcterms:description "The title by which a BusinessObject is known."@en ;
          rdfs:label "Title"@en .
 
@@ -2681,7 +2682,7 @@ dc:title rdf:type owl:DatatypeProperty ;
 dc:type rdf:type owl:DatatypeProperty ;
         owl:equivalentProperty ec:hasType ;
         rdfs:domain ec:Asset ;
-        rdfs:range xsd:string ;
+        rdfs:range rdfs:Literal ;
         dcterms:description "A concept associated with an Asset."@en ;
         rdfs:label "Type"@en .
 
@@ -2689,53 +2690,53 @@ dc:type rdf:type owl:DatatypeProperty ;
 ###  http://purl.org/dc/terms/alternative
 dcterms:alternative rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Asset ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     dcterms:description "An alternative to the title."@en ;
                     rdfs:label "Alternative title"@en .
 
 
 ###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string ;
+              rdfs:range rdfs:Literal ;
               dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ;
               rdfs:label "Title"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth
-<http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth> rdf:type owl:DatatypeProperty ;
-                                                           owl:equivalentProperty ec:dateOfBirth ;
-                                                           rdfs:domain ec:Contact ;
-                                                           rdfs:range xsd:date ;
-                                                           dcterms:description "The date when a Contact/Person is born."@en ;
-                                                           rdfs:label "Date of birth"@en .
+bbcconsepts:dateOfBirth rdf:type owl:DatatypeProperty ;
+                        owl:equivalentProperty ec:dateOfBirth ;
+                        rdfs:domain ec:Contact ;
+                        rdfs:range xsd:date ;
+                        dcterms:description "The date when a Contact/Person is born."@en ;
+                        rdfs:label "Date of birth"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfDeath
-<http://www.bbc.co.uk/ontologies/coreconcepts/dateOfDeath> rdf:type owl:DatatypeProperty ;
-                                                           owl:equivalentProperty ec:dateOfDeath ;
-                                                           rdfs:domain ec:Contact ;
-                                                           rdfs:range xsd:date ;
-                                                           dcterms:description "To provide the date of death."@en ;
-                                                           rdfs:label "Date of death."@en .
+bbcconsepts:dateOfDeath rdf:type owl:DatatypeProperty ;
+                        owl:equivalentProperty ec:dateOfDeath ;
+                        rdfs:domain ec:Contact ;
+                        rdfs:range xsd:date ;
+                        dcterms:description "To provide the date of death."@en ;
+                        rdfs:label "Date of death."@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/gender
-<http://www.bbc.co.uk/ontologies/coreconcepts/gender> rdf:type owl:DatatypeProperty ;
-                                                      owl:equivalentProperty ec:gender ;
-                                                      rdfs:domain ec:Contact ;
-                                                      rdfs:range xsd:string ;
-                                                      dcterms:description "The gender of a person e.g. male or female."@en ;
-                                                      rdfs:label "Gender"@en .
+bbcconsepts:gender rdf:type owl:DatatypeProperty ;
+                   owl:equivalentProperty ec:gender ;
+                   rdfs:domain ec:Contact ;
+                   rdfs:range xsd:string ;
+                   dcterms:description "The gender of a person e.g. male or female."@en ;
+                   rdfs:label "Gender"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/placeOfBirth
-<http://www.bbc.co.uk/ontologies/coreconcepts/placeOfBirth> rdf:type owl:DatatypeProperty ;
-                                                            owl:equivalentProperty ec:hasCountryOfBirth ,
-                                                                                   ec:hasCountryOfDeath ;
-                                                            rdfs:domain ec:Contact ;
-                                                            rdfs:range xsd:string ;
-                                                            dcterms:description "The place where a person is born."@en ;
-                                                            rdfs:label "Place of birth"@en .
+bbcconsepts:placeOfBirth rdf:type owl:DatatypeProperty ;
+                         owl:equivalentProperty ec:hasCountryOfBirth ,
+                                                ec:hasCountryOfDeath ;
+                         rdfs:domain ec:Contact ;
+                         rdfs:range xsd:string ;
+                         dcterms:description "The place where a person is born."@en ;
+                         rdfs:label "Place of birth"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DID
@@ -2762,7 +2763,7 @@ ec:SDID rdf:type owl:DatatypeProperty ;
 ec:abrigedTitle rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf ec:alternativeTitle ;
                 rdfs:domain ec:Asset ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "An abridged title."@en ;
                 rdfs:label "Abridged title"@en .
 
@@ -2771,7 +2772,7 @@ ec:abrigedTitle rdf:type owl:DatatypeProperty ;
 ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf ec:description ;
             rdfs:domain ec:Asset ;
-            rdfs:range xsd:string ;
+            rdfs:range rdfs:Literal ;
             dcterms:description "To provide an abstract."@en ;
             rdfs:label "Abstract"@en .
 
@@ -2779,21 +2780,20 @@ ec:abstract rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionDescription
 ec:actionDescription rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Action ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      dcterms:description "The description of an Action."@en ;
                      rdfs:label "Action description"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionId
 ec:actionId rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:anyURI ,
-                       xsd:string .
+            rdfs:range rdfs:Literal .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionName
 ec:actionName rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Action ;
-              rdfs:range xsd:string ;
+              rdfs:range rdfs:Literal ;
               dcterms:description "The name of an Action."@en ;
               rdfs:label "Action name"@en .
 
@@ -2801,7 +2801,7 @@ ec:actionName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestamp
 ec:actionTimestamp rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Action ;
-                   rdfs:range xsd:string ;
+                   rdfs:range rdfs:Literal ;
                    dcterms:description "The time when the Action occurs."@en ;
                    rdfs:label "Action timestamp"@en .
 
@@ -2828,7 +2828,7 @@ ec:actionTimestampNormalPlayTime rdf:type owl:DatatypeProperty ;
 ec:actionTimestampTimecode rdf:type owl:DatatypeProperty ;
                            rdfs:subPropertyOf ec:actionTimestamp ;
                            rdfs:domain ec:Action ;
-                           rdfs:range xsd:string ;
+                           rdfs:range rdfs:Literal ;
                            dcterms:description "The timecode at which the Action occurs."@en ;
                            rdfs:label "Action timecode"@en .
 
@@ -2837,15 +2837,9 @@ ec:actionTimestampTimecode rdf:type owl:DatatypeProperty ;
 ec:actionTimestampTimecodeDropFrame rdf:type owl:DatatypeProperty ;
                                     rdfs:subPropertyOf ec:actionTimestamp ;
                                     rdfs:domain ec:Action ;
-                                    rdfs:range xsd:string ;
+                                    rdfs:range rdfs:Literal ;
                                     dcterms:description "The timecode (dropframe) at which the Action occurs."@en ;
                                     rdfs:label "Action timecode (dropframe)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionType
-ec:actionType rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityEndDate
@@ -3101,7 +3095,7 @@ ec:agentWikipedia rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitle
 ec:alternativeTitle rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Asset ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     dcterms:description "To provide an alternative title."@en ;
                     rdfs:label "Alternative title."@en .
 
@@ -3908,11 +3902,12 @@ ec:datelicensed rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description
 ec:description rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Asset ;
-               rdfs:range xsd:string ;
+               rdfs:range rdfs:Literal ;
                dcterms:description """This can be specialised by using sub-properties
             like defined in http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm
             implemented as examples as e.g. 'summary' or
             'script'."""@en ;
+               rdfs:isDefinedBy <dc:description> ;
                rdfs:label "Description"@en .
 
 
@@ -6993,7 +6988,7 @@ ec:startTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ec:subtitle rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf ec:alternativeTitle ;
             rdfs:domain ec:Asset ;
-            rdfs:range xsd:string ;
+            rdfs:range rdfs:Literal ;
             dcterms:description "A complementary subtitle."@en ;
             rdfs:label "Subtitle"@en .
 
@@ -7244,7 +7239,7 @@ ec:timelineTrackDurationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title
 ec:title rdf:type owl:DatatypeProperty ;
          rdfs:domain ec:Asset ;
-         rdfs:range xsd:string ;
+         rdfs:range rdfs:Literal ;
          dcterms:description """All value of the EBU title status
             classification scheme
             (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) are candidates
@@ -7307,7 +7302,7 @@ ec:translationTitle rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf ec:alternativeTitle ;
                     rdfs:domain ec:EditorialObject ,
                                 ec:MediaResource ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     dcterms:description "A translated version of the title."@en ;
                     rdfs:label "Translation title"@en .
 
@@ -7333,7 +7328,7 @@ ec:version rdf:type owl:DatatypeProperty ;
 ec:versionTitle rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf ec:alternativeTitle ;
                 rdfs:domain ec:Asset ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "An alternative title specific to a verison of content."@en ;
                 rdfs:label "Version title"@en .
 
@@ -7416,15 +7411,19 @@ ec:wordCount rdf:type owl:DatatypeProperty ;
 ec:workingTitle rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf ec:alternativeTitle ;
                 rdfs:domain ec:Asset ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "A title used while content is not complete."@en ;
                 rdfs:label "Working title"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+skos:notation rdfs:range rdfs:Literal .
 
 
 ###  http://xmlns.com/foaf/0.1/name
 <http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty ;
                                  rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
-                                 rdfs:range xsd:string ;
+                                 rdfs:range rdfs:Literal ;
                                  dcterms:description "To name an Agent."@en ;
                                  rdfs:label "Name"@en .
 
@@ -7436,49 +7435,44 @@ ec:workingTitle rdf:type owl:DatatypeProperty ;
 ###  http://purl.org/dc/elements/1.1/Agent
 dc:Agent rdf:type owl:Class ;
          owl:equivalentClass ec:Agent ;
-         rdfs:subClassOf owl:Thing ;
          dcterms:description "A resource that acts or has the power to act."@en ;
          rdfs:label "Agent"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Event
-<http://www.bbc.co.uk/ontologies/coreconcepts/Event> rdf:type owl:Class ;
-                                                     owl:equivalentClass ec:Event ;
-                                                     rdfs:subClassOf owl:Thing ;
-                                                     dcterms:description "Music events, historic events, sports events, politics events, e.t.c."@en ;
-                                                     rdfs:label "Event"@en .
+bbcconsepts:Event rdf:type owl:Class ;
+                  owl:equivalentClass ec:Event ;
+                  dcterms:description "Music events, historic events, sports events, politics events, e.t.c."@en ;
+                  rdfs:label "Event"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Organisation
-<http://www.bbc.co.uk/ontologies/coreconcepts/Organisation> rdf:type owl:Class ;
-                                                            owl:equivalentClass ec:Organisation ;
-                                                            rdfs:subClassOf owl:Thing ;
-                                                            dcterms:description "E.g., Businesses."@en ;
-                                                            rdfs:label "Organisation"@en .
+bbcconsepts:Organisation rdf:type owl:Class ;
+                         owl:equivalentClass ec:Organisation ;
+                         dcterms:description "E.g., Businesses."@en ;
+                         rdfs:label "Organisation"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Person
-<http://www.bbc.co.uk/ontologies/coreconcepts/Person> rdf:type owl:Class ;
-                                                      owl:equivalentClass ec:Person ;
-                                                      rdfs:subClassOf owl:Thing ;
-                                                      dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
-                                                      rdfs:label "Person"@en .
+bbcconsepts:Person rdf:type owl:Class ;
+                   owl:equivalentClass ec:Person ;
+                   dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
+                   rdfs:label "Person"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Place
-<http://www.bbc.co.uk/ontologies/coreconcepts/Place> rdf:type owl:Class ;
-                                                     owl:equivalentClass ec:Location ;
-                                                     rdfs:subClassOf owl:Thing ;
-                                                     dcterms:description "Another type of location."@en ;
-                                                     rdfs:label "Place"@en .
+bbcconsepts:Place rdf:type owl:Class ;
+                  owl:equivalentClass ec:Location ;
+                  dcterms:description "Another type of location."@en ;
+                  rdfs:label "Place"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Theme
-<http://www.bbc.co.uk/ontologies/coreconcepts/Theme> rdf:type owl:Class ;
-                                                     owl:equivalentClass ec:Keyword ;
-                                                     rdfs:subClassOf rdfs:Resource ;
-                                                     dcterms:description "This concept is used to represent intangible things or abstract concepts. For example, Financial Crisis, Midwifery, Happiness."@en ;
-                                                     rdfs:label "Theme"@en .
+bbcconsepts:Theme rdf:type owl:Class ;
+                  owl:equivalentClass ec:Keyword ;
+                  rdfs:subClassOf rdfs:Resource ;
+                  dcterms:description "This concept is used to represent intangible things or abstract concepts. For example, Financial Crisis, Midwifery, Happiness."@en ;
+                  rdfs:label "Theme"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AccessConditions
@@ -7490,7 +7484,6 @@ ec:AccessConditions rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Action
 ec:Action rdf:type owl:Class ;
-          rdfs:subClassOf owl:Thing ;
           dcterms:description "A class to log Actions."@en ;
           rdfs:label "Action"@en .
 
@@ -7519,7 +7512,6 @@ ec:Affiliation rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
          owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> ;
-         rdfs:subClassOf owl:Thing ;
          dcterms:description "A person / contact or organisation."@en ;
          rdfs:label "Agent"@en .
 
@@ -7544,7 +7536,6 @@ ec:AncillaryDataFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Animal
 ec:Animal rdf:type owl:Class ;
-          rdfs:subClassOf owl:Thing ;
           dcterms:description "To identify an animal."@en ;
           rdfs:label "Animal"@en .
 
@@ -7565,7 +7556,6 @@ ec:AnimalColourCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation
 ec:Annotation rdf:type owl:Class ;
-              rdfs:subClassOf owl:Thing ;
               dcterms:description "A class used to annotate Assets."@en ;
               rdfs:label "Annotation"@en .
 
@@ -7579,7 +7569,6 @@ ec:Annotation_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
-            rdfs:subClassOf owl:Thing ;
             dcterms:description "To identify and describe artefacts used in a production (on and behind the stage)."@en ;
             rdfs:label "Artefact"@en .
 
@@ -7757,7 +7746,6 @@ ec:AudioTrackPurpose rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Award
 ec:Award rdf:type owl:Class ;
-         rdfs:subClassOf owl:Thing ;
          dcterms:description "To describe an Award and associated information."@en ;
          rdfs:label "Award"@en .
 
@@ -7904,7 +7892,6 @@ ec:ClosedSubtitling rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Codec
 ec:Codec rdf:type owl:Class ;
-         rdfs:subClassOf owl:Thing ;
          dcterms:description "To provide information on a codec."@en ;
          rdfs:label "Codec"@en .
 
@@ -8158,7 +8145,6 @@ ec:EditorialObject_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion
 ec:Emotion rdf:type owl:Class ;
-           rdfs:subClassOf owl:Thing ;
            dcterms:description "A class to log Emotions."@en ;
            rdfs:label "Emotion"@en .
 
@@ -8197,7 +8183,6 @@ ec:Essence rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
 ec:Event rdf:type owl:Class ;
-         rdfs:subClassOf owl:Thing ;
          dcterms:description """Additional types of event shall be defined as
             new sub-classes of event."""@en ,
                              """An event related to the media resource, e.g.
@@ -8332,7 +8317,6 @@ ec:IPRRestrictions rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Identifier
 ec:Identifier rdf:type owl:Class ;
-              rdfs:subClassOf owl:Thing ;
               dcterms:description "To support the use of structured identifiers."@en ;
               rdfs:label "Identifier"@en .
 
@@ -8441,14 +8425,12 @@ ec:Licensing rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Link
 ec:Link rdf:type owl:Class ;
-        rdfs:subClassOf owl:Thing ;
         dcterms:description "To define a custom link."@en ;
         rdfs:label "Link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location
 ec:Location rdf:type owl:Class ;
-            rdfs:subClassOf owl:Thing ;
             dcterms:description """A location related to the media resource, e.g.
             depicted in the resource (possibly fictional) or where the resource was created
             (shooting location), etc."""@en ,
@@ -8482,7 +8464,6 @@ ec:LocationType rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Locator
 ec:Locator rdf:type owl:Class ;
-           rdfs:subClassOf owl:Thing ;
            dcterms:description "Custom attributes are to be associated by implementers."@en ,
                                "To provide information about complex locators."@en ;
            rdfs:label "Locator"@en .
@@ -8693,8 +8674,7 @@ ec:Props rdf:type owl:Class ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance
-ec:Provenance rdf:type owl:Class ;
-              rdfs:subClassOf owl:Thing .
+ec:Provenance rdf:type owl:Class .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
@@ -8735,7 +8715,6 @@ ec:PublicationEvent_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationHistory
 ec:PublicationHistory rdf:type owl:Class ;
-                      rdfs:subClassOf owl:Thing ;
                       dcterms:description """A collection of PublicationEvents through which
             a resource has been published."""@en ;
                       rdfs:label "Publication History"@en .
@@ -8749,7 +8728,6 @@ ec:PublicationMedium rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationPlan
 ec:PublicationPlan rdf:type owl:Class ;
-                   rdfs:subClassOf owl:Thing ;
                    dcterms:description "A collection of PublicationEvents organised as a PublicationPlanning."@en ;
                    rdfs:label "Publication History"@en .
 
@@ -8771,7 +8749,6 @@ ec:RadioProgramme rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rating
 ec:Rating rdf:type owl:Class ;
-          rdfs:subClassOf owl:Thing ;
           dcterms:description """All the information about the rating/evaluation
             given to a media resource by an Agent i.e. a person/Contact or
             Organisation."""@en ,
@@ -8796,7 +8773,6 @@ ec:RegionCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Relation
 ec:Relation rdf:type owl:Class ;
-            rdfs:subClassOf owl:Thing ;
             dcterms:description "To define links and relations."@en ;
             rdfs:label "Relation"@en .
 
@@ -8886,7 +8862,6 @@ ec:Series rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
 ec:Service rdf:type owl:Class ;
-           rdfs:subClassOf owl:Thing ;
            dcterms:description """A service is the umbrella under which one or
             more PublicationChannel is operated."""@en ;
            rdfs:label "Service"@en .
@@ -9055,7 +9030,6 @@ ec:TextAnnotation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TextLine
 ec:TextLine rdf:type owl:Class ;
-            rdfs:subClassOf owl:Thing ;
             dcterms:description "To provide lines of text extracted from or additional to the resource."@en ;
             rdfs:label "Text line"@en .
 
@@ -9120,7 +9094,6 @@ ec:TimedTextSubtitleTargetFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack
 ec:TimelineTrack rdf:type owl:Class ;
-                 rdfs:subClassOf owl:Thing ;
                  dcterms:description "To define a time sequence of EditorialObjects."@en ;
                  rdfs:label "Timeline track"@en .
 
@@ -9247,35 +9220,30 @@ skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 ###  http://xmlns.com/foaf/0.1/Agent
 <http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
-                                  rdfs:subClassOf owl:Thing ;
                                   dcterms:description "A person or Organisation."@en ;
                                   rdfs:label "Agent"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Group
 <http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
-                                  rdfs:subClassOf owl:Thing ;
                                   dcterms:description "A group of Agents."@en ;
                                   rdfs:label "Group"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
 <http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
-                                         rdfs:subClassOf owl:Thing ;
                                          dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
                                          rdfs:label "Organization"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
-                                   rdfs:subClassOf owl:Thing ;
                                    dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
                                    rdfs:label "Person"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/img
 <http://xmlns.com/foaf/0.1/img> rdf:type owl:Class ;
-                                rdfs:subClassOf owl:Thing ;
                                 dcterms:description "Animage to represent something."@en ;
                                 rdfs:label "Image"@en .
 
@@ -9316,11 +9284,6 @@ dcterms:contributor dcterms:description "In the context of EBUCore, reserved for
 ec:actionId rdfs:label "Action identifier"@en ;
             dcterms:description "Range: anyURI or string or Identifier"@en ,
                                 "An identifier attributed to an Action."@en .
-
-
-ec:actionType dcterms:description "A type of Action."@en ,
-                                  "Range: Action_type or string"@en ;
-              rdfs:label "Action type"@en .
 
 
 ec:agentId dcterms:description "Range: an Identifier or anyURI or string."@en ,
