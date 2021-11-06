@@ -56,7 +56,11 @@
                                                                         "Valerie J. Miller, PBS"@en-us ,
                                                                         "Vincent Dabouineau"@fr ;
                                                          dc:creator "Jean Pierre Evain, EBU"@ch ;
+                                                         dc:description "Note to implementers: The EBUCore ontology is used by a variety of users with different needs. Several EBUCore properties have no range to allow different implementations using entities or literals. As an implementer, it is your choice to go for one or the other for each property to have consistent expectations when parsing individuals. EBUCore also provides different classes defined as subclasses of skos:Concept. You can use these classes as entities in range of several properties currently left without range. EBUCore is expressed in RDF in order to facilitate such modelling and flexibility. As a consequence, propoerties appear in the documentation as annotation properties."@en ,
+                                                                        "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate BusinessObjects or Resources or Agents) and subproperties."@en ,
+                                                                        "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
                                                          dc:publisher "European Broadcasting Union (EBU)"@ch ;
+                                                         dc:rights "Copyright 2021 EBU"@en ;
                                                          vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" ;
                                                          spin:imports <http://topbraid.org/spin/owlrl-all> ;
                                                          owl:backwardCompatibleWith <http://www.ebu.ch/metadata/ontologies/ebucore/20182011/ebucore.rdf> ;
@@ -117,6 +121,19 @@ dc:creator rdf:type owl:AnnotationProperty ;
            rdfs:domain ec:Asset .
 
 
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty ;
+        dcterms:description "A date associated with an resource."@en ;
+        rdfs:label "Date"@en ;
+        rdfs:range xsd:date .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty ;
+               dcterms:description "A description of an Asset."@en ;
+               rdfs:label "Description"@en .
+
+
 ###  http://purl.org/dc/elements/1.1/format
 dc:format rdf:type owl:AnnotationProperty ;
           dcterms:description "Information about the Format of a Resource."@en ;
@@ -142,6 +159,22 @@ dc:publisher rdf:type owl:AnnotationProperty ;
              dcterms:description "An Agent involved in the distribution of content."@en ;
              rdfs:label "Publisher"@en ;
              rdfs:domain ec:Asset .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty ;
+         dcterms:description "The title by which a BusinessObject is known."@en ;
+         rdfs:label "Title"@en .
+
+
+###  http://purl.org/dc/elements/1.1/type
+dc:type rdf:type owl:AnnotationProperty ;
+        dcterms:description "A concept associated with a resource."@en ;
+        rdfs:label "Type"@en .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
@@ -2625,31 +2658,6 @@ ec:trackType rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/elements/1.1/date
-dc:date rdf:type owl:DatatypeProperty ;
-        owl:equivalentProperty ec:date ;
-        rdfs:domain ec:Asset ;
-        rdfs:range xsd:date ;
-        dcterms:description "A date associated with an Asset."@en ;
-        rdfs:label "Date"@en .
-
-
-###  http://purl.org/dc/elements/1.1/description
-dc:description rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Asset ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "A description of an Asset."@en ;
-               rdfs:label "Description"@en .
-
-
-###  http://purl.org/dc/elements/1.1/rights
-dc:rights rdf:type owl:DatatypeProperty ;
-          rdfs:range rdfs:Literal ;
-          dcterms:description "Rights information related to an Asset, aPublicationEvent, a BusinessObject or a resource."@en ;
-          rdfs:comment "*** equivalent to isCoveredBy"@en ;
-          rdfs:label "Rights"@en .
-
-
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:DatatypeProperty ;
           rdfs:domain ec:MediaResource ;
@@ -2658,48 +2666,12 @@ dc:source rdf:type owl:DatatypeProperty ;
           rdfs:label "Source"@en .
 
 
-###  http://purl.org/dc/elements/1.1/subject
-dc:subject rdf:type owl:DatatypeProperty ;
-           owl:equivalentProperty ec:hasSubject ;
-           rdfs:domain ec:BusinessObject ;
-           rdfs:range rdfs:Literal ;
-           dcterms:description """To associate a Subject or topic addressed by a
-            BusinessObject / Resource."""@en ;
-           rdfs:label "Subject"@en .
-
-
-###  http://purl.org/dc/elements/1.1/title
-dc:title rdf:type owl:DatatypeProperty ;
-         owl:equivalentProperty ec:mainTitle ,
-                                ec:title ;
-         rdfs:domain ec:Asset ;
-         rdfs:range rdfs:Literal ;
-         dcterms:description "The title by which a BusinessObject is known."@en ;
-         rdfs:label "Title"@en .
-
-
-###  http://purl.org/dc/elements/1.1/type
-dc:type rdf:type owl:DatatypeProperty ;
-        owl:equivalentProperty ec:hasType ;
-        rdfs:domain ec:Asset ;
-        rdfs:range rdfs:Literal ;
-        dcterms:description "A concept associated with an Asset."@en ;
-        rdfs:label "Type"@en .
-
-
 ###  http://purl.org/dc/terms/alternative
 dcterms:alternative rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Asset ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "An alternative to the title."@en ;
                     rdfs:label "Alternative title"@en .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:DatatypeProperty ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ;
-              rdfs:label "Title"@en .
 
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth
@@ -2731,10 +2703,9 @@ bbcconsepts:gender rdf:type owl:DatatypeProperty ;
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/placeOfBirth
 bbcconsepts:placeOfBirth rdf:type owl:DatatypeProperty ;
-                         owl:equivalentProperty ec:hasCountryOfBirth ,
-                                                ec:hasCountryOfDeath ;
+                         owl:equivalentProperty ec:hasCountryOfBirth ;
                          rdfs:domain ec:Contact ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          dcterms:description "The place where a person is born."@en ;
                          rdfs:label "Place of birth"@en .
 
@@ -3719,6 +3690,7 @@ ec:date rdf:type owl:DatatypeProperty ;
         rdfs:domain ec:Asset ;
         rdfs:range xsd:string ;
         dcterms:description "A date associated to an Asset."@en ;
+        rdfs:isDefinedBy dc:date ;
         rdfs:label "Date"@en .
 
 
@@ -5361,11 +5333,6 @@ ec:hasTrackPurpose rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:string .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasType
-ec:hasType rdf:type owl:DatatypeProperty ;
-           rdfs:range xsd:string .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:DatatypeProperty ;
                         rdfs:range xsd:string .
@@ -5501,11 +5468,6 @@ ec:isBrand rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCharacter
 ec:isCharacter rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCoveredBy
-ec:isCoveredBy rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:string .
 
 
@@ -5821,7 +5783,7 @@ ec:loudnessRange rdf:type owl:DatatypeProperty ;
 ec:mainTitle rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf ec:title ;
              rdfs:domain ec:Asset ;
-             rdfs:range xsd:string ;
+             rdfs:range rdfs:Literal ;
              dcterms:description """Specifies the main title or name given to the
             EditorialObject."""@en ;
              rdfs:label "Main title"@en .
@@ -7582,10 +7544,6 @@ ec:Artefact_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty dc:rights ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ;
          owl:disjointWith ec:Rating ;
          dcterms:description """The Class \"Asset\" is an
             object to which an identifier will be associated at commissioning. It will serve as a
@@ -8695,10 +8653,6 @@ ec:PublicationChannel_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
 ec:PublicationEvent rdf:type owl:Class ;
-                    rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty dc:rights ;
-                                      owl:someValuesFrom rdfs:Literal
-                                    ] ;
                     owl:disjointWith ec:Rating ;
                     dcterms:description """To describe any manifestation of a media
             resource on any media (live, on demand, catch-up TV, etc.) and the appropriate
@@ -9252,25 +9206,12 @@ skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 #    Individuals
 #################################################################
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> rdf:type owl:NamedIndividual ;
-                                                        dc:description "Guidelines: for the purpose of flexibility and interoperability with a wider range of implementations, some properties purposefully do not have a range and accept either a resource or a literal.  When a resource is used, it is recommended to reuse objects defined in the model (e.g. pair hasEvent/Event or hasRole/Role). Example 1: x hasRole 'actor'. Example 2: x hasRole _:Role_1 (a reference to the Concept identifier from a SKOS Role vocabulary defined in the ontology)."@en ,
-                                                                       "Note to implementers: The EBUCore ontology is used by a variety of users with different needs. Several EBUCore properties have no range to allow different implementations using entities or literals. As an implementer, it is your choice to go for one or the other for each property to have consistent expectations when parsing individuals. EBUCore also provides different classes defined as subclasses of skos:Concept. You can use these classes as entities in range of several properties currently left without range. EBUCore is expressed in RDF in order to facilitate such modelling and flexibility. As a consequence, propoerties appear in the documentation as annotation properties."@en ,
-                                                                       "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate BusinessObjects or Resources or Agents) and subproperties."@en ,
-                                                                       "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
-                                                        dc:rights "Copyright 2020 EBU"@en ;
-                                                        dc:title "EBUCore - the Dublin Core for media"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedPicture
-ec:hasAgentRelatedPicture rdf:type owl:NamedIndividual ;
-                          dc:description "A link/locator to a picture related to an Agent."@en .
+ec:hasAgentRelatedPicture rdf:type owl:NamedIndividual .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
-ec:hasAssociatedArtefact rdf:type owl:NamedIndividual ;
-                         dc:description "An Artefact related to an Agent."@en ,
-                                        "Range: string or Artefact"@en .
+ec:hasAssociatedArtefact rdf:type owl:NamedIndividual .
 
 
 #################################################################
@@ -9291,9 +9232,9 @@ ec:agentId dcterms:description "Range: an Identifier or anyURI or string."@en ,
            rdfs:label "Agent identifier"@en .
 
 
-ec:artefactId dcterms:description "Range: string or Identifier."@en ;
-              rdfs:label "Artefact Identifier"@en ;
-              dcterms:description "To identify an Artefact."@en .
+ec:artefactId dcterms:description "Range: string or Identifier."@en ,
+                                  "To identify an Artefact."@en ;
+              rdfs:label "Artefact Identifier"@en .
 
 
 ec:artefactType dcterms:description "To specify the type of an Artefact."@en ;
@@ -9301,9 +9242,9 @@ ec:artefactType dcterms:description "To specify the type of an Artefact."@en ;
                 dcterms:description "Range: string or Artefact_type."@en .
 
 
-ec:assetId rdfs:label "Asset identifier"@en ;
-           dcterms:description "Range: an Identifier or anyURI or string."@en ,
-                               "An identifier attributed to an Asset."@en .
+ec:assetId dcterms:description "Range: an Identifier or anyURI or string."@en ;
+           rdfs:label "Asset identifier"@en ;
+           dcterms:description "An identifier attributed to an Asset."@en .
 
 
 ec:awardId rdfs:label "Award identifier"@en ;
@@ -9321,14 +9262,14 @@ ec:businessObjectId rdfs:label "BusinessObject identifier"@en ;
                                         "An identifier attributed to an BusinessObject."@en .
 
 
-ec:businessObjectType dcterms:description "A type attributed to a BusinessObject."@en ;
-                      rdfs:label "Business Object type"@en ;
-                      dcterms:description "Range: string or BusinessObjectType"@en .
+ec:businessObjectType rdfs:label "Business Object type"@en ;
+                      dcterms:description "A type attributed to a BusinessObject."@en ,
+                                          "Range: string or BusinessObjectType"@en .
 
 
-ec:codecId dcterms:description "Range: string or Identifier."@en ;
-           rdfs:label "Codec Identifier"@en ;
-           dcterms:description "To identify a Codec."@en .
+ec:codecId rdfs:label "Codec Identifier"@en ;
+           dcterms:description "Range: string or Identifier."@en ,
+                               "To identify a Codec."@en .
 
 
 ec:costumeType rdfs:label "Costume type"@en ;
@@ -9340,8 +9281,8 @@ ec:displayAspectRatio rdfs:label "Display aspect ratio"@en ;
 
 
 ec:editorialObjectId rdfs:label "Editorial object identifier"@en ;
-                     dcterms:description "An identifier attributed to an EditorialObject."@en ,
-                                         "Range: an Identifier or anyURI or string."@en .
+                     dcterms:description "Range: an Identifier or anyURI or string."@en ,
+                                         "An identifier attributed to an EditorialObject."@en .
 
 
 ec:editorialObjectType dcterms:description "Range: string or EditorialObjectType/Concept"@en ,
@@ -9369,9 +9310,9 @@ ec:eventType dcterms:description "Range: Event or string"@en ,
              rdfs:label "Event type"@en .
 
 
-ec:formatId dcterms:description "A version identifier attributed to a Format."@en ;
-            rdfs:label "Format version identifier"@en ;
-            dcterms:description "Range: string or anyURI or Identifier."@en .
+ec:formatId rdfs:label "Format version identifier"@en ;
+            dcterms:description "A version identifier attributed to a Format."@en ,
+                                "Range: string or anyURI or Identifier."@en .
 
 
 ec:formatVersionId dcterms:description "A version identifier attributed to a Format."@en ,
@@ -9394,9 +9335,9 @@ ec:hasAccessConditions dcterms:description "Range: string or AccessConditions."@
                        rdfs:label "Access conditions"@en .
 
 
-ec:hasActionRelatedAgent dcterms:description "To associate an Action with an Agent (e.g. Person or Character)."@en ;
-                         rdfs:label "Action related agent"@en ;
-                         dcterms:description "Range: string or Agent."@en .
+ec:hasActionRelatedAgent dcterms:description "To associate an Action with an Agent (e.g. Person or Character)."@en ,
+                                             "Range: string or Agent."@en ;
+                         rdfs:label "Action related agent"@en .
 
 
 ec:hasAffiliation dcterms:description """A property to establish the relation between a
@@ -9430,7 +9371,8 @@ ec:hasAgentPlaceOfResidence rdfs:label "Place of residence"@en ;
                                                 "To indicate the place of residence of an Agent."@en .
 
 
-ec:hasAgentRelatedPicture rdfs:label "Related picture"@en .
+ec:hasAgentRelatedPicture rdfs:label "Related picture"@en ;
+                          dc:description "A link/locator to a picture related to an Agent."@en .
 
 
 ec:hasAncillaryDataFormat rdfs:label "Ancillary data format"@en ;
@@ -9456,8 +9398,8 @@ ec:hasArtefactBuyer dcterms:description "The Agent who bought the Artefact."@en 
 
 
 ec:hasArtefactCreator rdfs:label "Creator"@en ;
-                      dcterms:description "Range: string or Agent"@en ,
-                                          "To identify the creator of an Artefact."@en .
+                      dcterms:description "To identify the creator of an Artefact."@en ,
+                                          "Range: string or Agent"@en .
 
 
 ec:hasArtefactLocation dcterms:description "Range: string or Location"@en ;
@@ -9475,8 +9417,8 @@ ec:hasArtefactPriceCurrency dcterms:description "To specify the currency into wh
                             rdfs:label "Artefact price currency"@en .
 
 
-ec:hasArtefactRelatedAgent dcterms:description "To associate an Artefact/Prop or else with an Agent."@en ,
-                                               "Range: string or Agent"@en ;
+ec:hasArtefactRelatedAgent dcterms:description "Range: string or Agent"@en ,
+                                               "To associate an Artefact/Prop or else with an Agent."@en ;
                            rdfs:label "Associated agent"@en .
 
 
@@ -9486,8 +9428,8 @@ ec:hasArtefactRelatedLocation dcterms:description "To associate an Artefact/Prop
 
 
 ec:hasArtefactRetailer rdfs:label "Retailer"@en ;
-                       dcterms:description "Range: string or Agent"@en ,
-                                           "To identify the retailer of an Artefact."@en .
+                       dcterms:description "To identify the retailer of an Artefact."@en ,
+                                           "Range: string or Agent"@en .
 
 
 ec:hasArtefactSupplier dcterms:description "To identify a supplier of an Artefact."@en ;
@@ -9495,7 +9437,9 @@ ec:hasArtefactSupplier dcterms:description "To identify a supplier of an Artefac
                        dcterms:description "Range: string or Agent"@en .
 
 
-ec:hasAssociatedArtefact rdfs:label "Related Artefact"@en .
+ec:hasAssociatedArtefact rdfs:label "Related Artefact"@en ;
+                         dc:description "Range: string or Artefact"@en ,
+                                        "An Artefact related to an Agent."@en .
 
 
 ec:hasAudienceScoreRecordingTechnique dcterms:description "To identify the technique used to measure an audience."@en ,
@@ -9544,8 +9488,8 @@ ec:hasCaptioningSource dcterms:description "Range: string or Agent"@en ;
 
 
 ec:hasCastMember rdfs:label "Cast member"@en ;
-                 dcterms:description "Range: a string or a Cast"@en ,
-                                     "A member of the cast."@en .
+                 dcterms:description "A member of the cast."@en ,
+                                     "Range: a string or a Cast"@en .
 
 
 ec:hasCastRole dcterms:description """To define the role of an Agent (Contact/person
@@ -9559,9 +9503,9 @@ ec:hasCharacter dcterms:description "To list characters in a fiction."@en ,
                 rdfs:label "Character"@en .
 
 
-ec:hasCodec dcterms:description "Range: string or Codec"@en ,
-                                "To identify a Codec used to create a resource."@en ;
-            rdfs:label "Codec"@en .
+ec:hasCodec dcterms:description "Range: string or Codec"@en ;
+            rdfs:label "Codec"@en ;
+            dcterms:description "To identify a Codec used to create a resource."@en .
 
 
 ec:hasCodecVendor rdfs:label "Codec vendor"@en ;
@@ -9600,9 +9544,9 @@ ec:hasContributor dcterms:description "Range: string or Agent"@en ;
                   dcterms:description "To identify a contributor to a Resource, a Business Object, an Event..."@en .
 
 
-ec:hasCopyright dcterms:description "Range: string or Copyright."@en ;
-                rdfs:label "Copyright"@en ;
-                dcterms:description "To express copyright."@en .
+ec:hasCopyright rdfs:label "Copyright"@en ;
+                dcterms:description "Range: string or Copyright."@en ,
+                                    "To express copyright."@en .
 
 
 ec:hasCostumeType rdfs:label "Costume type"@en ;
@@ -9616,7 +9560,7 @@ ec:hasCountryOfBirth dcterms:description "The country where a person is born."@e
 
 
 ec:hasCountryOfDeath dcterms:description "Range: string or CountryCode"@en ,
-                                         "The country where a person is dead."@en ;
+                                         "The country where the person died"@en ;
                      rdfs:label "Country of death"@en .
 
 
@@ -9640,9 +9584,9 @@ ec:hasCreativeCommons dcterms:description "Range: string or Creative Commons."@e
                       rdfs:label "Creative Commons"@en .
 
 
-ec:hasCreator dcterms:description "Range: string or Agent."@en ;
-              rdfs:label "Creator"@en ;
-              dcterms:description "To identify an Agent involved in the creation of the Resource or BusinessObject."@en .
+ec:hasCreator dcterms:description "Range: string or Agent."@en ,
+                                  "To identify an Agent involved in the creation of the Resource or BusinessObject."@en ;
+              rdfs:label "Creator"@en .
 
 
 ec:hasCrewMember dcterms:description "A member of the crew."@en ,
@@ -9686,9 +9630,9 @@ ec:hasDocumentFormat dcterms:description "To describe the format of a Document."
                      dcterms:description "Range: string or Document format"@en .
 
 
-ec:hasDopesheet dcterms:description "Range: string or Dopesheet."@en ;
-                rdfs:label "Dopesheet"@en ;
-                dcterms:description "The dopesheet of a NewsItem."@en .
+ec:hasDopesheet rdfs:label "Dopesheet"@en ;
+                dcterms:description "Range: string or Dopesheet."@en ,
+                                    "The dopesheet of a NewsItem."@en .
 
 
 ec:hasDubbedLanguage dcterms:description "Range: string or Language."@en ,
@@ -9741,9 +9685,9 @@ ec:hasEventRelatedLocation dcterms:description "Range: a Location or a string"@e
                            dcterms:description "To associate a Location with an Event."@en .
 
 
-ec:hasEventType dcterms:description "To define a type of Event."@en ;
-                rdfs:label "Agent"@en ;
-                dcterms:description "Range: string or EventType"@en .
+ec:hasEventType rdfs:label "Agent"@en ;
+                dcterms:description "To define a type of Event."@en ,
+                                    "Range: string or EventType"@en .
 
 
 ec:hasExploitationIssues dcterms:description "Range: string or Exploitation Issues."@en ,
@@ -9782,9 +9726,9 @@ ec:hasIMediaIdentifier dcterms:description "Range: string or Identifier."@en ;
                        dcterms:description "To associate an IMedia Identifier with an Asset."@en .
 
 
-ec:hasIPRRestrictions dcterms:description "To express IPR Restrictions."@en ;
-                      rdfs:label "IPR restrictions"@en ;
-                      dcterms:description "Range: string or IPR Restrictions."@en .
+ec:hasIPRRestrictions rdfs:label "IPR restrictions"@en ;
+                      dcterms:description "To express IPR Restrictions."@en ,
+                                          "Range: string or IPR Restrictions."@en .
 
 
 ec:hasIdentifier dcterms:description "Range: string or Identifier."@en ;
@@ -9967,9 +9911,9 @@ ec:hasRelatedAnimal dcterms:description "To identify animals associate with an A
                     rdfs:label "Related animal"@en .
 
 
-ec:hasRelatedArtefact dcterms:description "To identify and Artefact related to EditorialObject or a resource."@en ;
-                      rdfs:label "Related artefact"@en ;
-                      dcterms:description "Range: string or Artefact."@en .
+ec:hasRelatedArtefact rdfs:label "Related artefact"@en ;
+                      dcterms:description "To identify and Artefact related to EditorialObject or a resource."@en ,
+                                          "Range: string or Artefact."@en .
 
 
 ec:hasRelatedAward dcterms:description "To identify an Award related to EditorialObject."@en ,
@@ -10031,10 +9975,10 @@ ec:hasRightsClearance rdfs:label "Rights clearance"@en ;
                                           "To express Rights Clearance."@en .
 
 
-ec:hasRightsContact dcterms:description """To identify a Contact/person who can provide
-            assistance / guidance regarding the associated Rights."""@en ;
-                    rdfs:label "Contact"@en ;
-                    dcterms:description "Range: a string or a Contact."@en .
+ec:hasRightsContact rdfs:label "Contact"@en ;
+                    dcterms:description """To identify a Contact/person who can provide
+            assistance / guidance regarding the associated Rights."""@en ,
+                                        "Range: a string or a Contact."@en .
 
 
 ec:hasRightsHolder dcterms:description "Range: a string or an Agent."@en ;
@@ -10059,9 +10003,9 @@ ec:hasShootingLocation rdfs:label "Shooting location"@en ;
                                            "The Location where content has been captured."@en .
 
 
-ec:hasSigningFormat dcterms:description "To specify the format used for signing."@en ,
-                                        "Range: string or SigningFormat."@en ;
-                    rdfs:label "Signing format"@en .
+ec:hasSigningFormat dcterms:description "To specify the format used for signing."@en ;
+                    rdfs:label "Signing format"@en ;
+                    dcterms:description "Range: string or SigningFormat."@en .
 
 
 ec:hasSigningSource rdfs:label "Signing source"@en ;
@@ -10095,9 +10039,9 @@ ec:hasStorageId dcterms:description "Range: Identifier, anyURI, string"@en ;
                 dcterms:description "To identify storage associated with a locator from which a Resource can be accessed or can be retrieved."@en .
 
 
-ec:hasStorageType dcterms:description "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ;
-                  rdfs:label "Storage type"@en ;
-                  dcterms:description "Range:; string or Storage_Type"@en .
+ec:hasStorageType rdfs:label "Storage type"@en ;
+                  dcterms:description "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ,
+                                      "Range:; string or Storage_Type"@en .
 
 
 ec:hasSubject dcterms:description "Range: string, anyURI or Subject"@en ;
@@ -10105,9 +10049,9 @@ ec:hasSubject dcterms:description "Range: string, anyURI or Subject"@en ;
               dcterms:description "This property enables to associate an Asset with a subject which can be a string or a URI pointing to a term from a controlled vocabulary."@en .
 
 
-ec:hasSubtitling dcterms:description "To identify existing subtitling."@en ,
-                                     "Range: string or Subtitling"@en ;
-                 rdfs:label "Subtitling"@en .
+ec:hasSubtitling dcterms:description "To identify existing subtitling."@en ;
+                 rdfs:label "Subtitling"@en ;
+                 dcterms:description "Range: string or Subtitling"@en .
 
 
 ec:hasSubtitlingFormat dcterms:description "The format of Subtitling."@en ,
@@ -10116,9 +10060,9 @@ ec:hasSubtitlingFormat dcterms:description "The format of Subtitling."@en ,
 
 
 ec:hasSubtitlingSource rdfs:label "Subtitling source"@en ;
-                       dcterms:description """To identify the source of the Subtitling
-            resource."""@en ,
-                                           "Range: a string or an Agent."@en .
+                       dcterms:description "Range: a string or an Agent."@en ,
+                                           """To identify the source of the Subtitling
+            resource."""@en .
 
 
 ec:hasTargetAudience dcterms:description "Range: string or TargetAudience."@en ;
@@ -10168,8 +10112,8 @@ ec:hasTextLineType dcterms:description "To identify the type of a text line."@en
                    rdfs:label "Text line type"@en .
 
 
-ec:hasTheme dcterms:description "Range: a Concept, anyURI or a string"@en ,
-                                "This property enables to associate an Asset with a theme which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is the Eurostats NACE classification."@en ;
+ec:hasTheme dcterms:description "This property enables to associate an Asset with a theme which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is the Eurostats NACE classification."@en ,
+                                "Range: a Concept, anyURI or a string"@en ;
             rdfs:label "Theme"@en .
 
 
@@ -10183,15 +10127,9 @@ ec:hasTopic dcterms:description "Range: a Topic, anyURI or a string"@en ,
             rdfs:label "Topic"@en .
 
 
-ec:hasTrackPurpose rdfs:label "Track purpose"@en ;
-                   dcterms:description "Range: string or TrackPurpose."@en ,
-                                       "The purpose for which the Track is provided."@en .
-
-
-ec:hasType rdfs:label "Asset type"@en ,
-                      "Type"@en ;
-           dcterms:description "Range: string or Type."@en ,
-                               "An type of Asset."@en .
+ec:hasTrackPurpose dcterms:description "Range: string or TrackPurpose."@en ;
+                   rdfs:label "Track purpose"@en ;
+                   dcterms:description "The purpose for which the Track is provided."@en .
 
 
 ec:hasUsageRestrictions dcterms:description "To express usage restrictions."@en ,
@@ -10244,16 +10182,10 @@ ec:isCharacter dcterms:description "To identify a character."@en ;
                dcterms:description "Range: string or Agent."@en .
 
 
-ec:isCoveredBy rdfs:label "Rights"@en ;
-               dcterms:description "Range: a link to Rights or open text (string)."@en ,
-                                   """The Rights or policy applicable to the
-            BusinessObject, Asset, Resource or PublicationEvent."""@en .
-
-
 ec:isDistributedOn rdfs:label "Range: string or Service and subclasses"@en ;
-                   dcterms:description "To identify the platform on which content is distributed."@en ,
-                                       "Range: Service or string."@en ;
-                   rdfs:label "Platform/Service/PublicationChannel"@en .
+                   dcterms:description "To identify the platform on which content is distributed."@en ;
+                   rdfs:label "Platform/Service/PublicationChannel"@en ;
+                   dcterms:description "Range: Service or string."@en .
 
 
 ec:isEpisodeOf dcterms:description "The Episode of a Series or a Season."@en ,
@@ -10393,8 +10325,8 @@ ec:ratingId rdfs:label "Rating Id"@en ;
                                 "To associate an id with a Rating."@en .
 
 
-ec:relationIdentifier dcterms:description "To identify a Relation."@en ,
-                                          "Range: string or Identifier."@en ;
+ec:relationIdentifier dcterms:description "Range: string or Identifier."@en ,
+                                          "To identify a Relation."@en ;
                       rdfs:label "Relation Type"@en .
 
 
@@ -10408,9 +10340,9 @@ ec:resourceId dcterms:description "An identifier associated to a Resource."@en ,
               rdfs:label "Resource id"@en .
 
 
-ec:resourceIdType rdfs:label "Resource id"@en ;
-                  dcterms:description "To define a type of Resource."@en ,
-                                      "Range: Resource_type or anyURI or string"@en .
+ec:resourceIdType dcterms:description "To define a type of Resource."@en ;
+                  rdfs:label "Resource id"@en ;
+                  dcterms:description "Range: Resource_type or anyURI or string"@en .
 
 
 ec:rightsId dcterms:description "Range: Identifier, anyURI, string"@en ;
