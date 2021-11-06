@@ -287,13 +287,19 @@ xsd:time rdf:type rdfs:Datatype .
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionId
 ec:actionId rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Action ;
-            rdfs:range ec:Identifier .
+            rdfs:range ec:Identifier ;
+            dcterms:description "An identifier attributed to an Action."@en ,
+                                "Range: Identifier"@en ;
+            rdfs:label "Action identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentId
 ec:agentId rdf:type owl:ObjectProperty ;
            rdfs:domain ec:Agent ;
-           rdfs:range ec:Identifier .
+           rdfs:range ec:Identifier ;
+           dcterms:description "An identifier attributed to an Agent."@en ,
+                               "Range: an Identifier."@en ;
+           rdfs:label "Agent identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentType
@@ -348,13 +354,19 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactId
 ec:artefactId rdf:type owl:ObjectProperty ;
               rdfs:domain ec:Artefact ;
-              rdfs:range ec:Identifier .
+              rdfs:range ec:Identifier ;
+              dcterms:description "Range: string or Identifier."@en ,
+                                  "To identify an Artefact."@en ;
+              rdfs:label "Artefact Identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactType
 ec:artefactType rdf:type owl:ObjectProperty ;
                 rdfs:domain ec:Artefact ;
-                rdfs:range ec:Artefact_Type .
+                rdfs:range ec:Artefact_Type ;
+                dcterms:description "Range: string or Artefact_type."@en ,
+                                    "To specify the type of an Artefact."@en ;
+                rdfs:label "Artefact type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetId
@@ -2756,11 +2768,6 @@ ec:actionDescription rdf:type owl:DatatypeProperty ;
                      rdfs:label "Action description"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionId
-ec:actionId rdf:type owl:DatatypeProperty ;
-            rdfs:range rdfs:Literal .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionName
 ec:actionName rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Action ;
@@ -2816,7 +2823,7 @@ ec:actionTimestampTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityEndDate
 ec:activityEndDate rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Organisation ;
-                   rdfs:range xsd:string ;
+                   rdfs:range xsd:dateTime ;
                    dcterms:description "To provide the end date of activity of an Organisation."@en ;
                    rdfs:label "Activity end date"@en .
 
@@ -2824,7 +2831,7 @@ ec:activityEndDate rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityStartDate
 ec:activityStartDate rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Organisation ;
-                     rdfs:range xsd:string ;
+                     rdfs:range xsd:dateTime ;
                      dcterms:description "To provide the start date of activity of an Organisation."@en ;
                      rdfs:label "Activity start date"@en .
 
@@ -2840,7 +2847,7 @@ ec:adultContent rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#affiliationEndDate
 ec:affiliationEndDate rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:Affiliation ;
-                      rdfs:range xsd:string ;
+                      rdfs:range xsd:dateTime ;
                       dcterms:description "The date of end of Affiliation."@en ;
                       rdfs:label "Affiliation end date"@en .
 
@@ -2848,7 +2855,7 @@ ec:affiliationEndDate rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#affiliationStartDate
 ec:affiliationStartDate rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:Affiliation ;
-                        rdfs:range xsd:string ;
+                        rdfs:range xsd:dateTime ;
                         dcterms:description "The date of Affiliation."@en ;
                         rdfs:label "Affiliation start date"@en .
 
@@ -2873,7 +2880,7 @@ ec:agentDbpedia rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDescription
 ec:agentDescription rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Agent ;
-                    rdfs:range xsd:string ;
+                    rdfs:range rdfs:Literal ;
                     dcterms:description "To provide a description of an Agent."@en ;
                     rdfs:label "Description"@en .
 
@@ -2881,7 +2888,7 @@ ec:agentDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentEmailAddress
 ec:agentEmailAddress rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Agent ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      dcterms:description "To provide an email address."@en ;
                      rdfs:label "email"@en .
 
@@ -2897,7 +2904,7 @@ ec:agentFacebook rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFee
 ec:agentFee rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Agent ;
-            rdfs:range xsd:string ;
+            rdfs:range rdfs:Literal ;
             dcterms:description "The fee of an Agent."@en ;
             rdfs:label "Agent fee"@en .
 
@@ -2908,12 +2915,6 @@ ec:agentFlickr rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Agent ;
                rdfs:range xsd:anyURI ;
                rdfs:label "Flickr"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentId
-ec:agentId rdf:type owl:DatatypeProperty ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentImdb
@@ -2954,7 +2955,7 @@ ec:agentLinkedIn rdf:type owl:DatatypeProperty ;
 ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf ec:agentTelephoneNumber ;
                               rdfs:domain ec:Agent ;
-                              rdfs:range xsd:string ;
+                              rdfs:range rdfs:Literal ;
                               dcterms:description """To provide the mobile telephone number of an
             Agent (Contact/Person or organisation)"""@en ;
                               rdfs:label "Mobile"@en .
@@ -2963,7 +2964,7 @@ ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentName
 ec:agentName rdf:type owl:DatatypeProperty ;
              rdfs:domain ec:Agent ;
-             rdfs:range xsd:string ;
+             rdfs:range rdfs:Literal ;
              dcterms:description "To provide a name of an Agent."@en ;
              rdfs:label "Name"@en .
 
@@ -2971,7 +2972,7 @@ ec:agentName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentNickname
 ec:agentNickname rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Agent ;
-                 rdfs:range xsd:string ;
+                 rdfs:range rdfs:Literal ;
                  dcterms:description "To provide a nickname of a Contact/Person."@en ;
                  rdfs:label "Nickname"@en .
 
@@ -2979,7 +2980,7 @@ ec:agentNickname rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentPreviousName
 ec:agentPreviousName rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Agent ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      dcterms:description "To provide the previous name of a Contact/Person."@en ;
                      rdfs:label "Previous name"@en .
 
@@ -3023,7 +3024,7 @@ ec:agentSocialMedia rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTelephoneNumber
 ec:agentTelephoneNumber rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:Agent ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         dcterms:description """To provide the telephone number of an Agent
             (Contact/Person or Organisation)."""@en ;
                         rdfs:label "Telephone"@en .
@@ -3082,7 +3083,7 @@ ec:animalBirthYear rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCharacterName
 ec:animalCharacterName rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Animal ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        dcterms:description "To associate a fictitious character name with an animal."@en ;
                        rdfs:label "Animal character name"@en .
 
@@ -3090,7 +3091,7 @@ ec:animalCharacterName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCode
 ec:animalCode rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Animal ;
-              rdfs:range xsd:string ;
+              rdfs:range rdfs:Literal ;
               dcterms:description "To associate a code with an animal."@en ;
               rdfs:label "Animal code"@en .
 
@@ -3098,7 +3099,7 @@ ec:animalCode rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalDescription
 ec:animalDescription rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Animal ;
-                     rdfs:range xsd:string ;
+                     rdfs:range rdfs:Literal ;
                      dcterms:description "To describe an animal."@en ;
                      rdfs:label "Animal description"@en .
 
@@ -3106,7 +3107,7 @@ ec:animalDescription rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalGender
 ec:animalGender rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Animal ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "To give the gender of an animal."@en ;
                 rdfs:label "Animal gender"@en .
 
@@ -3122,7 +3123,7 @@ ec:animalId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalName
 ec:animalName rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Animal ;
-              rdfs:range xsd:string ;
+              rdfs:range rdfs:Literal ;
               dcterms:description "To name an animal."@en ;
               rdfs:label "Animal name"@en .
 
@@ -3130,7 +3131,7 @@ ec:animalName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalPassport
 ec:animalPassport rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Animal ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   dcterms:description "To replicate the passport of an animal."@en ;
                   rdfs:label "Animal passport"@en .
 
@@ -3138,7 +3139,7 @@ ec:animalPassport rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence
 ec:annotationConfidence rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:Annotation ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         dcterms:description "To estimate the confidence in an Annotation."@en ;
                         rdfs:label "Annotation confidence"@en .
 
@@ -3154,7 +3155,7 @@ ec:annotationCurationDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationDescription
 ec:annotationDescription rdf:type owl:DatatypeProperty ;
                          rdfs:domain ec:Annotation ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          dcterms:description "To describe an Annotation."@en ;
                          rdfs:label "Annotation description"@en .
 
@@ -3170,7 +3171,7 @@ ec:annotationId rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationName
 ec:annotationName rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Annotation ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   dcterms:description "To name an Annotation."@en ;
                   rdfs:label "Annotation name"@en .
 
@@ -3178,7 +3179,7 @@ ec:annotationName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency
 ec:annotationSaliency rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:Annotation ;
-                      rdfs:range xsd:string ;
+                      rdfs:range rdfs:Literal ;
                       dcterms:description "To estimate the saliency of an Annotation."@en ;
                       rdfs:label "Annotation saliency"@en .
 
@@ -3226,7 +3227,7 @@ ec:artefactBoxWidth rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBrand
 ec:artefactBrand rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Artefact ;
-                 rdfs:range xsd:string ;
+                 rdfs:range rdfs:Literal ;
                  dcterms:description "To specify the brand of an Artefact."@en ;
                  rdfs:label "Artefact brand"@en .
 
@@ -3234,7 +3235,7 @@ ec:artefactBrand rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactColour
 ec:artefactColour rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Artefact ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   dcterms:description "To provide the clour(s) of an Artefact."@en ;
                   rdfs:label "Artefact colour(s)"@en .
 
@@ -3242,7 +3243,7 @@ ec:artefactColour rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactComment
 ec:artefactComment rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Artefact ;
-                   rdfs:range xsd:string ;
+                   rdfs:range rdfs:Literal ;
                    dcterms:description "To provide a contextual comment about an Artefact."@en ;
                    rdfs:label "Artefact comment"@en .
 
@@ -3250,7 +3251,7 @@ ec:artefactComment rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
 ec:artefactDateOfPurchase rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:Artefact ;
-                          rdfs:range xsd:string ;
+                          rdfs:range xsd:dateTime ;
                           dcterms:description "The date when an Artefact was purchased. ."@en ;
                           rdfs:label "Artefact date of purchase"@en .
 
@@ -3258,7 +3259,7 @@ ec:artefactDateOfPurchase rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
 ec:artefactDateOfSell rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:Artefact ;
-                      rdfs:range xsd:string ;
+                      rdfs:range xsd:dateTime ;
                       dcterms:description "The date when an Artefact was sold."@en ;
                       rdfs:label "Artefact date of sell"@en .
 
@@ -3266,21 +3267,15 @@ ec:artefactDateOfSell rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDescription
 ec:artefactDescription rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Artefact ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        dcterms:description "A description of an Artefact."@en ;
                        rdfs:label "Artefact description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactId
-ec:artefactId rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactModel
 ec:artefactModel rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Artefact ;
-                 rdfs:range xsd:string ;
+                 rdfs:range rdfs:Literal ;
                  dcterms:description "To specify a model of an Artefact."@en ;
                  rdfs:label "Artefact model"@en .
 
@@ -3288,7 +3283,7 @@ ec:artefactModel rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactName
 ec:artefactName rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Artefact ;
-                rdfs:range xsd:string ;
+                rdfs:range rdfs:Literal ;
                 dcterms:description "A name associated with an Artefact."@en ;
                 rdfs:label "Artefact name"@en .
 
@@ -3296,7 +3291,7 @@ ec:artefactName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactPeriod
 ec:artefactPeriod rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Artefact ;
-                  rdfs:range xsd:string ;
+                  rdfs:range rdfs:Literal ;
                   dcterms:description "To specify the period associated with an Artefact."@en ;
                   rdfs:label "Artefact period"@en .
 
@@ -3304,7 +3299,7 @@ ec:artefactPeriod rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactPriceAmount
 ec:artefactPriceAmount rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:Artefact ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdf:PlainLiteral ;
                        dcterms:description "To specifythe price of an Artefact."@en ;
                        rdfs:label "Artefact price"@en .
 
@@ -3312,7 +3307,7 @@ ec:artefactPriceAmount rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactReference
 ec:artefactReference rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Artefact ;
-                     rdfs:range xsd:string ;
+                     rdfs:range xsd:anyURI ;
                      dcterms:description "To specify a reference of an Artefact."@en ;
                      rdfs:label "Artefact reference"@en .
 
@@ -3320,21 +3315,15 @@ ec:artefactReference rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactStyle
 ec:artefactStyle rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Artefact ;
-                 rdfs:range xsd:string ;
+                 rdfs:range rdfs:Literal ;
                  dcterms:description "To specify the style associated with an Artefact."@en ;
                  rdfs:label "Artefact style"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactType
-ec:artefactType rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:anyURI ,
-                           xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactUsageHistory
 ec:artefactUsageHistory rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:Artefact ;
-                        rdfs:range xsd:string ;
+                        rdfs:range rdfs:Literal ;
                         dcterms:description "To provide information on the usage history of an Artefact."@en ;
                         rdfs:label "Artefact usage history"@en .
 
@@ -5896,7 +5885,7 @@ ec:occupation rdf:type owl:DatatypeProperty ;
 ec:officeEmailAddress rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf ec:agentEmailAddress ;
                       rdfs:domain ec:Person ;
-                      rdfs:range xsd:string ;
+                      rdfs:range rdfs:Literal ;
                       dcterms:description """To provide the professional/office email
             address of an Agent (Contact/Person or Organisation)."""@en ;
                       rdfs:label "Office email"@en .
@@ -5906,7 +5895,7 @@ ec:officeEmailAddress rdf:type owl:DatatypeProperty ;
 ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                rdfs:subPropertyOf ec:agentTelephoneNumber ;
                                rdfs:domain ec:Person ;
-                               rdfs:range xsd:string ;
+                               rdfs:range rdfs:Literal ;
                                dcterms:description """To provide the office mobile telephone number of an
             Agent (Contact/Person)."""@en ;
                                rdfs:label "Telephone (private)"@en .
@@ -5916,7 +5905,7 @@ ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ec:officeTelephoneNumber rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ec:agentTelephoneNumber ;
                          rdfs:domain ec:Person ;
-                         rdfs:range xsd:string ;
+                         rdfs:range rdfs:Literal ;
                          dcterms:description """To provide the office telephone number of an
             Agent (Contact/Person)."""@en ;
                          rdfs:label "Telephone (private)"@en .
@@ -6119,7 +6108,7 @@ ec:position rdf:type owl:DatatypeProperty ;
 ec:privateEmailAddress rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf ec:agentEmailAddress ;
                        rdfs:domain ec:Person ;
-                       rdfs:range xsd:string ;
+                       rdfs:range rdfs:Literal ;
                        dcterms:description """To provide the private email address of an
             Agent (Contact/Person)"""@en ;
                        rdfs:label "Private email"@en .
@@ -6139,7 +6128,7 @@ ec:privateHomepage rdf:type owl:DatatypeProperty ;
 ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf ec:agentTelephoneNumber ;
                                 rdfs:domain ec:Person ;
-                                rdfs:range xsd:string ;
+                                rdfs:range rdfs:Literal ;
                                 dcterms:description """To provide the private mobile telephone number of an
             Agent (Contact/Person)."""@en ;
                                 rdfs:label "Telephone (private)"@en .
@@ -6149,7 +6138,7 @@ ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ec:privateTelephoneNumber rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf ec:agentTelephoneNumber ;
                           rdfs:domain ec:Person ;
-                          rdfs:range xsd:string ;
+                          rdfs:range rdfs:Literal ;
                           dcterms:description """To provide the private telephone number of an
             Agent (Contact/Person)."""@en ;
                           rdfs:label "Telephone (private)"@en .
@@ -9220,26 +9209,6 @@ ec:hasAssociatedArtefact rdf:type owl:NamedIndividual .
 
 dcterms:contributor dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ;
                     rdfs:label "Contributor"@en .
-
-
-ec:actionId rdfs:label "Action identifier"@en ;
-            dcterms:description "Range: anyURI or string or Identifier"@en ,
-                                "An identifier attributed to an Action."@en .
-
-
-ec:agentId dcterms:description "Range: an Identifier or anyURI or string."@en ,
-                               "An identifier attributed to an Agent."@en ;
-           rdfs:label "Agent identifier"@en .
-
-
-ec:artefactId dcterms:description "Range: string or Identifier."@en ,
-                                  "To identify an Artefact."@en ;
-              rdfs:label "Artefact Identifier"@en .
-
-
-ec:artefactType dcterms:description "To specify the type of an Artefact."@en ;
-                rdfs:label "Artefact type"@en ;
-                dcterms:description "Range: string or Artefact_type."@en .
 
 
 ec:assetId dcterms:description "Range: an Identifier or anyURI or string."@en ;
