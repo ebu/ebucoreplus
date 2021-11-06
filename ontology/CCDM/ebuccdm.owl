@@ -2900,12 +2900,12 @@ ec:organisationName rdf:type owl:DatatypeProperty ;
                     rdfs:label "Organisation name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEndDateTime
-ec:publicationEndDateTime rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:PublicationEvent ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The scheduled end date and time of a PublicationEvent."@en ;
-                          rdfs:label "PublicationEvent end date & time"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventEndDateTime
+ec:publicationEventEndDateTime rdf:type owl:DatatypeProperty ;
+                               rdfs:domain ec:PublicationEvent ;
+                               rdfs:range xsd:dateTime ;
+                               dcterms:description "The scheduled end date and time of a PublicationEvent."@en ;
+                               rdfs:label "PublicationEvent scheduled end date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventId
@@ -2918,6 +2918,14 @@ ec:publicationEventId rdf:type owl:DatatypeProperty ;
                                  ] ;
                       dcterms:description "An identifier attributed to a PublicationEvent."@en ;
                       rdfs:label "Event Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventStartDateTime
+ec:publicationEventStartDateTime rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain ec:PublicationEvent ;
+                                 rdfs:range xsd:dateTime ;
+                                 dcterms:description "The scheduled start date and time of a PublicationEvent."@en ;
+                                 rdfs:label "PublicationEvent scheduled start date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanDescription
@@ -2964,20 +2972,12 @@ ec:publicationPlanTitle rdf:type owl:DatatypeProperty ;
                         rdfs:label "Publication plan title"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationStartDateTime
-ec:publicationStartDateTime rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:PublicationEvent ;
-                            rdfs:range xsd:dateTime ;
-                            dcterms:description "The scheduled start date and time of a PublicationEvent."@en ;
-                            rdfs:label "Publication start date & time"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedEndDateTime
 ec:publishedEndDateTime rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:PublicationEvent ;
                         rdfs:range xsd:dateTime ;
                         dcterms:description "The end date and time of a PublicationEvent as it was run."@en ;
-                        rdfs:label "Publication end date & time"@en .
+                        rdfs:label "PublicationEvent actual end date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedStartDateTime
@@ -2985,7 +2985,7 @@ ec:publishedStartDateTime rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:PublicationEvent ;
                           rdfs:range xsd:dateTime ;
                           dcterms:description "The start date and time of a PublicationEvent as it was run."@en ;
-                          rdfs:label "Publication start date & time"@en .
+                          rdfs:label "PublicationEvent actual start date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishingEventsLeft
