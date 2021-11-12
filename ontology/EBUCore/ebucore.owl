@@ -2883,13 +2883,19 @@ ec:locationType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
 ec:mediaResourceId rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:MediaResource ;
-                   rdfs:range ec:Identifier .
+                   rdfs:range ec:Identifier ;
+                   dcterms:description "Range: Identifier or string"@en ,
+                                       "To identify a type of MediaResource, e.g. a template'."@en ;
+                   rdfs:label "Media resource Id"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType
 ec:mediaResourceType rdf:type owl:ObjectProperty ;
                      rdfs:domain ec:MediaResource ;
-                     rdfs:range ec:MediaResource_Type .
+                     rdfs:range ec:MediaResource_Type ;
+                     dcterms:description "Range: MediaResource_Type or string"@en ,
+                                         "To identify a type of MediaResource, e.g. a template'."@en ;
+                     rdfs:label "Media resource type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#offers
@@ -3023,31 +3029,45 @@ ec:requires rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceId
 ec:resourceId rdf:type owl:ObjectProperty ;
               rdfs:domain ec:MediaResource ;
-              rdfs:range ec:Identifier .
+              rdfs:range ec:Identifier ;
+              dcterms:description "An identifier associated to a Resource."@en ,
+                                  "Range: Identifier or anyURI or string"@en ;
+              rdfs:label "Resource id"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceIdType
 ec:resourceIdType rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:MediaResource ;
-                  rdfs:range ec:Resource_Type .
+                  rdfs:range ec:Resource_Type ;
+                  dcterms:description "Range: Resource_type or anyURI or string"@en ,
+                                      "To define a type of Resource."@en ;
+                  rdfs:label "Resource id"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsId
 ec:rightsId rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Rights ;
-            rdfs:range ec:Identifier .
+            rdfs:range ec:Identifier ;
+            dcterms:description "An identifier attributed to a set of Rights."@en ,
+                                "Range: Identifier, anyURI, string"@en ;
+            rdfs:label "Rights identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes
 ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Rights ;
-                           rdfs:range ec:CountryCode .
+                           rdfs:range ec:CountryCode ;
+                           dcterms:description "A list of country or region codes to which Rights do not apply."@en ;
+                           rdfs:label "Excluded territories"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryIncludes
 ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Rights ;
-                           rdfs:range ec:CountryCode .
+                           rdfs:range ec:CountryCode ;
+                           dcterms:description "A list of country or region codes to which Rights apply."@en ,
+                                               "Range: string or CountryCode."@en ;
+                           rdfs:label "Included territories"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType
@@ -3058,7 +3078,11 @@ ec:rightsType rdf:type owl:ObjectProperty ;
                                          ec:ExclusivityType
                                          ec:RightsType
                                        )
-                         ] .
+                         ] ;
+              dcterms:description "***REUSE OF IRI***"@en ,
+                                  "Range: a string or a Rights_Type or a ContractType."@en ,
+                                  "To identify a type of Rights."@en ;
+              rdfs:label "Rights type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceId
@@ -3070,13 +3094,10 @@ ec:serviceId rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceType
 ec:serviceType rdf:type owl:ObjectProperty ;
                rdfs:domain ec:Service ;
-               rdfs:range ec:Service_Type .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackId
-ec:trackId rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Track ;
-           rdfs:range ec:Identifier .
+               rdfs:range ec:Service_Type ;
+               dcterms:description "Range: string or Service_type"@en ,
+                                   "The type of a Service."@en ;
+               rdfs:label "Service type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
@@ -5467,18 +5488,6 @@ ec:mediaResourceDescription rdf:type owl:DatatypeProperty ;
                             rdfs:label "MediaResource description"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
-ec:mediaResourceId rdf:type owl:DatatypeProperty ;
-                   rdfs:range xsd:anyURI ,
-                              xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType
-ec:mediaResourceType rdf:type owl:DatatypeProperty ;
-                     rdfs:range xsd:anyURI ,
-                                xsd:string .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed
 ec:midRollAdAllowed rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:MediaResource ;
@@ -6264,18 +6273,6 @@ ec:resourceFilename rdf:type owl:DatatypeProperty ;
                     rdfs:label "File name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceId
-ec:resourceId rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceIdType
-ec:resourceIdType rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:anyURI ,
-                             xsd:string .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceLocatorTargetInformation
 ec:resourceLocatorTargetInformation rdf:type owl:DatatypeProperty ;
                                     rdfs:domain ec:Resource ;
@@ -6368,12 +6365,6 @@ ec:rightsExpression rdf:type owl:DatatypeProperty ;
                     rdfs:label "Rights"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsId
-ec:rightsId rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:anyURI ,
-                       xsd:string .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsLink
 ec:rightsLink rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:Rights ;
@@ -6389,22 +6380,6 @@ ec:rightsStartDateTime rdf:type owl:DatatypeProperty ;
                        rdfs:range xsd:dateTime ;
                        dcterms:description "To define the start time since when Rights are applicable."@en ;
                        rdfs:label "Rights start date time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes
-ec:rightsTerritoryExcludes rdf:type owl:DatatypeProperty ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryIncludes
-ec:rightsTerritoryIncludes rdf:type owl:DatatypeProperty ;
-                           rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType
-ec:rightsType rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleId
@@ -6506,12 +6481,6 @@ ec:serviceName rdf:type owl:DatatypeProperty ;
                rdfs:range rdfs:Literal ;
                dcterms:description "The name of the Service."@en ;
                rdfs:label "Service name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceType
-ec:serviceType rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:anyURI ,
-                          xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#shotLog
@@ -6903,7 +6872,10 @@ ec:trackDefinition rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackId
 ec:trackId rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:anyURI ,
-                      xsd:string .
+                      xsd:string ;
+           dcterms:description "An Identifier attributed to a Track."@en ,
+                               "Range: Identifier, anyURI, string"@en ;
+           rdfs:label "Track identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackName
@@ -8285,7 +8257,8 @@ ec:Props rdf:type owl:Class ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance
-ec:Provenance rdf:type owl:Class .
+ec:Provenance rdf:type owl:Class ;
+              skos:note "Provenance"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
@@ -9038,8 +9011,7 @@ ec:hasContributor dcterms:description "Range: string or Agent"@en ;
                   dcterms:description "To identify a contributor to a Resource, a Business Object, an Event..."@en .
 
 
-ec:hasCopyright dcterms:description "Range: string or Copyright."@en ;
-                rdfs:label "Copyright"@en ;
+ec:hasCopyright rdfs:label "Copyright"@en ;
                 dcterms:description "To express copyright."@en .
 
 
@@ -9136,16 +9108,6 @@ ec:locationId dcterms:description "Range: Identifier, anyURI or string"@en ,
               rdfs:label "Location identifier"@en .
 
 
-ec:mediaResourceId dcterms:description "Range: Identifier or string"@en ,
-                                       "To identify a type of MediaResource, e.g. a template'."@en ;
-                   rdfs:label "Media resource Id"@en .
-
-
-ec:mediaResourceType rdfs:label "Media resource type"@en ;
-                     dcterms:description "To identify a type of MediaResource, e.g. a template'."@en ,
-                                         "Range: MediaResource_Type or string"@en .
-
-
 ec:organisationId rdfs:label "Organisation identifier"@en ;
                   dcterms:description "Range: string or Identifier"@en ,
                                       "The identifier attributed to an Organisation"@en .
@@ -9206,50 +9168,9 @@ ec:relationType dcterms:description "Range: string or Relation_Type."@en ;
                 dcterms:description "To define a type of Relation."@en .
 
 
-ec:resourceId dcterms:description "An identifier associated to a Resource."@en ,
-                                  "Range: Identifier or anyURI or string"@en ;
-              rdfs:label "Resource id"@en .
-
-
-ec:resourceIdType dcterms:description "To define a type of Resource."@en ;
-                  rdfs:label "Resource id"@en ;
-                  dcterms:description "Range: Resource_type or anyURI or string"@en .
-
-
-ec:rightsId dcterms:description "Range: Identifier, anyURI, string"@en ;
-            rdfs:label "Rights identifier"@en ;
-            dcterms:description "An identifier attributed to a set of Rights."@en .
-
-
-ec:rightsTerritoryExcludes dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
-                                               "Range: string or CountryCode."@en ;
-                           rdfs:label "Excluded territories"@en .
-
-
-ec:rightsTerritoryIncludes rdfs:label "Included territories"@en ;
-                           dcterms:description "Range: string or CountryCode."@en ,
-                                               "A list of country or region codes to which Rights apply."@en .
-
-
-ec:rightsType dcterms:description "***REUSE OF IRI***"@en ;
-              rdfs:label "Rights type"@en ;
-              dcterms:description "To identify a type of Rights."@en ,
-                                  "Range: a string or a Rights_Type or a ContractType."@en .
-
-
 ec:serviceId dcterms:description "To attribute an identifiier to a Service."@en ,
                                  "Range: string or Identifier."@en ;
              rdfs:label "Service identiifier"@en .
-
-
-ec:serviceType rdfs:label "Service type"@en ;
-               dcterms:description "The type of a Service."@en ,
-                                   "Range: string or Service_type"@en .
-
-
-ec:trackId dcterms:description "Range: Identifier, anyURI, string"@en ;
-           rdfs:label "Track identifier"@en ;
-           dcterms:description "An Identifier attributed to a Track."@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
