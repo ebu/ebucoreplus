@@ -646,6 +646,12 @@ ec:hasAnnotationRelatedAgent rdf:type owl:ObjectProperty ;
                              rdfs:range ec:Agent .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedLocation
+ec:hasAnnotationRelatedLocation rdf:type owl:ObjectProperty ;
+                                rdfs:domain ec:Annotation ;
+                                rdfs:range ec:Location .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:Annotation ;
@@ -818,7 +824,10 @@ ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudienceScoreRecordingTechnique
 ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
                                       rdfs:domain ec:AudienceRating ;
-                                      rdfs:range ec:Agent .
+                                      rdfs:range ec:Agent ;
+                                      dcterms:description "Range: string or AudienceScorerecordingTechnique."@en ,
+                                                          "To identify the technique used to measure an audience."@en ;
+                                      rdfs:label "Audience score recording technique"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioCodec
@@ -834,7 +843,10 @@ ec:hasAudioCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioContentType
 ec:hasAudioContentType rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:AudioContent ;
-                       rdfs:range ec:AudioContent_Type .
+                       rdfs:range ec:AudioContent_Type ;
+                       dcterms:description "Range:string or AudioContent_Type."@en ,
+                                           "To define a type of AudioContent."@en ;
+                       rdfs:label "Audio content type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioDescription
@@ -859,7 +871,10 @@ ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioProgrammeType
 ec:hasAudioProgrammeType rdf:type owl:ObjectProperty ;
                          rdfs:domain ec:AudioProgramme ;
-                         rdfs:range ec:AudioProgramme_Type .
+                         rdfs:range ec:AudioProgramme_Type ;
+                         dcterms:description "Range:string or AudioProgramme_Type"@en ,
+                                             "To define a type of AudioProgramme."@en ;
+                         rdfs:label "Audio programme type."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioTrack
@@ -873,7 +888,10 @@ ec:hasAudioTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedAgent
 ec:hasAwardRelatedAgent rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:Award ;
-                        rdfs:range ec:Agent .
+                        rdfs:range ec:Agent ;
+                        dcterms:description "Range: string or Agent."@en ,
+                                            "To link an Agent to an Award."@en ;
+                        rdfs:label "Agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedBusinessObject
@@ -887,13 +905,18 @@ ec:hasAwardRelatedBusinessObject rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedEvent
 ec:hasAwardRelatedEvent rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:Award ;
-                        rdfs:range ec:Event .
+                        rdfs:range ec:Event ;
+                        dcterms:description "An Event e.g. a ceremony, associated to an Award."@en ;
+                        rdfs:label "Event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasBeenAwarded
 ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Agent ;
-                  rdfs:range ec:Award .
+                  rdfs:range ec:Award ;
+                  dcterms:description "Range: a string or an Award."@en ,
+                                      "The Award gievn to an Agent"@en ;
+                  rdfs:label "Agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning
@@ -918,19 +941,30 @@ ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioningSource
 ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:MediaResource ;
-                       rdfs:range ec:Agent .
+                       rdfs:range ec:Agent ;
+                       dcterms:description "Range: string or Agent"@en ,
+                                           """To provide information on the source of
+            Captioning."""@en ;
+                       rdfs:label "Captioning source"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember
 ec:hasCastMember rdf:type owl:ObjectProperty ;
                  rdfs:domain ec:Asset ;
-                 rdfs:range ec:Cast .
+                 rdfs:range ec:Cast ;
+                 dcterms:description "A member of the cast."@en ,
+                                     "Range: a string or a Cast"@en ;
+                 rdfs:label "Cast member"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastRole
 ec:hasCastRole rdf:type owl:ObjectProperty ;
                rdfs:domain ec:Agent ;
-               rdfs:range ec:Role .
+               rdfs:range ec:Role ;
+               dcterms:description "Range: a string or a Role/Concept from a controlled vocabulary."@en ,
+                                   """To define the role of an Agent (Contact/person
+            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
+               rdfs:label "Cast role"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelLogo
@@ -954,19 +988,28 @@ ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
                 rdfs:domain ec:Asset ;
-                rdfs:range ec:Character .
+                rdfs:range ec:Character ;
+                dcterms:description "Range: a string or a \"fictitious\" person - Character."@en ,
+                                    "To list characters in a fiction."@en ;
+                rdfs:label "Character"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec
 ec:hasCodec rdf:type owl:ObjectProperty ;
             rdfs:domain ec:MediaResource ;
-            rdfs:range ec:Codec .
+            rdfs:range ec:Codec ;
+            dcterms:description "Range: string or Codec"@en ,
+                                "To identify a Codec used to create a resource."@en ;
+            rdfs:label "Codec"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodecVendor
 ec:hasCodecVendor rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Codec ;
-                  rdfs:range ec:Agent .
+                  rdfs:range ec:Agent ;
+                  dcterms:description "Range: string or Agent."@en ,
+                                      "To provide a name for the vendor of the Codec."@en ;
+                  rdfs:label "Codec vendor"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasColourSpace
@@ -982,7 +1025,11 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContact
 ec:hasContact rdf:type owl:ObjectProperty ;
               rdfs:domain ec:Agent ;
-              rdfs:range ec:Contact .
+              rdfs:range ec:Contact ;
+              dcterms:description "Range: a link to a Contact or a string."@en ,
+                                  """To provide information on a Contact for an
+            Organisation or a physical person (e.g. the agent of an actor)."""@en ;
+              rdfs:label "Contact"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContainerCodec
@@ -1018,20 +1065,28 @@ ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContentEditorialFormat
 ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
                              rdfs:domain ec:EditorialObject ;
-                             rdfs:range ec:ContentEditorialFormat .
+                             rdfs:range ec:ContentEditorialFormat ;
+                             dcterms:description "Range: string or ContentEditorialFormat."@en ,
+                                                 "To define a content editorial format e.g. magazine."@en ;
+                             rdfs:label "Editorial format"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContributor
 ec:hasContributor rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Asset ;
-                  rdfs:range ec:Agent .
+                  rdfs:range ec:Agent ;
+                  dcterms:description "Range: string or Agent"@en ,
+                                      "To identify a contributor to a Resource, a Business Object, an Event..."@en ;
+                  rdfs:label "Contributor"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:isCoveredBy ;
                 rdfs:domain ec:Asset ;
-                rdfs:range ec:Copyright .
+                rdfs:range ec:Copyright ;
+                dcterms:description "To express copyright."@en ;
+                rdfs:label "Copyright"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCostumeType
@@ -1055,7 +1110,10 @@ ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCountryOfDeath
 ec:hasCountryOfDeath rdf:type owl:ObjectProperty ;
                      rdfs:domain ec:Person ;
-                     rdfs:range ec:CountryCode .
+                     rdfs:range ec:CountryCode ;
+                     dcterms:description "Range: string or CountryCode"@en ,
+                                         "The country where the person died"@en ;
+                     rdfs:label "Country of death"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCoverage
@@ -1356,13 +1414,19 @@ ec:hasFoodStyle rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat
 ec:hasFormat rdf:type owl:ObjectProperty ;
              rdfs:domain ec:MediaResource ;
-             rdfs:range ec:Format .
+             rdfs:range ec:Format ;
+             dcterms:description "Range: string, Format or any Format-related Concept"@en ,
+                                 "To identify a Format"@en ;
+             rdfs:label "Format"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormatId
 ec:hasFormatId rdf:type owl:ObjectProperty ;
                rdfs:domain ec:Format ;
-               rdfs:range ec:Identifier .
+               rdfs:range ec:Identifier ;
+               dcterms:description "An identifier attributed to a Format."@en ,
+                                   "Range: Identifier or string or anyURI."@en ;
+               rdfs:label "Format identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGeneration
@@ -1377,27 +1441,40 @@ ec:hasGeneration rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGenre
 ec:hasGenre rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Asset ;
-            rdfs:range ec:Genre .
+            rdfs:range ec:Genre ;
+            dcterms:description """To define a Genre/category associated to the
+            BusinesssObject."""@en ,
+                                "range: string or Genre."@en ;
+            rdfs:label "Genre"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIMediaIdentifier
 ec:hasIMediaIdentifier rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasIdentifier ;
                        rdfs:domain ec:Asset ;
-                       rdfs:range ec:Identifier .
+                       rdfs:range ec:Identifier ;
+                       dcterms:description "Range: string or Identifier."@en ,
+                                           "To associate an IMedia Identifier with an Asset."@en ;
+                       rdfs:label "IMedia Id"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:isCoveredBy ;
                       rdfs:domain ec:Asset ;
-                      rdfs:range ec:IPRRestrictions .
+                      rdfs:range ec:IPRRestrictions ;
+                      dcterms:description "Range: string or IPR Restrictions."@en ,
+                                          "To express IPR Restrictions."@en ;
+                      rdfs:label "IPR restrictions"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier
 ec:hasIdentifier rdf:type owl:ObjectProperty ;
                  rdfs:domain ec:Asset ;
-                 rdfs:range ec:Identifier .
+                 rdfs:range ec:Identifier ;
+                 dcterms:description "To associate an Identifier with an Asset."@en ;
+                 rdfs:comment "*** Use this general ***"@en ;
+                 rdfs:label "Identifier"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifierType
@@ -3092,7 +3169,10 @@ ec:references rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationIdentifier
 ec:relationIdentifier rdf:type owl:ObjectProperty ;
                       rdfs:domain ec:Relation ;
-                      rdfs:range ec:Identifier .
+                      rdfs:range ec:Identifier ;
+                      dcterms:description "Range: string or Identifier."@en ,
+                                          "To identify a Relation."@en ;
+                      rdfs:label "Relation Type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationType
@@ -5003,128 +5083,7 @@ ec:hasAnnotationRelatedEvent rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedLocation
 ec:hasAnnotationRelatedLocation rdf:type owl:DatatypeProperty ;
-                                rdfs:subPropertyOf ec:hasAnnotationPurpose ;
-                                rdfs:domain ec:Annotation ;
-                                rdfs:range xsd:anyURI ,
-                                           xsd:string ;
-                                dcterms:description "To identify a Location subject of the Annotation."@en ;
-                                rdfs:label "Annotation related location"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
-ec:hasAssociatedArtefact rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudienceScoreRecordingTechnique
-ec:hasAudienceScoreRecordingTechnique rdf:type owl:DatatypeProperty ;
-                                      rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioContentType
-ec:hasAudioContentType rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioProgrammeType
-ec:hasAudioProgrammeType rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedAgent
-ec:hasAwardRelatedAgent rdf:type owl:DatatypeProperty ;
-                        rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedEvent
-ec:hasAwardRelatedEvent rdf:type owl:DatatypeProperty ;
-                        rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasBeenAwarded
-ec:hasBeenAwarded rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioningSource
-ec:hasCaptioningSource rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember
-ec:hasCastMember rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastRole
-ec:hasCastRole rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter
-ec:hasCharacter rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec
-ec:hasCodec rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodecVendor
-ec:hasCodecVendor rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContact
-ec:hasContact rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContentEditorialFormat
-ec:hasContentEditorialFormat rdf:type owl:DatatypeProperty ;
-                             rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContributor
-ec:hasContributor rdf:type owl:DatatypeProperty ;
-                  rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCopyright
-ec:hasCopyright rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCountryOfDeath
-ec:hasCountryOfDeath rdf:type owl:DatatypeProperty ;
-                     rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat
-ec:hasFormat rdf:type owl:DatatypeProperty ;
-             rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormatId
-ec:hasFormatId rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:anyURI ,
-                          xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGenre
-ec:hasGenre rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIMediaIdentifier
-ec:hasIMediaIdentifier rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:string .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIPRRestrictions
-ec:hasIPRRestrictions rdf:type owl:DatatypeProperty ;
-                      rdfs:range xsd:string .
+                                rdfs:subPropertyOf ec:hasAnnotationPurpose .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
@@ -5134,12 +5093,6 @@ ec:hasIdPicture rdf:type owl:DatatypeProperty ;
                 dcterms:description "A locator / URI or a Picture."@en ,
                                     "To provide a link to an identification picture."@en ;
                 rdfs:label "Identification picture"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier
-ec:hasIdentifier rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:anyURI ,
-                            xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenanceTarget
@@ -6121,12 +6074,6 @@ ec:regionDelimY rdf:type owl:DatatypeProperty ;
             the y-axis. If present with regionDelimX, the zone definition is complemented by the
             associated values of the height and width."""@en ;
                 rdfs:label "Region delimiter (y-axis)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationIdentifier
-ec:relationIdentifier rdf:type owl:DatatypeProperty ;
-                      rdfs:range xsd:anyURI ,
-                                 xsd:string .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationLink
@@ -8807,131 +8754,13 @@ ec:hasAnnotationRelatedAgent dcterms:description "To identify an Agent subject o
                              rdfs:label "Annotation related agent"@en .
 
 
+ec:hasAnnotationRelatedLocation dcterms:description "To identify a Location subject of the Annotation."@en ;
+                                rdfs:label "Annotation related location"@en .
+
+
 ec:hasAssociatedArtefact dc:description "Range: string or Artefact"@en ;
                          rdfs:label "Related Artefact"@en ;
                          dc:description "An Artefact related to an Agent."@en .
-
-
-ec:hasAudienceScoreRecordingTechnique dcterms:description "To identify the technique used to measure an audience."@en ,
-                                                          "Range: string or AudienceScorerecordingTechnique."@en ;
-                                      rdfs:label "Audience score recording technique"@en .
-
-
-ec:hasAudioContentType rdfs:label "Audio content type"@en ;
-                       dcterms:description "Range:string or AudioContent_Type."@en ,
-                                           "To define a type of AudioContent."@en .
-
-
-ec:hasAudioProgrammeType dcterms:description "Range:string or AudioProgramme_Type"@en ;
-                         rdfs:label "Audio programme type."@en ;
-                         dcterms:description "To define a type of AudioProgramme."@en .
-
-
-ec:hasAwardRelatedAgent dcterms:description "Range: string or Agent."@en ,
-                                            "To link an Agent to an Award."@en ;
-                        rdfs:label "Agent"@en .
-
-
-ec:hasAwardRelatedEvent rdfs:label "Event"@en ;
-                        dcterms:description "An Event e.g. a ceremony, associated to an Award."@en .
-
-
-ec:hasBeenAwarded dcterms:description "The Award gievn to an Agent"@en ,
-                                      "Range: a string or an Award."@en ;
-                  rdfs:label "Agent"@en .
-
-
-ec:hasCaptioningSource dcterms:description "Range: string or Agent"@en ;
-                       rdfs:label "Captioning source"@en ;
-                       dcterms:description """To provide information on the source of
-            Captioning."""@en .
-
-
-ec:hasCastMember rdfs:label "Cast member"@en ;
-                 dcterms:description "A member of the cast."@en ,
-                                     "Range: a string or a Cast"@en .
-
-
-ec:hasCastRole dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
-               rdfs:label "Cast role"@en ;
-               dcterms:description "Range: a string or a Role/Concept from a controlled vocabulary."@en .
-
-
-ec:hasCharacter dcterms:description "To list characters in a fiction."@en ,
-                                    "Range: a string or a \"fictitious\" person - Character."@en ;
-                rdfs:label "Character"@en .
-
-
-ec:hasCodec dcterms:description "Range: string or Codec"@en ,
-                                "To identify a Codec used to create a resource."@en ;
-            rdfs:label "Codec"@en .
-
-
-ec:hasCodecVendor rdfs:label "Codec vendor"@en ;
-                  dcterms:description "To provide a name for the vendor of the Codec."@en ,
-                                      "Range: string or Agent."@en .
-
-
-ec:hasContact dcterms:description "Range: a link to a Contact or a string."@en ;
-              rdfs:label "Contact"@en ;
-              dcterms:description """To provide information on a Contact for an
-            Organisation or a physical person (e.g. the agent of an actor)."""@en .
-
-
-ec:hasContentEditorialFormat dcterms:description "Range: string or ContentEditorialFormat."@en ;
-                             rdfs:label "Editorial format"@en ;
-                             dcterms:description "To define a content editorial format e.g. magazine."@en .
-
-
-ec:hasContributor dcterms:description "Range: string or Agent"@en ;
-                  rdfs:label "Contributor"@en ;
-                  dcterms:description "To identify a contributor to a Resource, a Business Object, an Event..."@en .
-
-
-ec:hasCopyright rdfs:label "Copyright"@en ;
-                dcterms:description "To express copyright."@en .
-
-
-ec:hasCountryOfDeath dcterms:description "Range: string or CountryCode"@en ,
-                                         "The country where the person died"@en ;
-                     rdfs:label "Country of death"@en .
-
-
-ec:hasFormat dcterms:description "To identify a Format"@en ;
-             rdfs:label "Format"@en ;
-             dcterms:description "Range: string, Format or any Format-related Concept"@en .
-
-
-ec:hasFormatId rdfs:label "Format identifier"@en ;
-               dcterms:description "An identifier attributed to a Format."@en ,
-                                   "Range: Identifier or string or anyURI."@en .
-
-
-ec:hasGenre dcterms:description "range: string or Genre."@en ;
-            rdfs:label "Genre"@en ;
-            dcterms:description """To define a Genre/category associated to the
-            BusinesssObject."""@en .
-
-
-ec:hasIMediaIdentifier dcterms:description "Range: string or Identifier."@en ;
-                       rdfs:label "IMedia Id"@en ;
-                       dcterms:description "To associate an IMedia Identifier with an Asset."@en .
-
-
-ec:hasIPRRestrictions rdfs:label "IPR restrictions"@en ;
-                      dcterms:description "To express IPR Restrictions."@en ,
-                                          "Range: string or IPR Restrictions."@en .
-
-
-ec:hasIdentifier dcterms:description "Range: string or Identifier."@en ;
-                 rdfs:label "Identifier"@en ;
-                 dcterms:description "To associate an Identifier with an Asset."@en .
-
-
-ec:relationIdentifier dcterms:description "Range: string or Identifier."@en ,
-                                          "To identify a Relation."@en ;
-                      rdfs:label "Relation Type"@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
