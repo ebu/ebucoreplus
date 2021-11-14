@@ -317,7 +317,7 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#displayAspectRatio
 ec:displayAspectRatio rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Asset ;
+                      rdfs:domain ec:MediaResource ;
                       rdfs:range ec:ActiveFormatDescriptorCode ;
                       dcterms:description "The aspect ratio when displayed."@en ;
                       rdfs:label "Display aspect ratio"@en .
@@ -2449,15 +2449,19 @@ ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOf
 ec:isEpisodeOf rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Asset ;
-               rdfs:range ec:Series ;
+               rdfs:domain ec:Episode ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( ec:Season
+                                          ec:Series
+                                        )
+                          ] ;
                dcterms:description "The Episode of a Series or a Season."@en ;
                rdfs:label "Parent season / series"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeason
 ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Asset ;
+                     rdfs:domain ec:Episode ;
                      rdfs:range ec:Season ;
                      dcterms:description "The Episode of a Series or a Season."@en ;
                      rdfs:label "Parent season / series"@en .
@@ -2465,7 +2469,7 @@ ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Asset ;
+                     rdfs:domain ec:Episode ;
                      rdfs:range ec:Series ;
                      dcterms:description "The Episode of a Series or a Season."@en ;
                      rdfs:label "Parent season / series"@en .
@@ -2979,7 +2983,7 @@ dc:source rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/dc/terms/alternative
 dcterms:alternative rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Asset ;
+                    rdfs:subPropertyOf ec:title ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "An alternative to the title."@en ;
                     rdfs:label "Alternative title"@en .
@@ -3132,9 +3136,10 @@ ec:activityStartDate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#adultContent
 ec:adultContent rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Asset ;
+                rdfs:domain ec:TO_BE_LOOKED_AT ;
                 rdfs:range xsd:boolean ;
                 dcterms:description "A flag to indiucate adult content."@en ;
+                rdfs:comment "**** Content type *** i.e. some skos:Consept"@en ;
                 rdfs:label "Adult content flag"@en .
 
 
@@ -3615,7 +3620,6 @@ ec:artefactWebsite rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#aspectRatio
 ec:aspectRatio rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Asset ;
                rdfs:range rdfs:Literal ;
                dcterms:description "To specify the aspect ratio."@en ;
                rdfs:label "Aspect ratio"@en .
@@ -4103,7 +4107,6 @@ ec:durationPublished rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationPublishedNormalPlayTime
 ec:durationPublishedNormalPlayTime rdf:type owl:DatatypeProperty ;
                                    rdfs:subPropertyOf ec:durationPublished ;
-                                   rdfs:domain ec:Asset ;
                                    rdfs:range rdfs:Literal ;
                                    dcterms:description "To provide a published duration as normal play time."@en ;
                                    rdfs:label "Published duration (play time)"@en .
@@ -4295,7 +4298,7 @@ ec:endTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumber
 ec:episodeNumber rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Asset ;
+                 rdfs:domain ec:Episode ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "The Episode Number"@en ;
                  rdfs:label "Episode number"@en .
@@ -4303,7 +4306,7 @@ ec:episodeNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumberInSeason
 ec:episodeNumberInSeason rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Asset ;
+                         rdfs:domain ec:Episode ;
                          rdfs:range rdfs:Literal ;
                          dcterms:description "The Episode Number in a season"@en ;
                          rdfs:label "Episode number in season"@en .
@@ -4311,7 +4314,7 @@ ec:episodeNumberInSeason rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumberInSeries
 ec:episodeNumberInSeries rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Asset ;
+                         rdfs:domain ec:Episode ;
                          rdfs:range rdfs:Literal ;
                          dcterms:description "The Episode Number in a series"@en ;
                          rdfs:label "Episode number in series"@en .
@@ -4901,7 +4904,6 @@ ec:loudnessRange rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mainTitle
 ec:mainTitle rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf ec:title ;
-             rdfs:domain ec:Asset ;
              rdfs:range rdfs:Literal ;
              dcterms:description "Specifies the main title or name given to the EditorialObject."@en ;
              rdfs:label "Main title"@en .
@@ -5087,7 +5089,6 @@ ec:orientation rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#originalTitle
 ec:originalTitle rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf ec:title ;
-                 rdfs:domain ec:Asset ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "The original title used to identify the work."@en ;
                  rdfs:label "Original title."@en .
@@ -5446,7 +5447,6 @@ ec:publishedStartDateTime rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedTitle
 ec:publishedTitle rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:title ;
-                  rdfs:domain ec:Asset ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "The title used to identify the work at publication time."@en ;
                   rdfs:label "Published title."@en .
@@ -5599,7 +5599,6 @@ ec:relationTotalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resolution
 ec:resolution rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Asset ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To define the resolution of an Asset e.g. video, image..."@en ;
               rdfs:label "Resolution"@en .
@@ -5793,7 +5792,7 @@ ec:script rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#seasonNumber
 ec:seasonNumber rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Asset ;
+                rdfs:domain ec:Season ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To provide a Season number."@en ;
                 rdfs:label "Season number"@en .
@@ -6094,9 +6093,8 @@ ec:textLineStartTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timeCreated
 ec:timeCreated rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Asset ;
                rdfs:range rdfs:Literal ;
-               dcterms:description "the tie of creation of an Asset."@en ;
+               dcterms:description "The time of creation of an Asset."@en ;
                rdfs:label "Time created."@en .
 
 
@@ -6223,7 +6221,6 @@ ec:username rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#version
 ec:version rdf:type owl:DatatypeProperty ;
-           rdfs:domain ec:Asset ;
            rdfs:range rdfs:Literal ;
            dcterms:description "To provide information on the current version of an EditorialObject."@en ;
            rdfs:label "Version"@en .
@@ -6522,6 +6519,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:aspectRatio ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:comments ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
@@ -6562,11 +6563,23 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:resolution ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:start ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:timeCreated ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:title ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:version ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
          owl:disjointWith ec:Rating ;
