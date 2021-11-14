@@ -298,14 +298,6 @@ ec:clonedTo rdf:type owl:ObjectProperty ;
             rdfs:label "Cloned to"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecId
-ec:codecId rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Codec ;
-           rdfs:range ec:Identifier ;
-           dcterms:description "To identify a Codec."@en ;
-           rdfs:label "Codec Identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
@@ -3821,14 +3813,6 @@ ec:codecFamily rdf:type owl:DatatypeProperty ;
                rdfs:label "Codec family"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecName
-ec:codecName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Codec ;
-             rdfs:range rdf:PlainLiteral ;
-             dcterms:description "To provide a name for the Codec, e.g. a product name."@en ;
-             rdfs:label "Codec name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecVersion
 ec:codecVersion rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Codec ;
@@ -6892,6 +6876,22 @@ ec:ClosedSubtitling rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Codec
 ec:Codec rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasIdentifier ;
+                           owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:someValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectDescription ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectName ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ;
          dcterms:description "To provide information on a codec."@en ;
          rdfs:label "Codec"@en .
 
