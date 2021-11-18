@@ -340,30 +340,6 @@ ec:emotionType rdf:type owl:ObjectProperty ;
                rdfs:label "Emotion type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventId
-ec:eventId rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Event ;
-           rdfs:range ec:Identifier ;
-           dcterms:description "An identifier attributed to an Event."@en ;
-           rdfs:label "Event identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventType
-ec:eventType rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Event ;
-             rdfs:range ec:EventType ;
-             dcterms:description "To define a type of Event."@en ;
-             rdfs:label "Event type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#followsInSequence
-ec:followsInSequence rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Asset ;
-                     rdfs:range ec:Asset ;
-                     dcterms:description "A link to an Asset precedinging the current Asset in an ordered sequence."@en ;
-                     rdfs:label "Preceding"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
 ec:formatId rdf:type owl:ObjectProperty ;
             rdfs:domain ec:Format ;
@@ -2525,6 +2501,7 @@ ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isNextInSequence
 ec:isNextInSequence rdf:type owl:ObjectProperty ;
+                    owl:inverseOf ec:isPreviousInSequence ;
                     rdfs:domain ec:Asset ;
                     rdfs:range ec:Asset ;
                     dcterms:description "A link to an Asset following the current Asset in an ordered sequence."@en ;
@@ -2570,6 +2547,14 @@ ec:isPictureIdLocator rdf:type owl:ObjectProperty ;
                       rdfs:range ec:Locator ;
                       dcterms:description "The location from where a Person identification picture can be accessed."@en ;
                       rdfs:label "Identification picture locator"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPreviousInSequence
+ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
+                        rdfs:domain ec:Asset ;
+                        rdfs:range ec:Asset ;
+                        dcterms:description "A link to an Asset precedinging the current Asset in an ordered sequence."@en ;
+                        rdfs:label "Preceding"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToBusinessObject
@@ -4058,7 +4043,7 @@ ec:displayOrder rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration
 ec:duration rdf:type owl:DatatypeProperty ;
             rdfs:range rdfs:Literal ;
-            dcterms:description "To provide information on the duration of an EditorialObject or MediaResource."@en ;
+            dcterms:description "To provide information on the duration of an resource or consept."@en ;
             rdfs:label "Duration"@en .
 
 
@@ -4074,8 +4059,7 @@ ec:durationEditUnits rdf:type owl:DatatypeProperty ;
 ec:durationNormalPlayTime rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf ec:duration ;
                           rdfs:range rdfs:Literal ;
-                          dcterms:description """To provide a duration as normal
-            time."""@en ;
+                          dcterms:description "To provide a duration as normal time."@en ;
                           rdfs:label "Duration (time)"@en .
 
 
@@ -4304,22 +4288,6 @@ ec:episodeNumberInSeries rdf:type owl:DatatypeProperty ;
                          rdfs:label "Episode number in series"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventDescription
-ec:eventDescription rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Event ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide a description for an Event."@en ;
-                    rdfs:label "Event description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventDuration
-ec:eventDuration rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Event ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "The duration of an Event."@en ;
-                 rdfs:label "Duration"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndDate
 ec:eventEndDate rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Event ;
@@ -4342,14 +4310,6 @@ ec:eventEndTime rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:time ;
                 dcterms:description "The end time of an Event."@en ;
                 rdfs:label "Event end time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventName
-ec:eventName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Event ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description "To provide a name for an Event."@en ;
-             rdfs:label "Event name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventPeriod
@@ -7207,6 +7167,26 @@ ec:Essence rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
 ec:Event rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasIdentifier ;
+                           owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:someValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:duration ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectDescription ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectName ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ;
          dcterms:description """Additional types of event shall be defined as
             new sub-classes of event."""@en ,
                              """An event related to the media resource, e.g.
