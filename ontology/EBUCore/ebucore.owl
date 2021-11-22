@@ -213,12 +213,6 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType
-ec:annotationType rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Annotation ;
-                  rdfs:range ec:Annotation_Type .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesOutOf
 ec:appliesOutOf rdf:type owl:ObjectProperty ;
                 rdfs:domain ec:Rating ;
@@ -248,22 +242,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
               dcterms:description "To identify the Agent who approved the EditorialObject."@en ;
               rdfs:label "Agent"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardId
-ec:awardId rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Award ;
-           rdfs:range ec:Identifier ;
-           dcterms:description "To identify an Award."@en ;
-           rdfs:label "Award identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardType
-ec:awardType rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Award ;
-             rdfs:range ec:Award_Type ;
-             dcterms:description "To define a type of Award."@en ;
-             rdfs:label "Award type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo
@@ -299,22 +277,6 @@ ec:dubbedTo rdf:type owl:ObjectProperty ;
             rdfs:range ec:Language ;
             dcterms:description "the Language into which MediaResource is dubbed."@en ;
             rdfs:label "Dubbed to"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionId
-ec:emotionId rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Emotion ;
-             rdfs:range ec:Identifier ;
-             dcterms:description "An identifier attributed to an Emotion."@en ;
-             rdfs:label "Emotion identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionType
-ec:emotionType rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Emotion ;
-               rdfs:range ec:Emotion_Type ;
-               dcterms:description "A type of Emotion."@en ;
-               rdfs:label "Emotion type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
@@ -2180,12 +2142,6 @@ ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
                    rdfs:label "Track purpose"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasType
-ec:hasType rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Asset ;
-           rdfs:range ec:Type .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:isCoveredBy ;
@@ -3317,30 +3273,6 @@ ec:annotationCurationDateTime rdf:type owl:DatatypeProperty ;
                               rdfs:label "Annotation curation date & time"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationDescription
-ec:annotationDescription rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Annotation ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "To describe an Annotation."@en ;
-                         rdfs:label "Annotation description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationId
-ec:annotationId rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Annotation ;
-                rdfs:range xsd:anyURI ;
-                dcterms:description "To identify an Annotation."@en ;
-                rdfs:label "Annotation Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationName
-ec:annotationName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Annotation ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "To name an Annotation."@en ;
-                  rdfs:label "Annotation name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency
 ec:annotationSaliency rdf:type owl:DatatypeProperty ;
                       rdfs:domain ec:Annotation ;
@@ -3578,22 +3510,6 @@ ec:awardDate rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:dateTime ;
              dcterms:description "To provide an date when an Award was delivered."@en ;
              rdfs:label "Award date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDescription
-ec:awardDescription rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Award ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide a description for an Award."@en ;
-                    rdfs:label "Award description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardName
-ec:awardName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Award ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description "To provide the name of an Award."@en ;
-             rdfs:label "Award name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitDepth
@@ -3988,14 +3904,6 @@ ec:education rdf:type owl:DatatypeProperty ;
              rdfs:label "Education"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionDescription
-ec:emotionDescription rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Emotion ;
-                      rdfs:range rdfs:Literal ;
-                      dcterms:description "The description of an Emotion."@en ;
-                      rdfs:label "Emotion description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionEditUnit
 ec:emotionEditUnit rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:emotionTimestamp ;
@@ -4003,14 +3911,6 @@ ec:emotionEditUnit rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:long ;
                    dcterms:description "The edit unit number at which the Emotion occurs."@en ;
                    rdfs:label "Emotion edit unit number"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionName
-ec:emotionName rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Emotion ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "A name attributed to an Emotion."@en ;
-               rdfs:label "Emotion name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionNormalPlayTime
@@ -6296,6 +6196,22 @@ ec:AnimalColourCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation
 ec:Annotation rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasIdentifier ;
+                                owl:someValuesFrom ec:Identifier
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectType ;
+                                owl:someValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectDescription ;
+                                owl:someValuesFrom rdfs:Literal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectName ;
+                                owl:someValuesFrom rdfs:Literal
+                              ] ;
               dcterms:description "A class used to annotate Assets."@en ;
               rdfs:label "Annotation"@en .
 
@@ -6578,6 +6494,22 @@ ec:AudioTrackPurpose rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Award
 ec:Award rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasIdentifier ;
+                           owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:someValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectDescription ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectName ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ;
          dcterms:description "To describe an Award and associated information."@en ;
          rdfs:label "Award"@en .
 
@@ -7025,6 +6957,22 @@ ec:EditorialObject_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion
 ec:Emotion rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasIdentifier ;
+                             owl:someValuesFrom ec:Identifier
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
+                             owl:someValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectDescription ;
+                             owl:someValuesFrom rdfs:Literal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectName ;
+                             owl:someValuesFrom rdfs:Literal
+                           ] ;
            dcterms:description "A class to log Emotions."@en ;
            rdfs:label "Emotion"@en .
 
