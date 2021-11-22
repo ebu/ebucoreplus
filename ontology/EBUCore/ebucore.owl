@@ -7,6 +7,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spin: <http://spinrdf.org/spin#> .
@@ -2710,22 +2711,6 @@ ec:partId rdf:type owl:ObjectProperty ;
           rdfs:label "Part identifier"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personId
-ec:personId rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Person ;
-            rdfs:range ec:Identifier ;
-            dcterms:description "An identifier attributed to a Person."@en ;
-            rdfs:label "Person identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personType
-ec:personType rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Person ;
-              rdfs:range ec:Identifier ;
-              dcterms:description "A type attributed to a Person."@en ;
-              rdfs:label "Person type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:domain ec:PublicationEvent ;
@@ -2900,11 +2885,11 @@ ec:trackType rdf:type owl:ObjectProperty ;
 
 
 ###  http://xmlns.com/foaf/0.1/member
-<http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <http://xmlns.com/foaf/0.1/Group> ;
-                                   rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
-                                   dcterms:description "To identify an Agent member of a Group."@en ;
-                                   rdfs:label "Group member"@en .
+foaf:member rdf:type owl:ObjectProperty ;
+            rdfs:domain foaf:Group ;
+            rdfs:range foaf:Agent ;
+            dcterms:description "To identify an Agent member of a Group."@en ;
+            rdfs:label "Group member"@en .
 
 
 #################################################################
@@ -3300,36 +3285,12 @@ ec:animalCode rdf:type owl:DatatypeProperty ;
               rdfs:label "Animal code"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalDescription
-ec:animalDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Animal ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "To describe an animal."@en ;
-                     rdfs:label "Animal description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalGender
 ec:animalGender rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Animal ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To give the gender of an animal."@en ;
                 rdfs:label "Animal gender"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalId
-ec:animalId rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Animal ;
-            rdfs:range xsd:anyURI ;
-            dcterms:description "To associate an Id with an animal."@en ;
-            rdfs:label "Animal Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalName
-ec:animalName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Animal ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "To name an animal."@en ;
-              rdfs:label "Animal name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalPassport
@@ -3687,28 +3648,12 @@ ec:bookmark rdf:type owl:DatatypeProperty ;
             rdfs:label "Bookmark"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterDescription
-ec:characterDescription rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Character ;
-                        rdfs:range rdf:XMLLiteral ;
-                        dcterms:description "To provide the description of a Character."@en ;
-                        rdfs:label "Character description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterEndIndex
 ec:characterEndIndex rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:TextAnnotation ;
                      rdfs:range xsd:integer ;
                      dcterms:description "To identify the end character index of the portion of text to which the Annotation applies."@en ;
                      rdfs:label "Annotation character start index"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterName
-ec:characterName rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Character ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "To specify the name of a Character."@en ;
-                 rdfs:label "Character name."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterStartIndex
@@ -6168,11 +6113,11 @@ skos:notation rdfs:range rdfs:Literal .
 
 
 ###  http://xmlns.com/foaf/0.1/name
-<http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
-                                 rdfs:range rdfs:Literal ;
-                                 dcterms:description "To name an Agent."@en ;
-                                 rdfs:label "Name"@en .
+foaf:name rdf:type owl:DatatypeProperty ;
+          rdfs:domain foaf:Agent ;
+          rdfs:range rdfs:Literal ;
+          dcterms:description "To name an Agent."@en ;
+          rdfs:label "Name"@en .
 
 
 #################################################################
@@ -6273,7 +6218,7 @@ ec:Affiliation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
-         owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> ;
+         owl:equivalentClass foaf:Agent ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
@@ -6315,6 +6260,22 @@ ec:AncillaryDataFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Animal
 ec:Animal rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasIdentifier ;
+                            owl:someValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:someValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectDescription ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ;
           dcterms:description "To identify an animal."@en ;
           rdfs:label "Animal"@en .
 
@@ -7517,7 +7478,7 @@ ec:OpenSubtitling rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation
 ec:Organisation rdf:type owl:Class ;
-                owl:equivalentClass <http://xmlns.com/foaf/0.1/Organization> ;
+                owl:equivalentClass foaf:Organization ;
                 rdfs:subClassOf ec:Agent ;
                 dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
                 rdfs:label "Organisation"@en .
@@ -7566,7 +7527,7 @@ ec:Party rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
 ec:Person rdf:type owl:Class ;
-          owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> ;
+          owl:equivalentClass foaf:Person ;
           rdfs:subClassOf ec:Agent ;
           dcterms:description "To describe a Person."@en ;
           rdfs:label "Person"@en .
@@ -7588,7 +7549,7 @@ ec:Pictogram rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture
 ec:Picture rdf:type owl:Class ;
-           owl:equivalentClass <http://xmlns.com/foaf/0.1/img> ;
+           owl:equivalentClass foaf:img ;
            rdfs:subClassOf ec:Resource ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
            rdfs:label "Picture"@en .
@@ -7976,7 +7937,7 @@ ec:TargetPlatform rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
 ec:Team rdf:type owl:Class ;
-        owl:equivalentClass <http://xmlns.com/foaf/0.1/Group> ;
+        owl:equivalentClass foaf:Group ;
         rdfs:subClassOf ec:Agent ;
         dcterms:description "To define a Team."@en ;
         rdfs:label "Team"@en .
@@ -8194,33 +8155,33 @@ skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
-<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
-                                  dcterms:description "A person or Organisation."@en ;
-                                  rdfs:label "Agent"@en .
+foaf:Agent rdf:type owl:Class ;
+           dcterms:description "A person or Organisation."@en ;
+           rdfs:label "Agent"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Group
-<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class ;
-                                  dcterms:description "A group of Agents."@en ;
-                                  rdfs:label "Group"@en .
+foaf:Group rdf:type owl:Class ;
+           dcterms:description "A group of Agents."@en ;
+           rdfs:label "Group"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
-                                         dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
-                                         rdfs:label "Organization"@en .
+foaf:Organization rdf:type owl:Class ;
+                  dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
+                  rdfs:label "Organization"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
-<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
-                                   dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
-                                   rdfs:label "Person"@en .
+foaf:Person rdf:type owl:Class ;
+            dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
+            rdfs:label "Person"@en .
 
 
 ###  http://xmlns.com/foaf/0.1/img
-<http://xmlns.com/foaf/0.1/img> rdf:type owl:Class ;
-                                dcterms:description "Animage to represent something."@en ;
-                                rdfs:label "Image"@en .
+foaf:img rdf:type owl:Class ;
+         dcterms:description "Animage to represent something."@en ;
+         rdfs:label "Image"@en .
 
 
 #################################################################
