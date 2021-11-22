@@ -2643,22 +2643,6 @@ ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:label "Essence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelId
-ec:publicationChannelId rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:PublicationChannel ;
-                        rdfs:range ec:Identifier ;
-                        dcterms:description "An identifier attributed to a PublicationChannel."@en ;
-                        rdfs:label "Publication channel identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelType
-ec:publicationChannelType rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:PublicationChannel ;
-                          rdfs:range skos:Concept ;
-                          dcterms:description "To define a type of PublicationChannel."@en ;
-                          rdfs:label "Publication Channel type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishes
 ec:publishes rdf:type owl:ObjectProperty ;
              rdfs:domain ec:PublicationEvent ;
@@ -2715,14 +2699,6 @@ ec:resourceIdType rdf:type owl:ObjectProperty ;
                   rdfs:label "Resource id"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsId
-ec:rightsId rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Rights ;
-            rdfs:range ec:Identifier ;
-            dcterms:description "An identifier attributed to a set of Rights."@en ;
-            rdfs:label "Rights identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes
 ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Rights ;
@@ -2737,35 +2713,6 @@ ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                            rdfs:range ec:CountryCode ;
                            dcterms:description "A list of country or region codes to which Rights apply."@en ;
                            rdfs:label "Included territories"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType
-ec:rightsType rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Rights ;
-              rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( ec:ContractType
-                                         ec:ExclusivityType
-                                         ec:RightsType
-                                       )
-                         ] ;
-              dcterms:description "To identify a type of Rights."@en ;
-              rdfs:label "Rights type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceId
-ec:serviceId rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Service ;
-             rdfs:range ec:Identifier ;
-             dcterms:description "To attribute an identifiier to a Service."@en ;
-             rdfs:label "Service identiifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceType
-ec:serviceType rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Service ;
-               rdfs:range ec:Service_Type ;
-               dcterms:description "The type of a Service."@en ;
-               rdfs:label "Service type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
@@ -4944,22 +4891,6 @@ ec:pubStatus rdf:type owl:DatatypeProperty ;
              rdfs:label "Publication status"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelDescription
-ec:publicationChannelDescription rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain ec:PublicationChannel ;
-                                 rdfs:range rdfs:Literal ;
-                                 dcterms:description "To provide a description of a PublicationChannel e.g. a TV channel or website."@en ;
-                                 rdfs:label "PublicationChannel description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelName
-ec:publicationChannelName rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:PublicationChannel ;
-                          rdfs:range rdfs:Literal ;
-                          dcterms:description "To provide a name to a PublicationChannel e.g. a TV channel or website."@en ;
-                          rdfs:label "PublicationChannel name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationDuration
 ec:publicationDuration rdf:type owl:DatatypeProperty ;
                        rdfs:domain ec:PublicationEvent ;
@@ -5366,22 +5297,6 @@ ec:seasonNumber rdf:type owl:DatatypeProperty ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To provide a Season number."@en ;
                 rdfs:label "Season number"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceDescription
-ec:serviceDescription rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Service ;
-                      rdfs:range rdfs:Literal ;
-                      dcterms:description "A description of the Service."@en ;
-                      rdfs:label "Service description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceName
-ec:serviceName rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Service ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "The name of the Service."@en ;
-               rdfs:label "Service name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#shotLog
@@ -7622,6 +7537,22 @@ ec:Review rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights
 ec:Rights rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasIdentifier ;
+                            owl:someValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:someValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectDescription ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ;
           dcterms:description """To provide information on the rights, including
             intellectual property, related to a BusinessObject or Resource."""@en ;
           rdfs:label "Rights"@en .
@@ -7685,6 +7616,22 @@ ec:Series rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
 ec:Service rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasIdentifier ;
+                             owl:someValuesFrom ec:Identifier
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
+                             owl:someValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectDescription ;
+                             owl:someValuesFrom rdfs:Literal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectName ;
+                             owl:someValuesFrom rdfs:Literal
+                           ] ;
            dcterms:description """A service is the umbrella under which one or
             more PublicationChannel is operated."""@en ;
            rdfs:label "Service"@en .
