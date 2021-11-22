@@ -1299,14 +1299,6 @@ ec:hasLocationRelatedResource rdf:type owl:ObjectProperty ;
                               rdfs:label "Related resource"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationType
-ec:hasLocationType rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Location ;
-                   rdfs:range ec:LocationType ;
-                   dcterms:description "To define the type of a Location."@en ;
-                   rdfs:label "Locationcode"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:domain ec:MediaResource ;
@@ -2596,14 +2588,6 @@ ec:linkToSticker rdf:type owl:ObjectProperty ;
                  rdfs:label "Link to Sticker"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationId
-ec:locationId rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Location ;
-              rdfs:range ec:Identifier ;
-              dcterms:description "Range: Identifier, anyURI or string"@en ;
-              rdfs:label "Location identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationRegion
 ec:locationRegion rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Location ;
@@ -2618,14 +2602,6 @@ ec:locationTimeType rdf:type owl:ObjectProperty ;
                     rdfs:range ec:LocationTimeType ;
                     dcterms:description "A type of time at a Location."@en ;
                     rdfs:label "Location type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationType
-ec:locationType rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Location ;
-                rdfs:range ec:LocationType ;
-                dcterms:description "A type of Location."@en ;
-                rdfs:label "Location type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
@@ -4499,14 +4475,6 @@ ec:locationCoordinateSystemName rdf:type owl:DatatypeProperty ;
                                 dcterms:description """To specify the name of the gps coordinate
             system used for the Location."""@en ;
                                 rdfs:label "Coordinate system"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationDescription
-ec:locationDescription rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Location ;
-                       rdfs:range rdfs:Literal ;
-                       dcterms:description "To provide a description of a particular Location."@en ;
-                       rdfs:label "Location description"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationLatitude
@@ -7274,11 +7242,28 @@ ec:Licensing rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Link
 ec:Link rdf:type owl:Class ;
         dcterms:description "To define a custom link."@en ;
+        rdfs:comment "*** Not defined? ***"@en ;
         rdfs:label "Link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location
 ec:Location rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasIdentifier ;
+                              owl:someValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectType ;
+                              owl:someValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectDescription ;
+                              owl:someValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectName ;
+                              owl:someValuesFrom rdfs:Literal
+                            ] ;
             dcterms:description """A location related to the media resource, e.g.
             depicted in the resource (possibly fictional) or where the resource was created
             (shooting location), etc."""@en ,
