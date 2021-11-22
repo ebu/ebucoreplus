@@ -212,30 +212,6 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionId
-ec:actionId rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Action ;
-            rdfs:range ec:Identifier ;
-            dcterms:description "An identifier attributed to an Action."@en ;
-            rdfs:label "Action identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentId
-ec:agentId rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Agent ;
-           rdfs:range ec:Identifier ;
-           dcterms:description "An identifier attributed to an Agent."@en ;
-           rdfs:label "Agent identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentType
-ec:agentType rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Agent ;
-             rdfs:range skos:Concept ;
-             dcterms:description "To define a type of Agent."@en ;
-             rdfs:label "Agent type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType
 ec:annotationType rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Annotation ;
@@ -380,13 +356,6 @@ ec:hasActionRelatedScene rdf:type owl:ObjectProperty ;
                          rdfs:range ec:Scene ;
                          dcterms:description "To associate an Action with a Scene."@en ;
                          rdfs:label "Action related scene"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionType
-ec:hasActionType rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Action ;
-                 rdfs:range ec:Action_Type ;
-                 rdfs:label "action type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAffiliation
@@ -2733,14 +2702,6 @@ ec:offers rdf:type owl:ObjectProperty ;
           rdfs:label "PublicationEvent"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#organisationId
-ec:organisationId rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Organisation ;
-                  rdfs:range ec:Identifier ;
-                  dcterms:description "The identifier attributed to an Organisation"@en ;
-                  rdfs:label "Organisation identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partId
 ec:partId rdf:type owl:ObjectProperty ;
           rdfs:domain ec:Part ;
@@ -3035,22 +2996,6 @@ ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:label "Abstract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionDescription
-ec:actionDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Action ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "The description of an Action."@en ;
-                     rdfs:label "Action description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionName
-ec:actionName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Action ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "The name of an Action."@en ;
-              rdfs:label "Action name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestamp
 ec:actionTimestamp rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Action ;
@@ -3153,14 +3098,6 @@ ec:agentDbpedia rdf:type owl:DatatypeProperty ;
                 rdfs:label "DBPedia" .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDescription
-ec:agentDescription rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Agent ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide a description of an Agent."@en ;
-                    rdfs:label "Description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentEmailAddress
 ec:agentEmailAddress rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Agent ;
@@ -3235,14 +3172,6 @@ ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                               dcterms:description """To provide the mobile telephone number of an
             Agent (Contact/Person or organisation)"""@en ;
                               rdfs:label "Mobile"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentName
-ec:agentName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Agent ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description "To provide a name of an Agent."@en ;
-             rdfs:label "Name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentNickname
@@ -4996,32 +4925,6 @@ ec:orderedFlag rdf:type owl:DatatypeProperty ;
                rdfs:label "Ordered flag"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#organisationDescription
-ec:organisationDescription rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ec:Organisation ;
-                           rdfs:range rdfs:Literal ;
-                           dcterms:description "To provide a description of an Organisation."@en ;
-                           rdfs:label "Organisation description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#organisationName
-ec:organisationName rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Organisation ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide the full name of an Organisation."@en ;
-                    rdfs:label "Organisation name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#organisationType
-ec:organisationType rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Organisation ;
-                    rdfs:range xsd:anyURI ,
-                               xsd:string ;
-                    dcterms:description "Range: string or anyURI or Concept."@en ,
-                                        "To define a type of an Organisation."@en ;
-                    rdfs:label "Asset type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#orientation
 ec:orientation rdf:type owl:DatatypeProperty ;
                rdfs:range rdfs:Literal ;
@@ -6327,6 +6230,22 @@ ec:AccessConditions rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Action
 ec:Action rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasIdentifier ;
+                            owl:someValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:someValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectDescription ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ;
           dcterms:description "A class to log Actions."@en ;
           rdfs:label "Action"@en .
 
@@ -6355,6 +6274,22 @@ ec:Affiliation rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
          owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasIdentifier ;
+                           owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:someValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectDescription ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectName ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ;
          dcterms:description "A person / contact or organisation."@en ;
          rdfs:isDefinedBy dc:Agent ;
          rdfs:label "Agent"@en .
