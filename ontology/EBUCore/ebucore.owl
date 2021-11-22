@@ -1543,14 +1543,6 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
                             rdfs:label "Publication plan member."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationPlanType
-ec:hasPublicationPlanType rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:PublicationPlan ;
-                          rdfs:range ec:PublicationPlan_Type ;
-                          dcterms:description "To define a type of PublicationPlan."@en ;
-                          rdfs:label "Publication plan type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:PublicationEvent ;
@@ -2667,14 +2659,6 @@ ec:publicationChannelType rdf:type owl:ObjectProperty ;
                           rdfs:label "Publication Channel type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanId
-ec:publicationPlanId rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:PublicationPlan ;
-                     rdfs:range ec:Identifier ;
-                     dcterms:description "An identifier attributed to a PublicationPlan."@en ;
-                     rdfs:label "Publication plan identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishes
 ec:publishes rdf:type owl:ObjectProperty ;
              rdfs:domain ec:PublicationEvent ;
@@ -2683,36 +2667,12 @@ ec:publishes rdf:type owl:ObjectProperty ;
              rdfs:label "Editorial object"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingId
-ec:ratingId rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Rating ;
-            rdfs:range ec:Identifier ;
-            dcterms:description "To associate an id with a Rating."@en ;
-            rdfs:label "Rating Id"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#references
 ec:references rdf:type owl:ObjectProperty ;
               rdfs:domain ec:EditorialObject ;
               rdfs:range ec:MediaResource ;
               dcterms:description "To express a reference between Assets, BusinessObjects or Resources."@en ;
               rdfs:label "References"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationIdentifier
-ec:relationIdentifier rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Relation ;
-                      rdfs:range ec:Identifier ;
-                      dcterms:description "To identify a Relation."@en ;
-                      rdfs:label "Relation Type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationType
-ec:relationType rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Relation ;
-                rdfs:range ec:Relation_Type ;
-                dcterms:description "To define a type of Relation."@en ;
-                rdfs:label "Relation Type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#replaces
@@ -5032,28 +4992,12 @@ ec:publicationEventTitle rdf:type owl:DatatypeProperty ;
                          rdfs:label "PublicationEvent title"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanDescription
-ec:publicationPlanDescription rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ec:PublicationPlan ;
-                              rdfs:range rdfs:Literal ;
-                              dcterms:description "A description of a PublicationPlan."@en ;
-                              rdfs:label "PublicationPlan description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanEndDate
 ec:publicationPlanEndDate rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:PublicationPlan ;
                           rdfs:range xsd:dateTime ;
                           dcterms:description "The end date of a PublicationPlan"@en ;
                           rdfs:label "PublicationPlan end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanName
-ec:publicationPlanName rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:PublicationPlan ;
-                       rdfs:range rdfs:Literal ;
-                       dcterms:description "A name attributed to a PublicationPlan."@en ;
-                       rdfs:label "Publication plan name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStartDate
@@ -5112,22 +5056,6 @@ ec:publishedTitle rdf:type owl:DatatypeProperty ;
                   rdfs:label "Published title."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingDescription
-ec:ratingDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Rating ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "To associate a description with a Rating."@en ;
-                     rdfs:label "Rating name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingName
-ec:ratingName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Rating ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "To associate a name with a Rating."@en ;
-              rdfs:label "Rating name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingScaleMax
 ec:ratingScaleMax rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:Rating ;
@@ -5160,16 +5088,6 @@ ec:ratingSystemName rdf:type owl:DatatypeProperty ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "To identify a Rating system by its name."@en ;
                     rdfs:label "Rating system"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingType
-ec:ratingType rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Rating ;
-              rdfs:range xsd:anyURI ,
-                         xsd:string ;
-              dcterms:description "Range: string or anyURI or Concept."@en ,
-                                  "To define a type of Rating."@en ;
-              rdfs:label "Rating type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingValue
@@ -5223,14 +5141,6 @@ ec:relationLink rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:anyURI ;
                 dcterms:description "To define a link in a Relation."@en ;
                 rdfs:label "Link"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationNote
-ec:relationNote rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Relation ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "A note to provide additional information about a Relation."@en ;
-                rdfs:label "Relation Note"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationOrderedGroupFlag
@@ -7585,6 +7495,22 @@ ec:PublicationMedium rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationPlan
 ec:PublicationPlan rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasIdentifier ;
+                                     owl:someValuesFrom ec:Identifier
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectType ;
+                                     owl:someValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectDescription ;
+                                     owl:someValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectName ;
+                                     owl:someValuesFrom rdfs:Literal
+                                   ] ;
                    dcterms:description "A collection of PublicationEvents organised as a PublicationPlanning."@en ;
                    rdfs:label "Publication History"@en .
 
@@ -7606,6 +7532,22 @@ ec:RadioProgramme rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rating
 ec:Rating rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasIdentifier ;
+                            owl:someValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:someValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectDescription ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ;
           dcterms:description """All the information about the rating/evaluation
             given to a media resource by an Agent i.e. a person/Contact or
             Organisation."""@en ,
@@ -7630,6 +7572,22 @@ ec:RegionCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Relation
 ec:Relation rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasIdentifier ;
+                              owl:someValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectType ;
+                              owl:someValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectDescription ;
+                              owl:someValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectName ;
+                              owl:someValuesFrom rdfs:Literal
+                            ] ;
             dcterms:description "To define links and relations."@en ;
             rdfs:label "Relation"@en .
 
