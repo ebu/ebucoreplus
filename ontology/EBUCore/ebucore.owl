@@ -443,6 +443,22 @@ ec:hasAnnotationRelatedAgent rdf:type owl:ObjectProperty ;
                              rdfs:label "Annotation related agent"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact
+ec:hasAnnotationRelatedArtefact rdf:type owl:ObjectProperty ;
+                                rdfs:domain ec:Annotation ;
+                                rdfs:range ec:Artefact ;
+                                dcterms:description "To identify an Artefact subject of the Annotation."@en ;
+                                rdfs:label "Annotation related artefact"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedEvent
+ec:hasAnnotationRelatedEvent rdf:type owl:ObjectProperty ;
+                             rdfs:domain ec:Annotation ;
+                             rdfs:range ec:Event ;
+                             dcterms:description "To identify an Event subject of the Annotation."@en ;
+                             rdfs:label "Annotation related event"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedLocation
 ec:hasAnnotationRelatedLocation rdf:type owl:ObjectProperty ;
                                 rdfs:domain ec:Annotation ;
@@ -1501,6 +1517,7 @@ ec:hasProductionLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenance
 ec:hasProvenance rdf:type owl:ObjectProperty ;
+                 owl:inverseOf ec:hasProvenanceTarget ;
                  rdfs:domain owl:Thing ;
                  rdfs:range ec:Provenance ;
                  dcterms:description "Range: string, anyURI or Concept."@en ,
@@ -1508,11 +1525,16 @@ ec:hasProvenance rdf:type owl:ObjectProperty ;
                  rdfs:label "Provenance"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenanceTarget
+ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
+                       rdfs:domain ec:Provenance ;
+                       rdfs:range owl:Thing ;
+                       dcterms:description "The instance of an object sourced by the Provenance."@en ;
+                       rdfs:label "Provenance target"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:PublicationChannel ,
-                                   ec:PublicationHistory ,
-                                   ec:PublicationPlan ;
                        rdfs:range ec:PublicationEvent ;
                        dcterms:description """To associate PublicationEvents with
             PublicationChannels or as elements of a PublicationHistory or PublicationPlanning."""@en ;
@@ -4153,30 +4175,9 @@ ec:givenName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose
 ec:hasAnnotationPurpose rdf:type owl:DatatypeProperty ;
                         rdfs:domain ec:Annotation ;
-                        rdfs:range xsd:anyURI ,
-                                   xsd:string ;
+                        rdfs:range xsd:string ;
                         dcterms:description "To define the purpose of an Annotation."@en ;
                         rdfs:label "Annotation confidence"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact
-ec:hasAnnotationRelatedArtefact rdf:type owl:DatatypeProperty ;
-                                rdfs:subPropertyOf ec:hasAnnotationPurpose ;
-                                rdfs:domain ec:Annotation ;
-                                rdfs:range xsd:anyURI ,
-                                           xsd:string ;
-                                dcterms:description "To identify an Artefact subject of the Annotation."@en ;
-                                rdfs:label "Annotation related artefact"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedEvent
-ec:hasAnnotationRelatedEvent rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf ec:hasAnnotationPurpose ;
-                             rdfs:domain ec:Annotation ;
-                             rdfs:range xsd:anyURI ,
-                                        xsd:string ;
-                             dcterms:description "To identify an Event subject of the Annotation."@en ;
-                             rdfs:label "Annotation related event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
@@ -4186,15 +4187,6 @@ ec:hasIdPicture rdf:type owl:DatatypeProperty ;
                 dcterms:description "A locator / URI or a Picture."@en ,
                                     "To provide a link to an identification picture."@en ;
                 rdfs:label "Identification picture"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenanceTarget
-ec:hasProvenanceTarget rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Provenance ;
-                       rdfs:range xsd:anyURI ,
-                                  xsd:string ;
-                       dcterms:description "The instance of an object sourced by the Provenance."@en ;
-                       rdfs:label "Provenance target"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hashValue
@@ -5221,25 +5213,6 @@ ec:rightsStartDateTime rdf:type owl:DatatypeProperty ;
                        rdfs:label "Rights start date time"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleId
-ec:roleId rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:Role ;
-          rdfs:range xsd:anyURI ,
-                     xsd:string ;
-          dcterms:description "Range: string or anyURI."@en ,
-                              "To identify a Role."@en ;
-          rdfs:label "role Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#roleType
-ec:roleType rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Role ;
-            rdfs:range xsd:anyURI ,
-                       xsd:string ;
-            dcterms:description "To define a type of Role (not the Role itself)."@en ;
-            rdfs:label "Role type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#salutationTitle
 ec:salutationTitle rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Person ;
@@ -5657,33 +5630,6 @@ ec:totalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
                              rdfs:range xsd:integer ;
                              dcterms:description "To provide the total number of members in a Group."@en ;
                              rdfs:label "Total number of Group members"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackDefinition
-ec:trackDefinition rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Track ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description """To provide a definition associated to a
-            Track."""@en ;
-                   rdfs:label "Definition"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackId
-ec:trackId rdf:type owl:DatatypeProperty ;
-           rdfs:range xsd:anyURI ,
-                      xsd:string ;
-           dcterms:description "An Identifier attributed to a Track."@en ,
-                               "Range: Identifier, anyURI, string"@en ;
-           rdfs:label "Track identifier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackName
-ec:trackName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Track ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description """To provide  name of a
-            Track."""@en ;
-             rdfs:label "Track name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#translationTitle
@@ -7349,7 +7295,11 @@ ec:Provenance rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
 ec:PublicationChannel rdf:type owl:Class ;
-                      rdfs:subClassOf ec:Service ;
+                      rdfs:subClassOf ec:Service ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasPublicationEvent ;
+                                        owl:someValuesFrom ec:PublicationEvent
+                                      ] ;
                       dcterms:description """The name of the channel through which a
             Resource has been published as a PublicationEvent. A PublicationChannel can use a
             variety of medias e.g. broadcast or online."""@en ;
@@ -7397,6 +7347,10 @@ ec:PublicationEvent_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationHistory
 ec:PublicationHistory rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasPublicationEvent ;
+                                        owl:someValuesFrom ec:PublicationEvent
+                                      ] ;
                       dcterms:description """A collection of PublicationEvents through which
             a resource has been published."""@en ;
                       rdfs:label "Publication History"@en .
@@ -7413,6 +7367,10 @@ ec:PublicationPlan rdf:type owl:Class ;
                    rdfs:subClassOf [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasIdentifier ;
                                      owl:someValuesFrom ec:Identifier
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPublicationEvent ;
+                                     owl:someValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:objectType ;
@@ -7575,7 +7533,23 @@ ec:RightsType rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Role
 ec:Role rdf:type owl:Class ;
-        rdfs:subClassOf skos:Concept ;
+        rdfs:subClassOf skos:Concept ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasIdentifier ;
+                          owl:someValuesFrom ec:Identifier
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:objectType ;
+                          owl:someValuesFrom skos:Concept
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:objectDescription ;
+                          owl:someValuesFrom rdfs:Literal
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:objectName ;
+                          owl:someValuesFrom rdfs:Literal
+                        ] ;
         dcterms:description """To define the role / action of an agent. This
             is provided as free text in an annotation label or as an identifier pointing to a term
             in a classification scheme."""@en ;
