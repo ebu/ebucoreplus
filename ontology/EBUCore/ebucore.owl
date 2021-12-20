@@ -6133,27 +6133,32 @@ ec:AudioContent rdf:type owl:Class ;
                 rdfs:subClassOf ec:Programme ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessIntegratedLoudness ;
-                                  owl:someValuesFrom xsd:float
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessMaxMomentary ;
-                                  owl:someValuesFrom xsd:float
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessMaxShortTerm ;
-                                  owl:someValuesFrom xsd:float
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessMaxTruepeak ;
-                                  owl:someValuesFrom xsd:float
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:loudnessMethod ;
-                                  owl:someValuesFrom rdfs:Literal
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessRange ;
-                                  owl:someValuesFrom xsd:float
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessMethod ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                 ] ;
                 dcterms:description """An audioContent defines one component of a programme (e.g. background
 				music), its association with an audioGroup (e.g. a 2.0 audioPackFormat of
@@ -6202,27 +6207,32 @@ ec:AudioProgramme rdf:type owl:Class ;
                   rdfs:subClassOf ec:Programme ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessIntegratedLoudness ;
-                                    owl:someValuesFrom xsd:float
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessMaxMomentary ;
-                                    owl:someValuesFrom xsd:float
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessMaxShortTerm ;
-                                    owl:someValuesFrom xsd:float
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessMaxTruepeak ;
-                                    owl:someValuesFrom xsd:float
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:loudnessMethod ;
-                                    owl:someValuesFrom rdfs:Literal
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessRange ;
-                                    owl:someValuesFrom xsd:float
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessMethod ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                   ] ;
                   dcterms:description """A set of one or more audioContent that derive from the same material,
 				i.e. an audioMultiplex, and the definition of its multiplexed audioContents (e.g.
