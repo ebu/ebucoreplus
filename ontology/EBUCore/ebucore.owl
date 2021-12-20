@@ -4420,8 +4420,6 @@ ec:log rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessIntegratedLoudness
 ec:loudnessIntegratedLoudness rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf ec:loudnessParameters ;
-                              rdfs:domain ec:AudioContent ,
-                                          ec:AudioProgramme ;
                               rdfs:range xsd:float ;
                               dcterms:description "The value for integrated loudness measured at AudioProgramme or AudioContent level."@en ;
                               rdfs:label "Integrated loudness"@en .
@@ -4430,8 +4428,6 @@ ec:loudnessIntegratedLoudness rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxMomentary
 ec:loudnessMaxMomentary rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf ec:loudnessParameters ;
-                        rdfs:domain ec:AudioContent ,
-                                    ec:AudioProgramme ;
                         rdfs:range xsd:float ;
                         dcterms:description "The value for maximum momentary loudness measured at AudioProgramme or AudioContent level."@en ;
                         rdfs:label "Max momentary loudness"@en .
@@ -4440,8 +4436,6 @@ ec:loudnessMaxMomentary rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxShortTerm
 ec:loudnessMaxShortTerm rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf ec:loudnessParameters ;
-                        rdfs:domain ec:AudioContent ,
-                                    ec:AudioProgramme ;
                         rdfs:range xsd:float ;
                         dcterms:description "The value for maximum max short term loudness measured at AudioProgramme or AudioContent level."@en ;
                         rdfs:label "Max short term loudness"@en .
@@ -4450,8 +4444,6 @@ ec:loudnessMaxShortTerm rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxTruepeak
 ec:loudnessMaxTruepeak rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf ec:loudnessParameters ;
-                       rdfs:domain ec:AudioContent ,
-                                   ec:AudioProgramme ;
                        rdfs:range xsd:float ;
                        dcterms:description "The value for maximum true peak loudness measured at AudioProgramme or AudioContent level."@en ;
                        rdfs:label "Max true peak loudness"@en .
@@ -4460,8 +4452,6 @@ ec:loudnessMaxTruepeak rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMethod
 ec:loudnessMethod rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:loudnessParameters ;
-                  rdfs:domain ec:AudioContent ,
-                              ec:AudioProgramme ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "The method for loudness measurement at AudioProgramme or AudioContent level."@en ;
                   rdfs:label "Loudness method"@en .
@@ -4469,9 +4459,6 @@ ec:loudnessMethod rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessParameters
 ec:loudnessParameters rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:AudioContent ,
-                                  ec:AudioProgramme ;
-                      rdfs:range xsd:float ;
                       dcterms:description "To provide loudness parameters."@en ;
                       rdfs:label "Loudness parameters"@en .
 
@@ -4479,8 +4466,6 @@ ec:loudnessParameters rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessRange
 ec:loudnessRange rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf ec:loudnessParameters ;
-                 rdfs:domain ec:AudioContent ,
-                             ec:AudioProgramme ;
                  rdfs:range xsd:float ;
                  dcterms:description "The loudness range measured at AudioProgramme or AudioContent level."@en ;
                  rdfs:label "Loudness range"@en .
@@ -6145,7 +6130,36 @@ ec:AudioCodec rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioContent
 ec:AudioContent rdf:type owl:Class ;
-                rdfs:subClassOf ec:Programme ;
+                rdfs:subClassOf ec:Programme ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessIntegratedLoudness ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessMaxMomentary ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessMaxShortTerm ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessMaxTruepeak ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessRange ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:float
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:loudnessMethod ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
                 dcterms:description """An audioContent defines one component of a programme (e.g. background
 				music), its association with an audioGroup (e.g. a 2.0 audioPackFormat of
 				audioChannelFormats for stereo reproduction), its association with an
@@ -6190,7 +6204,36 @@ ec:AudioObject rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioProgramme
 ec:AudioProgramme rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Programme ;
+                  rdfs:subClassOf ec:Programme ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessIntegratedLoudness ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessMaxMomentary ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessMaxShortTerm ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessMaxTruepeak ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessRange ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:float
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loudnessMethod ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
                   dcterms:description """A set of one or more audioContent that derive from the same material,
 				i.e. an audioMultiplex, and the definition of its multiplexed audioContents (e.g.
 				foreground and commentary, background music)."""@en ;
