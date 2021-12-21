@@ -239,7 +239,7 @@ ec:applyTo rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#approvedBy
 ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
-              dcterms:description "To identify the Agent who approved the EditorialObject."@en ;
+              dcterms:description "To identify the Agent who approved the EditorialObject for publishing"@en ;
               rdfs:label "Agent"@en .
 
 
@@ -250,6 +250,135 @@ ec:clonedTo rdf:type owl:ObjectProperty ;
             rdfs:range ec:MediaResource ;
             dcterms:description "Identifies relationship between a digital instantiation of a Resource and its direct copy, with no generational loss."@en ;
             rdfs:label "Cloned to"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#date
+ec:date rdf:type owl:ObjectProperty ;
+        rdfs:range ec:DateTimeObject ;
+        dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
+        dcterms:description "A date associated to an Asset."@en ;
+        rdfs:isDefinedBy dc:date ;
+        rdfs:label "Date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateArchived
+ec:dateArchived rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date when the Asset was archived."@en ;
+                rdfs:label "Archiving date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
+ec:dateBroadcast rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
+                 dcterms:description "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
+                 rdfs:label "Broadcast date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateCreated
+ec:dateCreated rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:date ;
+               dcterms:description "The date of creation of the Asset."@en ;
+               rdfs:label "Creation date/time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDeleted
+ec:dateDeleted rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:date ;
+               dcterms:description "The date when the Resource was deleted."@en ;
+               rdfs:label "Deletion date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDigitised
+ec:dateDigitised rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
+                 dcterms:description "The date when the Resource was digitised."@en ;
+                 rdfs:label "Digitisation date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDistributed
+ec:dateDistributed rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                   rdfs:comment "*** Same ass Issued?"@en ;
+                   rdfs:label "Distribution date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
+ec:dateIngested rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date when the Resource was ingested/acquired in institutional holdings."@en ;
+                rdfs:label "Ingest date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIssued
+ec:dateIssued rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf ec:date ;
+              dcterms:description "The date when the Asset was issued."@en ;
+              rdfs:label "Archiving date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateMigrated
+ec:dateMigrated rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
+                rdfs:label "Migration date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateModified
+ec:dateModified rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "To indicate the date at which the Asset has been modified."@en ;
+                rdfs:label "Modification date/time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateNormalized
+ec:dateNormalized rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  dcterms:description "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
+                  rdfs:label "Normalization date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateProduced
+ec:dateProduced rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date of production of the Asset."@en ;
+                rdfs:label "production date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateReleased
+ec:dateReleased rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                rdfs:label "Release date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTransferred
+ec:dateTransferred rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   dcterms:description "The date when the Asset was moved from one digital or physical location to another."@en ;
+                   rdfs:label "Transfer date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateValidated
+ec:dateValidated rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
+                 dcterms:description "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
+                 rdfs:label "Validation date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicenseEnd
+ec:datelicenseEnd rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  dcterms:description "The date when the licence for the Asset ends."@en ;
+                  rdfs:label "Licence end date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed
+ec:datelicensed rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                dcterms:description "The date when the licence for the Asset begins."@en ;
+                rdfs:label "Licence start date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo
@@ -639,7 +768,7 @@ ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudienceScoreRecordingTechnique
 ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
                                       rdfs:domain ec:AudienceRating ;
-                                      rdfs:range ec:Agent ;
+                                      rdfs:range skos:Concept ;
                                       dcterms:description "To identify the technique used to measure an audience."@en ;
                                       rdfs:label "Audience score recording technique"@en .
 
@@ -885,8 +1014,6 @@ ec:hasCountryOfDeath rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCoverage
 ec:hasCoverage rdf:type owl:ObjectProperty ;
                rdfs:domain ec:Asset ;
-               rdfs:range ec:Event ,
-                          ec:Location ;
                dcterms:description "To provide coverage information."@en ;
                rdfs:label "Coverage"@en .
 
@@ -1067,6 +1194,7 @@ ec:hasEventRelatedAgent rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:Event ;
                         rdfs:range ec:Agent ;
                         dcterms:description "An Agent relates to an Event."@en ;
+                        rdfs:comment "hasContributor" ;
                         rdfs:label "Agent"@en .
 
 
@@ -1170,8 +1298,6 @@ ec:hasGeneration rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGenre
 ec:hasGenre rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Asset ;
-            rdfs:range ec:Genre ;
             dcterms:description """To define a Genre/category associated to the
             BusinesssObject."""@en ;
             rdfs:label "Genre"@en .
@@ -2214,7 +2340,8 @@ ec:instantiates rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAgent
-ec:isAgent rdf:type owl:ObjectProperty ;
+ec:isAgent rdf:type owl:ObjectProperty ,
+                    owl:IrreflexiveProperty ;
            rdfs:domain ec:Agent ;
            rdfs:range ec:Agent ;
            dcterms:description "Range: string or Agent."@en ,
@@ -2837,50 +2964,6 @@ ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:range rdfs:Literal ;
             dcterms:description "To provide an abstract."@en ;
             rdfs:label "Abstract"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestamp
-ec:actionTimestamp rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Action ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "The time when the Action occurs."@en ;
-                   rdfs:label "Action timestamp"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestampEditUnits
-ec:actionTimestampEditUnits rdf:type owl:DatatypeProperty ;
-                            rdfs:subPropertyOf ec:actionTimestamp ;
-                            rdfs:domain ec:Action ;
-                            rdfs:range xsd:long ;
-                            dcterms:description "The edit unit number at which the Action occurs."@en ;
-                            rdfs:label "Action edit unit number"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestampNormalPlayTime
-ec:actionTimestampNormalPlayTime rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf ec:actionTimestamp ;
-                                 rdfs:domain ec:Action ;
-                                 rdfs:range xsd:time ;
-                                 dcterms:description "The normal play time at which the Action occurs."@en ;
-                                 rdfs:label "Action normal play time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestampTimecode
-ec:actionTimestampTimecode rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf ec:actionTimestamp ;
-                           rdfs:domain ec:Action ;
-                           rdfs:range rdfs:Literal ;
-                           dcterms:description "The timecode at which the Action occurs."@en ;
-                           rdfs:label "Action timecode"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionTimestampTimecodeDropFrame
-ec:actionTimestampTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                                    rdfs:subPropertyOf ec:actionTimestamp ;
-                                    rdfs:domain ec:Action ;
-                                    rdfs:range rdfs:Literal ;
-                                    dcterms:description "The timecode (dropframe) at which the Action occurs."@en ;
-                                    rdfs:label "Action timecode (dropframe)"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityEndDate
@@ -3543,107 +3626,6 @@ ec:costumeTexture rdf:type owl:DatatypeProperty ;
                   rdfs:label "Costume texture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#date
-ec:date rdf:type owl:DatatypeProperty ;
-        rdfs:range rdfs:Literal ;
-        dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
-        dcterms:description "A date associated to an Asset."@en ;
-        rdfs:isDefinedBy dc:date ;
-        rdfs:label "Date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateArchived
-ec:dateArchived rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date when the Asset was archived."@en ;
-                rdfs:label "Archiving date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
-ec:dateBroadcast rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
-                 rdfs:label "Broadcast date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateCreated
-ec:dateCreated rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "The date of creation of the Asset."@en ;
-               rdfs:label "Creation date/time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDeleted
-ec:dateDeleted rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "The date when the Resource was deleted."@en ;
-               rdfs:label "Deletion date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDigitised
-ec:dateDigitised rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "The date when the Resource was digitised."@en ;
-                 rdfs:label "Digitisation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDistributed
-ec:dateDistributed rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:domain ec:MediaResource ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:label "Distribution date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
-ec:dateIngested rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date when the Resource was ingested/acquired in institutional holdings."@en ;
-                rdfs:label "Ingest date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIssued
-ec:dateIssued rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf ec:date ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "The date when the Asset was issued."@en ;
-              rdfs:label "Archiving date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateMigrated
-ec:dateMigrated rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
-                rdfs:label "Migration date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateModified
-ec:dateModified rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "To indicate the date at which the Asset has been modified."@en ;
-                rdfs:label "Modification date/time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateNormalized
-ec:dateNormalized rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:domain ec:MediaResource ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
-                  rdfs:label "Normalization date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfBirth
 ec:dateOfBirth rdf:type owl:DatatypeProperty ;
                rdfs:domain ec:Person ;
@@ -3668,60 +3650,11 @@ ec:dateOfRetirement rdf:type owl:DatatypeProperty ;
                     rdfs:label "Date of retirement"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateProduced
-ec:dateProduced rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date of production of the Asset."@en ;
-                rdfs:label "production date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateReleased
-ec:dateReleased rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                rdfs:label "Release date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTime
 ec:dateTime rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain ec:DateTimeObject ;
             rdfs:range xsd:dateTime .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTransferred
-ec:dateTransferred rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:domain ec:MediaResource ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "The date when the Asset was moved from one digital or physical location to another."@en ;
-                   rdfs:label "Transfer date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateValidated
-ec:dateValidated rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
-                 rdfs:label "Validation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicenseEnd
-ec:datelicenseEnd rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "The date when the licence for the Asset ends."@en ;
-                  rdfs:label "Licence end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed
-ec:datelicensed rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The date when the licence for the Asset begins."@en ;
-                rdfs:label "Licence start date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
@@ -3738,22 +3671,6 @@ ec:displayOrder rdf:type owl:DatatypeProperty ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "The order in which an Agent appears in a scene."@en ;
                 rdfs:label "Display order"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationEditUnits
-ec:durationEditUnits rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf ec:duration_ ;
-                     rdfs:range xsd:nonNegativeInteger ;
-                     dcterms:description "To provide a duration in edit units."@en ;
-                     rdfs:label "Duration (edit units)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationNormalPlayTime
-ec:durationNormalPlayTime rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf ec:duration_ ;
-                          rdfs:range rdfs:Literal ;
-                          dcterms:description "To provide a duration as normal time."@en ;
-                          rdfs:label "Duration (time)"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationPublished
@@ -3773,31 +3690,6 @@ ec:durationPublishedNormalPlayTime rdf:type owl:DatatypeProperty ;
                                    rdfs:label "Published duration (play time)"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationTimecode
-ec:durationTimecode rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:duration_ ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description """The duration expressed as a
-            timecode."""@en ;
-                    rdfs:label "Duration (timecode)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationTimecodeDropFrame
-ec:durationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf ec:duration_ ;
-                             rdfs:range rdfs:Literal ;
-                             dcterms:description """The duration expressed as a
-            timecode with drop frames."""@en ;
-                             rdfs:label "Duration (timecode, drop frame)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration_
-ec:duration_ rdf:type owl:DatatypeProperty ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description "To provide information on the duration of an resource or consept."@en ;
-             rdfs:label "Duration"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit
 ec:editUnit rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:EditUnitCount ;
@@ -3809,6 +3701,8 @@ ec:editUnit rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnitCount
 ec:editUnitCount rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ec:EditUnitCount ;
+                 rdfs:range xsd:long ;
                  dc:description "Time expressed as the number of editunits or samples."@en ;
                  rdfs:label "Edit unit count"@en .
 
@@ -3819,50 +3713,6 @@ ec:education rdf:type owl:DatatypeProperty ;
              rdfs:range rdfs:Literal ;
              dcterms:description "To provide information on the education."@en ;
              rdfs:label "Education"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionEditUnit
-ec:emotionEditUnit rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:emotionTimestamp ;
-                   rdfs:domain ec:Emotion ;
-                   rdfs:range xsd:long ;
-                   dcterms:description "The edit unit number at which the Emotion occurs."@en ;
-                   rdfs:label "Emotion edit unit number"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionNormalPlayTime
-ec:emotionNormalPlayTime rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf ec:emotionTimestamp ;
-                         rdfs:domain ec:Emotion ;
-                         rdfs:range xsd:time ;
-                         dcterms:description "The normal play time at which the Emotion occurs."@en ;
-                         rdfs:label "Emotion normal play time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimecode
-ec:emotionTimecode rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:emotionTimestamp ;
-                   rdfs:domain ec:Emotion ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "The timecode at which the Emotion occurs."@en ;
-                   rdfs:label "Emotion timecode"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimecodeDropFrame
-ec:emotionTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                            rdfs:subPropertyOf ec:emotionTimestamp ;
-                            rdfs:domain ec:Emotion ;
-                            rdfs:range rdfs:Literal ;
-                            dcterms:description "The timecode (dropframe) at which the Emotion occurs."@en ;
-                            rdfs:label "Emotion timecode (dropframe)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimestamp
-ec:emotionTimestamp rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Emotion ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To identify a timestamp at which an Emotion can be seen."@en ;
-                    rdfs:label "Emotion timestamp"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingLevel
@@ -3903,6 +3753,14 @@ ec:episodeNumberInSeries rdf:type owl:DatatypeProperty ;
                          rdfs:range rdfs:Literal ;
                          dcterms:description "The Episode Number in a series"@en ;
                          rdfs:label "Episode number in series"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#equivalentTime
+ec:equivalentTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ec:TimePoint ;
+                  rdfs:range xsd:float ;
+                  dc:description "Notation of time in seconds compares different ways to denote time, like timecode or sample count."@en ;
+                  rdfs:label "equivalent time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndDate
@@ -5308,13 +5166,6 @@ ec:textLineOrder rdf:type owl:DatatypeProperty ;
                  rdfs:label "Text line order"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timeCreated
-ec:timeCreated rdf:type owl:DatatypeProperty ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "The time of creation of an Asset."@en ;
-               rdfs:label "Time created."@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timecode
 ec:timecode rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:TimeCode ;
@@ -5545,6 +5396,16 @@ ec:Action rdf:type owl:Class ;
                             owl:someValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:start ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:TimePoint
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:end ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:TimePoint
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectDescription ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
@@ -5715,8 +5576,31 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:date ;
+                           owl:someValuesFrom ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasGenre ;
+                           owl:someValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateArchived ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateCreated ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateDistributed ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:duration ;
@@ -5751,27 +5635,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:date ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateArchived ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateCreated ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectName ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:timeCreated ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6436,7 +6304,8 @@ ec:Dopesheet rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditUnitCount
 ec:EditUnitCount rdf:type owl:Class ;
-                 rdfs:subClassOf ec:TimePoint .
+                 rdfs:subClassOf ec:TimePoint ;
+                 rdfs:label "Edit unit count"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
@@ -6460,7 +6329,8 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
-                                     owl:someValuesFrom rdfs:Literal
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:DateTimeObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:translationTitle ;
@@ -6493,6 +6363,16 @@ ec:Emotion rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:someValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:start ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass ec:TimePoint
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:end ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass ec:TimePoint
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectDescription ;
@@ -6547,10 +6427,6 @@ ec:Event rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
                            owl:someValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:duration_ ;
-                           owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
@@ -6892,7 +6768,28 @@ ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateDigitised ;
-                                   owl:someValuesFrom rdfs:Literal
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:DateTimeObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:dateIngested ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:DateTimeObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:dateMigrated ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:DateTimeObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:dateNormalized ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:DateTimeObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:dateTransferred ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:DateTimeObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:translationTitle ;
@@ -6953,7 +6850,8 @@ ec:NewsItem rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#NormalPlayTime
 ec:NormalPlayTime rdf:type owl:Class ;
-                  rdfs:subClassOf ec:TimePoint .
+                  rdfs:subClassOf ec:TimePoint ;
+                  rdfs:label "Normal play time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ObjectType
@@ -7274,7 +7172,12 @@ ec:Relation_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
 ec:Resource rdf:type owl:Class ;
-            rdfs:subClassOf ec:Asset ;
+            rdfs:subClassOf ec:Asset ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:dateValidated ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
+                            ] ;
             dcterms:description "To describe a Resource."@en ;
             rdfs:label "Resource"@en .
 
@@ -7632,19 +7535,20 @@ ec:Thumbnail rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimeCode
 ec:TimeCode rdf:type owl:Class ;
-            rdfs:subClassOf ec:TimePoint .
+            rdfs:subClassOf ec:TimePoint ;
+            rdfs:label "Time code"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimePoint
 ec:TimePoint rdf:type owl:Class ;
              dc:description "A precise time point  of a media resource"@en ;
-             rdfs:comment "Add time in seconds, float - the equivalent time"@en ;
              rdfs:label "Time point"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimecodeDropFrame
 ec:TimecodeDropFrame rdf:type owl:Class ;
-                     rdfs:subClassOf ec:TimePoint .
+                     rdfs:subClassOf ec:TimePoint ;
+                     rdfs:label "Time code with dropframe"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimecodeTrack
@@ -7832,7 +7736,6 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                           ec:EditorialObject ;
                  ec:abrigedTitle "Et prg"@nb ;
                  ec:aspectRatio "16:9"^^xsd:string ;
-                 ec:durationEditUnits "12343234"^^xsd:int ;
                  ec:tag "Et merke"@nb ,
                         "et annet merke"@nb .
 
