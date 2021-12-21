@@ -7,7 +7,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spin: <http://spinrdf.org/spin#> .
@@ -277,6 +276,16 @@ ec:dubbedTo rdf:type owl:ObjectProperty ;
             rdfs:range ec:Language ;
             dcterms:description "the Language into which MediaResource is dubbed."@en ;
             rdfs:label "Dubbed to"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration
+ec:duration rdf:type owl:ObjectProperty ;
+            rdfs:range ec:TimePoint .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
+ec:end rdf:type owl:ObjectProperty ;
+       rdfs:range ec:TimePoint .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
@@ -2721,6 +2730,13 @@ ec:resourceIdType rdf:type owl:ObjectProperty ;
                   rdfs:label "Resource id"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffset
+ec:resourceOffset rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:TimePoint ;
+                  dcterms:description "The start offset within a Resource."@en ;
+                  rdfs:label "Resource offset"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes
 ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Rights ;
@@ -2737,20 +2753,17 @@ ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                            rdfs:label "Included territories"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start
+ec:start rdf:type owl:ObjectProperty ;
+         rdfs:range ec:TimePoint .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
 ec:trackType rdf:type owl:ObjectProperty ;
              rdfs:domain ec:Track ;
              rdfs:range ec:Track_Type ;
              dcterms:description "The type attributed to a Track."@en ;
              rdfs:label "Track name"@en .
-
-
-###  http://xmlns.com/foaf/0.1/member
-foaf:member rdf:type owl:ObjectProperty ;
-            rdfs:domain foaf:Group ;
-            rdfs:range foaf:Agent ;
-            dcterms:description "To identify an Agent member of a Group."@en ;
-            rdfs:label "Group member"@en .
 
 
 #################################################################
@@ -2903,7 +2916,8 @@ ec:activityStartDate rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#adultContent
-ec:adultContent rdf:type owl:DatatypeProperty ;
+ec:adultContent rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain ec:TO_BE_LOOKED_AT ;
                 rdfs:range xsd:boolean ;
                 dcterms:description "A flag to indiucate adult content."@en ;
@@ -3324,7 +3338,7 @@ ec:artefactWebsite rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#aspectRatio
 ec:aspectRatio rdf:type owl:DatatypeProperty ;
-               rdfs:range rdfs:Literal ;
+               rdfs:range xsd:string ;
                dcterms:description "To specify the aspect ratio."@en ;
                rdfs:label "Aspect ratio"@en .
 
@@ -3686,6 +3700,13 @@ ec:dateReleased rdf:type owl:DatatypeProperty ;
                 rdfs:label "Release date"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTime
+ec:dateTime rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain ec:DateTimeObject ;
+            rdfs:range xsd:dateTime .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTransferred
 ec:dateTransferred rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:date ;
@@ -3735,16 +3756,9 @@ ec:displayOrder rdf:type owl:DatatypeProperty ;
                 rdfs:label "Display order"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration
-ec:duration rdf:type owl:DatatypeProperty ;
-            rdfs:range rdfs:Literal ;
-            dcterms:description "To provide information on the duration of an resource or consept."@en ;
-            rdfs:label "Duration"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationEditUnits
 ec:durationEditUnits rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf ec:duration ;
+                     rdfs:subPropertyOf ec:duration_ ;
                      rdfs:range xsd:nonNegativeInteger ;
                      dcterms:description "To provide a duration in edit units."@en ;
                      rdfs:label "Duration (edit units)"@en .
@@ -3752,7 +3766,7 @@ ec:durationEditUnits rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationNormalPlayTime
 ec:durationNormalPlayTime rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf ec:duration ;
+                          rdfs:subPropertyOf ec:duration_ ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description "To provide a duration as normal time."@en ;
                           rdfs:label "Duration (time)"@en .
@@ -3777,7 +3791,7 @@ ec:durationPublishedNormalPlayTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationTimecode
 ec:durationTimecode rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:duration ;
+                    rdfs:subPropertyOf ec:duration_ ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description """The duration expressed as a
             timecode."""@en ;
@@ -3786,16 +3800,24 @@ ec:durationTimecode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationTimecodeDropFrame
 ec:durationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf ec:duration ;
+                             rdfs:subPropertyOf ec:duration_ ;
                              rdfs:range rdfs:Literal ;
                              dcterms:description """The duration expressed as a
             timecode with drop frames."""@en ;
                              rdfs:label "Duration (timecode, drop frame)"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration_
+ec:duration_ rdf:type owl:DatatypeProperty ;
+             rdfs:range rdfs:Literal ;
+             dcterms:description "To provide information on the duration of an resource or consept."@en ;
+             rdfs:label "Duration"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit
 ec:editUnit rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:float ;
+            rdfs:domain ec:EditUnitCount ;
+            rdfs:range xsd:long ;
             dcterms:description """The edit unit is e.g. the inverse of the audio
             sample rate or video frame rate."""@en ;
             rdfs:label "Edit unit"@en .
@@ -3869,16 +3891,9 @@ ec:encodingProfile rdf:type owl:DatatypeProperty ;
                    rdfs:label "Encoding profile"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
-ec:end rdf:type owl:DatatypeProperty ;
-       rdfs:range rdfs:Literal ;
-       dcterms:description "To define an end timestamp, e.g. the end point of a MediaResource."@en ;
-       rdfs:label "End"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endEditUnits
 ec:endEditUnits rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:end ;
+                rdfs:subPropertyOf ec:end_ ;
                 rdfs:range xsd:double ;
                 dcterms:description "The end time in edit units."@en ;
                 rdfs:label "End time (edit units)"@en .
@@ -3886,7 +3901,7 @@ ec:endEditUnits rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endNormalPlayTime
 ec:endNormalPlayTime rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf ec:end ;
+                     rdfs:subPropertyOf ec:end_ ;
                      rdfs:range xsd:time ;
                      dcterms:description """The end time expressed using a time
             expression."""@en ;
@@ -3895,7 +3910,7 @@ ec:endNormalPlayTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endOffsetEditUnits
 ec:endOffsetEditUnits rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf ec:end ;
+                      rdfs:subPropertyOf ec:end_ ;
                       rdfs:range xsd:double ;
                       dcterms:description "The offset end time in edit units."@en ;
                       rdfs:label "Offset end time (edit units)"@en .
@@ -3903,7 +3918,7 @@ ec:endOffsetEditUnits rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endOffsetNormalPlayTime
 ec:endOffsetNormalPlayTime rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf ec:end ;
+                           rdfs:subPropertyOf ec:end_ ;
                            rdfs:range xsd:time ;
                            dcterms:description "The offset end time in normal play time."@en ;
                            rdfs:label "Offset end time (normal play time)"@en .
@@ -3911,7 +3926,7 @@ ec:endOffsetNormalPlayTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endOffsetTimecode
 ec:endOffsetTimecode rdf:type owl:DatatypeProperty ;
-                     rdfs:subPropertyOf ec:end ;
+                     rdfs:subPropertyOf ec:end_ ;
                      rdfs:range rdfs:Literal ;
                      dcterms:description "The offset end timecode."@en ;
                      rdfs:label "Offset end timecode"@en .
@@ -3919,7 +3934,7 @@ ec:endOffsetTimecode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endOffsetTimecodedropframe
 ec:endOffsetTimecodedropframe rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf ec:end ;
+                              rdfs:subPropertyOf ec:end_ ;
                               rdfs:range rdfs:Literal ;
                               dcterms:description "The offset end timecode dropframe."@en ;
                               rdfs:label "Offset end timecode (dropframe)"@en .
@@ -3927,7 +3942,7 @@ ec:endOffsetTimecodedropframe rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endTimecode
 ec:endTimecode rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf ec:end ;
+               rdfs:subPropertyOf ec:end_ ;
                rdfs:range rdfs:Literal ;
                dcterms:description """An end time expressed as
             timecode."""@en ;
@@ -3936,11 +3951,18 @@ ec:endTimecode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endTimecodeDropFrame
 ec:endTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf ec:end ;
+                        rdfs:subPropertyOf ec:end_ ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description """An end time expressed as
             timecode with drop frames."""@en ;
                         rdfs:label "End time (timecode dropframe)"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end_
+ec:end_ rdf:type owl:DatatypeProperty ;
+        rdfs:range rdfs:Literal ;
+        dcterms:description "To define an end timestamp, e.g. the end point of a MediaResource."@en ;
+        rdfs:label "End"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumber
@@ -4048,7 +4070,8 @@ ec:fileSize rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowing
-ec:firstShowing rdf:type owl:DatatypeProperty ;
+ec:firstShowing rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain ec:PublicationEvent ;
                 rdfs:range xsd:boolean ;
                 dcterms:description "To flag this is a first showing PublicationEvent."@en ;
@@ -4141,7 +4164,8 @@ ec:frameWidthUnit rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#free
-ec:free rdf:type owl:DatatypeProperty ;
+ec:free rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to indicate that the access to the PublicationEvent is 'free'."@en ;
@@ -4277,7 +4301,8 @@ ec:lineNumber rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#live
-ec:live rdf:type owl:DatatypeProperty ;
+ec:live rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
         rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to signal that content is live"@en ;
@@ -4496,7 +4521,8 @@ ec:mediaResourceDescription rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed
-ec:midRollAdAllowed rdf:type owl:DatatypeProperty ;
+ec:midRollAdAllowed rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain ec:MediaResource ;
                     rdfs:range xsd:boolean ;
                     dcterms:description "A flag to indicate whether it is allowed to insert ad breaks in mid-roll."@en ;
@@ -4520,7 +4546,8 @@ ec:nickName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#noiseFilter
-ec:noiseFilter rdf:type owl:DatatypeProperty ;
+ec:noiseFilter rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain ec:MediaResource ;
                rdfs:range xsd:boolean ;
                dcterms:description """A flag to signal that a noise filter has been
@@ -4529,7 +4556,8 @@ ec:noiseFilter rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#notRated
-ec:notRated rdf:type owl:DatatypeProperty ;
+ec:notRated rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
             rdfs:domain ec:Rating ;
             rdfs:range xsd:boolean ;
             dcterms:description "A flag to indicate that the EditorialObejct has not been rated."@en ;
@@ -4615,7 +4643,8 @@ ec:officeTelephoneNumber rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#orderedFlag
-ec:orderedFlag rdf:type owl:DatatypeProperty ;
+ec:orderedFlag rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
                rdfs:domain ec:EditorialObject ;
                rdfs:range xsd:boolean ;
                dcterms:description "A flag to indicate that a EditorialObject is member of an ordered group or is an ordered group (e.g. Series)"@en ;
@@ -5008,7 +5037,8 @@ ec:ratingValue rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#readyForPublication
-ec:readyForPublication rdf:type owl:DatatypeProperty ;
+ec:readyForPublication rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
                        rdfs:domain ec:Essence ;
                        rdfs:range xsd:boolean ;
                        dcterms:description "A flag to indicate that the Essence is ready for publication."@en ;
@@ -5107,51 +5137,29 @@ ec:resourceLocatorTargetInformation rdf:type owl:DatatypeProperty ;
                                     rdfs:label "Locator target information"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffset
-ec:resourceOffset rdf:type owl:DatatypeProperty ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "The start offset within a Resource."@en ;
-                  rdfs:label "Resource offset"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetNormalPlaytime
 ec:resourceOffsetNormalPlaytime rdf:type owl:DatatypeProperty ;
-                                rdfs:subPropertyOf ec:resourceOffset ;
-                                rdfs:domain ec:MediaResource ;
-                                rdfs:range xsd:time ;
-                                dcterms:description "The resource offset in normal play time"@en ;
-                                rdfs:label "Resource offset normal playtime"@en .
+                                rdfs:range xsd:time .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetNumberEditUnit
 ec:resourceOffsetNumberEditUnit rdf:type owl:DatatypeProperty ;
-                                rdfs:subPropertyOf ec:resourceOffset ;
-                                rdfs:domain ec:MediaResource ;
-                                rdfs:range xsd:long ;
-                                dcterms:description "The resource offset in edit units"@en ;
-                                rdfs:label "Resource offset number edit units"@en .
+                                rdfs:range xsd:long .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetTimecode
 ec:resourceOffsetTimecode rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf ec:resourceOffset ;
-                          rdfs:domain ec:MediaResource ;
-                          rdfs:range rdfs:Literal ;
-                          dcterms:description "The resource offset in timecode"@en ;
-                          rdfs:label "Resource offset timecode."@en .
+                          rdfs:range rdfs:Literal .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetTimecodedropframe
 ec:resourceOffsetTimecodedropframe rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf ec:resourceOffset ;
-                                   rdfs:domain ec:MediaResource ;
-                                   rdfs:range rdfs:Literal ;
-                                   dcterms:description "The resource offset in timecode dropframe"@en ;
-                                   rdfs:label "Resource offset timecode (dropframe)."@en .
+                                   rdfs:range rdfs:Literal .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsClearanceFlag
-ec:rightsClearanceFlag rdf:type owl:DatatypeProperty ;
+ec:rightsClearanceFlag rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
                        rdfs:range xsd:boolean ;
                        dcterms:description "A flag to indicate that righst have been cleared"@en ;
                        rdfs:label "Rights clearance flag"@en .
@@ -5265,16 +5273,9 @@ ec:shotLog rdf:type owl:DatatypeProperty ;
            rdfs:label "Shot log"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start
-ec:start rdf:type owl:DatatypeProperty ;
-         rdfs:range rdfs:Literal ;
-         dcterms:description "Start timestamp e.g. the start time for a MediaResource."@en ;
-         rdfs:label "Start time"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startEditUnits
 ec:startEditUnits rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf ec:start ;
+                  rdfs:subPropertyOf ec:start_ ;
                   rdfs:range xsd:double ;
                   dcterms:description """A start time expressed as a number of edit
             units."""@en ;
@@ -5283,7 +5284,7 @@ ec:startEditUnits rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startNormalPlayTime
 ec:startNormalPlayTime rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:start ;
+                       rdfs:subPropertyOf ec:start_ ;
                        rdfs:range xsd:time ;
                        dcterms:description "A start time expressed as a normal play time."@en ;
                        rdfs:label "Start time (normal play time)"@en .
@@ -5291,7 +5292,7 @@ ec:startNormalPlayTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startOffsetEditUnit
 ec:startOffsetEditUnit rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:start ;
+                       rdfs:subPropertyOf ec:start_ ;
                        rdfs:range xsd:double ;
                        dcterms:description """A start offset time expressed as a number of edit
             units."""@en ;
@@ -5300,7 +5301,7 @@ ec:startOffsetEditUnit rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startOffsetNormalPlayTime
 ec:startOffsetNormalPlayTime rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf ec:start ;
+                             rdfs:subPropertyOf ec:start_ ;
                              rdfs:range xsd:double ;
                              dcterms:description "A start offset time expressed as normal play time."@en ;
                              rdfs:label "Startoffset  time (edit units)"@en .
@@ -5308,7 +5309,7 @@ ec:startOffsetNormalPlayTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startOffsetTimecode
 ec:startOffsetTimecode rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:start ;
+                       rdfs:subPropertyOf ec:start_ ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description """A start offset time expressed as
             timecode."""@en ;
@@ -5317,7 +5318,7 @@ ec:startOffsetTimecode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startOffsetTimecodeDropFrame
 ec:startOffsetTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                                rdfs:subPropertyOf ec:start ;
+                                rdfs:subPropertyOf ec:start_ ;
                                 rdfs:range rdfs:Literal ;
                                 dcterms:description """A start offset time expressed as
             timecode with drop frames."""@en ;
@@ -5326,7 +5327,7 @@ ec:startOffsetTimecodeDropFrame rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startTimecode
 ec:startTimecode rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:start ;
+                 rdfs:subPropertyOf ec:start_ ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description """A start time expressed as
             timecode."""@en ;
@@ -5335,11 +5336,18 @@ ec:startTimecode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startTimecodeDropFrame
 ec:startTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf ec:start ;
+                          rdfs:subPropertyOf ec:start_ ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description """A start time expressed as
             timecode with drop frames."""@en ;
                           rdfs:label "Start time (timecode, drop frames)"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start_
+ec:start_ rdf:type owl:DatatypeProperty ;
+          rdfs:range rdfs:Literal ;
+          dcterms:description "Start timestamp e.g. the start time for a MediaResource."@en ;
+          rdfs:label "Start time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#subtitle
@@ -5541,53 +5549,6 @@ ec:timeCreated rdf:type owl:DatatypeProperty ;
                rdfs:label "Time created."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDuration
-ec:timelineTrackDuration rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:TimelineTrack ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "To express the duration of a TimelineTrack."@en ;
-                         rdfs:label "TimelineTrack duration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDurationEditUnits
-ec:timelineTrackDurationEditUnits rdf:type owl:DatatypeProperty ;
-                                  rdfs:subPropertyOf ec:timelineTrackDuration ;
-                                  rdfs:domain ec:TimelineTrack ;
-                                  rdfs:range xsd:time ;
-                                  dcterms:description "To provide a duration as a number of edit units."@en ;
-                                  rdfs:label "Duration (edit unit)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDurationNormalPlayTime
-ec:timelineTrackDurationNormalPlayTime rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf ec:timelineTrackDuration ;
-                                       rdfs:domain ec:TimelineTrack ;
-                                       rdfs:range xsd:time ;
-                                       dcterms:description """To provide a duration as normal
-            time."""@en ;
-                                       rdfs:label "Duration (time)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDurationTimecode
-ec:timelineTrackDurationTimecode rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf ec:timelineTrackDuration ;
-                                 rdfs:domain ec:TimelineTrack ;
-                                 rdfs:range rdfs:Literal ;
-                                 dcterms:description """The duration expressed as a
-            timecode."""@en ;
-                                 rdfs:label "Duration (timecode)"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDurationTimecodeDropFrame
-ec:timelineTrackDurationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
-                                          rdfs:subPropertyOf ec:timelineTrackDuration ;
-                                          rdfs:domain ec:TimelineTrack ;
-                                          rdfs:range rdfs:Literal ;
-                                          dcterms:description """The duration expressed as a
-            timecode with drop frames."""@en ;
-                                          rdfs:label "Duration (timecode, drop frame)"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title
 ec:title rdf:type owl:DatatypeProperty ;
          rdfs:range rdfs:Literal ;
@@ -5736,14 +5697,6 @@ ec:workingTitle rdf:type owl:DatatypeProperty ;
 skos:notation rdfs:range rdfs:Literal .
 
 
-###  http://xmlns.com/foaf/0.1/name
-foaf:name rdf:type owl:DatatypeProperty ;
-          rdfs:domain foaf:Agent ;
-          rdfs:range rdfs:Literal ;
-          dcterms:description "To name an Agent."@en ;
-          rdfs:label "Name"@en .
-
-
 #################################################################
 #    Classes
 #################################################################
@@ -5842,7 +5795,6 @@ ec:Affiliation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
-         owl:equivalentClass foaf:Agent ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
@@ -5983,23 +5935,27 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:duration ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:TimePoint
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:end ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:TimePoint
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
-                           owl:someValuesFrom skos:Concept
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:abrigedTitle ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:abstract ;
-                           owl:someValuesFrom rdfs:Literal
+                           owl:onProperty ec:start ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:TimePoint
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:alternativeTitle ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:aspectRatio ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6023,31 +5979,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:duration ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:editUnit ;
-                           owl:someValuesFrom xsd:float
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:end ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectName ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:resolution ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:start ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6061,6 +5997,16 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:version ;
                            owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:aspectRatio ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:resolution ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:string
                          ] ;
          owl:disjointWith ec:Rating ;
          dcterms:description "The Class \"Asset\" is an object to which an identifier will be associated at commissioning. It will serve as acentral reference point to manage rights associated to EditorialObjects, Resources, MediaResources or Essences, and PublicationEvents (distribution and exploitation conditions)."@en ;
@@ -6358,11 +6304,12 @@ ec:BusinessObject rdf:type owl:Class ;
                   rdfs:subClassOf ec:Asset ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:orientation ;
-                                    owl:someValuesFrom rdfs:Literal
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:rightsClearanceFlag ;
-                                    owl:allValuesFrom xsd:boolean
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:boolean
                                   ] ;
                   owl:disjointWith ec:MediaResource ,
                                    ec:Rating ;
@@ -6642,6 +6589,17 @@ ec:DataTrack rdf:type owl:Class ;
              rdfs:label "Data track"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DateObject
+ec:DateObject rdf:type owl:Class ;
+              rdfs:subClassOf ec:DateTimeObject ;
+              rdfs:comment "for just dates"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DateTimeObject
+ec:DateTimeObject rdf:type owl:Class ;
+                  rdfs:label "Date time object"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Department
 ec:Department rdf:type owl:Class ;
               rdfs:subClassOf ec:Organisation ;
@@ -6692,6 +6650,11 @@ ec:Dopesheet rdf:type owl:Class ;
              rdfs:label "Dopesheet"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditUnitCount
+ec:EditUnitCount rdf:type owl:Class ;
+                 rdfs:subClassOf ec:TimePoint .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
 ec:EditorialObject rdf:type owl:Class ;
                    rdfs:subClassOf ec:BusinessObject ,
@@ -6708,11 +6671,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:someValuesFrom ec:Brand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateBroadcast ;
-                                     owl:someValuesFrom rdfs:Literal
+                                     owl:onProperty ec:resourceOffset ;
+                                     owl:someValuesFrom ec:TimePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:resourceOffset ;
+                                     owl:onProperty ec:dateBroadcast ;
                                      owl:someValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -6802,7 +6765,7 @@ ec:Event rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:duration ;
+                           owl:onProperty ec:duration_ ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6935,6 +6898,14 @@ ec:Group rdf:type owl:Class ;
          dcterms:description """To define a collection / group of media
             resources, for example a series made of episodes."""@en ;
          rdfs:label "Group"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#HistoricDate
+ec:HistoricDate rdf:type owl:Class ;
+                rdfs:subClassOf ec:DateTimeObject ;
+                rdfs:comment """For all kinds of dates
+
+Start - end for historic dates, just month and year."""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IPRRestrictions
@@ -7225,7 +7196,6 @@ ec:OpenSubtitling rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation
 ec:Organisation rdf:type owl:Class ;
-                owl:equivalentClass foaf:Organization ;
                 rdfs:subClassOf ec:Agent ;
                 dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
                 rdfs:label "Organisation"@en .
@@ -7274,7 +7244,6 @@ ec:Party rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
 ec:Person rdf:type owl:Class ;
-          owl:equivalentClass foaf:Person ;
           rdfs:subClassOf ec:Agent ;
           dcterms:description "To describe a Person."@en ;
           rdfs:label "Person"@en .
@@ -7296,7 +7265,6 @@ ec:Pictogram rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture
 ec:Picture rdf:type owl:Class ;
-           owl:equivalentClass foaf:img ;
            rdfs:subClassOf ec:Resource ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
            rdfs:label "Picture"@en .
@@ -7792,7 +7760,6 @@ ec:TargetPlatform rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
 ec:Team rdf:type owl:Class ;
-        owl:equivalentClass foaf:Group ;
         rdfs:subClassOf ec:Agent ;
         dcterms:description "To define a Team."@en ;
         rdfs:label "Team"@en .
@@ -7855,6 +7822,23 @@ ec:Thumbnail rdf:type owl:Class ;
              rdfs:label "Thumbnail"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimeCode
+ec:TimeCode rdf:type owl:Class ;
+            rdfs:subClassOf ec:TimePoint .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimePoint
+ec:TimePoint rdf:type owl:Class ;
+             dc:description "A precise time point  of a media resource"@en ;
+             rdfs:comment "Add time in seconds, float - the equivalent time"@en ;
+             rdfs:label "Time point"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimecodeDropFrame
+ec:TimecodeDropFrame rdf:type owl:Class ;
+                     rdfs:subClassOf ec:TimePoint .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimecodeTrack
 ec:TimecodeTrack rdf:type owl:Class ;
                  rdfs:subClassOf ec:Track ;
@@ -7885,6 +7869,16 @@ ec:TimedTextSubtitleTargetFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack
 ec:TimelineTrack rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:duration ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:TimePoint
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasIdentifier ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:Identifier
+                                 ] ;
                  dcterms:description "To define a time sequence of EditorialObjects."@en ;
                  rdfs:label "Timeline track"@en .
 
@@ -8009,36 +8003,6 @@ rdfs:Resource rdf:type owl:Class .
 skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
-###  http://xmlns.com/foaf/0.1/Agent
-foaf:Agent rdf:type owl:Class ;
-           dcterms:description "A person or Organisation."@en ;
-           rdfs:label "Agent"@en .
-
-
-###  http://xmlns.com/foaf/0.1/Group
-foaf:Group rdf:type owl:Class ;
-           dcterms:description "A group of Agents."@en ;
-           rdfs:label "Group"@en .
-
-
-###  http://xmlns.com/foaf/0.1/Organization
-foaf:Organization rdf:type owl:Class ;
-                  dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
-                  rdfs:label "Organization"@en .
-
-
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class ;
-            dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
-            rdfs:label "Person"@en .
-
-
-###  http://xmlns.com/foaf/0.1/img
-foaf:img rdf:type owl:Class ;
-         dcterms:description "Animage to represent something."@en ;
-         rdfs:label "Image"@en .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -8047,7 +8011,10 @@ foaf:img rdf:type owl:Class ;
 ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                           ec:EditorialObject ;
                  ec:abrigedTitle "Et prg"@nb ;
-                 ec:durationEditUnits "12343234"^^xsd:int .
+                 ec:aspectRatio "16:9"^^xsd:string ;
+                 ec:durationEditUnits "12343234"^^xsd:int ;
+                 ec:tag "Et merke"@nb ,
+                        "et annet merke"@nb .
 
 
 #################################################################
