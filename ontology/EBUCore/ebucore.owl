@@ -192,6 +192,10 @@ bbcconsepts:primaryTopic rdf:type owl:AnnotationProperty ;
                          rdfs:domain ec:Asset .
 
 
+###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
+owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
 vs:term_status rdf:type owl:AnnotationProperty .
 
@@ -259,13 +263,6 @@ ec:date rdf:type owl:ObjectProperty ;
         dcterms:description "A date associated to an Asset."@en ;
         rdfs:isDefinedBy dc:date ;
         rdfs:label "Date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateArchived
-ec:dateArchived rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                dcterms:description "The date when the Asset was archived."@en ;
-                rdfs:label "Archiving date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
@@ -337,6 +334,27 @@ ec:dateNormalized rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:date ;
                   dcterms:description "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
                   rdfs:label "Normalization date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfBirth
+ec:dateOfBirth rdf:type owl:ObjectProperty ;
+               rdfs:range ec:DateTimeObject ;
+               dcterms:description "The date when a Contact/Person is born."@en ;
+               rdfs:label "Date of birth"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfDeath
+ec:dateOfDeath rdf:type owl:ObjectProperty ;
+               rdfs:range ec:DateTimeObject ;
+               dcterms:description "The date when a Contact/Person has passed away."@en ;
+               rdfs:label "Date of death"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfRetirement
+ec:dateOfRetirement rdf:type owl:ObjectProperty ;
+                    rdfs:range ec:DateTimeObject ;
+                    dcterms:description "The date when a Contact/Person has retired."@en ;
+                    rdfs:label "Date of retirement"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateProduced
@@ -415,6 +433,13 @@ ec:duration rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
 ec:end rdf:type owl:ObjectProperty ;
        rdfs:range ec:TimePoint .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endDateTime
+ec:endDateTime rdf:type owl:ObjectProperty ;
+               rdfs:range ec:DateTimeObject ;
+               rdfs:comment "Describing an end of an interval"@en ,
+                            "End date time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
@@ -619,14 +644,6 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Agent ;
                     dcterms:description "The Agent who bought the Artefact."@en ;
                     rdfs:label "Buyer"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactCreator
-ec:hasArtefactCreator rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Artefact ;
-                      rdfs:range ec:Agent ;
-                      dcterms:description "To identify the creator of an Artefact."@en ;
-                      rdfs:label "Creator"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactLocation
@@ -1047,7 +1064,6 @@ ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreator
 ec:hasCreator rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Asset ;
               rdfs:range ec:Agent ;
               dcterms:description "To identify an Agent involved in the creation of the Resource or BusinessObject."@en ;
               rdfs:label "Creator"@en .
@@ -1215,7 +1231,8 @@ ec:hasEventRelatedBusinessObject rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedEvent
-ec:hasEventRelatedEvent rdf:type owl:ObjectProperty ;
+ec:hasEventRelatedEvent rdf:type owl:ObjectProperty ,
+                                 owl:IrreflexiveProperty ;
                         rdfs:domain ec:Event ;
                         rdfs:range ec:Event ;
                         dcterms:description "An Event relates to an Event."@en ;
@@ -2329,6 +2346,13 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
                    rdfs:label "Wrapping type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hived
+ec:hived rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf ec:date ;
+         dcterms:description "The date when the Asset was archived."@en ;
+         rdfs:label "Archiving date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
@@ -2738,6 +2762,13 @@ ec:locationTimeType rdf:type owl:ObjectProperty ;
                     rdfs:label "Location type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loggsPublicationEvent
+ec:loggsPublicationEvent rdf:type owl:ObjectProperty ;
+                         rdfs:domain ec:PublicationLogg ;
+                         rdfs:range ec:PublicationEvent ;
+                         skos:note "loggs publication event"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
 ec:mediaResourceId rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:MediaResource ;
@@ -2869,6 +2900,13 @@ ec:start rdf:type owl:ObjectProperty ;
          rdfs:range ec:TimePoint .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startDateTime
+ec:startDateTime rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:DateTimeObject ;
+                 rdfs:comment "A point of time or start of an interval"@en ,
+                              "Start date time"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackType
 ec:trackType rdf:type owl:ObjectProperty ;
              rdfs:domain ec:Track ;
@@ -2899,7 +2937,6 @@ dcterms:alternative rdf:type owl:DatatypeProperty ;
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth
 bbcconsepts:dateOfBirth rdf:type owl:DatatypeProperty ;
-                        owl:equivalentProperty ec:dateOfBirth ;
                         rdfs:domain ec:Contact ;
                         rdfs:range xsd:date ;
                         dcterms:description "The date when a Contact/Person is born."@en ;
@@ -2908,7 +2945,6 @@ bbcconsepts:dateOfBirth rdf:type owl:DatatypeProperty ;
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfDeath
 bbcconsepts:dateOfDeath rdf:type owl:DatatypeProperty ;
-                        owl:equivalentProperty ec:dateOfDeath ;
                         rdfs:domain ec:Contact ;
                         rdfs:range xsd:date ;
                         dcterms:description "To provide the date of death."@en ;
@@ -2966,22 +3002,6 @@ ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:label "Abstract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityEndDate
-ec:activityEndDate rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Organisation ;
-                   rdfs:range xsd:dateTime ;
-                   dcterms:description "To provide the end date of activity of an Organisation."@en ;
-                   rdfs:label "Activity end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#activityStartDate
-ec:activityStartDate rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Organisation ;
-                     rdfs:range xsd:dateTime ;
-                     dcterms:description "To provide the start date of activity of an Organisation."@en ;
-                     rdfs:label "Activity start date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#adultContent
 ec:adultContent rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
@@ -2990,22 +3010,6 @@ ec:adultContent rdf:type owl:DatatypeProperty ,
                 dcterms:description "A flag to indiucate adult content."@en ;
                 rdfs:comment "**** Content type *** i.e. some skos:Consept"@en ;
                 rdfs:label "Adult content flag"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#affiliationEndDate
-ec:affiliationEndDate rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Affiliation ;
-                      rdfs:range xsd:dateTime ;
-                      dcterms:description "The date of end of Affiliation."@en ;
-                      rdfs:label "Affiliation end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#affiliationStartDate
-ec:affiliationStartDate rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Affiliation ;
-                        rdfs:range xsd:dateTime ;
-                        dcterms:description "The date of Affiliation."@en ;
-                        rdfs:label "Affiliation start date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#age
@@ -3201,14 +3205,6 @@ ec:alternativeTitle rdf:type owl:DatatypeProperty ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "To provide an alternative title."@en ;
                     rdfs:label "Alternative title."@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalBirthYear
-ec:animalBirthYear rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Animal ;
-                   rdfs:range xsd:date ;
-                   dcterms:description "To year of birth of an animal."@en ;
-                   rdfs:label "Animal birth year"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCharacterName
@@ -3626,35 +3622,17 @@ ec:costumeTexture rdf:type owl:DatatypeProperty ;
                   rdfs:label "Costume texture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfBirth
-ec:dateOfBirth rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Person ;
-               rdfs:range xsd:dateTime ;
-               dcterms:description "The date when a Contact/Person is born."@en ;
-               rdfs:label "Date of birth"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfDeath
-ec:dateOfDeath rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Person ;
-               rdfs:range xsd:dateTime ;
-               dcterms:description "The date when a Contact/Person has passed away."@en ;
-               rdfs:label "Date of death"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfRetirement
-ec:dateOfRetirement rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Person ;
-                    rdfs:range xsd:dateTime ;
-                    dcterms:description "The date when a Contact/Person has retired."@en ;
-                    rdfs:label "Date of retirement"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTime
 ec:dateTime rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain ec:DateTimeObject ;
             rdfs:range xsd:dateTime .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#day
+ec:day rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:integer ;
+       rdfs:label "day"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
@@ -3763,62 +3741,6 @@ ec:equivalentTime rdf:type owl:DatatypeProperty ;
                   rdfs:label "equivalent time"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndDate
-ec:eventEndDate rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Event ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "The end date of an Event."@en ;
-                rdfs:label "Event end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndDateTime
-ec:eventEndDateTime rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Event ;
-                    rdfs:range xsd:dateTime ;
-                    dcterms:description "The end date and time of an Event."@en ;
-                    rdfs:label "Event end date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventEndTime
-ec:eventEndTime rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Event ;
-                rdfs:range xsd:time ;
-                dcterms:description "The end time of an Event."@en ;
-                rdfs:label "Event end time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventPeriod
-ec:eventPeriod rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Event ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "The period of time during which an Event has occured."@en ;
-               rdfs:label "Event period"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventStartDate
-ec:eventStartDate rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Event ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "The start date of an Event."@en ;
-                  rdfs:label "Event start date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventStartDateTime
-ec:eventStartDateTime rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Event ;
-                      rdfs:range xsd:dateTime ;
-                      dcterms:description "The start date and time of an Event."@en ;
-                      rdfs:label "Event start date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#eventStartTime
-ec:eventStartTime rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Event ;
-                  rdfs:range xsd:time ;
-                  dcterms:description "The start time of an Event."@en ;
-                  rdfs:label "Event start time"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#familyInformation
 ec:familyInformation rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Person ;
@@ -3853,7 +3775,8 @@ ec:firstShowing rdf:type owl:DatatypeProperty ,
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowingThisService
-ec:firstShowingThisService rdf:type owl:DatatypeProperty ;
+ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
                            rdfs:domain ec:PublicationEvent ;
                            rdfs:range xsd:boolean ;
                            dcterms:description "To falg this is a first showing  PublicationEvent on this service."@en ;
@@ -4311,6 +4234,12 @@ ec:middleName rdf:type owl:DatatypeProperty ;
               rdfs:label "Middle name"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#month
+ec:month rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:integer ;
+         rdfs:label "month"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#nickName
 ec:nickName rdf:type owl:DatatypeProperty ;
             rdfs:domain ec:Person ;
@@ -4515,6 +4444,13 @@ ec:partTotalNumber rdf:type owl:DatatypeProperty ;
                    rdfs:label "Part total number"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#period
+ec:period rdf:type owl:DatatypeProperty ;
+          rdfs:range rdfs:Literal ;
+          dcterms:description "The period of time during which an Event has occured."@en ;
+          rdfs:label "period"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personDescription
 ec:personDescription rdf:type owl:DatatypeProperty ;
                      rdfs:domain ec:Person ;
@@ -4686,54 +4622,6 @@ ec:pubStatus rdf:type owl:DatatypeProperty ;
              rdfs:label "Publication status"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationDuration
-ec:publicationDuration rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:PublicationEvent ;
-                       rdfs:range rdfs:Literal ;
-                       dcterms:description "The actual duration of a PublicationEvent."@en ;
-                       rdfs:label "PublicationEvent duration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEndDateTime
-ec:publicationEndDateTime rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:PublicationEvent ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The scheduled end date and time of a PublicationEvent."@en ;
-                          rdfs:label "PublicationEvent end date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventAbstract
-ec:publicationEventAbstract rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:PublicationEvent ;
-                            rdfs:range rdfs:Literal ;
-                            dcterms:description "To provide an abstract for a PublicationEvent."@en ;
-                            rdfs:label "PublicationEvent abstract"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventTitle
-ec:publicationEventTitle rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:PublicationEvent ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "To provide a title for a PublicationEvent."@en ;
-                         rdfs:label "PublicationEvent title"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanEndDate
-ec:publicationPlanEndDate rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:PublicationPlan ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The end date of a PublicationPlan"@en ;
-                          rdfs:label "PublicationPlan end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStartDate
-ec:publicationPlanStartDate rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:PublicationPlan ;
-                            rdfs:range xsd:dateTime ;
-                            dcterms:description "The start date of a PublicationPlan"@en ;
-                            rdfs:label "PublicationPlan start date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStatus
 ec:publicationPlanStatus rdf:type owl:DatatypeProperty ;
                          rdfs:domain ec:PublicationPlan ;
@@ -4748,30 +4636,6 @@ ec:publicationScheduleDate rdf:type owl:DatatypeProperty ;
                            rdfs:range xsd:date ;
                            dcterms:description "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ;
                            rdfs:label "Schedule date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationStartDateTime
-ec:publicationStartDateTime rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:PublicationEvent ;
-                            rdfs:range xsd:dateTime ;
-                            dcterms:description "The scheduled start date and time of a PublicationEvent."@en ;
-                            rdfs:label "Publication start date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedEndDateTime
-ec:publishedEndDateTime rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:PublicationEvent ;
-                        rdfs:range xsd:dateTime ;
-                        dcterms:description "The end date and time of a PublicationEvent as it was run."@en ;
-                        rdfs:label "Publication end date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedStartDateTime
-ec:publishedStartDateTime rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:PublicationEvent ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The start date and time of a PublicationEvent as it was run."@en ;
-                          rdfs:label "Publication start date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedTitle
@@ -4954,22 +4818,6 @@ ec:rightsClearanceFlag rdf:type owl:DatatypeProperty ,
                        rdfs:label "Rights clearance flag"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsDuration
-ec:rightsDuration rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Rights ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "To define the duration of the period when Rights are applicable."@en ;
-                  rdfs:label "Rights duration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsEndDateTime
-ec:rightsEndDateTime rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Rights ;
-                     rdfs:range xsd:dateTime ;
-                     dcterms:description "To define the end time until when Rights are applicable."@en ;
-                     rdfs:label "Rights end date time"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsExpression
 ec:rightsExpression rdf:type owl:DatatypeProperty ;
                     rdfs:domain ec:Rights ;
@@ -4985,14 +4833,6 @@ ec:rightsLink rdf:type owl:DatatypeProperty ;
               dcterms:description """A link to e.g. a webpage where an expression of
             the rights can be found and consulted."""@en ;
               rdfs:label "Rights web resource"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsStartDateTime
-ec:rightsStartDateTime rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Rights ;
-                       rdfs:range xsd:dateTime ;
-                       dcterms:description "To define the start time since when Rights are applicable."@en ;
-                       rdfs:label "Rights start date time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#salutationTitle
@@ -5328,6 +5168,12 @@ ec:workingTitle rdf:type owl:DatatypeProperty ;
                 rdfs:label "Working title"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#year
+ec:year rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:integer ;
+        rdfs:label "year"@en .
+
+
 ###  http://www.w3.org/2004/02/skos/core#notation
 skos:notation rdfs:range rdfs:Literal .
 
@@ -5335,6 +5181,10 @@ skos:notation rdfs:range rdfs:Literal .
 #################################################################
 #    Classes
 #################################################################
+
+###  http://org.semanticweb.owlapi/error#Error2
+<http://org.semanticweb.owlapi/error#Error2> rdf:type owl:Class .
+
 
 ###  http://purl.org/dc/elements/1.1/Agent
 dc:Agent rdf:type owl:Class ;
@@ -5490,6 +5340,16 @@ ec:Animal rdf:type owl:Class ;
                             owl:someValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:dateOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:dateOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectDescription ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
@@ -5547,6 +5407,10 @@ ec:Annotation_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasCreator ;
+                              owl:someValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:someValuesFrom ec:Identifier
                             ] ,
@@ -5575,9 +5439,14 @@ ec:Artefact_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
+         rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error2> ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:date ;
                            owl:someValuesFrom ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCreator ;
+                           owl:someValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasGenre ;
@@ -5586,11 +5455,6 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateArchived ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:DateTimeObject
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
@@ -6243,8 +6107,24 @@ ec:DataTrack rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DateObject
 ec:DateObject rdf:type owl:Class ;
-              rdfs:subClassOf ec:DateTimeObject ;
-              rdfs:comment "for just dates"@en .
+              rdfs:subClassOf ec:DateTimeObject ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:year ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:day ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:month ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ;
+              dc:description "Date type where year, mont, and day are seperated."@en ;
+              rdfs:label "Date object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DateTimeObject
@@ -6429,6 +6309,16 @@ ec:Event rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:endDateTime ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:startDateTime ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
@@ -6562,10 +6452,33 @@ ec:Group rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#HistoricDate
 ec:HistoricDate rdf:type owl:Class ;
-                rdfs:subClassOf ec:DateTimeObject ;
-                rdfs:comment """For all kinds of dates
-
-Start - end for historic dates, just month and year."""@en .
+                rdfs:subClassOf ec:DateTimeObject ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:endDateTime ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass ec:DateTimeObject
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:objectType ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass skos:Concept
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:startDateTime ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass ec:DateTimeObject
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:objectDescription ;
+                                  owl:someValuesFrom rdfs:Literal
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:period ;
+                                  owl:someValuesFrom rdfs:Literal
+                                ] ;
+                dc:description """The date expressed as an interval between start and end, for unsertain dates.
+Aditional infomation can be written in the description property"""@en ;
+                rdfs:label "Historic date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IPRRestrictions
@@ -6883,7 +6796,17 @@ ec:OpenSubtitling rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation
 ec:Organisation rdf:type owl:Class ;
-                rdfs:subClassOf ec:Agent ;
+                rdfs:subClassOf ec:Agent ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:endDateTime ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass ec:DateTimeObject
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:startDateTime ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass ec:DateTimeObject
+                                ] ;
                 dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
                 rdfs:label "Organisation"@en .
 
@@ -6931,7 +6854,22 @@ ec:Party rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
 ec:Person rdf:type owl:Class ;
-          rdfs:subClassOf ec:Agent ;
+          rdfs:subClassOf ec:Agent ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:dateOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:dateOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:dateOfRetirement ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ;
           dcterms:description "To describe a Person."@en ;
           rdfs:label "Person"@en .
 
@@ -7022,11 +6960,34 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:someValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:startDateTime ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass ec:DateTimeObject
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:duration ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass ec:TimePoint
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:endDateTime ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass ec:DateObject
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:abstract ;
+                                      owl:someValuesFrom rdfs:Literal
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:objectDescription ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:objectName ;
+                                      owl:someValuesFrom rdfs:Literal
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:title ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ;
                     owl:disjointWith ec:Rating ;
@@ -7054,6 +7015,36 @@ ec:PublicationHistory rdf:type owl:Class ;
                       rdfs:label "Publication History"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationLogg
+ec:PublicationLogg rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:loggsPublicationEvent ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:PublicationEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:startDateTime ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:endDateTime ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectType ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectDescription ;
+                                     owl:someValuesFrom rdfs:Literal
+                                   ] ;
+                   dc:description "For colecting data from the \"As run logg\""@en ;
+                   rdfs:label "Publication logg"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationMedium
 ec:PublicationMedium rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept ;
@@ -7073,6 +7064,16 @@ ec:PublicationPlan rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:objectType ;
                                      owl:someValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:endDateTime ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:DateTimeObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:startDateTime ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:DateTimeObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:objectDescription ;
@@ -7205,6 +7206,21 @@ ec:Rights rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
                             owl:someValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:duration ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:TimePoint
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:endDateTime ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:startDateTime ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:DateTimeObject
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectDescription ;
@@ -7740,12 +7756,15 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                         "et annet merke"@nb .
 
 
+[ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+] .
+
 #################################################################
 #    Annotations
 #################################################################
 
 dcterms:contributor dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ;
-                    rdfs:label "Contributor"@en .
+                     rdfs:label "Contributor"@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
