@@ -7745,7 +7745,7 @@ skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 #################################################################
 #    Individuals
-#################################################################
+################################################################
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#SOMEPROGRAMME
 ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
