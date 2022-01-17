@@ -590,14 +590,6 @@ ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
                      rdfs:label "Annotation body"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedAgent
-ec:hasAnnotationRelatedAgent rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:Annotation ;
-                             rdfs:range ec:Agent ;
-                             dcterms:description "To identify an Agent subject of the Annotation."@en ;
-                             rdfs:label "Annotation related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact
 ec:hasAnnotationRelatedArtefact rdf:type owl:ObjectProperty ;
                                 rdfs:domain ec:Annotation ;
@@ -660,14 +652,6 @@ ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
                             rdfs:range ec:CurrencyCode ;
                             dcterms:description "To specify the currency into which the price of an Artefact is expressed."@en ;
                             rdfs:label "Artefact price currency"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedAgent
-ec:hasArtefactRelatedAgent rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Artefact ;
-                           rdfs:range ec:Agent ;
-                           dcterms:description "To associate an Artefact/Prop or else with an Agent."@en ;
-                           rdfs:label "Associated agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedEditorialObject
@@ -814,14 +798,6 @@ ec:hasAudioTrack rdf:type owl:ObjectProperty ;
                  rdfs:range ec:AudioTrack ;
                  dcterms:description "To identify AudioTracks in the Resource."@en ;
                  rdfs:label "Audio track"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedAgent
-ec:hasAwardRelatedAgent rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Award ;
-                        rdfs:range ec:Agent ;
-                        dcterms:description "To link an Agent to an Award."@en ;
-                        rdfs:label "Agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedBusinessObject
@@ -1163,14 +1139,6 @@ ec:hasEidrIdentifier rdf:type owl:ObjectProperty ;
                      rdfs:label "EIDR"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedAgent
-ec:hasEmotionRelatedAgent rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:Emotion ;
-                          rdfs:range ec:Agent ;
-                          dcterms:description "To associate an Emotion with an Agent (e.g. Person or Character)."@en ;
-                          rdfs:label "Emotion related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedScene
 ec:hasEmotionRelatedScene rdf:type owl:ObjectProperty ;
                           rdfs:domain ec:Emotion ;
@@ -1195,15 +1163,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
               rdfs:range ec:Episode ;
               dcterms:description "To identify Episodes in a Series"@en ;
               rdfs:label "Episode"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedAgent
-ec:hasEventRelatedAgent rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Event ;
-                        rdfs:range ec:Agent ;
-                        dcterms:description "An Agent relates to an Event."@en ;
-                        rdfs:comment "hasContributor" ;
-                        rdfs:label "Agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedArtefact
@@ -2175,14 +2134,6 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
                  rdfs:range ec:Person ;
                  dcterms:description "To identify the members of a Team"@en ;
                  rdfs:label "Team member"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedAgent
-ec:hasTextLineRelatedAgent rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:TextLine ;
-                           rdfs:range ec:Agent ;
-                           dcterms:description "To identify an Agent/Person/Character related to a TextLine."@en ;
-                           rdfs:label "Text line related agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedCharacter
@@ -5381,6 +5332,10 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:someValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasRelatedAgent ;
+                                owl:someValuesFrom ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectType ;
                                 owl:someValuesFrom skos:Concept
                               ] ,
@@ -5412,6 +5367,10 @@ ec:Artefact rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:someValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:someValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
@@ -5739,6 +5698,10 @@ ec:Award rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:someValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -6239,6 +6202,10 @@ ec:Emotion rdf:type owl:Class ;
                              owl:someValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedAgent ;
+                             owl:someValuesFrom ec:Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:someValuesFrom skos:Concept
                            ] ,
@@ -6301,6 +6268,10 @@ ec:Event rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:someValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -7497,6 +7468,10 @@ ec:TextLine rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:someValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:someValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:end ;
