@@ -468,14 +468,6 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:label "Access conditions"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionRelatedAgent
-ec:hasActionRelatedAgent rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Action ;
-                         rdfs:range ec:Agent ;
-                         dcterms:description "To associate an Action with an Agent (e.g. Person or Character)."@en ;
-                         rdfs:label "Action related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionRelatedScene
 ec:hasActionRelatedScene rdf:type owl:ObjectProperty ;
                          rdfs:domain ec:Action ;
@@ -1756,6 +1748,13 @@ ec:hasRatingSource rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Agent ;
                    dcterms:description "To identify an Agent who has provided a Rating."@en ;
                    rdfs:label "Rating source / agent"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAgent
+ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
+                   rdfs:range ec:Agent ;
+                   dcterms:description "To associate a concept with an Agent (e.g. Person or Character)."@en ;
+                   rdfs:label "Related agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAnimal
@@ -5182,10 +5181,6 @@ skos:notation rdfs:range rdfs:Literal .
 #    Classes
 #################################################################
 
-###  http://org.semanticweb.owlapi/error#Error2
-<http://org.semanticweb.owlapi/error#Error2> rdf:type owl:Class .
-
-
 ###  http://purl.org/dc/elements/1.1/Agent
 dc:Agent rdf:type owl:Class ;
          dcterms:description "A resource that acts or has the power to act."@en ;
@@ -5240,6 +5235,10 @@ ec:Action rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:someValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasRelatedAgent ;
+                            owl:someValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
@@ -5439,8 +5438,7 @@ ec:Artefact_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
-         rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error2> ,
-                         [ rdf:type owl:Restriction ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:date ;
                            owl:someValuesFrom ec:DateTimeObject
                          ] ,
@@ -7745,7 +7743,7 @@ skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 #################################################################
 #    Individuals
-################################################################
+#################################################################
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#SOMEPROGRAMME
 ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
