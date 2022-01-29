@@ -2268,7 +2268,7 @@ ec:isAgent rdf:type owl:ObjectProperty ,
            rdfs:domain ec:Agent ;
            rdfs:range ec:Agent ;
            dcterms:description "Range: string or Agent."@en ,
-                               "To identify a related Agent."@en .
+                               "To identify a related Agent. I.e. a person related to a call for a function on a production plan."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnimalGroom
@@ -3665,7 +3665,6 @@ ec:fileSize rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowing
 ec:firstShowing rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain ec:PublicationEvent ;
                 rdfs:range xsd:boolean ;
                 dcterms:description "To flag this is a first showing PublicationEvent."@en ;
                 rdfs:label "First showing flag"@en .
@@ -3674,7 +3673,6 @@ ec:firstShowing rdf:type owl:DatatypeProperty ,
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowingThisService
 ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
-                           rdfs:domain ec:PublicationEvent ;
                            rdfs:range xsd:boolean ;
                            dcterms:description "To falg this is a first showing  PublicationEvent on this service."@en ;
                            rdfs:label "First showing on service flag"@en .
@@ -3896,7 +3894,6 @@ ec:lineNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#live
 ec:live rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
-        rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to signal that content is live"@en ;
         rdfs:label "live"@en .
@@ -6934,7 +6931,22 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:firstShowing ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:firstShowingThisService ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:free ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:live ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:boolean
                                     ] ;
