@@ -247,6 +247,28 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:label "Agent"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
+ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                          rdfs:range ec:DateTimeObject ;
+                          dcterms:description "The date when an Artefact was purchased. ."@en ;
+                          rdfs:label "Artefact date of purchase"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
+ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:DateTimeObject ;
+                      dcterms:description "The date when an Artefact was sold."@en ;
+                      rdfs:label "Artefact date of sell"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDate
+ec:awardDate rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Award ;
+             rdfs:range ec:DateTimeObject ;
+             dcterms:description "To provide an date when an Award was delivered."@en ;
+             rdfs:label "Award date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo
 ec:clonedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isClonedFrom ;
@@ -3224,22 +3246,6 @@ ec:artefactComment rdf:type owl:DatatypeProperty ;
                    rdfs:label "Artefact comment"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
-ec:artefactDateOfPurchase rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:Artefact ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The date when an Artefact was purchased. ."@en ;
-                          rdfs:label "Artefact date of purchase"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
-ec:artefactDateOfSell rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Artefact ;
-                      rdfs:range xsd:dateTime ;
-                      dcterms:description "The date when an Artefact was sold."@en ;
-                      rdfs:label "Artefact date of sell"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactModel
 ec:artefactModel rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Artefact ;
@@ -3381,14 +3387,6 @@ ec:awardCeremony rdf:type owl:DatatypeProperty ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To provide an Award ceremony name."@en ;
                  rdfs:label "Award ceremony"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDate
-ec:awardDate rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Award ;
-             rdfs:range xsd:dateTime ;
-             dcterms:description "To provide an date when an Award was delivered."@en ;
-             rdfs:label "Award date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitDepth
@@ -3854,14 +3852,6 @@ ec:iFrameSize rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:int ;
               dcterms:description "The distance between 2 I-frames also known as the gop size."@en ;
               rdfs:label "I-frame/Gop size"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#idDateOfCreation
-ec:idDateOfCreation rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Identifier ;
-                    rdfs:range xsd:dateTime ;
-                    dcterms:description "The date when the identifier was generated."@en ;
-                    rdfs:label "Date of creation"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#identifierValue
@@ -5267,6 +5257,16 @@ ec:Artefact rdf:type owl:Class ;
                               owl:someValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactDateOfPurchase ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasLocation ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:Location
@@ -6389,6 +6389,11 @@ ec:IPRRestrictions rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Identifier
 ec:Identifier rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:dateCreated ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:DateTimeObject
+                              ] ;
               dcterms:description "To support the use of structured identifiers."@en ;
               rdfs:label "Identifier"@en .
 
