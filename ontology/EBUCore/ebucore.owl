@@ -358,7 +358,7 @@ ec:dateIngested rdf:type owl:ObjectProperty ;
 ec:dateIssued rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf ec:date ;
               dcterms:description "The date when the Asset was issued."@en ;
-              rdfs:label "Archiving date"@en .
+              rdfs:label "Date issued"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateMigrated
@@ -5856,6 +5856,7 @@ ec:DateObject rdf:type owl:Class ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:integer
                               ] ;
+              owl:disjointWith ec:HistoricDate ;
               dc:description "Date type where year, mont, and day are seperated."@en ;
               rdfs:label "Date object"@en .
 
