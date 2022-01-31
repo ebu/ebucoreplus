@@ -3473,13 +3473,15 @@ ec:costumeTexture rdf:type owl:DatatypeProperty ;
 ec:dateTime rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain ec:DateTimeObject ;
-            rdfs:range xsd:dateTime .
+            rdfs:range xsd:dateTime ;
+            dcterms:description "A string describing the time and date."@en ;
+            rdfs:label "Date time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#day
 ec:day rdf:type owl:DatatypeProperty ;
        rdfs:range xsd:integer ;
-       rdfs:label "day"@en .
+       rdfs:label "Day"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
@@ -3840,7 +3842,7 @@ ec:live rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to signal that content is live"@en ;
-        rdfs:label "live"@en .
+        rdfs:label "Live"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressArea
@@ -4015,7 +4017,7 @@ ec:middleName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#month
 ec:month rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:integer ;
-         rdfs:label "month"@en .
+         rdfs:label "Month"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#nickName
@@ -4039,7 +4041,8 @@ ec:noiseFilter rdf:type owl:DatatypeProperty ,
 ec:normalDuration rdf:type owl:DatatypeProperty ;
                   rdfs:domain ec:NormalPlayTime ;
                   rdfs:range xsd:string ;
-                  rdfs:comment "a duration expressed as a string formated as ISO8601 ie PT3M23S"@en .
+                  dcterms:description "a duration expressed as a string formated as ISO8601 ie PT3M23S"@en ;
+                  rdfs:label "Normal duration"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#normalPlayTime
@@ -4191,7 +4194,7 @@ ec:partTotalNumber rdf:type owl:DatatypeProperty ;
 ec:period rdf:type owl:DatatypeProperty ;
           rdfs:range rdfs:Literal ;
           dcterms:description "The period of time during which an Event has occured."@en ;
-          rdfs:label "period"@en .
+          rdfs:label "Period"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personHeight
@@ -4828,7 +4831,7 @@ ec:workingTitle rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#year
 ec:year rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:integer ;
-        rdfs:label "year"@en .
+        rdfs:label "Year"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#notation
@@ -5132,10 +5135,6 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:date ;
-                           owl:someValuesFrom ec:DateTimeObject
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAccessConditions ;
                            owl:someValuesFrom ec:AccessConditions
                          ] ,
@@ -5178,6 +5177,31 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateDistributed ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateIssued ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateModified ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateReleased ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:datelicenseEnd ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:datelicensed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:DateTimeObject
                          ] ,
@@ -5857,7 +5881,7 @@ ec:DateObject rdf:type owl:Class ;
                                 owl:onDataRange xsd:integer
                               ] ;
               owl:disjointWith ec:HistoricDate ;
-              dc:description "Date type where year, mont, and day are seperated."@en ;
+              dcterms:description "Date type where year, mont, and day are seperated."@en ;
               rdfs:label "Date object"@en .
 
 
@@ -6223,7 +6247,7 @@ ec:HistoricDate rdf:type owl:Class ;
                                   owl:onProperty ec:period ;
                                   owl:someValuesFrom rdfs:Literal
                                 ] ;
-                dc:description """The date expressed as an interval between start and end, for unsertain dates.
+                dcterms:description """The date expressed as an interval between start and end, for unsertain dates.
 Aditional infomation can be written in the description property"""@en ;
                 rdfs:label "Historic date"@en .
 
@@ -7019,6 +7043,11 @@ ec:Resource rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasLocator ;
                               owl:someValuesFrom ec:Locator
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:dateDeleted ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:dateValidated ;
