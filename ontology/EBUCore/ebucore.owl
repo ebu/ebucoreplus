@@ -249,6 +249,7 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
 ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf ec:date ;
                           rdfs:range ec:DateTimeObject ;
                           dcterms:description "The date when an Artefact was purchased. ."@en ;
                           rdfs:label "Artefact date of purchase"@en .
@@ -256,6 +257,7 @@ ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
 ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:date ;
                       rdfs:range ec:DateTimeObject ;
                       dcterms:description "The date when an Artefact was sold."@en ;
                       rdfs:label "Artefact date of sell"@en .
@@ -263,7 +265,7 @@ ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDate
 ec:awardDate rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Award ;
+             rdfs:subPropertyOf ec:date ;
              rdfs:range ec:DateTimeObject ;
              dcterms:description "To provide an date when an Award was delivered."@en ;
              rdfs:label "Award date"@en .
@@ -382,6 +384,7 @@ ec:dateNormalized rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfBirth
 ec:dateOfBirth rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:date ;
                rdfs:range ec:DateTimeObject ;
                dcterms:description "The date when a Contact/Person is born."@en ;
                rdfs:label "Date of birth"@en .
@@ -389,6 +392,7 @@ ec:dateOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfDeath
 ec:dateOfDeath rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:date ;
                rdfs:range ec:DateTimeObject ;
                dcterms:description "The date when a Contact/Person has passed away."@en ;
                rdfs:label "Date of death"@en .
@@ -396,6 +400,7 @@ ec:dateOfDeath rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateOfRetirement
 ec:dateOfRetirement rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:date ;
                     rdfs:range ec:DateTimeObject ;
                     dcterms:description "The date when a Contact/Person has retired."@en ;
                     rdfs:label "Date of retirement"@en .
@@ -481,6 +486,7 @@ ec:end rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#endDateTime
 ec:endDateTime rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:date ;
                rdfs:range ec:DateTimeObject ;
                rdfs:comment "Describing an end of an interval"@en ,
                             "End date time"@en .
@@ -750,14 +756,6 @@ ec:hasAssetRelatedMediaResource rdf:type owl:ObjectProperty ;
                                 rdfs:range ec:MediaResource ;
                                 dcterms:description "To identify a related MediaResource."@en ;
                                 rdfs:label "Asset related media resource"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedResource
-ec:hasAssetRelatedResource rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Asset ;
-                           rdfs:range ec:Resource ;
-                           dcterms:description "To identify a related Resource."@en ;
-                           rdfs:label "Asset related resource"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
@@ -1443,9 +1441,8 @@ ec:hasLocationRelatedResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range ec:Locator ;
-              dcterms:description "A locator from where the MediaResource can be accessed."@en ;
+              dcterms:description "A locator from where the Resource can be accessed."@en ;
               rdfs:label "Locator"@en .
 
 
@@ -1896,14 +1893,6 @@ ec:hasRelationSource rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To define source of a Relation."@en ;
                      rdfs:label "Relation source"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasResourceLocator
-ec:hasResourceLocator rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Resource ;
-                      rdfs:range ec:Locator ;
-                      dcterms:description "A locator from where the Resource can be accessed."@en ;
-                      rdfs:label "Locator"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasReview
@@ -2719,14 +2708,6 @@ ec:offers rdf:type owl:ObjectProperty ;
           rdfs:label "PublicationEvent"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partId
-ec:partId rdf:type owl:ObjectProperty ;
-          rdfs:domain ec:Part ;
-          rdfs:range ec:Identifier ;
-          dcterms:description "The identifier of a Part."@en ;
-          rdfs:label "Part identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:domain ec:PublicationEvent ;
@@ -2872,7 +2853,6 @@ bbcconsepts:dateOfDeath rdf:type owl:DatatypeProperty ;
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/gender
 bbcconsepts:gender rdf:type owl:DatatypeProperty ;
-                   owl:equivalentProperty ec:gender ;
                    rdfs:domain ec:Contact ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "The gender of a person e.g. male or female."@en ;
@@ -2933,7 +2913,6 @@ ec:adultContent rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#age
 ec:age rdf:type owl:DatatypeProperty ;
-       rdfs:domain ec:Person ;
        rdfs:range xsd:integer ;
        dcterms:description "The age in years of a Contact/Person."@en ;
        rdfs:label "Age"@en .
@@ -3022,14 +3001,6 @@ ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                               dcterms:description """To provide the mobile telephone number of an
             Agent (Contact/Person or organisation)"""@en ;
                               rdfs:label "Mobile"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentNickname
-ec:agentNickname rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Agent ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "To provide a nickname of a Contact/Person."@en ;
-                 rdfs:label "Nickname"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentPreviousName
@@ -3140,14 +3111,6 @@ ec:animalCode rdf:type owl:DatatypeProperty ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To associate a code with an animal."@en ;
               rdfs:label "Animal code"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalGender
-ec:animalGender rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Animal ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "To give the gender of an animal."@en ;
-                rdfs:label "Animal gender"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalPassport
@@ -3311,7 +3274,6 @@ ec:aspectRatio rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRate
 ec:audioBitRate rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:bitRate ;
                 rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:nonNegativeInteger ;
                 dcterms:description "The audio bitrate."@en ;
@@ -3320,16 +3282,14 @@ ec:audioBitRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRateMax
 ec:audioBitRateMax rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:bitRateMax ;
                    rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:nonNegativeInteger ;
                    dcterms:description "The max audio bitrate."@en ;
-                   rdfs:label "Audio bitrate"@en .
+                   rdfs:label "Audio bitrate max"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRateMode
 ec:audioBitRateMode rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:bitRateMode ;
                     rdfs:domain ec:MediaResource ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "The audio bitrate mode."@en ;
@@ -3492,14 +3452,6 @@ ec:contentDescription rdf:type owl:DatatypeProperty ;
                       rdfs:label "Content description"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#costumeGender
-ec:costumeGender rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Costume ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "To specify the gender associated with a Costume."@en ;
-                 rdfs:label "Costume gender"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#costumeSizeInformation
 ec:costumeSizeInformation rdf:type owl:DatatypeProperty ;
                           rdfs:domain ec:Costume ;
@@ -3582,7 +3534,6 @@ ec:editUnitCount rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#education
 ec:education rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Person ;
              rdfs:range rdfs:Literal ;
              dcterms:description "To provide information on the education."@en ;
              rdfs:label "Education"@en .
@@ -3638,7 +3589,6 @@ ec:equivalentTime rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#familyInformation
 ec:familyInformation rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Person ;
                      rdfs:range rdfs:Literal ;
                      dcterms:description "To provide information on the family of a Person."@en ;
                      rdfs:label "Family information"@en .
@@ -3646,7 +3596,6 @@ ec:familyInformation rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#familyName
 ec:familyName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Person ;
               rdfs:range rdfs:Literal ;
               dcterms:description "The family name of a Person."@en ;
               rdfs:label "Family name"@en .
@@ -3654,10 +3603,17 @@ ec:familyName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize
 ec:fileSize rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:MediaResource ;
             rdfs:range xsd:double ;
-            dcterms:description "Provides the size of a MediaResource in bytes."@en ;
+            dcterms:description "Provides the size of a Resource in bytes."@en ;
             rdfs:label "File size"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename
+ec:filename rdf:type owl:DatatypeProperty ;
+            rdfs:domain ec:Resource ;
+            rdfs:range xsd:string ;
+            dcterms:description "The name of the file containing the Resource."@en ;
+            rdfs:label "File name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowing
@@ -3763,7 +3719,6 @@ ec:free rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#gender
 ec:gender rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:Person ;
           rdfs:range rdfs:Literal ;
           dcterms:description "The gender of a Person e.g. male or female."@en ;
           rdfs:label "Gender"@en .
@@ -3779,7 +3734,6 @@ ec:geoBlocking rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#givenName
 ec:givenName rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Person ;
              rdfs:range rdfs:Literal ;
              dcterms:description "The given name of a Person."@en ;
              rdfs:label "Given name"@en .
@@ -3889,34 +3843,8 @@ ec:live rdf:type owl:DatatypeProperty ,
         rdfs:label "live"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#localFamiliyName
-ec:localFamiliyName rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Person ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide a family name in its local expression."@en ;
-                    rdfs:label "Local familiy name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#localGivenName
-ec:localGivenName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Person ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "To provide a given name in its local expression."@en ;
-                  rdfs:label "Local given name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddress
-ec:locationAddress rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Location ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description """To provide the address of a
-           Location."""@en ;
-                   rdfs:label "Address"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressArea
 ec:locationAddressArea rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:locationAddress ;
                        rdfs:domain ec:Location ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description """To provide the Area part of an
@@ -3926,7 +3854,6 @@ ec:locationAddressArea rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressCountry
 ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf ec:locationAddress ;
                           rdfs:domain ec:Location ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description """To provide the country name and or country
@@ -3936,7 +3863,6 @@ ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLine
 ec:locationAddressLine rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:locationAddress ;
                        rdfs:domain ec:Location ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description "To provide an address line."@en ;
@@ -3945,7 +3871,6 @@ ec:locationAddressLine rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLocality
 ec:locationAddressLocality rdf:type owl:DatatypeProperty ;
-                           rdfs:subPropertyOf ec:locationAddress ;
                            rdfs:domain ec:Location ;
                            rdfs:range rdfs:Literal ;
                            dcterms:description """To provide the name of a city, village,
@@ -3955,7 +3880,6 @@ ec:locationAddressLocality rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressPostalCode
 ec:locationAddressPostalCode rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf ec:locationAddress ;
                              rdfs:domain ec:Location ;
                              rdfs:range rdfs:Literal ;
                              dcterms:description """To provide an address postal
@@ -3998,17 +3922,9 @@ ec:locationLongitude rdf:type owl:DatatypeProperty ;
                      rdfs:label "Longitude"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationName
-ec:locationName rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Location ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "To provide a namefor a particular Location."@en ;
-                rdfs:label "Location name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locatorTargetInformation
 ec:locatorTargetInformation rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:MediaResource ;
+                            rdfs:domain ec:Locator ;
                             rdfs:range rdfs:Literal ;
                             dcterms:description "Information on the locator target."@en ;
                             rdfs:label "Locator target information"@en .
@@ -4024,7 +3940,6 @@ ec:log rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessIntegratedLoudness
 ec:loudnessIntegratedLoudness rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf ec:loudnessParameters ;
                               rdfs:range xsd:float ;
                               dcterms:description "The value for integrated loudness measured at AudioProgramme or AudioContent level."@en ;
                               rdfs:label "Integrated loudness"@en .
@@ -4032,7 +3947,6 @@ ec:loudnessIntegratedLoudness rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxMomentary
 ec:loudnessMaxMomentary rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf ec:loudnessParameters ;
                         rdfs:range xsd:float ;
                         dcterms:description "The value for maximum momentary loudness measured at AudioProgramme or AudioContent level."@en ;
                         rdfs:label "Max momentary loudness"@en .
@@ -4040,7 +3954,6 @@ ec:loudnessMaxMomentary rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxShortTerm
 ec:loudnessMaxShortTerm rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf ec:loudnessParameters ;
                         rdfs:range xsd:float ;
                         dcterms:description "The value for maximum max short term loudness measured at AudioProgramme or AudioContent level."@en ;
                         rdfs:label "Max short term loudness"@en .
@@ -4048,7 +3961,6 @@ ec:loudnessMaxShortTerm rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxTruepeak
 ec:loudnessMaxTruepeak rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:loudnessParameters ;
                        rdfs:range xsd:float ;
                        dcterms:description "The value for maximum true peak loudness measured at AudioProgramme or AudioContent level."@en ;
                        rdfs:label "Max true peak loudness"@en .
@@ -4056,21 +3968,13 @@ ec:loudnessMaxTruepeak rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMethod
 ec:loudnessMethod rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf ec:loudnessParameters ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "The method for loudness measurement at AudioProgramme or AudioContent level."@en ;
                   rdfs:label "Loudness method"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessParameters
-ec:loudnessParameters rdf:type owl:DatatypeProperty ;
-                      dcterms:description "To provide loudness parameters."@en ;
-                      rdfs:label "Loudness parameters"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessRange
 ec:loudnessRange rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:loudnessParameters ;
                  rdfs:range xsd:float ;
                  dcterms:description "The loudness range measured at AudioProgramme or AudioContent level."@en ;
                  rdfs:label "Loudness range"@en .
@@ -4092,14 +3996,6 @@ ec:maritalStatus rdf:type owl:DatatypeProperty ;
                  rdfs:label "Marital Status"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceDescription
-ec:mediaResourceDescription rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:MediaResource ;
-                            rdfs:range rdfs:Literal ;
-                            dcterms:description "A description of a MediaResource."@en ;
-                            rdfs:label "MediaResource description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed
 ec:midRollAdAllowed rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
@@ -4111,7 +4007,6 @@ ec:midRollAdAllowed rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#middleName
 ec:middleName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Person ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To provide one or more middle names for a Person."@en ;
               rdfs:label "Middle name"@en .
@@ -4125,7 +4020,6 @@ ec:month rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#nickName
 ec:nickName rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Person ;
             rdfs:range rdfs:Literal ;
             dcterms:description "The nickname of a Person."@en ;
             rdfs:label "Nickname"@en .
@@ -4167,24 +4061,14 @@ ec:notRated rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfAudioTracks
 ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:numberOfTracks ;
                        rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of audio tracks."@en ;
                        rdfs:label "Number of audio tracks"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfTracks
-ec:numberOfTracks rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:MediaResource ;
-                  rdfs:range xsd:integer ;
-                  dcterms:description "The number of Tracks composing the MediaResource."@en ;
-                  rdfs:label "Number of tracks"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfVideoTracks
 ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf ec:numberOfTracks ;
                        rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of video tracks."@en ;
@@ -4284,30 +4168,6 @@ ec:packageName rdf:type owl:DatatypeProperty ;
                dcterms:description """The name of a media package in
             Bytes."""@en ;
                rdfs:label "Package name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partDefinition
-ec:partDefinition rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Part ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "A definition associated with the Part."@en ;
-                  rdfs:label "Part definition"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partDescription
-ec:partDescription rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Part ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "A description associated with the Part."@en ;
-                   rdfs:label "Part definition"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partName
-ec:partName rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Part ;
-            rdfs:range rdfs:Literal ;
-            dcterms:description "A name associated with the Part."@en ;
-            rdfs:label "Part name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partNumber
@@ -4588,31 +4448,6 @@ ec:resolution rdf:type owl:DatatypeProperty ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To define the resolution of an Asset e.g. video, image..."@en ;
               rdfs:label "Resolution"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceFileSize
-ec:resourceFileSize rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Resource ;
-                    rdfs:range xsd:double ;
-                    dcterms:description "Provides the size of a Resource in bytes."@en ;
-                    rdfs:label "File size"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceFilename
-ec:resourceFilename rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Resource ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description """The name of the file containing the
-            Resource."""@en ;
-                    rdfs:label "File name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceLocatorTargetInformation
-ec:resourceLocatorTargetInformation rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain ec:Resource ;
-                                    rdfs:range rdfs:Literal ;
-                                    dcterms:description "Information on the Resource locator target."@en ;
-                                    rdfs:label "Locator target information"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetNormalPlaytime
@@ -4913,7 +4748,6 @@ ec:versionTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRate
 ec:videoBitRate rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:bitRate ;
                 rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:nonNegativeInteger ;
                 dcterms:description """The video bitrate. To provide the bitrate at which the MediaResource can be played
@@ -4924,7 +4758,6 @@ ec:videoBitRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMax
 ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf ec:bitRateMax ;
                    rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:nonNegativeInteger ;
                    dcterms:description "The maximum video bitrate."@en ;
@@ -4933,7 +4766,6 @@ ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMode
 ec:videoBitRateMode rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:bitRateMode ;
                     rdfs:domain ec:MediaResource ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "The video bitrate mode."@en ;
@@ -5029,7 +4861,6 @@ bbcconsepts:Organisation rdf:type owl:Class ;
 
 ###  http://www.bbc.co.uk/ontologies/coreconcepts/Person
 bbcconsepts:Person rdf:type owl:Class ;
-                   owl:equivalentClass ec:Person ;
                    dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
                    rdfs:label "Person"@en .
 
@@ -5124,6 +4955,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:nickName ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
@@ -5181,6 +5016,10 @@ ec:Animal rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectName ;
                             owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:gender ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
           dcterms:description "To identify an animal."@en ;
           rdfs:label "Animal"@en .
@@ -5632,6 +5471,11 @@ ec:Award rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:awardDate ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectDescription ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
@@ -5917,7 +5761,11 @@ ec:Copyright rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Costume
 ec:Costume rdf:type owl:Class ;
-           rdfs:subClassOf ec:Artefact ;
+           rdfs:subClassOf ec:Artefact ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:gender ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
            dcterms:description "To identify and describe Costumes used in productions."@en ;
            rdfs:label "Costume"@en .
 
@@ -6772,6 +6620,34 @@ ec:Person rdf:type owl:Class ;
                             owl:onProperty ec:dateOfRetirement ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:DateTimeObject
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:age ;
+                            owl:someValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:education ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:familyInformation ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:familyName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:givenName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:middleName ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:gender ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
           dcterms:description "To describe a Person."@en ;
           rdfs:label "Person"@en .
@@ -7140,9 +7016,23 @@ ec:Relation_Type rdf:type owl:Class ;
 ec:Resource rdf:type owl:Class ;
             rdfs:subClassOf ec:Asset ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocator ;
+                              owl:someValuesFrom ec:Locator
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:dateValidated ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:DateTimeObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:fileSize ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:double
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:filename ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] ;
             dcterms:description "To describe a Resource."@en ;
             rdfs:label "Resource"@en .
