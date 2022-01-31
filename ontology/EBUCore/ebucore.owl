@@ -247,6 +247,28 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:label "Agent"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
+ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                          rdfs:range ec:DateTimeObject ;
+                          dcterms:description "The date when an Artefact was purchased. ."@en ;
+                          rdfs:label "Artefact date of purchase"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
+ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:DateTimeObject ;
+                      dcterms:description "The date when an Artefact was sold."@en ;
+                      rdfs:label "Artefact date of sell"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDate
+ec:awardDate rdf:type owl:ObjectProperty ;
+             rdfs:domain ec:Award ;
+             rdfs:range ec:DateTimeObject ;
+             dcterms:description "To provide an date when an Award was delivered."@en ;
+             rdfs:label "Award date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo
 ec:clonedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isClonedFrom ;
@@ -254,6 +276,28 @@ ec:clonedTo rdf:type owl:ObjectProperty ;
             rdfs:range ec:MediaResource ;
             dcterms:description "Identifies relationship between a digital instantiation of a Resource and its direct copy, with no generational loss."@en ;
             rdfs:label "Cloned to"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#coversEvent
+ec:coversEvent rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ec:hasCoverage ;
+               rdfs:domain ec:Asset ;
+               rdfs:range ec:Event ;
+               dcterms:description """A property to identify the 
+            Events, all real or fictional, covered by the 
+            EditorialObject."""@en ;
+               rdfs:label "Covers event"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#coversLocation
+ec:coversLocation rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasCoverage ;
+                  rdfs:domain ec:Asset ;
+                  rdfs:range ec:Location ;
+                  dcterms:description """A property to identify the 
+            Locations, all real or fictional, covered by the 
+            EditorialObject."""@en ;
+                  rdfs:label "Covers location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#date
@@ -461,8 +505,6 @@ ec:formatVersionId rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:isCoveredBy ;
-                       rdfs:domain ec:Asset ,
-                                   ec:PublicationEvent ;
                        rdfs:range ec:AccessConditions ;
                        dcterms:description "To express access conditions/restrictions."@en ;
                        rdfs:label "Access conditions"@en .
@@ -590,14 +632,6 @@ ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
                      rdfs:label "Annotation body"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedAgent
-ec:hasAnnotationRelatedAgent rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:Annotation ;
-                             rdfs:range ec:Agent ;
-                             dcterms:description "To identify an Agent subject of the Annotation."@en ;
-                             rdfs:label "Annotation related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact
 ec:hasAnnotationRelatedArtefact rdf:type owl:ObjectProperty ;
                                 rdfs:domain ec:Annotation ;
@@ -612,14 +646,6 @@ ec:hasAnnotationRelatedEvent rdf:type owl:ObjectProperty ;
                              rdfs:range ec:Event ;
                              dcterms:description "To identify an Event subject of the Annotation."@en ;
                              rdfs:label "Annotation related event"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedLocation
-ec:hasAnnotationRelatedLocation rdf:type owl:ObjectProperty ;
-                                rdfs:domain ec:Annotation ;
-                                rdfs:range ec:Location ;
-                                dcterms:description "To identify a Location subject of the Annotation."@en ;
-                                rdfs:label "Annotation related location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
@@ -638,14 +664,6 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:label "Buyer"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactLocation
-ec:hasArtefactLocation rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Artefact ;
-                       rdfs:range ec:Location ;
-                       dcterms:description "To identify the location of an Artefact."@en ;
-                       rdfs:label "Location"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactOwner
 ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
                     rdfs:domain ec:Artefact ;
@@ -660,14 +678,6 @@ ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
                             rdfs:range ec:CurrencyCode ;
                             dcterms:description "To specify the currency into which the price of an Artefact is expressed."@en ;
                             rdfs:label "Artefact price currency"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedAgent
-ec:hasArtefactRelatedAgent rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Artefact ;
-                           rdfs:range ec:Agent ;
-                           dcterms:description "To associate an Artefact/Prop or else with an Agent."@en ;
-                           rdfs:label "Associated agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedEditorialObject
@@ -816,14 +826,6 @@ ec:hasAudioTrack rdf:type owl:ObjectProperty ;
                  rdfs:label "Audio track"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedAgent
-ec:hasAwardRelatedAgent rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Award ;
-                        rdfs:range ec:Agent ;
-                        dcterms:description "To link an Agent to an Award."@en ;
-                        rdfs:label "Agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedBusinessObject
 ec:hasAwardRelatedBusinessObject rdf:type owl:ObjectProperty ;
                                  rdfs:domain ec:Award ;
@@ -945,7 +947,6 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContact
 ec:hasContact rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Agent ;
               rdfs:range ec:Contact ;
               dcterms:description """To provide information on a Contact for an
             Organisation or a physical person (e.g. the agent of an actor)."""@en ;
@@ -989,7 +990,6 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContributor
 ec:hasContributor rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Asset ;
                   rdfs:range ec:Agent ;
                   dcterms:description "To identify a contributor to a Resource, a Business Object, an Event..."@en ;
                   rdfs:label "Contributor"@en .
@@ -1030,8 +1030,6 @@ ec:hasCoverage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCoverageRestrictions
 ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf ec:isCoveredBy ;
-                           rdfs:domain ec:Asset ,
-                                       ec:PublicationEvent ;
                            rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "To express coverage restrictions."@en ;
                            rdfs:label "Coverage restrictions"@en .
@@ -1042,7 +1040,8 @@ ec:hasCreationLocation rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:MediaResource ;
                        rdfs:range ec:Location ;
                        dcterms:description "To identify the location where a media resources was created."@en ;
-                       rdfs:label "Creation location"@en .
+                       rdfs:label "Creation location"@en ;
+                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreativeCommons
@@ -1163,14 +1162,6 @@ ec:hasEidrIdentifier rdf:type owl:ObjectProperty ;
                      rdfs:label "EIDR"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedAgent
-ec:hasEmotionRelatedAgent rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:Emotion ;
-                          rdfs:range ec:Agent ;
-                          dcterms:description "To associate an Emotion with an Agent (e.g. Person or Character)."@en ;
-                          rdfs:label "Emotion related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedScene
 ec:hasEmotionRelatedScene rdf:type owl:ObjectProperty ;
                           rdfs:domain ec:Emotion ;
@@ -1197,15 +1188,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
               rdfs:label "Episode"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedAgent
-ec:hasEventRelatedAgent rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Event ;
-                        rdfs:range ec:Agent ;
-                        dcterms:description "An Agent relates to an Event."@en ;
-                        rdfs:comment "hasContributor" ;
-                        rdfs:label "Agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedArtefact
 ec:hasEventRelatedArtefact rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Event ;
@@ -1229,14 +1211,6 @@ ec:hasEventRelatedEvent rdf:type owl:ObjectProperty ,
                         rdfs:range ec:Event ;
                         dcterms:description "An Event relates to an Event."@en ;
                         rdfs:label "Event"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedLocation
-ec:hasEventRelatedLocation rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Event ;
-                           rdfs:range ec:Location ;
-                           dcterms:description "To associate a Location with an Event."@en ;
-                           rdfs:label "Location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedResource
@@ -1415,6 +1389,14 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Licensing ;
                 dcterms:description "To express Licensing."@en ;
                 rdfs:label "Licensing"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocation
+ec:hasLocation rdf:type owl:ObjectProperty ;
+               rdfs:range ec:Location ;
+               dcterms:description "A location assosiated with the object or consept"@en ;
+               rdfs:label "Location"@en ;
+               skos:example "The Location where content has been captured."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationCode
@@ -1650,15 +1632,6 @@ ec:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:label "Producer"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProductionLocation
-ec:hasProductionLocation rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Asset ;
-                         rdfs:range ec:Location ;
-                         dcterms:description "Range: a Location or string"@en ,
-                                             "To identify the Location of a production"@en ;
-                         rdfs:label "Production location"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenance
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
@@ -1837,36 +1810,12 @@ ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
                      rdfs:label "Related essence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEvent
-ec:hasRelatedEvent rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:hasCoverage ;
-                   rdfs:domain ec:Asset ;
-                   rdfs:range ec:Event ;
-                   dcterms:description """A property to identify the 
-            Events, all real or fictional, covered by the 
-            EditorialObject."""@en ,
-                                       "Range: Sting or Event"@en ;
-                   rdfs:label "Event"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedImage
 ec:hasRelatedImage rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:Asset ;
                    rdfs:range ec:Image ;
                    dcterms:description "To associate an Image with a BusinessObject."@en ;
                    rdfs:label "Image"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedLocation
-ec:hasRelatedLocation rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:hasCoverage ;
-                      rdfs:domain ec:Asset ;
-                      rdfs:range ec:Location ;
-                      dcterms:description """A property to identify the 
-            Locations, all real or fictional, covered by the 
-            EditorialObject."""@en ,
-                                          "Range: String or Location"@en ;
-                      rdfs:label "Location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedMediaFragment
@@ -1974,15 +1923,6 @@ ec:hasRightsClearance rdf:type owl:ObjectProperty ;
                       rdfs:label "Rights clearance"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsContact
-ec:hasRightsContact rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Rights ;
-                    rdfs:range ec:Contact ;
-                    dcterms:description """To identify a Contact/person who can provide
-            assistance / guidance regarding the associated Rights."""@en ;
-                    rdfs:label "Contact"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsHolder
 ec:hasRightsHolder rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:Rights ;
@@ -2024,14 +1964,6 @@ ec:hasServiceLogo rdf:type owl:ObjectProperty ;
                   rdfs:range ec:Logo ;
                   dcterms:description "The Logo characterising a Service"@en ;
                   rdfs:label "Service logo"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasShootingLocation
-ec:hasShootingLocation rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:MediaResource ;
-                       rdfs:range ec:Location ;
-                       dcterms:description "The Location where content has been captured."@en ;
-                       rdfs:label "Shooting location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSigning
@@ -2177,14 +2109,6 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
                  rdfs:label "Team member"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedAgent
-ec:hasTextLineRelatedAgent rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:TextLine ;
-                           rdfs:range ec:Agent ;
-                           dcterms:description "To identify an Agent/Person/Character related to a TextLine."@en ;
-                           rdfs:label "Text line related agent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedCharacter
 ec:hasTextLineRelatedCharacter rdf:type owl:ObjectProperty ;
                                rdfs:domain ec:TextLine ;
@@ -2286,8 +2210,6 @@ ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:isCoveredBy ;
-                        rdfs:domain ec:Asset ,
-                                    ec:PublicationEvent ;
                         rdfs:range ec:UsageRestrictions ;
                         dcterms:description "To express usage restrictions."@en ;
                         rdfs:label "Usage restrictions"@en .
@@ -2368,7 +2290,7 @@ ec:isAgent rdf:type owl:ObjectProperty ,
            rdfs:domain ec:Agent ;
            rdfs:range ec:Agent ;
            dcterms:description "Range: string or Agent."@en ,
-                               "To identify a related Agent."@en .
+                               "To identify a related Agent. I.e. a person related to a call for a function on a production plan."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnimalGroom
@@ -2452,8 +2374,6 @@ ec:isComposedOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCoveredBy
 ec:isCoveredBy rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Asset ,
-                           ec:PublicationEvent ;
                rdfs:range ec:Rights .
 
 
@@ -3326,22 +3246,6 @@ ec:artefactComment rdf:type owl:DatatypeProperty ;
                    rdfs:label "Artefact comment"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfPurchase
-ec:artefactDateOfPurchase rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:Artefact ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The date when an Artefact was purchased. ."@en ;
-                          rdfs:label "Artefact date of purchase"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactDateOfSell
-ec:artefactDateOfSell rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Artefact ;
-                      rdfs:range xsd:dateTime ;
-                      dcterms:description "The date when an Artefact was sold."@en ;
-                      rdfs:label "Artefact date of sell"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactModel
 ec:artefactModel rdf:type owl:DatatypeProperty ;
                  rdfs:domain ec:Artefact ;
@@ -3483,14 +3387,6 @@ ec:awardCeremony rdf:type owl:DatatypeProperty ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To provide an Award ceremony name."@en ;
                  rdfs:label "Award ceremony"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardDate
-ec:awardDate rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:Award ;
-             rdfs:range xsd:dateTime ;
-             dcterms:description "To provide an date when an Award was delivered."@en ;
-             rdfs:label "Award date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitDepth
@@ -3767,7 +3663,6 @@ ec:fileSize rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowing
 ec:firstShowing rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain ec:PublicationEvent ;
                 rdfs:range xsd:boolean ;
                 dcterms:description "To flag this is a first showing PublicationEvent."@en ;
                 rdfs:label "First showing flag"@en .
@@ -3776,7 +3671,6 @@ ec:firstShowing rdf:type owl:DatatypeProperty ,
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowingThisService
 ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
-                           rdfs:domain ec:PublicationEvent ;
                            rdfs:range xsd:boolean ;
                            dcterms:description "To falg this is a first showing  PublicationEvent on this service."@en ;
                            rdfs:label "First showing on service flag"@en .
@@ -3862,7 +3756,6 @@ ec:frameWidthUnit rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#free
 ec:free rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
-        rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to indicate that the access to the PublicationEvent is 'free'."@en ;
         rdfs:label "Free access"@en .
@@ -3961,14 +3854,6 @@ ec:iFrameSize rdf:type owl:DatatypeProperty ;
               rdfs:label "I-frame/Gop size"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#idDateOfCreation
-ec:idDateOfCreation rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Identifier ;
-                    rdfs:range xsd:dateTime ;
-                    dcterms:description "The date when the identifier was generated."@en ;
-                    rdfs:label "Date of creation"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#identifierValue
 ec:identifierValue rdf:type owl:DatatypeProperty ;
                    rdfs:domain ec:Identifier ;
@@ -3999,7 +3884,6 @@ ec:lineNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#live
 ec:live rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
-        rdfs:domain ec:PublicationEvent ;
         rdfs:range xsd:boolean ;
         dcterms:description "A flag to signal that content is live"@en ;
         rdfs:label "live"@en .
@@ -4450,14 +4334,6 @@ ec:period rdf:type owl:DatatypeProperty ;
           rdfs:label "period"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personDescription
-ec:personDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Person ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "To provide a description of a Person."@en ;
-                     rdfs:label "Description"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personHeight
 ec:personHeight rdf:type owl:DatatypeProperty ;
                 rdfs:domain ec:Person ;
@@ -4561,56 +4437,6 @@ ec:promotionalInformation rdf:type owl:DatatypeProperty ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description "To provide textual promotional information."@en ;
                           rdfs:label "Promotional information"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceDateCreated
-ec:provenanceDateCreated rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Provenance ;
-                         rdfs:range xsd:dateTime ;
-                         dcterms:description "The date of creation of a Provenance instance."@en ;
-                         rdfs:label "Provenance creation date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceDateModified
-ec:provenanceDateModified rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:Provenance ;
-                          rdfs:range xsd:dateTime ;
-                          dcterms:description "The date of modification of a Provenance instance."@en ;
-                          rdfs:label "Provenance modification date & time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceDescription
-ec:provenanceDescription rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Provenance ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "To describe a Provenance."@en ;
-                         rdfs:label "Provenance description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceId
-ec:provenanceId rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Provenance ;
-                rdfs:range xsd:anyURI ;
-                dcterms:description "To identify a Provenance."@en ;
-                rdfs:label "Provenance Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceName
-ec:provenanceName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Provenance ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "To name a Provenance."@en ;
-                  rdfs:label "Provenance name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#provenanceType
-ec:provenanceType rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Provenance ;
-                  rdfs:range xsd:anyURI ,
-                             xsd:string ;
-                  dcterms:description "Range: string, anyURI or Concept."@en ,
-                                      "To define a type of Provenance."@en ;
-                  rdfs:label "Provenance type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#pubStatus
@@ -5381,8 +5207,17 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:someValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasRelatedAgent ;
+                                owl:someValuesFrom ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectType ;
                                 owl:someValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasLocation ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:Location
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectDescription ;
@@ -5414,8 +5249,27 @@ ec:Artefact rdf:type owl:Class ;
                               owl:someValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:someValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
                               owl:someValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactDateOfPurchase ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:DateTimeObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocation ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:Location
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectDescription ;
@@ -5443,6 +5297,22 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom ec:DateTimeObject
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAccessConditions ;
+                           owl:someValuesFrom ec:AccessConditions
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasContact ;
+                           owl:someValuesFrom ec:Contact
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasContributor ;
+                           owl:someValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCoverageRestrictions ;
+                           owl:someValuesFrom ec:CoverageRestrictions
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCreator ;
                            owl:someValuesFrom ec:Agent
                          ] ,
@@ -5453,6 +5323,14 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasUsageRestrictions ;
+                           owl:someValuesFrom ec:UsageRestrictions
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isCoveredBy ;
+                           owl:someValuesFrom ec:Rights
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
@@ -5473,6 +5351,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:onProperty ec:end ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:TimePoint
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasLocation ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -5739,6 +5622,10 @@ ec:Award rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:someValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:someValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -6239,6 +6126,10 @@ ec:Emotion rdf:type owl:Class ;
                              owl:someValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedAgent ;
+                             owl:someValuesFrom ec:Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:someValuesFrom skos:Concept
                            ] ,
@@ -6303,6 +6194,10 @@ ec:Event rdf:type owl:Class ;
                            owl:someValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:someValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
                            owl:someValuesFrom skos:Concept
                          ] ,
@@ -6310,6 +6205,11 @@ ec:Event rdf:type owl:Class ;
                            owl:onProperty ec:endDateTime ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:DateTimeObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasLocation ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:startDateTime ;
@@ -6489,6 +6389,11 @@ ec:IPRRestrictions rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Identifier
 ec:Identifier rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:dateCreated ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:DateTimeObject
+                              ] ;
               dcterms:description "To support the use of structured identifiers."@en ;
               rdfs:label "Identifier"@en .
 
@@ -6924,6 +6829,32 @@ ec:Props rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance
 ec:Provenance rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasIdentifier ;
+                                owl:someValuesFrom ec:Identifier
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectType ;
+                                owl:someValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:dateCreated ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:DateObject
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:dateModified ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:DateObject
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectDescription ;
+                                owl:someValuesFrom rdfs:Literal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectName ;
+                                owl:someValuesFrom rdfs:Literal
+                              ] ;
               skos:note "Provenance"@en .
 
 
@@ -6950,8 +6881,24 @@ ec:PublicationChannel_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
 ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasAccessConditions ;
+                                      owl:someValuesFrom ec:AccessConditions
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasCoverageRestrictions ;
+                                      owl:someValuesFrom ec:CoverageRestrictions
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasIdentifier ;
                                       owl:someValuesFrom ec:Identifier
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasUsageRestrictions ;
+                                      owl:someValuesFrom ec:UsageRestrictions
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:isCoveredBy ;
+                                      owl:someValuesFrom ec:Rights
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:objectType ;
@@ -6987,6 +6934,26 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:title ;
                                       owl:someValuesFrom rdfs:Literal
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:firstShowing ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:firstShowingThisService ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:free ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:live ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:boolean
                                     ] ;
                     owl:disjointWith ec:Rating ;
                     dcterms:description """To describe any manifestation of a media
@@ -7198,6 +7165,10 @@ ec:Review rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights
 ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasContact ;
+                            owl:someValuesFrom ec:Contact
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:someValuesFrom ec:Identifier
                           ] ,
@@ -7497,6 +7468,10 @@ ec:TextLine rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:someValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:someValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:end ;
