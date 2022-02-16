@@ -327,6 +327,7 @@ ec:date rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
 ec:dateBroadcast rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
+                 rdfs:range time:Instant ;
                  dcterms:description "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
                  rdfs:label "Broadcast date"@en .
 
@@ -334,6 +335,7 @@ ec:dateBroadcast rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateCreated
 ec:dateCreated rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:date ;
+               rdfs:range time:Instant ;
                dcterms:description "The date of creation of the Asset."@en ;
                rdfs:label "Creation date/time"@en .
 
@@ -341,6 +343,7 @@ ec:dateCreated rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDeleted
 ec:dateDeleted rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:date ;
+               rdfs:range time:Instant ;
                dcterms:description "The date when the Resource was deleted."@en ;
                rdfs:label "Deletion date"@en .
 
@@ -348,6 +351,7 @@ ec:dateDeleted rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDigitised
 ec:dateDigitised rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
+                 rdfs:range time:Instant ;
                  dcterms:description "The date when the Resource was digitised."@en ;
                  rdfs:label "Digitisation date"@en .
 
@@ -355,6 +359,7 @@ ec:dateDigitised rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateDistributed
 ec:dateDistributed rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
                    dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
                    rdfs:comment "*** Same ass Issued?"@en ;
                    rdfs:label "Distribution date"@en .
@@ -363,6 +368,7 @@ ec:dateDistributed rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
 ec:dateIngested rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "The date when the Resource was ingested/acquired in institutional holdings."@en ;
                 rdfs:label "Ingest date"@en .
 
@@ -370,6 +376,7 @@ ec:dateIngested rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIssued
 ec:dateIssued rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf ec:date ;
+              rdfs:range time:Instant ;
               dcterms:description "The date when the Asset was issued."@en ;
               rdfs:label "Date issued"@en .
 
@@ -377,6 +384,7 @@ ec:dateIssued rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateMigrated
 ec:dateMigrated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
                 rdfs:label "Migration date"@en .
 
@@ -384,6 +392,7 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateModified
 ec:dateModified rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "To indicate the date at which the Asset has been modified."@en ;
                 rdfs:label "Modification date/time"@en .
 
@@ -391,6 +400,7 @@ ec:dateModified rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateNormalized
 ec:dateNormalized rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
                   dcterms:description "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
                   rdfs:label "Normalization date"@en .
 
@@ -422,6 +432,7 @@ ec:dateOfRetirement rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateProduced
 ec:dateProduced rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "The date of production of the Asset."@en ;
                 rdfs:label "production date"@en .
 
@@ -429,6 +440,7 @@ ec:dateProduced rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateReleased
 ec:dateReleased rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
                 rdfs:label "Release date"@en .
 
@@ -436,6 +448,7 @@ ec:dateReleased rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTransferred
 ec:dateTransferred rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
                    dcterms:description "The date when the Asset was moved from one digital or physical location to another."@en ;
                    rdfs:label "Transfer date"@en .
 
@@ -443,6 +456,7 @@ ec:dateTransferred rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateValidated
 ec:dateValidated rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
+                 rdfs:range time:Instant ;
                  dcterms:description "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
                  rdfs:label "Validation date"@en .
 
@@ -450,6 +464,7 @@ ec:dateValidated rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicenseEnd
 ec:datelicenseEnd rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
                   dcterms:description "The date when the licence for the Asset ends."@en ;
                   rdfs:label "Licence end date"@en .
 
@@ -457,6 +472,7 @@ ec:datelicenseEnd rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed
 ec:datelicensed rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
                 dcterms:description "The date when the licence for the Asset begins."@en ;
                 rdfs:label "Licence start date"@en .
 
@@ -2272,6 +2288,7 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hived
 ec:hived rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf ec:date ;
+         rdfs:range time:Instant ;
          dcterms:description "The date when the Asset was archived."@en ;
          rdfs:label "Archiving date"@en .
 
@@ -5957,6 +5974,7 @@ ec:Dopesheet rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditUnitCount
 ec:EditUnitCount rdf:type owl:Class ;
                  rdfs:subClassOf ec:TimelinePoint ;
+                 dcterms:description "An edit unit can be a frame, a sample or a extend of time."@en ;
                  rdfs:label "Edit unit count"@en .
 
 
