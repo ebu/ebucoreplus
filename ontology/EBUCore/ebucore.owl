@@ -3639,19 +3639,20 @@ ec:familyName rdf:type owl:DatatypeProperty ;
               rdfs:label "Family name"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileName
+ec:fileName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain ec:Resource ;
+            rdfs:range xsd:string ;
+            dcterms:description "The name of the file containing the Resource."@en ;
+            rdfs:label "File name"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize
 ec:fileSize rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:double ;
             dcterms:description "Provides the size of a Resource in bytes."@en ;
             rdfs:label "File size"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename
-ec:filename rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Resource ;
-            rdfs:range xsd:string ;
-            dcterms:description "The name of the file containing the Resource."@en ;
-            rdfs:label "File name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#firstShowing
@@ -7056,14 +7057,14 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:fileName ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:fileSize ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:double
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:filename ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onDataRange xsd:string
                             ] ;
             dcterms:description "To describe a Resource."@en ;
             rdfs:label "Resource"@en .
