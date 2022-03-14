@@ -1477,14 +1477,9 @@ ec:hasLocator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLogo
 ec:hasLogo rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Award ,
-                       ec:Organisation ,
-                       ec:Rating ,
-                       ec:Service ;
            rdfs:range ec:Logo ;
            dcterms:description """Logos can be used in a variety of contexts.
             Logo can be associated with an Organisation or a Service or a PublicationChannel."""@en ;
-           rdfs:comment "*** Bruk klassebegrensninger isteden ***"@nb ;
            rdfs:label "Logo"@en .
 
 
@@ -5554,6 +5549,10 @@ ec:Award rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasLogo ;
+                           owl:allValuesFrom ec:Logo
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:awardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -6575,6 +6574,10 @@ ec:OpenSubtitling rdf:type owl:Class ;
 ec:Organisation rdf:type owl:Class ;
                 rdfs:subClassOf ec:Agent ,
                                 [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:hasLogo ;
+                                  owl:allValuesFrom ec:Logo
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:endDateTime ;
                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass time:Instant
@@ -6980,6 +6983,10 @@ ec:Rating rdf:type owl:Class ;
                             owl:someValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasLogo ;
+                            owl:allValuesFrom ec:Logo
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectDescription ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
@@ -7206,6 +7213,10 @@ ec:Service rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:someValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasLogo ;
+                             owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectDescription ;
