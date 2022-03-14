@@ -7591,7 +7591,7 @@ ec:UncertainDate rdf:type owl:Class ;
                  owl:disjointWith time:DateTimeDescription ;
                  dcterms:description """The date expressed as an interval between start and end, for uncertain  dates.
 Aditional infomation can be written in the description property"""@en ;
-                 rdfs:label "Uncertain  date"@en .
+                 rdfs:label "Uncertain date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#UsageRestrictions
@@ -7699,7 +7699,8 @@ time:Instant rdf:type owl:Class ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:dateTimeStamp
                              ] ;
-             rdfs:label "Date time object"@en .
+             dc:description "A temporal entity with zero extent or duration"@en ;
+             rdfs:label "Time instant"@en .
 
 
 ###  http://www.w3.org/2006/time#TRS
