@@ -381,6 +381,14 @@ ec:dateIssued rdf:type owl:ObjectProperty ;
               rdfs:label "Date issued"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateLicenseEnd
+ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "The date when the licence for the Asset ends."@en ;
+                  rdfs:label "Licence end date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateMigrated
 ec:dateMigrated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -459,14 +467,6 @@ ec:dateValidated rdf:type owl:ObjectProperty ;
                  rdfs:range time:Instant ;
                  dcterms:description "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
                  rdfs:label "Validation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicenseEnd
-ec:datelicenseEnd rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "The date when the licence for the Asset ends."@en ;
-                  rdfs:label "Licence end date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed
@@ -5245,17 +5245,17 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateLicenseEnd ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateModified ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateReleased ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:datelicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
