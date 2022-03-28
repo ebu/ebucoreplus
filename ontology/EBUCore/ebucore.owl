@@ -13,7 +13,6 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix bbcconsepts: <http://www.bbc.co.uk/ontologies/coreconcepts/> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> rdf:type owl:Ontology ;
@@ -184,13 +183,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://spinrdf.org/spin#imports
 spin:imports rdf:type owl:AnnotationProperty .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/primaryTopic
-bbcconsepts:primaryTopic rdf:type owl:AnnotationProperty ;
-                         dcterms:description "The main subject of interest."@en ;
-                         rdfs:label "Primary topic"@en ;
-                         rdfs:domain ec:Asset .
 
 
 ###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
@@ -2866,38 +2858,6 @@ dcterms:alternative rdf:type owl:DatatypeProperty ;
                     rdfs:label "Alternative title"@en .
 
 
-###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth
-bbcconsepts:dateOfBirth rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Contact ;
-                        rdfs:range xsd:date ;
-                        dcterms:description "The date when a Contact/Person is born."@en ;
-                        rdfs:label "Date of birth"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/dateOfDeath
-bbcconsepts:dateOfDeath rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Contact ;
-                        rdfs:range xsd:date ;
-                        dcterms:description "To provide the date of death."@en ;
-                        rdfs:label "Date of death."@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/gender
-bbcconsepts:gender rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Contact ;
-                   rdfs:range rdfs:Literal ;
-                   dcterms:description "The gender of a person e.g. male or female."@en ;
-                   rdfs:label "Gender"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/placeOfBirth
-bbcconsepts:placeOfBirth rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:Contact ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "The place where a person is born."@en ;
-                         rdfs:label "Place of birth"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DID
 ec:DID rdf:type owl:DatatypeProperty ;
        rdfs:domain ec:AncillaryData ;
@@ -4901,41 +4861,6 @@ time:year rdf:type owl:DatatypeProperty ;
 dc:Agent rdf:type owl:Class ;
          dcterms:description "A resource that acts or has the power to act."@en ;
          rdfs:label "Agent"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/Event
-bbcconsepts:Event rdf:type owl:Class ;
-                  owl:equivalentClass ec:Event ;
-                  dcterms:description "Music events, historic events, sports events, politics events, e.t.c."@en ;
-                  rdfs:label "Event"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/Organisation
-bbcconsepts:Organisation rdf:type owl:Class ;
-                         owl:equivalentClass ec:Organisation ;
-                         dcterms:description "E.g., Businesses."@en ;
-                         rdfs:label "Organisation"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/Person
-bbcconsepts:Person rdf:type owl:Class ;
-                   dcterms:description "all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en ;
-                   rdfs:label "Person"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/Place
-bbcconsepts:Place rdf:type owl:Class ;
-                  owl:equivalentClass ec:Location ;
-                  dcterms:description "Another type of location."@en ;
-                  rdfs:label "Place"@en .
-
-
-###  http://www.bbc.co.uk/ontologies/coreconcepts/Theme
-bbcconsepts:Theme rdf:type owl:Class ;
-                  owl:equivalentClass ec:Keyword ;
-                  rdfs:subClassOf rdfs:Resource ;
-                  dcterms:description "This concept is used to represent intangible things or abstract concepts. For example, Financial Crisis, Midwifery, Happiness."@en ;
-                  rdfs:label "Theme"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AccessConditions
