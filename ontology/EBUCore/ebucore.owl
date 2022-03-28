@@ -1163,15 +1163,6 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:label "Dubbed language"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEidrIdentifier
-ec:hasEidrIdentifier rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ec:hasIdentifier ;
-                     rdfs:domain ec:Asset ;
-                     rdfs:range ec:Identifier ;
-                     dcterms:description "To associate an EIDR Identifier with an Asset."@en ;
-                     rdfs:label "EIDR"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedScene
 ec:hasEmotionRelatedScene rdf:type owl:ObjectProperty ;
                           rdfs:domain ec:Emotion ;
@@ -1296,15 +1287,6 @@ ec:hasGenre rdf:type owl:ObjectProperty ;
             rdfs:label "Genre"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIMediaIdentifier
-ec:hasIMediaIdentifier rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf ec:hasIdentifier ;
-                       rdfs:domain ec:Asset ;
-                       rdfs:range ec:Identifier ;
-                       dcterms:description "To associate an IMedia Identifier with an Asset."@en ;
-                       rdfs:label "IMedia Id"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:isCoveredBy ;
@@ -1343,15 +1325,6 @@ ec:hasImageFormat rdf:type owl:ObjectProperty ;
                   rdfs:range ec:ImageFormat ;
                   dcterms:description "To specify the format of an Image."@en ;
                   rdfs:label "Image format"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIsanIdentifier
-ec:hasIsanIdentifier rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ec:hasIdentifier ;
-                     rdfs:domain ec:Asset ;
-                     rdfs:range ec:Identifier ;
-                     dcterms:description "To associate an ISAN Identifier with an Asset."@en ;
-                     rdfs:label "ISAN"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasKeyCareerEvent
@@ -3781,7 +3754,6 @@ ec:iFrameSize rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#identifierValue
 ec:identifierValue rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Identifier ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "Range: string or anyURI."@en ,
                                        "To provide the value attribued to an Identifier."@en ;
@@ -5918,6 +5890,12 @@ ec:EditorialObject_Type rdf:type owl:Class ;
                         rdfs:label "Editorial object type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EidrIdentifier
+ec:EidrIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf ec:Identifier ;
+                  rdfs:label "EIDR"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion
 ec:Emotion rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -6162,6 +6140,12 @@ ec:Group rdf:type owl:Class ;
          rdfs:label "Group"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IMediaIdentifier
+ec:IMediaIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf ec:Identifier ;
+                    rdfs:label "IMedia Identifier"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IPRRestrictions
 ec:IPRRestrictions rdf:type owl:Class ;
                    rdfs:subClassOf ec:Rights ;
@@ -6176,6 +6160,11 @@ ec:Identifier rdf:type owl:Class ;
                                 owl:onProperty ec:dateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:identifierValue ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
                               ] ;
               dcterms:description "To support the use of structured identifiers."@en ;
               rdfs:label "Identifier"@en .
@@ -6218,6 +6207,12 @@ ec:IntentionCode rdf:type owl:Class ;
                  rdfs:subClassOf ec:Type ;
                  dcterms:description "To indicate the purpose for which content was created."@en ;
                  rdfs:label "Intention code"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IsanIdentifier
+ec:IsanIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf ec:Identifier ;
+                  rdfs:label "ISAN"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item
