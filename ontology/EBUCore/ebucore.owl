@@ -3448,6 +3448,13 @@ ec:day rdf:type owl:DatatypeProperty ;
        rdfs:label "Day"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description
+ec:description rdf:type owl:DatatypeProperty ;
+               rdfs:range rdfs:Literal ;
+               dcterms:description "A summary of the resource."@en ;
+               rdfs:label "Description"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
 ec:dimensions rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:MediaResource ;
@@ -3982,6 +3989,13 @@ ec:month rdf:type owl:DatatypeProperty ;
          rdfs:label "Month"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#name
+ec:name rdf:type owl:DatatypeProperty ;
+        rdfs:range rdfs:Literal ;
+        dcterms:description "The designation of the resource."@en ;
+        rdfs:label "Name"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#nickName
 ec:nickName rdf:type owl:DatatypeProperty ;
             rdfs:range rdfs:Literal ;
@@ -4038,20 +4052,6 @@ ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of video tracks."@en ;
                        rdfs:label "Number of video tracks"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#objectDescription
-ec:objectDescription rdf:type owl:DatatypeProperty ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "A summary of the resource."@en ;
-                     rdfs:label "Description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#objectName
-ec:objectName rdf:type owl:DatatypeProperty ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "The designation of the resource."@en ;
-              rdfs:label "Name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#occupation
@@ -4864,11 +4864,11 @@ ec:Action rdf:type owl:Class ;
                             owl:onClass ec:TimelinePoint
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectDescription ;
+                            owl:onProperty ec:description ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectName ;
+                            owl:onProperty ec:name ;
                             owl:someValuesFrom rdfs:Literal
                           ] ;
           dcterms:description "A class to log Actions."@en ;
@@ -4907,15 +4907,15 @@ ec:Agent rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:description ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:name ;
+                           owl:someValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:nickName ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectDescription ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectName ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
          dcterms:description "A person / contact or organisation."@en ;
@@ -4962,11 +4962,11 @@ ec:Animal rdf:type owl:Class ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectDescription ;
+                            owl:onProperty ec:description ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectName ;
+                            owl:onProperty ec:name ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -5011,11 +5011,11 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onClass ec:Location
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectDescription ;
+                                owl:onProperty ec:description ;
                                 owl:someValuesFrom rdfs:Literal
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectName ;
+                                owl:onProperty ec:name ;
                                 owl:someValuesFrom rdfs:Literal
                               ] ;
               dcterms:description "A class used to annotate Assets."@en ;
@@ -5063,11 +5063,11 @@ ec:Artefact rdf:type owl:Class ;
                               owl:onClass ec:Location
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectDescription ;
+                              owl:onProperty ec:description ;
                               owl:someValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectName ;
+                              owl:onProperty ec:name ;
                               owl:someValuesFrom rdfs:Literal
                             ] ;
             dcterms:description "To identify and describe artefacts used in a production (on and behind the stage)."@en ;
@@ -5192,11 +5192,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectDescription ;
+                           owl:onProperty ec:description ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectName ;
+                           owl:onProperty ec:name ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -5453,11 +5453,11 @@ ec:Award rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectDescription ;
+                           owl:onProperty ec:description ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectName ;
+                           owl:onProperty ec:name ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
          dcterms:description "To describe an Award and associated information."@en ;
@@ -5624,11 +5624,11 @@ ec:Codec rdf:type owl:Class ;
                            owl:someValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectDescription ;
+                           owl:onProperty ec:description ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectName ;
+                           owl:onProperty ec:name ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
          dcterms:description "To provide information on a codec."@en ;
@@ -5943,11 +5943,11 @@ ec:Emotion rdf:type owl:Class ;
                              owl:onClass ec:TimelinePoint
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectDescription ;
+                             owl:onProperty ec:description ;
                              owl:someValuesFrom rdfs:Literal
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectName ;
+                             owl:onProperty ec:name ;
                              owl:someValuesFrom rdfs:Literal
                            ] ;
            dcterms:description "A class to log Emotions."@en ;
@@ -6031,11 +6031,11 @@ ec:Event rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectDescription ;
+                           owl:onProperty ec:description ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectName ;
+                           owl:onProperty ec:name ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
          dcterms:description """Additional types of event shall be defined as
@@ -6301,11 +6301,11 @@ ec:Location rdf:type owl:Class ;
                               owl:someValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectDescription ;
+                              owl:onProperty ec:description ;
                               owl:someValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectName ;
+                              owl:onProperty ec:name ;
                               owl:someValuesFrom rdfs:Literal
                             ] ;
             dcterms:description """A location related to the media resource, e.g.
@@ -6668,11 +6668,11 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectDescription ;
+                                owl:onProperty ec:description ;
                                 owl:someValuesFrom rdfs:Literal
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectName ;
+                                owl:onProperty ec:name ;
                                 owl:someValuesFrom rdfs:Literal
                               ] ;
               skos:note "Provenance"@en .
@@ -6744,11 +6744,11 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectDescription ;
+                                      owl:onProperty ec:description ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectName ;
+                                      owl:onProperty ec:name ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -6823,7 +6823,7 @@ ec:PublicationLogg rdf:type owl:Class ;
                                      owl:onClass skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectDescription ;
+                                     owl:onProperty ec:description ;
                                      owl:someValuesFrom rdfs:Literal
                                    ] ;
                    dc:description "For colecting data from the \"As run logg\""@en ;
@@ -6861,11 +6861,11 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectDescription ;
+                                     owl:onProperty ec:description ;
                                      owl:someValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectName ;
+                                     owl:onProperty ec:name ;
                                      owl:someValuesFrom rdfs:Literal
                                    ] ;
                    dcterms:description "A collection of PublicationEvents organised as a PublicationPlanning."@en ;
@@ -6902,11 +6902,11 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:Logo
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectDescription ;
+                            owl:onProperty ec:description ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectName ;
+                            owl:onProperty ec:name ;
                             owl:someValuesFrom rdfs:Literal
                           ] ;
           dcterms:description """All the information about the rating/evaluation
@@ -6942,11 +6942,11 @@ ec:Relation rdf:type owl:Class ;
                               owl:someValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectDescription ;
+                              owl:onProperty ec:description ;
                               owl:someValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectName ;
+                              owl:onProperty ec:name ;
                               owl:someValuesFrom rdfs:Literal
                             ] ;
             dcterms:description "To define links and relations."@en ;
@@ -7035,11 +7035,11 @@ ec:Rights rdf:type owl:Class ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectDescription ;
+                            owl:onProperty ec:description ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectName ;
+                            owl:onProperty ec:name ;
                             owl:someValuesFrom rdfs:Literal
                           ] ;
           dcterms:description """To provide information on the rights, including
@@ -7074,11 +7074,11 @@ ec:Role rdf:type owl:Class ;
                           owl:someValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:objectDescription ;
+                          owl:onProperty ec:description ;
                           owl:someValuesFrom rdfs:Literal
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:objectName ;
+                          owl:onProperty ec:name ;
                           owl:someValuesFrom rdfs:Literal
                         ] ;
         dcterms:description """To define the role / action of an agent. This
@@ -7139,11 +7139,11 @@ ec:Service rdf:type owl:Class ;
                              owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectDescription ;
+                             owl:onProperty ec:description ;
                              owl:someValuesFrom rdfs:Literal
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectName ;
+                             owl:onProperty ec:name ;
                              owl:someValuesFrom rdfs:Literal
                            ] ;
            dcterms:description """A service is the umbrella under which one or
@@ -7437,11 +7437,11 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:onClass skos:Concept
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectDescription ;
+                                   owl:onProperty ec:description ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectName ;
+                                   owl:onProperty ec:name ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ;
                  dcterms:description "To define a time sequence of EditorialObjects."@en ;
@@ -7512,7 +7512,7 @@ ec:UncertainDate rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectDescription ;
+                                   owl:onProperty ec:description ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
