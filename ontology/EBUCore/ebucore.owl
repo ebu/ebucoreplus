@@ -490,8 +490,8 @@ ec:displayAspectRatio rdf:type owl:ObjectProperty ;
 ec:dubbedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isDubbedFrom ;
             rdfs:domain ec:MediaResource ;
-            rdfs:range ec:Language ;
-            dcterms:description "the Language into which MediaResource is dubbed."@en ;
+            rdfs:range ec:MediaResource ;
+            dcterms:description "the resource have another languageversion"@en ;
             rdfs:label "Dubbed to"@en .
 
 
