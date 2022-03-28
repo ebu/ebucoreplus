@@ -913,15 +913,6 @@ ec:hasCastRole rdf:type owl:ObjectProperty ;
                rdfs:label "Cast role"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelLogo
-ec:hasChannelLogo rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:hasLogo ;
-                  rdfs:domain ec:PublicationChannel ;
-                  rdfs:range ec:Logo ;
-                  dcterms:description "The logo of a Publication Channel"@en ;
-                  rdfs:label "Channel logo"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent
 ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
                               rdfs:domain ec:PublicationChannel ;
@@ -1553,15 +1544,6 @@ ec:hasObjectType rdf:type owl:ObjectProperty ;
                  rdfs:label "Object/asset type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOrganisationLogo
-ec:hasOrganisationLogo rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf ec:hasLogo ;
-                       rdfs:domain ec:Organisation ;
-                       rdfs:range ec:Logo ;
-                       dcterms:description "The logo representing an Organisation"@en ;
-                       rdfs:label "Organisation logo"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:Organisation ;
@@ -1960,15 +1942,6 @@ ec:hasServiceGenre rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Genre ;
                    dcterms:description "The genre of content associated with the Service."@en ;
                    rdfs:label "Service genre"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasServiceLogo
-ec:hasServiceLogo rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:hasLogo ;
-                  rdfs:domain ec:Service ;
-                  rdfs:range ec:Logo ;
-                  dcterms:description "The Logo characterising a Service"@en ;
-                  rdfs:label "Service logo"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSigning
