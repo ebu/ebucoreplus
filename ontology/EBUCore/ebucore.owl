@@ -3659,6 +3659,844 @@ time:hasTRS rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountDescription
+ebuccdm:accountDescription rdf:type owl:DatatypeProperty ;
+                           terms:description "Description of an Account."@en ;
+                           rdfs:label "Account description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountId
+ebuccdm:accountId rdf:type owl:DatatypeProperty ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:unionOf ( xsd:anyURI
+                                             xsd:string
+                                           )
+                             ] ;
+                  terms:description "An id associated with an Account"@en ;
+                  rdfs:label "Account id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#accountName
+ebuccdm:accountName rdf:type owl:DatatypeProperty ;
+                    terms:description "Name of an Account"@en ;
+                    rdfs:label "Account name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValue
+ebuccdm:assetValue rdf:type owl:DatatypeProperty ;
+                   terms:description "To provide an estimated or actual value of an Asset."@en ;
+                   rdfs:label "Asset value"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueCurrency
+ebuccdm:assetValueCurrency rdf:type owl:DatatypeProperty ;
+                           terms:description """To provide the currency in which the assetValue is
+      given."""@en ;
+                           rdfs:label "Asset value currency"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueDescription
+ebuccdm:assetValueDescription rdf:type owl:DatatypeProperty ;
+                              terms:description """To describe the notion of value associated to an
+      AssetValue."""@en ;
+                              rdfs:label "Asset value description."@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueId
+ebuccdm:assetValueId rdf:type owl:DatatypeProperty ;
+                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                  owl:unionOf ( xsd:anyURI
+                                                xsd:string
+                                              )
+                                ] ;
+                     terms:description """To identify the notion of value associated to an
+      Asset."""@en ;
+                     rdfs:label "Asset value id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValueName
+ebuccdm:assetValueName rdf:type owl:DatatypeProperty ;
+                       terms:description "To name the notion of value associated to an Asset."@en ;
+                       rdfs:label "Asset value name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceAgeHigh
+ebuccdm:audienceAgeHigh rdf:type owl:DatatypeProperty ;
+                        terms:description "The maximum age of an Audience."@en ;
+                        rdfs:label "Audience age high"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceAgeLow
+ebuccdm:audienceAgeLow rdf:type owl:DatatypeProperty ;
+                       terms:description "The minimum age of an Audience."@en ;
+                       rdfs:label "Audience age low"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceCount
+ebuccdm:audienceCount rdf:type owl:DatatypeProperty ;
+                      terms:description "The Audience reach in numbers or percent."@en ;
+                      rdfs:label "Audience number"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceDescription
+ebuccdm:audienceDescription rdf:type owl:DatatypeProperty ;
+                            terms:description "The description of an Audience."@en ;
+                            rdfs:label "Audience description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceId
+ebuccdm:audienceId rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   terms:description "An Id attributed to an Audience."@en ;
+                   rdfs:comment "Range: anyURI or string"@en ;
+                   rdfs:label "Audience id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceInterest
+ebuccdm:audienceInterest rdf:type owl:DatatypeProperty ;
+                         terms:description "The points of interest of an Audience."@en ;
+                         rdfs:label "Audience interest"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#audienceName
+ebuccdm:audienceName rdf:type owl:DatatypeProperty ;
+                     terms:description "A name attributed to an Audience."@en ;
+                     rdfs:label "Audience name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobDescription
+ebuccdm:auditJobDescription rdf:type owl:DatatypeProperty ;
+                            terms:description "To describe an AuditJob."@en ;
+                            rdfs:label "Audit job description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobId
+ebuccdm:auditJobId rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   terms:description "To identify an AuditJob."@en ;
+                   rdfs:label "Audit job Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobName
+ebuccdm:auditJobName rdf:type owl:DatatypeProperty ;
+                     terms:description "To name an AuditJob."@en ;
+                     rdfs:label "Audit job name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDate
+ebuccdm:auditReportDate rdf:type owl:DatatypeProperty ;
+                        terms:description "The date of release of an AuditReport."@en ;
+                        rdfs:label "Audit report date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDescription
+ebuccdm:auditReportDescription rdf:type owl:DatatypeProperty ;
+                               terms:description "To describe an AuditReport."@en ;
+                               rdfs:label "Audit report description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportId
+ebuccdm:auditReportId rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:anyURI
+                                                 xsd:string
+                                               )
+                                 ] ;
+                      terms:description "To identify an AuditReport."@en ;
+                      rdfs:label "Audit report Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportName
+ebuccdm:auditReportName rdf:type owl:DatatypeProperty ;
+                        terms:description "To name an AuditReport."@en ;
+                        rdfs:label "Audit report name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportResults
+ebuccdm:auditReportResults rdf:type owl:DatatypeProperty ;
+                           terms:description """To express the combined results of one or more
+      AuditJobs."""@en ;
+                           rdfs:label "Audit report results"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignDescription
+ebuccdm:campaignDescription rdf:type owl:DatatypeProperty ;
+                            terms:description "To describe a Campiagn."@en ;
+                            rdfs:label "Campaign description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignId
+ebuccdm:campaignId rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   terms:description "An identifier attributed to a Campaign."@en ;
+                   rdfs:label "Campaign Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#campaignTitle
+ebuccdm:campaignTitle rdf:type owl:DatatypeProperty ;
+                      terms:description "A title given to a Campaign."@en ;
+                      rdfs:label "Campaign Title"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumerId
+ebuccdm:consumerId rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   terms:description "An Id attributed to a consumer."@en ;
+                   rdfs:label "Consumer id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceBrand
+ebuccdm:consumptionDeviceBrand rdf:type owl:DatatypeProperty ;
+                               terms:description "The brand of a ConsumptionDevice."@en ;
+                               rdfs:label "Consumption device brand"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceBrowser
+ebuccdm:consumptionDeviceBrowser rdf:type owl:DatatypeProperty ;
+                                 terms:description "The browser compatible with a ConsumptionDevice."@en ;
+                                 rdfs:label "Consumption device browser"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceId
+ebuccdm:consumptionDeviceId rdf:type owl:DatatypeProperty ;
+                            rdfs:range [ rdf:type rdfs:Datatype ;
+                                         owl:unionOf ( xsd:anyURI
+                                                       xsd:string
+                                                     )
+                                       ] ;
+                            terms:description "An Id attributed to a ConsumptionDevice."@en ;
+                            rdfs:label "Consumption device id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceModel
+ebuccdm:consumptionDeviceModel rdf:type owl:DatatypeProperty ;
+                               terms:description "The model of a ConsumptionDevice."@en ;
+                               rdfs:label "Consumption device model"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceOS
+ebuccdm:consumptionDeviceOS rdf:type owl:DatatypeProperty ;
+                            terms:description "The operating system of a ConsumptionDevice."@en ;
+                            rdfs:label "Consumption device OS"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileDescription
+ebuccdm:consumptionDeviceProfileDescription rdf:type owl:DatatypeProperty ;
+                                            terms:description "The description of a ConsumptionDeviceProfile."@en ;
+                                            rdfs:label "Consumption device profile description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileId
+ebuccdm:consumptionDeviceProfileId rdf:type owl:DatatypeProperty ;
+                                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                                owl:unionOf ( xsd:anyURI
+                                                              xsd:string
+                                                            )
+                                              ] ;
+                                   terms:description "An Id attributed to a ConsumptionDeviceProfile."@en ;
+                                   rdfs:label "Consumption device profile id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceProfileName
+ebuccdm:consumptionDeviceProfileName rdf:type owl:DatatypeProperty ;
+                                     terms:description "An name attributed to a ConsumptionDeviceProfile."@en ;
+                                     rdfs:label "Consumption device profile name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventDescription
+ebuccdm:consumptionEventDescription rdf:type owl:DatatypeProperty ;
+                                    terms:description "A description attributed to the ConsumptionEvent."@en ;
+                                    rdfs:label "Consumption event description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventEndDateTime
+ebuccdm:consumptionEventEndDateTime rdf:type owl:DatatypeProperty ;
+                                    terms:description "The end date & time of the ConsumptionEvent."@en ;
+                                    rdfs:label "Consumption end time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventId
+ebuccdm:consumptionEventId rdf:type owl:DatatypeProperty ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
+                           terms:description "An Id attributed to the ConsumptionEvent."@en ;
+                           rdfs:label "Consumption event Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventName
+ebuccdm:consumptionEventName rdf:type owl:DatatypeProperty ;
+                             terms:description "A namre attributed to the ConsumptionEvent."@en ;
+                             rdfs:label "Consumption event name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventResumePoint
+ebuccdm:consumptionEventResumePoint rdf:type owl:DatatypeProperty ;
+                                    terms:description """The date and time point at which consumption has
+      resumed."""@en ;
+                                    rdfs:label "Consumption event resume point"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventStartDateTime
+ebuccdm:consumptionEventStartDateTime rdf:type owl:DatatypeProperty ;
+                                      terms:description "The start date & time of the ConsumptionEvent."@en ;
+                                      rdfs:label "Consumption start time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceDescription
+ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
+                                      terms:description "The description of a ConsumptionLicence."@en ;
+                                      rdfs:label "Consumption licence description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceId
+ebuccdm:consumptionLicenceId rdf:type owl:DatatypeProperty ;
+                             rdfs:range [ rdf:type rdfs:Datatype ;
+                                          owl:unionOf ( xsd:anyURI
+                                                        xsd:string
+                                                      )
+                                        ] ;
+                             terms:description "An Id attributed to a ConsumptionLicence."@en ;
+                             rdfs:label "Consumption licence id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceLink
+ebuccdm:consumptionLicenceLink rdf:type owl:DatatypeProperty ;
+                               terms:description "A link to the terms of a ConsumptionLicence."@en ;
+                               rdfs:label "Consumption licence link"@en ;
+                               skos:changeNote "Is the range her Contract or Subclass of Contract?"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceName
+ebuccdm:consumptionLicenceName rdf:type owl:DatatypeProperty ;
+                               terms:description "A name attributed to a ConsumptionLicence."@en ;
+                               rdfs:label "Consumption licence name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceText
+ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
+                               terms:description "The terms of a ConsumptionLicence."@en ;
+                               rdfs:label "Consumption licence"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmount
+ebuccdm:contractCostAmount rdf:type owl:DatatypeProperty ;
+                           terms:description "The amount of the ContractCost."@en ;
+                           rdfs:label "Cost amount"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostDescription
+ebuccdm:contractCostDescription rdf:type owl:DatatypeProperty ;
+                                terms:description """To provide additional information on the
+      ContractCost."""@en ;
+                                rdfs:label "ContractCost description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostId
+ebuccdm:contractCostId rdf:type owl:DatatypeProperty ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:unionOf ( xsd:anyURI
+                                                  xsd:string
+                                                )
+                                  ] ;
+                       terms:description "To identify a specific ContractCost."@en ;
+                       rdfs:label "ContractCost id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostName
+ebuccdm:contractCostName rdf:type owl:DatatypeProperty ;
+                         terms:description "To name a particular ContractCost."@en ;
+                         rdfs:label "ContractCost name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractDescription
+ebuccdm:contractDescription rdf:type owl:DatatypeProperty ;
+                            terms:description "The description of a Contract."@en ;
+                            rdfs:label "Contract description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractId
+ebuccdm:contractId rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   terms:description "An Id attributed to a Contract."@en ;
+                   rdfs:label "Contract Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractLink
+ebuccdm:contractLink rdf:type owl:DatatypeProperty ;
+                     terms:description """A link to a location where information can be found about a
+      Contract."""@en ;
+                     rdfs:label "Contract link"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractName
+ebuccdm:contractName rdf:type owl:DatatypeProperty ;
+                     terms:description "The name attributed to a Contract."@en ;
+                     rdfs:label "Contract name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#formatId
+ebuccdm:formatId rdf:type owl:DatatypeProperty ;
+                 rdfs:range [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] ;
+                 terms:description "An Id attributed to a Format."@en ;
+                 rdfs:label "Format Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
+ebuccdm:hasGeoLocation rdf:type owl:DatatypeProperty ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:unionOf ( xsd:anyURI
+                                                  xsd:string
+                                                )
+                                  ] ;
+                       terms:description "The Location of a ConsumptionDevice."@en ;
+                       rdfs:comment "Range: a Location or a string"@en ;
+                       rdfs:label "Device location"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#internetConnectivity
+ebuccdm:internetConnectivity rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             terms:description """To indicate if the Service requires Internet
+      connectivity."""@en ;
+                             rdfs:label "Internet connectivity"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureDescription
+ebuccdm:measureDescription rdf:type owl:DatatypeProperty ;
+                           terms:description "To describe a Measure."@en ;
+                           rdfs:label "Measure description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureId
+ebuccdm:measureId rdf:type owl:DatatypeProperty ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:unionOf ( xsd:anyURI
+                                             xsd:string
+                                           )
+                             ] ;
+                  terms:description "To identify a Measure."@en ;
+                  rdfs:label "Measure Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureName
+ebuccdm:measureName rdf:type owl:DatatypeProperty ;
+                    terms:description "To name a Measure."@en ;
+                    rdfs:label "Measure name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValue
+ebuccdm:measureValue rdf:type owl:DatatypeProperty ;
+                     terms:description "To provide the value of a Measure."@en ;
+                     rdfs:comment "The range is Literal. A more specific range can be used for a specific measurement."@en ;
+                     rdfs:label "Measure value"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueMax
+ebuccdm:measureValueMax rdf:type owl:DatatypeProperty ;
+                        terms:description """To define the maximum value of a Measure when
+      applicable."""@en ;
+                        rdfs:label "Measure maximum value"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueMin
+ebuccdm:measureValueMin rdf:type owl:DatatypeProperty ;
+                        terms:description """To define the minimum value of a Measure when
+      applicable."""@en ;
+                        rdfs:label "Measure minimum value"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#microphone
+ebuccdm:microphone rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   terms:description "To indicate if the Service requires a microphone."@en ;
+                   rdfs:label "Microphone"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionCoordinateX
+ebuccdm:onStagePositionCoordinateX rdf:type owl:DatatypeProperty ;
+                                   terms:description """The x coordinates within a 3 axis spatial coordinates
+      space."""@en ;
+                                   rdfs:label "X coordinate"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionCoordinateY
+ebuccdm:onStagePositionCoordinateY rdf:type owl:DatatypeProperty ;
+                                   terms:description """The y coordinates within a 3 axis spatial coordinates
+      space."""@en ;
+                                   rdfs:label "Y coordinate"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionCoordinateZ
+ebuccdm:onStagePositionCoordinateZ rdf:type owl:DatatypeProperty ;
+                                   terms:description """The z coordinates within a 3 axis spatial coordinates
+      space."""@en ;
+                                   rdfs:label "Z coordinate"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionCoordinatesReferencePoint
+ebuccdm:onStagePositionCoordinatesReferencePoint rdf:type owl:DatatypeProperty ;
+                                                 terms:description """To define a reference point for a set of coordinates defining a
+      position on stage."""@en ;
+                                                 rdfs:label "On stage position coordinates reference point"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionDefinition
+ebuccdm:onStagePositionDefinition rdf:type owl:DatatypeProperty ;
+                                  terms:description """To define a set of coordinates defining a position on
+      stage."""@en ;
+                                  rdfs:label "On stage position definition"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionId
+ebuccdm:onStagePositionId rdf:type owl:DatatypeProperty ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
+                          terms:description """To identify a set of coordinates defining a position on
+      stage."""@en ;
+                          rdfs:label "On stage position Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionName
+ebuccdm:onStagePositionName rdf:type owl:DatatypeProperty ;
+                            terms:description """To name a set of coordinates defining a position on
+      stage."""@en ;
+                            rdfs:label "On stage position name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#orderedFlag
+ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    terms:description """A flag to signal that a Collection/Group of EditorialObject, itself
+      an EditorialObject, is ordered."""@en ;
+                    rdfs:label "Ordered"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#previousRelatedProductionJobId
+ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
+                                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                                    owl:unionOf ( xsd:anyURI
+                                                                  xsd:string
+                                                                )
+                                                  ] ;
+                                       terms:description """To identify a previous associated ProductionJob identified by its
+      productionJobId."""@en ;
+                                       rdfs:label "Previous job Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceDescription
+ebuccdm:productionDeviceDescription rdf:type owl:DatatypeProperty ;
+                                    terms:description "A description of a ProductionDevice."@en ;
+                                    rdfs:label "Device description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceId
+ebuccdm:productionDeviceId rdf:type owl:DatatypeProperty ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
+                           terms:description "An Id attributed to a Device."@en ;
+                           rdfs:label "Device Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceName
+ebuccdm:productionDeviceName rdf:type owl:DatatypeProperty ;
+                             terms:description "A name associated to a ProductionDevice."@en ;
+                             rdfs:label "Device name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobDescription
+ebuccdm:productionJobDescription rdf:type owl:DatatypeProperty ;
+                                 terms:description "A description of a ProductionJob."@en ;
+                                 rdfs:label "Production Job description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobId
+ebuccdm:productionJobId rdf:type owl:DatatypeProperty ;
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:unionOf ( xsd:anyURI
+                                                   xsd:string
+                                                 )
+                                   ] ;
+                        terms:description "An identifier attributed to a ProductionJob."@en ;
+                        rdfs:label "Production Job Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobName
+ebuccdm:productionJobName rdf:type owl:DatatypeProperty ;
+                          terms:description "A name attributed to a ProductionJob."@en ;
+                          rdfs:label "Production Job name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderDescription
+ebuccdm:productionOrderDescription rdf:type owl:DatatypeProperty ;
+                                   terms:description "The description of a production order."@en ;
+                                   rdfs:label "Production order description."@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderId
+ebuccdm:productionOrderId rdf:type owl:DatatypeProperty ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
+                          terms:description "An identifier attributed to a production order."@en ;
+                          rdfs:label "Production order id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderName
+ebuccdm:productionOrderName rdf:type owl:DatatypeProperty ;
+                            terms:description "The name given to a production order."@en ;
+                            rdfs:label "Production order name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#radioTuner
+ebuccdm:radioTuner rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   terms:description "To indicate if the Service requires a radio tuner."@en ;
+                   rdfs:label "Radio tuner"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#readyForPublication
+ebuccdm:readyForPublication rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            terms:description """A flag to indicate that the resource/essence is ready for
+      publication."""@en ;
+                            rdfs:label "Ready for publication"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceDescription
+ebuccdm:resonanceDescription rdf:type owl:DatatypeProperty ;
+                             terms:description "The description of a Resonance."@en ;
+                             rdfs:label "Resonance description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventDescription
+ebuccdm:resonanceEventDescription rdf:type owl:DatatypeProperty ;
+                                  terms:description "A description of a ResonanceEvent."@en ;
+                                  rdfs:label "Resonance event description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventId
+ebuccdm:resonanceEventId rdf:type owl:DatatypeProperty ;
+                         rdfs:range [ rdf:type rdfs:Datatype ;
+                                      owl:unionOf ( xsd:anyURI
+                                                    xsd:string
+                                                  )
+                                    ] ;
+                         terms:description "An Id attributed to a ResonanceEvent."@en ;
+                         rdfs:label "Resonance event id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventLocator
+ebuccdm:resonanceEventLocator rdf:type owl:DatatypeProperty ;
+                              terms:description "An Locator attributed to a ResonanceEvent."@en ;
+                              rdfs:label "Resonance event locator"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventName
+ebuccdm:resonanceEventName rdf:type owl:DatatypeProperty ;
+                           terms:description "A name attributed to a ResonanceEvent."@en ;
+                           rdfs:label "Resonance event name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceId
+ebuccdm:resonanceId rdf:type owl:DatatypeProperty ;
+                    rdfs:range [ rdf:type rdfs:Datatype ;
+                                 owl:unionOf ( xsd:anyURI
+                                               xsd:string
+                                             )
+                               ] ;
+                    terms:description "An Id attributed to a Resonance."@en ;
+                    rdfs:label "Resonance id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceLocator
+ebuccdm:resonanceLocator rdf:type owl:DatatypeProperty ;
+                         terms:description "A locator to a document describing a Resonance."@en ;
+                         rdfs:label "Resonance locator"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceName
+ebuccdm:resonanceName rdf:type owl:DatatypeProperty ;
+                      terms:description "An name attributed to a Resonance."@en ;
+                      rdfs:label "Resonance name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#rightsUsageRestrictions
+ebuccdm:rightsUsageRestrictions rdf:type owl:DatatypeProperty ;
+                                terms:description "To specify a set of UsageRestrictions."@en ;
+                                rdfs:label "Usage restrictions"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleDescription
+ebuccdm:ruleDescription rdf:type owl:DatatypeProperty ;
+                        terms:description "To describe a Rule."@en ;
+                        rdfs:label "Rule description"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleId
+ebuccdm:ruleId rdf:type owl:DatatypeProperty ;
+               rdfs:range [ rdf:type rdfs:Datatype ;
+                            owl:unionOf ( xsd:anyURI
+                                          xsd:string
+                                        )
+                          ] ;
+               terms:description "To identify a Rule."@en ;
+               rdfs:label "Rule Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleName
+ebuccdm:ruleName rdf:type owl:DatatypeProperty ;
+                 terms:description "To name a Rule."@en ;
+                 rdfs:label "Rule name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleReference
+ebuccdm:ruleReference rdf:type owl:DatatypeProperty ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:anyURI
+                                                 xsd:string
+                                               )
+                                 ] ;
+                      terms:description "To provide references to a Rule."@en ;
+                      rdfs:label "Rule reference"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleStatement
+ebuccdm:ruleStatement rdf:type owl:DatatypeProperty ;
+                      terms:description "To express a statement related to a Rule."@en ;
+                      rdfs:label "Rule statement"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#soundOutput
+ebuccdm:soundOutput rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    terms:description """A flag to indicate if the Service requires a sound
+      output."""@en ;
+                    rdfs:label "Sound output"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageDefinition
+ebuccdm:stageDefinition rdf:type owl:DatatypeProperty ;
+                        terms:description "To define/describe a Stage."@en ;
+                        rdfs:label "Stage definition"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageId
+ebuccdm:stageId rdf:type owl:DatatypeProperty ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:unionOf ( xsd:anyURI
+                                           xsd:string
+                                         )
+                           ] ;
+                terms:description "To identify a Stage."@en ;
+                rdfs:label "Stage Id"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageName
+ebuccdm:stageName rdf:type owl:DatatypeProperty ;
+                  terms:description "To name a Stage."@en ;
+                  rdfs:label "Stage name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#textInput
+ebuccdm:textInput rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  terms:description """To indicate if the Service requires text input
+      capability."""@en ;
+                  rdfs:label "Text input capability"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationEditUnit
+ebuccdm:timelineTrackDurationEditUnit rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                      rdfs:range xsd:double ;
+                                      rdfs:label "Timeline track duration - edit units" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationNormalPlayTime
+ebuccdm:timelineTrackDurationNormalPlayTime rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                            rdfs:range xsd:time ;
+                                            rdfs:label "Timeline track duration - normal play time" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationTimecode
+ebuccdm:timelineTrackDurationTimecode rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:label "Timeline track duration - timecode" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timelineTrackDurationTimecodeDropFrame
+ebuccdm:timelineTrackDurationTimecodeDropFrame rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf ec:timelineTrackDuration ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:label "Timeline track duration timecode - dropframes" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#timeshift
+ebuccdm:timeshift rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  terms:description """A flag to indicate if the Service requires timeshift
+      support."""@en ;
+                  rdfs:label "Timeshift support"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#videoDisplay
+ebuccdm:videoDisplay rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     terms:description """A flag to indicate if the Service requires a video
+      display."""@en ;
+                     rdfs:label "Video display"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#webcam
+ebuccdm:webcam rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               terms:description "A flag to indicate if the Service requires a webcam."@en ;
+               rdfs:label "Webcam"@en .
+
+
+
+
+
+
+
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:DatatypeProperty ;
           rdfs:domain ec:MediaResource ;
