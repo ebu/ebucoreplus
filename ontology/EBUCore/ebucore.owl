@@ -1166,7 +1166,9 @@ ec:endDateTime rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#existsAs
-ec:existsAs rdf:type owl:ObjectProperty .
+ec:existsAs rdf:type owl:ObjectProperty ;
+            dcterms:description "To identify alternative EditorialObjects in the form of which and EditorialObject may exists."@en ;
+            rdfs:label "Editorial object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
@@ -2446,12 +2448,20 @@ ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
                      rdfs:label "Related essence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEvent
+ec:hasRelatedEvent rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedImage
 ec:hasRelatedImage rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:Asset ;
                    rdfs:range ec:Image ;
                    dcterms:description "To associate an Image with a BusinessObject."@en ;
                    rdfs:label "Image"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedLocation
+ec:hasRelatedLocation rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedMediaFragment
@@ -3444,6 +3454,12 @@ ec:trackType rdf:type owl:ObjectProperty ;
              rdfs:range ec:Track_Type ;
              dcterms:description "The type attributed to a Track."@en ;
              rdfs:label "Track name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionType
+ec:versionType rdf:type owl:ObjectProperty ;
+               dcterms:description "To specify a type of version for an EditorialObject."@en ;
+               rdfs:label "Version type"@en .
 
 
 ###  http://www.w3.org/2006/time#hasTRS
@@ -7740,6 +7756,34 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedEvent ;
+                           owl:allValuesFrom ec:Event
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedLocation ;
+                           owl:allValuesFrom ec:Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedResource ;
+                           owl:allValuesFrom ec:Resource
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isInstantiatedBy ;
+                           owl:allValuesFrom ec:MediaResource
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isVersionOf ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:represents ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:versionType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -7831,6 +7875,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:onProperty ec:aspectRatio ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onDataRange xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:orderedFlag ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:boolean
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:resolution ;
