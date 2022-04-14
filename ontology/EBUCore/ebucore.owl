@@ -1152,6 +1152,11 @@ ec:duration rdf:type owl:ObjectProperty ;
             rdfs:range ec:TimelinePoint .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectType
+ec:editorialObjectType rdf:type owl:ObjectProperty ;
+                       owl:deprecated "true"^^xsd:boolean .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end
 ec:end rdf:type owl:ObjectProperty ;
        rdfs:range ec:TimelinePoint .
@@ -1442,7 +1447,9 @@ ec:hasAssetRelatedMediaResource rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedResource
-ec:hasAssetRelatedResource rdf:type owl:ObjectProperty .
+ec:hasAssetRelatedResource rdf:type owl:ObjectProperty ;
+                           rdfs:comment "Do we need this?"@en ;
+                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
@@ -2579,6 +2586,10 @@ ec:hasRole rdf:type owl:ObjectProperty ;
            rdfs:label "Role"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasScene
+ec:hasScene rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSeason
 ec:hasSeason rdf:type owl:ObjectProperty ;
              rdfs:domain ec:Series ;
@@ -2710,6 +2721,10 @@ ec:hasSubtitlingSource rdf:type owl:ObjectProperty ;
                        dcterms:description """To identify the source of the Subtitling
             resource."""@en ;
                        rdfs:label "Subtitling source"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTake
+ec:hasTake rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetAudience
@@ -5767,6 +5782,10 @@ ec:publicationPlanStatus rdf:type owl:DatatypeProperty ;
                          rdfs:label "PublicationPlan status"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanTitle
+ec:publicationPlanTitle rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
 ec:publicationScheduleDate rdf:type owl:DatatypeProperty ;
                            rdfs:domain ec:PublicationEvent ;
@@ -8031,8 +8050,12 @@ ec:AudioEncodingFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioFormat
 ec:AudioFormat rdf:type owl:Class ;
                rdfs:subClassOf ec:Format ;
-               dcterms:description "To define an AudioFormat."@en ;
-               rdfs:label "Audio format"@en .
+               dcterms:description "Spezifiziert das Audioformat der Medienressource."@de ,
+                                   "Spécifie le format audio."@fr ,
+                                   "To specify the format used for audio."@en ;
+               rdfs:label "Audio format"@en ,
+                          "Audioformat"@de ,
+                          "Format audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioObject
@@ -8357,8 +8380,12 @@ ec:Component rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact
 ec:Contact rdf:type owl:Class ;
            rdfs:subClassOf ec:Person ;
-           dcterms:description "A physical person."@en ;
-           rdfs:label "Contact"@en .
+           dcterms:description "A Contact e.g. for a Person or Organisation."@en ,
+                               "Un contact pour un personne ou une organisation"@fr ;
+           rdfs:label "Contact"@en ,
+                      "Contact"@fr ,
+                      "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
+                      "Kontakt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ContainerCodec
@@ -8373,6 +8400,17 @@ ec:ContainerEncodingFormat rdf:type owl:Class ;
                            rdfs:subClassOf ec:EncodingFormat ;
                            dcterms:description "To define the conatiner encoding format."@en ;
                            rdfs:label "Container encoding format"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ContainerFormat
+ec:ContainerFormat rdf:type owl:Class ;
+                   rdfs:subClassOf ec:Format ;
+                   dcterms:description "Definiert das Format des Containers, z.B. imf oder MXF. Es hält Informationen über das Container- oder Verpackungsformat im Gegensatz zum Stream-Encoding Format des Kanals, z.B. mp3, Wave, Quicktime, ogg."@de ,
+                                       "Pour définir le format d'un conteneur, par exemple IMF ou MXF. Il fournit des informations sur le format du conteneur / wrapper en complément des informations sur l'encodage du flux fournies dans 'channel', (par exemple mp3, wave, Quicktime, ogg)."@fr ,
+                                       "To define the format of a container e.g. imf or MXF. It provides information on the container / wrapper format in complement to the stream encoding information provided in 'channel', (e.g. mp3, wave, Quicktime, ogg)."@en ;
+                   rdfs:label "Container format"@en ,
+                              "Containerformat"@de ,
+                              "Format du conteneur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ContainerMimeType
@@ -8464,8 +8502,12 @@ ec:CreativeCommons rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Crew
 ec:Crew rdf:type owl:Class ;
         rdfs:subClassOf ec:Agent ;
-        dcterms:description "A member of the Crew."@en ;
-        rdfs:label "Crew member"@en .
+        dcterms:description "To identify a member of the crew."@en ,
+                            "Zur Identifikation eines Besatzungsmitglieds."@de ;
+        rdfs:comment "Permet d'identifier un membre d'une équipe."@fr ;
+        rdfs:label "Besatzung"@de ,
+                   "Crew"@en ,
+                   "Équipe"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CuisineStyle
@@ -8485,11 +8527,12 @@ ec:CurrencyCode rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataFormat
 ec:DataFormat rdf:type owl:Class ;
               rdfs:subClassOf ec:Format ;
-              dcterms:description """To provide addtional technical information on
-            the characteristics of data streams in a MediaResource including but not limited to
-            AncillaryData, Subtilting and Captioning. Additional specific data format may be defined
-            as subclasses of DataFormat."""@en ;
-              rdfs:label "Data format"@en .
+              dcterms:description "Spezifiziert das verwendete Datenformat der Medienressource."@de ,
+                                  "Spécifie le format utilisé pour les data"@fr ,
+                                  "To specify the format used for data."@en ;
+              rdfs:label "Data format"@en ,
+                         "Datenformat"@de ,
+                         "Format des data"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataTrack
@@ -8577,6 +8620,38 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:someValuesFrom ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasAssociatedProductionJob ;
+                                     owl:allValuesFrom ebuccdm:ProductionJob
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasRelatedResonanceEvent ;
+                                     owl:allValuesFrom ebuccdm:ResonanceEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:isCommissionedBy ;
+                                     owl:allValuesFrom ebuccdm:Contract
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:isExtractOf ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:editorialObjectType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasScene ;
+                                     owl:allValuesFrom ec:Scene
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTake ;
+                                     owl:allValuesFrom ec:Take
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTimelineTrack ;
+                                     owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
@@ -8584,16 +8659,57 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:translationTitle ;
                                      owl:someValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:orderedFlag ;
+                                     owl:allValuesFrom xsd:boolean
                                    ] ;
-                   dcterms:description """In the audiovisual domain, the Class
-            EditorialObject transforms a commissioned concept into an editorial definition of a
-            MediaResource before fabrication (in the Production Domain) and Distribution (in the
-            Distribution Domain). An EditorialObject is a set of descriptive metadata summarising
-            e.g. editing decisions. An EditorialObject can also be a part of an EditorialObject,
-            which is defined by its start time and duration. An EditorialObject can also be a group
-            of EditorialObjects. For example a series composed of episodes is defined as an
-            EditorialObject."""@en ;
-                   rdfs:label "Editorial Object"@en .
+                   dcterms:description """An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
+An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline.
+Examples of simple EditorialObjects: Programme, Item, Shot,Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc.
+A simplifieduse-case:
+A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50\" >60\" ).
+ This could be modelled as follows:
+• The NewsBroadcast is linked
+      to a MediaResource using the instantiates-property
+• The NewsItems are linked to the
+      NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13
+• The InterviewPart is
+      linked to the NewsItem using the hasMember-property. Start and Duration are properties within
+      the InterviewPart indicating its appearance within the NewsItem2.
+• The InterviewPart
+      is linked to its original source using the existsAs-property
+• The Interview
+      instantiates a MediaResource, which in turn is linked from the MediaResource of the
+      NewsBroadcast using the hasSource-property
+• Representation of segmentation:
+      TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for
+      playout."""@en ,
+                                       """Ein Medieninhalt versammelt sämtliche deskriptiven informationen über ein Objekt, das als Ressource (oder eine Menge davon) realisiert werden soll. Der Medieninhalt beschreibt eine Idee, eine Geschichte und wird benutzt, um ein Konzept in eine inhaltliche Festlegung einer Ressource zu erreichen, und zwar vor der Herstellung und der Verbreitung.
+
+Ein Medieninhalt besteht aus einer Menge beschreibender Metadaten, z.B. Schnittlisten. Ein Medieninhalt kann eine Gruppe von anderen Medieninhalten sein. Ein Medieninhalt kann auch Teil eines anderen Medieninhalts sein, was durch den Zeitpunkt des Beginns und die Dauer dafiniert wird. Medieninhalte können gruppiert werden or entlang einer Zeitachse angeordnet werden.
+
+Beispiele für einfache Medieninhalte: Sendung, Beitrag, Szene
+Beispiele für Gruppierungen: Marke, Serie, Reihe, Sammlung"""@de ;
+                   rdfs:comment """Un EditorialObject rassemble toutes les informations descriptives d'un objet à réaliser comme une MediaResource ou une collection de MediaResource. Un EditorialObject décrit une idée, une histoire. Il est utilisé pour transformer un concept en une définition éditoriale, une MediaResource avant sa fabrication (domaine de la production) et sa distribution (domaine de la distribution).
+Un EditorialObject est un ensemble de métadonnées descriptives résumant, par exemple, les décisions d'édition. Un EditorialObject peut être un groupe d'EditorialObjects. Un EditorialObject peut également faire partie d'un autre EditorialObject, qui est défini par son heure de début et sa durée.
+Les objets éditoriaux peuvent être ordonnés soit en tant que groupes, soit en tant qu'éléments sur une ligne de temps.
+ Exemples d'EditorialObjects simples : Programme, Article, Une prise de vue, Une Partie, etc.
+Exemples de groupes d'EditorialObjects : Marque, Série, Collection, etc.
+
+Un cas d'utilisation simplifié :
+------------------------
+Un journal télévisé se compose de deux éléments d'information. L'un d'entre eux contient les dix dernières secondes d'une interview d'une minute provenant d'une autre source (c'est-à-dire entre la seconde 50 et la seconde 60).
+Cette situation pourrait être modélisée comme suit :
+o NewsBroadcast est lié à un MediaResource à l'aide de la propriété instantiates.
+o NewsItems sont liés au NewsBroadcast à l'aide d'un TimelineTrack. Tech 3351 EBU CCDM 13
+o L'InterviewPart est liée au NewsItem à l'aide de la propriété hasMember. Start et Duration sont des propriétés de l'InterviewPart qui indiquent son apparence dans le NewsItem.
+o L'InterviewPart est liée à sa source originale à l'aide de la propriété existsAs.
+o L'interview instancie une MediaResource, qui à son tour est liée à la MediaResource du NewsBroadcast à l'aide de la propriété hasSource.
+o Représentation de la segmentation : Les TimelineTracks sont préférés aux hasPart-properties, lorsqu'un récapitulatif est nécessaire, par exemple pour la diffusion."""@fr ;
+                   rdfs:label "Editorial object"@en ,
+                              "Medieninhalt"@de ,
+                              "Objet éditorial"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject_Type
@@ -8687,9 +8803,27 @@ ec:Episode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence
 ec:Essence rdf:type owl:Class ;
-           rdfs:subClassOf ec:MediaResource ;
-           dcterms:description "Essence is content ready for distribution. Essence can become a MediaResource in further production processes."@en ;
-           rdfs:label "Essence"@en .
+           rdfs:subClassOf ec:MediaResource ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:isComposedOf ;
+                             owl:allValuesFrom ec:MediaResource
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:readyForPublication ;
+                             owl:allValuesFrom xsd:boolean
+                           ] ;
+           dcterms:description "C'est une ressource multimédia, MediaResource,qui peut être composée d'une ou plusieurs Pistes, Tracks. Une ressource multimédia est définie par un objet éditorial d'un domaine éditorial, EditorialObject (Editorial Domain). Cet EditorialObject peut être matérialisé par des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ,
+                               """Die echte physische Repräsentation einer oder mehrerer Medienressourcen, die zur Nutzung bearbeitet wurde.
+Die Essenz ist eine physische Repräsentation einer Medienressource in einem spezillen Format für die Ausspielung oder Publikation. Essenz ist eine Sub-Klasse von Medienressource und erbt deren Eigenschaften. Essenzen treten auf in Form einfacher Dateien oder komplexer Pakete, z.B. wie es von verschiedenen Kameras verschiedener Hersteller geliefert wird."""@de ,
+                               """The actual physical representation of one or more MediaResource
+      edited for consumption. The Essence is a physical representation of a MediaResource in a
+      particular Format destined for play-out or publishing. \"Essence is a subclass of a
+      MediaResource and inherits the MediaResource properties. Essence can be available in a
+      form of a simple file or complex packages (e.g. as delivered by cameras of different
+      brands)."""@en ;
+           rdfs:label "Essence" ,
+                      "Essence"@en ,
+                      "Essenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
@@ -8729,11 +8863,12 @@ ec:Event rdf:type owl:Class ;
                            owl:onProperty ec:name ;
                            owl:someValuesFrom rdfs:Literal
                          ] ;
-         dcterms:description """Additional types of event shall be defined as
-            new sub-classes of event."""@en ,
-                             """An event related to the media resource, e.g.
-            depicted in the resource (possibly fictional), etc."""@en ;
-         rdfs:label "Event"@en .
+         dcterms:description "An Event related to a Resource, e.g. as depicted in the Resource (real or fictional), etc."@en ,
+                             "Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Ressource (real oder fiktional), etc."@de ,
+                             "Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la resource."@fr ;
+         rdfs:label "Ereignis"@de ,
+                    "Event"@en ,
+                    "Événement"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EventType
@@ -8820,11 +8955,12 @@ ec:FoodStyle rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format
 ec:Format rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ;
-          dcterms:description """The format provides technical information on
-            the format of a Resource. A BusinessObject can be instantiated in a variety of Resources
-            each in a particular Format. Other specific data formats may be defined as subclasses of
-            format."""@en ;
-          rdfs:label "Format"@en .
+          dcterms:description "A Format can be defined as a collection of audio / video / data and container Formats. A Format can be globally associated to a MediaResource but Specific audio / video / data and container Formats can also be distinctly associated to a MediaResource. The ContainerFormat defines the file / package structure of the MediaResource."@en ,
+                              "Ein Format wird definiert als eine Sammlung aus Audio-, Video-, Daten- und Containerformaten. Ein Format kann global mit einer Medienressource verknüpft sein, oder auch speziell nach unterschiedlichen Audio-, Video-, Daten- und Containerformaten. Das Containerformat definiert die Datei- bzw. Paketstruktur einer Medienressource."@de ,
+                              "Un format peut être défini comme une collection de formats audio/vidéo/données et de conteneurs. Un format peut être associé globalement à une ressource multimédia, mais des formats audio/vidéo/données et conteneurs spécifiques peuvent également être associés de manière distincte à une ressource multimédia. Le ContainerFormat définit la structure du fichier / paquet de la MediaResource."@fr ;
+          rdfs:label "Format"@de ,
+                     "Format"@en ,
+                     "Format"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Generation
@@ -9009,6 +9145,10 @@ ec:Location rdf:type owl:Class ;
                               owl:someValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocationRelatedEvent ;
+                              owl:allValuesFrom ec:Event
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
                               owl:someValuesFrom rdfs:Literal
                             ] ,
@@ -9016,14 +9156,16 @@ ec:Location rdf:type owl:Class ;
                               owl:onProperty ec:name ;
                               owl:someValuesFrom rdfs:Literal
                             ] ;
-            dcterms:description """A location related to the media resource, e.g.
-            depicted in the resource (possibly fictional) or where the resource was created
-            (shooting location), etc."""@en ,
-                                """A type of location is defined as a sub-class of 
-            location."""@en ,
-                                """This is provided as free text in an annotation
-            label or as an identifier pointing to a term in a classification scheme."""@en ;
-            rdfs:label "Location"@en .
+            dcterms:description "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc. A «Location» is used to define the spatial coverage of the story or recording locations like studios or in the field, associated with the EditorialObjects (or Part of EditorialObjects)."@en ,
+                                """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
+Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in einem Medieninhalt, wie z.b. im Studio, Außenaufnahme."""@de ,
+                                "Note: a type of location shall be defined as a sub-class of Location."@en ,
+                                "Note: le type de localisation doit être décrit comme une sous-classe de localisation."@fr ,
+                                """Une localisation est liée à la ressource média, elle peut être décrite dans la ressource et donc être éventuellement fictive. Elle peut aussi représenter le lieu où la ressource a été créée (lieu de tournage).
+Une localisation est utilisée pour définir la couverture spatiale du reportage ou des lieux d'enregistrement comme par exemple : studios ou sur le terrain, associés aux EditorialObjects (ou à une partie des EditorialObjects)."""@fr ;
+            rdfs:label "Localisation"@fr ,
+                       "Location"@en ,
+                       "Ort"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationCode
@@ -9074,6 +9216,26 @@ ec:MediaFragment rdf:type owl:Class ;
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ebuccdm:hasProductionDevice ;
+                                   owl:allValuesFrom ebuccdm:ProductionDevice
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasSource ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTrack ;
+                                   owl:allValuesFrom ec:Track
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:instantiates ;
+                                   owl:allValuesFrom ec:EditorialObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:mediaResourceType ;
+                                   owl:allValuesFrom skos:Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateDigitised ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
@@ -9103,9 +9265,12 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ;
                  owl:disjointWith ec:Rating ;
-                 dcterms:description """The use of MediaResource is reserved to
-            audiovisual content. In a production process, several MediaResources can be edited and assembled to realsie an Essence ready for distribution (see IMF package and OPL)"""@en ;
-                 rdfs:label "Media Resource"@en .
+                 dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
+                                     "Eine audiovisuelle Medienressource, die aus einer oder mehreren Spuren bestehen kann. Die Medienressource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ,
+                                     "Une MediaResource audiovisuelle, qui peut être composée d'une ou plusieurs Pistes. Une ressource multimédia, MediaResource est définie par un objet éditorial EditorialObject, (domaine éditorial), qui peut être réalisé dans des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ;
+                 rdfs:comment "Ressource médiatique" ;
+                 rdfs:label "Media resource"@en ,
+                            "Medienressource"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource_Type
@@ -9301,15 +9466,23 @@ ec:Person rdf:type owl:Class ;
                             owl:onProperty ec:gender ;
                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
-          dcterms:description "To describe a Person."@en ;
-          rdfs:label "Person"@en .
+          dcterms:description "A Person."@en ,
+                              "Eine Person."@de ;
+          rdfs:comment "Une personne physique."@fr ;
+          rdfs:label "Person"@de ,
+                     "Person"@en ,
+                     "Personne"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource
 ec:PhysicalResource rdf:type owl:Class ;
-                    rdfs:subClassOf ec:MediaResource ;
-                    dcterms:description "To describe a physical resource e.g. a tape."@en ;
-                    rdfs:label "Physical resource"@en .
+                    rdfs:subClassOf ec:Resource ;
+                    dcterms:description "Beschreibt eine physische Ressource, z.B. ein Tonband."@de ,
+                                        "Pour décrire une ressource physique, par exemple une bande."@fr ,
+                                        "To describe a physical resource e.g. a tape."@en ;
+                    rdfs:label "Physical resource"@en ,
+                               "Physische Ressource"@de ,
+                               "Ressource physique"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Pictogram
@@ -9393,10 +9566,10 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:onProperty ec:hasPublicationEvent ;
                                         owl:someValuesFrom ec:PublicationEvent
                                       ] ;
-                      dcterms:description """The name of the channel through which a
-            Resource has been published as a PublicationEvent. A PublicationChannel can use a
-            variety of medias e.g. broadcast or online."""@en ;
-                      rdfs:label "Publication Channel"@en .
+                      dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ;
+                      rdfs:comment "C'est un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD/DVD, etc."@fr ;
+                      rdfs:label "Canal de publication"@fr ,
+                                 "Publication channel"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel_Type
@@ -9431,6 +9604,30 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:objectType ;
                                       owl:someValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ebuccdm:hasConsumptionEvent ;
+                                      owl:allValuesFrom ebuccdm:ConsumptionEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ebuccdm:hasPublicationEventTargetAudience ;
+                                      owl:allValuesFrom ebuccdm:Audience
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ebuccdm:hasRestrictedAudience ;
+                                      owl:allValuesFrom ebuccdm:Audience
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:isReleasedBy ;
+                                      owl:allValuesFrom ec:Service
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:playsOut ;
+                                      owl:allValuesFrom ec:Essence
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:publishes ;
+                                      owl:allValuesFrom ec:EditorialObject
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:startDateTime ;
@@ -9484,10 +9681,14 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onDataRange xsd:boolean
                                     ] ;
                     owl:disjointWith ec:Rating ;
-                    dcterms:description """To describe any manifestation of a media
-            resource on any media (live, on demand, catch-up TV, etc.) and the appropriate
-            PublciationChannel."""@en ;
-                    rdfs:label "Publication Event"@en .
+                    dcterms:description """Beschreibt die Bereitstellung eines Medieninhaltes und seiner Essenz durch ein beliebiges Medium.
+Ein Publikationsereignis kann ein geplantes oder ein ungeplantes Ereignis im Rahmen eines linearen Angebot sein, oder eine Abrufmöglichkeit sowie live-streaming im nicht-linearen Angebot."""@de ,
+                                        "Décrit toute apparition, manifestation, d'un objet éditorial, EditorialObjec et d'une essence associée, Essence, sur n'importe quel média (en direct, à la demande, à la télévision, etc.). Un PublicationEvent peut être par exemple, un événement programmé, un événement diffusé (à l'origine non programmé comme les \"dernières nouvelles\"), ou des événements non linéaires à la demande et des diffusions en direct."@fr ,
+                                        """To describe any manifestation of an EditorialObject and associated Essence on any media (live, on demand, catch-up TV, etc.).
+A PublicationEvent can be e.g. a scheduled event, a broadcast event (originally not scheduled like \"latest news\"), or non-linear on-demand events and live-streaming."""@en ;
+                    rdfs:label "Publication Event"@en ,
+                               "Publikationsereignis"@de ,
+                               "Événement de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent_Type
@@ -9559,6 +9760,30 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:someValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasAsset ;
+                                     owl:allValuesFrom ec:Asset
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasAssociatedProductionOrder ;
+                                     owl:allValuesFrom ebuccdm:ProductionOrder
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasBusinessContract ;
+                                     owl:allValuesFrom ebuccdm:Contract
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ebuccdm:hasStakeholder ;
+                                     owl:allValuesFrom ec:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPublicationPlanMember ;
+                                     owl:allValuesFrom ec:PublicationPlan
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isMemberOfPublicationPlan ;
+                                     owl:allValuesFrom ec:PublicationPlan
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:endDateTime ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
@@ -9575,9 +9800,27 @@ ec:PublicationPlan rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:name ;
                                      owl:someValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:publicationPlanTitle ;
+                                     owl:allValuesFrom rdfs:Literal
                                    ] ;
-                   dcterms:description "A collection of PublicationEvents organised as a PublicationPlanning."@en ;
-                   rdfs:label "Publication History"@en .
+                   dcterms:description """A PublicationPlan describes a schedule of PublicationEvents (and their Audiences). The realisation of a PublicationPlan may require the specific acquisition or creation of content defined as a pair of EditorialObjects and Essence, which occurs through ProductionOrders. A PublicationPlan can be the result of associated Publication(sub)Plans.
+
+Examples:
+
+Example 1: A campaign of commercials for a product, consists of set of planned PublicationEvents.
+Example 2: A fiction film is promoted with several trailers published before the publication of the film."""@en ,
+                                       """Ein Publikationsplan beschreibt eine Zeitplan von Publikationsereignissen und ihre Publika. Die Realisierung eines Publikationsplan erfordert möglicherweise den Einkauf oder die Herstellung von Medienprodukten (Medieninhalt mit Essenz), ausgelöst durch einen Produktionsauftrag. Ein Publikationsplan kann aus mehreren Publikationsplänen zusammengesetzt werden.
+Beispiele 1: Eine Werbekampagne für ein neues Produkt besteht aus einer Reihe geplanter Veröffentlichungsereignisse.
+Beispiel 2: Ein Film wird  durch mehrere Trailer beworben, bevor er veröffentlicht wird."""@de ,
+                                       """Un PublicationPlan décrit un calendrier de PublicationEvents ainsi que leurs audiences. La réalisation d'un plan de publication, PublicationPlan, peut nécessiter l'acquisition ou la création spécifique d'un contenu défini comme une paire d'objets éditoriaux, EditorialObjects, et d'essences, d'Essence. Ceci se produit par le biais d'ordres de production, ProductionOrders.
+Un plan de publication peut être le résultat de plans ou sous plans de publication associés.
+Exemple 1 : Une campagne publicitaire pour un produit consiste en un ensemble d'événements de publication, PublicationPlan, planifiée.
+Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiées avant la publication du film."""@fr ;
+                   rdfs:label "Plan de publication"@fr ,
+                              "Publication plan"@en ,
+                              "Publikationsplan"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationPlan_Type
@@ -9971,7 +10214,8 @@ ec:SubtitlingFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TO_BE_LOOKED_AT
 ec:TO_BE_LOOKED_AT rdf:type owl:Class ;
-                   rdfs:comment "Properties we perhaps don´t need"@en .
+                   rdfs:comment "Properties we perhaps don´t need"@en ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TVProgramme
@@ -9980,6 +10224,10 @@ ec:TVProgramme rdf:type owl:Class ;
                dcterms:description """A programme for distribution on television
             channels."""@en ;
                rdfs:label "TV Programme"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Take
+ec:Take rdf:type owl:Class .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetAudience
