@@ -10053,18 +10053,27 @@ ec:Role rdf:type owl:Class ;
                           owl:onProperty ec:name ;
                           owl:someValuesFrom rdfs:Literal
                         ] ;
-        dcterms:description """To define the role / action of an agent. This
-            is provided as free text in an annotation label or as an identifier pointing to a term
-            in a classification scheme."""@en ;
-        rdfs:label "Role"@en .
+        dcterms:description """Definiert eine Rolle, die ein Akteur übernimmt.
+Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
+                          "Permet de définir le rôle, Role,  joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
+                          "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
+        rdfs:label "Role"@en ,
+                   "Rolle"@de ,
+                   "Rôle"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
 ec:Scene rdf:type owl:Class ;
-         rdfs:subClassOf ec:Part ;
-         dcterms:description "A specifc type of Part."@en ;
+         rdfs:subClassOf ec:EditorialObject ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasShot ;
+                           owl:allValuesFrom ec:Shot
+                         ] ;
+         owl:disjointWith ec:Shot ,
+                          ec:Take ;
+         dcterms:description "A sequence of continuous action"@en ;
          rdfs:label "Scene"@en .
-
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Season
 ec:Season rdf:type owl:Class ;
@@ -10103,6 +10112,30 @@ ec:Service rdf:type owl:Class ;
                              owl:someValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:accountingTo ;
+                             owl:allValuesFrom ebuccdm:Account
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:hasServiceTargetAudience ;
+                             owl:allValuesFrom ebuccdm:Audience
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:offers ;
+                             owl:allValuesFrom ec:PublicationEvent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:supportsConsumptionDeviceProfile ;
+                             owl:allValuesFrom ebuccdm:ConsumptionDeviceProfile
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedService ;
+                             owl:allValuesFrom ec:Service
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:serviceGenre ;
+                             owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:someValuesFrom skos:Concept
                            ] ,
@@ -10118,9 +10151,13 @@ ec:Service rdf:type owl:Class ;
                              owl:onProperty ec:name ;
                              owl:someValuesFrom rdfs:Literal
                            ] ;
-           dcterms:description """A service is the umbrella under which one or
-            more PublicationChannel is operated."""@en ;
-           rdfs:label "Service"@en .
+           dcterms:description "A Service is a channel or publishing platform that releases the content to a given Audience."@en ,
+                             "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ;
+           rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
+           rdfs:label "Service"@de ,
+                      "Service"@en ,
+                      "Service"@fr .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service_Type
@@ -10132,8 +10169,9 @@ ec:Service_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
 ec:Shot rdf:type owl:Class ;
-        rdfs:subClassOf ec:Part ;
-        dcterms:description "A specifc type of Part."@en ;
+        rdfs:subClassOf ec:EditorialObject ;
+        owl:disjointWith ec:Take ;
+        dcterms:description "A film sequence photographed continuously by one camera"@en ;
         rdfs:label "Shot"@en .
 
 
@@ -10248,7 +10286,11 @@ ec:TVProgramme rdf:type owl:Class ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Take
-ec:Take rdf:type owl:Class .
+ec:Take rdf:type owl:Class ;
+        rdfs:subClassOf ec:EditorialObject ;
+        dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
+        rdfs:label "Take"@en .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetAudience
@@ -10405,6 +10447,10 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:someValuesFrom ec:Identifier
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTimelineTrackPart ;
+                                   owl:allValuesFrom ec:EditorialObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:duration ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:TimelinePoint
@@ -10422,8 +10468,12 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:onProperty ec:name ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ;
-                 dcterms:description "To define a time sequence of EditorialObjects."@en ;
-                 rdfs:label "Timeline track"@en .
+                 dcterms:description "Definiert den zeitlichen Ablauf von Medieninhalten."@de ,
+                                   "To define a timed sequence of EditorialObjects."@en ;
+                 rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
+                 rdfs:label "Ablaufplan"@de ,
+                            "Piste chronologique"@fr ,
+                            "Timeline track"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelineTrack_Type
@@ -10444,10 +10494,34 @@ ec:Topic rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track
 ec:Track rdf:type owl:Class ;
-         rdfs:subClassOf ec:MediaResource ;
-         dcterms:description """Audiovisual content can be composed of audio,
-            video and data Tracks (including captioning and subtitling)."""@en ;
-         rdfs:label "Track"@en .
+         rdfs:subClassOf ec:MediaResource ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:trackType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:trackId ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:trackId ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:trackName ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:trackPurpose ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ;
+         dcterms:description "Cela peut être une piste audio ou  video ou timecode ou data provenant de la resource médiatique, MediaResource."@fr ,
+                           """E.g. audio, video, timcode and/or data Tracks forming the
+      MediaResource."""@en ,
+                           "z.B. Audio-, Video-, Timecode- und/oder Datenspuren bilden eine Medienressource."@de ;
+         rdfs:label "Piste"@fr ,
+                    "Spur"@de ,
+                    "Track"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TrackPurpose
@@ -10541,8 +10615,11 @@ ec:VideoEncodingFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoFormat
 ec:VideoFormat rdf:type owl:Class ;
                rdfs:subClassOf ec:Format ;
-               dcterms:description "To define an VideoFormat."@en ;
-               rdfs:label "Video format"@en .
+               dcterms:description "Spezifiziert das Videoformat der Medienressource."@de ,
+                                 "To specify the format used for video."@en ;
+               rdfs:label "Video format"@en ,
+                          "Videoformat"@de .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoStream
