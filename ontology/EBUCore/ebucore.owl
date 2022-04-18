@@ -288,16 +288,17 @@ ebuccdm:consumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
                                       rdfs:label "Consumption device manufacturer"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventType
-ebuccdm:consumptionEventType rdf:type owl:ObjectProperty ;
-                             dcterms:description "An type of ConsumptionEvent"@en ;
-                             rdfs:label "Consumption event type"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventResumePoint
+ebuccdm:consumptionEventResumePoint rdf:type owl:ObjectProperty ;
+                                    dcterms:description """The date and time point at which consumption has
+      resumed."""@en ;
+                                    rdfs:label "Consumption event resume point"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceType
-ebuccdm:consumptionLicenceType rdf:type owl:ObjectProperty ;
-                               dcterms:description "The type of ConsumptionLicence."@en ;
-                               rdfs:label "Consumption licence type"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceLink
+ebuccdm:consumptionLicenceLink rdf:type owl:ObjectProperty ;
+                               dcterms:description "A link to the terms of a ConsumptionLicence."@en ;
+                               rdfs:label "Consumption licence link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostAmountCurrency
@@ -306,16 +307,11 @@ ebuccdm:contractCostAmountCurrency rdf:type owl:ObjectProperty ;
                                    rdfs:label "Cost currency"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostType
-ebuccdm:contractCostType rdf:type owl:ObjectProperty ;
-                         dcterms:description "To define the type of ContractCost."@en ;
-                         rdfs:label "Cost type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractType
-ebuccdm:contractType rdf:type owl:ObjectProperty ;
-                     dcterms:description "To define a type of Contract."@en ;
-                     rdfs:label "contract type"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractLink
+ebuccdm:contractLink rdf:type owl:ObjectProperty ;
+                     dcterms:description """A link to a location where information can be found about a
+      Contract."""@en ;
+                     rdfs:label "Contract link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#coversConsumptionDevice
@@ -698,12 +694,6 @@ ebuccdm:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
                                  rdfs:label "Contract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureType
-ebuccdm:measureType rdf:type owl:ObjectProperty ;
-                    dcterms:description "To define a type of Measure."@en ;
-                    rdfs:label "Measure type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValueUnit
 ebuccdm:measureValueUnit rdf:type owl:ObjectProperty ;
                          dcterms:description """To define the unit in which the value of a Measure is expressed,
@@ -724,24 +714,10 @@ ebuccdm:offers rdf:type owl:ObjectProperty ;
                rdfs:label "Publication events"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionType
-ebuccdm:onStagePositionType rdf:type owl:ObjectProperty ;
-                            dcterms:description """To define a type of a set of coordinates defining a position on
-      stage."""@en ;
-                            rdfs:label "On stage position type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#originateFrom
 ebuccdm:originateFrom rdf:type owl:ObjectProperty ;
                       dcterms:description "The Contract from which the Rights orginate."@en ;
                       rdfs:label "Contract"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceType
-ebuccdm:productionDeviceType rdf:type owl:ObjectProperty ;
-                             dcterms:description """A type of ProductionDevice e.g. TV-Set, mobile,
-      tablet."""@en ;
-                             rdfs:label "Device type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobType
@@ -3586,71 +3562,6 @@ ebuccdm:consumptionDeviceOS rdf:type owl:DatatypeProperty ;
                             rdfs:label "Consumption device OS"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventDescription
-ebuccdm:consumptionEventDescription rdf:type owl:DatatypeProperty ;
-                                    dcterms:description "A description attributed to the ConsumptionEvent."@en ;
-                                    rdfs:label "Consumption event description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventEndDateTime
-ebuccdm:consumptionEventEndDateTime rdf:type owl:DatatypeProperty ;
-                                    dcterms:description "The end date & time of the ConsumptionEvent."@en ;
-                                    rdfs:label "Consumption end time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventId
-ebuccdm:consumptionEventId rdf:type owl:DatatypeProperty ;
-                           rdfs:range [ rdf:type rdfs:Datatype ;
-                                        owl:unionOf ( xsd:anyURI
-                                                      xsd:string
-                                                    )
-                                      ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventName
-ebuccdm:consumptionEventName rdf:type owl:DatatypeProperty ;
-                             dcterms:description "A namre attributed to the ConsumptionEvent."@en ;
-                             rdfs:label "Consumption event name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventResumePoint
-ebuccdm:consumptionEventResumePoint rdf:type owl:DatatypeProperty ;
-                                    dcterms:description """The date and time point at which consumption has
-      resumed."""@en ;
-                                    rdfs:label "Consumption event resume point"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionEventStartDateTime
-ebuccdm:consumptionEventStartDateTime rdf:type owl:DatatypeProperty ;
-                                      dcterms:description "The start date & time of the ConsumptionEvent."@en ;
-                                      rdfs:label "Consumption start time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceDescription
-ebuccdm:consumptionLicenceDescription rdf:type owl:DatatypeProperty ;
-                                      dcterms:description "The description of a ConsumptionLicence."@en ;
-                                      rdfs:label "Consumption licence description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceId
-ebuccdm:consumptionLicenceId rdf:type owl:DatatypeProperty ;
-                             rdfs:range [ rdf:type rdfs:Datatype ;
-                                          owl:unionOf ( xsd:anyURI
-                                                        xsd:string
-                                                      )
-                                        ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceLink
-ebuccdm:consumptionLicenceLink rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceName
-ebuccdm:consumptionLicenceName rdf:type owl:DatatypeProperty ;
-                               dcterms:description "A name attributed to a ConsumptionLicence."@en ;
-                               rdfs:label "Consumption licence name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionLicenceText
 ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
                                dcterms:description "The terms of a ConsumptionLicence."@en ;
@@ -3661,53 +3572,6 @@ ebuccdm:consumptionLicenceText rdf:type owl:DatatypeProperty ;
 ebuccdm:contractCostAmount rdf:type owl:DatatypeProperty ;
                            dcterms:description "The amount of the ContractCost."@en ;
                            rdfs:label "Cost amount"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostDescription
-ebuccdm:contractCostDescription rdf:type owl:DatatypeProperty ;
-                                dcterms:description """To provide additional information on the
-      ContractCost."""@en ;
-                                rdfs:label "ContractCost description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostId
-ebuccdm:contractCostId rdf:type owl:DatatypeProperty ;
-                       rdfs:range [ rdf:type rdfs:Datatype ;
-                                    owl:unionOf ( xsd:anyURI
-                                                  xsd:string
-                                                )
-                                  ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractCostName
-ebuccdm:contractCostName rdf:type owl:DatatypeProperty ;
-                         dcterms:description "To name a particular ContractCost."@en ;
-                         rdfs:label "ContractCost name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractDescription
-ebuccdm:contractDescription rdf:type owl:DatatypeProperty ;
-                            dcterms:description "The description of a Contract."@en ;
-                            rdfs:label "Contract description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractId
-ebuccdm:contractId rdf:type owl:DatatypeProperty ;
-                   rdfs:range [ rdf:type rdfs:Datatype ;
-                                owl:unionOf ( xsd:anyURI
-                                              xsd:string
-                                            )
-                              ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractLink
-ebuccdm:contractLink rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#contractName
-ebuccdm:contractName rdf:type owl:DatatypeProperty ;
-                     dcterms:description "The name attributed to a Contract."@en ;
-                     rdfs:label "Contract name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#formatId
@@ -3736,27 +3600,6 @@ ebuccdm:internetConnectivity rdf:type owl:DatatypeProperty ,
                              dcterms:description """To indicate if the Service requires Internet
       connectivity."""@en ;
                              rdfs:label "Internet connectivity"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureDescription
-ebuccdm:measureDescription rdf:type owl:DatatypeProperty ;
-                           dcterms:description "To describe a Measure."@en ;
-                           rdfs:label "Measure description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureId
-ebuccdm:measureId rdf:type owl:DatatypeProperty ;
-                  rdfs:range [ rdf:type rdfs:Datatype ;
-                               owl:unionOf ( xsd:anyURI
-                                             xsd:string
-                                           )
-                             ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureName
-ebuccdm:measureName rdf:type owl:DatatypeProperty ;
-                    dcterms:description "To name a Measure."@en ;
-                    rdfs:label "Measure name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#measureValue
@@ -3815,29 +3658,6 @@ ebuccdm:onStagePositionCoordinatesReferencePoint rdf:type owl:DatatypeProperty ;
                                                  rdfs:label "On stage position coordinates reference point"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionDefinition
-ebuccdm:onStagePositionDefinition rdf:type owl:DatatypeProperty ;
-                                  dcterms:description """To define a set of coordinates defining a position on
-      stage."""@en ;
-                                  rdfs:label "On stage position definition"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionId
-ebuccdm:onStagePositionId rdf:type owl:DatatypeProperty ;
-                          rdfs:range [ rdf:type rdfs:Datatype ;
-                                       owl:unionOf ( xsd:anyURI
-                                                     xsd:string
-                                                   )
-                                     ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#onStagePositionName
-ebuccdm:onStagePositionName rdf:type owl:DatatypeProperty ;
-                            dcterms:description """To name a set of coordinates defining a position on
-      stage."""@en ;
-                            rdfs:label "On stage position name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#orderedFlag
 ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
@@ -3853,27 +3673,6 @@ ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
                                                                   xsd:string
                                                                 )
                                                   ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceDescription
-ebuccdm:productionDeviceDescription rdf:type owl:DatatypeProperty ;
-                                    dcterms:description "A description of a ProductionDevice."@en ;
-                                    rdfs:label "Device description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceId
-ebuccdm:productionDeviceId rdf:type owl:DatatypeProperty ;
-                           rdfs:range [ rdf:type rdfs:Datatype ;
-                                        owl:unionOf ( xsd:anyURI
-                                                      xsd:string
-                                                    )
-                                      ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionDeviceName
-ebuccdm:productionDeviceName rdf:type owl:DatatypeProperty ;
-                             dcterms:description "A name associated to a ProductionDevice."@en ;
-                             rdfs:label "Device name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobDescription
@@ -6534,12 +6333,8 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                                            owl:allValuesFrom ec:Essence
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventId ;
-                                           owl:allValuesFrom xsd:anyURI
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventType ;
-                                           owl:allValuesFrom skos:Concept
+                                           owl:onProperty ebuccdm:consumptionEventResumePoint ;
+                                           owl:allValuesFrom ec:TimelinePoint
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ebuccdm:hasRelatedConsumptionEvent ;
@@ -6558,28 +6353,30 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                                            owl:allValuesFrom ebuccdm:ResonanceEvent
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventDescription ;
+                                           owl:onProperty ec:hasIdentifier ;
+                                           owl:allValuesFrom ec:Identifier
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:objectType ;
+                                           owl:allValuesFrom skos:Concept
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:endDateTime ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass time:Instant
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:startDateTime ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass time:Instant
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:description ;
                                            owl:allValuesFrom rdfs:Literal
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventEndDateTime ;
-                                           owl:allValuesFrom xsd:dateTime
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventId ;
-                                           owl:allValuesFrom xsd:string
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventName ;
+                                           owl:onProperty ec:name ;
                                            owl:allValuesFrom rdfs:Literal
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventResumePoint ;
-                                           owl:allValuesFrom xsd:dateTime
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:consumptionEventStartDateTime ;
-                                           owl:allValuesFrom xsd:dateTime
                                          ] ;
                          dcterms:description "A ConsumptionEvent reflecting the consumption of content during a PublicationEvent. For linear services the ConsumptionEvent and PublicationEvent happen at the same time. For non-linear services, the consumer decides about the time of the ConsumptionEvent. The ConsumptionEvent results into ResonanceEvent aggregated into Resonance data."@en ,
                                              """Ein Nutzungsereignis repräsentiert die Nutzung eines Medienanproduktes im Rahmen eines Publikationsereignisses.
@@ -6593,38 +6390,34 @@ Das Nutzunsereignis führt zu Resonanzereignissen, die zu Resonanzdaten aggregie
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionLicence
 ebuccdm:ConsumptionLicence rdf:type owl:Class ;
-                           rdfs:subClassOf owl:Thing ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceId ;
-                                             owl:allValuesFrom xsd:anyURI
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceLink ;
-                                             owl:allValuesFrom xsd:anyURI
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceType ;
-                                             owl:allValuesFrom skos:Concept
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
                                              owl:onProperty ebuccdm:coversConsumptionDevice ;
                                              owl:allValuesFrom ebuccdm:ConsumptionDevice
                                            ] ,
                                            [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceDescription ;
+                                             owl:onProperty ec:hasIdentifier ;
+                                             owl:allValuesFrom ec:Identifier
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty ec:objectType ;
+                                             owl:allValuesFrom skos:Concept
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty ebuccdm:consumptionLicenceLink ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass ebuccdm:Contract
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty ec:description ;
                                              owl:allValuesFrom rdfs:Literal
                                            ] ,
                                            [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceId ;
-                                             owl:allValuesFrom xsd:string
-                                           ] ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty ebuccdm:consumptionLicenceName ;
+                                             owl:onProperty ec:name ;
                                              owl:allValuesFrom rdfs:Literal
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty ebuccdm:consumptionLicenceText ;
-                                             owl:allValuesFrom rdfs:Literal
+                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                            ] ;
                            dcterms:description "A licence attributed to a Consumer defining the terms for the consumption of content.  The ConsumptionLicence is verified by a mechanism that is usually located in the device and referred to as DRM (Digital Rights Management)."@en ,
                                                "Eine Nutzungslizenz gehört zu einem Nutzer und legt die Nutzungsbedingungen für ein Produkt fest."@de ,
@@ -6636,18 +6429,9 @@ ebuccdm:ConsumptionLicence rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Contract
 ebuccdm:Contract rdf:type owl:Class ;
-                 rdfs:subClassOf owl:Thing ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:contractId ;
-                                   owl:allValuesFrom xsd:anyURI
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:contractLink ;
-                                   owl:allValuesFrom xsd:anyURI
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:contractType ;
-                                   owl:allValuesFrom skos:Concept
+                                   owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:hasContractRelatedCost ;
@@ -6662,15 +6446,19 @@ ebuccdm:Contract rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Agent
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:contractDescription ;
+                                   owl:onProperty ec:hasIdentifier ;
+                                   owl:allValuesFrom ec:Identifier
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:objectType ;
+                                   owl:allValuesFrom skos:Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:description ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:contractId ;
-                                   owl:allValuesFrom xsd:string
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:contractName ;
+                                   owl:onProperty ec:name ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ;
                  dcterms:description "A set of contractual terms involving different parties and Rights and used to commission/contract the creation of Resources. A Contract covers the ProductionOrder and sales order combined. The contract connects the Rights to any contractual parties. A contract defines one or more set of Rights."@en ,
@@ -6683,33 +6471,28 @@ ebuccdm:Contract rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
 ebuccdm:ContractCost rdf:type owl:Class ;
-                     rdfs:subClassOf owl:Thing ,
-                                     [ rdf:type owl:Restriction ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
                                        owl:onProperty ebuccdm:contractCostAmountCurrency ;
                                        owl:allValuesFrom skos:Concept
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ebuccdm:contractCostId ;
-                                       owl:allValuesFrom xsd:anyURI
+                                       owl:onProperty ec:hasIdentifier ;
+                                       owl:allValuesFrom ec:Identifier
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ebuccdm:contractCostType ;
+                                       owl:onProperty ec:objectType ;
                                        owl:allValuesFrom skos:Concept
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty ebuccdm:contractCostAmount ;
+                                       owl:allValuesFrom xsd:decimal
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty ec:description ;
                                        owl:allValuesFrom rdfs:Literal
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ebuccdm:contractCostDescription ;
-                                       owl:allValuesFrom rdfs:Literal
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty ebuccdm:contractCostId ;
-                                       owl:allValuesFrom xsd:string
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty ebuccdm:contractCostName ;
+                                       owl:onProperty ec:name ;
                                        owl:allValuesFrom rdfs:Literal
                                      ] ;
                      dcterms:description "Beschreibt die Kosten eines Vertrages."@de ,
@@ -6722,16 +6505,7 @@ ebuccdm:ContractCost rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Measure
 ebuccdm:Measure rdf:type owl:Class ;
-                rdfs:subClassOf owl:Thing ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty ebuccdm:measureId ;
-                                  owl:allValuesFrom xsd:anyURI
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty ebuccdm:measureType ;
-                                  owl:allValuesFrom skos:Concept
-                                ] ,
-                                [ rdf:type owl:Restriction ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
                                   owl:onProperty ebuccdm:measureValueUnit ;
                                   owl:allValuesFrom skos:Concept
                                 ] ,
@@ -6740,16 +6514,12 @@ ebuccdm:Measure rdf:type owl:Class ;
                                   owl:allValuesFrom ebuccdm:Rule
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ebuccdm:measureDescription ;
-                                  owl:allValuesFrom rdfs:Literal
+                                  owl:onProperty ec:hasIdentifier ;
+                                  owl:allValuesFrom ec:Identifier
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ebuccdm:measureId ;
-                                  owl:allValuesFrom xsd:string
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty ebuccdm:measureName ;
-                                  owl:allValuesFrom rdfs:Literal
+                                  owl:onProperty ec:objectType ;
+                                  owl:allValuesFrom skos:Concept
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ebuccdm:measureValue ;
@@ -6762,6 +6532,14 @@ ebuccdm:Measure rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ebuccdm:measureValueMin ;
                                   owl:allValuesFrom rdfs:Literal
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:description ;
+                                  owl:allValuesFrom rdfs:Literal
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:name ;
+                                  owl:allValuesFrom rdfs:Literal
                                 ] ;
                 dcterms:description "A Measure associated to a Rule to assess compliance through AuditJobs."@en ,
                                     "Eine Messung zu einer Regel untersucht deren Einhaltung durch Prüfaufgaben."@de ,
@@ -6773,17 +6551,16 @@ ebuccdm:Measure rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#OnStagePosition
 ebuccdm:OnStagePosition rdf:type owl:Class ;
-                        rdfs:subClassOf owl:Thing ,
-                                        [ rdf:type owl:Restriction ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
                                           owl:onProperty ebuccdm:hasRelatedStage ;
                                           owl:allValuesFrom ebuccdm:Stage
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:onStagePositionId ;
-                                          owl:allValuesFrom xsd:anyURI
+                                          owl:onProperty ec:hasIdentifier ;
+                                          owl:allValuesFrom ec:Identifier
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:onStagePositionType ;
+                                          owl:onProperty ec:objectType ;
                                           owl:allValuesFrom skos:Concept
                                         ] ,
                                         [ rdf:type owl:Restriction ;
@@ -6803,15 +6580,11 @@ ebuccdm:OnStagePosition rdf:type owl:Class ;
                                           owl:allValuesFrom rdfs:Literal
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:onStagePositionDefinition ;
+                                          owl:onProperty ec:description ;
                                           owl:allValuesFrom rdfs:Literal
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:onStagePositionId ;
-                                          owl:allValuesFrom xsd:string
-                                        ] ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:onStagePositionName ;
+                                          owl:onProperty ec:name ;
                                           owl:allValuesFrom rdfs:Literal
                                         ] ;
                         dcterms:description "Gibt die Position eines Akteurs oder eines Produktionswerkzeuges auf einer Bühne an."@de ,
@@ -6824,8 +6597,7 @@ ebuccdm:OnStagePosition rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionDevice
 ebuccdm:ProductionDevice rdf:type owl:Class ;
-                         rdfs:subClassOf owl:Thing ,
-                                         [ rdf:type owl:Restriction ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                            owl:onProperty ebuccdm:hasProductionDeviceOnStagePosition ;
                                            owl:allValuesFrom ebuccdm:OnStagePosition
                                          ] ,
@@ -6834,23 +6606,19 @@ ebuccdm:ProductionDevice rdf:type owl:Class ;
                                            owl:allValuesFrom ebuccdm:Contract
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:productionDeviceId ;
-                                           owl:allValuesFrom xsd:anyURI
+                                           owl:onProperty ec:hasIdentifier ;
+                                           owl:allValuesFrom ec:Identifier
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:productionDeviceType ;
+                                           owl:onProperty ec:objectType ;
                                            owl:allValuesFrom skos:Concept
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:productionDeviceDescription ;
+                                           owl:onProperty ec:description ;
                                            owl:allValuesFrom rdfs:Literal
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:productionDeviceId ;
-                                           owl:allValuesFrom xsd:string
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:productionDeviceName ;
+                                           owl:onProperty ec:name ;
                                            owl:allValuesFrom rdfs:Literal
                                          ] ;
                          dcterms:description "A Device used for creating/processing a MediaResource."@en ,
@@ -10508,53 +10276,14 @@ ebuccdm:consumerId rdfs:label "Consumer id"@en ;
                    dcterms:description "An Id attributed to a consumer."@en .
 
 
-ebuccdm:consumptionEventId rdfs:label "Consumption event Id"@en ;
-                           dcterms:description "An Id attributed to the ConsumptionEvent."@en .
-
-
-ebuccdm:consumptionLicenceId rdfs:label "Consumption licence id"@en ;
-                             dcterms:description "An Id attributed to a ConsumptionLicence."@en .
-
-
-ebuccdm:consumptionLicenceLink rdfs:label "Consumption licence link"@en ;
-                               skos:changeNote "Is the range her Contract or Subclass of Contract?"@en ;
-                               dcterms:description "A link to the terms of a ConsumptionLicence."@en .
-
-
-ebuccdm:contractCostId rdfs:label "ContractCost id"@en ;
-                       dcterms:description "To identify a specific ContractCost."@en .
-
-
-ebuccdm:contractId dcterms:description "An Id attributed to a Contract."@en ;
-                   rdfs:label "Contract Id"@en .
-
-
-ebuccdm:contractLink rdfs:label "Contract link"@en ;
-                     dcterms:description """A link to a location where information can be found about a
-      Contract."""@en .
-
-
 ebuccdm:hasGeoLocation rdfs:label "Device location"@en ;
                        dcterms:description "The Location of a ConsumptionDevice."@en ;
                        rdfs:comment "Range: a Location or a string"@en .
 
 
-ebuccdm:measureId dcterms:description "To identify a Measure."@en ;
-                  rdfs:label "Measure Id"@en .
-
-
-ebuccdm:onStagePositionId dcterms:description """To identify a set of coordinates defining a position on
-      stage."""@en ;
-                          rdfs:label "On stage position Id"@en .
-
-
 ebuccdm:previousRelatedProductionJobId dcterms:description """To identify a previous associated ProductionJob identified by its
       productionJobId."""@en ;
                                        rdfs:label "Previous job Id"@en .
-
-
-ebuccdm:productionDeviceId rdfs:label "Device Id"@en ;
-                           dcterms:description "An Id attributed to a Device."@en .
 
 
 ebuccdm:productionJobId rdfs:label "Production Job Id"@en ;
@@ -10589,8 +10318,8 @@ ebuccdm:ruleReference rdfs:label "Rule reference"@en ;
                       dcterms:description "To provide references to a Rule."@en .
 
 
-ebuccdm:stageId dcterms:description "To identify a Stage."@en ;
-                rdfs:label "Stage Id"@en .
+ebuccdm:stageId rdfs:label "Stage Id"@en ;
+                dcterms:description "To identify a Stage."@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
