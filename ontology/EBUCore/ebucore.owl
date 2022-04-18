@@ -236,12 +236,6 @@ ebuccdm:assetValueCurrency rdf:type owl:ObjectProperty ;
                            rdfs:label "Asset value currency"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobType
-ebuccdm:auditJobType rdf:type owl:ObjectProperty ;
-                     dcterms:description "To define a type of AuditJob."@en ;
-                     rdfs:label "Audit job type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportDate
 ebuccdm:auditReportDate rdf:type owl:ObjectProperty ;
                         dcterms:description "The date of release of an AuditReport."@en ;
@@ -428,6 +422,12 @@ ebuccdm:hasContractualParty rdf:type owl:ObjectProperty ;
                             dcterms:description """To identify the different parties involved mentioned in Contract
       terms."""@en ;
                             rdfs:label "Contract party"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
+ebuccdm:hasGeoLocation rdf:type owl:ObjectProperty ;
+                       dcterms:description "The Location of a ConsumptionDevice."@en ;
+                       rdfs:label "Device location"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasInputMediaResource
@@ -720,18 +720,6 @@ ebuccdm:originateFrom rdf:type owl:ObjectProperty ;
                       rdfs:label "Contract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobType
-ebuccdm:productionJobType rdf:type owl:ObjectProperty ;
-                          dcterms:description "The type of ProductionJob."@en ;
-                          rdfs:label "Production Job type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderType
-ebuccdm:productionOrderType rdf:type owl:ObjectProperty ;
-                            dcterms:description "The type of production order."@en ;
-                            rdfs:label "Production order type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#provenance
 ebuccdm:provenance rdf:type owl:ObjectProperty ;
                    rdfs:domain owl:Thing ;
@@ -754,12 +742,6 @@ ebuccdm:requiresLicence rdf:type owl:ObjectProperty ;
                         rdfs:label "Required licence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceType
-ebuccdm:resonanceType rdf:type owl:ObjectProperty ;
-                      dcterms:description "The type of Resonance."@en ;
-                      rdfs:label "Resonance type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resultsIn
 ebuccdm:resultsIn rdf:type owl:ObjectProperty ;
                   dcterms:description """A link between a ResonanceEvent and a
@@ -773,16 +755,10 @@ ebuccdm:rulePriority rdf:type owl:ObjectProperty ;
                      rdfs:label "Rule priority"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleType
-ebuccdm:ruleType rdf:type owl:ObjectProperty ;
-                 dcterms:description "To define the type of a Rule."@en ;
-                 rdfs:label "Rule type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageType
-ebuccdm:stageType rdf:type owl:ObjectProperty ;
-                  dcterms:description "To define a type of Stage."@en ;
-                  rdfs:label "Stage type"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleReference
+ebuccdm:ruleReference rdf:type owl:ObjectProperty ;
+                      dcterms:description "To provide references to a Rule."@en ;
+                      rdfs:label "Rule reference"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#supportsConsumptionDeviceProfile
@@ -2526,7 +2502,10 @@ ec:hasRightsHolder rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsTargetService
-ec:hasRightsTargetService rdf:type owl:ObjectProperty .
+ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
+                          dcterms:description "Range: string or Service."@en ,
+                                              "To identify a Service associated to Rights."@en ;
+                          rdfs:label "Target service"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRole
@@ -3501,41 +3480,11 @@ ebuccdm:audienceInterest rdf:type owl:DatatypeProperty ;
                          rdfs:label "Audience interest"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobDescription
-ebuccdm:auditJobDescription rdf:type owl:DatatypeProperty ;
-                            dcterms:description "To describe an AuditJob."@en ;
-                            rdfs:label "Audit job description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobId
-ebuccdm:auditJobId rdf:type owl:DatatypeProperty ;
-                   rdfs:range [ rdf:type rdfs:Datatype ;
-                                owl:unionOf ( xsd:anyURI
-                                              xsd:string
-                                            )
-                              ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditJobName
-ebuccdm:auditJobName rdf:type owl:DatatypeProperty ;
-                     dcterms:description "To name an AuditJob."@en ;
-                     rdfs:label "Audit job name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#auditReportResults
 ebuccdm:auditReportResults rdf:type owl:DatatypeProperty ;
                            dcterms:description """To express the combined results of one or more
       AuditJobs."""@en ;
                            rdfs:label "Audit report results"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumerId
-ebuccdm:consumerId rdf:type owl:DatatypeProperty ;
-                   rdfs:range [ rdf:type rdfs:Datatype ;
-                                owl:unionOf ( xsd:anyURI
-                                              xsd:string
-                                            )
-                              ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#consumptionDeviceBrand
@@ -3583,15 +3532,6 @@ ebuccdm:formatId rdf:type owl:DatatypeProperty ;
                             ] ;
                  dcterms:description "An Id attributed to a Format."@en ;
                  rdfs:label "Format Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
-ebuccdm:hasGeoLocation rdf:type owl:DatatypeProperty ;
-                       rdfs:range [ rdf:type rdfs:Datatype ;
-                                    owl:unionOf ( xsd:anyURI
-                                                  xsd:string
-                                                )
-                                  ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#internetConnectivity
@@ -3675,48 +3615,6 @@ ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
                                                   ] .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobDescription
-ebuccdm:productionJobDescription rdf:type owl:DatatypeProperty ;
-                                 dcterms:description "A description of a ProductionJob."@en ;
-                                 rdfs:label "Production Job description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobId
-ebuccdm:productionJobId rdf:type owl:DatatypeProperty ;
-                        rdfs:range [ rdf:type rdfs:Datatype ;
-                                     owl:unionOf ( xsd:anyURI
-                                                   xsd:string
-                                                 )
-                                   ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionJobName
-ebuccdm:productionJobName rdf:type owl:DatatypeProperty ;
-                          dcterms:description "A name attributed to a ProductionJob."@en ;
-                          rdfs:label "Production Job name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderDescription
-ebuccdm:productionOrderDescription rdf:type owl:DatatypeProperty ;
-                                   dcterms:description "The description of a production order."@en ;
-                                   rdfs:label "Production order description."@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderId
-ebuccdm:productionOrderId rdf:type owl:DatatypeProperty ;
-                          rdfs:range [ rdf:type rdfs:Datatype ;
-                                       owl:unionOf ( xsd:anyURI
-                                                     xsd:string
-                                                   )
-                                     ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#productionOrderName
-ebuccdm:productionOrderName rdf:type owl:DatatypeProperty ;
-                            dcterms:description "The name given to a production order."@en ;
-                            rdfs:label "Production order name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#radioTuner
 ebuccdm:radioTuner rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
@@ -3732,90 +3630,10 @@ ebuccdm:readyForPublication rdf:type owl:DatatypeProperty ,
                             rdfs:label "Ready for publication"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceDescription
-ebuccdm:resonanceDescription rdf:type owl:DatatypeProperty ;
-                             dcterms:description "The description of a Resonance."@en ;
-                             rdfs:label "Resonance description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventDescription
-ebuccdm:resonanceEventDescription rdf:type owl:DatatypeProperty ;
-                                  dcterms:description "A description of a ResonanceEvent."@en ;
-                                  rdfs:label "Resonance event description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventId
-ebuccdm:resonanceEventId rdf:type owl:DatatypeProperty ;
-                         rdfs:range [ rdf:type rdfs:Datatype ;
-                                      owl:unionOf ( xsd:anyURI
-                                                    xsd:string
-                                                  )
-                                    ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventLocator
-ebuccdm:resonanceEventLocator rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceEventName
-ebuccdm:resonanceEventName rdf:type owl:DatatypeProperty ;
-                           dcterms:description "A name attributed to a ResonanceEvent."@en ;
-                           rdfs:label "Resonance event name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceId
-ebuccdm:resonanceId rdf:type owl:DatatypeProperty ;
-                    rdfs:range [ rdf:type rdfs:Datatype ;
-                                 owl:unionOf ( xsd:anyURI
-                                               xsd:string
-                                             )
-                               ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceLocator
-ebuccdm:resonanceLocator rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#resonanceName
-ebuccdm:resonanceName rdf:type owl:DatatypeProperty ;
-                      dcterms:description "An name attributed to a Resonance."@en ;
-                      rdfs:label "Resonance name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#rightsUsageRestrictions
 ebuccdm:rightsUsageRestrictions rdf:type owl:DatatypeProperty ;
                                 dcterms:description "To specify a set of UsageRestrictions."@en ;
                                 rdfs:label "Usage restrictions"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleDescription
-ebuccdm:ruleDescription rdf:type owl:DatatypeProperty ;
-                        dcterms:description "To describe a Rule."@en ;
-                        rdfs:label "Rule description"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleId
-ebuccdm:ruleId rdf:type owl:DatatypeProperty ;
-               rdfs:range [ rdf:type rdfs:Datatype ;
-                            owl:unionOf ( xsd:anyURI
-                                          xsd:string
-                                        )
-                          ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleName
-ebuccdm:ruleName rdf:type owl:DatatypeProperty ;
-                 dcterms:description "To name a Rule."@en ;
-                 rdfs:label "Rule name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleReference
-ebuccdm:ruleReference rdf:type owl:DatatypeProperty ;
-                      rdfs:range [ rdf:type rdfs:Datatype ;
-                                   owl:unionOf ( xsd:anyURI
-                                                 xsd:string
-                                               )
-                                 ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ruleStatement
@@ -3830,27 +3648,6 @@ ebuccdm:soundOutput rdf:type owl:DatatypeProperty ,
                     dcterms:description """A flag to indicate if the Service requires a sound
       output."""@en ;
                     rdfs:label "Sound output"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageDefinition
-ebuccdm:stageDefinition rdf:type owl:DatatypeProperty ;
-                        dcterms:description "To define/describe a Stage."@en ;
-                        rdfs:label "Stage definition"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageId
-ebuccdm:stageId rdf:type owl:DatatypeProperty ;
-                rdfs:range [ rdf:type rdfs:Datatype ;
-                             owl:unionOf ( xsd:anyURI
-                                           xsd:string
-                                         )
-                           ] .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#stageName
-ebuccdm:stageName rdf:type owl:DatatypeProperty ;
-                  dcterms:description "To name a Stage."@en ;
-                  rdfs:label "Stage name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#textInput
@@ -6025,32 +5822,12 @@ ebuccdm:Audience rdf:type owl:Class ;
 ebuccdm:AuditJob rdf:type owl:Class ;
                  rdfs:subClassOf ebuccdm:ProductionJob ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:auditJobId ;
-                                   owl:allValuesFrom xsd:anyURI
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:auditJobType ;
-                                   owl:allValuesFrom skos:Concept
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:hasAuditJobRelatedAuditReport ;
                                    owl:allValuesFrom ebuccdm:AuditReport
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:usesMeasure ;
                                    owl:allValuesFrom ebuccdm:Measure
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:auditJobDescription ;
-                                   owl:allValuesFrom rdfs:Literal
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:auditJobId ;
-                                   owl:allValuesFrom xsd:string
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:auditJobName ;
-                                   owl:allValuesFrom rdfs:Literal
                                  ] ;
                  dcterms:description "Eine Prüfaufgabe untersucht die Einhaltung einer Regel durch eine Messung."@de ,
                                      "L'évaluation de la conformité est effectuée par rapport à une mesure, Measure, associée à une règle, Rule, via un AuditJob."@fr ,
@@ -6163,10 +5940,6 @@ ebuccdm:Consumer rdf:type owl:Class ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:consumerId ;
-                                   owl:allValuesFrom xsd:anyURI
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:hasAssociatedConsumptionEvent ;
                                    owl:allValuesFrom ebuccdm:ConsumptionEvent
                                  ] ,
@@ -6181,10 +5954,6 @@ ebuccdm:Consumer rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:usesDevices ;
                                    owl:allValuesFrom ebuccdm:ConsumptionDevice
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:consumerId ;
-                                   owl:allValuesFrom xsd:string
                                  ] ;
                  dcterms:description "An individual who consumes the Service using a ConsumptionDevice. The Consumer can be associated to an Audience. His actions lead to data around the ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service via an Account containing information about that Concumer to a varying degree of detaill (e.g. age, sex, matrimonial status, address). This is further defined in Consumption Licence when applicable."@en ,
                                      """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
@@ -6249,7 +6018,7 @@ ebuccdm:ConsumptionDevice rdf:type owl:Class ;
 ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                    owl:onProperty ebuccdm:hasGeoLocation ;
-                                                   owl:allValuesFrom xsd:anyURI
+                                                   owl:allValuesFrom ec:Location
                                                  ] ,
                                                  [ rdf:type owl:Restriction ;
                                                    owl:onProperty ec:hasIdentifier ;
@@ -6314,16 +6083,6 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:label "Consumption device profile"@en ,
                                             "Endgeräteprofil"@de ,
                                             "Profile d'un appareil"@fr .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ebuccdm:ConsumptionDeviceProfile ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ebuccdm:hasGeoLocation ;
-                         owl:allValuesFrom xsd:anyURI
-                       ] ;
-   rdfs:comment "What is the correct range here?"@en
- ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionEvent
@@ -6631,8 +6390,7 @@ ebuccdm:ProductionDevice rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob
 ebuccdm:ProductionJob rdf:type owl:Class ;
-                      rdfs:subClassOf owl:Thing ,
-                                      [ rdf:type owl:Restriction ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:basedOn ;
                                         owl:allValuesFrom ec:EditorialObject
                                       ] ,
@@ -6685,31 +6443,27 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                         owl:allValuesFrom xsd:anyURI
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:productionJobId ;
-                                        owl:allValuesFrom xsd:anyURI
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:productionJobType ;
-                                        owl:allValuesFrom skos:Concept
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:usesProductionDevice ;
                                         owl:allValuesFrom ebuccdm:ProductionDevice
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasIdentifier ;
+                                        owl:allValuesFrom ec:Identifier
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:objectType ;
+                                        owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:previousRelatedProductionJobId ;
                                         owl:allValuesFrom xsd:string
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:productionJobDescription ;
+                                        owl:onProperty ec:description ;
                                         owl:allValuesFrom rdfs:Literal
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:productionJobId ;
-                                        owl:allValuesFrom xsd:string
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:productionJobName ;
+                                        owl:onProperty ec:name ;
                                         owl:allValuesFrom rdfs:Literal
                                       ] ;
                       dcterms:description "A job / process to be performed to manipulate/create/modify/store/etc. MediaResources and Essences as defined in an associated EditorialObject. It is ordered by Contract."@en ,
@@ -6723,29 +6477,24 @@ Medienressource und Essenz werden gemäß einen Medieninhalt hergestellt. Die Pr
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionOrder
 ebuccdm:ProductionOrder rdf:type owl:Class ;
-                        rdfs:subClassOf owl:Thing ,
-                                        [ rdf:type owl:Restriction ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
                                           owl:onProperty ebuccdm:hasProductionContract ;
                                           owl:allValuesFrom ebuccdm:Contract
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:productionOrderId ;
-                                          owl:allValuesFrom xsd:anyURI
+                                          owl:onProperty ec:hasIdentifier ;
+                                          owl:allValuesFrom ec:Identifier
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:productionOrderType ;
+                                          owl:onProperty ec:objectType ;
                                           owl:allValuesFrom skos:Concept
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:productionOrderDescription ;
+                                          owl:onProperty ec:description ;
                                           owl:allValuesFrom rdfs:Literal
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:productionOrderId ;
-                                          owl:allValuesFrom xsd:string
-                                        ] ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty ebuccdm:productionOrderName ;
+                                          owl:onProperty ec:name ;
                                           owl:allValuesFrom rdfs:Literal
                                         ] ;
                         dcterms:description """Die Beauftragung zur Erstellung, zum Kauf oder zur Wiederverwendung einer Medienressource.
@@ -6759,8 +6508,7 @@ Die Bedingungen eines Produktionsauftrages sind in einem Vertrag definiert."""@d
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Resonance
 ebuccdm:Resonance rdf:type owl:Class ;
-                  rdfs:subClassOf owl:Thing ,
-                                  [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                     owl:onProperty ebuccdm:compilesResonanceEvents ;
                                     owl:allValuesFrom ebuccdm:ResonanceEvent
                                   ] ,
@@ -6769,27 +6517,23 @@ ebuccdm:Resonance rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceId ;
-                                    owl:allValuesFrom xsd:anyURI
+                                    owl:onProperty ec:hasIdentifier ;
+                                    owl:allValuesFrom ec:Identifier
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceLocator ;
-                                    owl:allValuesFrom xsd:anyURI
+                                    owl:onProperty ec:hasLocator ;
+                                    owl:allValuesFrom ec:Locator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceType ;
+                                    owl:onProperty ec:objectType ;
                                     owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceDescription ;
+                                    owl:onProperty ec:description ;
                                     owl:allValuesFrom rdfs:Literal
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceId ;
-                                    owl:allValuesFrom xsd:string
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ebuccdm:resonanceName ;
+                                    owl:onProperty ec:name ;
                                     owl:allValuesFrom rdfs:Literal
                                   ] ;
                   dcterms:description """Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern.
@@ -6805,29 +6549,24 @@ The analysis of the Resonance Data allows more particularly refining a Campaign 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ResonanceEvent
 ebuccdm:ResonanceEvent rdf:type owl:Class ;
-                       rdfs:subClassOf owl:Thing ,
-                                       [ rdf:type owl:Restriction ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
                                          owl:onProperty ebuccdm:hasAssociatedConsumer ;
                                          owl:allValuesFrom ebuccdm:Consumer
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ebuccdm:resonanceEventId ;
-                                         owl:allValuesFrom xsd:anyURI
+                                         owl:onProperty ec:hasIdentifier ;
+                                         owl:allValuesFrom ec:Identifier
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ebuccdm:resonanceEventLocator ;
-                                         owl:allValuesFrom xsd:anyURI
+                                         owl:onProperty ec:hasLocator ;
+                                         owl:allValuesFrom ec:Locator
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ebuccdm:resonanceEventDescription ;
+                                         owl:onProperty ec:description ;
                                          owl:allValuesFrom rdfs:Literal
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ebuccdm:resonanceEventId ;
-                                         owl:allValuesFrom xsd:string
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty ebuccdm:resonanceEventName ;
+                                         owl:onProperty ec:name ;
                                          owl:allValuesFrom rdfs:Literal
                                        ] ;
                        dcterms:description """Data about the consumption of content by a Consumer using a particular ConsumptionDevice. Represents all individual countable or noticeable actions by consumers during a consumptionEvent using a particular ConsumptionDevice, e.g. clicks, likes, comments, votes, tweets preferences, downloads... All ResonanceEvents are linked to a ConsumptionEvent and the associated Essence or EditorialObject. ResonanceEvents represent raw-data, that need to be aggregated (e.g. summed up). Such data can be seen as \"Big
@@ -6848,14 +6587,9 @@ L'agrégation de ces données est un ensemble de résultats de résonance."""@fr
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Rule
 ebuccdm:Rule rdf:type owl:Class ;
-             rdfs:subClassOf owl:Thing ,
-                             [ rdf:type owl:Restriction ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty ebuccdm:isDefinedBy ;
                                owl:allValuesFrom ebuccdm:Contract
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleId ;
-                               owl:allValuesFrom xsd:anyURI
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ebuccdm:rulePriority ;
@@ -6863,30 +6597,26 @@ ebuccdm:Rule rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ebuccdm:ruleReference ;
-                               owl:allValuesFrom xsd:anyURI
+                               owl:allValuesFrom ebuccdm:Rule
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleType ;
+                               owl:onProperty ec:hasIdentifier ;
+                               owl:allValuesFrom ec:Identifier
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:objectType ;
                                owl:allValuesFrom skos:Concept
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleDescription ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleId ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleName ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ebuccdm:ruleReference ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty ebuccdm:ruleStatement ;
+                               owl:allValuesFrom rdfs:Literal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:description ;
+                               owl:allValuesFrom rdfs:Literal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:name ;
                                owl:allValuesFrom rdfs:Literal
                              ] ;
              dcterms:description "A Rule defined from legal, technical or editorial, or regulatory requirements."@en ,
@@ -6899,29 +6629,24 @@ ebuccdm:Rule rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Stage
 ebuccdm:Stage rdf:type owl:Class ;
-              rdfs:subClassOf owl:Thing ,
-                              [ rdf:type owl:Restriction ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty ebuccdm:hasStageLocation ;
                                 owl:allValuesFrom ec:Location
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ebuccdm:stageId ;
-                                owl:allValuesFrom xsd:anyURI
+                                owl:onProperty ec:hasLocator ;
+                                owl:allValuesFrom ec:Locator
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ebuccdm:stageType ;
+                                owl:onProperty ec:objectType ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ebuccdm:stageDefinition ;
+                                owl:onProperty ec:description ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ebuccdm:stageId ;
-                                owl:allValuesFrom xsd:string
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ebuccdm:stageName ;
+                                owl:onProperty ec:name ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ;
               dcterms:description "Définit une scène."@fr ,
@@ -9527,11 +9252,11 @@ ec:Rights rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryExcludes ;
-                            owl:allValuesFrom xsd:anyURI
+                            owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryIncludes ;
-                            owl:allValuesFrom xsd:anyURI
+                            owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:duration ;
@@ -9571,16 +9296,6 @@ Les droits proviennent d'un contrat, Contract. Les droits sont associés à des 
           rdfs:label "Droits"@fr ,
                      "Recht"@de ,
                      "Rights"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ec:Rights ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ec:rightsTerritoryExcludes ;
-                         owl:allValuesFrom xsd:anyURI
-                       ] ;
-   rdfs:comment "Or is this Location or something else?"@en
- ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#RightsClearance
@@ -10192,10 +9907,6 @@ ec:WrappingType rdf:type owl:Class ;
                 rdfs:label "Wrapping type"@en .
 
 
-###  http://www.w3.org/2000/01/rdf-schema#Resource
-rdfs:Resource rdf:type owl:Class .
-
-
 ###  http://www.w3.org/2004/02/skos/core#Concept
 skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
@@ -10250,7 +9961,7 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                  ec:abrigedTitle "Et prg"@nb ;
                  ec:aspectRatio "16:9"^^xsd:string ;
                  ec:tag "Et merke"@nb ,
-                        "et annet merke"@nb .
+                        "et annet merke (some tag)"@nb .
 
 
 ###  http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
@@ -10268,58 +9979,9 @@ dcterms:contributor dcterms:description "In the context of EBUCore, reserved for
                      rdfs:label "Contributor"@en .
 
 
-ebuccdm:auditJobId rdfs:label "Audit job Id"@en ;
-                   dcterms:description "To identify an AuditJob."@en .
-
-
-ebuccdm:consumerId rdfs:label "Consumer id"@en ;
-                   dcterms:description "An Id attributed to a consumer."@en .
-
-
-ebuccdm:hasGeoLocation rdfs:label "Device location"@en ;
-                       dcterms:description "The Location of a ConsumptionDevice."@en ;
-                       rdfs:comment "Range: a Location or a string"@en .
-
-
 ebuccdm:previousRelatedProductionJobId dcterms:description """To identify a previous associated ProductionJob identified by its
       productionJobId."""@en ;
                                        rdfs:label "Previous job Id"@en .
-
-
-ebuccdm:productionJobId rdfs:label "Production Job Id"@en ;
-                        dcterms:description "An identifier attributed to a ProductionJob."@en .
-
-
-ebuccdm:productionOrderId dcterms:description "An identifier attributed to a production order."@en ;
-                          rdfs:label "Production order id"@en .
-
-
-ebuccdm:resonanceEventId dcterms:description "An Id attributed to a ResonanceEvent."@en ;
-                         rdfs:label "Resonance event id"@en .
-
-
-ebuccdm:resonanceEventLocator dcterms:description "An Locator attributed to a ResonanceEvent."@en ;
-                              rdfs:label "Resonance event locator"@en .
-
-
-ebuccdm:resonanceId rdfs:label "Resonance id"@en ;
-                    dcterms:description "An Id attributed to a Resonance."@en .
-
-
-ebuccdm:resonanceLocator dcterms:description "A locator to a document describing a Resonance."@en ;
-                         rdfs:label "Resonance locator"@en .
-
-
-ebuccdm:ruleId rdfs:label "Rule Id"@en ;
-               dcterms:description "To identify a Rule."@en .
-
-
-ebuccdm:ruleReference rdfs:label "Rule reference"@en ;
-                      dcterms:description "To provide references to a Rule."@en .
-
-
-ebuccdm:stageId rdfs:label "Stage Id"@en ;
-                dcterms:description "To identify a Stage."@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
