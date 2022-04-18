@@ -3297,14 +3297,6 @@ ec:objectType rdf:type owl:ObjectProperty ;
               rdfs:label "type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#offers
-ec:offers rdf:type owl:ObjectProperty ;
-          rdfs:domain ec:Service ;
-          rdfs:range ec:PublicationEvent ;
-          dcterms:description "To identify the PublicationEvents provided through a Service."@en ;
-          rdfs:label "PublicationEvent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:domain ec:PublicationEvent ;
@@ -3390,12 +3382,6 @@ ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                            rdfs:range ec:CountryCode ;
                            dcterms:description "A list of country or region codes to which Rights apply."@en ;
                            rdfs:label "Included territories"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serviceGenre
-ec:serviceGenre rdf:type owl:ObjectProperty ;
-                dcterms:description "The genre of Service."@en ;
-                rdfs:label "Service genre"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#start
@@ -8805,6 +8791,14 @@ ec:PublicationChannel rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasPublicationEvent ;
                                         owl:someValuesFrom ec:PublicationEvent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasRelatedPublicationChannel ;
+                                        owl:allValuesFrom ec:PublicationChannel
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:isOperatedBy ;
+                                        owl:allValuesFrom ec:Service
                                       ] ;
                       dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ;
                       rdfs:comment "C'est un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD/DVD, etc."@fr ;
@@ -9415,11 +9409,15 @@ ec:Service rdf:type owl:Class ;
                              owl:allValuesFrom ec:Service
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
+                             owl:onProperty ec:hasServiceGenre ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:serviceGenre ;
+                             owl:onProperty ec:isOwnedBy ;
+                             owl:allValuesFrom ec:Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
