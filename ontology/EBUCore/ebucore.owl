@@ -8953,12 +8953,12 @@ ec:PublicationLogg rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:startDateTime ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:TimelinePoint
+                                     owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:endDateTime ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:TimelinePoint
+                                     owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:objectType ;
