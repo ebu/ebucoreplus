@@ -360,8 +360,7 @@ ebuccdm:hasAssociatedConsumptionEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAssociatedProductionJob
 ebuccdm:hasAssociatedProductionJob rdf:type owl:ObjectProperty ;
-                                   dcterms:description """To identify a ProductionJob associated with the realisation of an
-      EditorialObject."""@en ;
+                                   dcterms:description "To identify a ProductionJob associated with the realisation of an EditorialObject."@en ;
                                    rdfs:label "Production job"@en .
 
 
@@ -718,6 +717,13 @@ ebuccdm:offers rdf:type owl:ObjectProperty ;
 ebuccdm:originateFrom rdf:type owl:ObjectProperty ;
                       dcterms:description "The Contract from which the Rights orginate."@en ;
                       rdfs:label "Contract"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#previousRelatedProductionJob
+ebuccdm:previousRelatedProductionJob rdf:type owl:ObjectProperty ;
+                                     rdfs:range ebuccdm:ProductionJob ;
+                                     dcterms:description "To identify a previous associated ProductionJob"@en ;
+                                     rdfs:label "Previous job"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#provenance
@@ -3592,15 +3598,6 @@ ebuccdm:orderedFlag rdf:type owl:DatatypeProperty ,
                     rdfs:label "Ordered"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#previousRelatedProductionJobId
-ebuccdm:previousRelatedProductionJobId rdf:type owl:DatatypeProperty ;
-                                       rdfs:range [ rdf:type rdfs:Datatype ;
-                                                    owl:unionOf ( xsd:anyURI
-                                                                  xsd:string
-                                                                )
-                                                  ] .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#radioTuner
 ebuccdm:radioTuner rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
@@ -6425,8 +6422,8 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                         owl:allValuesFrom ebuccdm:Contract
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:previousRelatedProductionJobId ;
-                                        owl:allValuesFrom xsd:anyURI
+                                        owl:onProperty ebuccdm:previousRelatedProductionJob ;
+                                        owl:allValuesFrom ebuccdm:ProductionJob
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:usesProductionDevice ;
@@ -6439,10 +6436,6 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:objectType ;
                                         owl:allValuesFrom skos:Concept
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:previousRelatedProductionJobId ;
-                                        owl:allValuesFrom xsd:string
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:description ;
@@ -9975,11 +9968,6 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
 
 dcterms:contributor dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ;
                      rdfs:label "Contributor"@en .
-
-
-ebuccdm:previousRelatedProductionJobId dcterms:description """To identify a previous associated ProductionJob identified by its
-      productionJobId."""@en ;
-                                       rdfs:label "Previous job Id"@en .
 
 
 <http://www.w3.org/ns/ma-ont#hasPermissions> dcterms:description "To define permissions as defined in the W3C media ontology (ma-ont)" ;
