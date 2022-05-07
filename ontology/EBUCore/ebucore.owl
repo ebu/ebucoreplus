@@ -1298,14 +1298,6 @@ ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
                             rdfs:label "Artefact price currency"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedEditorialObject
-ec:hasArtefactRelatedEditorialObject rdf:type owl:ObjectProperty ;
-                                     rdfs:domain ec:Artefact ;
-                                     rdfs:range ec:EditorialObject ;
-                                     dcterms:description "To associate an Artefact/Prop or else with an EditorialObject."@en ;
-                                     rdfs:label "Associated editorial object"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedLocation
 ec:hasArtefactRelatedLocation rdf:type owl:ObjectProperty ;
                               rdfs:domain ec:Artefact ;
@@ -1352,14 +1344,6 @@ ec:hasAssetRelatedBusinessObject rdf:type owl:ObjectProperty ;
                                  rdfs:range ec:BusinessObject ;
                                  dcterms:description "To associate a BusinessObject with an Asset."@en ;
                                  rdfs:label "Related business object"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedEditorialObject
-ec:hasAssetRelatedEditorialObject rdf:type owl:ObjectProperty ;
-                                  rdfs:domain ec:Asset ;
-                                  rdfs:range ec:EditorialObject ;
-                                  dcterms:description "To associate an EditorialObject with an Asset."@en ;
-                                  rdfs:label "Related editorial object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedMediaResource
@@ -2365,7 +2349,6 @@ ec:hasRelatedAward rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEditorialObject
 ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:Asset ;
                              rdfs:range ec:EditorialObject ;
                              dcterms:description "To identify related EditorialObjects."@en ;
                              rdfs:label "Related editorial object"@en .
@@ -6891,6 +6874,10 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedEditorialObject ;
+                              owl:allValuesFrom ec:EditorialObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
                               owl:allValuesFrom skos:Concept
                             ] ,
@@ -6964,10 +6951,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:AccessConditions
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasAssetRelatedEditorialObject ;
-                           owl:allValuesFrom ec:EditorialObject
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAssetRelatedResource ;
                            owl:allValuesFrom ec:Resource
                          ] ,
@@ -6994,6 +6977,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedEditorialObject ;
+                           owl:allValuesFrom ec:EditorialObject
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
