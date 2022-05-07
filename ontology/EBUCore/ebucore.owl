@@ -1258,14 +1258,6 @@ ec:hasAnnotationRelatedArtefact rdf:type owl:ObjectProperty ;
                                 rdfs:label "Annotation related artefact"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedEvent
-ec:hasAnnotationRelatedEvent rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:Annotation ;
-                             rdfs:range ec:Event ;
-                             dcterms:description "To identify an Event subject of the Annotation."@en ;
-                             rdfs:label "Annotation related event"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:Annotation ;
@@ -1448,14 +1440,6 @@ ec:hasAwardRelatedBusinessObject rdf:type owl:ObjectProperty ;
                                  rdfs:range ec:BusinessObject ;
                                  dcterms:description "To link a BusinessObject to an Award."@en ;
                                  rdfs:label "Business object"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedEvent
-ec:hasAwardRelatedEvent rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Award ;
-                        rdfs:range ec:Event ;
-                        dcterms:description "An Event e.g. a ceremony, associated to an Award."@en ;
-                        rdfs:label "Event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasBeenAwarded
@@ -1802,29 +1786,12 @@ ec:hasEventRelatedBusinessObject rdf:type owl:ObjectProperty ;
                                  rdfs:label "Business object"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedEvent
-ec:hasEventRelatedEvent rdf:type owl:ObjectProperty ,
-                                 owl:IrreflexiveProperty ;
-                        rdfs:domain ec:Event ;
-                        rdfs:range ec:Event ;
-                        dcterms:description "An Event relates to an Event."@en ;
-                        rdfs:label "Event"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedResource
 ec:hasEventRelatedResource rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Event ;
                            rdfs:range ec:MediaResource ;
                            dcterms:description "A Resource relates to an Event."@en ;
                            rdfs:label "Resource"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventType
-ec:hasEventType rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Event ;
-                rdfs:range ec:EventType ;
-                dcterms:description "To define a type of Event."@en ;
-                rdfs:label "Agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasExploitationIssues
@@ -2006,15 +1973,6 @@ ec:hasLocationRelatedArtefact rdf:type owl:ObjectProperty ;
                               dcterms:description """To associate an Artefact with a
             Location."""@en ;
                               rdfs:label "Artefact"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedEvent
-ec:hasLocationRelatedEvent rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Location ;
-                           rdfs:range ec:Event ;
-                           dcterms:description """To associate an Event with a
-            Location."""@en ;
-                           rdfs:label "Event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedResource
@@ -2380,7 +2338,10 @@ ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEvent
-ec:hasRelatedEvent rdf:type owl:ObjectProperty .
+ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
+                            owl:IrreflexiveProperty ;
+                   dcterms:description "an event assosiated with the consept"@en ;
+                   rdfs:label "related event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedImage
@@ -6841,6 +6802,10 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasRelatedEvent ;
+                                owl:allValuesFrom ec:Event
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectType ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
@@ -7375,6 +7340,10 @@ ec:Award rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasLogo ;
                            owl:allValuesFrom ec:Logo
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedEvent ;
+                           owl:allValuesFrom ec:Event
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -8062,6 +8031,10 @@ ec:Event rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedEvent ;
+                           owl:allValuesFrom ec:Event
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
                            owl:allValuesFrom skos:Concept
                          ] ,
@@ -8366,7 +8339,7 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasLocationRelatedEvent ;
+                              owl:onProperty ec:hasRelatedEvent ;
                               owl:allValuesFrom ec:Event
                             ] ,
                             [ rdf:type owl:Restriction ;
