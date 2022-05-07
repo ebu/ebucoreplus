@@ -1189,10 +1189,6 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
                             rdfs:label "Place of residence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedArtefact
-ec:hasAgentRelatedArtefact rdf:type owl:ObjectProperty .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedPicture
 ec:hasAgentRelatedPicture rdf:type owl:ObjectProperty ;
                           rdfs:domain ec:Agent ;
@@ -1248,14 +1244,6 @@ ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To define the Annotation instance of an Agent."@en ;
                      rdfs:label "Annotation body"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact
-ec:hasAnnotationRelatedArtefact rdf:type owl:ObjectProperty ;
-                                rdfs:domain ec:Annotation ;
-                                rdfs:range ec:Artefact ;
-                                dcterms:description "To identify an Artefact subject of the Annotation."@en ;
-                                rdfs:label "Annotation related artefact"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedEvent
@@ -1786,14 +1774,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
               rdfs:label "Episode"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedArtefact
-ec:hasEventRelatedArtefact rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Event ;
-                           rdfs:range ec:Artefact ;
-                           dcterms:description "An artefact related to an Event."@en ;
-                           rdfs:label "Artefact"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedBusinessObject
 ec:hasEventRelatedBusinessObject rdf:type owl:ObjectProperty ;
                                  rdfs:domain ec:Event ;
@@ -1997,15 +1977,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
                       rdfs:range ec:Picture ;
                       dcterms:description "A picture associated with a Location."@en ;
                       rdfs:label "Picture"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedArtefact
-ec:hasLocationRelatedArtefact rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:Location ;
-                              rdfs:range ec:Artefact ;
-                              dcterms:description """To associate an Artefact with a
-            Location."""@en ;
-                              rdfs:label "Artefact"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedEvent
@@ -2311,7 +2282,7 @@ ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
 ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
                       rdfs:domain ec:Asset ;
                       rdfs:range ec:Artefact ;
-                      dcterms:description "To identify and Artefact related to EditorialObject or a resource."@en ;
+                      dcterms:description "To identify and Artefact related to a concept, EditorialObject or a Resource."@en ;
                       rdfs:label "Related artefact"@en .
 
 
@@ -6714,10 +6685,6 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:OnStagePosition
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasAgentRelatedArtefact ;
-                           owl:allValuesFrom ec:Artefact
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -6728,6 +6695,10 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedArtefact ;
+                           owl:allValuesFrom ec:Artefact
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRole ;
@@ -6839,6 +6810,10 @@ ec:Annotation rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasIdentifier ;
                                 owl:allValuesFrom ec:Identifier
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasRelatedArtefact ;
+                                owl:allValuesFrom ec:Artefact
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectType ;
@@ -8054,12 +8029,16 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedAgent ;
-                           owl:someValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedArtefact ;
+                           owl:allValuesFrom ec:Artefact
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -8368,6 +8347,10 @@ ec:Location rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasLocationRelatedEvent ;
                               owl:allValuesFrom ec:Event
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedArtefact ;
+                              owl:allValuesFrom ec:Artefact
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
