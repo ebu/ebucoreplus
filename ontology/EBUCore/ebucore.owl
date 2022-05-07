@@ -1124,14 +1124,6 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:label "Access conditions"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionRelatedScene
-ec:hasActionRelatedScene rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Action ;
-                         rdfs:range ec:Scene ;
-                         dcterms:description "To associate an Action with a Scene."@en ;
-                         rdfs:label "Action related scene"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
                   rdfs:domain ec:Person ;
@@ -1758,14 +1750,6 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Language ;
                      dcterms:description "To identify available dubbed languages."@en ;
                      rdfs:label "Dubbed language"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedScene
-ec:hasEmotionRelatedScene rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:Emotion ;
-                          rdfs:range ec:Scene ;
-                          dcterms:description "To associate an Emotion with a Scene."@en ;
-                          rdfs:label "Emotion related scene"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEncodingFormat
@@ -2451,6 +2435,13 @@ ec:hasRelatedResource rdf:type owl:ObjectProperty ;
                       rdfs:label "Related resource"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedScene
+ec:hasRelatedScene rdf:type owl:ObjectProperty ;
+                   rdfs:range ec:Scene ;
+                   dcterms:description "To accosiate a concept with a Scene"@en ;
+                   rdfs:label "Related scene"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedService
 ec:hasRelatedService rdf:type owl:ObjectProperty ;
                      rdfs:domain ec:Service ;
@@ -2700,14 +2691,6 @@ ec:hasTextLineRelatedCharacter rdf:type owl:ObjectProperty ;
                                rdfs:range ec:Character ;
                                dcterms:description "To identify a Character related to a TextLine."@en ;
                                rdfs:label "Text line related character"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedScene
-ec:hasTextLineRelatedScene rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:TextLine ;
-                           rdfs:range ec:Scene ;
-                           dcterms:description "To identify an scene related to a text line."@en ;
-                           rdfs:label "Text line related scene"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineSource
@@ -6661,6 +6644,10 @@ ec:Action rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasRelatedScene ;
+                            owl:allValuesFrom ec:Scene
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
                             owl:allValuesFrom skos:Concept
                           ] ,
@@ -7959,6 +7946,10 @@ ec:Emotion rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasIdentifier ;
                              owl:allValuesFrom ec:Identifier
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedScene ;
+                             owl:allValuesFrom ec:Scene
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
@@ -9619,6 +9610,10 @@ ec:TextLine rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:allValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedScene ;
+                              owl:allValuesFrom ec:Scene
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:end ;
