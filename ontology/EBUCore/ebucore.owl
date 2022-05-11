@@ -2438,7 +2438,7 @@ ec:hasRelatedResource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedScene
 ec:hasRelatedScene rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Scene ;
-                   dcterms:description "To accosiate a concept with a Scene"@en ;
+                   dcterms:description "To associate a concept with a Scene"@en ;
                    rdfs:label "Related scene"@en .
 
 
