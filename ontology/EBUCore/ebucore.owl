@@ -4333,12 +4333,11 @@ ec:editUnit rdf:type owl:DatatypeProperty ;
             rdfs:label "Edit unit"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnitCount
-ec:editUnitCount rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:EditUnitCount ;
-                 rdfs:range xsd:long ;
-                 dc:description "Time expressed as the number of editunits or samples."@en ;
-                 rdfs:label "Edit unit count"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnitNumbering
+ec:editUnitNumbering rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:long ;
+                     dc:description "Time expressed as the number of editunits or samples."@en ;
+                     rdfs:label "Edit unit numbering"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#education
@@ -4387,7 +4386,6 @@ ec:episodeNumberInSeries rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#equivalentTime
 ec:equivalentTime rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:TimelinePoint ;
                   rdfs:range xsd:float ;
                   dc:description "Notation of time in seconds compares different ways to denote time, like timecode or sample count."@en ;
                   rdfs:label "equivalent time"@en .
@@ -4632,6 +4630,13 @@ ec:inchesPerSecond rdf:type owl:DatatypeProperty ;
                    rdfs:label "Inches per second"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isoDuration
+ec:isoDuration rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:string ;
+               dcterms:description "a duration expressed as a string formated as ISO8601 ie PT3M23S"@en ;
+               rdfs:label "ISO duration"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#lineNumber
 ec:lineNumber rdf:type owl:DatatypeProperty ;
               rdfs:domain ec:AncillaryData ;
@@ -4846,22 +4851,6 @@ ec:noiseFilter rdf:type owl:DatatypeProperty ,
                dcterms:description """A flag to signal that a noise filter has been
             used."""@en ;
                rdfs:label "Noise filter"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#normalDuration
-ec:normalDuration rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:NormalPlayTime ;
-                  rdfs:range xsd:string ;
-                  dcterms:description "a duration expressed as a string formated as ISO8601 ie PT3M23S"@en ;
-                  rdfs:label "Normal duration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#normalPlayTime
-ec:normalPlayTime rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:NormalPlayTime ;
-                  rdfs:range xsd:time ;
-                  dcterms:description "A start time expressed as a normal play time."@en ;
-                  rdfs:label "Start time (normal play time)"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#notRated
@@ -5473,22 +5462,19 @@ ec:textLineOrder rdf:type owl:DatatypeProperty ;
                  rdfs:label "Text line order"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timecode
-ec:timecode rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:TimeCode ;
-            rdfs:range xsd:string ;
-            dcterms:description """A time expressed as
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timeOfDay
+ec:timeOfDay rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:time ;
+             dcterms:description "A time expressed as a normal time of day"@en ;
+             rdfs:label "time of day"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timecodeExpression
+ec:timecodeExpression rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string ;
+                      dcterms:description """A time expressed as
             timecode."""@en ;
-            rdfs:label "timecode"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timecodeDropFrame
-ec:timecodeDropFrame rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TimecodeDropFrame ;
-                     rdfs:range xsd:string ;
-                     dcterms:description """A time expressed as
-            timecode with drop frames."""@en ;
-                     rdfs:label "Timecode, drop frames"@en .
+                      rdfs:label "timecode expression"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title
@@ -7820,7 +7806,17 @@ ec:Dopesheet rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditUnitCount
 ec:EditUnitCount rdf:type owl:Class ;
-                 rdfs:subClassOf ec:TimelinePoint ;
+                 rdfs:subClassOf ec:TimelinePoint ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:editUnit ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:long
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:editUnitNumbering ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:long
+                                 ] ;
                  dcterms:description "An edit unit can be a frame, a sample or a extend of time."@en ;
                  rdfs:label "Edit unit count"@en .
 
@@ -8547,7 +8543,17 @@ ec:NewsItem rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#NormalPlayTime
 ec:NormalPlayTime rdf:type owl:Class ;
-                  rdfs:subClassOf ec:TimelinePoint ;
+                  rdfs:subClassOf ec:TimelinePoint ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isoDuration ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:timeOfDay ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:time
+                                  ] ;
                   rdfs:label "Normal play time"@en .
 
 
@@ -9671,13 +9677,23 @@ ec:Thumbnail rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimeCode
 ec:TimeCode rdf:type owl:Class ;
-            rdfs:subClassOf ec:TimelinePoint ;
+            rdfs:subClassOf ec:TimelinePoint ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:timecodeExpression ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ;
             rdfs:label "Time code"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimecodeDropFrame
-ec:TimecodeDropFrame rdf:type owl:Class ;
-                     rdfs:subClassOf ec:TimelinePoint ;
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimeCodeDropFrame
+ec:TimeCodeDropFrame rdf:type owl:Class ;
+                     rdfs:subClassOf ec:TimelinePoint ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty ec:timecodeExpression ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:string
+                                     ] ;
                      rdfs:label "Time code with dropframe"@en .
 
 
@@ -9711,6 +9727,11 @@ ec:TimedTextSubtitleTargetFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TimelinePoint
 ec:TimelinePoint rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:equivalentTime ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:float
+                                 ] ;
                  dc:description "A precise time point  of a media resource"@en ;
                  rdfs:label "Timeline point"@en .
 
