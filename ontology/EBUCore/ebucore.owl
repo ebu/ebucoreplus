@@ -1199,14 +1199,6 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
 ec:hasAgentRelatedArtefact rdf:type owl:ObjectProperty .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedPicture
-ec:hasAgentRelatedPicture rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:Agent ;
-                          rdfs:range ec:Picture ;
-                          dc:description "A link/locator to a picture related to an Agent."@en ;
-                          rdfs:label "Related picture"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryData
 ec:hasAncillaryData rdf:type owl:ObjectProperty ;
                     rdfs:domain ec:Asset ;
@@ -2419,7 +2411,6 @@ ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPicture
 ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Asset ;
                      rdfs:range ec:Picture ;
                      dcterms:description "To associate a Picture with a BusinessObject or a Resource."@en ;
                      rdfs:label "Picture"@en .
@@ -6709,6 +6700,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedPicture ;
+                           owl:allValuesFrom ec:Picture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRole ;
                            owl:allValuesFrom ec:Role
                          ] ,
@@ -6981,6 +6976,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedLocation ;
                            owl:allValuesFrom ec:Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedPicture ;
+                           owl:allValuesFrom ec:Picture
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedResource ;
