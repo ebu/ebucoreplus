@@ -2282,7 +2282,7 @@ ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
 ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
                       rdfs:domain ec:Asset ;
                       rdfs:range ec:Artefact ;
-                      dcterms:description "To identify and Artefact related to a concept, EditorialObject or a Resource."@en ;
+                      dcterms:description "To identify an Artefact related to a concept, EditorialObject or a Resource."@en ;
                       rdfs:label "Related artefact"@en .
 
 
