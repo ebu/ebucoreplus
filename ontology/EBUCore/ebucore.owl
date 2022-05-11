@@ -1320,14 +1320,6 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
                        rdfs:label "Supplier"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedBusinessObject
-ec:hasAssetRelatedBusinessObject rdf:type owl:ObjectProperty ;
-                                 rdfs:domain ec:Asset ;
-                                 rdfs:range ec:BusinessObject ;
-                                 dcterms:description "To associate a BusinessObject with an Asset."@en ;
-                                 rdfs:label "Related business object"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedMediaResource
 ec:hasAssetRelatedMediaResource rdf:type owl:ObjectProperty ;
                                 rdfs:domain ec:Asset ;
@@ -1406,14 +1398,6 @@ ec:hasAudioTrack rdf:type owl:ObjectProperty ;
                  rdfs:range ec:AudioTrack ;
                  dcterms:description "To identify AudioTracks in the Resource."@en ;
                  rdfs:label "Audio track"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAwardRelatedBusinessObject
-ec:hasAwardRelatedBusinessObject rdf:type owl:ObjectProperty ;
-                                 rdfs:domain ec:Award ;
-                                 rdfs:range ec:BusinessObject ;
-                                 dcterms:description "To link a BusinessObject to an Award."@en ;
-                                 rdfs:label "Business object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasBeenAwarded
@@ -1742,14 +1726,6 @@ ec:hasEventRelatedArtefact rdf:type owl:ObjectProperty ;
                            rdfs:range ec:Artefact ;
                            dcterms:description "An artefact related to an Event."@en ;
                            rdfs:label "Artefact"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedBusinessObject
-ec:hasEventRelatedBusinessObject rdf:type owl:ObjectProperty ;
-                                 rdfs:domain ec:Event ;
-                                 rdfs:range ec:BusinessObject ;
-                                 dcterms:description "A BusinessObject relates to an Event."@en ;
-                                 rdfs:label "Business object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedResource
@@ -2285,6 +2261,13 @@ ec:hasRelatedAward rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Award ;
                    dcterms:description "To identify an Award related to EditorialObject."@en ;
                    rdfs:label "Related award"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedBusinessObject
+ec:hasRelatedBusinessObject rdf:type owl:ObjectProperty ;
+                            rdfs:range ec:BusinessObject ;
+                            dcterms:description "To associate a concept with an Asset."@en ;
+                            rdfs:label "Related business object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEditorialObject
@@ -6905,6 +6888,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedBusinessObject ;
+                           owl:allValuesFrom ec:BusinessObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEditorialObject ;
                            owl:allValuesFrom ec:EditorialObject
                          ] ,
@@ -7292,6 +7279,10 @@ ec:Award rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasLogo ;
                            owl:allValuesFrom ec:Logo
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedBusinessObject ;
+                           owl:allValuesFrom ec:BusinessObject
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
@@ -7995,6 +7986,10 @@ ec:Event rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedBusinessObject ;
+                           owl:allValuesFrom ec:BusinessObject
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
