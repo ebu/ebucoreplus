@@ -1320,14 +1320,6 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
                        rdfs:label "Supplier"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedMediaResource
-ec:hasAssetRelatedMediaResource rdf:type owl:ObjectProperty ;
-                                rdfs:domain ec:Asset ;
-                                rdfs:range ec:MediaResource ;
-                                dcterms:description "To identify a related MediaResource."@en ;
-                                rdfs:label "Asset related media resource"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedResource
 ec:hasAssetRelatedResource rdf:type owl:ObjectProperty ;
                            rdfs:comment "Do we need this?"@en ;
@@ -2314,9 +2306,8 @@ ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedMediaResource
 ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Asset ;
                            rdfs:range ec:MediaResource ;
-                           dcterms:description "To identify a MediaResource associated with an Asset or a BusinessObject or a PublicationEvent or another Resource."@en ;
+                           dcterms:description "To identify a MediaResource associated with a concept"@en ;
                            rdfs:label "Related media resource"@en .
 
 
@@ -6902,6 +6893,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedLocation ;
                            owl:allValuesFrom ec:Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedMediaResource ;
+                           owl:allValuesFrom ec:MediaResource
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
