@@ -2340,7 +2340,7 @@ ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEvent
 ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
                             owl:IrreflexiveProperty ;
-                   dcterms:description "an event assosiated with the consept"@en ;
+                   dcterms:description "an event associated with the concept"@en ;
                    rdfs:label "related event"@en .
 
 
