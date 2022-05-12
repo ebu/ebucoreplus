@@ -2270,6 +2270,13 @@ ec:hasRelatedBusinessObject rdf:type owl:ObjectProperty ;
                             rdfs:label "Related business object"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedCharacter
+ec:hasRelatedCharacter rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:Character ;
+                       dcterms:description "To identify a Character related to a concept"@en ;
+                       rdfs:label "Related character"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEditorialObject
 ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
                              rdfs:range ec:EditorialObject ;
@@ -2609,17 +2616,8 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
                  rdfs:label "Team member"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineRelatedCharacter
-ec:hasTextLineRelatedCharacter rdf:type owl:ObjectProperty ;
-                               rdfs:domain ec:TextLine ;
-                               rdfs:range ec:Character ;
-                               dcterms:description "To identify a Character related to a TextLine."@en ;
-                               rdfs:label "Text line related character"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTextLineSource
 ec:hasTextLineSource rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:TextLine ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To identify the source of a TextLine."@en ;
                      rdfs:label "Text line source"@en .
@@ -3853,7 +3851,6 @@ ec:artefactAvailability rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBoxHeight
 ec:artefactBoxHeight rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TextLine ;
                      rdfs:range xsd:nonNegativeInteger ;
                      dcterms:description "The height of the box containing the Artefact."@en ;
                      rdfs:label "Artefact box height."@en .
@@ -3861,7 +3858,6 @@ ec:artefactBoxHeight rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBoxTopLeftCornerLineNumber
 ec:artefactBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ec:TextLine ;
                                       rdfs:range xsd:nonNegativeInteger ;
                                       dcterms:description "The coordinates on a vertical axis of the position of the top left corner of the box containing the Artefact."@en ;
                                       rdfs:label "Artefact box top left corner Y position."@en .
@@ -3869,7 +3865,6 @@ ec:artefactBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBoxTopLeftCornerPixelNumber
 ec:artefactBoxTopLeftCornerPixelNumber rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ec:TextLine ;
                                        rdfs:range xsd:nonNegativeInteger ;
                                        dcterms:description "The coordinates on an horizontal axis of the position of the top left corner of the box containing the Artefact."@en ;
                                        rdfs:label "Artefact box top left corner X position."@en .
@@ -3877,7 +3872,6 @@ ec:artefactBoxTopLeftCornerPixelNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBoxWidth
 ec:artefactBoxWidth rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:TextLine ;
                     rdfs:range xsd:nonNegativeInteger ;
                     dcterms:description "The width of the box containing the Artefact."@en ;
                     rdfs:label "Artefact box width."@en .
@@ -5314,7 +5308,6 @@ ec:targetAudienceSystem rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineBoxHeight
 ec:textLineBoxHeight rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TextLine ;
                      rdfs:range xsd:nonNegativeInteger ;
                      dcterms:description "The height of the text box containing the TextLine."@en ;
                      rdfs:label "Text line box height."@en .
@@ -5322,7 +5315,6 @@ ec:textLineBoxHeight rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineBoxTopLeftCornerLineNumber
 ec:textLineBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain ec:TextLine ;
                                       rdfs:range xsd:nonNegativeInteger ;
                                       dcterms:description "The coordinates on a vertical axis of the position of the top left corner of the text box containing the TextLine."@en ;
                                       rdfs:label "Text line box top left corner Y position."@en .
@@ -5330,7 +5322,6 @@ ec:textLineBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineBoxTopLeftCornerPixelNumber
 ec:textLineBoxTopLeftCornerPixelNumber rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain ec:TextLine ;
                                        rdfs:range xsd:nonNegativeInteger ;
                                        dcterms:description "The coordinates on an horizontal axis of the position of the top left corner of the text box containing the TextLine."@en ;
                                        rdfs:label "Text line box top left Coner X position."@en .
@@ -5338,7 +5329,6 @@ ec:textLineBoxTopLeftCornerPixelNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineBoxWidth
 ec:textLineBoxWidth rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:TextLine ;
                     rdfs:range xsd:nonNegativeInteger ;
                     dcterms:description "The width of the text box containing the TextLine."@en ;
                     rdfs:label "Text line box width."@en .
@@ -5346,7 +5336,6 @@ ec:textLineBoxWidth rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineContent
 ec:textLineContent rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:TextLine ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "To provide the content of a text line."@en ;
                    rdfs:label "Text line"@en .
@@ -5354,7 +5343,6 @@ ec:textLineContent rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineOrder
 ec:textLineOrder rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:TextLine ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "The order in which a text line can be found e.g. in a scene."@en ;
                  rdfs:label "Text line order"@en .
@@ -9565,6 +9553,10 @@ ec:TextLine rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedCharacter ;
+                              owl:allValuesFrom ec:Character
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedScene ;
                               owl:allValuesFrom ec:Scene
                             ] ,
@@ -9572,6 +9564,11 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onProperty ec:end ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:TimelinePoint
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasTextLineSource ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
@@ -9582,6 +9579,54 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onProperty ec:start ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:TimelinePoint
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactBoxHeight ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactBoxTopLeftCornerLineNumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactBoxTopLeftCornerPixelNumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactBoxWidth ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineBoxHeight ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineBoxTopLeftCornerLineNumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineBoxTopLeftCornerPixelNumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineBoxWidth ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineContent ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:textLineOrder ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                             ] ;
             dcterms:description "To provide lines of text extracted from or additional to the resource."@en ;
             rdfs:label "Text line"@en .
