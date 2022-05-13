@@ -62,7 +62,7 @@
                                                                         "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate BusinessObjects or Resources or Agents) and subproperties."@en ,
                                                                         "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
                                                          dc:publisher "European Broadcasting Union (EBU)"@ch ;
-                                                         dc:rights "Copyright 2021 EBU"@en ;
+                                                         dc:rights "Copyright 2022 EBU"@en ;
                                                          vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" ;
                                                          spin:imports <http://topbraid.org/spin/owlrl-all> ;
                                                          owl:backwardCompatibleWith <http://www.ebu.ch/metadata/ontologies/ebucore/20182011/ebucore.rdf> ;
@@ -800,6 +800,13 @@ ebuccdm:usesProductionDevice rdf:type owl:ObjectProperty ;
       ProductionJob."""@en ;
                              rdfs:label "Production device"@en ,
                                         "Uses production device"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationCurationDateTime
+ec:annotationCurationDateTime rdf:type owl:ObjectProperty ;
+                              rdfs:range time:Instant ;
+                              dcterms:description "To provide the date and time when an Annotation has been reviewed."@en ;
+                              rdfs:label "Annotation curation date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesOutOf
@@ -3783,18 +3790,9 @@ ec:animalPassport rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence
 ec:annotationConfidence rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Annotation ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description "To estimate the confidence in an Annotation."@en ;
                         rdfs:label "Annotation confidence"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationCurationDateTime
-ec:annotationCurationDateTime rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ec:Annotation ;
-                              rdfs:range xsd:dateTime ;
-                              dcterms:description "To provide the date and time when an Annotation has been reviewed."@en ;
-                              rdfs:label "Annotation curation date & time"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency
@@ -6703,6 +6701,11 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationCurationDateTime ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass time:Instant
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasLocation ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:Location
@@ -6714,6 +6717,10 @@ ec:Annotation rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:name ;
                                 owl:allValuesFrom rdfs:Literal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationConfidence ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ;
               dcterms:description "A class used to annotate Assets."@en ;
               rdfs:label "Annotation"@en .
