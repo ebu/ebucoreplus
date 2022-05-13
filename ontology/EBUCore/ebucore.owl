@@ -1866,7 +1866,6 @@ ec:hasLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationCode
 ec:hasLocationCode rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Location ;
                    rdfs:range ec:LocationCode ;
                    dcterms:description "To give the code of a Location."@en ;
                    rdfs:label "Locationcode"@en .
@@ -1874,7 +1873,6 @@ ec:hasLocationCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationPicture
 ec:hasLocationPicture rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Location ;
                       rdfs:range ec:Picture ;
                       dcterms:description "A picture associated with a Location."@en ;
                       rdfs:label "Picture"@en .
@@ -1882,7 +1880,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedResource
 ec:hasLocationRelatedResource rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:Location ;
                               rdfs:range ec:MediaResource ;
                               dcterms:description "To identify a Resource associated with a Location."@en ;
                               rdfs:label "Related resource"@en .
@@ -3122,7 +3119,6 @@ ec:linkToSticker rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationRegion
 ec:locationRegion rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Location ;
                   rdfs:range ec:RegionCode ;
                   dcterms:description "To provide a description of a particular region assocoated to the Location."@en ;
                   rdfs:label "Region"@en .
@@ -3130,7 +3126,6 @@ ec:locationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationTimeType
 ec:locationTimeType rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Location ;
                     rdfs:range ec:LocationTimeType ;
                     dcterms:description "A type of time at a Location."@en ;
                     rdfs:label "Location type"@en .
@@ -4516,7 +4511,6 @@ ec:live rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressArea
 ec:locationAddressArea rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Location ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description """To provide the Area part of an
             Adrress."""@en ;
@@ -4525,7 +4519,6 @@ ec:locationAddressArea rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressCountry
 ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:Location ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description """To provide the country name and or country
             code."""@en ;
@@ -4534,7 +4527,6 @@ ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLine
 ec:locationAddressLine rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Location ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description "To provide an address line."@en ;
                        rdfs:label "Adress line"@en .
@@ -4542,7 +4534,6 @@ ec:locationAddressLine rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLocality
 ec:locationAddressLocality rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ec:Location ;
                            rdfs:range rdfs:Literal ;
                            dcterms:description """To provide the name of a city, village,
             etc."""@en ;
@@ -4551,7 +4542,6 @@ ec:locationAddressLocality rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressPostalCode
 ec:locationAddressPostalCode rdf:type owl:DatatypeProperty ;
-                             rdfs:domain ec:Location ;
                              rdfs:range rdfs:Literal ;
                              dcterms:description """To provide an address postal
             code."""@en ;
@@ -4560,7 +4550,6 @@ ec:locationAddressPostalCode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAltitude
 ec:locationAltitude rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Location ;
                     rdfs:range xsd:float ;
                     dcterms:description """To define the altitude of a Location in
             meters."""@en ;
@@ -4569,7 +4558,6 @@ ec:locationAltitude rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationCoordinateSystemName
 ec:locationCoordinateSystemName rdf:type owl:DatatypeProperty ;
-                                rdfs:domain ec:Location ;
                                 rdfs:range rdfs:Literal ;
                                 dcterms:description """To specify the name of the gps coordinate
             system used for the Location."""@en ;
@@ -4578,7 +4566,6 @@ ec:locationCoordinateSystemName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationLatitude
 ec:locationLatitude rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Location ;
                     rdfs:range xsd:float ;
                     dcterms:description "The latitude of the Location."@en ;
                     rdfs:label "Latitude"@en .
@@ -4586,7 +4573,6 @@ ec:locationLatitude rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationLongitude
 ec:locationLongitude rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Location ;
                      rdfs:range xsd:float ;
                      dcterms:description """To define the longitude of the
             Location."""@en ;
@@ -8278,6 +8264,18 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocationCode ;
+                              owl:allValuesFrom ec:LocationCode
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocationPicture ;
+                              owl:allValuesFrom ec:Picture
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocationRelatedResource ;
+                              owl:allValuesFrom ec:Resource
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedArtefact ;
                               owl:allValuesFrom ec:Artefact
                             ] ,
@@ -8290,12 +8288,61 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationRegion ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:RegionCode
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationTimeType ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:LocationTimeType
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressLine ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressLocality ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressPostalCode ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:name ;
                               owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressArea ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressCountry ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAltitude ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:float
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationCoordinateSystemName ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationLatitude ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:float
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationLongitude ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:float
                             ] ;
             dcterms:description "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc. A «Location» is used to define the spatial coverage of the story or recording locations like studios or in the field, associated with the EditorialObjects (or Part of EditorialObjects)."@en ,
                                 """Ein Ort, der mit einer Medienressource verknüpft ist, z.B. darin dargestellt (auch fiktional) oder dort hergestellt (Drehort), etc.
