@@ -1237,7 +1237,6 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationBody
 ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Annotation ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To define the Annotation instance of an Agent."@en ;
                      rdfs:label "Annotation body"@en .
@@ -1245,7 +1244,6 @@ ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Annotation ;
                        rdfs:range owl:Thing ;
                        dcterms:description "To define the target object to which the Annotation applies."@en ;
                        rdfs:label "Annotation target"@en .
@@ -2773,7 +2771,6 @@ ec:isAnimalOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource
 ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:Annotation ;
                             rdfs:range ec:MediaResource ;
                             dcterms:description "To link an Annotation to a MediaResource."@en ;
                             rdfs:label "Media resource"@en .
@@ -2781,7 +2778,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotationBy
 ec:isAnnotationBy rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Annotation ;
                   rdfs:range ec:Agent ;
                   dcterms:description "To link an Annotation to an Agent who created it."@en ;
                   rdfs:label "Agent"@en .
@@ -3795,9 +3791,15 @@ ec:annotationConfidence rdf:type owl:DatatypeProperty ;
                         rdfs:label "Annotation confidence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationPurpose
+ec:annotationPurpose rdf:type owl:DatatypeProperty ;
+                     rdfs:range rdfs:Literal ;
+                     dcterms:description "To define the purpose of an Annotation."@en ;
+                     rdfs:label "Annotation confidence"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency
 ec:annotationSaliency rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Annotation ;
                       rdfs:range rdfs:Literal ;
                       dcterms:description "To estimate the saliency of an Annotation."@en ;
                       rdfs:label "Annotation saliency"@en .
@@ -4400,14 +4402,6 @@ ec:givenName rdf:type owl:DatatypeProperty ;
              rdfs:range rdfs:Literal ;
              dcterms:description "The given name of a Person."@en ;
              rdfs:label "Given name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose
-ec:hasAnnotationPurpose rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Annotation ;
-                        rdfs:range xsd:string ;
-                        dcterms:description "To define the purpose of an Annotation."@en ;
-                        rdfs:label "Annotation confidence"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
@@ -6685,6 +6679,14 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:someValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAnnotationBody ;
+                                owl:allValuesFrom ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAnnotationTarget ;
+                                owl:allValuesFrom owl:Thing
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasIdentifier ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
@@ -6711,6 +6713,16 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onClass ec:Location
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isAnnotatedMediaResource ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:MediaResource
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isAnnotationBy ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:description ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ,
@@ -6720,6 +6732,14 @@ ec:Annotation rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:annotationConfidence ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationPurpose ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationSaliency ;
                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ;
               dcterms:description "A class used to annotate Assets."@en ;
