@@ -2255,14 +2255,6 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
                    rdfs:label "related event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedImage
-ec:hasRelatedImage rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Asset ;
-                   rdfs:range ec:Image ;
-                   dcterms:description "To associate an Image with a BusinessObject."@en ;
-                   rdfs:label "Image"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedLocation
 ec:hasRelatedLocation rdf:type owl:ObjectProperty .
 
@@ -8161,14 +8153,6 @@ ec:IdentifierType rdf:type owl:Class ;
                   rdfs:subClassOf skos:Concept ;
                   dcterms:description "To define a type of identifier."@en ;
                   rdfs:label "Identifier type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Image
-ec:Image rdf:type owl:Class ;
-         rdfs:subClassOf ec:BusinessObject ;
-         dcterms:description """A still image / thumbnail / key frame / logo
-            related to the media resource or being the media resource itself."""@en ;
-         rdfs:label "Image"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ImageCodec
