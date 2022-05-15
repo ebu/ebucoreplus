@@ -1878,13 +1878,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
                       rdfs:label "Picture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationRelatedResource
-ec:hasLocationRelatedResource rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:MediaResource ;
-                              dcterms:description "To identify a Resource associated with a Location."@en ;
-                              rdfs:label "Related resource"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:range ec:Locator ;
@@ -8272,16 +8265,16 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Picture
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasLocationRelatedResource ;
-                              owl:allValuesFrom ec:Resource
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedArtefact ;
                               owl:allValuesFrom ec:Artefact
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedEvent ;
                               owl:allValuesFrom ec:Event
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedResource ;
+                              owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
