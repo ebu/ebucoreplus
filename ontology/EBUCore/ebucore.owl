@@ -1284,14 +1284,6 @@ ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
                                       rdfs:label "Associated physical resource"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedResource
-ec:hasArtefactRelatedResource rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:Artefact ;
-                              rdfs:range ec:MediaResource ;
-                              dcterms:description "To associate an Artefact/Prop or else with a resource."@en ;
-                              rdfs:label "Associated resource"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRetailer
 ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
                        rdfs:domain ec:Artefact ;
@@ -1306,12 +1298,6 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
                        rdfs:range ec:Agent ;
                        dcterms:description "To identify a supplier of an Artefact."@en ;
                        rdfs:label "Supplier"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssetRelatedResource
-ec:hasAssetRelatedResource rdf:type owl:ObjectProperty ;
-                           rdfs:comment "Do we need this?"@en ;
-                           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
@@ -1698,14 +1684,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
               rdfs:range ec:Episode ;
               dcterms:description "To identify Episodes in a Series"@en ;
               rdfs:label "Episode"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedResource
-ec:hasEventRelatedResource rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Event ;
-                           rdfs:range ec:MediaResource ;
-                           dcterms:description "A Resource relates to an Event."@en ;
-                           rdfs:label "Resource"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasExploitationIssues
@@ -2315,7 +2293,6 @@ ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource
 ec:hasRelatedResource rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Asset ;
                       rdfs:range ec:Resource ;
                       dcterms:description "To identify a Resource associated with an Asset or a BusinessObject or a PublicationEvent or another Resource."@en ;
                       rdfs:label "Related resource"@en .
@@ -6741,16 +6718,16 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom ec:PhysicalResource
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasArtefactRelatedResource ;
-                              owl:allValuesFrom ec:Resource
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedEditorialObject ;
                               owl:allValuesFrom ec:EditorialObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedResource ;
+                              owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:objectType ;
@@ -6824,10 +6801,6 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAccessConditions ;
                            owl:allValuesFrom ec:AccessConditions
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasAssetRelatedResource ;
-                           owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
@@ -7972,6 +7945,10 @@ ec:Event rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
                            owl:allValuesFrom ec:Event
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedResource ;
+                           owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
