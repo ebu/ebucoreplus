@@ -1129,6 +1129,20 @@ ec:formatVersionId rdf:type owl:ObjectProperty ;
                    rdfs:label "Format version identifier"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#geoBlockingBlacklist
+ec:geoBlockingBlacklist rdf:type owl:ObjectProperty ;
+                        rdfs:range skos:Concept ;
+                        dcterms:description "checking a users IP-address against a blacklist"@en ;
+                        rdfs:label "geo-blocking blacklist"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#geoBlockingWhitelist
+ec:geoBlockingWhitelist rdf:type owl:ObjectProperty ;
+                        rdfs:range skos:Concept ;
+                        dcterms:description "checking a users IP-address against a whitelist"@en ;
+                        rdfs:label "geo-blocking whitelist"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:isCoveredBy ;
@@ -4304,14 +4318,6 @@ ec:gender rdf:type owl:DatatypeProperty ;
           rdfs:label "Gender"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#geoBlocking
-ec:geoBlocking rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:AccessConditions ;
-               rdfs:range rdfs:Literal ;
-               dcterms:description "To identify geographical areas where content cannor be accessed."@en ;
-               rdfs:label "Geographical blocking"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#givenName
 ec:givenName rdf:type owl:DatatypeProperty ;
              rdfs:range rdfs:Literal ;
@@ -6379,7 +6385,15 @@ ebuccdm:Stage rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AccessConditions
 ec:AccessConditions rdf:type owl:Class ;
-                    rdfs:subClassOf ec:Rights ;
+                    rdfs:subClassOf ec:Rights ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:geoBlockingBlacklist ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:geoBlockingWhitelist ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ;
                     dcterms:description "The conditions under which content can be accessed."@en ;
                     rdfs:label "Access conditions"@en .
 
