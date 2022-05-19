@@ -3938,7 +3938,6 @@ ec:audioTrackNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardCeremony
 ec:awardCeremony rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Award ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To provide an Award ceremony name."@en ;
                  rdfs:label "Award ceremony"@en .
@@ -7309,6 +7308,10 @@ ec:Award rdf:type owl:Class ;
                            owl:someValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasBeenAwarded ;
+                           owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
@@ -7340,6 +7343,10 @@ ec:Award rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:name ;
                            owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:awardCeremony ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
          dcterms:description "To describe an Award and associated information."@en ;
          rdfs:label "Award"@en .
