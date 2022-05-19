@@ -6945,10 +6945,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:UsageRestrictions
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isInstantiatedBy ;
-                           owl:allValuesFrom ec:MediaResource
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isVersionOf ;
                            owl:allValuesFrom ec:Asset
                          ] ,
@@ -7834,6 +7830,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTimelineTrack ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isInstantiatedBy ;
+                                     owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
@@ -9193,8 +9193,7 @@ ec:Relation_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
 ec:Resource rdf:type owl:Class ;
-            rdfs:subClassOf ec:Asset ,
-                            [ rdf:type owl:Restriction ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasLocator ;
                               owl:someValuesFrom ec:Locator
                             ] ,
@@ -9211,11 +9210,19 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Format
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasIdentifier ;
+                              owl:allValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageId ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectType ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -9229,6 +9236,29 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:duration ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:TimelinePoint
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:end ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:TimelinePoint
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:start ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:TimelinePoint
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:description ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:name ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:fileName ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
@@ -9237,6 +9267,11 @@ ec:Resource rdf:type owl:Class ;
                               owl:onProperty ec:fileSize ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:double
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:resolution ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] ;
             dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Ressource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Ressource). Die Ressource hat einen Locator, der angibt, wo auf die Ressource zugegriffen werden kann."@de ;
