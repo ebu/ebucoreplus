@@ -62,7 +62,7 @@
                                                                         "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate BusinessObjects or Resources or Agents) and subproperties."@en ,
                                                                         "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
                                                          dc:publisher "European Broadcasting Union (EBU)"@ch ;
-                                                         dc:rights "Copyright 2021 EBU"@en ;
+                                                         dc:rights "Copyright 2022 EBU"@en ;
                                                          vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" ;
                                                          spin:imports <http://topbraid.org/spin/owlrl-all> ;
                                                          owl:backwardCompatibleWith <http://www.ebu.ch/metadata/ontologies/ebucore/20182011/ebucore.rdf> ;
@@ -802,6 +802,13 @@ ebuccdm:usesProductionDevice rdf:type owl:ObjectProperty ;
                                         "Uses production device"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationCurationDateTime
+ec:annotationCurationDateTime rdf:type owl:ObjectProperty ;
+                              rdfs:range time:Instant ;
+                              dcterms:description "To provide the date and time when an Annotation has been reviewed."@en ;
+                              rdfs:label "Annotation curation date & time"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesOutOf
 ec:appliesOutOf rdf:type owl:ObjectProperty ;
                 rdfs:domain ec:Rating ;
@@ -1222,17 +1229,15 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                  rdfs:label "Animal role"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationBody
-ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Annotation ;
-                     rdfs:range ec:Agent ;
-                     dcterms:description "To define the Annotation instance of an Agent."@en ;
-                     rdfs:label "Annotation body"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationAgent
+ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:Agent ;
+                      dcterms:description "To define the Annotation instance of an Agent."@en ;
+                      rdfs:label "Annotation agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Annotation ;
                        rdfs:range owl:Thing ;
                        dcterms:description "To define the target object to which the Annotation applies."@en ;
                        rdfs:label "Annotation target"@en .
@@ -2710,7 +2715,6 @@ ec:isAnimalOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource
 ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:Annotation ;
                             rdfs:range ec:MediaResource ;
                             dcterms:description "To link an Annotation to a MediaResource."@en ;
                             rdfs:label "Media resource"@en .
@@ -2718,7 +2722,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotationBy
 ec:isAnnotationBy rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Annotation ;
                   rdfs:range ec:Agent ;
                   dcterms:description "To link an Annotation to an Agent who created it."@en ;
                   rdfs:label "Agent"@en .
@@ -3704,23 +3707,20 @@ ec:animalPassport rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence
 ec:annotationConfidence rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Annotation ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description "To estimate the confidence in an Annotation."@en ;
                         rdfs:label "Annotation confidence"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationCurationDateTime
-ec:annotationCurationDateTime rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ec:Annotation ;
-                              rdfs:range xsd:dateTime ;
-                              dcterms:description "To provide the date and time when an Annotation has been reviewed."@en ;
-                              rdfs:label "Annotation curation date & time"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationPurpose
+ec:annotationPurpose rdf:type owl:DatatypeProperty ;
+                     rdfs:range rdfs:Literal ;
+                     dcterms:description "To define the purpose of an Annotation."@en ;
+                     rdfs:label "Annotation confidence"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency
 ec:annotationSaliency rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ec:Annotation ;
                       rdfs:range rdfs:Literal ;
                       dcterms:description "To estimate the saliency of an Annotation."@en ;
                       rdfs:label "Annotation saliency"@en .
@@ -4317,14 +4317,6 @@ ec:givenName rdf:type owl:DatatypeProperty ;
              rdfs:range rdfs:Literal ;
              dcterms:description "The given name of a Person."@en ;
              rdfs:label "Given name"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose
-ec:hasAnnotationPurpose rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Annotation ;
-                        rdfs:range xsd:string ;
-                        dcterms:description "To define the purpose of an Annotation."@en ;
-                        rdfs:label "Annotation confidence"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
@@ -6719,6 +6711,14 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:someValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAnnotationAgent ;
+                                owl:allValuesFrom ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAnnotationTarget ;
+                                owl:allValuesFrom owl:Thing
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasIdentifier ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
@@ -6735,9 +6735,24 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationCurationDateTime ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass time:Instant
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasLocation ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:Location
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isAnnotatedMediaResource ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:MediaResource
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isAnnotationBy ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:description ;
@@ -6746,6 +6761,18 @@ ec:Annotation rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:name ;
                                 owl:allValuesFrom rdfs:Literal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationConfidence ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationPurpose ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:annotationSaliency ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ;
               dcterms:description "A class used to annotate Assets."@en ;
               rdfs:label "Annotation"@en .
