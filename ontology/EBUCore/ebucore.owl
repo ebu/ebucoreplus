@@ -1141,7 +1141,6 @@ ec:hasAffiliation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentBiography
 ec:hasAgentBiography rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Agent ;
                      rdfs:range ec:Biography ;
                      dcterms:description "To provide a biography of an Agent."@en ;
                      rdfs:label "Biography"@en .
@@ -1149,7 +1148,6 @@ ec:hasAgentBiography rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentCountryOfResidence
 ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:Agent ;
                               rdfs:range ec:CountryCode ;
                               dcterms:description "To indicate the place of residence of an Agent."@en ;
                               rdfs:label "Country of residence"@en .
@@ -1157,7 +1155,6 @@ ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentLanguage
 ec:hasAgentLanguage rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Agent ;
                     rdfs:range ec:Language ;
                     dcterms:description "To provide the language(s) of a Contact/person."@en ;
                     rdfs:label "Language"@en .
@@ -1165,7 +1162,6 @@ ec:hasAgentLanguage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentMember
 ec:hasAgentMember rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Agent ;
                   rdfs:range ec:Agent ;
                   dcterms:description "To associate an Agent to another Agent e.g. a Team."@en ;
                   rdfs:label "Agent member"@en .
@@ -1173,7 +1169,6 @@ ec:hasAgentMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentNationality
 ec:hasAgentNationality rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Agent ;
                        rdfs:range ec:CountryCode ;
                        dcterms:description "To provide the nationality of an Agent."@en ;
                        rdfs:label "Nationality"@en .
@@ -1181,7 +1176,6 @@ ec:hasAgentNationality rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentPlaceOfResidence
 ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:Agent ;
                             rdfs:range ec:Location ;
                             dcterms:description "To indicate the place of residence of an Agent."@en ;
                             rdfs:label "Place of residence"@en .
@@ -1302,7 +1296,6 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
 ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Agent ;
                          rdfs:range ec:Artefact ;
                          dc:description "An Artefact related to an Agent."@en ;
                          rdfs:label "Related Artefact"@en .
@@ -1368,7 +1361,6 @@ ec:hasAudioTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasBeenAwarded
 ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Agent ;
                   rdfs:range ec:Award ;
                   dcterms:description "The Award gievn to an Agent"@en ;
                   rdfs:label "Agent"@en .
@@ -1411,7 +1403,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastRole
 ec:hasCastRole rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Agent ;
                rdfs:range ec:Role ;
                dcterms:description """To define the role of an Agent (Contact/person
             or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
@@ -1585,7 +1576,6 @@ ec:hasCrewMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCrewRole
 ec:hasCrewRole rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Agent ;
                rdfs:range ec:Role ;
                dcterms:description """To define the role of an Agent (Contact/person
             or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the BusinessObject."""@en ;
@@ -2349,14 +2339,13 @@ ec:hasRightsHolder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsTargetService
 ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
-                          dcterms:description "Range: string or Service."@en ,
-                                              "To identify a Service associated to Rights."@en ;
+                          rdfs:range ec:Service ;
+                          dcterms:description "To identify a Service associated to Rights."@en ;
                           rdfs:label "Target service"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRole
 ec:hasRole rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Agent ;
            rdfs:range ec:Role ;
            dcterms:description """To define the role of an Agent (Contact/person
             or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
@@ -2434,7 +2423,6 @@ ec:hasStaffMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffRole
 ec:hasStaffRole rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Agent ;
                 rdfs:range ec:Role ;
                 dcterms:description """To define the role of an Agent (Contact/person
             or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole or hasStaffRole."""@en ;
@@ -2711,7 +2699,6 @@ ec:instantiates rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAgent
 ec:isAgent rdf:type owl:ObjectProperty ,
                     owl:IrreflexiveProperty ;
-           rdfs:domain ec:Agent ;
            rdfs:range ec:Agent ;
            dcterms:description "Range: string or Agent."@en ,
                                "To identify a related Agent. I.e. a person related to a call for a function on a production plan."@en .
@@ -2766,7 +2753,6 @@ ec:isBrand rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCharacter
 ec:isCharacter rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Agent ;
                rdfs:range ec:Character ;
                dcterms:description "To identify a character."@en ;
                rdfs:label "Fictional character."@en .
@@ -3550,7 +3536,6 @@ ec:age rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDbpedia
 ec:agentDbpedia rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf ec:agentLinkedData ;
-                rdfs:domain ec:Agent ;
                 rdfs:range xsd:anyURI ;
                 dcterms:description "A link to a DBPedia page."@en ;
                 rdfs:label "DBPedia" .
@@ -3558,8 +3543,7 @@ ec:agentDbpedia rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentEmailAddress
 ec:agentEmailAddress rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Agent ;
-                     rdfs:range rdfs:Literal ;
+                     rdfs:range xsd:string ;
                      dcterms:description "To provide an email address."@en ;
                      rdfs:label "email"@en .
 
@@ -3567,14 +3551,12 @@ ec:agentEmailAddress rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFacebook
 ec:agentFacebook rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf ec:agentSocialMedia ;
-                 rdfs:domain ec:Agent ;
                  rdfs:range xsd:anyURI ;
                  rdfs:label "Facebook"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFee
 ec:agentFee rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Agent ;
             rdfs:range rdfs:Literal ;
             dcterms:description "The fee of an Agent."@en ;
             rdfs:label "Agent fee"@en .
@@ -3583,7 +3565,6 @@ ec:agentFee rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFlickr
 ec:agentFlickr rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf ec:agentSocialMedia ;
-               rdfs:domain ec:Agent ;
                rdfs:range xsd:anyURI ;
                rdfs:label "Flickr"@en .
 
@@ -3591,7 +3572,6 @@ ec:agentFlickr rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentImdb
 ec:agentImdb rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf ec:agentLinkedData ;
-             rdfs:domain ec:Agent ;
              rdfs:range xsd:anyURI ;
              dcterms:description "A link to an imdb page."@en ;
              rdfs:label "Wikidata" .
@@ -3600,14 +3580,12 @@ ec:agentImdb rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentInstagram
 ec:agentInstagram rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:agentSocialMedia ;
-                  rdfs:domain ec:Agent ;
                   rdfs:range xsd:anyURI ;
                   rdfs:label "Instagram"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentLinkedData
 ec:agentLinkedData rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Agent ;
                    rdfs:range xsd:anyURI ;
                    dcterms:description "Range: a URL or URI."@en ,
                                        "To provide a hook to linked data."@en ;
@@ -3617,7 +3595,6 @@ ec:agentLinkedData rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentLinkedIn
 ec:agentLinkedIn rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf ec:agentSocialMedia ;
-                 rdfs:domain ec:Agent ;
                  rdfs:range xsd:anyURI ;
                  rdfs:label "LinkedIn"@en .
 
@@ -3625,8 +3602,7 @@ ec:agentLinkedIn rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentMobileTelephoneNumber
 ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf ec:agentTelephoneNumber ;
-                              rdfs:domain ec:Agent ;
-                              rdfs:range rdfs:Literal ;
+                              rdfs:range xsd:string ;
                               dcterms:description """To provide the mobile telephone number of an
             Agent (Contact/Person or organisation)"""@en ;
                               rdfs:label "Mobile"@en .
@@ -3634,7 +3610,6 @@ ec:agentMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentPreviousName
 ec:agentPreviousName rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Agent ;
                      rdfs:range rdfs:Literal ;
                      dcterms:description "To provide the previous name of a Contact/Person."@en ;
                      rdfs:label "Previous name"@en .
@@ -3643,7 +3618,6 @@ ec:agentPreviousName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentRelatedInformationLink
 ec:agentRelatedInformationLink rdf:type owl:DatatypeProperty ;
                                rdfs:subPropertyOf ec:agentRelatedLink ;
-                               rdfs:domain ec:Agent ;
                                rdfs:range xsd:anyURI ;
                                dcterms:description """To provide a link to a web resource containing
             information related to an Agent (Contact/Person or Organisation)."""@en ;
@@ -3652,7 +3626,6 @@ ec:agentRelatedInformationLink rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentRelatedLink
 ec:agentRelatedLink rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Agent ;
                     rdfs:range xsd:anyURI ;
                     dcterms:description "To provide a link to e.g. a web resource related to an Agent."@en ;
                     rdfs:label "Related link"@en .
@@ -3661,7 +3634,6 @@ ec:agentRelatedLink rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentRelatedPressLink
 ec:agentRelatedPressLink rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ec:agentRelatedLink ;
-                         rdfs:domain ec:Agent ;
                          rdfs:range xsd:anyURI ;
                          dcterms:description """To provide a link to a web resource containing
             information related to an Agent (Contact/Person or Organisation)."""@en ;
@@ -3670,7 +3642,6 @@ ec:agentRelatedPressLink rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentSocialMedia
 ec:agentSocialMedia rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Agent ;
                     rdfs:range xsd:anyURI ;
                     dcterms:description "Links to an Agent's social media."@en ;
                     rdfs:label "Socail media"@en .
@@ -3678,8 +3649,7 @@ ec:agentSocialMedia rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTelephoneNumber
 ec:agentTelephoneNumber rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Agent ;
-                        rdfs:range rdfs:Literal ;
+                        rdfs:range xsd:string ;
                         dcterms:description """To provide the telephone number of an Agent
             (Contact/Person or Organisation)."""@en ;
                         rdfs:label "Telephone"@en .
@@ -3688,14 +3658,12 @@ ec:agentTelephoneNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTwitter
 ec:agentTwitter rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf ec:agentSocialMedia ;
-                rdfs:domain ec:Agent ;
                 rdfs:range xsd:anyURI ;
                 rdfs:label "Twitter"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentWebHomepage
 ec:agentWebHomepage rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Agent ;
                     rdfs:range xsd:anyURI ;
                     dcterms:description """To provide the address of the webpage of an
             Agent (Contact/Person or Organisation)."""@en ;
@@ -3705,7 +3673,6 @@ ec:agentWebHomepage rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentWikidata
 ec:agentWikidata rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf ec:agentLinkedData ;
-                 rdfs:domain ec:Agent ;
                  rdfs:range xsd:anyURI ;
                  dcterms:description "A link to a wikidata page."@en ;
                  rdfs:label "Wikidata" .
@@ -3714,7 +3681,6 @@ ec:agentWikidata rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentWikipedia
 ec:agentWikipedia rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:agentSocialMedia ;
-                  rdfs:domain ec:Agent ;
                   rdfs:range xsd:anyURI ;
                   rdfs:label "Wikipedia"@en .
 
@@ -4130,7 +4096,6 @@ ec:dimensions rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#displayOrder
 ec:displayOrder rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Agent ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "The order in which an Agent appears in a scene."@en ;
                 rdfs:label "Display order"@en .
@@ -4729,7 +4694,7 @@ ec:officeEmailAddress rdf:type owl:DatatypeProperty ;
 ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                rdfs:subPropertyOf ec:agentTelephoneNumber ;
                                rdfs:domain ec:Person ;
-                               rdfs:range rdfs:Literal ;
+                               rdfs:range xsd:string ;
                                dcterms:description """To provide the office mobile telephone number of an
             Agent (Contact/Person)."""@en ;
                                rdfs:label "Telephone (private)"@en .
@@ -4739,7 +4704,7 @@ ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ec:officeTelephoneNumber rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ec:agentTelephoneNumber ;
                          rdfs:domain ec:Person ;
-                         rdfs:range rdfs:Literal ;
+                         rdfs:range xsd:string ;
                          dcterms:description """To provide the office telephone number of an
             Agent (Contact/Person)."""@en ;
                          rdfs:label "Telephone (private)"@en .
@@ -4884,7 +4849,7 @@ ec:privateHomepage rdf:type owl:DatatypeProperty ;
 ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf ec:agentTelephoneNumber ;
                                 rdfs:domain ec:Person ;
-                                rdfs:range rdfs:Literal ;
+                                rdfs:range xsd:string ;
                                 dcterms:description """To provide the private mobile telephone number of an
             Agent (Contact/Person)."""@en ;
                                 rdfs:label "Telephone (private)"@en .
@@ -4894,7 +4859,7 @@ ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ec:privateTelephoneNumber rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf ec:agentTelephoneNumber ;
                           rdfs:domain ec:Person ;
-                          rdfs:range rdfs:Literal ;
+                          rdfs:range xsd:string ;
                           dcterms:description """To provide the private telephone number of an
             Agent (Contact/Person)."""@en ;
                           rdfs:label "Telephone (private)"@en .
@@ -6529,8 +6494,48 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:OnStagePosition
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentBiography ;
+                           owl:allValuesFrom ec:Biography
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentCountryOfResidence ;
+                           owl:allValuesFrom ec:CountryCode
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentLanguage ;
+                           owl:allValuesFrom ec:Language
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentMember ;
+                           owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentNationality ;
+                           owl:allValuesFrom ec:CountryCode
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentPlaceOfResidence ;
+                           owl:allValuesFrom ec:Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAssociatedArtefact ;
+                           owl:allValuesFrom ec:Artefact
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasBeenAwarded ;
+                           owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCastRole ;
+                           owl:allValuesFrom ec:Role
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCrewRole ;
+                           owl:allValuesFrom ec:Role
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasGroupMember ;
@@ -6553,8 +6558,16 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Role
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasStaffRole ;
+                           owl:allValuesFrom ec:Role
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isAgent ;
                            owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isCharacter ;
+                           owl:allValuesFrom ec:Character
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -6565,12 +6578,96 @@ ec:Agent rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentDbpedia ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentEmailAddress ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFacebook ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFee ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFlickr ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentImdb ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentInstagram ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentLinkedData ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentLinkedIn ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentMobileTelephoneNumber ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentPreviousName ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentRelatedInformationLink ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentRelatedLink ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentRelatedPressLink ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentSocialMedia ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentTelephoneNumber ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentTwitter ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentWebHomepage ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentWikidata ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentWikipedia ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
                            owl:allValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:name ;
                            owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:displayOrder ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
          dcterms:description "An «Agent» is either a Contact/Person or Organisation to which is associated a Role corresponding to the contribution the «Agent» brings to the realisation of a MediaResource or EditorialObject."@en ,
                              "Ein Akteur ist entweder eine Kontaktperson oder eine Organisation, deren Beitrag zur Realisierung eines Inhaltsobjektes oder eines Medienobjektes durch eine Rolle beschrieben wird."@de ,
@@ -9129,7 +9226,7 @@ ec:Rights rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsTargetService ;
-                            owl:allValuesFrom xsd:anyURI
+                            owl:allValuesFrom ec:Service
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryExcludes ;
