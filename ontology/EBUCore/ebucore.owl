@@ -3070,13 +3070,6 @@ ec:locationRegion rdf:type owl:ObjectProperty ;
                   rdfs:label "Region"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationTimeType
-ec:locationTimeType rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:LocationTimeType ;
-                    dcterms:description "A type of time at a Location."@en ;
-                    rdfs:label "Location type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loggsPublicationEvent
 ec:loggsPublicationEvent rdf:type owl:ObjectProperty ;
                          rdfs:domain ec:PublicationLogg ;
@@ -8339,11 +8332,6 @@ ec:Location rdf:type owl:Class ;
                               owl:onClass ec:RegionCode
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationTimeType ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:LocationTimeType
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
@@ -8407,13 +8395,6 @@ ec:LocationCode rdf:type owl:Class ;
                 rdfs:subClassOf skos:Concept ;
                 dcterms:description "A code given to a Location."@en ;
                 rdfs:label "Location code."@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationTimeType
-ec:LocationTimeType rdf:type owl:Class ;
-                    rdfs:subClassOf skos:Concept ;
-                    dcterms:description "To define a type of time at a location."@en ;
-                    rdfs:label "Location time type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationType
