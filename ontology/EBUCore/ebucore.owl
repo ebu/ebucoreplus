@@ -6529,6 +6529,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Biography
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAgentCountryOfResidence ;
+                           owl:allValuesFrom ec:CountryCode
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAgentLanguage ;
                            owl:allValuesFrom ec:Language
                          ] ,
@@ -6601,17 +6605,44 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasAgentCountryOfResidence ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:CountryCode
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:nickName ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentDbpedia ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentEmailAddress ;
                            owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFacebook ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFee ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentFlickr ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentImdb ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentInstagram ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentLinkedData ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentLinkedIn ;
+                           owl:allValuesFrom xsd:anyURI
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentMobileTelephoneNumber ;
@@ -6642,7 +6673,19 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentTwitter ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentWebHomepage ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentWikidata ;
+                           owl:allValuesFrom xsd:anyURI
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:agentWikipedia ;
                            owl:allValuesFrom xsd:anyURI
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6652,60 +6695,6 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:name ;
                            owl:allValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentDbpedia ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentFacebook ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentFee ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentFlickr ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentImdb ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentInstagram ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentLinkedData ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentLinkedIn ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentTwitter ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentWikidata ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:agentWikipedia ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:anyURI
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:displayOrder ;
