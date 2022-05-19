@@ -1235,11 +1235,11 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                  rdfs:label "Animal role"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationBody
-ec:hasAnnotationBody rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
-                     dcterms:description "To define the Annotation instance of an Agent."@en ;
-                     rdfs:label "Annotation body"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationAgent
+ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:Agent ;
+                      dcterms:description "To define the Annotation instance of an Agent."@en ;
+                      rdfs:label "Annotation agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget
@@ -6679,7 +6679,7 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:someValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasAnnotationBody ;
+                                owl:onProperty ec:hasAnnotationAgent ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
