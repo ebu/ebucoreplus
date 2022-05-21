@@ -2227,10 +2227,6 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
                    rdfs:label "related event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedLocation
-ec:hasRelatedLocation rdf:type owl:ObjectProperty .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedMediaFragment
 ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
                            rdfs:domain ec:Asset ;
@@ -6875,10 +6871,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:existsAs ;
-                           owl:allValuesFrom ec:Asset
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAccessConditions ;
                            owl:allValuesFrom ec:AccessConditions
                          ] ,
@@ -6887,20 +6879,8 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Contact
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasContributor ;
-                           owl:allValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCoverageRestrictions ;
                            owl:allValuesFrom ec:CoverageRestrictions
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasCreator ;
-                           owl:allValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasGenre ;
-                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
@@ -6919,24 +6899,8 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:EditorialObject
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedEvent ;
-                           owl:allValuesFrom ec:Event
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedLocation ;
-                           owl:allValuesFrom ec:Location
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedMediaResource ;
-                           owl:allValuesFrom ec:MediaResource
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedResource ;
-                           owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRestrictions ;
@@ -6987,11 +6951,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:onProperty ec:datelicensedStart ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasLocation ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -7368,9 +7327,34 @@ ec:BreakingNewsItem rdf:type owl:Class ;
 ec:BusinessObject rdf:type owl:Class ;
                   rdfs:subClassOf ec:Asset ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasContributor ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasCreator ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasGenre ;
+                                    owl:allValuesFrom skos:Concept
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasRelatedEvent ;
+                                    owl:allValuesFrom ec:Event
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasRelatedResource ;
+                                    owl:allValuesFrom ec:Resource
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:dateIssued ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasLocation ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:Location
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:alternativeTitle ;
@@ -7800,6 +7784,14 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:editorialObjectType ;
                                      owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:existsAs ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedMediaResource ;
+                                     owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasScene ;
