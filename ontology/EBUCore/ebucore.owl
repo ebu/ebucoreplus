@@ -836,7 +836,8 @@ ec:applyTo rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#approvedBy
 ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
-              dcterms:description "To identify the Agent who approved the EditorialObject for publishing"@en ;
+              dcterms:description """To identify the Agent who approved the EditorialObject for publishing.
+The property, when present, will act as an trigger for the publishing of the Editorial object."""@en ;
               rdfs:label "Agent"@en .
 
 
@@ -942,7 +943,8 @@ ec:dateDistributed rdf:type owl:ObjectProperty ;
                    rdfs:range time:Instant ;
                    dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
                    rdfs:comment "*** Same ass Issued?"@en ;
-                   rdfs:label "Distribution date"@en .
+                   rdfs:label "Distribution date"@en ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
@@ -1049,12 +1051,12 @@ ec:dateValidated rdf:type owl:ObjectProperty ;
                  rdfs:label "Validation date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed
-ec:datelicensed rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "The date when the licence for the Asset begins."@en ;
-                rdfs:label "Licence start date"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensedStart
+ec:datelicensedStart rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:date ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "The date when the licence for the Asset begins."@en ;
+                     rdfs:label "Licence start date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo
@@ -6873,10 +6875,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:approvedBy ;
-                           owl:allValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:existsAs ;
                            owl:allValuesFrom ec:Asset
                          ] ,
@@ -6971,11 +6969,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateIssued ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateLicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -6991,19 +6984,9 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:datelicensed ;
+                           owl:onProperty ec:datelicensedStart ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:duration ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:TimelinePoint
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:end ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:TimelinePoint
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasLocation ;
@@ -7016,11 +6999,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:start ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:TimelinePoint
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:title ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
@@ -7029,29 +7007,12 @@ ec:Asset rdf:type owl:Class ;
                            owl:someValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:alternativeTitle ;
-                           owl:allValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:comments ;
-                           owl:allValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:contentDescription ;
-                           owl:allValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
                            owl:allValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:name ;
                            owl:allValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:aspectRatio ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onDataRange xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:orderedFlag ;
@@ -7406,6 +7367,23 @@ ec:BreakingNewsItem rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject
 ec:BusinessObject rdf:type owl:Class ;
                   rdfs:subClassOf ec:Asset ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:dateIssued ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:alternativeTitle ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:comments ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:contentDescription ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:orientation ;
                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
@@ -7841,6 +7819,21 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:duration ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:end ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:start ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:translationTitle ;
                                      owl:someValuesFrom rdfs:Literal
                                    ] ,
@@ -8187,7 +8180,7 @@ ec:Genre rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Group
 ec:Group rdf:type owl:Class ;
-         rdfs:subClassOf ec:Asset ;
+         rdfs:subClassOf ec:BusinessObject ;
          dcterms:description """To define a collection / group of media
             resources, for example a series made of episodes."""@en ;
          rdfs:label "Group"@en .
@@ -8524,6 +8517,11 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:translationTitle ;
                                    owl:someValuesFrom rdfs:Literal
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:aspectRatio ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
                                  ] ;
                  owl:disjointWith ec:Rating ;
                  dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
@@ -8766,7 +8764,12 @@ ec:Pictogram rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture
 ec:Picture rdf:type owl:Class ;
-           rdfs:subClassOf ec:Resource ;
+           rdfs:subClassOf ec:Resource ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:aspectRatio ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
            rdfs:label "Picture"@en .
 
