@@ -1499,7 +1499,6 @@ ec:hasContributor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:isCoveredBy ;
-                rdfs:domain ec:Asset ;
                 rdfs:range ec:Copyright ;
                 dcterms:description "To express copyright."@en ;
                 rdfs:label "Copyright"@en .
@@ -1547,7 +1546,6 @@ ec:hasCreationLocation rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreativeCommons
 ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:isCoveredBy ;
-                      rdfs:domain ec:Asset ;
                       rdfs:range ec:CreativeCommons ;
                       dcterms:description "To express Creative Commons."@en ;
                       rdfs:label "Creative Commons"@en .
@@ -1562,8 +1560,7 @@ ec:hasCreator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCrewMember
 ec:hasCrewMember rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Asset ;
-                 rdfs:range ec:Cast ;
+                 rdfs:range ec:Crew ;
                  dcterms:description "A member of the crew."@en ;
                  rdfs:label "Crew member"@en .
 
@@ -1620,7 +1617,6 @@ ec:hasDepartment rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDisclaimer
 ec:hasDisclaimer rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:isCoveredBy ;
-                 rdfs:domain ec:Asset ;
                  rdfs:range ec:Disclaimer ;
                  dcterms:description "To express Disclaimer."@en ;
                  rdfs:label "Disclaimer"@en .
@@ -1646,7 +1642,6 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDubbedLanguage
 ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasLanguage ;
-                     rdfs:domain ec:Asset ;
                      rdfs:range ec:Language ;
                      dcterms:description "To identify available dubbed languages."@en ;
                      rdfs:label "Dubbed language"@en .
@@ -1673,7 +1668,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasExploitationIssues
 ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ec:isCoveredBy ;
-                         rdfs:domain ec:Asset ;
                          rdfs:range ec:ExploitationIssues ;
                          dcterms:description "To express Exploitation Issues."@en ;
                          rdfs:label "Exploitation Issues"@en .
@@ -1734,7 +1728,6 @@ ec:hasGroupMember rdf:type owl:ObjectProperty .
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:isCoveredBy ;
-                      rdfs:domain ec:Asset ;
                       rdfs:range ec:IPRRestrictions ;
                       dcterms:description "To express IPR Restrictions."@en ;
                       rdfs:label "IPR restrictions"@en .
@@ -1797,7 +1790,6 @@ ec:hasKeyword rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLanguage
 ec:hasLanguage rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Asset ;
                rdfs:range ec:Language ;
                dcterms:description """To associate a Language to an Asset. A controlled vocabulary based on BCP 47 is recommended. This
             property can also be used to identify the presence of sign language (RFC 5646). By
@@ -1811,7 +1803,6 @@ ec:hasLanguage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLicensing
 ec:hasLicensing rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:isCoveredBy ;
-                rdfs:domain ec:Asset ;
                 rdfs:range ec:Licensing ;
                 dcterms:description "To express Licensing."@en ;
                 rdfs:label "Licensing"@en .
@@ -1856,8 +1847,7 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasManifestation
 ec:hasManifestation rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Asset ;
-                    rdfs:range ec:MediaResource ;
+                    rdfs:range ec:Resource ;
                     dcterms:description "A manifestation is the physical embodiment of work e.g. a tape, a file..."@en ;
                     rdfs:label "Manifestation"@en .
 
@@ -1943,7 +1933,6 @@ ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOriginalLanguage
 ec:hasOriginalLanguage rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasLanguage ;
-                       rdfs:domain ec:Asset ;
                        rdfs:range ec:Language ;
                        dcterms:description "To define the original language of an Asset."@en ;
                        rdfs:label "Original language"@en .
@@ -1976,7 +1965,6 @@ ec:hasPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParticipatingAgent
 ec:hasParticipatingAgent rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Asset ;
                          rdfs:range ec:Agent ;
                          dcterms:description "To identify participating Agents."@en ;
                          rdfs:label "Participating agent"@en .
@@ -2008,7 +1996,6 @@ ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Asset ;
                rdfs:range ec:Agent ;
                dcterms:description "Range: string or Agent."@en ,
                                    "To identify an Agent involved in the production of the Resource or BusinessObject."@en ;
@@ -2043,7 +2030,6 @@ ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationHistory
 ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Asset ;
                          rdfs:range ec:PublicationHistory ;
                          dcterms:description "To provide the history of publication of an EditorailObject or MediaResource."@en ;
                          rdfs:label "Publication history"@en .
@@ -2075,7 +2061,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Asset ;
                 rdfs:range ec:Agent ;
                 dcterms:description "To identify an Agent involved in the publication of the Resource or BusinessObject."@en ;
                 rdfs:label "Publisher"@en .
@@ -2985,7 +2970,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isScheduledOn
 ec:isScheduledOn rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:publishes ;
-                 rdfs:domain ec:EditorialObject ;
                  rdfs:range ec:PublicationEvent ;
                  dcterms:description "To associatre a PublicationEvent with an EditorialObject."@en ;
                  rdfs:label "Publication event"@en .
@@ -3101,7 +3085,6 @@ ec:playsOut rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishes
 ec:publishes rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:PublicationEvent ;
              rdfs:range ec:EditorialObject ;
              dcterms:description "The editorial object associated to a PublicationEvent."@en ;
              rdfs:label "Editorial object"@en .
@@ -6861,12 +6844,40 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Contact
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCopyright ;
+                           owl:allValuesFrom ec:Copyright
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCoverageRestrictions ;
                            owl:allValuesFrom ec:CoverageRestrictions
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCreativeCommons ;
+                           owl:allValuesFrom ec:CreativeCommons
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDisclaimer ;
+                           owl:allValuesFrom ec:Disclaimer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasExploitationIssues ;
+                           owl:allValuesFrom ec:ExploitationIssues
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasIPRRestrictions ;
+                           owl:allValuesFrom ec:IPRRestrictions
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasLicensing ;
+                           owl:allValuesFrom ec:Licensing
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasParticipatingAgent ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedArtefact ;
@@ -7284,6 +7295,10 @@ ec:BreakingNewsItem rdf:type owl:Class ;
 ec:BusinessObject rdf:type owl:Class ;
                   rdfs:subClassOf ec:Asset ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasManifestation ;
+                                    owl:someValuesFrom ec:Resource
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:coversEvent ;
                                     owl:allValuesFrom ec:Event
                                   ] ,
@@ -7316,12 +7331,40 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasCrewMember ;
+                                    owl:allValuesFrom ec:Crew
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasDubbedLanguage ;
+                                    owl:allValuesFrom ec:Language
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasGenre ;
                                     owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasKeyword ;
                                     owl:allValuesFrom ec:Keyword
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasLanguage ;
+                                    owl:allValuesFrom ec:Language
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasOriginalLanguage ;
+                                    owl:allValuesFrom ec:Language
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasProducer ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasPublicationHistory ;
+                                    owl:allValuesFrom ec:PublicationHistory
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasPublisher ;
+                                    owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasRelatedEvent ;
@@ -7825,6 +7868,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isInstantiatedBy ;
                                      owl:allValuesFrom ec:MediaResource
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isScheduledOn ;
+                                     owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
