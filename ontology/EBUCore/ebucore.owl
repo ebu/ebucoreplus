@@ -1911,15 +1911,6 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:label "Mime type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasObjectType
-ec:hasObjectType rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:EditorialObject ;
-                 rdfs:range ec:ObjectType ;
-                 dcterms:description """To define an ObjectType for the BusinessObject
-             (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
-                 rdfs:label "Object/asset type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:Organisation ;
@@ -1938,7 +1929,6 @@ ec:hasOriginalLanguage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParentEditorialObject
 ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:EditorialObject ;
                             rdfs:range ec:EditorialObject ;
                             dcterms:description "To link a EditorialOject to a parent."@en ;
                             rdfs:label "Parent editorial object"@en .
@@ -2502,7 +2492,6 @@ ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrack
 ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:EditorialObject ;
                     rdfs:range ec:TimelineTrack ;
                     dcterms:description "To associate a TimelineTrack with an EditorialObject"@en ;
                     rdfs:label "Timeline track"@en .
@@ -2732,7 +2721,6 @@ ec:isDerivedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDistributedOn
 ec:isDistributedOn rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:EditorialObject ;
                    rdfs:range ec:Service ;
                    dcterms:description "To identify the platform on which content is distributed."@en ;
                    rdfs:label "Platform/Service/PublicationChannel"@en .
@@ -2748,7 +2736,6 @@ ec:isDubbedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEditorialFormatOf
 ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:EditorialObject ;
                        rdfs:range ec:EditorialObject ;
                        dcterms:description "To identify an Editorial Object based on the same Editorial format"@en ;
                        rdfs:comment "*** Bad description ***"@en ;
@@ -2793,7 +2780,6 @@ ec:isFictitiousPerson rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isInstantiatedBy
 ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:EditorialObject ;
                     rdfs:range ec:MediaResource ;
                     dcterms:description "To identify a MediaResource instantiating an EditorialObject."@en ;
                     rdfs:label "Media Resource"@en .
@@ -2968,7 +2954,6 @@ ec:isSeriesOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isTimelineTrackPartOf
 ec:isTimelineTrackPartOf rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:EditorialObject ;
                          rdfs:range ec:TimelineTrack ;
                          dcterms:description "To associate an EditorialObject with a part of the TimelineTrack."@en ;
                          rdfs:label "Editorial Object"@en .
@@ -4615,7 +4600,6 @@ ec:officeTelephoneNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#orderedFlag
 ec:orderedFlag rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain ec:EditorialObject ;
                rdfs:range xsd:boolean ;
                dcterms:description "A flag to indicate that a EditorialObject is member of an ordered group or is an ordered group (e.g. Series)"@en ;
                rdfs:label "Ordered flag"@en .
@@ -4665,7 +4649,6 @@ ec:partNumber rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partTotalNumber
 ec:partTotalNumber rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:EditorialObject ;
                    rdfs:range xsd:integer ;
                    dcterms:description "The total number of Parts associated with an EditorialObject."@en ;
                    rdfs:label "Part total number"@en .
@@ -4720,7 +4703,6 @@ ec:playlist rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#position
 ec:position rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:EditorialObject ;
             rdfs:range rdfs:Literal ;
             dcterms:description """To indicate the position of an EditorialObject in an ordered
       group."""@en ;
@@ -7871,6 +7853,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:MediaFragment
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasParentEditorialObject ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedArtefact ;
                                      owl:allValuesFrom ec:Artefact
                                    ] ,
@@ -7881,6 +7867,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedAudioProgramme ;
                                      owl:allValuesFrom ec:AudioProgramme
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedEditorialObject ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
@@ -7911,6 +7901,14 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:TimelineTrack
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isDistributedOn ;
+                                     owl:allValuesFrom ec:Service
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isEditorialFormatOf ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isInstantiatedBy ;
                                      owl:allValuesFrom ec:MediaResource
                                    ] ,
@@ -7921,6 +7919,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isScheduledOn ;
                                      owl:allValuesFrom ec:PublicationEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isTimelineTrackPartOf ;
+                                     owl:allValuesFrom ec:TimelineTrack
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
@@ -7959,6 +7961,20 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:orderedFlag ;
                                      owl:allValuesFrom xsd:boolean
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:orderedFlag ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:boolean
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:partTotalNumber ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:integer
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:position ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:resolution ;
@@ -8729,18 +8745,6 @@ ec:NormalPlayTime rdf:type owl:Class ;
                                     owl:onDataRange xsd:time
                                   ] ;
                   rdfs:label "Normal play time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ObjectType
-ec:ObjectType rdf:type owl:Class ;
-              rdfs:subClassOf ec:Type ;
-              dcterms:description """To specify the type of BusinessObject e.g. and
-            EditorialObject of type \"programme\" or clip\". This is
-            provided as free text in an annotation label or as an identifier pointing to a term in a
-            classification scheme e.g.
-            http://www.ebu.ch/metadata/ontologies/skos/ebu_ObjectTypeCodeCS.rdf."""@en ;
-              rdfs:label "Object type"@en ;
-              owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OpenCaptions
