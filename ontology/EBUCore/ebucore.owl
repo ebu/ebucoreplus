@@ -1190,7 +1190,6 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryData
 ec:hasAncillaryData rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Asset ;
                     rdfs:range ec:AncillaryData ;
                     dcterms:description "To identify ancillary data in the media resource."@en ;
                     rdfs:label "Ancillary data"@en .
@@ -9204,6 +9203,10 @@ ec:Resource rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ebuccdm:isResourceCommissionedBy ;
                               owl:allValuesFrom ebuccdm:Contract
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasAncillaryData ;
+                              owl:allValuesFrom ec:AncillaryData
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasFormat ;
