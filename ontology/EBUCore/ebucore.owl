@@ -2068,10 +2068,8 @@ ec:hasPublisher rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRating
 ec:hasRating rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Asset ;
              rdfs:range ec:Rating ;
-             dcterms:description """To identify the presence of Rating attributed
-            to a Resource or BusinessObject."""@en ;
+             dcterms:description "To identify the presence of Rating attributed to a BusinessObject."@en ;
              rdfs:label "Rating"@en .
 
 
@@ -2100,15 +2098,13 @@ ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAnimal
 ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Asset ;
                     rdfs:range ec:Animal ;
-                    dcterms:description "To identify animals associate with an Asset."@en ;
+                    dcterms:description "To identify animals associate with a concept"@en ;
                     rdfs:label "Related animal"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedArtefact
 ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Asset ;
                       rdfs:range ec:Artefact ;
                       dcterms:description "To identify and Artefact related to EditorialObject or a concept"@en ;
                       rdfs:label "Related artefact"@en .
@@ -2116,7 +2112,6 @@ ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAsset
 ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Asset ;
                    rdfs:range ec:Asset ;
                    dcterms:description "To identify related Assets."@en ;
                    rdfs:label "Related asset"@en .
@@ -2124,7 +2119,6 @@ ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioContent
 ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:Asset ;
                           rdfs:range ec:AudioContent ;
                           dcterms:description "To identify related Audio Content"@en ;
                           rdfs:label "Audio content"@en .
@@ -2140,7 +2134,6 @@ ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioProgramme
 ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:Asset ;
                             rdfs:range ec:AudioProgramme ;
                             dcterms:description "A related audio programme"@en ;
                             rdfs:label "Audio programme"@en .
@@ -2156,7 +2149,6 @@ ec:hasRelatedAudioTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAward
 ec:hasRelatedAward rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Asset ;
                    rdfs:range ec:Award ;
                    dcterms:description "To identify an Award related to EditorialObject."@en ;
                    rdfs:label "Related award"@en .
@@ -2200,9 +2192,8 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedMediaFragment
 ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Asset ;
                            rdfs:range ec:MediaFragment ;
-                           dcterms:description "To associate a Part of an Asset with a MediaFragment within the association MediaResource instantiating the Asset."@en ;
+                           dcterms:description "To associate a Part of an Editorial Object with a MediaFragment within the association MediaResource instantiating the Editrial Object."@en ;
                            rdfs:label "Media fragment"@en .
 
 
@@ -2238,7 +2229,6 @@ ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedRecord
 ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Asset ;
                     rdfs:range ec:Record ;
                     dcterms:description "To associate a Record with an Asset."@en ;
                     rdfs:label "Related record"@en .
@@ -2268,7 +2258,6 @@ ec:hasRelatedService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedTextLine
 ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Asset ;
                       rdfs:range ec:TextLine ;
                       dcterms:description "A TextLine or free text related to an EditorialObject."@en ;
                       rdfs:label "Related text line"@en .
@@ -2864,9 +2853,8 @@ ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isNextInSequence
 ec:isNextInSequence rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isPreviousInSequence ;
-                    rdfs:domain ec:Asset ;
-                    rdfs:range ec:Asset ;
-                    dcterms:description "A link to an Asset following the current Asset in an ordered sequence."@en ;
+                    rdfs:range ec:EditorialObject ;
+                    dcterms:description "A link to an Editorial Object following the current Editorial Object in an ordered sequence."@en ;
                     rdfs:label "Next"@en .
 
 
@@ -2913,9 +2901,8 @@ ec:isPictureIdLocator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPreviousInSequence
 ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Asset ;
-                        rdfs:range ec:Asset ;
-                        dcterms:description "A link to an Asset precedinging the current Asset in an ordered sequence."@en ;
+                        rdfs:range ec:EditorialObject ;
+                        dcterms:description "A link to an Editorial Object precedinging the current Editorial Object in an ordered sequence."@en ;
                         rdfs:label "Preceding"@en .
 
 
@@ -6884,6 +6871,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Artefact
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAsset ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedBusinessObject ;
                            owl:allValuesFrom ec:BusinessObject
                          ] ,
@@ -6894,6 +6885,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedRecord ;
+                           owl:allValuesFrom ec:Record
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRestrictions ;
@@ -7365,6 +7360,18 @@ ec:BusinessObject rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasPublisher ;
                                     owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasRating ;
+                                    owl:allValuesFrom ec:Rating
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasRelatedAnimal ;
+                                    owl:allValuesFrom ec:Animal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasRelatedAward ;
+                                    owl:allValuesFrom ec:Award
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasRelatedEvent ;
@@ -7850,8 +7857,28 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Captioning
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasMediaFragment ;
+                                     owl:allValuesFrom ec:MediaFragment
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedArtefact ;
+                                     owl:allValuesFrom ec:Artefact
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedAudioContent ;
+                                     owl:allValuesFrom ec:AudioContent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedAudioProgramme ;
+                                     owl:allValuesFrom ec:AudioProgramme
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
                                      owl:allValuesFrom ec:MediaResource
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedTextLine ;
+                                     owl:allValuesFrom ec:TextLine
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasScene ;
@@ -7887,6 +7914,16 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onProperty ec:end ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isNextInSequence ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isPreviousInSequence ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:start ;
