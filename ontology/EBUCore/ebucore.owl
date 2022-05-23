@@ -1311,7 +1311,6 @@ ec:hasAssociatedAsset rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedRelation
 ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:Asset ;
                          rdfs:range ec:Relation ;
                          dcterms:description "To define a Relation."@en ;
                          rdfs:label "Relation"@en .
@@ -1336,7 +1335,6 @@ ec:hasAudioCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioDescription
 ec:hasAudioDescription rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Asset ;
                        rdfs:range ec:AudioDescription ;
                        dcterms:description "To signal the presence of AudioDescription."@en ;
                        rdfs:label "Audio description"@en .
@@ -1368,7 +1366,6 @@ ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning
 ec:hasCaptioning rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Asset ;
                  rdfs:range ec:Captioning ;
                  dcterms:description """To signal the presence of
             Captioning."""@en ;
@@ -1395,7 +1392,6 @@ ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember
 ec:hasCastMember rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Asset ;
                  rdfs:range ec:Cast ;
                  dcterms:description "A member of the cast."@en ;
                  rdfs:label "Cast member"@en .
@@ -1420,7 +1416,6 @@ ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Asset ;
                 rdfs:range ec:Character ;
                 dcterms:description "To list characters in a fiction."@en ;
                 rdfs:label "Character"@en .
@@ -7297,6 +7292,18 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Location
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasAssociatedAsset ;
+                                    owl:allValuesFrom ec:Relation
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasCastMember ;
+                                    owl:allValuesFrom ec:Cast
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasCharacter ;
+                                    owl:allValuesFrom ec:Character
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasContributor ;
                                     owl:allValuesFrom ec:Agent
                                   ] ,
@@ -7790,6 +7797,14 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:existsAs ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasAudioDescription ;
+                                     owl:allValuesFrom ec:AudioDescription
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasCaptioning ;
+                                     owl:allValuesFrom ec:Captioning
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
