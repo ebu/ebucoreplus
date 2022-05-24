@@ -2305,7 +2305,6 @@ ec:hasScene rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSeason
 ec:hasSeason rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Series ;
              rdfs:range ec:Season ;
              dcterms:description "To identiify Seasons in a Series."@en ;
              rdfs:label "Season"@en .
@@ -2930,7 +2929,6 @@ ec:isScheduledOn rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isSeasonOf
 ec:isSeasonOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Season ;
               rdfs:range ec:Series ;
               dcterms:description "To assoicate a Season with a Series."@en ;
               rdfs:label "Series"@en .
@@ -2938,7 +2936,6 @@ ec:isSeasonOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isSeriesOf
 ec:isSeriesOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Series ;
               rdfs:range ec:Brand ;
               dcterms:description "To associate a Series with a Brand."@en ;
               rdfs:label "Brand"@en .
@@ -5013,7 +5010,6 @@ ec:script rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#seasonNumber
 ec:seasonNumber rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Season ;
                 rdfs:range xsd:integer ;
                 dcterms:description "To provide a Season number."@en ;
                 rdfs:label "Season number"@en .
@@ -9556,6 +9552,10 @@ ec:Season rdf:type owl:Class ;
                             owl:someValuesFrom ec:Episode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:isSeasonOf ;
+                            owl:allValuesFrom ec:Series
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:seasonNumber ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:integer
@@ -9572,6 +9572,14 @@ ec:Series rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasEpisode ;
                             owl:someValuesFrom ec:Episode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasSeason ;
+                            owl:allValuesFrom ec:Season
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:isSeriesOf ;
+                            owl:allValuesFrom ec:Brand
                           ] ;
           dcterms:description """Series is a particular type of collection. TV
             or Radio Series are composed of Episodes."""@en ;
