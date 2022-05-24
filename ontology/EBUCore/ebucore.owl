@@ -1632,7 +1632,6 @@ ec:hasDocumentFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDopesheet
 ec:hasDopesheet rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:NewsItem ;
                 rdfs:range ec:Dopesheet ;
                 dcterms:description "The dopesheet of a NewsItem."@en ;
                 rdfs:label "Dopesheet"@en .
@@ -2744,19 +2743,13 @@ ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOf
 ec:isEpisodeOf rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Episode ;
-               rdfs:range [ rdf:type owl:Class ;
-                            owl:unionOf ( ec:Season
-                                          ec:Series
-                                        )
-                          ] ;
+               rdfs:range ec:Group ;
                dcterms:description "The Episode of a Series or a Season."@en ;
                rdfs:label "Parent season / series"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeason
 ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Episode ;
                      rdfs:range ec:Season ;
                      dcterms:description "The Episode of a Series or a Season."@en ;
                      rdfs:label "Parent season / series"@en .
@@ -2764,7 +2757,6 @@ ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Episode ;
                      rdfs:range ec:Series ;
                      dcterms:description "The Episode of a Series or a Season."@en ;
                      rdfs:label "Parent season / series"@en .
@@ -8107,6 +8099,18 @@ ec:EncodingFormat rdf:type owl:Class ;
 ec:Episode rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialObject ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:isEpisodeOf ;
+                             owl:allValuesFrom ec:Group
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:isEpisodeOfSeason ;
+                             owl:allValuesFrom ec:Season
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:isEpisodeOfSeries ;
+                             owl:allValuesFrom ec:Series
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:episodeNumber ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:integer
@@ -8729,7 +8733,11 @@ ec:MimeType rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#NewsItem
 ec:NewsItem rdf:type owl:Class ;
-            rdfs:subClassOf ec:Item ;
+            rdfs:subClassOf ec:Item ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasDopesheet ;
+                              owl:allValuesFrom ec:Dopesheet
+                            ] ;
             dcterms:description "A NewsItem aggregates all information about a particular news event."@en ;
             rdfs:label "News Item"@en .
 
