@@ -3052,7 +3052,6 @@ ec:publishes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#references
 ec:references rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:EditorialObject ;
               rdfs:range ec:MediaResource ;
               dcterms:description "To express a reference between Assets, BusinessObjects or Resources."@en ;
               rdfs:label "References"@en .
@@ -7923,6 +7922,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isTimelineTrackPartOf ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
