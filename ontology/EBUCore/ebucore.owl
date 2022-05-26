@@ -1752,14 +1752,6 @@ ec:hasIdentifier rdf:type owl:ObjectProperty ;
                  rdfs:label "Identifier"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifierType
-ec:hasIdentifierType rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Identifier ;
-                     rdfs:range ec:IdentifierType ;
-                     dcterms:description "To define a type of Identifer (e.g. UUID, ISAN, EIDR, in-house production Id)."@en ;
-                     rdfs:label "Identifier type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasImageCodec
 ec:hasImageCodec rdf:type owl:ObjectProperty ;
                  rdfs:domain ec:MediaResource ;
@@ -2792,7 +2784,6 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isIssuedBy
 ec:isIssuedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Identifier ;
               rdfs:range ec:Agent ;
               dcterms:description "To identify the issuer of an identifier."@en ;
               rdfs:label "Issuer"@en .
@@ -8365,9 +8356,25 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isIssuedBy ;
+                                owl:allValuesFrom ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:objectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:dateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:description ;
+                                owl:allValuesFrom rdfs:Literal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:name ;
+                                owl:allValuesFrom rdfs:Literal
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:identifierValue ;
