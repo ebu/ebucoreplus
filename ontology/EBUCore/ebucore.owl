@@ -1067,7 +1067,6 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#displayAspectRatio
 ec:displayAspectRatio rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:MediaResource ;
                       rdfs:range ec:ActiveFormatDescriptorCode ;
                       dcterms:description "The aspect ratio when displayed."@en ;
                       rdfs:label "Display aspect ratio"@en .
@@ -8473,6 +8472,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:clonedTo ;
                                    owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:displayAspectRatio ;
+                                   owl:allValuesFrom ec:ActiveFormatDescriptorCode
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSource ;
