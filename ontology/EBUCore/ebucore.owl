@@ -2750,15 +2750,15 @@ ec:isEpisodeOf rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeason
 ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Season ;
-                     dcterms:description "The Episode of a Series or a Season."@en ;
-                     rdfs:label "Parent season / series"@en .
+                     dcterms:description "The Episode of a Season."@en ;
+                     rdfs:label "Parent season"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Series ;
-                     dcterms:description "The Episode of a Series or a Season."@en ;
-                     rdfs:label "Parent season / series"@en .
+                     dcterms:description "The Episode of a Series."@en ;
+                     rdfs:label "Parent series"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isFictitiousPerson
