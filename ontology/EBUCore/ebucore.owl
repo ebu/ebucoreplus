@@ -1722,7 +1722,6 @@ ec:hasIdentifier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasImageCodec
 ec:hasImageCodec rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:ImageCodec ;
                  dcterms:description "To specify the codec of an Image."@en ;
                  rdfs:label "Image codec"@en .
@@ -1730,7 +1729,6 @@ ec:hasImageCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasImageFormat
 ec:hasImageFormat rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range ec:ImageFormat ;
                   dcterms:description "To specify the format of an Image."@en ;
                   rdfs:label "Image format"@en .
@@ -1826,7 +1824,6 @@ ec:hasManifestation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMaster
 ec:hasMaster rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:MediaResource ;
              dcterms:description "To identify the master of a Resource"@en ;
              rdfs:label "Master"@en .
@@ -1835,7 +1832,6 @@ ec:hasMaster rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment
 ec:hasMediaFragment rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isMediaFragmentOf ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:MediaFragment ;
                     dcterms:description """To define relation to MediaFragments
             withiin a MediaResource."""@en ;
@@ -2764,7 +2760,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf
 ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:MediaFragment ;
                      rdfs:range ec:MediaResource ;
                      dcterms:description "To identify the Media Resource to which a Media Fragment belongs to"@en ;
                      rdfs:label "Media fragment source"@en .
@@ -8572,7 +8567,11 @@ ec:Logo rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment
 ec:MediaFragment rdf:type owl:Class ;
-                 rdfs:subClassOf ec:MediaResource ;
+                 rdfs:subClassOf ec:MediaResource ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isMediaFragmentOf ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ;
                  dcterms:description "A MediaFragment is a temporal or spatial segment of a resource identified by a MediaGragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@en ;
                  rdfs:label "Media Fragment"@en .
 
@@ -8619,6 +8618,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasGeneration ;
                                    owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMediaFragment ;
+                                   owl:allValuesFrom ec:MediaFragment
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSource ;
@@ -8712,9 +8715,24 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass ec:FileFormat
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasImageCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ImageCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasImageFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ImageFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasLocation ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:Location
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMaster ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
@@ -9085,9 +9103,37 @@ ec:Picture rdf:type owl:Class ;
                              owl:allValuesFrom ec:EncodingFormat
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasImageCodec ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass ec:ImageCodec
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasImageFormat ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass ec:ImageFormat
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:aspectRatio ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameHeight ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameHeightUnit ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameWidth ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameWidthUnit ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
            rdfs:label "Picture"@en .
