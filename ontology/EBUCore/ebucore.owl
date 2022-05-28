@@ -1841,7 +1841,6 @@ ec:hasMediaFragment rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMedium
 ec:hasMedium rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ec:hasFormat ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:Medium ;
              dcterms:description "To specify the medium on which the Resource is available."@en ;
              rdfs:label "Medium"@en .
@@ -1865,7 +1864,6 @@ ec:hasMemberPublicationPlan rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMetadataTrack
 ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:MetadataTrack ;
                     dcterms:description "To identify MetadataTracks in the Resource."@en ;
                     rdfs:label "Metadata track"@en .
@@ -1874,7 +1872,6 @@ ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType
 ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range ec:MimeType ;
                dcterms:description "To specify the Mime type of a Resource."@en ;
                rdfs:label "Mime type"@en .
@@ -1905,7 +1902,6 @@ ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParentMediaResource
 ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:MediaResource ;
                           dcterms:description "To link a MediaResource to a parent."@en ;
                           rdfs:label "Parent resource"@en .
@@ -2083,7 +2079,6 @@ ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioObject
 ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:MediaResource ;
                          rdfs:range ec:AudioObject ;
                          dcterms:description "To identify related Audio Objects"@en ;
                          rdfs:label "Audio object"@en .
@@ -2098,7 +2093,6 @@ ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioTrack
 ec:hasRelatedAudioTrack rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:MediaResource ;
                         rdfs:range ec:AudioTrack ;
                         dcterms:description "To identify related Audio Tracks"@en ;
                         rdfs:label "Audio track"@en .
@@ -2134,7 +2128,6 @@ ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEssence
 ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:MediaResource ;
                      rdfs:range ec:Essence ;
                      dcterms:description "To establish a relation between a MediaResource and an Essence."@en ;
                      rdfs:label "Related essence"@en .
@@ -2320,7 +2313,6 @@ ec:hasSigningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSource
 ec:hasSource rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:MediaResource ;
              dcterms:description "To identify the source of a MediaResource."@en ;
              rdfs:label "Source"@en .
@@ -2353,7 +2345,6 @@ ec:hasStakeholder rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStandard
 ec:hasStandard rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range ec:Standard ;
                dcterms:description "Identifies the technical video standard of a MediaResource, i.e. NTSC or PAL."@en ;
                rdfs:label "Standard"@en .
@@ -8624,8 +8615,32 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaFragment
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMedium ;
+                                   owl:allValuesFrom ec:Medium
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMetadataTrack ;
+                                   owl:allValuesFrom ec:MetadataTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedAudioObject ;
+                                   owl:allValuesFrom ec:AudioObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedAudioTrack ;
+                                   owl:allValuesFrom ec:AudioTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedEssence ;
+                                   owl:allValuesFrom ec:Essence
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSource ;
                                    owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasStandard ;
+                                   owl:allValuesFrom ec:Standard
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasTrack ;
@@ -8731,6 +8746,21 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasMaster ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMimeType ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasParentMediaResource ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasSource ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
                                  ] ,
