@@ -2359,7 +2359,6 @@ ec:hasStorageId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageType
 ec:hasStorageType rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range ec:Storage_Type ;
                   dcterms:description "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ;
                   rdfs:label "Storage type"@en .
@@ -2382,7 +2381,6 @@ ec:hasSubtitling rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubtitlingFormat
 ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range ec:SubtitlingFormat ;
                        dcterms:description "The format of Subtitling."@en ;
                        rdfs:label "Subtitling format"@en .
@@ -2442,7 +2440,6 @@ ec:hasTheme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimecodeTrack
 ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:TimecodeTrack ;
                     dcterms:description "To identify a timecode track with a MediaResource."@en ;
                     rdfs:label "Timecode track"@en .
@@ -2481,7 +2478,6 @@ ec:hasTopic rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTrack
 ec:hasTrack rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
             rdfs:range ec:Track ;
             dcterms:description "To associate audio/data/video tracks with a MediaResource."@en ;
             rdfs:label "Track"@en .
@@ -2522,8 +2518,7 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVersion
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
-              rdfs:domain ec:MediaResource ;
-              rdfs:range ec:MediaResource ;
+              rdfs:range ec:BusinessObject ;
               dcterms:description "To identify another version of an Asset, BusinessObject or Resource."@en ;
               rdfs:label "Version"@en .
 
@@ -2531,7 +2526,6 @@ ec:hasVersion rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoCodec
 ec:hasVideoCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:VideoCodec ;
                  dcterms:description "To identify a video codec"@en ;
                  rdfs:label "Video codec"@en .
@@ -2540,7 +2534,6 @@ ec:hasVideoCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoEncodingFormat
 ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:VideoEncodingFormat ;
                           dcterms:description "To specify the video encoding format."@en ;
                           rdfs:label "Audio encoding format"@en .
@@ -2548,7 +2541,6 @@ ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoTrack
 ec:hasVideoTrack rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:VideoTrack ;
                  dcterms:description "To identify VideoTracks in the Resource."@en ;
                  rdfs:label "Video track"@en .
@@ -2573,7 +2565,6 @@ ec:hived rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:EditorialObject ;
                 dcterms:description """To link a particular manifestation of a
             BusinessObject to the corresponding Resource."""@en ;
@@ -2914,8 +2905,7 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:MediaResource ;
-               rdfs:range ec:MediaResource ;
+               rdfs:range ec:BusinessObject ;
                dcterms:description "To identify related versions."@en ;
                rdfs:label "Version of"@en .
 
@@ -4201,7 +4191,6 @@ ec:hobbies rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#iFrameSize
 ec:iFrameSize rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:int ;
               dcterms:description "The distance between 2 I-frames also known as the gop size."@en ;
               rdfs:label "I-frame/Gop size"@en .
@@ -6779,10 +6768,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:UsageRights
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isVersionOf ;
-                           owl:allValuesFrom ec:Asset
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -7288,6 +7273,14 @@ ec:BusinessObject rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasTopic ;
                                     owl:allValuesFrom ec:Topic
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasVersion ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isVersionOf ;
+                                    owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:represents ;
@@ -8643,8 +8636,24 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Standard
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasStorageType ;
+                                   owl:allValuesFrom ec:Storage_Type
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasSubtitlingFormat ;
+                                   owl:allValuesFrom ec:SubtitlingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTimecodeTrack ;
+                                   owl:allValuesFrom ec:TimecodeTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasTrack ;
                                    owl:allValuesFrom ec:Track
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoTrack ;
+                                   owl:allValuesFrom ec:VideoTrack
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:instantiates ;
@@ -8763,6 +8772,21 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hasSource ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:VideoCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoEncodingFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:VideoEncodingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:instantiates ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:EditorialObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
@@ -8885,6 +8909,11 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hashValue ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:iFrameSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingLevel ;
