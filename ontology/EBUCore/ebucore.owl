@@ -2848,17 +2848,17 @@ ec:isReleasedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReplacedBy
 ec:isReplacedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range ec:MediaResource ;
+                owl:inverseOf ec:replaces ;
+                rdfs:range ec:BusinessObject ;
                 dcterms:description "To identify substitutions."@en ;
                 rdfs:label "Replacement"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRequiredBy
 ec:isRequiredBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "To express strong relations between Assets, BusinessObjects or Resources."@en ;
+                owl:inverseOf ec:requires ;
+                rdfs:range ec:BusinessObject ;
+                dcterms:description "To express strong relations between BusinessObjects"@en ;
                 rdfs:label "Required"@en .
 
 
@@ -2893,7 +2893,6 @@ ec:isTimelineTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isTrackPartOf
 ec:isTrackPartOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:Track ;
                  dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destination."@en ;
                  rdfs:label "Track part source"@en .
@@ -2983,8 +2982,7 @@ ec:references rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#replaces
 ec:replaces rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
-            rdfs:range ec:MediaResource ;
+            rdfs:range ec:BusinessObject ;
             dcterms:description "To identify substitution."@en ;
             rdfs:label "Replaces"@en .
 
@@ -2998,8 +2996,7 @@ ec:represents rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#requires
 ec:requires rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
-            rdfs:range ec:MediaResource ;
+            rdfs:range ec:BusinessObject ;
             dcterms:description "To express dependency."@en ;
             rdfs:label "Requires"@en .
 
@@ -7286,12 +7283,28 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isReplacedBy ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isRequiredBy ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:isVersionOf ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:replaces ;
                                     owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:represents ;
                                     owl:allValuesFrom ec:Asset
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:requires ;
+                                    owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:versionType ;
@@ -8809,6 +8822,11 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:isDubbedFrom ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isTrackPartOf ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:Track
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:translationTitle ;
