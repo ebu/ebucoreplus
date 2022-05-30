@@ -4207,7 +4207,6 @@ ec:identifierValue rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#inchesPerSecond
 ec:inchesPerSecond rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:playbackSpeed ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:double ;
                    dcterms:description "Identifies the inches per second at which an analog audio tape should be played back for human consumption."@en ;
                    rdfs:label "Inches per second"@en .
@@ -8809,6 +8808,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:encodingProfile ;
                                    owl:allValuesFrom rdfs:Literal
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:inchesPerSecond ;
+                                   owl:allValuesFrom xsd:double
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:aspectRatio ;
