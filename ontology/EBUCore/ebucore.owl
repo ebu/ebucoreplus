@@ -1055,7 +1055,6 @@ ec:datelicensedStart rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
-             rdfs:domain ec:Asset ;
              rdfs:range ec:Asset ;
              dcterms:description "To identify a new version derived from the original."@en ;
              rdfs:label "Derivation target"@en .
@@ -2633,8 +2632,8 @@ ec:isCharacter rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
-             rdfs:range ec:MediaResource ;
+             owl:inverseOf ec:isParentOf ;
+             rdfs:range ec:BusinessObject ;
              dcterms:description "To link a BusinessOject or Resource to a parent."@en ;
              rdfs:label "Parent"@en .
 
@@ -2648,7 +2647,6 @@ ec:isClonedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isComposedOf
 ec:isComposedOf rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:MediaResource ;
                 dcterms:description "To identify mediaResources used to compose an Essence."@en ;
                 rdfs:label "Media Resource"@en .
@@ -2661,8 +2659,7 @@ ec:isCoveredBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDerivedFrom
 ec:isDerivedFrom rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
-                 rdfs:range ec:MediaResource ;
+                 rdfs:range ec:Asset ;
                  dcterms:description "Identifies a content-based relationship between two resources."@en ;
                  rdfs:label "Derived from"@en .
 
@@ -2790,8 +2787,7 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isParentOf
 ec:isParentOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:MediaResource ;
-              rdfs:range ec:MediaResource ;
+              rdfs:range ec:BusinessObject ;
               dcterms:description "To link a Asset to a parent Asset."@en ;
               rdfs:label "Child"@en .
 
@@ -6687,6 +6683,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:derivedTo ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAccessConditions ;
                            owl:allValuesFrom ec:AccessConditions
                          ] ,
@@ -6765,6 +6765,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRights ;
                            owl:allValuesFrom ec:UsageRights
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isDerivedFrom ;
+                           owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
@@ -7278,6 +7282,10 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isParentOf ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:isVersionOf ;
                                     owl:allValuesFrom ec:BusinessObject
                                   ] ,
@@ -7298,6 +7306,11 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:onProperty ec:hasLocation ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:Location
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isChildOf ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:title ;
