@@ -3078,7 +3078,6 @@ time:hasTRS rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:MediaResource ;
           rdfs:range rdfs:Literal ;
           dcterms:description "To identify a Resource as the source of another Resource."@en ;
           rdfs:label "Source"@en .
@@ -4376,7 +4375,6 @@ ec:maritalStatus rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed
 ec:midRollAdAllowed rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range xsd:boolean ;
                     dcterms:description "A flag to indicate whether it is allowed to insert ad breaks in mid-roll."@en ;
                     rdfs:label "Midroll ad allowed"@en .
@@ -4412,7 +4410,6 @@ ec:nickName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#noiseFilter
 ec:noiseFilter rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range xsd:boolean ;
                dcterms:description """A flag to signal that a noise filter has been
             used."""@en ;
@@ -4430,7 +4427,6 @@ ec:notRated rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfAudioTracks
 ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of audio tracks."@en ;
                        rdfs:label "Number of audio tracks"@en .
@@ -4438,7 +4434,6 @@ ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfVideoTracks
 ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of video tracks."@en ;
                        rdfs:label "Number of video tracks"@en .
@@ -4508,7 +4503,6 @@ ec:originalTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#packageByteSize
 ec:packageByteSize rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:long ;
                    dcterms:description """The size of a media package in
             Bytes."""@en ;
@@ -4517,10 +4511,8 @@ ec:packageByteSize rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#packageName
 ec:packageName rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range rdfs:Literal ;
-               dcterms:description """The name of a media package in
-            Bytes."""@en ;
+               dcterms:description "The name of a media package in Bytes."@en ;
                rdfs:label "Package name"@en .
 
 
@@ -4572,7 +4564,6 @@ ec:personWeight rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playbackSpeed
 ec:playbackSpeed rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range xsd:double ;
                  dcterms:description "Identifies the rate of units against time at which the resource should be played back for human consumption.  If the unit of measure is known, use sub-properties framesPerSecond or inchesPerSecond."@en ;
                  rdfs:label "Playback speed"@en .
@@ -4752,7 +4743,6 @@ ec:reason rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimX
 ec:regionDelimX rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:integer ;
                 dcterms:description """To define the top left corner of a zone on
             the x-axis. If present with regionDelimy, the zone definition is complemented by the
@@ -4762,7 +4752,6 @@ ec:regionDelimX rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimY
 ec:regionDelimY rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:integer ;
                 dcterms:description """To define the bottom right corner of a zone on
             the y-axis. If present with regionDelimX, the zone definition is complemented by the
@@ -4864,7 +4853,6 @@ ec:salutationTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleRate
 ec:sampleRate rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:integer ;
               dcterms:description "The frequency at which audio is sampled per second. Also called sampling rate."@en ;
               rdfs:label "Sample Rate"@en .
@@ -4872,7 +4860,6 @@ ec:sampleRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleSize
 ec:sampleSize rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:integer ;
               dcterms:description """The size of an audio sample in
             bits. Also called bit depth."""@en ;
@@ -4881,7 +4868,6 @@ ec:sampleSize rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleType
 ec:sampleType rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range rdfs:Literal ;
               dcterms:description "The type of audio sample."@en ;
               rdfs:label "Sample type"@en .
@@ -4889,7 +4875,6 @@ ec:sampleType rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#scanningFormat
 ec:scanningFormat rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description """To define the scanning format for a
             MediaResource. For video, the two main values are \"interlaced\" or
@@ -5101,7 +5086,6 @@ ec:versionTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRate
 ec:videoBitRate rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:nonNegativeInteger ;
                 dcterms:description """The video bitrate. To provide the bitrate at which the MediaResource can be played
           in bits/second. Current bitrate if constant, and average bitrate if
@@ -5111,7 +5095,6 @@ ec:videoBitRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMax
 ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:nonNegativeInteger ;
                    dcterms:description "The maximum video bitrate."@en ;
                    rdfs:label "Video bitrate max"@en .
@@ -5119,7 +5102,6 @@ ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMode
 ec:videoBitRateMode rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "The video bitrate mode."@en ;
                     rdfs:label "Video bitrate mode"@en .
@@ -7910,6 +7892,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:midRollAdAllowed ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:boolean
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:orderedFlag ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:boolean
@@ -8841,8 +8828,8 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:inchesPerSecond ;
-                                   owl:allValuesFrom xsd:double
+                                   owl:onProperty dc:source ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:aspectRatio ;
@@ -8948,6 +8935,82 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:iFrameSize ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:inchesPerSecond ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:double
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:noiseFilter ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:boolean
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:numberOfAudioTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:numberOfVideoTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:packageByteSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:long
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:packageName ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:playbackSpeed ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:double
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:regionDelimX ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:regionDelimY ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleRate ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleType ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:scanningFormat ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRate ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRateMax ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRateMode ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingLevel ;
