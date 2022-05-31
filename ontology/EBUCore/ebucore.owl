@@ -2641,7 +2641,7 @@ ec:isChildOf rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isClonedFrom
 ec:isClonedFrom rdf:type owl:ObjectProperty ;
                 rdfs:range ec:MediaResource ;
-                dcterms:description "To identify the source of a clone ResourceResource"@en ;
+                dcterms:description "To identify the source of a clone MediaResource"@en ;
                 rdfs:label "Clone source"@en .
 
 
