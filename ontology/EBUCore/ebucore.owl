@@ -869,7 +869,7 @@ ec:awardDate rdf:type owl:ObjectProperty ;
 ec:clonedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isClonedFrom ;
             rdfs:range ec:MediaResource ;
-            dcterms:description "Identifies relationship between a digital instantiation of a Resource and its direct copy, with no generational loss."@en ;
+            dcterms:description "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ;
             rdfs:label "Cloned to"@en .
 
 
@@ -1055,7 +1055,6 @@ ec:datelicensedStart rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
-             rdfs:domain ec:Asset ;
              rdfs:range ec:Asset ;
              dcterms:description "To identify a new version derived from the original."@en ;
              rdfs:label "Derivation target"@en .
@@ -1071,7 +1070,6 @@ ec:displayAspectRatio rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dubbedTo
 ec:dubbedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isDubbedFrom ;
-            rdfs:domain ec:MediaResource ;
             rdfs:range ec:MediaResource ;
             dcterms:description "the resource have another languageversion"@en ;
             rdfs:label "Dubbed to"@en .
@@ -1206,7 +1204,6 @@ ec:hasAncillaryData rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryDataFormat
 ec:hasAncillaryDataFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:AncillaryDataFormat ;
                           dcterms:description "the format of ancillary data."@en ;
                           rdfs:label "Ancillary data format"@en .
@@ -1339,7 +1336,6 @@ ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioCodec
 ec:hasAudioCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:AudioCodec ;
                  dcterms:description "To identify the audio Codec"@en ;
                  rdfs:label "Audio codec"@en .
@@ -1355,7 +1351,6 @@ ec:hasAudioDescription rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioEncodingFormat
 ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:AudioEncodingFormat ;
                           dcterms:description "To specify the audio encoding format."@en ;
                           rdfs:label "Audio encoding format"@en .
@@ -1363,7 +1358,6 @@ ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioTrack
 ec:hasAudioTrack rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:AudioTrack ;
                  dcterms:description "To identify AudioTracks in the Resource."@en ;
                  rdfs:label "Audio track"@en .
@@ -1387,7 +1381,6 @@ ec:hasCaptioning rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioningFormat
 ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range ec:CaptioningFormat ;
                        dcterms:description "The format of Captioning."@en ;
                        rdfs:label "Captioning format"@en .
@@ -1395,10 +1388,8 @@ ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioningSource
 ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range ec:Agent ;
-                       dcterms:description """To provide information on the source of
-            Captioning."""@en ;
+                       dcterms:description "To provide information on the source of Captioning."@en ;
                        rdfs:label "Captioning source"@en .
 
 
@@ -1435,7 +1426,6 @@ ec:hasCharacter rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec
 ec:hasCodec rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
             rdfs:range ec:Codec ;
             dcterms:description "To identify a Codec used to create a resource."@en ;
             rdfs:label "Codec"@en .
@@ -1452,7 +1442,6 @@ ec:hasCodecVendor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasColourSpace
 ec:hasColourSpace rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasFormat ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range ec:ColourSpace ;
                   dcterms:description "To describe the colour space."@en ;
                   rdfs:label "Colour space"@en .
@@ -1469,7 +1458,6 @@ ec:hasContact rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContainerCodec
 ec:hasContainerCodec rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasCodec ;
-                     rdfs:domain ec:MediaResource ;
                      rdfs:range ec:ContainerCodec ;
                      dcterms:description "To identify a container codec."@en ;
                      rdfs:label "Container codec"@en .
@@ -1478,7 +1466,6 @@ ec:hasContainerCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContainerEncodingFormat
 ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf ec:hasFormat ;
-                              rdfs:domain ec:MediaResource ;
                               rdfs:range ec:ContainerEncodingFormat ;
                               dcterms:description "To describe the container encoding format."@en ;
                               rdfs:label "Container encoding format"@en .
@@ -1487,7 +1474,6 @@ ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContainerMimeType
 ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:hasFormat ;
-                        rdfs:domain ec:MediaResource ;
                         rdfs:range ec:MimeType ;
                         dcterms:description "To provide the Mime type of the Resource."@en ;
                         rdfs:label "Mime type"@en .
@@ -1543,15 +1529,6 @@ ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
                            rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "To express coverage restrictions."@en ;
                            rdfs:label "Coverage restrictions"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreationLocation
-ec:hasCreationLocation rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:MediaResource ;
-                       rdfs:range ec:Location ;
-                       dcterms:description "To identify the location where a media resources was created."@en ;
-                       rdfs:label "Creation location"@en ;
-                       owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreativeCommons
@@ -1611,7 +1588,6 @@ ec:hasDataFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDataTrack
 ec:hasDataTrack rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:DataTrack ;
                 dcterms:description "To identify DataTracks in the Resource."@en ;
                 rdfs:label "Data track"@en .
@@ -1681,7 +1657,6 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFileFormat
 ec:hasFileFormat rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:FileFormat ;
                  dcterms:description "The format of a file."@en ;
                  rdfs:label "File format"@en .
@@ -1697,7 +1672,6 @@ ec:hasFoodStyle rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat
 ec:hasFormat rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:Format ;
              dcterms:description "To identify a Format"@en ;
              rdfs:label "Format"@en .
@@ -1713,7 +1687,6 @@ ec:hasFormatId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGeneration
 ec:hasGeneration rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:MediaResource ;
                  dcterms:description """Identifies the generation of a version of a resource, i.e. master,
       edit master, distribution copy, etc."""@en ;
@@ -1748,7 +1721,6 @@ ec:hasIdentifier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasImageCodec
 ec:hasImageCodec rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:ImageCodec ;
                  dcterms:description "To specify the codec of an Image."@en ;
                  rdfs:label "Image codec"@en .
@@ -1756,7 +1728,6 @@ ec:hasImageCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasImageFormat
 ec:hasImageFormat rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range ec:ImageFormat ;
                   dcterms:description "To specify the format of an Image."@en ;
                   rdfs:label "Image format"@en .
@@ -1852,7 +1823,6 @@ ec:hasManifestation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMaster
 ec:hasMaster rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:MediaResource ;
              dcterms:description "To identify the master of a Resource"@en ;
              rdfs:label "Master"@en .
@@ -1861,7 +1831,6 @@ ec:hasMaster rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment
 ec:hasMediaFragment rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isMediaFragmentOf ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:MediaFragment ;
                     dcterms:description """To define relation to MediaFragments
             withiin a MediaResource."""@en ;
@@ -1871,7 +1840,6 @@ ec:hasMediaFragment rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMedium
 ec:hasMedium rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ec:hasFormat ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:Medium ;
              dcterms:description "To specify the medium on which the Resource is available."@en ;
              rdfs:label "Medium"@en .
@@ -1895,7 +1863,6 @@ ec:hasMemberPublicationPlan rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMetadataTrack
 ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:MetadataTrack ;
                     dcterms:description "To identify MetadataTracks in the Resource."@en ;
                     rdfs:label "Metadata track"@en .
@@ -1904,7 +1871,6 @@ ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType
 ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range ec:MimeType ;
                dcterms:description "To specify the Mime type of a Resource."@en ;
                rdfs:label "Mime type"@en .
@@ -1935,7 +1901,6 @@ ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParentMediaResource
 ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:MediaResource ;
                           dcterms:description "To link a MediaResource to a parent."@en ;
                           rdfs:label "Parent resource"@en .
@@ -2113,7 +2078,6 @@ ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioObject
 ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:MediaResource ;
                          rdfs:range ec:AudioObject ;
                          dcterms:description "To identify related Audio Objects"@en ;
                          rdfs:label "Audio object"@en .
@@ -2128,7 +2092,6 @@ ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAudioTrack
 ec:hasRelatedAudioTrack rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:MediaResource ;
                         rdfs:range ec:AudioTrack ;
                         dcterms:description "To identify related Audio Tracks"@en ;
                         rdfs:label "Audio track"@en .
@@ -2164,7 +2127,6 @@ ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedEssence
 ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:MediaResource ;
                      rdfs:range ec:Essence ;
                      dcterms:description "To establish a relation between a MediaResource and an Essence."@en ;
                      rdfs:label "Related essence"@en .
@@ -2350,7 +2312,6 @@ ec:hasSigningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSource
 ec:hasSource rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range ec:MediaResource ;
              dcterms:description "To identify the source of a MediaResource."@en ;
              rdfs:label "Source"@en .
@@ -2383,7 +2344,6 @@ ec:hasStakeholder rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStandard
 ec:hasStandard rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range ec:Standard ;
                dcterms:description "Identifies the technical video standard of a MediaResource, i.e. NTSC or PAL."@en ;
                rdfs:label "Standard"@en .
@@ -2398,7 +2358,6 @@ ec:hasStorageId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageType
 ec:hasStorageType rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range ec:Storage_Type ;
                   dcterms:description "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ;
                   rdfs:label "Storage type"@en .
@@ -2421,7 +2380,6 @@ ec:hasSubtitling rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubtitlingFormat
 ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range ec:SubtitlingFormat ;
                        dcterms:description "The format of Subtitling."@en ;
                        rdfs:label "Subtitling format"@en .
@@ -2481,7 +2439,6 @@ ec:hasTheme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimecodeTrack
 ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range ec:TimecodeTrack ;
                     dcterms:description "To identify a timecode track with a MediaResource."@en ;
                     rdfs:label "Timecode track"@en .
@@ -2520,7 +2477,6 @@ ec:hasTopic rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTrack
 ec:hasTrack rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
             rdfs:range ec:Track ;
             dcterms:description "To associate audio/data/video tracks with a MediaResource."@en ;
             rdfs:label "Track"@en .
@@ -2561,8 +2517,7 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVersion
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
-              rdfs:domain ec:MediaResource ;
-              rdfs:range ec:MediaResource ;
+              rdfs:range ec:BusinessObject ;
               dcterms:description "To identify another version of an Asset, BusinessObject or Resource."@en ;
               rdfs:label "Version"@en .
 
@@ -2570,7 +2525,6 @@ ec:hasVersion rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoCodec
 ec:hasVideoCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:VideoCodec ;
                  dcterms:description "To identify a video codec"@en ;
                  rdfs:label "Video codec"@en .
@@ -2579,7 +2533,6 @@ ec:hasVideoCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoEncodingFormat
 ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:domain ec:MediaResource ;
                           rdfs:range ec:VideoEncodingFormat ;
                           dcterms:description "To specify the video encoding format."@en ;
                           rdfs:label "Audio encoding format"@en .
@@ -2587,7 +2540,6 @@ ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoTrack
 ec:hasVideoTrack rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:VideoTrack ;
                  dcterms:description "To identify VideoTracks in the Resource."@en ;
                  rdfs:label "Video track"@en .
@@ -2612,7 +2564,6 @@ ec:hived rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:EditorialObject ;
                 dcterms:description """To link a particular manifestation of a
             BusinessObject to the corresponding Resource."""@en ;
@@ -2681,23 +2632,21 @@ ec:isCharacter rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:MediaResource ;
-             rdfs:range ec:MediaResource ;
+             owl:inverseOf ec:isParentOf ;
+             rdfs:range ec:BusinessObject ;
              dcterms:description "To link a BusinessOject or Resource to a parent."@en ;
              rdfs:label "Parent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isClonedFrom
 ec:isClonedFrom rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:MediaResource ;
-                dcterms:description "To identify the source of a clone Editorial Object or Resource"@en ;
+                dcterms:description "To identify the source of a clone MediaResource"@en ;
                 rdfs:label "Clone source"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isComposedOf
 ec:isComposedOf rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:MediaResource ;
                 dcterms:description "To identify mediaResources used to compose an Essence."@en ;
                 rdfs:label "Media Resource"@en .
@@ -2710,8 +2659,7 @@ ec:isCoveredBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDerivedFrom
 ec:isDerivedFrom rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
-                 rdfs:range ec:MediaResource ;
+                 rdfs:range ec:Asset ;
                  dcterms:description "Identifies a content-based relationship between two resources."@en ;
                  rdfs:label "Derived from"@en .
 
@@ -2725,7 +2673,6 @@ ec:isDistributedOn rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDubbedFrom
 ec:isDubbedFrom rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range ec:MediaResource ;
                 dcterms:description "the origin of a dubbed MediaResource."@en ;
                 rdfs:label "Dubbed from"@en .
@@ -2792,7 +2739,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf
 ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:MediaFragment ;
                      rdfs:range ec:MediaResource ;
                      dcterms:description "To identify the Media Resource to which a Media Fragment belongs to"@en ;
                      rdfs:label "Media fragment source"@en .
@@ -2841,8 +2787,7 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isParentOf
 ec:isParentOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:MediaResource ;
-              rdfs:range ec:MediaResource ;
+              rdfs:range ec:BusinessObject ;
               dcterms:description "To link a Asset to a parent Asset."@en ;
               rdfs:label "Child"@en .
 
@@ -2903,17 +2848,17 @@ ec:isReleasedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReplacedBy
 ec:isReplacedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range ec:MediaResource ;
+                owl:inverseOf ec:replaces ;
+                rdfs:range ec:BusinessObject ;
                 dcterms:description "To identify substitutions."@en ;
                 rdfs:label "Replacement"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRequiredBy
 ec:isRequiredBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:MediaResource ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "To express strong relations between Assets, BusinessObjects or Resources."@en ;
+                owl:inverseOf ec:requires ;
+                rdfs:range ec:BusinessObject ;
+                dcterms:description "To express strong relations between BusinessObjects"@en ;
                 rdfs:label "Required"@en .
 
 
@@ -2948,7 +2893,6 @@ ec:isTimelineTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isTrackPartOf
 ec:isTrackPartOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range ec:Track ;
                  dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destination."@en ;
                  rdfs:label "Track part source"@en .
@@ -2956,8 +2900,7 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:MediaResource ;
-               rdfs:range ec:MediaResource ;
+               rdfs:range ec:BusinessObject ;
                dcterms:description "To identify related versions."@en ;
                rdfs:label "Version of"@en .
 
@@ -3039,8 +2982,7 @@ ec:references rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#replaces
 ec:replaces rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
-            rdfs:range ec:MediaResource ;
+            rdfs:range ec:BusinessObject ;
             dcterms:description "To identify substitution."@en ;
             rdfs:label "Replaces"@en .
 
@@ -3054,8 +2996,7 @@ ec:represents rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#requires
 ec:requires rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:MediaResource ;
-            rdfs:range ec:MediaResource ;
+            rdfs:range ec:BusinessObject ;
             dcterms:description "To express dependency."@en ;
             rdfs:label "Requires"@en .
 
@@ -3137,7 +3078,6 @@ time:hasTRS rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/dc/elements/1.1/source
 dc:source rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:MediaResource ;
           rdfs:range rdfs:Literal ;
           dcterms:description "To identify a Resource as the source of another Resource."@en ;
           rdfs:label "Source"@en .
@@ -4012,7 +3952,6 @@ ec:education rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingLevel
 ec:encodingLevel rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To define an encoding level."@en ;
                  rdfs:label "Encoding level"@en .
@@ -4020,7 +3959,6 @@ ec:encodingLevel rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingProfile
 ec:encodingProfile rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "The encoding profile as defined in specifications."@en ;
                    rdfs:label "Encoding profile"@en .
@@ -4069,7 +4007,10 @@ ec:familyName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileName
-ec:fileName rdf:type owl:DatatypeProperty ;
+
+ec:fileName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+
             rdfs:range xsd:string ;
             dcterms:description "The name of the file containing the Resource."@en ;
             rdfs:label "File name"@en .
@@ -4100,7 +4041,6 @@ ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#folksonomy
 ec:folksonomy rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range rdfs:Literal ;
               dcterms:description "Provides a user/audience-generated description, tag, or label for resource content."@en ;
               rdfs:label "Folksonomy"@en .
@@ -4125,7 +4065,6 @@ ec:foodIngredient rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameHeight
 ec:frameHeight rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf ec:height ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range xsd:integer ;
                dcterms:description "The height of a video frame."@en ;
                rdfs:label "Frame height"@en .
@@ -4134,7 +4073,6 @@ ec:frameHeight rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameHeightUnit
 ec:frameHeightUnit rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:heightUnit ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "The unit used to measure the height of a frame."@en ;
                    rdfs:label "Frame height unit"@en .
@@ -4142,7 +4080,6 @@ ec:frameHeightUnit rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameRate
 ec:frameRate rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range rdfs:Literal ;
              dcterms:description "The unit used to express the frame rate of a MediaResource in frames/second."@en ;
              rdfs:label "Frame rate"@en .
@@ -4150,7 +4087,6 @@ ec:frameRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameSizeUnit
 ec:frameSizeUnit rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description """The unit used to express the frame width or
             height. The unit by default is 'pixel'."""@en ;
@@ -4160,7 +4096,6 @@ ec:frameSizeUnit rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameWidth
 ec:frameWidth rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf ec:width ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:integer ;
               dcterms:description "The width of a video frame."@en ;
               rdfs:label "Frame width"@en .
@@ -4169,7 +4104,6 @@ ec:frameWidth rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameWidthUnit
 ec:frameWidthUnit rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:widthUnit ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "The unit used to measure the width of a frame."@en ;
                   rdfs:label "Frame width unit"@en .
@@ -4208,8 +4142,7 @@ ec:hasIdPicture rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hashValue
 ec:hashValue rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:MediaResource ;
-             rdfs:range rdfs:Literal ;
+             rdfs:range xsd:string ;
              dcterms:description """The hash value associated to a Resource. There
             are different methods / algorithms to calculate hash values, which can be defined as
             subproperties."""@en ;
@@ -4252,7 +4185,6 @@ ec:hobbies rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#iFrameSize
 ec:iFrameSize rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:int ;
               dcterms:description "The distance between 2 I-frames also known as the gop size."@en ;
               rdfs:label "I-frame/Gop size"@en .
@@ -4269,7 +4201,6 @@ ec:identifierValue rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#inchesPerSecond
 ec:inchesPerSecond rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:playbackSpeed ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:double ;
                    dcterms:description "Identifies the inches per second at which an analog audio tape should be played back for human consumption."@en ;
                    rdfs:label "Inches per second"@en .
@@ -4446,7 +4377,6 @@ ec:maritalStatus rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed
 ec:midRollAdAllowed rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range xsd:boolean ;
                     dcterms:description "A flag to indicate whether it is allowed to insert ad breaks in mid-roll."@en ;
                     rdfs:label "Midroll ad allowed"@en .
@@ -4482,7 +4412,6 @@ ec:nickName rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#noiseFilter
 ec:noiseFilter rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range xsd:boolean ;
                dcterms:description """A flag to signal that a noise filter has been
             used."""@en ;
@@ -4500,7 +4429,6 @@ ec:notRated rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfAudioTracks
 ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of audio tracks."@en ;
                        rdfs:label "Number of audio tracks"@en .
@@ -4508,7 +4436,6 @@ ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#numberOfVideoTracks
 ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:MediaResource ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To provide the number of video tracks."@en ;
                        rdfs:label "Number of video tracks"@en .
@@ -4578,7 +4505,6 @@ ec:originalTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#packageByteSize
 ec:packageByteSize rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:long ;
                    dcterms:description """The size of a media package in
             Bytes."""@en ;
@@ -4587,10 +4513,8 @@ ec:packageByteSize rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#packageName
 ec:packageName rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:MediaResource ;
                rdfs:range rdfs:Literal ;
-               dcterms:description """The name of a media package in
-            Bytes."""@en ;
+               dcterms:description "The name of a media package in Bytes."@en ;
                rdfs:label "Package name"@en .
 
 
@@ -4642,7 +4566,6 @@ ec:personWeight rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playbackSpeed
 ec:playbackSpeed rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:MediaResource ;
                  rdfs:range xsd:double ;
                  dcterms:description "Identifies the rate of units against time at which the resource should be played back for human consumption.  If the unit of measure is known, use sub-properties framesPerSecond or inchesPerSecond."@en ;
                  rdfs:label "Playback speed"@en .
@@ -4822,7 +4745,6 @@ ec:reason rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimX
 ec:regionDelimX rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:integer ;
                 dcterms:description """To define the top left corner of a zone on
             the x-axis. If present with regionDelimy, the zone definition is complemented by the
@@ -4832,7 +4754,6 @@ ec:regionDelimX rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimY
 ec:regionDelimY rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:integer ;
                 dcterms:description """To define the bottom right corner of a zone on
             the y-axis. If present with regionDelimX, the zone definition is complemented by the
@@ -4934,7 +4855,6 @@ ec:salutationTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleRate
 ec:sampleRate rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:integer ;
               dcterms:description "The frequency at which audio is sampled per second. Also called sampling rate."@en ;
               rdfs:label "Sample Rate"@en .
@@ -4942,7 +4862,6 @@ ec:sampleRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleSize
 ec:sampleSize rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range xsd:integer ;
               dcterms:description """The size of an audio sample in
             bits. Also called bit depth."""@en ;
@@ -4951,7 +4870,6 @@ ec:sampleSize rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#sampleType
 ec:sampleType rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range rdfs:Literal ;
               dcterms:description "The type of audio sample."@en ;
               rdfs:label "Sample type"@en .
@@ -4959,7 +4877,6 @@ ec:sampleType rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#scanningFormat
 ec:scanningFormat rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:MediaResource ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description """To define the scanning format for a
             MediaResource. For video, the two main values are \"interlaced\" or
@@ -5171,7 +5088,6 @@ ec:versionTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRate
 ec:videoBitRate rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:MediaResource ;
                 rdfs:range xsd:nonNegativeInteger ;
                 dcterms:description """The video bitrate. To provide the bitrate at which the MediaResource can be played
           in bits/second. Current bitrate if constant, and average bitrate if
@@ -5181,7 +5097,6 @@ ec:videoBitRate rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMax
 ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:MediaResource ;
                    rdfs:range xsd:nonNegativeInteger ;
                    dcterms:description "The maximum video bitrate."@en ;
                    rdfs:label "Video bitrate max"@en .
@@ -5189,7 +5104,6 @@ ec:videoBitRateMax rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRateMode
 ec:videoBitRateMode rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:MediaResource ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "The video bitrate mode."@en ;
                     rdfs:label "Video bitrate mode"@en .
@@ -5198,7 +5112,6 @@ ec:videoBitRateMode rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoEncodingLevel
 ec:videoEncodingLevel rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf ec:encodingLevel ;
-                      rdfs:domain ec:MediaResource ;
                       rdfs:range rdfs:Literal ;
                       dcterms:description "The encoding level as defined in specifications."@en ;
                       rdfs:label "Video encoding level"@en .
@@ -5207,7 +5120,6 @@ ec:videoEncodingLevel rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoEncodingProfile
 ec:videoEncodingProfile rdf:type owl:DatatypeProperty ;
                         rdfs:subPropertyOf ec:encodingProfile ;
-                        rdfs:domain ec:MediaResource ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description "The encoding level as defined in specifications."@en ;
                         rdfs:label "Video encoding profile"@en .
@@ -6751,6 +6663,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ebuccdm:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:derivedTo ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAccessConditions ;
                            owl:allValuesFrom ec:AccessConditions
                          ] ,
@@ -6834,7 +6750,8 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
 
-                           owl:onProperty ec:isVersionOf ;
+                           owl:onProperty ec:isDerivedFrom ;
+
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -7345,8 +7262,36 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Topic
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasVersion ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isParentOf ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isReplacedBy ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isRequiredBy ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isVersionOf ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:replaces ;
+                                    owl:allValuesFrom ec:BusinessObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:represents ;
                                     owl:allValuesFrom ec:Asset
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:requires ;
+                                    owl:allValuesFrom ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:versionType ;
@@ -7361,6 +7306,11 @@ ec:BusinessObject rdf:type owl:Class ;
                                     owl:onProperty ec:hasLocation ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:Location
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isChildOf ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:BusinessObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:title ;
@@ -7719,13 +7669,13 @@ ec:Document rdf:type owl:Class ;
             rdfs:subClassOf ec:Resource ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasDocumentFormat ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:DocumentFormat
+
+                              owl:allValuesFrom ec:DocumentFormat
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasEncodingFormat ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:EncodingFormat
+                              owl:allValuesFrom ec:EncodingFormat
+
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:wordCount ;
@@ -7949,6 +7899,15 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:orderedFlag ;
                                      owl:allValuesFrom xsd:boolean
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:folksonomy ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:midRollAdAllowed ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:boolean
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:orderedFlag ;
@@ -8617,7 +8576,11 @@ ec:Logo rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment
 ec:MediaFragment rdf:type owl:Class ;
-                 rdfs:subClassOf ec:MediaResource ;
+                 rdfs:subClassOf ec:MediaResource ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isMediaFragmentOf ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ;
                  dcterms:description "A MediaFragment is a temporal or spatial segment of a resource identified by a MediaGragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@en ;
                  rdfs:label "Media Fragment"@en .
 
@@ -8634,16 +8597,90 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:displayAspectRatio ;
-                                   owl:allValuesFrom ec:ActiveFormatDescriptorCode
+
+                                   owl:onProperty ec:dubbedTo ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasAudioTrack ;
+                                   owl:allValuesFrom ec:AudioTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasCaptioningSource ;
+                                   owl:allValuesFrom ec:Agent
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasCodec ;
+                                   owl:allValuesFrom ec:Codec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDataTrack ;
+                                   owl:allValuesFrom ec:DataTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasEncodingFormat ;
+                                   owl:allValuesFrom ec:EncodingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasFormat ;
+                                   owl:allValuesFrom ec:Format
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasGeneration ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMediaFragment ;
+                                   owl:allValuesFrom ec:MediaFragment
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMedium ;
+                                   owl:allValuesFrom ec:Medium
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMetadataTrack ;
+                                   owl:allValuesFrom ec:MetadataTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedAudioObject ;
+                                   owl:allValuesFrom ec:AudioObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedAudioTrack ;
+                                   owl:allValuesFrom ec:AudioTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasRelatedEssence ;
+                                   owl:allValuesFrom ec:Essence
+
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSource ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasStandard ;
+                                   owl:allValuesFrom ec:Standard
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasStorageType ;
+                                   owl:allValuesFrom ec:Storage_Type
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasSubtitlingFormat ;
+                                   owl:allValuesFrom ec:SubtitlingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTimecodeTrack ;
+                                   owl:allValuesFrom ec:TimecodeTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasTrack ;
                                    owl:allValuesFrom ec:Track
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoTrack ;
+                                   owl:allValuesFrom ec:VideoTrack
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:instantiates ;
@@ -8683,9 +8720,121 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasEncodingFormat ;
+
+                                   owl:onProperty ec:displayAspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ec:EncodingFormat
+                                   owl:onClass ec:ActiveFormatDescriptorCode
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasAncillaryDataFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:AncillaryDataFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasAudioCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:AudioCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasAudioEncodingFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:AudioEncodingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasCaptioningFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:CaptioningFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasColourSpace ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ColourSpace
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasContainerCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ContainerCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasContainerEncodingFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ContainerEncodingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasContainerMimeType ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasFileFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:FileFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasImageCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ImageCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasImageFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ImageFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasLocation ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:Location
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMaster ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasMimeType ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasParentMediaResource ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasSource ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoCodec ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:VideoCodec
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasVideoEncodingFormat ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:VideoEncodingFormat
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:instantiates ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:EditorialObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isClonedFrom ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isDubbedFrom ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isTrackPartOf ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:Track
+
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:translationTitle ;
@@ -8693,6 +8842,23 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
 
+                                   owl:onProperty ec:encodingLevel ;
+                                   owl:allValuesFrom rdfs:Literal
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:encodingProfile ;
+                                   owl:allValuesFrom rdfs:Literal
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty dc:source ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:aspectRatio ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:audioBitRate ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:nonNegativeInteger
@@ -8734,6 +8900,11 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onDataRange xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:bitRate ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:bitRateMax ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:nonNegativeInteger
@@ -8750,11 +8921,126 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dimensions ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
- ] ,
- [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:aspectRatio ;
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameHeight ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameHeightUnit ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameRate ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameSizeUnit ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameWidth ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:frameWidthUnit ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hashValue ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:iFrameSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:inchesPerSecond ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:double
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:noiseFilter ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:boolean
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:numberOfAudioTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:numberOfVideoTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:packageByteSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:long
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:packageName ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:playbackSpeed ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:double
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:regionDelimX ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:regionDelimY ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleRate ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleSize ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:sampleType ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:scanningFormat ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRate ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRateMax ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoBitRateMode ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoEncodingLevel ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoEncodingProfile ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
 
                                  ] ;
                  owl:disjointWith ec:Rating ;
@@ -8994,13 +9280,40 @@ ec:Picture rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
 
                              owl:onProperty ec:hasEncodingFormat ;
+                             owl:allValuesFrom ec:EncodingFormat
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasImageCodec ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass ec:EncodingFormat
-                             ] ,
-[ rdf:type owl:Restriction ;
+                             owl:onClass ec:ImageCodec
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasImageFormat ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass ec:ImageFormat
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:aspectRatio ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameHeight ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameHeightUnit ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameWidth ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:frameWidthUnit ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
 
                            ] ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
@@ -9476,19 +9789,11 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:duration ;
+
+                              owl:onProperty ec:objectType ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:TimelinePoint
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:end ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:TimelinePoint
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:start ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:TimelinePoint
+                              owl:onClass skos:Concept
+
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
