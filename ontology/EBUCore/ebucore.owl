@@ -1982,7 +1982,6 @@ ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationMedium
 ec:hasPublicationMedium rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:PublicationEvent ;
                         rdfs:range ec:PublicationMedium ;
                         dcterms:description "To identify the publication medium."@en ;
                         rdfs:label "Publication medium"@en .
@@ -1998,7 +1997,6 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:PublicationEvent ;
                         rdfs:range ec:Location ;
                         dcterms:description "The region where the publication takes place."@en ;
                         rdfs:label "Publication region"@en .
@@ -2155,7 +2153,6 @@ ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPublicationChannel
 ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
-                                rdfs:domain ec:PublicationEvent ;
                                 rdfs:range ec:PublicationChannel ;
                                 dcterms:description "To identify a Publication Channel"@en ;
                                 rdfs:label "Publication channel"@en .
@@ -2163,7 +2160,6 @@ ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPublicationEvent
 ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:PublicationEvent ;
                               rdfs:range ec:PublicationEvent ;
                               dcterms:description "To identify the PublicationEvent associated with a MediaResource (manifestation of an EditorialObject)."@en ;
                               rdfs:label "Publication event"@en .
@@ -2833,7 +2829,6 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReleasedBy
 ec:isReleasedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:PublicationEvent ;
                 rdfs:range ec:Service ;
                 dcterms:description "To identify a Service assocoated to a PublicationEvent."@en ;
                 rdfs:label "Service"@en .
@@ -2953,10 +2948,16 @@ ec:objectType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:PublicationEvent ;
             rdfs:range ec:Essence ;
             dcterms:description "To identify the Essence used in a PublicationEvent"@en ;
             rdfs:label "Essence"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
+ec:publicationScheduleDate rdf:type owl:ObjectProperty ;
+                           rdfs:range time:Instant ;
+                           dcterms:description "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ;
+                           rdfs:label "Schedule date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishes
@@ -4652,14 +4653,6 @@ ec:publicationPlanStatus rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanTitle
 ec:publicationPlanTitle rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
-ec:publicationScheduleDate rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ec:PublicationEvent ;
-                           rdfs:range xsd:date ;
-                           dcterms:description "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ;
-                           rdfs:label "Schedule date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedTitle
@@ -9414,6 +9407,18 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasPublicationMedium ;
+                                      owl:allValuesFrom ec:PublicationMedium
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasPublicationRegion ;
+                                      owl:allValuesFrom ec:Location
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasRelatedPublicationEvent ;
+                                      owl:allValuesFrom ec:PublicationEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
                                       owl:allValuesFrom ec:Service
                                     ] ,
@@ -9443,6 +9448,11 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onProperty ec:endDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:DateTimeDescription
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:publicationScheduleDate ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:abstract ;
