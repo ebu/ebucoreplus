@@ -646,13 +646,6 @@ ebuccdm:isDefinedBy rdf:type owl:ObjectProperty ;
                     rdfs:label "Related contract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isDerivedFrom
-ebuccdm:isDerivedFrom rdf:type owl:ObjectProperty ;
-                      dcterms:description """Ti identify a source from which a Resource is
-      derived."""@en ;
-                      rdfs:label "Source"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isExtractOf
 ebuccdm:isExtractOf rdf:type owl:ObjectProperty ;
                     dcterms:description """Used for representing an extract, i. e. the playout of a part or the whole of some archived material on the playout.
@@ -4007,10 +4000,8 @@ ec:familyName rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileName
-
 ec:fileName rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
-
             rdfs:range xsd:string ;
             dcterms:description "The name of the file containing the Resource."@en ;
             rdfs:label "File name"@en .
@@ -6743,15 +6734,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:UsageRestrictions
                          ] ,
                          [ rdf:type owl:Restriction ;
-
-
                            owl:onProperty ec:hasUsageRights ;
                            owl:allValuesFrom ec:UsageRights
                          ] ,
                          [ rdf:type owl:Restriction ;
-
                            owl:onProperty ec:isDerivedFrom ;
-
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -7669,13 +7656,11 @@ ec:Document rdf:type owl:Class ;
             rdfs:subClassOf ec:Resource ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasDocumentFormat ;
-
                               owl:allValuesFrom ec:DocumentFormat
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasEncodingFormat ;
                               owl:allValuesFrom ec:EncodingFormat
-
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:wordCount ;
@@ -7829,8 +7814,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:TimelineTrack
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-
-
                                      owl:onProperty ec:isDistributedOn ;
                                      owl:allValuesFrom ec:Service
                                    ] ,
@@ -7839,13 +7822,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-
                                      owl:onProperty ec:isInstantiatedBy ;
                                      owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-
-
                                      owl:onProperty ec:isMemberOf ;
                                      owl:allValuesFrom ec:Group
                                    ] ,
@@ -7862,7 +7842,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-
                                      owl:onProperty ec:dateBroadcast ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
@@ -8597,7 +8576,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-
                                    owl:onProperty ec:dubbedTo ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
@@ -8652,7 +8630,6 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasRelatedEssence ;
                                    owl:allValuesFrom ec:Essence
-
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSource ;
@@ -8720,7 +8697,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-
                                    owl:onProperty ec:displayAspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:ActiveFormatDescriptorCode
@@ -8834,14 +8810,12 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:isTrackPartOf ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:Track
-
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:translationTitle ;
                                    owl:someValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-
                                    owl:onProperty ec:encodingLevel ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ,
@@ -9041,7 +9015,6 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingProfile ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-
                                  ] ;
                  owl:disjointWith ec:Rating ;
                  dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
@@ -9278,7 +9251,6 @@ ec:Pictogram rdf:type owl:Class ;
 ec:Picture rdf:type owl:Class ;
            rdfs:subClassOf ec:Resource ,
                            [ rdf:type owl:Restriction ;
-
                              owl:onProperty ec:hasEncodingFormat ;
                              owl:allValuesFrom ec:EncodingFormat
                            ] ,
@@ -9314,7 +9286,6 @@ ec:Picture rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:frameWidthUnit ;
                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
-
                            ] ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
            rdfs:label "Picture"@en .
@@ -9747,10 +9718,6 @@ ec:Resource rdf:type owl:Class ;
                               owl:someValuesFrom ec:Locator
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ebuccdm:isDerivedFrom ;
-                              owl:allValuesFrom ec:Resource
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ebuccdm:isResourceCommissionedBy ;
                               owl:allValuesFrom ebuccdm:Contract
                             ] ,
@@ -9789,11 +9756,9 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-
                               owl:onProperty ec:objectType ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass skos:Concept
-
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
