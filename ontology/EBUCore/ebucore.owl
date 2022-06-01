@@ -2203,7 +2203,6 @@ ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelationSource
 ec:hasRelationSource rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Relation ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To define source of a Relation."@en ;
                      rdfs:label "Relation source"@en .
@@ -2972,6 +2971,13 @@ ec:references rdf:type owl:ObjectProperty ;
               rdfs:range ec:MediaResource ;
               dcterms:description "To express a reference between Assets, BusinessObjects or Resources."@en ;
               rdfs:label "References"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationLink
+ec:relationLink rdf:type owl:ObjectProperty ;
+                rdfs:range owl:Thing ;
+                dcterms:description "To define a link in a Relation."@en ;
+                rdfs:label "Link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#replaces
@@ -4745,17 +4751,8 @@ ec:regionDelimY rdf:type owl:DatatypeProperty ;
                 rdfs:label "Region delimiter (y-axis)"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationLink
-ec:relationLink rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Relation ;
-                rdfs:range xsd:anyURI ;
-                dcterms:description "To define a link in a Relation."@en ;
-                rdfs:label "Link"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationOrderedGroupFlag
 ec:relationOrderedGroupFlag rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:Relation ;
                             rdfs:range xsd:boolean ;
                             dcterms:description "A boolean to define if a Relation is defined within and ordered group."@en ;
                             rdfs:label "Relation Ordered group flag"@en .
@@ -4763,16 +4760,14 @@ ec:relationOrderedGroupFlag rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationRunningOrderNumber
 ec:relationRunningOrderNumber rdf:type owl:DatatypeProperty ;
-                              rdfs:domain ec:Relation ;
-                              rdfs:range rdfs:Literal ;
+                              rdfs:range xsd:integer ;
                               dcterms:description "The order number in a list."@en ;
                               rdfs:label "Relation Running Order Number"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#relationTotalNumberOfGroupMembers
 ec:relationTotalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain ec:Relation ;
-                                     rdfs:range rdfs:Literal ;
+                                     rdfs:range xsd:integer ;
                                      dcterms:description "Total number of group members in a Relation."@en ;
                                      rdfs:label "Total number of group members."@en .
 
@@ -9703,12 +9698,36 @@ ec:Relation rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelationSource ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:relationLink ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:name ;
                               owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:relationOrderedGroupFlag ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:relationRunningOrderNumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:relationTotalNumberOfGroupMembers ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
                             ] ;
             dcterms:description "To define links and relations."@en ;
             rdfs:label "Relation"@en .
