@@ -1138,7 +1138,6 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Person ;
                   rdfs:range ec:Affiliation ;
                   dcterms:description """A property to establish the relation between a
             Contact/Person and an Organisation."""@en ;
@@ -1204,7 +1203,6 @@ ec:hasAncillaryDataFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnimalBreedCode
 ec:hasAnimalBreedCode rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Animal ;
                       rdfs:range ec:AnimalBreedCode ;
                       dcterms:description "To associate a breed code with an animal."@en ;
                       rdfs:label "Animal breed code"@en .
@@ -1212,7 +1210,6 @@ ec:hasAnimalBreedCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnimalColourCode
 ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Animal ;
                        rdfs:range ec:AnimalColourCode ;
                        dcterms:description "To associate a colour code with an animal."@en ;
                        rdfs:label "Animal colour code"@en .
@@ -1220,7 +1217,6 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnimalRole
 ec:hasAnimalRole rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Animal ;
                  rdfs:range ec:Role ;
                  dcterms:description "To identify the role of an animal."@en ;
                  rdfs:label "Animal role"@en .
@@ -1496,7 +1492,6 @@ ec:hasCopyright rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCountryOfBirth
 ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Person ;
                      rdfs:range ec:CountryCode ;
                      dcterms:description "The country where a person is born."@en ;
                      rdfs:label "Country of birth"@en .
@@ -1504,7 +1499,6 @@ ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCountryOfDeath
 ec:hasCountryOfDeath rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Person ;
                      rdfs:range ec:CountryCode ;
                      dcterms:description "The country where the person died"@en ;
                      rdfs:label "Country of death"@en .
@@ -1587,7 +1581,6 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDepartment
 ec:hasDepartment rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Organisation ;
                  rdfs:range ec:Department ;
                  dcterms:description "To identify a department in an organisation."@en ;
                  rdfs:label "Department"@en .
@@ -1704,6 +1697,13 @@ ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:label "IPR restrictions"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
+ec:hasIdPicture rdf:type owl:ObjectProperty ;
+                rdfs:range ec:Picture ;
+                dcterms:description "To provide a link to an identification picture."@en ;
+                rdfs:label "Identification picture"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier
 ec:hasIdentifier rdf:type owl:ObjectProperty ;
                  rdfs:range ec:Identifier ;
@@ -1727,7 +1727,6 @@ ec:hasImageFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Person ;
                      rdfs:range ec:KeyCareerEvent ;
                      dcterms:description "To identify the key career events of a Person."@en ;
                      rdfs:label "Career event"@en .
@@ -1735,7 +1734,6 @@ ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasKeyPersonalEvent
 ec:hasKeyPersonalEvent rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Person ;
                        rdfs:range ec:KeyPersonalEvent ;
                        dcterms:description "To identify the key personal events of a Person."@en ;
                        rdfs:label "Personal event"@en .
@@ -1870,7 +1868,6 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:Organisation ;
                         rdfs:range ec:Staff ;
                         dcterms:description "To identify Staff members in an Organisation."@en ;
                         rdfs:label "Staff"@en .
@@ -1924,7 +1921,6 @@ ec:hasPictogram rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPlaceOfBirth
 ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Person ;
                    rdfs:range ec:Location ;
                    dcterms:description "To identify the place of birth."@en ;
                    rdfs:label "Birth place"@en .
@@ -1932,7 +1928,6 @@ ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPlaceOfDeath
 ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Person ;
                    rdfs:range ec:Location ;
                    dcterms:description "To identify the place of death."@en ;
                    rdfs:label "Death place"@en .
@@ -2304,7 +2299,6 @@ ec:hasSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffMember
 ec:hasStaffMember rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Organisation ;
                   rdfs:range ec:Staff ;
                   dcterms:description "To identify members of staff in an organisation."@en ;
                   rdfs:label "member of Staff"@en .
@@ -2400,7 +2394,6 @@ ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTeamMember
 ec:hasTeamMember rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Team ;
                  rdfs:range ec:Person ;
                  dcterms:description "To identify the members of a Team"@en ;
                  rdfs:label "Team member"@en .
@@ -2568,7 +2561,6 @@ ec:isAgent rdf:type owl:ObjectProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnimalGroom
 ec:isAnimalGroom rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Animal ;
                  rdfs:range ec:Agent ;
                  dcterms:description "To identify the groom / care taker of an animal."@en ;
                  rdfs:label "Animal groom"@en .
@@ -2576,7 +2568,6 @@ ec:isAnimalGroom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnimalOwner
 ec:isAnimalOwner rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Animal ;
                  rdfs:range ec:Agent ;
                  dcterms:description "To identify the owner of an animal."@en ;
                  rdfs:label "Animal owner"@en .
@@ -2697,7 +2688,6 @@ ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isFictitiousPerson
 ec:isFictitiousPerson rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Character ;
                       rdfs:range ec:Person ;
                       dcterms:description "To identify a Contact/Person being fictitious."@en ;
                       rdfs:label "Fictitious contact"@en .
@@ -2785,14 +2775,6 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
             rdfs:range ec:EditorialObject ;
             dcterms:description "To identify the editorial object to which belongs a part."@en ;
             rdfs:label "Editorial object"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPictureIdLocator
-ec:isPictureIdLocator rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:Person ;
-                      rdfs:range ec:Locator ;
-                      dcterms:description "The location from where a Person identification picture can be accessed."@en ;
-                      rdfs:label "Identification picture locator"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPreviousInSequence
@@ -3515,7 +3497,6 @@ ec:alternativeTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCharacterName
 ec:animalCharacterName rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Animal ;
                        rdfs:range rdfs:Literal ;
                        dcterms:description "To associate a fictitious character name with an animal."@en ;
                        rdfs:label "Animal character name"@en .
@@ -3523,7 +3504,6 @@ ec:animalCharacterName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCode
 ec:animalCode rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Animal ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To associate a code with an animal."@en ;
               rdfs:label "Animal code"@en .
@@ -3531,7 +3511,6 @@ ec:animalCode rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalPassport
 ec:animalPassport rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Animal ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "To replicate the passport of an animal."@en ;
                   rdfs:label "Animal passport"@en .
@@ -4119,15 +4098,6 @@ ec:givenName rdf:type owl:DatatypeProperty ;
              rdfs:label "Given name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture
-ec:hasIdPicture rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Person ;
-                rdfs:range xsd:anyURI ;
-                dcterms:description "A locator / URI or a Picture."@en ,
-                                    "To provide a link to an identification picture."@en ;
-                rdfs:label "Identification picture"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hashValue
 ec:hashValue rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string ;
@@ -4165,7 +4135,6 @@ ec:highlights rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hobbies
 ec:hobbies rdf:type owl:DatatypeProperty ;
-           rdfs:domain ec:Person ;
            rdfs:range rdfs:Literal ;
            dcterms:description "The hobbies of a Person."@en ;
            rdfs:label "Hobbies"@en .
@@ -4355,7 +4324,6 @@ ec:mainTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#maritalStatus
 ec:maritalStatus rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Person ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To identify the marital status of a Person."@en ;
                  rdfs:label "Marital Status"@en .
@@ -4430,7 +4398,6 @@ ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#occupation
 ec:occupation rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Person ;
               rdfs:range rdfs:Literal ;
               dcterms:description "The job / occupation name of a Person."@en ;
               rdfs:label "Occupation"@en .
@@ -4439,8 +4406,7 @@ ec:occupation rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#officeEmailAddress
 ec:officeEmailAddress rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf ec:agentEmailAddress ;
-                      rdfs:domain ec:Person ;
-                      rdfs:range rdfs:Literal ;
+                      rdfs:range xsd:string ;
                       dcterms:description """To provide the professional/office email
             address of an Agent (Contact/Person or Organisation)."""@en ;
                       rdfs:label "Office email"@en .
@@ -4449,7 +4415,6 @@ ec:officeEmailAddress rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#officeMobileTelephoneNumber
 ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                rdfs:subPropertyOf ec:agentTelephoneNumber ;
-                               rdfs:domain ec:Person ;
                                rdfs:range xsd:string ;
                                dcterms:description """To provide the office mobile telephone number of an
             Agent (Contact/Person)."""@en ;
@@ -4459,7 +4424,6 @@ ec:officeMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#officeTelephoneNumber
 ec:officeTelephoneNumber rdf:type owl:DatatypeProperty ;
                          rdfs:subPropertyOf ec:agentTelephoneNumber ;
-                         rdfs:domain ec:Person ;
                          rdfs:range xsd:string ;
                          dcterms:description """To provide the office telephone number of an
             Agent (Contact/Person)."""@en ;
@@ -4529,7 +4493,6 @@ ec:period rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personHeight
 ec:personHeight rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Person ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To indicate the height of a person."@en ;
                 rdfs:label "Person height"@en .
@@ -4537,7 +4500,6 @@ ec:personHeight rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personName
 ec:personName rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Person ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To provide e.g. compound names."@en ;
               rdfs:label "Person name"@en .
@@ -4545,7 +4507,6 @@ ec:personName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personWeight
 ec:personWeight rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Person ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To indicate the weight of a person."@en ;
                 rdfs:label "Person weight"@en .
@@ -4577,8 +4538,7 @@ ec:position rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#privateEmailAddress
 ec:privateEmailAddress rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf ec:agentEmailAddress ;
-                       rdfs:domain ec:Person ;
-                       rdfs:range rdfs:Literal ;
+                       rdfs:range xsd:string ;
                        dcterms:description """To provide the private email address of an
             Agent (Contact/Person)"""@en ;
                        rdfs:label "Private email"@en .
@@ -4587,7 +4547,6 @@ ec:privateEmailAddress rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#privateHomepage
 ec:privateHomepage rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf ec:agentWebHomepage ;
-                   rdfs:domain ec:Person ;
                    rdfs:range xsd:anyURI ;
                    dcterms:description """To provide an private web homepage of an Agent
             (Contact/Person)."""@en ;
@@ -4597,7 +4556,6 @@ ec:privateHomepage rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#privateMobileTelephoneNumber
 ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
                                 rdfs:subPropertyOf ec:agentTelephoneNumber ;
-                                rdfs:domain ec:Person ;
                                 rdfs:range xsd:string ;
                                 dcterms:description """To provide the private mobile telephone number of an
             Agent (Contact/Person)."""@en ;
@@ -4607,7 +4565,6 @@ ec:privateMobileTelephoneNumber rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#privateTelephoneNumber
 ec:privateTelephoneNumber rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf ec:agentTelephoneNumber ;
-                          rdfs:domain ec:Person ;
                           rdfs:range xsd:string ;
                           dcterms:description """To provide the private telephone number of an
             Agent (Contact/Person)."""@en ;
@@ -4806,7 +4763,6 @@ ec:rightsLink rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#salutationTitle
 ec:salutationTitle rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Person ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "To provide a salutation title e.g M. Ms, Dr, Pr."@en ;
                    rdfs:label "Salutation title"@en .
@@ -4876,7 +4832,6 @@ ec:subtitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#suffix
 ec:suffix rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:Person ;
           rdfs:range rdfs:Literal ;
           dcterms:description "To provide a suffix associated with a Person name e.g. Jr."@en ;
           rdfs:label "Suffix"@en .
@@ -5017,7 +4972,6 @@ ec:translationTitle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#username
 ec:username rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:Person ;
             rdfs:range rdfs:Literal ;
             dcterms:description """The username by which a Person is
             known e.g. when attributing a rating value."""@en ;
@@ -6420,8 +6374,28 @@ ec:AncillaryDataFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Animal
 ec:Animal rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAnimalBreedCode ;
+                            owl:allValuesFrom ec:AnimalBreedCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAnimalColourCode ;
+                            owl:allValuesFrom ec:AnimalColourCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAnimalRole ;
+                            owl:allValuesFrom ec:Role
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:allValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:isAnimalGroom ;
+                            owl:allValuesFrom ec:Agent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:isAnimalOwner ;
+                            owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
@@ -6444,6 +6418,18 @@ ec:Animal rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:name ;
                             owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:animalCharacterName ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:animalCode ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:animalPassport ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:gender ;
@@ -7351,7 +7337,12 @@ ec:Cast rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Character
 ec:Character rdf:type owl:Class ;
-             rdfs:subClassOf ec:Person ;
+             rdfs:subClassOf ec:Person ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isFictitiousPerson ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass ec:Person
+                             ] ;
              dcterms:description "E.g. a fictitious contact / person."@en ;
              rdfs:label "Character"@en .
 
@@ -9099,8 +9090,20 @@ ec:OpenSubtitling rdf:type owl:Class ;
 ec:Organisation rdf:type owl:Class ;
                 rdfs:subClassOf ec:Agent ,
                                 [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:hasDepartment ;
+                                  owl:allValuesFrom ec:Department
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:hasLogo ;
                                   owl:allValuesFrom ec:Logo
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:hasOrganisationStaff ;
+                                  owl:allValuesFrom ec:Staff
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ec:hasStaffMember ;
+                                  owl:allValuesFrom ec:Staff
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:endDateTime ;
@@ -9166,6 +9169,22 @@ ec:Party rdf:type owl:Class ;
 ec:Person rdf:type owl:Class ;
           rdfs:subClassOf ec:Agent ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAffiliation ;
+                            owl:allValuesFrom ec:Affiliation
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasIdPicture ;
+                            owl:allValuesFrom ec:Picture
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasKeyCareerEvent ;
+                            owl:allValuesFrom ec:KeyCareerEvent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasKeyPersonalEvent ;
+                            owl:allValuesFrom ec:KeyPersonalEvent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:dateOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
@@ -9179,6 +9198,26 @@ ec:Person rdf:type owl:Class ;
                             owl:onProperty ec:dateOfRetirement ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasCountryOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasCountryOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasPlaceOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Location
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasPlaceOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Location
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:age ;
@@ -9205,7 +9244,71 @@ ec:Person rdf:type owl:Class ;
                             owl:someValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hobbies ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:occupation ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:officeEmailAddress ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:officeMobileTelephoneNumber ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:officeTelephoneNumber ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:personName ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:personWeight ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:privateEmailAddress ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:privateHomepage ;
+                            owl:allValuesFrom xsd:anyURI
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:privateMobileTelephoneNumber ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:privateTelephoneNumber ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:salutationTitle ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:suffix ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:username ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:gender ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:maritalStatus ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:personHeight ;
                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
           dcterms:description "A Person."@en ,
@@ -10229,7 +10332,11 @@ ec:TargetPlatform rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
 ec:Team rdf:type owl:Class ;
-        rdfs:subClassOf ec:Agent ;
+        rdfs:subClassOf ec:Agent ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasTeamMember ;
+                          owl:allValuesFrom ec:Person
+                        ] ;
         dcterms:description "To define a Team."@en ;
         rdfs:label "Team"@en .
 
