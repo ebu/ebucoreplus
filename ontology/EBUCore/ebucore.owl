@@ -2904,22 +2904,6 @@ ec:loggsPublicationEvent rdf:type owl:ObjectProperty ;
                          skos:note "loggs publication event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId
-ec:mediaResourceId rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:MediaResource ;
-                   rdfs:range ec:Identifier ;
-                   dcterms:description "To identify a type of MediaResource, e.g. a template'."@en ;
-                   rdfs:label "Media resource Id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType
-ec:mediaResourceType rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:MediaResource ;
-                     rdfs:range ec:MediaResource_Type ;
-                     dcterms:description "To identify a type of MediaResource, e.g. a template'."@en ;
-                     rdfs:label "Media resource type"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#objectType
 ec:objectType rdf:type owl:ObjectProperty ;
               rdfs:range skos:Concept ;
@@ -2981,22 +2965,6 @@ ec:requires rdf:type owl:ObjectProperty ;
             rdfs:range ec:BusinessObject ;
             dcterms:description "To express dependency."@en ;
             rdfs:label "Requires"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceId
-ec:resourceId rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:MediaResource ;
-              rdfs:range ec:Identifier ;
-              dcterms:description "An identifier associated to a Resource."@en ;
-              rdfs:label "Resource id"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceIdType
-ec:resourceIdType rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
-                  rdfs:range ec:Resource_Type ;
-                  dcterms:description "To define a type of Resource."@en ;
-                  rdfs:label "Resource id"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffset
@@ -8644,10 +8612,6 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
                                    owl:allValuesFrom ec:MediaResource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:mediaResourceType ;
-                                   owl:allValuesFrom skos:Concept
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateDigitised ;
