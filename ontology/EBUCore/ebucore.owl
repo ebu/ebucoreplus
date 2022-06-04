@@ -928,9 +928,7 @@ ec:dateDistributed rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:date ;
                    rdfs:range time:Instant ;
                    dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:comment "*** Same ass Issued?"@en ;
-                   rdfs:label "Distribution date"@en ;
-                   owl:deprecated "true"^^xsd:boolean .
+                   rdfs:label "Distribution date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
@@ -3047,6 +3045,7 @@ ec:start rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startDateTime
 ec:startDateTime rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
                  rdfs:range time:Instant ;
                  rdfs:comment "A point of time or start of an interval"@en ,
                               "Start date time"@en .
@@ -6735,6 +6734,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateDeleted ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateDistributed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -6750,12 +6754,22 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateProduced ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateReleased ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:datelicensedStart ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hived ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
