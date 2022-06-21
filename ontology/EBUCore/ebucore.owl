@@ -4716,26 +4716,6 @@ ec:resolution rdf:type owl:DatatypeProperty ;
               rdfs:label "Resolution"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetNormalPlaytime
-ec:resourceOffsetNormalPlaytime rdf:type owl:DatatypeProperty ;
-                                rdfs:range xsd:time .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetNumberEditUnit
-ec:resourceOffsetNumberEditUnit rdf:type owl:DatatypeProperty ;
-                                rdfs:range xsd:long .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetTimecode
-ec:resourceOffsetTimecode rdf:type owl:DatatypeProperty ;
-                          rdfs:range rdfs:Literal .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#resourceOffsetTimecodedropframe
-ec:resourceOffsetTimecodedropframe rdf:type owl:DatatypeProperty ;
-                                   rdfs:range rdfs:Literal .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsClearanceFlag
 ec:rightsClearanceFlag rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
