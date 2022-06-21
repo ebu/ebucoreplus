@@ -891,6 +891,14 @@ ec:date rdf:type owl:ObjectProperty ;
         rdfs:label "Date"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateArchived
+ec:dateArchived rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
+                dcterms:description "The date when the Asset was archived."@en ;
+                rdfs:label "Archiving date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
 ec:dateBroadcast rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
@@ -2537,14 +2545,6 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
                    rdfs:range ec:WrappingType ;
                    dcterms:description "To specify the type of wrapping."@en ;
                    rdfs:label "Wrapping type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hived
-ec:hived rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf ec:date ;
-         rdfs:range time:Instant ;
-         dcterms:description "The date when the Asset was archived."@en ;
-         rdfs:label "Archiving date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates
@@ -6729,6 +6729,11 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateArchived ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -6765,11 +6770,6 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:datelicensedStart ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hived ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
