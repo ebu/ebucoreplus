@@ -891,6 +891,14 @@ ec:date rdf:type owl:ObjectProperty ;
         rdfs:label "Date"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateArchived
+ec:dateArchived rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:date ;
+                rdfs:range time:Instant ;
+                dcterms:description "The date when the Asset was archived."@en ;
+                rdfs:label "Archiving date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateBroadcast
 ec:dateBroadcast rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
@@ -928,9 +936,7 @@ ec:dateDistributed rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:date ;
                    rdfs:range time:Instant ;
                    dcterms:description "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:comment "*** Same ass Issued?"@en ;
-                   rdfs:label "Distribution date"@en ;
-                   owl:deprecated "true"^^xsd:boolean .
+                   rdfs:label "Distribution date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateIngested
@@ -2534,14 +2540,6 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
                    rdfs:label "Wrapping type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hived
-ec:hived rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf ec:date ;
-         rdfs:range time:Instant ;
-         dcterms:description "The date when the Asset was archived."@en ;
-         rdfs:label "Archiving date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
@@ -2997,6 +2995,7 @@ ec:start rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#startDateTime
 ec:startDateTime rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
                  rdfs:range time:Instant ;
                  rdfs:comment "A point of time or start of an interval"@en ,
                               "Start date time"@en .
@@ -6658,7 +6657,17 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateArchived ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateDeleted ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -6674,6 +6683,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateModified ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:dateProduced ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
