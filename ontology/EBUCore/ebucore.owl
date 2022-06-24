@@ -9892,16 +9892,16 @@ ec:Review rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights
 ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasContact ;
-                            owl:someValuesFrom ec:Contact
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ebuccdm:originateFrom ;
                             owl:allValuesFrom ebuccdm:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:applyTo ;
                             owl:allValuesFrom ec:Asset
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasContact ;
+                            owl:allValuesFrom ec:Contact
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
