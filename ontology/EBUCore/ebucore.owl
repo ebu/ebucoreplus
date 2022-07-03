@@ -2571,6 +2571,13 @@ ec:isAnimalOwner rdf:type owl:ObjectProperty ;
                  rdfs:label "Animal owner"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnimatedBy
+ec:isAnimatedBy rdf:type owl:ObjectProperty ;
+                rdfs:range ec:Person ;
+                dcterms:description "Character, animated by a persion using an artifact"@en ;
+                rdfs:label "is animated by"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource
 ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                             rdfs:range ec:MediaResource ;
@@ -2661,6 +2668,13 @@ ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
                        dcterms:description "To identify an Editorial Object based on the same Editorial format"@en ;
                        rdfs:comment "*** Bad description ***"@en ;
                        rdfs:label "Same editorial format"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEmbodiedBy
+ec:isEmbodiedBy rdf:type owl:ObjectProperty ;
+                rdfs:range ec:Artefact ;
+                dcterms:description "Character depicted by an Artifact"@en ;
+                rdfs:label "is embodied by"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOf
@@ -2773,6 +2787,21 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
             rdfs:range ec:EditorialObject ;
             dcterms:description "To identify the editorial object to which belongs a part."@en ;
             rdfs:label "Editorial object"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPlayedBy
+ec:isPlayedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:portrays ;
+              rdfs:range ec:Agent ;
+              dcterms:description "Relationship between a fictional character and the actor playing the part."@en ;
+              rdfs:label "is played by"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPortrayedBy
+ec:isPortrayedBy rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:Animal ;
+                 dcterms:description "Relationship between a fictional character and the animal that is depicted in the scene."@en ;
+                 rdfs:label "is portrayed by"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPreviousInSequence
@@ -2914,6 +2943,13 @@ ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:range ec:Essence ;
             dcterms:description "To identify the Essence used in a PublicationEvent"@en ;
             rdfs:label "Essence"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#portrays
+ec:portrays rdf:type owl:ObjectProperty ;
+            rdfs:range ec:Character ;
+            dcterms:description "A character played by a person"@en ;
+            rdfs:label "portrays"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
@@ -7301,6 +7337,22 @@ ec:Cast rdf:type owl:Class ;
 ec:Character rdf:type owl:Class ;
              rdfs:subClassOf ec:Person ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isAnimatedBy ;
+                               owl:allValuesFrom ec:Person
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isEmbodiedBy ;
+                               owl:allValuesFrom ec:Artefact
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isPlayedBy ;
+                               owl:allValuesFrom ec:Person
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isPortrayedBy ;
+                               owl:allValuesFrom ec:Animal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isFictitiousPerson ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass ec:Person
@@ -9141,6 +9193,10 @@ ec:Person rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasKeyPersonalEvent ;
                             owl:allValuesFrom ec:KeyPersonalEvent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:portrays ;
+                            owl:allValuesFrom ec:Character
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:dateOfBirth ;
