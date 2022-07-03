@@ -8600,10 +8600,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:VideoTrack
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:instantiates ;
-                                   owl:allValuesFrom ec:EditorialObject
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
