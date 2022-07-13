@@ -2974,7 +2974,6 @@ ec:resourceOffset rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes
 ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Rights ;
                            rdfs:range ec:CountryCode ;
                            dcterms:description "A list of country or region codes to which Rights do not apply."@en ;
                            rdfs:label "Excluded territories"@en .
@@ -2982,7 +2981,6 @@ ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryIncludes
 ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
-                           rdfs:domain ec:Rights ;
                            rdfs:range ec:CountryCode ;
                            dcterms:description "A list of country or region codes to which Rights apply."@en ;
                            rdfs:label "Included territories"@en .
@@ -4913,7 +4911,6 @@ ec:translationTitle rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf ec:alternativeTitle ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "A translated version of the title."@en ;
-                    rdfs:comment "**** SOMETHING WRONG ***"@en ;
                     rdfs:label "Translation title"@en .
 
 
@@ -6031,12 +6028,12 @@ ec:AccessConditions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Action
 ec:Action rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasRelatedAgent ;
-                            owl:someValuesFrom ec:Agent
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:allValuesFrom ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasRelatedAgent ;
+                            owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRelatedScene ;
@@ -6176,10 +6173,6 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:nickName ;
-                           owl:someValuesFrom rdfs:Literal
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
                            owl:allValuesFrom xsd:anyURI
                          ] ,
@@ -6265,6 +6258,10 @@ ec:Agent rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:name ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:nickName ;
                            owl:allValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -6403,10 +6400,6 @@ ec:AnimalColourCode rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation
 ec:Annotation rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasRelatedAgent ;
-                                owl:someValuesFrom ec:Agent
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasAnnotationAgent ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
@@ -6417,6 +6410,10 @@ ec:Annotation rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasIdentifier ;
                                 owl:allValuesFrom ec:Identifier
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasRelatedAgent ;
+                                owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasRelatedArtefact ;
@@ -6484,20 +6481,20 @@ ec:Annotation_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasCreator ;
-                              owl:someValuesFrom ec:Agent
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasRelatedAgent ;
-                              owl:someValuesFrom ec:Agent
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasArtefactRelatedPhysicalResource ;
                               owl:allValuesFrom ec:PhysicalResource
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasCreator ;
+                              owl:allValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:allValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:allValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedEditorialObject ;
@@ -6553,10 +6550,6 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isCoveredBy ;
-                           owl:someValuesFrom ec:Rights
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ebuccdm:hasAssetValue ;
                            owl:allValuesFrom ebuccdm:AssetValue
                          ] ,
@@ -6651,6 +6644,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRights ;
                            owl:allValuesFrom ec:UsageRights
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isCoveredBy ;
+                           owl:allValuesFrom ec:Rights
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isDerivedFrom ;
@@ -6954,10 +6951,6 @@ ec:AudioTrackPurpose rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Award
 ec:Award rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedAgent ;
-                           owl:someValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasBeenAwarded ;
                            owl:allValuesFrom ec:Agent
                          ] ,
@@ -6968,6 +6961,10 @@ ec:Award rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasLogo ;
                            owl:allValuesFrom ec:Logo
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedBusinessObject ;
@@ -7063,10 +7060,6 @@ ec:BreakingNewsItem rdf:type owl:Class ;
 ec:BusinessObject rdf:type owl:Class ;
                   rdfs:subClassOf ec:Asset ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasManifestation ;
-                                    owl:someValuesFrom ec:Resource
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:coversEvent ;
                                     owl:allValuesFrom ec:Event
                                   ] ,
@@ -7117,6 +7110,10 @@ ec:BusinessObject rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasLanguage ;
                                     owl:allValuesFrom ec:Language
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasManifestation ;
+                                    owl:allValuesFrom ec:Resource
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasOriginalLanguage ;
@@ -7705,22 +7702,6 @@ ec:EditUnitCount rdf:type owl:Class ;
 ec:EditorialObject rdf:type owl:Class ;
                    rdfs:subClassOf ec:BusinessObject ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:approvedBy ;
-                                     owl:someValuesFrom ec:Agent
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasPart ;
-                                     owl:someValuesFrom ec:Part
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isBrand ;
-                                     owl:someValuesFrom ec:Brand
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:resourceOffset ;
-                                     owl:someValuesFrom ec:TimelinePoint
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:hasAssociatedProductionJob ;
                                      owl:allValuesFrom ebuccdm:ProductionJob
                                    ] ,
@@ -7735,6 +7716,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:isExtractOf ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:approvedBy ;
+                                     owl:allValuesFrom ec:Agent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:editorialObjectType ;
@@ -7763,6 +7748,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasParentEditorialObject ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPart ;
+                                     owl:allValuesFrom ec:Part
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedArtefact ;
@@ -7807,6 +7796,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTimelineTrack ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isBrand ;
+                                     owl:allValuesFrom ec:Brand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
@@ -7862,13 +7855,14 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:start ;
+                                     owl:onProperty ec:resourceOffset ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:translationTitle ;
-                                     owl:someValuesFrom rdfs:Literal
+                                     owl:onProperty ec:start ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:orderedFlag ;
@@ -7876,6 +7870,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:folksonomy ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:translationTitle ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -7966,12 +7964,12 @@ ec:EidrIdentifier rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion
 ec:Emotion rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasRelatedAgent ;
-                             owl:someValuesFrom ec:Agent
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasIdentifier ;
                              owl:allValuesFrom ec:Identifier
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedAgent ;
+                             owl:allValuesFrom ec:Agent
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedScene ;
@@ -8084,12 +8082,12 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
 ec:Event rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedAgent ;
-                           owl:someValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedArtefact ;
@@ -8804,10 +8802,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass ec:Track
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:translationTitle ;
-                                   owl:someValuesFrom rdfs:Literal
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:encodingLevel ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ,
@@ -9234,31 +9228,27 @@ ec:Person rdf:type owl:Class ;
                             owl:onClass ec:Location
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:age ;
-                            owl:someValuesFrom xsd:integer
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:education ;
-                            owl:someValuesFrom rdfs:Literal
+                            owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:familyInformation ;
-                            owl:someValuesFrom rdfs:Literal
+                            owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:familyName ;
-                            owl:someValuesFrom rdfs:Literal
+                            owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:givenName ;
-                            owl:someValuesFrom rdfs:Literal
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:middleName ;
-                            owl:someValuesFrom rdfs:Literal
+                            owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hobbies ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:middleName ;
                             owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -9312,6 +9302,11 @@ ec:Person rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:username ;
                             owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:age ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:integer
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:gender ;
@@ -9460,7 +9455,7 @@ ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:subClassOf ec:Service ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasPublicationEvent ;
-                                        owl:someValuesFrom ec:PublicationEvent
+                                        owl:allValuesFrom ec:PublicationEvent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationChannel ;
@@ -9486,22 +9481,6 @@ ec:PublicationChannel_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
 ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasAccessConditions ;
-                                      owl:someValuesFrom ec:AccessConditions
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasCoverageRestrictions ;
-                                      owl:someValuesFrom ec:CoverageRestrictions
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasUsageRestrictions ;
-                                      owl:someValuesFrom ec:UsageRestrictions
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:isCoveredBy ;
-                                      owl:someValuesFrom ec:Rights
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ebuccdm:hasConsumptionEvent ;
                                       owl:allValuesFrom ebuccdm:ConsumptionEvent
                                     ] ,
@@ -9512,6 +9491,14 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ebuccdm:hasRestrictedAudience ;
                                       owl:allValuesFrom ebuccdm:Audience
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasAccessConditions ;
+                                      owl:allValuesFrom ec:AccessConditions
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasCoverageRestrictions ;
+                                      owl:allValuesFrom ec:CoverageRestrictions
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasIdentifier ;
@@ -9528,6 +9515,14 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasRelatedPublicationEvent ;
                                       owl:allValuesFrom ec:PublicationEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasUsageRestrictions ;
+                                      owl:allValuesFrom ec:UsageRestrictions
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:isCoveredBy ;
+                                      owl:allValuesFrom ec:Rights
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
@@ -9566,12 +9561,12 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:abstract ;
+                                      owl:onProperty ec:title ;
                                       owl:someValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:title ;
-                                      owl:someValuesFrom rdfs:Literal
+                                      owl:onProperty ec:abstract ;
+                                      owl:allValuesFrom rdfs:Literal
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:description ;
@@ -9863,10 +9858,6 @@ ec:Relation_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
 ec:Resource rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasLocator ;
-                              owl:someValuesFrom ec:Locator
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ebuccdm:isResourceCommissionedBy ;
                               owl:allValuesFrom ebuccdm:Contract
                             ] ,
@@ -9881,6 +9872,10 @@ ec:Resource rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:allValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocator ;
+                              owl:allValuesFrom ec:Locator
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageId ;
@@ -9957,20 +9952,16 @@ ec:Review rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights
 ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasContact ;
-                            owl:someValuesFrom ec:Contact
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectType ;
-                            owl:someValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ebuccdm:originateFrom ;
                             owl:allValuesFrom ebuccdm:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:applyTo ;
                             owl:allValuesFrom ec:Asset
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasContact ;
+                            owl:allValuesFrom ec:Contact
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
@@ -9983,6 +9974,10 @@ ec:Rights rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsTargetService ;
                             owl:allValuesFrom ec:Service
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryExcludes ;
@@ -10383,12 +10378,12 @@ ec:TextAnnotation rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TextLine
 ec:TextLine rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasRelatedAgent ;
-                              owl:someValuesFrom ec:Agent
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
                               owl:allValuesFrom ec:Identifier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedAgent ;
+                              owl:allValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedCharacter ;
@@ -10679,12 +10674,12 @@ ec:UncertainDate rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:period ;
-                                   owl:someValuesFrom rdfs:Literal
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:description ;
                                    owl:allValuesFrom rdfs:Literal
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:period ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
                  owl:disjointWith time:DateTimeDescription ;
                  dcterms:description """The date expressed as an interval between start and end, for uncertain  dates.
