@@ -2791,7 +2791,7 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isPlayedBy
 ec:isPlayedBy rdf:type owl:ObjectProperty ;
-              owl:inverseOf ec:portrays ;
+              owl:inverseOf ec:playsCharacter ;
               rdfs:range ec:Agent ;
               dcterms:description "Relationship between a fictional character and the actor playing the part."@en ;
               rdfs:label "is played by"@en .
@@ -2938,18 +2938,18 @@ ec:objectType rdf:type owl:ObjectProperty ;
               rdfs:label "type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsCharacter
+ec:playsCharacter rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:Character ;
+                  dcterms:description "A character played by a person"@en ;
+                  rdfs:label "plays character"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
             rdfs:range ec:Essence ;
             dcterms:description "To identify the Essence used in a PublicationEvent"@en ;
             rdfs:label "Essence"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#portrays
-ec:portrays rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Character ;
-            dcterms:description "A character played by a person"@en ;
-            rdfs:label "portrays"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
@@ -9195,7 +9195,7 @@ ec:Person rdf:type owl:Class ;
                             owl:allValuesFrom ec:KeyPersonalEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:portrays ;
+                            owl:onProperty ec:playsCharacter ;
                             owl:allValuesFrom ec:Character
                           ] ,
                           [ rdf:type owl:Restriction ;
