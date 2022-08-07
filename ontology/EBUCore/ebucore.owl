@@ -4195,6 +4195,13 @@ ec:live rdf:type owl:DatatypeProperty ,
         rdfs:label "Live"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressAppartmentnumber
+ec:locationAddressAppartmentnumber rdf:type owl:DatatypeProperty ;
+                                   rdfs:range xsd:string ;
+                                   dcterms:description "The number identifying an apartment in a house."@en ;
+                                   rdfs:label "appartmentnumber"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressArea
 ec:locationAddressArea rdf:type owl:DatatypeProperty ;
                        rdfs:range rdfs:Literal ;
@@ -8548,6 +8555,11 @@ ec:Location rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:name ;
                               owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressAppartmentnumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:locationAddressArea ;
