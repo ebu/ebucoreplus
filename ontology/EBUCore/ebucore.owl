@@ -4211,19 +4211,19 @@ ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
                           rdfs:label "Country"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLine
-ec:locationAddressLine rdf:type owl:DatatypeProperty ;
-                       rdfs:range rdfs:Literal ;
-                       dcterms:description "To provide an address line."@en ;
-                       rdfs:label "Adress line"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressHousenumber
+ec:locationAddressHousenumber rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:string ;
+                              dcterms:description "The number given to the house or an entrance in a street"@en ;
+                              rdfs:label "Housenumber"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressLocality
-ec:locationAddressLocality rdf:type owl:DatatypeProperty ;
-                           rdfs:range rdfs:Literal ;
-                           dcterms:description """To provide the name of a city, village,
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressMunicipality
+ec:locationAddressMunicipality rdf:type owl:DatatypeProperty ;
+                               rdfs:range rdfs:Literal ;
+                               dcterms:description """To provide the name of a city, village,
             etc."""@en ;
-                           rdfs:label "Locality"@en .
+                               rdfs:label "municipality"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressPostalCode
@@ -4232,6 +4232,13 @@ ec:locationAddressPostalCode rdf:type owl:DatatypeProperty ;
                              dcterms:description """To provide an address postal
             code."""@en ;
                              rdfs:label "Postal code"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressStreetname
+ec:locationAddressStreetname rdf:type owl:DatatypeProperty ;
+                             rdfs:range rdfs:Literal ;
+                             dcterms:description "The name of the street, square or block in a adress"@en ;
+                             rdfs:label "street name"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAltitude
@@ -8527,15 +8534,15 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationAddressLine ;
-                              owl:allValuesFrom rdfs:Literal
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationAddressLocality ;
+                              owl:onProperty ec:locationAddressMunicipality ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:locationAddressPostalCode ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressStreetname ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -8549,6 +8556,11 @@ ec:Location rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:locationAddressCountry ;
                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:locationAddressHousenumber ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:locationAltitude ;
