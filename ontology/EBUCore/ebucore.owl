@@ -4195,11 +4195,11 @@ ec:live rdf:type owl:DatatypeProperty ,
         rdfs:label "Live"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressAppartmentnumber
-ec:locationAddressAppartmentnumber rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressAppartmentNumber
+ec:locationAddressAppartmentNumber rdf:type owl:DatatypeProperty ;
                                    rdfs:range xsd:string ;
                                    dcterms:description "The number identifying an apartment in a house."@en ;
-                                   rdfs:label "appartmentnumber"@en .
+                                   rdfs:label "appartment number"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressArea
@@ -4218,11 +4218,11 @@ ec:locationAddressCountry rdf:type owl:DatatypeProperty ;
                           rdfs:label "Country"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressHousenumber
-ec:locationAddressHousenumber rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressHouseNumber
+ec:locationAddressHouseNumber rdf:type owl:DatatypeProperty ;
                               rdfs:range xsd:string ;
                               dcterms:description "The number given to the house or an entrance in a street"@en ;
-                              rdfs:label "Housenumber"@en .
+                              rdfs:label "house number"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressMunicipality
@@ -4241,8 +4241,8 @@ ec:locationAddressPostalCode rdf:type owl:DatatypeProperty ;
                              rdfs:label "Postal code"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressStreetname
-ec:locationAddressStreetname rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locationAddressStreetName
+ec:locationAddressStreetName rdf:type owl:DatatypeProperty ;
                              rdfs:range rdfs:Literal ;
                              dcterms:description "The name of the street, square or block in a adress"@en ;
                              rdfs:label "street name"@en .
@@ -8549,7 +8549,7 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationAddressStreetname ;
+                              owl:onProperty ec:locationAddressStreetName ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -8557,7 +8557,7 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationAddressAppartmentnumber ;
+                              owl:onProperty ec:locationAddressAppartmentNumber ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ,
@@ -8570,7 +8570,7 @@ ec:Location rdf:type owl:Class ;
                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationAddressHousenumber ;
+                              owl:onProperty ec:locationAddressHouseNumber ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:string
                             ] ,
