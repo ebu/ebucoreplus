@@ -2831,9 +2831,8 @@ ec:isRatingRelatedToResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReferencedBy
 ec:isReferencedBy rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:MediaResource ;
-                  rdfs:range ec:EditorialObject ;
-                  dcterms:description "To described references between assets."@en ;
+                  owl:inverseOf ec:references ;
+                  dcterms:description "To described references between a source and a editorial or bibliografical object"@en ;
                   rdfs:label "Reference source"@en .
 
 
@@ -2855,7 +2854,6 @@ ec:isReplacedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRequiredBy
 ec:isRequiredBy rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:requires ;
-                rdfs:range ec:BusinessObject ;
                 dcterms:description "To express strong relations between BusinessObjects"@en ;
                 rdfs:label "Required"@en .
 
@@ -2976,8 +2974,7 @@ ec:publishes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#references
 ec:references rdf:type owl:ObjectProperty ;
-              rdfs:range ec:MediaResource ;
-              dcterms:description "To express a reference between Assets, BusinessObjects or Resources."@en ;
+              dcterms:description "To express a reference between an editorial or bibliographical object and its source"@en ;
               rdfs:label "References"@en .
 
 
@@ -3004,7 +3001,6 @@ ec:represents rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#requires
 ec:requires rdf:type owl:ObjectProperty ;
-            rdfs:range ec:BusinessObject ;
             dcterms:description "To express dependency."@en ;
             rdfs:label "Requires"@en .
 
@@ -7091,7 +7087,23 @@ ec:BMTemplate rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
-                         rdfs:subClassOf ec:BusinessObject ;
+                         rdfs:subClassOf ec:BusinessObject ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:isReferencedBy ;
+                                           owl:allValuesFrom ec:BibliographicalObject
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:isReferencedBy ;
+                                           owl:allValuesFrom ec:EditorialObject
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:references ;
+                                           owl:allValuesFrom ec:BibliographicalObject
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:references ;
+                                           owl:allValuesFrom ec:EditorialObject
+                                         ] ;
                          dcterms:description "Documents of various nature."@en ;
                          rdfs:label "Bibliographical object"@en .
 
@@ -7896,6 +7908,14 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Group
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isReferencedBy ;
+                                     owl:allValuesFrom ec:BibliographicalObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isReferencedBy ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isScheduledOn ;
                                      owl:allValuesFrom ec:PublicationEvent
                                    ] ,
@@ -7905,7 +7925,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:references ;
-                                     owl:allValuesFrom ec:MediaResource
+                                     owl:allValuesFrom ec:BibliographicalObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
@@ -8743,6 +8767,14 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isRequiredBy ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:requires ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
