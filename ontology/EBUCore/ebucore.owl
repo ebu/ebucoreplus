@@ -1305,14 +1305,6 @@ ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
                          rdfs:label "Related Artefact"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedAsset
-ec:hasAssociatedAsset rdf:type owl:ObjectProperty ;
-                      rdfs:domain ec:PublicationPlan ;
-                      rdfs:range ec:Asset ;
-                      dcterms:description "To identify an associated asset."@en ;
-                      rdfs:label "Associated asset"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedRelation
 ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
                          rdfs:range ec:Relation ;
@@ -1849,14 +1841,6 @@ ec:hasMember rdf:type owl:ObjectProperty ;
              rdfs:label "Member."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMemberPublicationPlan
-ec:hasMemberPublicationPlan rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:PublicationPlan ;
-                            rdfs:range ec:PublicationPlan ;
-                            dcterms:description "To identify a PublicationPlan that forms part of another PublicationPlan."@en ;
-                            rdfs:label "Publication  plan member"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMetadataTrack
 ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
                     rdfs:range ec:MetadataTrack ;
@@ -1989,7 +1973,6 @@ ec:hasPublicationMedium rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationPlanMember
 ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:PublicationPlan ;
                             rdfs:range ec:PublicationPlan ;
                             dcterms:description "To identify a subplan of a publication plan."@en ;
                             rdfs:label "Publication plan member."@en .
@@ -2320,7 +2303,6 @@ ec:hasStaffRole rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStakeholder
 ec:hasStakeholder rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:PublicationPlan ;
                   rdfs:range ec:Agent ;
                   dcterms:description "An Agent related to the PublicationPlan."@en ;
                   rdfs:label "Publication plan stakeholder"@en .
@@ -2743,7 +2725,6 @@ ec:isMemberOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMemberOfPublicationPlan
 ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:PublicationPlan ;
                              rdfs:range ec:PublicationPlan ;
                              dcterms:description "To identify a parent Publication Plan"@en ;
                              rdfs:label "Parent publication  plan"@en .
@@ -2928,7 +2909,6 @@ ec:locationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loggsPublicationEvent
 ec:loggsPublicationEvent rdf:type owl:ObjectProperty ;
-                         rdfs:domain ec:PublicationLogg ;
                          rdfs:range ec:PublicationEvent ;
                          skos:note "loggs publication event"@en .
 
@@ -2958,6 +2938,13 @@ ec:playsOut rdf:type owl:ObjectProperty ;
 ec:portrays rdf:type owl:ObjectProperty ;
             dcterms:description "An animal that appears as a character other than itself."@en ;
             rdfs:label "portrays"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStatus
+ec:publicationPlanStatus rdf:type owl:ObjectProperty ;
+                         rdfs:range skos:Concept ;
+                         dcterms:description "To provide a status regarding the PublicationPlan."@en ;
+                         rdfs:label "PublicationPlan status"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationScheduleDate
@@ -4616,14 +4603,6 @@ ec:pubStatus rdf:type owl:DatatypeProperty ;
              rdfs:range rdfs:Literal ;
              dcterms:description "To indicate a publication status."@en ;
              rdfs:label "Publication status"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStatus
-ec:publicationPlanStatus rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ec:PublicationPlan ;
-                         rdfs:range rdfs:Literal ;
-                         dcterms:description "To provide a status regarding the PublicationPlan."@en ;
-                         rdfs:label "PublicationPlan status"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanTitle
@@ -7128,10 +7107,6 @@ ec:BusinessObject rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:coversLocation ;
                                     owl:allValuesFrom ec:Location
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasAssociatedAsset ;
-                                    owl:allValuesFrom ec:Relation
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasCastMember ;
@@ -9784,6 +9759,10 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasStakeholder ;
+                                     owl:allValuesFrom ec:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isMemberOfPublicationPlan ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
@@ -9795,6 +9774,11 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:onProperty ec:endDateTime ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:publicationPlanStatus ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass skos:Collection
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:startDateTime ;
