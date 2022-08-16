@@ -12,7 +12,6 @@
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix terms: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ebuccdm: <http://www.ebu.ch/metadata/ontologies/ebuccdm#> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> .
@@ -1301,7 +1300,7 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
 ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
                          rdfs:range ec:Artefact ;
-                         dc:description "An Artefact related to an Agent."@en ;
+                         dcterms:description "An Artefact related to an Agent."@en ;
                          rdfs:label "Related Artefact"@en .
 
 
