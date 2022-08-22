@@ -1381,7 +1381,7 @@ ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember
 ec:hasCastMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Cast ;
+                 rdfs:range ec:CastMember ;
                  dcterms:description "A member of the cast."@en ;
                  rdfs:label "Cast member"@en .
 
@@ -1532,7 +1532,7 @@ ec:hasCreator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCrewMember
 ec:hasCrewMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Crew ;
+                 rdfs:range ec:CrewMember ;
                  dcterms:description "A member of the crew."@en ;
                  rdfs:label "Crew member"@en .
 
@@ -1857,7 +1857,7 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Staff ;
+                        rdfs:range ec:StaffMember ;
                         dcterms:description "To identify Staff members in an Organisation."@en ;
                         rdfs:label "Staff"@en .
 
@@ -2287,7 +2287,7 @@ ec:hasSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffMember
 ec:hasStaffMember rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Staff ;
+                  rdfs:range ec:StaffMember ;
                   dcterms:description "To identify members of staff in an organisation."@en ;
                   rdfs:label "member of Staff"@en .
 
@@ -2528,6 +2528,13 @@ ec:instantiates rdf:type owl:ObjectProperty ;
                 dcterms:description """To link a particular manifestation of a
             BusinessObject to the corresponding Resource."""@en ;
                 rdfs:label "Business object"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAffiliatedTo
+ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:Organisation ;
+                  dcterms:description "Relation to the organisation the affiliation represents"@en ;
+                  rdfs:label "is affiliated to"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAgent
@@ -6113,7 +6120,37 @@ ec:ActiveFormatDescriptorCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Affiliation
 ec:Affiliation rdf:type owl:Class ;
-               rdfs:subClassOf ec:Organisation ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasIdentifier ;
+                                 owl:allValuesFrom ec:Identifier
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:objectType ;
+                                 owl:allValuesFrom skos:Concept
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:isAffiliatedTo ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass ec:Organisation
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:endDateTime ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass time:Instant
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:startDateTime ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass time:Instant
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:description ;
+                                 owl:allValuesFrom rdfs:Literal
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:name ;
+                                 owl:allValuesFrom rdfs:Literal
+                               ] ;
                dcterms:description "An Organisation to which a Contact is affiliated (with period of validity)."@en ;
                rdfs:label "Affiliation"@en .
 
@@ -7121,7 +7158,7 @@ ec:BusinessObject rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasCastMember ;
-                                    owl:allValuesFrom ec:Cast
+                                    owl:allValuesFrom ec:CastMember
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasCharacter ;
@@ -7141,7 +7178,7 @@ ec:BusinessObject rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasCrewMember ;
-                                    owl:allValuesFrom ec:Crew
+                                    owl:allValuesFrom ec:CrewMember
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasDubbedLanguage ;
@@ -7390,12 +7427,12 @@ ec:CaptioningFormat rdf:type owl:Class ;
                     rdfs:label "Captioning format"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast
-ec:Cast rdf:type owl:Class ;
-        rdfs:subClassOf ec:Agent ;
-        dcterms:description """A member of the cast list (a list of performers/actors and associated fictitious
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CastMember
+ec:CastMember rdf:type owl:Class ;
+              rdfs:subClassOf ec:Person ;
+              dcterms:description """A member of the cast list (a list of performers/actors and associated fictitious
             characters)."""@en ;
-        rdfs:label "Cast member"@en .
+              rdfs:label "Cast member"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Character
@@ -7634,15 +7671,15 @@ ec:CreativeCommons rdf:type owl:Class ;
                    rdfs:label "Creative commons"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Crew
-ec:Crew rdf:type owl:Class ;
-        rdfs:subClassOf ec:Agent ;
-        dcterms:description "To identify a member of the crew."@en ,
-                            "Zur Identifikation eines Besatzungsmitglieds."@de ;
-        rdfs:comment "Permet d'identifier un membre d'une équipe."@fr ;
-        rdfs:label "Besatzung"@de ,
-                   "Crew"@en ,
-                   "Équipe"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CrewMember
+ec:CrewMember rdf:type owl:Class ;
+              rdfs:subClassOf ec:Person ;
+              dcterms:description "To identify a member of the crew."@en ,
+                                  "Zur Identifikation eines Besatzungsmitglieds."@de ;
+              rdfs:comment "Permet d'identifier un membre d'une équipe."@fr ;
+              rdfs:label "Besatzung"@de ,
+                         "Crew"@en ,
+                         "Équipe"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CuisineStyle
@@ -8264,13 +8301,6 @@ ec:FictionalOrganisation rdf:type owl:Class ;
                          rdfs:subClassOf ec:Organisation ;
                          dcterms:description "To define a fictional Organisation."@en ;
                          rdfs:label "Fictional organisation"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FictionalPerson
-ec:FictionalPerson rdf:type owl:Class ;
-                   rdfs:subClassOf ec:Person ;
-                   dcterms:description "To describe a fictional Person, e.g. a character in a drama."@en ;
-                   rdfs:label "Fictional person"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FileFormat
@@ -9197,11 +9227,11 @@ ec:Organisation rdf:type owl:Class ;
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:hasOrganisationStaff ;
-                                  owl:allValuesFrom ec:Staff
+                                  owl:allValuesFrom ec:StaffMember
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:hasStaffMember ;
-                                  owl:allValuesFrom ec:Staff
+                                  owl:allValuesFrom ec:StaffMember
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:endDateTime ;
@@ -9254,13 +9284,6 @@ ec:Part_Type rdf:type owl:Class ;
              rdfs:subClassOf skos:Concept ;
              dcterms:description "To define a type or part."@en ;
              rdfs:label "Part type"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Party
-ec:Party rdf:type owl:Class ;
-         rdfs:subClassOf ec:Agent ;
-         dcterms:description "To identify a Party intervening in a transaction or contractual agreement."@en ;
-         rdfs:label "Party"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person
@@ -9542,6 +9565,13 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ;
               skos:note "Provenance"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Pseudonym
+ec:Pseudonym rdf:type owl:Class ;
+             rdfs:subClassOf ec:Person ;
+             dcterms:description "a fictitious name; especially : pen name or stage name"@en ;
+             rdfs:label "Pseudonym"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
@@ -10343,11 +10373,11 @@ ec:SportItem rdf:type owl:Class ;
              rdfs:label "Sport item"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Staff
-ec:Staff rdf:type owl:Class ;
-         rdfs:subClassOf ec:Person ;
-         dcterms:description "A member of Staff."@en ;
-         rdfs:label "Staff member."@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#StaffMember
+ec:StaffMember rdf:type owl:Class ;
+               rdfs:subClassOf ec:Person ;
+               dcterms:description "A member of Staff."@en ;
+               rdfs:label "Staff member."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Standard
@@ -10448,7 +10478,7 @@ ec:TargetPlatform rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
 ec:Team rdf:type owl:Class ;
-        rdfs:subClassOf ec:Agent ,
+        rdfs:subClassOf ec:Organisation ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasTeamMember ;
                           owl:allValuesFrom ec:Person
