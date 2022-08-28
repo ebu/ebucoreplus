@@ -2473,7 +2473,7 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVersion
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
-              rdfs:range ec:BusinessObject ;
+              rdfs:range ec:EditorialObject ;
               dcterms:description "To identify another version of an Asset, BusinessObject or Resource."@en ;
               rdfs:label "Version"@en .
 
@@ -2790,7 +2790,7 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToBusinessObject
 ec:isRatingRelatedToBusinessObject rdf:type owl:ObjectProperty ;
                                    rdfs:domain ec:Rating ;
-                                   rdfs:range ec:BusinessObject ;
+                                   rdfs:range ec:EditorialObject ;
                                    dcterms:description "To identify the BusinessObject associated with a Rating."@en ;
                                    rdfs:label "Rated business object"@en .
 
@@ -2870,7 +2870,7 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
-               rdfs:range ec:BusinessObject ;
+               rdfs:range ec:EditorialObject ;
                dcterms:description "To identify related versions."@en ;
                rdfs:label "Version of"@en .
 
@@ -7102,7 +7102,7 @@ ec:BMTemplate rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
-                         rdfs:subClassOf ec:BusinessObject ,
+                         rdfs:subClassOf ec:Asset ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ec:isReferencedBy ;
                                            owl:allValuesFrom ec:BibliographicalObject
@@ -7143,28 +7143,6 @@ ec:BreakingNewsItem rdf:type owl:Class ;
                     rdfs:subClassOf ec:Item ;
                     dcterms:description "To describe a breaking news."@en ;
                     rdfs:label "Breaking news item"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject
-ec:BusinessObject rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Asset ;
-                                 
-
-                  owl:disjointWith ec:MediaResource ,
-                                   ec:Rating ;
-                  dcterms:description """An image, a document, an annotation
-            (descriptive textual metadata or audio/video tag), a tag (time related in audiovisual
-            media resources), or an audiovisual media resource (optionally composed of one or more
-            fragment / part and / or audio, video data tracks). Other types of BusinessObjects may
-            be defined as subclasses."""@en ;
-                  rdfs:label "Business Object"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject_Type
-ec:BusinessObject_Type rdf:type owl:Class ;
-                       rdfs:subClassOf skos:Concept ;
-                       dcterms:description "To define a type of business object."@en ;
-                       rdfs:label "Business object type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning
@@ -7579,187 +7557,7 @@ ec:EditorialGroup rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
 ec:EditorialObject rdf:type owl:Class ;
-                   rdfs:subClassOf ec:BusinessObject ,
-                   
-                    [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasManifestation ;
-                                    owl:allValuesFrom ec:Resource
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasOriginalLanguage ;
-                                    owl:allValuesFrom ec:Language
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasProducer ;
-                                    owl:allValuesFrom ec:Agent
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasPublicationHistory ;
-                                    owl:allValuesFrom ec:PublicationHistory
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasPublisher ;
-                                    owl:allValuesFrom ec:Agent
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasRating ;
-                                    owl:allValuesFrom ec:Rating
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasRelatedAnimal ;
-                                    owl:allValuesFrom ec:Animal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasRelatedAward ;
-                                    owl:allValuesFrom ec:Award
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasRelatedEvent ;
-                                    owl:allValuesFrom ec:Event
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasRelatedResource ;
-                                    owl:allValuesFrom ec:Resource
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasReview ;
-                                    owl:allValuesFrom ec:Review
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasSubject ;
-                                    owl:allValuesFrom ec:Subject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasTargetAudience ;
-                                    owl:allValuesFrom ec:TargetAudience
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasTargetPlatform ;
-                                    owl:allValuesFrom ec:TargetPlatform
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasTheme ;
-                                    owl:allValuesFrom ec:Theme
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasTopic ;
-                                    owl:allValuesFrom ec:Topic
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasVersion ;
-                                    owl:allValuesFrom ec:BusinessObject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:isRequiredBy ;
-                                    owl:allValuesFrom ec:BusinessObject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:isVersionOf ;
-                                    owl:allValuesFrom ec:BusinessObject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:represents ;
-                                    owl:allValuesFrom ec:Asset
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:requires ;
-                                    owl:allValuesFrom ec:BusinessObject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:versionType ;
-                                    owl:allValuesFrom skos:Concept
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:dateIssued ;
-                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass time:Instant
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasLocation ;
-                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass ec:Location
-                                  ] ,
-                                                                    [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:title ;
-                                    owl:someValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:abstract ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:alternativeTitle ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:bookmark ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:comments ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:contentDescription ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:highlights ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:log ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:playlist ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:productionSynopsis ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:promotionalInformation ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:pubStatus ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:script ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:shotLog ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:summary ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:synopsis ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:tableOfContent ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:tag ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:orientation ;
-                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:rightsClearanceFlag ;
-                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange xsd:boolean
-                                  ] ,
+                   rdfs:subClassOf ec:Asset ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:hasAssociatedProductionJob ;
                                      owl:allValuesFrom ebuccdm:ProductionJob
@@ -7845,8 +7643,16 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Language
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasManifestation ;
+                                     owl:allValuesFrom ec:Resource
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasMediaFragment ;
                                      owl:allValuesFrom ec:MediaFragment
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasOriginalLanguage ;
+                                     owl:allValuesFrom ec:Language
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasParentEditorialObject ;
@@ -7855,6 +7661,26 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPart ;
                                      owl:allValuesFrom ec:Part
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasProducer ;
+                                     owl:allValuesFrom ec:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPublicationHistory ;
+                                     owl:allValuesFrom ec:PublicationHistory
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPublisher ;
+                                     owl:allValuesFrom ec:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRating ;
+                                     owl:allValuesFrom ec:Rating
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedAnimal ;
+                                     owl:allValuesFrom ec:Animal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedArtefact ;
@@ -7869,16 +7695,32 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:AudioProgramme
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedAward ;
+                                     owl:allValuesFrom ec:Award
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedEditorialObject ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedEvent ;
+                                     owl:allValuesFrom ec:Event
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
                                      owl:allValuesFrom ec:MediaResource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasRelatedResource ;
+                                     owl:allValuesFrom ec:Resource
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedTextLine ;
                                      owl:allValuesFrom ec:TextLine
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasReview ;
+                                     owl:allValuesFrom ec:Review
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasScene ;
@@ -7889,6 +7731,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Signing
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasSubject ;
+                                     owl:allValuesFrom ec:Subject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasSubtitling ;
                                      owl:allValuesFrom ec:Subtitling
                                    ] ,
@@ -7897,8 +7743,28 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Take
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTargetAudience ;
+                                     owl:allValuesFrom ec:TargetAudience
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTargetPlatform ;
+                                     owl:allValuesFrom ec:TargetPlatform
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTheme ;
+                                     owl:allValuesFrom ec:Theme
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTimelineTrack ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTopic ;
+                                     owl:allValuesFrom ec:Topic
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasVersion ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isBrand ;
@@ -7929,12 +7795,20 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isRequiredBy ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isScheduledOn ;
                                      owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isTimelineTrackPartOf ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isVersionOf ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:references ;
@@ -7945,7 +7819,24 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:represents ;
+                                     owl:allValuesFrom ec:Asset
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:requires ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:versionType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:dateIssued ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
                                    ] ,
@@ -7958,6 +7849,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onProperty ec:end ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasLocation ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:Location
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isNextInSequence ;
@@ -7980,11 +7876,83 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:title ;
+                                     owl:someValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ebuccdm:orderedFlag ;
                                      owl:allValuesFrom xsd:boolean
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:abstract ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:alternativeTitle ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:bookmark ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:comments ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:contentDescription ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:folksonomy ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:highlights ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:log ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:playlist ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:productionSynopsis ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:promotionalInformation ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:pubStatus ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:script ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:shotLog ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:summary ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:synopsis ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:tableOfContent ;
+                                     owl:allValuesFrom rdfs:Literal
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:tag ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -8002,6 +7970,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onDataRange xsd:boolean
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:orientation ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:partTotalNumber ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:integer
@@ -8014,6 +7986,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onProperty ec:resolution ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:string
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:rightsClearanceFlag ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:boolean
                                    ] ;
                    dcterms:description """An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain).
 An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline.
