@@ -58,7 +58,7 @@
                                                                         "Vincent Dabouineau"@fr ;
                                                          dc:creator "Jean Pierre Evain, EBU"@ch ;
                                                          dc:description "Note to implementers: The EBUCore ontology is used by a variety of users with different needs. Several EBUCore properties have no range to allow different implementations using entities or literals. As an implementer, it is your choice to go for one or the other for each property to have consistent expectations when parsing individuals. EBUCore also provides different classes defined as subclasses of skos:Concept. You can use these classes as entities in range of several properties currently left without range. EBUCore is expressed in RDF in order to facilitate such modelling and flexibility. As a consequence, propoerties appear in the documentation as annotation properties."@en ,
-                                                                        "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate BusinessObjects or Resources or Agents) and subproperties."@en ,
+                                                                        "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate EditorialObjects or Resources or Agents) and subproperties."@en ,
                                                                         "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
                                                          dc:publisher "European Broadcasting Union (EBU)"@ch ;
                                                          dc:rights "Copyright 2022 EBU"@en ;
@@ -95,7 +95,7 @@
                                                                          "Delete roleDefinition and use skos:definition instead as Role is a subclass of Concept."@en ,
                                                                          "Had Review and hasReview."@en ,
                                                                          "Harmonise multi-range definition of properties, when applicable."@en ,
-                                                                         "Move generic properties from BusinessObject/EditorialObject, Resource and MediaResource at Asset level (e.g. title, etc.)."@en ,
+                                                                         "Move generic properties from EditorialObject, Resource and MediaResource at Asset level (e.g. title, etc.)."@en ,
                                                                          "Separate mutli-domains and multi-ranges to avoid owl:unionOf statements."@en ,
                                                                          "Version 1.10"@en ;
                                                          vs:term_status "stable"@en .
@@ -168,7 +168,7 @@ dc:rights rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/elements/1.1/title
 dc:title rdf:type owl:AnnotationProperty ;
-         dcterms:description "The title by which a BusinessObject is known."@en ;
+         dcterms:description "The title by which a EditorialObject is known."@en ;
          rdfs:label "Title"@en .
 
 
@@ -869,7 +869,7 @@ ec:clonedTo rdf:type owl:ObjectProperty ;
 ec:coversEvent rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasCoverage ;
                rdfs:range ec:Event ;
-               dcterms:description "A property to identify the Events, all real or fictional, covered by the EditorialObject or BusinessObject"@en ;
+               dcterms:description "A property to identify the Events, all real or fictional, covered by the EditorialObject"@en ;
                rdfs:label "Covers event"@en .
 
 
@@ -877,7 +877,7 @@ ec:coversEvent rdf:type owl:ObjectProperty ;
 ec:coversLocation rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasCoverage ;
                   rdfs:range ec:Location ;
-                  dcterms:description "A property to identify the Locations, all real or fictional, covered by the EditorialObject or BusinessObject"@en ;
+                  dcterms:description "A property to identify the Locations, all real or fictional, covered by the EditorialObject"@en ;
                   rdfs:label "Covers location"@en .
 
 
@@ -1384,7 +1384,7 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 ec:hasCastRole rdf:type owl:ObjectProperty ;
                rdfs:range ec:Role ;
                dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
+            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the EditorialObject."""@en ;
                rdfs:label "Cast role"@en .
 
 
@@ -1469,7 +1469,7 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasContributor
 ec:hasContributor rdf:type owl:ObjectProperty ;
                   rdfs:range ec:Agent ;
-                  dcterms:description "To identify a contributor to a Resource, a Business Object, an Event..."@en ;
+                  dcterms:description "To identify a contributor to a Resource, a EditorialObject, an Event..."@en ;
                   rdfs:label "Contributor"@en .
 
 
@@ -1520,7 +1520,7 @@ ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCreator
 ec:hasCreator rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
-              dcterms:description "To identify an Agent involved in the creation of the Resource or BusinessObject."@en ;
+              dcterms:description "To identify an Agent involved in the creation of the Resource or EditorialObject."@en ;
               rdfs:label "Creator"@en .
 
 
@@ -1535,7 +1535,7 @@ ec:hasCrewMember rdf:type owl:ObjectProperty ;
 ec:hasCrewRole rdf:type owl:ObjectProperty ;
                rdfs:range ec:Role ;
                dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the BusinessObject."""@en ;
+            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the EditorialObject."""@en ;
                rdfs:label "Crew role"@en .
 
 
@@ -1671,8 +1671,7 @@ ec:hasGeneration rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasGenre
 ec:hasGenre rdf:type owl:ObjectProperty ;
-            dcterms:description """To define a Genre/category associated to the
-            BusinesssObject."""@en ;
+            dcterms:description "To define a Genre/category associated to the EditorialObject."@en ;
             rdfs:label "Genre"@en .
 
 
@@ -1919,8 +1918,7 @@ ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:range ec:Agent ;
-               dcterms:description "Range: string or Agent."@en ,
-                                   "To identify an Agent involved in the production of the Resource or BusinessObject."@en ;
+               dcterms:description "To identify an Agent involved in the production of the Resource or EditorialObject."@en ;
                rdfs:label "Producer"@en .
 
 
@@ -1981,14 +1979,14 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Agent ;
-                dcterms:description "To identify an Agent involved in the publication of the Resource or BusinessObject."@en ;
+                dcterms:description "To identify an Agent involved in the publication of the EditorialObject."@en ;
                 rdfs:label "Publisher"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRating
 ec:hasRating rdf:type owl:ObjectProperty ;
              rdfs:range ec:Rating ;
-             dcterms:description "To identify the presence of Rating attributed to a BusinessObject."@en ;
+             dcterms:description "To identify the presence of Rating attributed to a EditorialObject."@en ;
              rdfs:label "Rating"@en .
 
 
@@ -2116,7 +2114,7 @@ ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPicture
 ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Picture ;
-                     dcterms:description "To associate a Picture with a BusinessObject or a Resource."@en ;
+                     dcterms:description "To associate a Picture with an EditorialObject"@en ;
                      rdfs:label "Picture"@en .
 
 
@@ -2144,7 +2142,7 @@ ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedResource
 ec:hasRelatedResource rdf:type owl:ObjectProperty ;
                       rdfs:range ec:Resource ;
-                      dcterms:description "To identify a Resource associated with an Asset or a BusinessObject or a PublicationEvent or another Resource."@en ;
+                      dcterms:description "To identify a Resource associated with an Asset or an EditorialObject or a PublicationEvent or another Resource."@en ;
                       rdfs:label "Related resource"@en .
 
 
@@ -2212,7 +2210,7 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
 ec:hasRole rdf:type owl:ObjectProperty ;
            rdfs:range ec:Role ;
            dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the BusinessObject."""@en ;
+            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the EditorialObject."""@en ;
            rdfs:label "Role"@en .
 
 
@@ -2246,8 +2244,7 @@ ec:hasShot rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSigning
 ec:hasSigning rdf:type owl:ObjectProperty ;
               rdfs:range ec:Signing ;
-              dcterms:description """To identify the presence of Signing associated
-            to the BusinessObject/Resource."""@en ;
+              dcterms:description "To identify the presence of Signing associated to the EditorialObject."@en ;
               rdfs:label "Accessibility - signing"@en .
 
 
@@ -2355,7 +2352,7 @@ ec:hasTake rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetAudience
 ec:hasTargetAudience rdf:type owl:ObjectProperty ;
                      rdfs:range ec:TargetAudience ;
-                     dcterms:description "To associate a TargetAudience (e.g. for parental guiddance or targeting a particular social group) with a BusinessObject"@en ;
+                     dcterms:description "To associate a TargetAudience (e.g. for parental guiddance or targeting a particular social group) with a EditorialObject"@en ;
                      rdfs:label "Target audience"@en .
 
 
@@ -2474,7 +2471,7 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
               rdfs:range ec:EditorialObject ;
-              dcterms:description "To identify another version of an Asset, BusinessObject or Resource."@en ;
+              dcterms:description "To identify another version of an Asset, EditorialObject or Resource."@en ;
               rdfs:label "Version"@en .
 
 
@@ -2512,9 +2509,8 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
                 rdfs:range ec:EditorialObject ;
-                dcterms:description """To link a particular manifestation of a
-            BusinessObject to the corresponding Resource."""@en ;
-                rdfs:label "Business object"@en .
+                dcterms:description "To link a particular manifestation of an EditorialObject to the corresponding Resource."@en ;
+                rdfs:label "Editorial object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAffiliatedTo
@@ -2593,7 +2589,7 @@ ec:isCharacter rdf:type owl:ObjectProperty ;
 ec:isChildOf rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isParentOf ;
              rdfs:range ec:Asset ;
-             dcterms:description "To link a BusinessOject or Resource to a parent."@en ;
+             dcterms:description "To link a concept to a parent."@en ;
              rdfs:label "Parent"@en .
 
 
@@ -2787,12 +2783,12 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
                         rdfs:label "Preceding"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToBusinessObject
-ec:isRatingRelatedToBusinessObject rdf:type owl:ObjectProperty ;
-                                   rdfs:domain ec:Rating ;
-                                   rdfs:range ec:EditorialObject ;
-                                   dcterms:description "To identify the BusinessObject associated with a Rating."@en ;
-                                   rdfs:label "Rated business object"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToEditorialObject
+ec:isRatingRelatedToEditorialObject rdf:type owl:ObjectProperty ;
+                                    rdfs:domain ec:Rating ;
+                                    rdfs:range ec:EditorialObject ;
+                                    dcterms:description "To identify the EditorialObject associated with a Rating."@en ;
+                                    rdfs:label "Rated editorial object"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToResource
@@ -2828,7 +2824,7 @@ ec:isReplacedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRequiredBy
 ec:isRequiredBy rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:requires ;
-                dcterms:description "To express strong relations between BusinessObjects"@en ;
+                dcterms:description "To express strong relations between EditorialObjects"@en ;
                 rdfs:label "Required"@en .
 
 
@@ -2975,7 +2971,7 @@ ec:replaces rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#represents
 ec:represents rdf:type owl:ObjectProperty ;
               rdfs:range ec:Asset ;
-              dcterms:description "To establish a relation between a BusinessObject and an Asset."@en ;
+              dcterms:description "To establish a relation between an EditorialObject and an Asset."@en ;
               rdfs:label "Related asset"@en .
 
 
@@ -7467,7 +7463,7 @@ ec:Department rdf:type owl:Class ;
 ec:DepictedEvent rdf:type owl:Class ;
                  rdfs:subClassOf ec:Event ;
                  dcterms:description """A DepictedEVent is fictitious or historical or
-            other sort of Event that the content of the BusinessObject or resource relates
+            other sort of Event that the content of the EditorialObject or resource relates
             to."""@en ;
                  rdfs:label "Depicted Event"@en .
 
@@ -8323,10 +8319,7 @@ ec:Generation rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Genre
 ec:Genre rdf:type owl:Class ;
          rdfs:subClassOf ec:Type ;
-         dcterms:description """This class shall be used to provide information
-            on the genre of the BusinessObject or Resource. This is provided as free text in an
-            annotation label or as an identifier pointing to a term in a classification scheme e.g.
-            http://www.ebu.ch/metadata/ontologies/skos/ebu_ContentGenreCS.rdf or
+         dcterms:description """This class shall be used to provide information on the genre of the EditorialObject. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme e.g.          http://www.ebu.ch/metadata/ontologies/skos/ebu_ContentGenreCS.rdf or
             http://www.ebu.ch/metadata/ontologies/skos/ebu_EditorialFormatCodeCS.rdf."""@en ;
          rdfs:label "Genre"@en .
 
@@ -8464,7 +8457,7 @@ ec:Keyword rdf:type owl:Class ;
 ec:Language rdf:type owl:Class ;
             rdfs:subClassOf skos:Concept ;
             dcterms:description """To provide information on languages present in
-            the BusinessObject and its purpose. This is provided as free text in an annotation label
+            the EditorialObject and its purpose. This is provided as free text in an annotation label
             or as an identifier pointing to a term in a classification scheme.Other language
             specific types may be added as subclasses of language."""@en ;
             rdfs:label "Language"@en .
@@ -9206,7 +9199,7 @@ ec:Organisation rdf:type owl:Class ;
 ec:OriginalLanguage rdf:type owl:Class ;
                     rdfs:subClassOf ec:Language ;
                     dcterms:description """The original language in which the
-            BusinessObject or Resource has been created and released. This is provided as free text
+            EditorialObject or Resource has been created and released. This is provided as free text
             in an annotation label or as an identifier pointing to a term in a classification
             scheme."""@en ;
                     rdfs:label "Language"@en .
@@ -10369,7 +10362,7 @@ ec:Stream rdf:type owl:Class ;
 ec:Subject rdf:type owl:Class ;
            rdfs:subClassOf skos:Concept ;
            dcterms:description """A term describing the topic covered by the
-            BusinessObject or resource. This is provided as free text in an annotation label or as
+            EditorialObject or resource. This is provided as free text in an annotation label or as
             an identifier pointing to a term in a classification scheme."""@en ;
            rdfs:label "Subject"@en .
 
