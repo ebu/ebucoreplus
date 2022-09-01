@@ -803,7 +803,6 @@ ec:annotationCurationDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesOutOf
 ec:appliesOutOf rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Rating ;
                 rdfs:range ec:CountryCode ;
                 dcterms:description "To define the Location (e.g. country, region) to which Rating and TargetAudience do NOT apply."@en ;
                 rdfs:label "Exclusion area"@en .
@@ -811,10 +810,9 @@ ec:appliesOutOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesTo
 ec:appliesTo rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Rating ;
              rdfs:range ec:Asset ;
-             dcterms:description "To identify the media resource to which the Rating applies."@en ;
-             rdfs:label "Media resource"@en .
+             dcterms:description "To identify the asset to which the Rating applies."@en ;
+             rdfs:label "applies to"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#applyTo
@@ -1895,7 +1893,6 @@ ec:hasParticipatingAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPictogram
 ec:hasPictogram rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Rating ;
                 rdfs:range ec:Picture ;
                 dcterms:description "To provide a visual representation of  a Rating / AufdienceRating / AudienceLevel."@en ;
                 rdfs:label "Pictogram"@en .
@@ -1992,18 +1989,9 @@ ec:hasRating rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRatingProvider
 ec:hasRatingProvider rdf:type owl:ObjectProperty ;
-                     rdfs:domain ec:Rating ;
                      rdfs:range ec:Agent ;
                      dcterms:description "To identify an Agent who has provided a Rating."@en ;
                      rdfs:label "Rating source / agent"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRatingSource
-ec:hasRatingSource rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Rating ;
-                   rdfs:range ec:Agent ;
-                   dcterms:description "To identify an Agent who has provided a Rating."@en ;
-                   rdfs:label "Rating source / agent"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedAgent
@@ -2781,22 +2769,6 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
                         rdfs:range ec:EditorialObject ;
                         dcterms:description "A link to an Editorial Object precedinging the current Editorial Object in an ordered sequence."@en ;
                         rdfs:label "Preceding"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToEditorialObject
-ec:isRatingRelatedToEditorialObject rdf:type owl:ObjectProperty ;
-                                    rdfs:domain ec:Rating ;
-                                    rdfs:range ec:EditorialObject ;
-                                    dcterms:description "To identify the EditorialObject associated with a Rating."@en ;
-                                    rdfs:label "Rated editorial object"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isRatingRelatedToResource
-ec:isRatingRelatedToResource rdf:type owl:ObjectProperty ;
-                             rdfs:domain ec:Rating ;
-                             rdfs:range ec:MediaResource ;
-                             dcterms:description "To identify the resource associated with a Rating."@en ;
-                             rdfs:label "Rated Resource"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReferencedBy
@@ -4369,9 +4341,7 @@ ec:noiseFilter rdf:type owl:DatatypeProperty ,
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#notRated
-ec:notRated rdf:type owl:DatatypeProperty ,
-                     owl:FunctionalProperty ;
-            rdfs:domain ec:Rating ;
+ec:notRated rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:boolean ;
             dcterms:description "A flag to indicate that the EditorialObejct has not been rated."@en ;
             rdfs:label "Not rated"@en .
@@ -4608,16 +4578,13 @@ ec:publishingEventsLeft rdf:type owl:DatatypeProperty .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingScaleMax
 ec:ratingScaleMax rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Rating ;
                   rdfs:range rdfs:Literal ;
-                  dcterms:description """The maximum value of the scale used for the Rating
-            of a MediaResource."""@en ;
+                  dcterms:description "The maximum value of the scale used for the Rating."@en ;
                   rdfs:label "Rating scale (top value)"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingScaleMin
 ec:ratingScaleMin rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Rating ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description """The minimum value of the scale used for rating
             a MediaResource."""@en ;
@@ -4626,7 +4593,6 @@ ec:ratingScaleMin rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingSystemEnvironment
 ec:ratingSystemEnvironment rdf:type owl:DatatypeProperty ;
-                           rdfs:domain ec:Rating ;
                            rdfs:range rdfs:Literal ;
                            dcterms:description "To identify the environment in which rating applies."@en ;
                            rdfs:label "Rating environment"@en .
@@ -4634,7 +4600,6 @@ ec:ratingSystemEnvironment rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingSystemName
 ec:ratingSystemName rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Rating ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "To identify a Rating system by its name."@en ;
                     rdfs:label "Rating system"@en .
@@ -4642,7 +4607,6 @@ ec:ratingSystemName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ratingValue
 ec:ratingValue rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Rating ;
                rdfs:range rdfs:Literal ;
                dcterms:description """To express a free text Rating value defined in
             a rating classification scheme."""@en ;
@@ -4651,7 +4615,6 @@ ec:ratingValue rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#reason
 ec:reason rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:Rating ;
           rdfs:range rdfs:Literal ;
           dcterms:description "A reason given for a rating."@en ;
           rdfs:label "Reason"@en .
@@ -9842,6 +9805,10 @@ ec:RadioProgramme rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rating
 ec:Rating rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:appliesOutOf ;
+                            owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
@@ -9850,8 +9817,22 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:Logo
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasPictogram ;
+                            owl:allValuesFrom ec:Picture
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
                             owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:appliesTo ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Asset
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasRatingProvider ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:description ;
@@ -9860,6 +9841,35 @@ ec:Rating rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:name ;
                             owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:reason ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:ratingValue ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:notRated ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:boolean
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:ratingScaleMax ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:ratingScaleMin ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:ratingSystemEnvironment ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:ratingSystemName ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
           dcterms:description """All the information about the rating/evaluation
             given to a media resource by an Agent i.e. a person/Contact or
