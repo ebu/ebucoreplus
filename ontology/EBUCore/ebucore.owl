@@ -1404,6 +1404,11 @@ ec:hasCharacter rdf:type owl:ObjectProperty ;
                 rdfs:label "Character"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasClip
+ec:hasClip rdf:type owl:ObjectProperty ;
+           rdfs:label "has clip"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec
 ec:hasCodec rdf:type owl:ObjectProperty ;
             rdfs:range ec:Codec ;
@@ -1922,6 +1927,12 @@ ec:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:label "Producer"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProgramme
+ec:hasProgramme rdf:type owl:ObjectProperty ;
+                rdfs:range ec:Programme ;
+                rdfs:label "has programme"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenance
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
@@ -2403,7 +2414,7 @@ ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
 ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
                         rdfs:domain ec:TimelineTrack ;
                         rdfs:range ec:EditorialObject ;
-                        dcterms:description "To associate an EditorialObject to a TimelineTrackPart"@en ;
+                        dcterms:description "To associate an EditorialObject to a TimelineTrack as an TimelineTrackpart"@en ;
                         rdfs:label "Timeline track part"@en .
 
 
@@ -7202,9 +7213,27 @@ ec:CityCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Clip
 ec:Clip rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ;
+        rdfs:subClassOf ec:EditorialSegment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasProgramme ;
+                          owl:allValuesFrom ec:Programme
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:isPartOf ;
+                          owl:allValuesFrom ec:Item
+                        ] ;
         dcterms:description "For use in models where Clip is common."@en ;
         rdfs:label "Clip"@en .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ec:Clip ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty ec:isPartOf ;
+                         owl:allValuesFrom ec:Item
+                       ] ;
+   rdfs:comment "The Item contains more than the clip, ref to manuscript etc"@en
+ ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ClosedCaptions
@@ -7717,10 +7746,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Review
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasScene ;
-                                     owl:allValuesFrom ec:Scene
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasSigning ;
                                      owl:allValuesFrom ec:Signing
                                    ] ,
@@ -7731,10 +7756,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasSubtitling ;
                                      owl:allValuesFrom ec:Subtitling
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasTake ;
-                                     owl:allValuesFrom ec:Take
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTargetAudience ;
@@ -8419,7 +8440,11 @@ ec:IsanIdentifier rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item
 ec:Item rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ;
+        rdfs:subClassOf ec:EditorialSegment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasProgramme ;
+                          owl:allValuesFrom ec:Programme
+                        ] ;
         dcterms:description "An item e.g. newsItem or sportItem"@en ;
         rdfs:label "Item"@en .
 
@@ -10148,8 +10173,20 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
 ec:Scene rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialSegment ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasClip ;
+                           owl:allValuesFrom ec:Clip
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasProgramme ;
+                           owl:allValuesFrom ec:Programme
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasShot ;
                            owl:allValuesFrom ec:Shot
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasTake ;
+                           owl:allValuesFrom ec:Take
                          ] ;
          owl:disjointWith ec:Shot ,
                           ec:Take ;
@@ -10266,7 +10303,19 @@ ec:Service_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
 ec:Shot rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ;
+        rdfs:subClassOf ec:EditorialSegment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasClip ;
+                          owl:allValuesFrom ec:Clip
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasScene ;
+                          owl:allValuesFrom ec:Scene
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasTake ;
+                          owl:allValuesFrom ec:Take
+                        ] ;
         owl:disjointWith ec:Take ;
         dcterms:description "A film sequence photographed continuously by one camera"@en ;
         rdfs:label "Shot"@en .
@@ -10398,7 +10447,11 @@ ec:TVProgramme rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Take
 ec:Take rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ;
+        rdfs:subClassOf ec:EditorialSegment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasScene ;
+                          owl:allValuesFrom ec:Scene
+                        ] ;
         dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
         rdfs:label "Take"@en .
 
