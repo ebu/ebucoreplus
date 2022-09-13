@@ -1880,7 +1880,7 @@ ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPart
 ec:hasPart rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:isPartOf ;
-           rdfs:range ec:Part ;
+           rdfs:range ec:EditorialSegment ;
            dcterms:description """To define Parts (segments, fragments, shots, etc.)
             within an EditorialObject."""@en ;
            rdfs:label "Part"@en .
@@ -7654,7 +7654,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPart ;
-                                     owl:allValuesFrom ec:Part
+                                     owl:allValuesFrom ec:EditorialSegment
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasProducer ;
@@ -8045,6 +8045,10 @@ ec:EditorialObject_Type rdf:type owl:Class ;
 ec:EditorialSegment rdf:type owl:Class ;
                     rdfs:subClassOf ec:EditorialObject ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:isPartOf ;
+                                      owl:someValuesFrom ec:EditorialObject
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:segmentNumber ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
@@ -8257,13 +8261,6 @@ ec:ExploitationIssues rdf:type owl:Class ;
                       dcterms:description """To highlight potential exploitation
             issues."""@en ;
                       rdfs:label "Exploitation issues"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Feature
-ec:Feature rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialObject ;
-           dcterms:description "The editorial object for a feature film."@en ;
-           rdfs:label "Feature"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FictionalEvent
@@ -9216,23 +9213,6 @@ ec:OriginalLanguage rdf:type owl:Class ;
             in an annotation label or as an identifier pointing to a term in a classification
             scheme."""@en ;
                     rdfs:label "Language"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part
-ec:Part rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialObject ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:isPartOf ;
-                          owl:someValuesFrom ec:EditorialObject
-                        ] ;
-        dcterms:description """A Fragment is a particular section of a
-            MediaResource identified by a start and end time or duration. Fragment can also be
-            called segment or part."""@en ,
-                            """One of more media fragment (audio, video, data)
-            composing an audiovisual media resource. In other ontolgies fragment is often referred
-            to e.g. as a 'part' or 'segment' or
-            'fragment'."""@en ;
-        rdfs:label "Part, Fragment, Segment"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part_Type
@@ -10793,13 +10773,6 @@ ec:UsageRights rdf:type owl:Class ;
                rdfs:subClassOf ec:Rights ;
                dcterms:description "Usage rights associated with content."@en ;
                rdfs:label "Usage rights"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Version
-ec:Version rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialObject ;
-           dcterms:description "To specifically identify a Version of an EditorialObject."@en ;
-           rdfs:label "Version"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoCodec
