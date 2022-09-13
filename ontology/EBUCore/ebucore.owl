@@ -1291,6 +1291,12 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
                        rdfs:label "Supplier"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArticle
+ec:hasArticle rdf:type owl:ObjectProperty ;
+              rdfs:range ec:Article ;
+              rdfs:label "has article"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAssociatedArtefact
 ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
                          rdfs:range ec:Artefact ;
@@ -1918,6 +1924,12 @@ ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Location ;
                    dcterms:description "To identify the place of death."@en ;
                    rdfs:label "Death place"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPost
+ec:hasPost rdf:type owl:ObjectProperty ;
+           rdfs:range ec:Post ;
+           rdfs:label "has post"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProducer
@@ -8441,6 +8453,14 @@ ec:IsanIdentifier rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item
 ec:Item rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialSegment ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasArticle ;
+                          owl:allValuesFrom ec:Article
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasPost ;
+                          owl:allValuesFrom ec:Post
+                        ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasProgramme ;
                           owl:allValuesFrom ec:Programme
