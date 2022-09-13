@@ -4464,14 +4464,6 @@ ec:packageName rdf:type owl:DatatypeProperty ;
                rdfs:label "Package name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partNumber
-ec:partNumber rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:integer ;
-              dcterms:description """The number associated to a Part as one among
-            many."""@en ;
-              rdfs:label "Part number"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#partTotalNumber
 ec:partTotalNumber rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:integer ;
@@ -4779,6 +4771,14 @@ ec:seasonNumber rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:integer ;
                 dcterms:description "To provide a Season number."@en ;
                 rdfs:label "Season number"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#segmentNumber
+ec:segmentNumber rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:integer ;
+                 dcterms:description """The number associated to a sagment as one among
+            many."""@en ;
+                 rdfs:label "Segment number"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#shotLog
@@ -6603,6 +6603,11 @@ ec:Artefact_Type rdf:type owl:Class ;
                  rdfs:label "Artefact type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Article
+ec:Article rdf:type owl:Class ;
+           rdfs:subClassOf ec:EditorialWork .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
 ec:Asset rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -7075,13 +7080,6 @@ ec:Award_Type rdf:type owl:Class ;
               rdfs:label "Award type"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BMContent
-ec:BMContent rdf:type owl:Class ;
-             rdfs:subClassOf ec:EditorialObject ;
-             dcterms:description "The FIMS BMContent."@en ;
-             rdfs:label "BMContent"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BMEssence
 ec:BMEssence rdf:type owl:Class ;
              rdfs:subClassOf ec:Essence ;
@@ -7204,7 +7202,7 @@ ec:CityCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Clip
 ec:Clip rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialObject ;
+        rdfs:subClassOf ec:EditorialSegment ;
         dcterms:description "For use in models where Clip is common."@en ;
         rdfs:label "Clip"@en .
 
@@ -8043,6 +8041,21 @@ ec:EditorialObject_Type rdf:type owl:Class ;
                         rdfs:label "Editorial object type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialSegment
+ec:EditorialSegment rdf:type owl:Class ;
+                    rdfs:subClassOf ec:EditorialObject ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:segmentNumber ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange xsd:integer
+                                    ] .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialWork
+ec:EditorialWork rdf:type owl:Class ;
+                 rdfs:subClassOf ec:EditorialObject .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EidrIdentifier
 ec:EidrIdentifier rdf:type owl:Class ;
                   rdfs:subClassOf ec:Identifier ;
@@ -8109,7 +8122,7 @@ ec:EncodingFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Episode
 ec:Episode rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialObject ,
+           rdfs:subClassOf ec:EditorialWork ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:isEpisodeOf ;
                              owl:allValuesFrom ec:EditorialGroup
@@ -8409,7 +8422,7 @@ ec:IsanIdentifier rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item
 ec:Item rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialObject ;
+        rdfs:subClassOf ec:EditorialSegment ;
         dcterms:description "An item e.g. newsItem or sportItem"@en ;
         rdfs:label "Item"@en .
 
@@ -9211,11 +9224,6 @@ ec:Part rdf:type owl:Class ;
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:isPartOf ;
                           owl:someValuesFrom ec:EditorialObject
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:partNumber ;
-                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onDataRange xsd:integer
                         ] ;
         dcterms:description """A Fragment is a particular section of a
             MediaResource identified by a start and end time or duration. Fragment can also be
@@ -9469,9 +9477,14 @@ ec:Platform rdf:type owl:Class ;
             rdfs:label "Platform"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Post
+ec:Post rdf:type owl:Class ;
+        rdfs:subClassOf ec:EditorialWork .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Programme
 ec:Programme rdf:type owl:Class ;
-             rdfs:subClassOf ec:EditorialObject ;
+             rdfs:subClassOf ec:EditorialWork ;
              dcterms:description """An EditorialObject corresponding to a
             MediaResource ready for publication."""@en ;
              rdfs:label "Programme"@en .
@@ -10153,7 +10166,7 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
 ec:Scene rdf:type owl:Class ;
-         rdfs:subClassOf ec:EditorialObject ,
+         rdfs:subClassOf ec:EditorialSegment ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasShot ;
                            owl:allValuesFrom ec:Shot
@@ -10273,7 +10286,7 @@ ec:Service_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
 ec:Shot rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialObject ;
+        rdfs:subClassOf ec:EditorialSegment ;
         owl:disjointWith ec:Take ;
         dcterms:description "A film sequence photographed continuously by one camera"@en ;
         rdfs:label "Shot"@en .
@@ -10405,7 +10418,7 @@ ec:TVProgramme rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Take
 ec:Take rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialObject ;
+        rdfs:subClassOf ec:EditorialSegment ;
         dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
         rdfs:label "Take"@en .
 
