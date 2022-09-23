@@ -2950,6 +2950,12 @@ ec:portrays rdf:type owl:ObjectProperty ;
             rdfs:label "portrays"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#promotes
+ec:promotes rdf:type owl:ObjectProperty ;
+            dcterms:description "The content promotes some other content"@en ;
+            rdfs:label "promotes"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanStatus
 ec:publicationPlanStatus rdf:type owl:ObjectProperty ;
                          rdfs:range skos:Concept ;
@@ -7223,31 +7229,6 @@ ec:CityCode rdf:type owl:Class ;
             rdfs:label "City code"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Clip
-ec:Clip rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasProgramme ;
-                          owl:allValuesFrom ec:Programme
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:isPartOf ;
-                          owl:allValuesFrom ec:Item
-                        ] ;
-        dcterms:description "For use in models where Clip is common."@en ;
-        rdfs:label "Clip"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ec:Clip ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ec:isPartOf ;
-                         owl:allValuesFrom ec:Item
-                       ] ;
-   rdfs:comment "The Item contains more than the clip, ref to manuscript etc"@en
- ] .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ClosedCaptions
 ec:ClosedCaptions rdf:type owl:Class ;
                   rdfs:subClassOf ec:Captioning ;
@@ -8090,7 +8071,11 @@ ec:EditorialSegment rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialWork
 ec:EditorialWork rdf:type owl:Class ;
-                 rdfs:subClassOf ec:EditorialObject .
+                 rdfs:subClassOf ec:EditorialObject ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:promotes ;
+                                   owl:allValuesFrom ec:EditorialWork
+                                 ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EidrIdentifier
@@ -8452,7 +8437,7 @@ ec:IsanIdentifier rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item
 ec:Item rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialSegment ,
+        rdfs:subClassOf ec:EditorialWork ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasArticle ;
                           owl:allValuesFrom ec:Article
@@ -10193,10 +10178,6 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
 ec:Scene rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialSegment ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasClip ;
-                           owl:allValuesFrom ec:Clip
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasProgramme ;
                            owl:allValuesFrom ec:Programme
                          ] ,
@@ -10324,10 +10305,6 @@ ec:Service_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Shot
 ec:Shot rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialSegment ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasClip ;
-                          owl:allValuesFrom ec:Clip
-                        ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasScene ;
                           owl:allValuesFrom ec:Scene
