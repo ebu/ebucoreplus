@@ -1183,6 +1183,11 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
                             rdfs:label "Place of residence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAlternativeTitle
+ec:hasAlternativeTitle rdf:type owl:ObjectProperty ;
+                       rdfs:label "has alternative title"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryData
 ec:hasAncillaryData rdf:type owl:ObjectProperty ;
                     rdfs:range ec:AncillaryData ;
@@ -3010,14 +3015,6 @@ dc:source rdf:type owl:DatatypeProperty ;
           rdfs:label "Source"@en .
 
 
-###  http://purl.org/dc/terms/alternative
-dcterms:alternative rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:title ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "An alternative to the title."@en ;
-                    rdfs:label "Alternative title"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#assetValue
 ebuccdm:assetValue rdf:type owl:DatatypeProperty ;
                    dcterms:description "To provide an estimated or actual value of an Asset."@en ;
@@ -3256,9 +3253,16 @@ ec:SDID rdf:type owl:DatatypeProperty ;
         rdfs:label "SDID"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#XalternativeTitle
+ec:XalternativeTitle rdf:type owl:DatatypeProperty ;
+                     rdfs:range rdfs:Literal ;
+                     dcterms:description "To provide an alternative title."@en ;
+                     rdfs:label "Alternative title."@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abrigedTitle
 ec:abrigedTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:alternativeTitle ;
+                rdfs:subPropertyOf ec:XalternativeTitle ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "An abridged title."@en ;
                 rdfs:label "Abridged title"@en .
@@ -3439,13 +3443,6 @@ ec:agentWikipedia rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf ec:agentSocialMedia ;
                   rdfs:range xsd:anyURI ;
                   rdfs:label "Wikipedia"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitle
-ec:alternativeTitle rdf:type owl:DatatypeProperty ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "To provide an alternative title."@en ;
-                    rdfs:label "Alternative title."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalCharacterName
@@ -4754,7 +4751,7 @@ ec:shotLog rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#subtitle
 ec:subtitle rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf ec:alternativeTitle ;
+            rdfs:subPropertyOf ec:XalternativeTitle ;
             rdfs:range rdfs:Literal ;
             dcterms:description "A complementary subtitle."@en ;
             rdfs:label "Subtitle"@en .
@@ -4893,7 +4890,7 @@ ec:totalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#translationTitle
 ec:translationTitle rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:alternativeTitle ;
+                    rdfs:subPropertyOf ec:XalternativeTitle ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "A translated version of the title."@en ;
                     rdfs:label "Translation title"@en .
@@ -4916,7 +4913,7 @@ ec:version rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionTitle
 ec:versionTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:alternativeTitle ;
+                rdfs:subPropertyOf ec:XalternativeTitle ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "An alternative title specific to a verison of content."@en ;
                 rdfs:label "Version title"@en .
@@ -4988,7 +4985,7 @@ ec:wordCount rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#workingTitle
 ec:workingTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:alternativeTitle ;
+                rdfs:subPropertyOf ec:XalternativeTitle ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "A title used while content is not complete."@en ;
                 rdfs:label "Working title"@en .
@@ -6292,6 +6289,41 @@ ec:Agent rdf:type owl:Class ;
                     "Un acteur"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AlternativeTitle
+ec:AlternativeTitle rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasIdentifier ;
+                                      owl:allValuesFrom ec:Identifier
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:objectType ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:end ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass time:Instant
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:start ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass time:Instant
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:title ;
+                                      owl:someValuesFrom rdfs:Literal
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:description ;
+                                      owl:allValuesFrom rdfs:Literal
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:name ;
+                                      owl:allValuesFrom rdfs:Literal
+                                    ] ;
+                    rdfs:label "Alternative title"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AncillaryData
 ec:AncillaryData rdf:type owl:Class ;
                  rdfs:subClassOf ec:DataTrack ,
@@ -7550,6 +7582,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasAlternativeTitle ;
+                                     owl:allValuesFrom ec:AlternativeTitle
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasAudioDescription ;
                                      owl:allValuesFrom ec:AudioDescription
                                    ] ,
@@ -7844,10 +7880,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:abstract ;
-                                     owl:allValuesFrom rdfs:Literal
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:alternativeTitle ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
