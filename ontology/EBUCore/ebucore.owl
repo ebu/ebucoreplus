@@ -1619,6 +1619,18 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:label "Dubbed language"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEditorialGroup
+ec:hasEditorialGroup rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:isMemberOf ;
+                     rdfs:label "has editorial group"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEditorialWork
+ec:hasEditorialWork rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:isMemberOf ;
+                    rdfs:label "has editorial work"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEncodingFormat
 ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
@@ -1879,6 +1891,11 @@ ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
                             rdfs:range ec:EditorialObject ;
                             dcterms:description "To link a EditorialOject to a parent."@en ;
                             rdfs:label "Parent editorial object"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParentEditorialSegment
+ec:hasParentEditorialSegment rdf:type owl:ObjectProperty ;
+                             rdfs:label "has parent editorial segment"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasParentMediaResource
@@ -2441,7 +2458,6 @@ ec:hasTimelineTrackType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTopic
 ec:hasTopic rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasSubject ;
-            rdfs:range ec:Topic ;
             dcterms:description "This property enables to associate an Asset with a topic which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is to make use of the IPTC Media Topics defined at http://cv.iptc.org/newscodes/mediatopic/."@en ;
             rdfs:label "Topic"@en .
 
@@ -7555,6 +7571,10 @@ ec:EditUnitCount rdf:type owl:Class ;
 ec:EditorialGroup rdf:type owl:Class ;
                   rdfs:subClassOf ec:EditorialObject ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasEditorialGroup ;
+                                    owl:allValuesFrom ec:EditorialGroup
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasMember ;
                                     owl:allValuesFrom ec:EditorialObject
                                   ] ,
@@ -7765,6 +7785,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTimelineTrack ;
                                      owl:allValuesFrom ec:TimelineTrack
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasTopic ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTopic ;
@@ -8047,6 +8071,16 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
                               "Medieninhalt"@de ,
                               "Objet éditorial"@fr .
 
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ec:EditorialObject ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty ec:hasTopic ;
+                         owl:allValuesFrom ec:EditorialObject
+                       ] ;
+   rdfs:comment "For expressing the case where an editorial object is about another editorisal object. I. e. \"the production of ...\""@en
+ ] .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject_Type
 ec:EditorialObject_Type rdf:type owl:Class ;
@@ -8063,6 +8097,14 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:someValuesFrom ec:EditorialObject
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasEditorialGroup ;
+                                      owl:allValuesFrom ec:EditorialGroup
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasEditorialWork ;
+                                      owl:allValuesFrom ec:EditorialWork
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:segmentNumber ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
@@ -8072,6 +8114,14 @@ ec:EditorialSegment rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialWork
 ec:EditorialWork rdf:type owl:Class ;
                  rdfs:subClassOf ec:EditorialObject ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasEditorialGroup ;
+                                   owl:allValuesFrom ec:EditorialGroup
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasEditorialWork ;
+                                   owl:allValuesFrom ec:EditorialWork
+                                 ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:promotes ;
                                    owl:allValuesFrom ec:EditorialWork
