@@ -9564,6 +9564,10 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:AccessConditions
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasAlternativeTitle ;
+                                      owl:allValuesFrom ec:AlternativeTitle
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasCoverageRestrictions ;
                                       owl:allValuesFrom ec:CoverageRestrictions
                                     ] ,
@@ -10934,6 +10938,12 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                  ec:aspectRatio "16:9"^^xsd:string ;
                  ec:tag "Et merke"@nb ,
                         "et annet merke (some tag)"@nb .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitleTypes
+ec:alternativeTitleTypes rdf:type owl:NamedIndividual ,
+                                  skos:ConceptScheme ;
+                         skos:prefLabel "Alternative title types"@en .
 
 
 ###  http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
