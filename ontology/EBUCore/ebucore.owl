@@ -3272,16 +3272,6 @@ ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:label "Abstract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#adultContent
-ec:adultContent rdf:type owl:DatatypeProperty ,
-                         owl:FunctionalProperty ;
-                rdfs:domain ec:TO_BE_LOOKED_AT ;
-                rdfs:range xsd:boolean ;
-                dcterms:description "A flag to indiucate adult content."@en ;
-                rdfs:comment "**** Content type *** i.e. some skos:Consept"@en ;
-                rdfs:label "Adult content flag"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#age
 ec:age rdf:type owl:DatatypeProperty ;
        rdfs:range xsd:integer ;
@@ -3830,23 +3820,6 @@ ec:displayOrder rdf:type owl:DatatypeProperty ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "The order in which an Agent appears in a scene."@en ;
                 rdfs:label "Display order"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationPublished
-ec:durationPublished rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TO_BE_LOOKED_AT ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "To provide information on the published / announced duration of an EditorialObject."@en ;
-                     rdfs:comment "*** This schould be exspressed by the publicationEvent. ***"@en ;
-                     rdfs:label "Published Duration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#durationPublishedNormalPlayTime
-ec:durationPublishedNormalPlayTime rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf ec:durationPublished ;
-                                   rdfs:range rdfs:Literal ;
-                                   dcterms:description "To provide a published duration as normal play time."@en ;
-                                   rdfs:label "Published duration (play time)"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit
@@ -10397,12 +10370,6 @@ ec:SubtitlingFormat rdf:type owl:Class ;
             annotation label  or as an identifier pointing to a term in a classification
             scheme."""@en ;
                     rdfs:label "Subtitling format"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TO_BE_LOOKED_AT
-ec:TO_BE_LOOKED_AT rdf:type owl:Class ;
-                   rdfs:comment "Properties we perhaps don´t need"@en ;
-                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TVProgramme
