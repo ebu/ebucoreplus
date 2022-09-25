@@ -3253,21 +3253,6 @@ ec:SDID rdf:type owl:DatatypeProperty ;
         rdfs:label "SDID"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#XalternativeTitle
-ec:XalternativeTitle rdf:type owl:DatatypeProperty ;
-                     rdfs:range rdfs:Literal ;
-                     dcterms:description "To provide an alternative title."@en ;
-                     rdfs:label "Alternative title."@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abrigedTitle
-ec:abrigedTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:XalternativeTitle ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "An abridged title."@en ;
-                rdfs:label "Abridged title"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abstract
 ec:abstract rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf ec:contentDescription ;
@@ -4278,14 +4263,6 @@ ec:loudnessRange rdf:type owl:DatatypeProperty ;
                  rdfs:label "Loudness range"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mainTitle
-ec:mainTitle rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf ec:title ;
-             rdfs:range rdfs:Literal ;
-             dcterms:description "Specifies the main title or name given to the EditorialObject."@en ;
-             rdfs:label "Main title"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#maritalStatus
 ec:maritalStatus rdf:type owl:DatatypeProperty ;
                  rdfs:range rdfs:Literal ;
@@ -4406,14 +4383,6 @@ ec:orientation rdf:type owl:DatatypeProperty ;
                dcterms:description """The orientation of a Document or an Image i.e. landscape or
             portrait."""@en ;
                rdfs:label "Orientation"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#originalTitle
-ec:originalTitle rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf ec:title ;
-                 rdfs:range rdfs:Literal ;
-                 dcterms:description "The original title used to identify the work."@en ;
-                 rdfs:label "Original title."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#packageByteSize
@@ -4559,14 +4528,6 @@ ec:pubStatus rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanTitle
 ec:publicationPlanTitle rdf:type owl:DatatypeProperty .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedTitle
-ec:publishedTitle rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf ec:title ;
-                  rdfs:range rdfs:Literal ;
-                  dcterms:description "The title used to identify the work at publication time."@en ;
-                  rdfs:label "Published title."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishingEventsLeft
@@ -4749,14 +4710,6 @@ ec:shotLog rdf:type owl:DatatypeProperty ;
            rdfs:label "Shot log"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#subtitle
-ec:subtitle rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf ec:XalternativeTitle ;
-            rdfs:range rdfs:Literal ;
-            dcterms:description "A complementary subtitle."@en ;
-            rdfs:label "Subtitle"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#suffix
 ec:suffix rdf:type owl:DatatypeProperty ;
           rdfs:range rdfs:Literal ;
@@ -4888,14 +4841,6 @@ ec:totalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
                              rdfs:label "Total number of Group members"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#translationTitle
-ec:translationTitle rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf ec:XalternativeTitle ;
-                    rdfs:range rdfs:Literal ;
-                    dcterms:description "A translated version of the title."@en ;
-                    rdfs:label "Translation title"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#username
 ec:username rdf:type owl:DatatypeProperty ;
             rdfs:range rdfs:Literal ;
@@ -4909,14 +4854,6 @@ ec:version rdf:type owl:DatatypeProperty ;
            rdfs:range rdfs:Literal ;
            dcterms:description "To provide information on the current version of an EditorialObject."@en ;
            rdfs:label "Version"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionTitle
-ec:versionTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:XalternativeTitle ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "An alternative title specific to a verison of content."@en ;
-                rdfs:label "Version title"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoBitRate
@@ -4981,14 +4918,6 @@ ec:wordCount rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:integer ;
              dcterms:description "The number of words contained in a document."@en ;
              rdfs:label "Word count"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#workingTitle
-ec:workingTitle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf ec:XalternativeTitle ;
-                rdfs:range rdfs:Literal ;
-                dcterms:description "A title used while content is not complete."@en ;
-                rdfs:label "Working title"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#notation
@@ -7944,10 +7873,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:tag ;
-                                     owl:allValuesFrom rdfs:Literal
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:translationTitle ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -10934,16 +10859,64 @@ time:TRS rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#SOMEPROGRAMME
 ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                           ec:EditorialObject ;
-                 ec:abrigedTitle "Et prg"@nb ;
                  ec:aspectRatio "16:9"^^xsd:string ;
                  ec:tag "Et merke"@nb ,
                         "et annet merke (some tag)"@nb .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abrigedTitle
+ec:abrigedTitle rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:inScheme ec:alternativeTitleTypes ;
+                skos:prefLabel "Abriged title"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitleTypes
 ec:alternativeTitleTypes rdf:type owl:NamedIndividual ,
                                   skos:ConceptScheme ;
                          skos:prefLabel "Alternative title types"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#originalTitle
+ec:originalTitle rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:inScheme ec:alternativeTitleTypes ;
+                 skos:definition "The original title used to identify the work."@en ;
+                 skos:prefLabel "Original title"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#seriesTitle
+ec:seriesTitle rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:inScheme ec:alternativeTitleTypes ;
+               skos:prefLabel "Series title"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#subtitle
+ec:subtitle rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:inScheme ec:alternativeTitleTypes ;
+            skos:prefLabel "Subtitle"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#translationTitle
+ec:translationTitle rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:inScheme ec:alternativeTitleTypes ;
+                    skos:prefLabel "Translation title"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionTitle
+ec:versionTitle rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:prefLabel "Version title"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#workingTitle
+ec:workingTitle rdf:type owl:NamedIndividual ,
+                         skos:Concept ;
+                skos:inScheme ec:alternativeTitleTypes ;
+                skos:prefLabel "working title"@en .
 
 
 ###  http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
