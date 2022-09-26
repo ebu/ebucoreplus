@@ -2267,6 +2267,11 @@ ec:hasSeason rdf:type owl:ObjectProperty ;
              rdfs:label "Season"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSerial
+ec:hasSerial rdf:type owl:ObjectProperty ;
+             rdfs:label "has serial"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasServiceGenre
 ec:hasServiceGenre rdf:type owl:ObjectProperty ;
                    rdfs:domain ec:Service ;
@@ -7169,6 +7174,12 @@ ec:Biography rdf:type owl:Class ;
              rdfs:label "Biography"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Bonus
+ec:Bonus rdf:type owl:Class ;
+         rdfs:subClassOf ec:EditorialWork ;
+         rdfs:label "Bonus"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Brand
 ec:Brand rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialGroup ;
@@ -8701,6 +8712,16 @@ ec:Logo rdf:type owl:Class ;
         rdfs:label "Logo"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MakingOf
+ec:MakingOf rdf:type owl:Class ;
+            rdfs:subClassOf ec:EditorialWork ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasTopic ;
+                              owl:allValuesFrom ec:EditorialObject
+                            ] ;
+            dcterms:description "makingOf"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment
 ec:MediaFragment rdf:type owl:Class ;
                  rdfs:subClassOf ec:MediaResource ,
@@ -9293,6 +9314,12 @@ ec:OriginalLanguage rdf:type owl:Class ;
             in an annotation label or as an identifier pointing to a term in a classification
             scheme."""@en ;
                     rdfs:label "Language"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Outtakes
+ec:Outtakes rdf:type owl:Class ;
+            rdfs:subClassOf ec:EditorialWork ;
+            rdfs:label "Outtakes"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part_Type
@@ -10253,6 +10280,10 @@ ec:Season rdf:type owl:Class ;
                             owl:someValuesFrom ec:Episode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasSerial ;
+                            owl:allValuesFrom ec:Serial
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isSeasonOf ;
                             owl:allValuesFrom ec:Series
                           ] ,
@@ -10265,6 +10296,13 @@ ec:Season rdf:type owl:Class ;
             clustering a certain number of episodes. Fro this reason, seasons are related to series
             using the isRelatedTo property."""@en ;
           rdfs:label "Season"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Serial
+ec:Serial rdf:type owl:Class ;
+          rdfs:subClassOf ec:EditorialGroup ;
+          dcterms:description "works appearing (as in a magazine or on television) in parts at intervals"@en ;
+          rdfs:label "Serial"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Series
@@ -10820,6 +10858,20 @@ ec:Track_Type rdf:type owl:Class ;
               rdfs:subClassOf skos:Concept ;
               dcterms:description "To define a type of track."@en ;
               rdfs:label "Track type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Trailer
+ec:Trailer rdf:type owl:Class ;
+           rdfs:subClassOf ec:EditorialWork ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:promotes ;
+                             owl:allValuesFrom ec:EditorialGroup
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:promotes ;
+                             owl:allValuesFrom ec:EditorialWork
+                           ] ;
+           dcterms:description "Trailer"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type
