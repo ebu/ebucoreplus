@@ -1962,6 +1962,11 @@ ec:hasProgramme rdf:type owl:ObjectProperty ;
                 rdfs:label "has programme"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPromotion
+ec:hasPromotion rdf:type owl:ObjectProperty ;
+                rdfs:label "has promotion"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenance
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
@@ -7195,6 +7200,12 @@ ec:BreakingNewsItem rdf:type owl:Class ;
                     rdfs:label "Breaking news item"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CampagnPackage
+ec:CampagnPackage rdf:type owl:Class ;
+                  rdfs:subClassOf ec:EditorialGroup ;
+                  rdfs:label "Campagn package"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning
 ec:Captioning rdf:type owl:Class ;
               rdfs:subClassOf ec:Track ;
@@ -9577,6 +9588,16 @@ ec:Programme rdf:type owl:Class ;
              rdfs:label "Programme"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Promotion
+ec:Promotion rdf:type owl:Class ;
+             rdfs:subClassOf ec:EditorialWork ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isMemberOf ;
+                               owl:allValuesFrom ec:CampagnPackage
+                             ] ;
+             rdfs:label "Promotion"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Props
 ec:Props rdf:type owl:Class ;
          rdfs:subClassOf ec:Artefact ;
@@ -10034,6 +10055,20 @@ ec:Relation_Type rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
                  dcterms:description "To specify a type of relation."@en ;
                  rdfs:label "Relation type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Reminder
+ec:Reminder rdf:type owl:Class ;
+            rdfs:subClassOf ec:EditorialWork ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasPromotion ;
+                              owl:allValuesFrom ec:Promotion
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:isMemberOf ;
+                              owl:allValuesFrom ec:CampagnPackage
+                            ] ;
+            rdfs:label "Reminder"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
