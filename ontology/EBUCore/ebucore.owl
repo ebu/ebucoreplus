@@ -10885,6 +10885,13 @@ ec:originalTitle rdf:type owl:NamedIndividual ,
                  skos:prefLabel "Original title"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#serialTitle
+ec:serialTitle rdf:type owl:NamedIndividual ,
+                        skos:Concept ;
+               skos:inScheme ec:alternativeTitleTypes ;
+               skos:prefLabel "Serial title"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#seriesTitle
 ec:seriesTitle rdf:type owl:NamedIndividual ,
                         skos:Concept ;
