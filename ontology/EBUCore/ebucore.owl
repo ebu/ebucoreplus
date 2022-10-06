@@ -478,6 +478,7 @@ ebuccdm:hasOutputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasPJContributor
 ebuccdm:hasPJContributor rdf:type owl:ObjectProperty ;
+                         rdfs:range ec:Role ;
                          dcterms:description "To identify Agents involved in a ProductionJob."@en ;
                          rdfs:label "Contributor"@en .
 
@@ -853,6 +854,12 @@ ec:awardDate rdf:type owl:ObjectProperty ;
              rdfs:range time:Instant ;
              dcterms:description "To provide an date when an Award was delivered."@en ;
              rdfs:label "Award date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bringsRights
+ec:bringsRights rdf:type owl:ObjectProperty ;
+                dcterms:description "The rights appear as a consequence of the engagement."@nb ;
+                rdfs:comment "brings rights"@nb .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo
@@ -5770,7 +5777,7 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:hasPJContributor ;
-                                        owl:allValuesFrom ec:Agent
+                                        owl:allValuesFrom ec:Role
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:hasProductionJobEvent ;
@@ -10136,8 +10143,20 @@ ec:RightsType rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Role
 ec:Role rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty ebuccdm:usesProductionDevice ;
+                          owl:allValuesFrom ebuccdm:ProductionDevice
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:bringsRights ;
+                          owl:allValuesFrom ec:Rights
+                        ] ,
+                        [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasAgent ;
                           owl:allValuesFrom ec:Agent
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasAssociatedArtefact ;
+                          owl:allValuesFrom ec:Artefact
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasIdentifier ;
