@@ -7200,10 +7200,10 @@ ec:BreakingNewsItem rdf:type owl:Class ;
                     rdfs:label "Breaking news item"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CampagnPackage
-ec:CampagnPackage rdf:type owl:Class ;
-                  rdfs:subClassOf ec:EditorialGroup ;
-                  rdfs:label "Campagn package"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CampaignPackage
+ec:CampaignPackage rdf:type owl:Class ;
+                   rdfs:subClassOf ec:EditorialGroup ;
+                   rdfs:label "Campaign package"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning
@@ -9593,7 +9593,7 @@ ec:Promotion rdf:type owl:Class ;
              rdfs:subClassOf ec:EditorialWork ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isMemberOf ;
-                               owl:allValuesFrom ec:CampagnPackage
+                               owl:allValuesFrom ec:CampaignPackage
                              ] ;
              rdfs:label "Promotion"@en .
 
@@ -10066,7 +10066,7 @@ ec:Reminder rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:isMemberOf ;
-                              owl:allValuesFrom ec:CampagnPackage
+                              owl:allValuesFrom ec:CampaignPackage
                             ] ;
             rdfs:label "Reminder"@en .
 
