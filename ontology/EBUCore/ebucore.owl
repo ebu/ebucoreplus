@@ -476,13 +476,6 @@ ebuccdm:hasOutputResource rdf:type owl:ObjectProperty ;
                           rdfs:label "Output resource"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasPJContributor
-ebuccdm:hasPJContributor rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:Role ;
-                         dcterms:description "To identify Agents involved in a ProductionJob."@en ;
-                         rdfs:label "Contributor"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasProductionContract
 ebuccdm:hasProductionContract rdf:type owl:ObjectProperty ;
                               dcterms:description """To identify Contarcts associated witha
@@ -1390,15 +1383,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
                  rdfs:label "Cast member"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastRole
-ec:hasCastRole rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Role ;
-               dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole  associated with the EditorialObject."""@en ;
-               rdfs:label "Cast role"@en ;
-               owl:deprecated "true"^^xsd:boolean .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent
 ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
                               rdfs:domain ec:PublicationChannel ;
@@ -1540,15 +1524,6 @@ ec:hasCrewMember rdf:type owl:ObjectProperty ;
                  rdfs:range ec:CrewMember ;
                  dcterms:description "A member of the crew."@en ;
                  rdfs:label "Crew member"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCrewRole
-ec:hasCrewRole rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Role ;
-               dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the EditorialObject."""@en ;
-               rdfs:label "Crew role"@en ;
-               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCuisineOrigin
@@ -2276,15 +2251,6 @@ ec:hasStaffMember rdf:type owl:ObjectProperty ;
                   rdfs:range ec:StaffMember ;
                   dcterms:description "To identify members of staff in an organisation."@en ;
                   rdfs:label "member of Staff"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffRole
-ec:hasStaffRole rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Role ;
-                dcterms:description """To define the role of an Agent (Contact/person
-            or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole or hasStaffRole."""@en ;
-                rdfs:label "Staff role"@en ;
-                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStakeholder
@@ -5776,10 +5742,6 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Resource
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ebuccdm:hasPJContributor ;
-                                        owl:allValuesFrom ec:Role
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:hasProductionJobEvent ;
                                         owl:allValuesFrom ec:Event
                                       ] ,
@@ -5802,6 +5764,10 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ebuccdm:usesProductionDevice ;
                                         owl:allValuesFrom ebuccdm:ProductionDevice
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasContributor ;
+                                        owl:allValuesFrom ec:Role
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasIdentifier ;
@@ -6119,10 +6085,6 @@ ec:Affiliation rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
 ec:Agent rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ebuccdm:hasAgentOnStagePosition ;
-                           owl:allValuesFrom ebuccdm:OnStagePosition
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAgentBiography ;
                            owl:allValuesFrom ec:Biography
                          ] ,
@@ -6155,16 +6117,8 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasCastRole ;
-                           owl:allValuesFrom ec:Role
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasCrewRole ;
-                           owl:allValuesFrom ec:Role
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasGroupMember ;
@@ -6177,10 +6131,6 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasStaffRole ;
-                           owl:allValuesFrom ec:Role
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isAgent ;
@@ -10143,6 +10093,10 @@ ec:RightsType rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Role
 ec:Role rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty ebuccdm:hasAgentOnStagePosition ;
+                          owl:allValuesFrom ebuccdm:OnStagePosition
+                        ] ,
+                        [ rdf:type owl:Restriction ;
                           owl:onProperty ebuccdm:usesProductionDevice ;
                           owl:allValuesFrom ebuccdm:ProductionDevice
                         ] ,
