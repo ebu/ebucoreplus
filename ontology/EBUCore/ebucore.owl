@@ -111,15 +111,13 @@ cc:licence rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/elements/1.1/contributor
 dc:contributor rdf:type owl:AnnotationProperty ;
                dcterms:description "An Agent who has participated in any phase of management of an Asset."@en ;
-               rdfs:label "Contributor"@en ;
-               rdfs:domain ec:Asset .
+               rdfs:label "Contributor"@en .
 
 
 ###  http://purl.org/dc/elements/1.1/creator
 dc:creator rdf:type owl:AnnotationProperty ;
            dcterms:description "To identify the creator of an Asset."@en ;
-           rdfs:label "Creator"@en ;
-           rdfs:domain ec:Asset .
+           rdfs:label "Creator"@en .
 
 
 ###  http://purl.org/dc/elements/1.1/date
@@ -138,28 +136,24 @@ dc:description rdf:type owl:AnnotationProperty ;
 ###  http://purl.org/dc/elements/1.1/format
 dc:format rdf:type owl:AnnotationProperty ;
           dcterms:description "Information about the Format of a Resource."@en ;
-          rdfs:label "Format"@en ;
-          rdfs:domain ec:MediaResource .
+          rdfs:label "Format"@en .
 
 
 ###  http://purl.org/dc/elements/1.1/identifier
 dc:identifier rdf:type owl:AnnotationProperty ;
               dcterms:description "To provide a simple not strongly structured identifier."@en ;
-              rdfs:label "Identifier"@en ;
-              rdfs:domain ec:Asset .
+              rdfs:label "Identifier"@en .
 
 
 ###  http://purl.org/dc/elements/1.1/language
 dc:language rdf:type owl:AnnotationProperty ;
-            rdfs:label "To define languages associated with an Asset."@en ;
-            rdfs:domain ec:Asset .
+            rdfs:label "To define languages associated with an Asset."@en .
 
 
 ###  http://purl.org/dc/elements/1.1/publisher
 dc:publisher rdf:type owl:AnnotationProperty ;
              dcterms:description "An Agent involved in the distribution of content."@en ;
-             rdfs:label "Publisher"@en ;
-             rdfs:domain ec:Asset .
+             rdfs:label "Publisher"@en .
 
 
 ###  http://purl.org/dc/elements/1.1/rights
