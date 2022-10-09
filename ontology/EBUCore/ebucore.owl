@@ -2444,18 +2444,9 @@ ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrackPart
 ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:TimelineTrack ;
                         rdfs:range ec:EditorialObject ;
                         dcterms:description "To associate an EditorialObject to a TimelineTrack as an TimelineTrackpart"@en ;
                         rdfs:label "Timeline track part"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTimelineTrackType
-ec:hasTimelineTrackType rdf:type owl:ObjectProperty ;
-                        rdfs:domain ec:TimelineTrack ;
-                        rdfs:range ec:TimelineTrack_Type ;
-                        dcterms:description "To specify a type of TimelineTrack"@en ;
-                        rdfs:label "Timeline track type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTopic
