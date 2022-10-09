@@ -1240,7 +1240,6 @@ ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactBuyer
 ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Artefact ;
                     rdfs:range ec:Agent ;
                     dcterms:description "The Agent who bought the Artefact."@en ;
                     rdfs:label "Buyer"@en .
@@ -1248,7 +1247,6 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactOwner
 ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Artefact ;
                     rdfs:range ec:Agent ;
                     dcterms:description "To identify the owner of an Artefact."@en ;
                     rdfs:label "Owner"@en .
@@ -1256,7 +1254,6 @@ ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactPriceCurrency
 ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
-                            rdfs:domain ec:Artefact ;
                             rdfs:range ec:CurrencyCode ;
                             dcterms:description "To specify the currency into which the price of an Artefact is expressed."@en ;
                             rdfs:label "Artefact price currency"@en .
@@ -1264,7 +1261,6 @@ ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedLocation
 ec:hasArtefactRelatedLocation rdf:type owl:ObjectProperty ;
-                              rdfs:domain ec:Artefact ;
                               rdfs:range ec:Location ;
                               dcterms:description "To associate an Artefact/Prop or else with a Location."@en ;
                               rdfs:label "Associated location"@en .
@@ -1272,7 +1268,6 @@ ec:hasArtefactRelatedLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRelatedPhysicalResource
 ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
-                                      rdfs:domain ec:Artefact ;
                                       rdfs:range ec:PhysicalResource ;
                                       dcterms:description "To associate an Artefact/Prop or else with a physical resource."@en ;
                                       rdfs:label "Associated physical resource"@en .
@@ -1280,7 +1275,6 @@ ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactRetailer
 ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Artefact ;
                        rdfs:range ec:Agent ;
                        dcterms:description "To identify the retailer of an Artefact."@en ;
                        rdfs:label "Retailer"@en .
@@ -1288,7 +1282,6 @@ ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasArtefactSupplier
 ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Artefact ;
                        rdfs:range ec:Agent ;
                        dcterms:description "To identify a supplier of an Artefact."@en ;
                        rdfs:label "Supplier"@en .
@@ -3519,7 +3512,6 @@ ec:annotationSaliency rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactAvailability
 ec:artefactAvailability rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Artefact ;
                         rdfs:range xsd:boolean ;
                         dcterms:description "To flag the availability of an Artefact."@en ;
                         rdfs:label "Artefact availability flag"@en .
@@ -3555,7 +3547,6 @@ ec:artefactBoxWidth rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactBrand
 ec:artefactBrand rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Artefact ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To specify the brand of an Artefact."@en ;
                  rdfs:label "Artefact brand"@en .
@@ -3563,7 +3554,6 @@ ec:artefactBrand rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactColour
 ec:artefactColour rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Artefact ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "To provide the clour(s) of an Artefact."@en ;
                   rdfs:label "Artefact colour(s)"@en .
@@ -3571,7 +3561,6 @@ ec:artefactColour rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactComment
 ec:artefactComment rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Artefact ;
                    rdfs:range rdfs:Literal ;
                    dcterms:description "To provide a contextual comment about an Artefact."@en ;
                    rdfs:label "Artefact comment"@en .
@@ -3579,7 +3568,6 @@ ec:artefactComment rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactModel
 ec:artefactModel rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Artefact ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To specify a model of an Artefact."@en ;
                  rdfs:label "Artefact model"@en .
@@ -3587,7 +3575,6 @@ ec:artefactModel rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactPeriod
 ec:artefactPeriod rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Artefact ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "To specify the period associated with an Artefact."@en ;
                   rdfs:label "Artefact period"@en .
@@ -3595,15 +3582,13 @@ ec:artefactPeriod rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactPriceAmount
 ec:artefactPriceAmount rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:Artefact ;
-                       rdfs:range rdf:PlainLiteral ;
+                       rdfs:range rdfs:Literal ;
                        dcterms:description "To specifythe price of an Artefact."@en ;
                        rdfs:label "Artefact price"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactReference
 ec:artefactReference rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:Artefact ;
                      rdfs:range xsd:anyURI ;
                      dcterms:description "To specify a reference of an Artefact."@en ;
                      rdfs:label "Artefact reference"@en .
@@ -3611,7 +3596,6 @@ ec:artefactReference rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactStyle
 ec:artefactStyle rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ec:Artefact ;
                  rdfs:range rdfs:Literal ;
                  dcterms:description "To specify the style associated with an Artefact."@en ;
                  rdfs:label "Artefact style"@en .
@@ -3619,7 +3603,6 @@ ec:artefactStyle rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactUsageHistory
 ec:artefactUsageHistory rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:Artefact ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description "To provide information on the usage history of an Artefact."@en ;
                         rdfs:label "Artefact usage history"@en .
@@ -3627,7 +3610,6 @@ ec:artefactUsageHistory rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#artefactWebsite
 ec:artefactWebsite rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ec:Artefact ;
                    rdfs:range xsd:anyURI ;
                    dcterms:description "To specify a website where more 	information can be found on the Artefact."@en ;
                    rdfs:label "Artefact website"@en .
@@ -6489,8 +6471,28 @@ ec:Annotation_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact
 ec:Artefact rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactBuyer ;
+                              owl:allValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactOwner ;
+                              owl:allValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactRelatedLocation ;
+                              owl:allValuesFrom ec:Location
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasArtefactRelatedPhysicalResource ;
                               owl:allValuesFrom ec:PhysicalResource
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactRetailer ;
+                              owl:allValuesFrom ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactSupplier ;
+                              owl:allValuesFrom ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasCreator ;
@@ -6527,9 +6529,58 @@ ec:Artefact rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactPriceCurrency ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass ec:CurrencyCode
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasLocation ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:Location
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactAvailability ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactBrand ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactColour ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactComment ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactModel ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactPeriod ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactPriceAmount ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactReference ;
+                              owl:allValuesFrom xsd:anyURI
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactStyle ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactUsageHistory ;
+                              owl:allValuesFrom rdfs:Literal
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:artefactWebsite ;
+                              owl:allValuesFrom xsd:anyURI
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
