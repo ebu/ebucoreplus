@@ -1095,17 +1095,8 @@ ec:existsAs rdf:type owl:ObjectProperty ;
             rdfs:label "Editorial object"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatId
-ec:formatId rdf:type owl:ObjectProperty ;
-            rdfs:domain ec:Format ;
-            rdfs:range ec:Identifier ;
-            dcterms:description "A version identifier attributed to a Format."@en ;
-            rdfs:label "Format version identifier"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatVersionId
 ec:formatVersionId rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Format ;
                    rdfs:range ec:Identifier ;
                    dcterms:description "A version identifier attributed to a Format."@en ;
                    rdfs:label "Format version identifier"@en .
@@ -1681,7 +1672,6 @@ ec:hasFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormatId
 ec:hasFormatId rdf:type owl:ObjectProperty ;
-               rdfs:domain ec:Format ;
                rdfs:range ec:Identifier ;
                dcterms:description "An identifier attributed to a Format."@en ;
                rdfs:label "Format identifier"@en .
@@ -8293,7 +8283,17 @@ ec:FoodStyle rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format
 ec:Format rdf:type owl:Class ;
-          rdfs:subClassOf skos:Concept ;
+          rdfs:subClassOf skos:Concept ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:formatVersionId ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Identifier
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasFormatId ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Identifier
+                          ] ;
           dcterms:description "A Format can be defined as a collection of audio / video / data and container Formats. A Format can be globally associated to a MediaResource but Specific audio / video / data and container Formats can also be distinctly associated to a MediaResource. The ContainerFormat defines the file / package structure of the MediaResource."@en ,
                               "Ein Format wird definiert als eine Sammlung aus Audio-, Video-, Daten- und Containerformaten. Ein Format kann global mit einer Medienressource verknüpft sein, oder auch speziell nach unterschiedlichen Audio-, Video-, Daten- und Containerformaten. Das Containerformat definiert die Datei- bzw. Paketstruktur einer Medienressource."@de ,
                               "Un format peut être défini comme une collection de formats audio/vidéo/données et de conteneurs. Un format peut être associé globalement à une ressource multimédia, mais des formats audio/vidéo/données et conteneurs spécifiques peuvent également être associés de manière distincte à une ressource multimédia. Le ContainerFormat définit la structure du fichier / paquet de la MediaResource."@fr ;
