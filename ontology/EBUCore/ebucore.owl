@@ -2899,7 +2899,6 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#linkToLogo
 ec:linkToLogo rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:Costume ;
               rdfs:range ec:Logo ;
               dcterms:description "To provide a link to a Logo"@en ;
               rdfs:label "Link to logo"@en .
@@ -2907,7 +2906,6 @@ ec:linkToLogo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#linkToSticker
 ec:linkToSticker rdf:type owl:ObjectProperty ;
-                 rdfs:domain ec:Costume ;
                  rdfs:range ec:Sticker ;
                  dcterms:description "To provide a link to a Sticker"@en ;
                  rdfs:label "Link to Sticker"@en .
@@ -3808,7 +3806,6 @@ ec:contentDescription rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#costumeSizeInformation
 ec:costumeSizeInformation rdf:type owl:DatatypeProperty ;
-                          rdfs:domain ec:Costume ;
                           rdfs:range rdfs:Literal ;
                           dcterms:description "To collect all information available useful to determine the size of a Costume."@en ;
                           rdfs:label "Costume size information"@en .
@@ -3816,7 +3813,6 @@ ec:costumeSizeInformation rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#costumeTexture
 ec:costumeTexture rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Costume ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "Range: a string or a Concept code from a vocabulary, e.g. Getty"@en ,
                                       "To define the texture of a Costume."@en ;
@@ -7321,6 +7317,22 @@ ec:Copyright rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Costume
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:linkToLogo ;
+                             owl:allValuesFrom ec:Logo
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:linkToSticker ;
+                             owl:allValuesFrom ec:Sticker
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:costumeSizeInformation ;
+                             owl:allValuesFrom rdfs:Literal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:costumeTexture ;
+                             owl:allValuesFrom rdfs:Literal
+                           ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:gender ;
                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
