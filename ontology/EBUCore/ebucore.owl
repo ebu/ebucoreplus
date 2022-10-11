@@ -10369,6 +10369,10 @@ ec:Service rdf:type owl:Class ;
                              owl:allValuesFrom ebuccdm:ConsumptionDeviceProfile
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasAlternativeTitle ;
+                             owl:allValuesFrom ec:AlternativeTitle
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasIdentifier ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
