@@ -6152,12 +6152,12 @@ ec:AlternativeTitle rdf:type owl:Class ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:end ;
+                                      owl:onProperty ec:endDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:start ;
+                                      owl:onProperty ec:startDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -10395,6 +10395,16 @@ ec:Service rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:objectType ;
                              owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:endDateTime ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass time:Instant
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:startDateTime ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass time:Instant
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:description ;
