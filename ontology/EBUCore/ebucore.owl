@@ -248,11 +248,11 @@ ebuccdm:basedOn rdf:type owl:ObjectProperty ;
                 rdfs:label "Related Editorial Object"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#belongsToTargetAudience
-ebuccdm:belongsToTargetAudience rdf:type owl:ObjectProperty ;
-                                dcterms:description """The parent Audience group to which a Consumer is a member
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#belongsToAudience
+ebuccdm:belongsToAudience rdf:type owl:ObjectProperty ;
+                          dcterms:description """The parent Audience group to which a Consumer is a member
       of."""@en ;
-                                rdfs:label "Parent audience"@en .
+                          rdfs:label "Parent audience"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#compilesResonanceEvents
@@ -383,12 +383,6 @@ ebuccdm:hasBusinessContract rdf:type owl:ObjectProperty ;
                             rdfs:label "Business contract"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasCampaignTargetAudience
-ebuccdm:hasCampaignTargetAudience rdf:type owl:ObjectProperty ;
-                                  dcterms:description "the target Audience of a Campaign."@en ;
-                                  rdfs:label "Target audience"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasConsumptionContract
 ebuccdm:hasConsumptionContract rdf:type owl:ObjectProperty ;
                                dcterms:description """To identify a ConsumptionContract related to an
@@ -420,6 +414,12 @@ ebuccdm:hasContractualParty rdf:type owl:ObjectProperty ;
                             dcterms:description """To identify the different parties involved mentioned in Contract
       terms."""@en ;
                             rdfs:label "Contract party"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasCountedAudience
+ebuccdm:hasCountedAudience rdf:type owl:ObjectProperty ;
+                           dcterms:description "The count and description of the real audience."@en ;
+                           rdfs:label "has counted audience"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
@@ -516,13 +516,6 @@ ebuccdm:hasProductionJobLocation rdf:type owl:ObjectProperty ;
                                  rdfs:label "Production job location"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasPublicationEventTargetAudience
-ebuccdm:hasPublicationEventTargetAudience rdf:type owl:ObjectProperty ;
-                                          dcterms:description """To identify the target Audience associated with a
-      PublicationEvent."""@en ;
-                                          rdfs:label "Target audience"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasPublicationPlan
 ebuccdm:hasPublicationPlan rdf:type owl:ObjectProperty ;
                            dcterms:description "A PublicationPlan associated to a Campaign."@en ;
@@ -580,12 +573,6 @@ ebuccdm:hasRestrictedAudience rdf:type owl:ObjectProperty ;
                               rdfs:label "Restricted audience"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasServiceTargetAudience
-ebuccdm:hasServiceTargetAudience rdf:type owl:ObjectProperty ;
-                                 dcterms:description "To identify the target Audience of a Service."@en ;
-                                 rdfs:label "Target audience"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasStageLocation
 ebuccdm:hasStageLocation rdf:type owl:ObjectProperty ;
                          dcterms:description "To associate a Location with a Stage."@en ;
@@ -603,6 +590,13 @@ ebuccdm:hasSubJob rdf:type owl:ObjectProperty ;
                   dcterms:description """To identify a ProductionJob / process as part of a complex
       ProductionJob."""@en ;
                   rdfs:label "Production job"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasTargetAudience
+ebuccdm:hasTargetAudience rdf:type owl:ObjectProperty ;
+                          dcterms:description """To identify the target Audience associated with a
+      PublicationEvent."""@en ;
+                          rdfs:label "Target audience"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasUsageContract
@@ -2770,7 +2764,6 @@ ec:isOperatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain ec:Service ;
              rdfs:range ec:Agent ;
              dcterms:description """To identify the Agent (Contact/person or
             Organisation) who owns a Service operating a PublicationChannel."""@en ;
@@ -5178,7 +5171,7 @@ ebuccdm:AuditReport rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Campaign
 ebuccdm:Campaign rdf:type owl:Class ;
                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:hasCampaignTargetAudience ;
+                                   owl:onProperty ebuccdm:hasCountedAudience ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -5188,6 +5181,10 @@ ebuccdm:Campaign rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:hasPublicationPlan ;
                                    owl:allValuesFrom ec:PublicationPlan
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ebuccdm:hasTargetAudience ;
+                                   owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasIdentifier ;
@@ -5218,7 +5215,7 @@ Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungser
 ebuccdm:Consumer rdf:type owl:Class ;
                  rdfs:subClassOf ec:Person ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:belongsToTargetAudience ;
+                                   owl:onProperty ebuccdm:belongsToAudience ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -9576,11 +9573,15 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ebuccdm:ConsumptionEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ebuccdm:hasPublicationEventTargetAudience ;
+                                      owl:onProperty ebuccdm:hasCountedAudience ;
                                       owl:allValuesFrom ebuccdm:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ebuccdm:hasRestrictedAudience ;
+                                      owl:allValuesFrom ebuccdm:Audience
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ebuccdm:hasTargetAudience ;
                                       owl:allValuesFrom ebuccdm:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -10316,7 +10317,11 @@ ec:Service rdf:type owl:Class ;
                              owl:allValuesFrom ebuccdm:Account
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:hasServiceTargetAudience ;
+                             owl:onProperty ebuccdm:hasCountedAudience ;
+                             owl:allValuesFrom ebuccdm:Audience
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ebuccdm:hasTargetAudience ;
                              owl:allValuesFrom ebuccdm:Audience
                            ] ,
                            [ rdf:type owl:Restriction ;
