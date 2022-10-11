@@ -1516,7 +1516,6 @@ ec:hasCrewMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCuisineOrigin
 ec:hasCuisineOrigin rdf:type owl:ObjectProperty ;
-                    rdfs:domain ec:Food ;
                     rdfs:range ec:CountryCode ;
                     dcterms:description "The country/region of origin of the cuisine"@en ;
                     rdfs:label "Cuisine origin"@en .
@@ -1524,7 +1523,6 @@ ec:hasCuisineOrigin rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCuisineStyle
 ec:hasCuisineStyle rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Food ;
                    rdfs:range ec:CuisineStyle ;
                    dcterms:description "The style of the cuisine"@en ;
                    rdfs:label "Cuisine style"@en .
@@ -1627,7 +1625,6 @@ ec:hasFileFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFoodStyle
 ec:hasFoodStyle rdf:type owl:ObjectProperty ;
-                rdfs:domain ec:Food ;
                 rdfs:range ec:FoodStyle ;
                 dcterms:description "The style of Food."@en ;
                 rdfs:label "Food style"@en .
@@ -3913,7 +3910,6 @@ ec:folksonomy rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#foodCategory
 ec:foodCategory rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Food ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To define a category of Food."@en ;
                 rdfs:label "Food category"@en .
@@ -3921,7 +3917,6 @@ ec:foodCategory rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#foodIngredient
 ec:foodIngredient rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ec:Food ;
                   rdfs:range rdfs:Literal ;
                   dcterms:description "The Food ingredients or Food items."@en ;
                   rdfs:label "Food ingredient"@en .
@@ -8245,7 +8240,27 @@ ec:FileFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Food
 ec:Food rdf:type owl:Class ;
-        rdfs:subClassOf ec:Artefact ;
+        rdfs:subClassOf ec:Artefact ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasCuisineOrigin ;
+                          owl:allValuesFrom ec:CountryCode
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasCuisineStyle ;
+                          owl:allValuesFrom ec:CuisineStyle
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasFoodStyle ;
+                          owl:allValuesFrom ec:FoodStyle
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:foodCategory ;
+                          owl:allValuesFrom rdfs:Literal
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:foodIngredient ;
+                          owl:allValuesFrom rdfs:Literal
+                        ] ;
         dcterms:description "To describe Food shown or consumed in productions."@en ;
         rdfs:label "Food"@en .
 
