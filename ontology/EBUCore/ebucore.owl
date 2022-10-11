@@ -1938,7 +1938,6 @@ ec:hasProvenance rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasProvenanceTarget
 ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
-                       rdfs:domain ec:Provenance ;
                        rdfs:range owl:Thing ;
                        dcterms:description "The instance of an object sourced by the Provenance."@en ;
                        rdfs:label "Provenance target"@en .
@@ -2556,9 +2555,8 @@ ec:isAnnotationBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAttributedTo
 ec:isAttributedTo rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Provenance ;
                   rdfs:range ec:Agent ;
-                  dcterms:description "Tassociate an Agent with a Provenance instance."@en ;
+                  dcterms:description "To associate an Agent with a Provenance instance."@en ;
                   rdfs:label "Provenance target"@en .
 
 
@@ -9517,6 +9515,14 @@ ec:Provenance rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasIdentifier ;
                                 owl:allValuesFrom ec:Identifier
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasProvenanceTarget ;
+                                owl:allValuesFrom owl:Thing
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:isAttributedTo ;
+                                owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:objectType ;
