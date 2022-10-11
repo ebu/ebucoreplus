@@ -799,7 +799,6 @@ ec:appliesTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
-           rdfs:domain ec:Rights ;
            rdfs:range ec:Asset ;
            dcterms:description "The Asset to which Rights apply."@en ;
            rdfs:label "Asset"@en .
@@ -1293,7 +1292,6 @@ ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudienceScoreRecordingTechnique
 ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
-                                      rdfs:domain ec:AudienceRating ;
                                       rdfs:range skos:Concept ;
                                       dcterms:description "To identify the technique used to measure an audience."@en ;
                                       rdfs:label "Audience score recording technique"@en .
@@ -1395,7 +1393,6 @@ ec:hasCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodecVendor
 ec:hasCodecVendor rdf:type owl:ObjectProperty ;
-                  rdfs:domain ec:Codec ;
                   rdfs:range ec:Agent ;
                   dcterms:description "To provide a name for the vendor of the Codec."@en ;
                   rdfs:label "Codec vendor"@en .
@@ -2184,7 +2181,6 @@ ec:hasRightsClearance rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsHolder
 ec:hasRightsHolder rdf:type owl:ObjectProperty ;
-                   rdfs:domain ec:Rights ;
                    rdfs:range ec:Agent ;
                    dcterms:description """To identify an Agent (Contact/person or
             Organisation) having/managing Rights."""@en ;
@@ -2669,7 +2665,6 @@ ec:isIssuedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMasterOf
 ec:isMasterOf rdf:type owl:ObjectProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range ec:MediaResource ;
               dcterms:description "To identify the master of a derived media resource."@en ;
               rdfs:label "Derived media resource"@en .
@@ -3676,7 +3671,6 @@ ec:bookmark rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterEndIndex
 ec:characterEndIndex rdf:type owl:DatatypeProperty ;
-                     rdfs:domain ec:TextAnnotation ;
                      rdfs:range xsd:integer ;
                      dcterms:description "To identify the end character index of the portion of text to which the Annotation applies."@en ;
                      rdfs:label "Annotation character start index"@en .
@@ -3684,7 +3678,6 @@ ec:characterEndIndex rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterStartIndex
 ec:characterStartIndex rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ec:TextAnnotation ;
                        rdfs:range xsd:integer ;
                        dcterms:description "To identify the start character index of the portion of text to which the Annotation applies."@en ;
                        rdfs:label "Annotation text character start index"@en .
@@ -3692,7 +3685,6 @@ ec:characterStartIndex rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecFamily
 ec:codecFamily rdf:type owl:DatatypeProperty ;
-               rdfs:domain ec:Codec ;
                rdfs:range rdfs:Literal ;
                dcterms:description "To provide information on the product family of the Codec."@en ;
                rdfs:label "Codec family"@en .
@@ -3700,7 +3692,6 @@ ec:codecFamily rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecVersion
 ec:codecVersion rdf:type owl:DatatypeProperty ;
-                rdfs:domain ec:Codec ;
                 rdfs:range rdfs:Literal ;
                 dcterms:description "To provide information on the version of the Codec."@en ;
                 rdfs:label "Codec version"@en .
@@ -3740,15 +3731,6 @@ ec:costumeTexture rdf:type owl:DatatypeProperty ;
                   rdfs:label "Costume texture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dateTime
-ec:dateTime rdf:type owl:DatatypeProperty ,
-                     owl:FunctionalProperty ;
-            rdfs:domain time:Instant ;
-            rdfs:range xsd:dateTime ;
-            dcterms:description "A string describing the time and date."@en ;
-            rdfs:label "Date time"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#day
 ec:day rdf:type owl:DatatypeProperty ;
        rdfs:range xsd:integer ;
@@ -3778,7 +3760,6 @@ ec:displayOrder rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit
 ec:editUnit rdf:type owl:DatatypeProperty ;
-            rdfs:domain ec:EditUnitCount ;
             rdfs:range xsd:long ;
             dcterms:description """The edit unit is e.g. the inverse of the audio
             sample rate or video frame rate."""@en ;
@@ -3987,7 +3968,6 @@ ec:hashValue rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height
 ec:height rdf:type owl:DatatypeProperty ;
-          rdfs:domain ec:MediaResource ;
           rdfs:range xsd:integer ;
           dcterms:description """The height of e.g. a video frame typically
             expressed as a number of lines or the height of a picture/image expressed in millimeters
@@ -3997,7 +3977,6 @@ ec:height rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#heightUnit
 ec:heightUnit rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:MediaResource ;
               rdfs:range rdfs:Literal ;
               dcterms:description "To specify a unit to express height."@en ;
               rdfs:label "Height unit"@en .
@@ -4150,7 +4129,6 @@ ec:locationLongitude rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#locatorTargetInformation
 ec:locatorTargetInformation rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ec:Locator ;
                             rdfs:range rdfs:Literal ;
                             dcterms:description "Information on the locator target."@en ;
                             rdfs:label "Locator target information"@en .
@@ -4569,7 +4547,6 @@ ec:rightsClearanceFlag rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsExpression
 ec:rightsExpression rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ec:Rights ;
                     rdfs:range rdfs:Literal ;
                     dcterms:description "To express an expression of Rights."@en ;
                     rdfs:label "Rights"@en .
@@ -4577,7 +4554,6 @@ ec:rightsExpression rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsLink
 ec:rightsLink rdf:type owl:DatatypeProperty ;
-              rdfs:domain ec:Rights ;
               rdfs:range xsd:anyURI ;
               dcterms:description """A link to e.g. a webpage where an expression of
             the rights can be found and consulted."""@en ;
@@ -4694,7 +4670,6 @@ ec:tag rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#targetAudienceSystem
 ec:targetAudienceSystem rdf:type owl:DatatypeProperty ;
-                        rdfs:domain ec:AudienceLevel ;
                         rdfs:range rdfs:Literal ;
                         dcterms:description "To define the system used to provide a TargetAudience."@en ;
                         rdfs:label "Target audience system"@en .
@@ -4840,7 +4815,6 @@ ec:videoEncodingProfile rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width
 ec:width rdf:type owl:DatatypeProperty ;
-         rdfs:domain ec:MediaResource ;
          rdfs:range xsd:integer ;
          dcterms:description """The width of e.g. a video frame typically
             expressed as a number of pixels, or picture/image in millimeters."""@en ;
@@ -4849,7 +4823,6 @@ ec:width rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#widthUnit
 ec:widthUnit rdf:type owl:DatatypeProperty ;
-             rdfs:domain ec:MediaResource ;
              rdfs:range rdfs:Literal ;
              dcterms:description """The unit used to measure a width e.g. in pixels
             or number of lines or millimeters or else."""@en ;
@@ -6747,7 +6720,11 @@ ec:Atmosphere rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudienceLevel
 ec:AudienceLevel rdf:type owl:Class ;
-                 rdfs:subClassOf ec:Rating ;
+                 rdfs:subClassOf ec:Rating ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:targetAudienceSystem ;
+                                   owl:allValuesFrom rdfs:Literal
+                                 ] ;
                  dcterms:description """The target audience (target region, target
             audience category but also parental guidance recommendation) for which the media
             resource is intended."""@en ,
@@ -6758,7 +6735,11 @@ ec:AudienceLevel rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudienceRating
 ec:AudienceRating rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Rating ;
+                  rdfs:subClassOf ec:Rating ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasAudienceScoreRecordingTechnique ;
+                                    owl:allValuesFrom skos:Concept
+                                  ] ;
                   dcterms:description """The audience by which the Resource can be
             seen according to ratings like MPAA  (http://en.wikipedia.org/wiki/Motion_picture_rating_system) or other organisational / national / local standards."""@en ;
                   rdfs:label "Audience rating"@en .
@@ -7147,12 +7128,24 @@ ec:ClosedSubtitling rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Codec
 ec:Codec rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCodecVendor ;
+                           owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
                            owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:codecFamily ;
+                           owl:allValuesFrom rdfs:Literal
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:codecVersion ;
+                           owl:allValuesFrom rdfs:Literal
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
@@ -8578,6 +8571,26 @@ ec:LocationType rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Locator
 ec:Locator rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasIdentifier ;
+                             owl:allValuesFrom ec:Identifier
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
+                             owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:description ;
+                             owl:allValuesFrom rdfs:Literal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:locatorTargetInformation ;
+                             owl:allValuesFrom rdfs:Literal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:name ;
+                             owl:allValuesFrom rdfs:Literal
+                           ] ;
            dcterms:description "Custom attributes are to be associated by implementers."@en ,
                                "To provide information about complex locators."@en ;
            rdfs:label "Locator"@en .
@@ -8710,6 +8723,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isClonedFrom ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:isMasterOf ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -10192,6 +10209,14 @@ ec:Rights rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:publishingEventsLeft ;
                             owl:allValuesFrom xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:rightsExpression ;
+                            owl:allValuesFrom rdfs:Literal
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:rightsLink ;
+                            owl:allValuesFrom xsd:anyURI
                           ] ;
           dcterms:description """Les droits, Rights, de propriété intellectuelle ou autres droits contractuels (par exemple, de publication) associés à un actif, un contrat ou un PublicationEvent.
 Les droits proviennent d'un contrat, Contract. Les droits sont associés à des EditorialObjects, MediaResource ou Essences par la définition d'un actif, Asset. Les droits sont liés à des détenteurs de droits, RightsHolders."""@fr ,
@@ -10601,7 +10626,17 @@ ec:TerritoryCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TextAnnotation
 ec:TextAnnotation rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Annotation ;
+                  rdfs:subClassOf ec:Annotation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:characterEndIndex ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:integer
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:characterStartIndex ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:integer
+                                  ] ;
                   dcterms:description "A class specific to the annotation of a text or portions of text."@en ;
                   rdfs:label "Text Annotation"@en .
 
