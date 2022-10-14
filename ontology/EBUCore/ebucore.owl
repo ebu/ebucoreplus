@@ -2639,6 +2639,11 @@ ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
                      rdfs:label "Parent season"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSerial
+ec:isEpisodeOfSerial rdf:type owl:ObjectProperty ;
+                     rdfs:label "is episode of serial"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Series ;
@@ -3825,6 +3830,11 @@ ec:episodeNumberInSeason rdf:type owl:DatatypeProperty ;
                          rdfs:range xsd:integer ;
                          dcterms:description "The Episode Number in a season"@en ;
                          rdfs:label "Episode number in season"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumberInSerial
+ec:episodeNumberInSerial rdf:type owl:DatatypeProperty ;
+                         rdfs:label "episode number of serial"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#episodeNumberInSeries
@@ -9454,11 +9464,18 @@ ec:Programme rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isEpisodeOfSeason ;
-                               owl:allValuesFrom ec:Season
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass ec:Season
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:isEpisodeOfSerial ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass ec:Serial
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isEpisodeOfSeries ;
-                               owl:allValuesFrom ec:Series
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass ec:Series
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:episodeNumber ;
@@ -9467,6 +9484,11 @@ ec:Programme rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:episodeNumberInSeason ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:episodeNumberInSerial ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:integer
                              ] ,
