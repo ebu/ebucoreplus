@@ -4352,13 +4352,6 @@ ec:personHeight rdf:type owl:DatatypeProperty ;
                 rdfs:label "Person height"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personName
-ec:personName rdf:type owl:DatatypeProperty ;
-              rdfs:range rdfs:Literal ;
-              dcterms:description "To provide e.g. compound names."@en ;
-              rdfs:label "Person name"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personWeight
 ec:personWeight rdf:type owl:DatatypeProperty ;
                 rdfs:range rdfs:Literal ;
@@ -9329,10 +9322,6 @@ ec:Person rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:officeTelephoneNumber ;
                             owl:allValuesFrom xsd:string
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:personName ;
-                            owl:allValuesFrom rdfs:Literal
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:personWeight ;
