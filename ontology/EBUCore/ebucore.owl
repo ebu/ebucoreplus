@@ -364,6 +364,11 @@ ebuccdm:hasAssociatedProductionOrder rdf:type owl:ObjectProperty ;
                                      rdfs:label "Production order"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAudience
+ebuccdm:hasAudience rdf:type owl:ObjectProperty ;
+                    rdfs:label "has audience"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasAuditJobRelatedAuditReport
 ebuccdm:hasAuditJobRelatedAuditReport rdf:type owl:ObjectProperty ;
                                       dcterms:description "To associate an AuditReport with an AuditJob."@en ;
@@ -384,17 +389,17 @@ ebuccdm:hasConsumptionContract rdf:type owl:ObjectProperty ;
                                rdfs:label "Consumption Contract"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasConsumptionCount
+ebuccdm:hasConsumptionCount rdf:type owl:ObjectProperty ;
+                            dcterms:description "The count of and relation to the real audience."@en ;
+                            rdfs:label "has consumption count"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasConsumptionEvent
 ebuccdm:hasConsumptionEvent rdf:type owl:ObjectProperty ;
                             dcterms:description """To identify a ConsumptionEvent related to a
       PublicationEvent."""@en ;
                             rdfs:label "Consumption event"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasConsumptionStatistics
-ebuccdm:hasConsumptionStatistics rdf:type owl:ObjectProperty ;
-                                 dcterms:description "The count and description of the real audience."@en ;
-                                 rdfs:label "has consumption statistics"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasContractRelatedCost
@@ -4981,12 +4986,12 @@ ebuccdm:Audience rdf:type owl:Class ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:hasMemberAudience ;
+                                   owl:onProperty ebuccdm:includesAudience ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:includesAudience ;
-                                   owl:allValuesFrom ebuccdm:Audience
+                                   owl:allValuesFrom ebuccdm:ConsumptionCount
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasIdentifier ;
@@ -4997,36 +5002,12 @@ ebuccdm:Audience rdf:type owl:Class ;
                                    owl:allValuesFrom skos:Concept
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:end ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ec:TimelinePoint
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:endDateTime ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:start ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ec:TimelinePoint
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:startDateTime ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:audienceAgeHigh ;
                                    owl:allValuesFrom xsd:integer
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:audienceAgeLow ;
                                    owl:allValuesFrom xsd:integer
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:audienceCount ;
-                                   owl:allValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:audienceInterest ;
@@ -5047,6 +5028,16 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
                             "Publikum"@de .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ebuccdm:Audience ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty ebuccdm:includesAudience ;
+                         owl:allValuesFrom ebuccdm:ConsumptionCount
+                       ] ;
+   rdfs:comment "For subdeviding an audience group with counted sub groups"@en
+ ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
@@ -5127,7 +5118,7 @@ ebuccdm:AuditReport rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Campaign
 ebuccdm:Campaign rdf:type owl:Class ;
                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:hasConsumptionStatistics ;
+                                   owl:onProperty ebuccdm:hasConsumptionCount ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -5197,6 +5188,56 @@ Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzun
                  rdfs:label "Consommateur"@fr ,
                             "Consumer"@en ,
                             "Nutzer"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionCount
+ebuccdm:ConsumptionCount rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty ebuccdm:hasAudience ;
+                                           owl:allValuesFrom ebuccdm:Audience
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:hasIdentifier ;
+                                           owl:allValuesFrom ec:Identifier
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:objectType ;
+                                           owl:allValuesFrom skos:Concept
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:end ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass ec:TimelinePoint
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:endDateTime ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass time:Instant
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:start ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass ec:TimelinePoint
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:startDateTime ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass time:Instant
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ebuccdm:audienceCount ;
+                                           owl:allValuesFrom rdfs:Literal
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:description ;
+                                           owl:allValuesFrom rdfs:Literal
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty ec:name ;
+                                           owl:allValuesFrom rdfs:Literal
+                                         ] ;
+                         dcterms:description "An aggregation of groups of counted Consumers"@en ;
+                         rdfs:label "Consumption count"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDevice
@@ -9598,12 +9639,12 @@ ec:PublicationChannel_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent
 ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty ebuccdm:hasConsumptionEvent ;
-                                      owl:allValuesFrom ebuccdm:ConsumptionEvent
+                                      owl:onProperty ebuccdm:hasConsumptionCount ;
+                                      owl:allValuesFrom ebuccdm:ConsumptionCount
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ebuccdm:hasConsumptionStatistics ;
-                                      owl:allValuesFrom ebuccdm:Audience
+                                      owl:onProperty ebuccdm:hasConsumptionEvent ;
+                                      owl:allValuesFrom ebuccdm:ConsumptionEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ebuccdm:hasRestrictedAudience ;
@@ -10373,7 +10414,7 @@ ec:Service rdf:type owl:Class ;
                              owl:allValuesFrom ebuccdm:Account
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:hasConsumptionStatistics ;
+                             owl:onProperty ebuccdm:hasConsumptionCount ;
                              owl:allValuesFrom ebuccdm:Audience
                            ] ,
                            [ rdf:type owl:Restriction ;
