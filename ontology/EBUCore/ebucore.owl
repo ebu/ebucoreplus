@@ -4990,10 +4990,6 @@ ebuccdm:Audience rdf:type owl:Class ;
                                    owl:allValuesFrom ebuccdm:Audience
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:includesAudience ;
-                                   owl:allValuesFrom ebuccdm:ConsumptionCount
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasIdentifier ;
                                    owl:allValuesFrom ec:Identifier
                                  ] ,
@@ -5008,6 +5004,10 @@ ebuccdm:Audience rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:audienceAgeLow ;
                                    owl:allValuesFrom xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ebuccdm:audienceCount ;
+                                   owl:allValuesFrom rdfs:Literal
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:audienceInterest ;
@@ -5028,16 +5028,6 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
                             "Publikum"@de .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ebuccdm:Audience ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ebuccdm:includesAudience ;
-                         owl:allValuesFrom ebuccdm:ConsumptionCount
-                       ] ;
-   rdfs:comment "For subdeviding an audience group with counted sub groups"@en
- ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
