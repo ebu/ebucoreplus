@@ -5163,6 +5163,10 @@ ebuccdm:ConsumptionCount rdf:type owl:Class ;
                                            owl:allValuesFrom ebuccdm:Audience
                                          ] ,
                                          [ rdf:type owl:Restriction ;
+                                           owl:onProperty ebuccdm:hasConsumptionEvent ;
+                                           owl:allValuesFrom ebuccdm:ConsumptionEvent
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
                                            owl:onProperty ec:hasIdentifier ;
                                            owl:allValuesFrom ec:Identifier
                                          ] ,
