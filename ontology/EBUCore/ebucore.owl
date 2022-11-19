@@ -421,6 +421,12 @@ ebuccdm:hasContractualParty rdf:type owl:ObjectProperty ;
                             rdfs:label "Contract party"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasDevice
+ebuccdm:hasDevice rdf:type owl:ObjectProperty ;
+                  dcterms:description "The ConsumptionDevice used during a ConsumptionEvent."@en ;
+                  rdfs:label "has device"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
 ebuccdm:hasGeoLocation rdf:type owl:ObjectProperty ;
                        dcterms:description "The Location of a ConsumptionDevice."@en ;
@@ -659,12 +665,6 @@ ebuccdm:isRegisteredAs rdf:type owl:ObjectProperty ;
                        rdfs:label "Registration"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isRenderedByConsumptionDevice
-ebuccdm:isRenderedByConsumptionDevice rdf:type owl:ObjectProperty ;
-                                      dcterms:description "The ConsumptionDevice used during a ConsumptionEvent."@en ;
-                                      rdfs:label "Consumption device"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isResourceCommissionedBy
 ebuccdm:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
                                  dcterms:description """The Contract through which a Resource is
@@ -720,6 +720,11 @@ ebuccdm:referencesRule rdf:type owl:ObjectProperty ;
                        rdfs:label "Referenced Rule"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#renders
+ebuccdm:renders rdf:type owl:ObjectProperty ;
+                rdfs:label "renders"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#requiresLicence
 ebuccdm:requiresLicence rdf:type owl:ObjectProperty ;
                         dcterms:description """To identify a ConsumptionLicence required by a
@@ -758,13 +763,6 @@ ebuccdm:usesConsumptionDevice rdf:type owl:ObjectProperty ;
                                                   """To identify the ConsumptionDevices used by a
       Consumer."""@en ;
                               rdfs:label "Consumption device"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#usesDevices
-ebuccdm:usesDevices rdf:type owl:ObjectProperty ;
-                    dcterms:description """To identifiy the device in use by the Consumer during the
-      consumption session."""@en ;
-                    rdfs:label "Device"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#usesMeasure
@@ -1369,14 +1367,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
                  rdfs:label "Cast member"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent
-ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:PublicationEvent ;
-                              dcterms:description """To associate PublicationEvents with
-            PublicationChannels."""@en ;
-                              rdfs:label "Publication event"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Character ;
@@ -1944,6 +1934,11 @@ ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
                        rdfs:label "Provenance target"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationChannel
+ec:hasPublicationChannel rdf:type owl:ObjectProperty ;
+                         rdfs:label "haspublicationchannel"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
                        rdfs:range ec:PublicationEvent ;
@@ -2347,7 +2342,7 @@ ec:hasTargetAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetPlatform
 ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TargetPlatform ;
+                     rdfs:range ec:Platform ;
                      dcterms:description "To specify a target platform."@en ;
                      rdfs:label "Target platform"@en .
 
@@ -5142,10 +5137,6 @@ ebuccdm:Consumer rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:usesConsumptionDevice ;
                                    owl:allValuesFrom ebuccdm:ConsumptionDevice
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:usesDevices ;
-                                   owl:allValuesFrom ebuccdm:ConsumptionDevice
                                  ] ;
                  dcterms:description "An individual who consumes the Service using a ConsumptionDevice. The Consumer can be associated to an Audience. His actions lead to data around the ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service via an Account containing information about that Concumer to a varying degree of detaill (e.g. age, sex, matrimonial status, address). This is further defined in Consumption Licence when applicable."@en ,
                                      """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
@@ -5342,12 +5333,12 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                                            owl:allValuesFrom ec:TimelinePoint
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:hasRelatedConsumptionEvent ;
-                                           owl:allValuesFrom ebuccdm:ConsumptionEvent
+                                           owl:onProperty ebuccdm:hasDevice ;
+                                           owl:allValuesFrom ebuccdm:ConsumptionDevice
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:isRenderedByConsumptionDevice ;
-                                           owl:allValuesFrom ebuccdm:ConsumptionDevice
+                                           owl:onProperty ebuccdm:hasRelatedConsumptionEvent ;
+                                           owl:allValuesFrom ebuccdm:ConsumptionEvent
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ebuccdm:requiresLicence ;
@@ -7740,7 +7731,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTargetPlatform ;
-                                     owl:allValuesFrom ec:TargetPlatform
+                                     owl:allValuesFrom ec:Platform
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTheme ;
@@ -8371,6 +8362,10 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ebuccdm:renders ;
+                                owl:allValuesFrom ec:Essence
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:isIssuedBy ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
@@ -9509,7 +9504,11 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Platform
 ec:Platform rdf:type owl:Class ;
-            rdfs:subClassOf ec:Service ;
+            rdfs:subClassOf ec:Service ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasPublicationChannel ;
+                              owl:allValuesFrom ec:PublicationChannel
+                            ] ;
             dcterms:description "A platform like a network or operator platform."@en ;
             rdfs:label "Platform"@en .
 
@@ -9632,10 +9631,6 @@ ec:Pseudonym rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
 ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:subClassOf ec:Service ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasChannelPublicationEvent ;
-                                        owl:allValuesFrom ec:PublicationChannel
-                                      ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasPublicationEvent ;
                                         owl:allValuesFrom ec:PublicationEvent
@@ -10679,7 +10674,8 @@ ec:TargetAudience rdf:type owl:Class ;
 ec:TargetPlatform rdf:type owl:Class ;
                   rdfs:subClassOf skos:Concept ;
                   dcterms:description "To specify a target platform."@en ;
-                  rdfs:label "Target Platform"@en .
+                  rdfs:label "Target Platform"@en ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
