@@ -2340,7 +2340,6 @@ ec:hasTake rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetAudience
 ec:hasTargetAudience rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TargetAudience ;
                      dcterms:description "To associate a TargetAudience (e.g. for parental guiddance or targeting a particular social group) with a EditorialObject"@en ;
                      rdfs:label "Target audience"@en .
 
@@ -7736,7 +7735,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTargetAudience ;
-                                     owl:allValuesFrom ec:TargetAudience
+                                     owl:allValuesFrom ebuccdm:Audience
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTargetPlatform ;
@@ -10666,13 +10665,6 @@ ec:Take rdf:type owl:Class ;
                         ] ;
         dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
         rdfs:label "Take"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetAudience
-ec:TargetAudience rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Type ;
-                  dcterms:description "To identify the audience for which the content was created."@en ;
-                  rdfs:label "Target audience"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetPlatform
