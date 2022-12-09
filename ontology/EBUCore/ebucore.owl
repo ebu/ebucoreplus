@@ -172,6 +172,10 @@ dc:type rdf:type owl:AnnotationProperty ;
         rdfs:label "Type"@en .
 
 
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
@@ -421,6 +425,12 @@ ebuccdm:hasContractualParty rdf:type owl:ObjectProperty ;
                             rdfs:label "Contract party"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasDevice
+ebuccdm:hasDevice rdf:type owl:ObjectProperty ;
+                  dcterms:description "The ConsumptionDevice used during a ConsumptionEvent."@en ;
+                  rdfs:label "has device"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#hasGeoLocation
 ebuccdm:hasGeoLocation rdf:type owl:ObjectProperty ;
                        dcterms:description "The Location of a ConsumptionDevice."@en ;
@@ -659,12 +669,6 @@ ebuccdm:isRegisteredAs rdf:type owl:ObjectProperty ;
                        rdfs:label "Registration"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isRenderedByConsumptionDevice
-ebuccdm:isRenderedByConsumptionDevice rdf:type owl:ObjectProperty ;
-                                      dcterms:description "The ConsumptionDevice used during a ConsumptionEvent."@en ;
-                                      rdfs:label "Consumption device"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#isResourceCommissionedBy
 ebuccdm:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
                                  dcterms:description """The Contract through which a Resource is
@@ -690,6 +694,11 @@ ebuccdm:offers rdf:type owl:ObjectProperty ;
                dcterms:description """To identify the PublicationEvents available through a
       Service."""@en ;
                rdfs:label "Publication events"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#offersService
+ebuccdm:offersService rdf:type owl:ObjectProperty ;
+                      rdfs:label "Offers service"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#originateFrom
@@ -718,6 +727,11 @@ ebuccdm:referencesRule rdf:type owl:ObjectProperty ;
                        dcterms:description """To provide a reference to a Rule against which an AuditJob has been
       performed through an associated Measure."""@en ;
                        rdfs:label "Referenced Rule"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebuccdm#renders
+ebuccdm:renders rdf:type owl:ObjectProperty ;
+                rdfs:label "renders"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#requiresLicence
@@ -758,13 +772,6 @@ ebuccdm:usesConsumptionDevice rdf:type owl:ObjectProperty ;
                                                   """To identify the ConsumptionDevices used by a
       Consumer."""@en ;
                               rdfs:label "Consumption device"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebuccdm#usesDevices
-ebuccdm:usesDevices rdf:type owl:ObjectProperty ;
-                    dcterms:description """To identifiy the device in use by the Consumer during the
-      consumption session."""@en ;
-                    rdfs:label "Device"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#usesMeasure
@@ -845,6 +852,16 @@ ec:awardDate rdf:type owl:ObjectProperty ;
 ec:bringsRights rdf:type owl:ObjectProperty ;
                 dcterms:description "The rights appear as a consequence of the engagement."@nb ;
                 rdfs:comment "brings rights"@nb .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#canAccessPublicationChannel
+ec:canAccessPublicationChannel rdf:type owl:ObjectProperty ;
+                               rdfs:label "can accesspublication channel"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#canAccessPublicationPlatform
+ec:canAccessPublicationPlatform rdf:type owl:ObjectProperty ;
+                                rdfs:label "canaccess publicationplatform"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo
@@ -1367,14 +1384,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
                  rdfs:range ec:CastMember ;
                  dcterms:description "A member of the cast."@en ;
                  rdfs:label "Cast member"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent
-ec:hasChannelPublicationEvent rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:PublicationEvent ;
-                              dcterms:description """To associate PublicationEvents with
-            PublicationChannels."""@en ;
-                              rdfs:label "Publication event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter
@@ -1944,6 +1953,11 @@ ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
                        rdfs:label "Provenance target"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationChannel
+ec:hasPublicationChannel rdf:type owl:ObjectProperty ;
+                         rdfs:label "haspublicationchannel"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
                        rdfs:range ec:PublicationEvent ;
@@ -2127,6 +2141,13 @@ ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
                               rdfs:label "Publication event"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedPublicationService
+ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
+                                rdfs:range ec:PublicationService ;
+                                dcterms:description "To establish a relation to publication services."@en ;
+                                rdfs:label "Related publication service"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedRecord
 ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Record ;
@@ -2146,13 +2167,6 @@ ec:hasRelatedScene rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Scene ;
                    dcterms:description "To associate a concept with a Scene"@en ;
                    rdfs:label "Related scene"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedService
-ec:hasRelatedService rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Service ;
-                     dcterms:description "To establish a relation between Services."@en ;
-                     rdfs:label "Related Service"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRelatedTextLine
@@ -2194,7 +2208,7 @@ ec:hasRightsHolder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasRightsTargetService
 ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
-                          rdfs:range ec:Service ;
+                          rdfs:range ec:PublicationService ;
                           dcterms:description "To identify a Service associated to Rights."@en ;
                           rdfs:label "Target service"@en .
 
@@ -2346,7 +2360,7 @@ ec:hasTargetAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetPlatform
 ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TargetPlatform ;
+                     rdfs:range ec:PublicationPlatform ;
                      dcterms:description "To specify a target platform."@en ;
                      rdfs:label "Target platform"@en .
 
@@ -2598,7 +2612,7 @@ ec:isDerivedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDistributedOn
 ec:isDistributedOn rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Service ;
+                   rdfs:range ec:PublicationService ;
                    dcterms:description "To identify the platform on which content is distributed."@en ;
                    rdfs:label "Platform/Service/PublicationChannel"@en .
 
@@ -2710,7 +2724,7 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isOperatedBy
 ec:isOperatedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Service ;
+                rdfs:range ec:PublicationService ;
                 dcterms:description """To identify the Service that operates the
             PublicationChannel."""@en ;
                 rdfs:label "Operator, owner"@en .
@@ -2770,7 +2784,7 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isReleasedBy
 ec:isReleasedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Service ;
+                rdfs:range ec:PublicationService ;
                 dcterms:description "To identify a Service assocoated to a PublicationEvent."@en ;
                 rdfs:label "Service"@en .
 
@@ -2979,6 +2993,11 @@ ec:startDateTime rdf:type owl:ObjectProperty ;
                  rdfs:range time:Instant ;
                  rdfs:comment "A point of time or start of an interval"@en ,
                               "Start date time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#transports
+ec:transports rdf:type owl:ObjectProperty ;
+              rdfs:label "Transports"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#versionType
@@ -4843,10 +4862,6 @@ ec:wordCount rdf:type owl:DatatypeProperty ;
              rdfs:label "Word count"@en .
 
 
-###  http://www.w3.org/2004/02/skos/core#notation
-skos:notation rdfs:range rdfs:Literal .
-
-
 ###  http://www.w3.org/2006/time#day
 time:day rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:gDay ;
@@ -5141,10 +5156,6 @@ ebuccdm:Consumer rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ebuccdm:usesConsumptionDevice ;
                                    owl:allValuesFrom ebuccdm:ConsumptionDevice
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ebuccdm:usesDevices ;
-                                   owl:allValuesFrom ebuccdm:ConsumptionDevice
                                  ] ;
                  dcterms:description "An individual who consumes the Service using a ConsumptionDevice. The Consumer can be associated to an Audience. His actions lead to data around the ConsumptionEvents and associated ResonanceEvents. A consumer can be registered to a Service via an Account containing information about that Concumer to a varying degree of detaill (e.g. age, sex, matrimonial status, address). This is further defined in Consumption Licence when applicable."@en ,
                                      """Eine Person, die einen Service konsumiert mit Hilfe eines Endgerätes.
@@ -5220,6 +5231,10 @@ ebuccdm:ConsumptionDevice rdf:type owl:Class ;
                                             owl:allValuesFrom ec:Agent
                                           ] ,
                                           [ rdf:type owl:Restriction ;
+                                            owl:onProperty ebuccdm:renders ;
+                                            owl:allValuesFrom ec:Essence
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
                                             owl:onProperty ec:hasIdentifier ;
                                             owl:allValuesFrom ec:Identifier
                                           ] ,
@@ -5264,6 +5279,14 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                    owl:onProperty ebuccdm:hasGeoLocation ;
                                                    owl:allValuesFrom ec:Location
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ec:canAccessPublicationChannel ;
+                                                   owl:allValuesFrom ec:PublicationChannel
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ec:canAccessPublicationPlatform ;
+                                                   owl:allValuesFrom ec:PublicationPlatform
                                                  ] ,
                                                  [ rdf:type owl:Restriction ;
                                                    owl:onProperty ec:hasIdentifier ;
@@ -5341,12 +5364,12 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                                            owl:allValuesFrom ec:TimelinePoint
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:hasRelatedConsumptionEvent ;
-                                           owl:allValuesFrom ebuccdm:ConsumptionEvent
+                                           owl:onProperty ebuccdm:hasDevice ;
+                                           owl:allValuesFrom ebuccdm:ConsumptionDevice
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ebuccdm:isRenderedByConsumptionDevice ;
-                                           owl:allValuesFrom ebuccdm:ConsumptionDevice
+                                           owl:onProperty ebuccdm:hasRelatedConsumptionEvent ;
+                                           owl:allValuesFrom ebuccdm:ConsumptionEvent
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ebuccdm:requiresLicence ;
@@ -7739,7 +7762,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTargetPlatform ;
-                                     owl:allValuesFrom ec:TargetPlatform
+                                     owl:allValuesFrom ec:PublicationPlatform
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTheme ;
@@ -7767,7 +7790,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
-                                     owl:allValuesFrom ec:Service
+                                     owl:allValuesFrom ec:PublicationService
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isEditorialFormatOf ;
@@ -9506,13 +9529,6 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
                         rdfs:label "Picture display format code"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Platform
-ec:Platform rdf:type owl:Class ;
-            rdfs:subClassOf ec:Service ;
-            dcterms:description "A platform like a network or operator platform."@en ;
-            rdfs:label "Platform"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Post
 ec:Post rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialWork .
@@ -9630,14 +9646,33 @@ ec:Pseudonym rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel
 ec:PublicationChannel rdf:type owl:Class ;
-                      rdfs:subClassOf ec:Service ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasChannelPublicationEvent ;
-                                        owl:allValuesFrom ec:PublicationChannel
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:accountingTo ;
+                                        owl:allValuesFrom ebuccdm:Account
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasPublicationEvent ;
+                                        owl:onProperty ebuccdm:hasConsumptionCount ;
+                                        owl:allValuesFrom ebuccdm:Audience
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:hasTargetAudience ;
+                                        owl:allValuesFrom ebuccdm:Audience
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:offers ;
                                         owl:allValuesFrom ec:PublicationEvent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasAlternativeTitle ;
+                                        owl:allValuesFrom ec:AlternativeTitle
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasIdentifier ;
+                                        owl:allValuesFrom ec:Identifier
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasLogo ;
+                                        owl:allValuesFrom ec:Logo
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationChannel ;
@@ -9645,7 +9680,37 @@ ec:PublicationChannel rdf:type owl:Class ;
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:isOperatedBy ;
-                                        owl:allValuesFrom ec:Service
+                                        owl:allValuesFrom ec:PublicationService
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:isOwnedBy ;
+                                        owl:allValuesFrom ec:Agent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:objectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:transports ;
+                                        owl:allValuesFrom ec:PublicationService
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:endDateTime ;
+                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass time:Instant
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:startDateTime ;
+                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass time:Instant
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:description ;
+                                        owl:allValuesFrom rdfs:Literal
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:name ;
+                                        owl:allValuesFrom rdfs:Literal
                                       ] ;
                       dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ;
                       rdfs:comment "C'est un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD/DVD, etc."@fr ;
@@ -9695,16 +9760,20 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasPublicationChannel ;
+                                      owl:allValuesFrom ec:PublicationChannel
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasPublicationEvent ;
+                                      owl:allValuesFrom ec:PublicationEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasPublicationMedium ;
                                       owl:allValuesFrom ec:PublicationMedium
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasPublicationRegion ;
                                       owl:allValuesFrom ec:Location
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasRelatedPublicationEvent ;
-                                      owl:allValuesFrom ec:PublicationEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasUsageRestrictions ;
@@ -9716,7 +9785,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
-                                      owl:allValuesFrom ec:Service
+                                      owl:allValuesFrom ec:PublicationService
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:objectType ;
@@ -9947,6 +10016,154 @@ ec:PublicationPlan_Type rdf:type owl:Class ;
                         rdfs:subClassOf skos:Concept ;
                         dcterms:description "To define a type of publication plan."@en ;
                         rdfs:label "Publication plan type"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationPlatform
+ec:PublicationPlatform rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:accountingTo ;
+                                         owl:allValuesFrom ebuccdm:Account
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:hasConsumptionCount ;
+                                         owl:allValuesFrom ebuccdm:Audience
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:hasTargetAudience ;
+                                         owl:allValuesFrom ebuccdm:Audience
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:offers ;
+                                         owl:allValuesFrom ec:PublicationEvent
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:offersService ;
+                                         owl:allValuesFrom ec:PublicationService
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ebuccdm:supportsConsumptionDeviceProfile ;
+                                         owl:allValuesFrom ebuccdm:ConsumptionDeviceProfile
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasAlternativeTitle ;
+                                         owl:allValuesFrom ec:AlternativeTitle
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasIdentifier ;
+                                         owl:allValuesFrom ec:Identifier
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasLogo ;
+                                         owl:allValuesFrom ec:Logo
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasPublicationChannel ;
+                                         owl:allValuesFrom ec:PublicationChannel
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasRelatedPublicationService ;
+                                         owl:allValuesFrom ec:PublicationService
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:isOwnedBy ;
+                                         owl:allValuesFrom ec:Agent
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:objectType ;
+                                         owl:allValuesFrom skos:Concept
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:endDateTime ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass time:Instant
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:startDateTime ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass time:Instant
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:description ;
+                                         owl:allValuesFrom rdfs:Literal
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:name ;
+                                         owl:allValuesFrom rdfs:Literal
+                                       ] ;
+                       dcterms:description "A platform like a network or operator platform."@en ;
+                       rdfs:label "Publication platform"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationService
+ec:PublicationService rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:accountingTo ;
+                                        owl:allValuesFrom ebuccdm:Account
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:hasConsumptionCount ;
+                                        owl:allValuesFrom ebuccdm:Audience
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:hasTargetAudience ;
+                                        owl:allValuesFrom ebuccdm:Audience
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ebuccdm:offers ;
+                                        owl:allValuesFrom ec:PublicationEvent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasAlternativeTitle ;
+                                        owl:allValuesFrom ec:AlternativeTitle
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasIdentifier ;
+                                        owl:allValuesFrom ec:Identifier
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasLogo ;
+                                        owl:allValuesFrom ec:Logo
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasRelatedPublicationService ;
+                                        owl:allValuesFrom ec:PublicationService
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasServiceGenre ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:isOwnedBy ;
+                                        owl:allValuesFrom ec:Agent
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:objectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:endDateTime ;
+                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass time:Instant
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:startDateTime ;
+                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass time:Instant
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:description ;
+                                        owl:allValuesFrom rdfs:Literal
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:name ;
+                                        owl:allValuesFrom rdfs:Literal
+                                      ] ;
+                      dcterms:description "A publication service is a channel or publishing platform that releases the content to a given Audience."@en ,
+                                          "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ;
+                      rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
+                      rdfs:label "Publication service"@en ,
+                                 "Service"@de ,
+                                 "Service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#RadioProgramme
@@ -10233,7 +10450,7 @@ ec:Rights rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsTargetService ;
-                            owl:allValuesFrom ec:Service
+                            owl:allValuesFrom ec:PublicationService
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
@@ -10439,82 +10656,6 @@ ec:Series rdf:type owl:Class ;
           rdfs:label "Series"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service
-ec:Service rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:accountingTo ;
-                             owl:allValuesFrom ebuccdm:Account
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:hasConsumptionCount ;
-                             owl:allValuesFrom ebuccdm:Audience
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:hasTargetAudience ;
-                             owl:allValuesFrom ebuccdm:Audience
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:offers ;
-                             owl:allValuesFrom ec:PublicationEvent
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ebuccdm:supportsConsumptionDeviceProfile ;
-                             owl:allValuesFrom ebuccdm:ConsumptionDeviceProfile
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasAlternativeTitle ;
-                             owl:allValuesFrom ec:AlternativeTitle
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasIdentifier ;
-                             owl:allValuesFrom ec:Identifier
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasLogo ;
-                             owl:allValuesFrom ec:Logo
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasRelatedService ;
-                             owl:allValuesFrom ec:Service
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasServiceGenre ;
-                             owl:allValuesFrom skos:Concept
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:isOwnedBy ;
-                             owl:allValuesFrom ec:Agent
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
-                             owl:allValuesFrom skos:Concept
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:endDateTime ;
-                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass time:Instant
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:startDateTime ;
-                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass time:Instant
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:description ;
-                             owl:allValuesFrom rdfs:Literal
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:name ;
-                             owl:allValuesFrom rdfs:Literal
-                           ] ;
-           dcterms:description "A Service is a channel or publishing platform that releases the content to a given Audience."@en ,
-                               "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ;
-           rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
-           rdfs:label "Service"@de ,
-                      "Service"@en ,
-                      "Service"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service_Type
 ec:Service_Type rdf:type owl:Class ;
                 rdfs:subClassOf skos:Concept ;
@@ -10671,7 +10812,8 @@ ec:Take rdf:type owl:Class ;
 ec:TargetPlatform rdf:type owl:Class ;
                   rdfs:subClassOf skos:Concept ;
                   dcterms:description "To specify a target platform."@en ;
-                  rdfs:label "Target Platform"@en .
+                  rdfs:label "Target Platform"@en ;
+                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team
@@ -11105,7 +11247,8 @@ ec:WrappingType rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+skos:Concept rdf:type owl:Class ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2006/time#DateTimeDescription
