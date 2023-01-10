@@ -12,6 +12,7 @@
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ebuccdm: <http://www.ebu.ch/metadata/ontologies/ebuccdm#> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore> .
@@ -3010,6 +3011,54 @@ ec:versionType rdf:type owl:ObjectProperty ;
 time:hasTRS rdf:type owl:ObjectProperty ;
             dcterms:description "The temporal reference system used by a temporal position or extent description."@en ;
             rdfs:label "Has TRS"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/after
+xkos:after rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf xkos:temporal ;
+           rdfs:label "after"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/before
+xkos:before rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf xkos:temporal ;
+            rdfs:label "before"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/next
+xkos:next rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf xkos:succeeds ;
+          rdfs:label "next"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/precedes
+xkos:precedes rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf xkos:sequential ;
+              rdfs:label "precedes"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/previous
+xkos:previous rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf xkos:precedes ;
+              rdfs:label "previous"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/sequential
+xkos:sequential rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf skos:related ;
+                rdfs:label "sequential"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/succeeds
+xkos:succeeds rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf xkos:sequential ;
+              rdfs:label "succeeds"@en .
+
+
+###  https://rdf-vocabulary.ddialliance.org/xkos/temporal
+xkos:temporal rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf xkos:sequential ;
+              rdfs:label "temporal"@en .
 
 
 #################################################################
