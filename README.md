@@ -1,7 +1,7 @@
 # EBU CCDM
 
 This is collaborative project managed by the **EBU Metadata Models** working group :
->https://tech.ebu.ch/groups/pmag#e.
+>https://tech.ebu.ch/groups/mm
 
 The purposes of the project is to develop and maintain the EBU Class Conceptual Data Model, **EBU CCDM** :
 >https://tech.ebu.ch/docs/tech/tech3351.pdf
