@@ -1,4 +1,4 @@
-# EBU CCDM
+# EBUCorePlus
 
 This is collaborative project managed by the **EBU Metadata Models** working group :
 >https://tech.ebu.ch/groups/mm
