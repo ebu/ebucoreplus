@@ -123,11 +123,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 .dmypy.json
-dmypy.json
+ dmypy.json
 
 # Pyre type checker
 .pyre/
 
-#for MAC User 
+#for MAC User
 .DS_Store
-ontology/EBUCore/catalog-v001.xml
