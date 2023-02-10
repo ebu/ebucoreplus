@@ -6633,7 +6633,9 @@ ec:Artefact_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Article
 ec:Article rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialWork .
+           rdfs:subClassOf ec:EditorialWork ;
+           skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on web-sites, blogs and other channels similar to the more traditional paper-based publications"@en ;
+           skos:example "- a news article on BBC's website"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
@@ -6840,7 +6842,12 @@ Beispiel: CCDM gestattet die Verknüpfung von Verwertungsrechten mit einem Inhal
 Exemple : Le modèle CCDM permet l'association de droits à un EditorialObject connexe représenté par une ou plusieurs essences, Essences."""@fr ;
          rdfs:label "Actif"@fr ,
                     "Asset"@de ,
-                    "Asset"@en .
+                    "Asset"@en ;
+         skos:definition "a media object that is intended for publication and consumption, attributed with author's rights and copyrights, and representing value."@en ;
+         skos:example """- a film on tape in the archive
+- a digital audio recording with associated author's right and copyright
+- a book
+- a collection of books"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset_Type
@@ -7163,7 +7170,9 @@ ec:Biography rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Bonus
 ec:Bonus rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialWork ;
-         rdfs:label "Bonus"@en .
+         rdfs:label "Bonus"@en ;
+         skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ;
+         skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Brand
@@ -7171,7 +7180,12 @@ ec:Brand rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialGroup ;
          dcterms:description """A group of EditorialObjects having a Brand as a
             common denominator."""@en ;
-         rdfs:label "Brand"@en .
+         rdfs:label "Brand"@en ;
+         skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ;
+         skos:example """- the name of a PSM organization: \"BBC\"
+- the name of a media channel: \"BBC4\"
+- the name of a series: \"Downton Abbey\"
+- the name of a serial: \"BBC News\""""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BreakingNewsItem
@@ -7184,7 +7198,10 @@ ec:BreakingNewsItem rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CampaignPackage
 ec:CampaignPackage rdf:type owl:Class ;
                    rdfs:subClassOf ec:EditorialGroup ;
-                   rdfs:label "Campaign package"@en .
+                   rdfs:label "Campaign package"@en ;
+                   skos:definition "a group of EditorialObjects to advertise a product, a service, an event ..."@en ;
+                   skos:example """- a set of different ads for one product
+- a set of different trailers for a film"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning
@@ -7305,7 +7322,10 @@ ec:Collection rdf:type owl:Class ;
             types of collections for which specific sub-classes should be defined. In the worl of
             archives, A collection corresponds to all items belonging to an individual /
             collector."""@en ;
-              rdfs:label "Collection"@en .
+              rdfs:label "Collection"@en ;
+              skos:definition "a group of EditorialObjects, selected deliberately"@en ;
+              skos:example """- a group of films, all starring a recently died actress
+- a group of audios, videos, posts all commemorating a historic event"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ColourSpace
@@ -7619,7 +7639,12 @@ ec:EditorialGroup rdf:type owl:Class ;
                                   ] ;
                   dcterms:description """To define a collection / group of media
             resources, for example a series made of episodes."""@en ;
-                  rdfs:label "Editorial group"@en .
+                  rdfs:label "Editorial group"@en ;
+                  skos:definition "a group of EditorialObjects"@en ;
+                  skos:example """- a series of episodes
+- a season of a series
+- a serial
+- a theme-related group of EditorialObjects"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject
@@ -8096,7 +8121,11 @@ o L'interview instancie une MediaResource, qui à son tour est liée à la Media
 o Représentation de la segmentation : Les TimelineTracks sont préférés aux hasPart-properties, lorsqu'un récapitulatif est nécessaire, par exemple pour la diffusion."""@fr ;
                    rdfs:label "Editorial object"@en ,
                               "Medieninhalt"@de ,
-                              "Objet éditorial"@fr .
+                              "Objet éditorial"@fr ;
+                   skos:definition "an Asset in the form of content related information about a MediaResource that may or may not exist."@en ;
+                   skos:example """- a group of EditorialObjects
+- a single \"work of the mind\", a piece
+- a segment of a \"work of the mind\""""@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource ec:EditorialObject ;
@@ -8152,7 +8181,13 @@ ec:EditorialWork rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:promotes ;
                                    owl:allValuesFrom ec:EditorialWork
-                                 ] .
+                                 ] ;
+                 skos:definition "an EditorialObject describing a \"work of the mind\", a piece."@en ;
+                 skos:example """- a film based on a playbook
+- a radio drama based on a playbook
+- a news programme with several items
+- an item in a news programme
+- an episode of a series"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EidrIdentifier
@@ -8524,7 +8559,10 @@ ec:Item rdf:type owl:Class ;
                           owl:allValuesFrom ec:Programme
                         ] ;
         dcterms:description "An item e.g. newsItem or sportItem"@en ;
-        rdfs:label "Item"@en .
+        rdfs:label "Item"@en ;
+        skos:definition "an EditorialWork to be incorporated into a Programme designed to accomodate Items"@en ;
+        skos:example """- a news item to be incorporated in a news programme
+- a survey-clip to be incorporated in a debate"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#KeyCareerEvent
@@ -8744,7 +8782,9 @@ ec:MakingOf rdf:type owl:Class ;
                               owl:onProperty ec:hasTopic ;
                               owl:allValuesFrom ec:EditorialObject
                             ] ;
-            dcterms:description "makingOf"@en .
+            dcterms:description "makingOf"@en ;
+            skos:definition "an EditorialWork about the making of a film or a Programme"@en ;
+            skos:example "- the making of a movie"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment
@@ -9348,7 +9388,9 @@ ec:OriginalLanguage rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Outtakes
 ec:Outtakes rdf:type owl:Class ;
             rdfs:subClassOf ec:EditorialWork ;
-            rdfs:label "Outtakes"@en .
+            rdfs:label "Outtakes"@en ;
+            skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ;
+            skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part_Type
@@ -9580,7 +9622,12 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Post
 ec:Post rdf:type owl:Class ;
-        rdfs:subClassOf ec:EditorialWork .
+        rdfs:subClassOf ec:EditorialWork ;
+        skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on social media platforms and alike"@en ;
+        skos:example """- a tweet on twitter
+- a post on Facebook
+- a post on Instagram
+- a video-post on Youtube"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Programme
@@ -9627,7 +9674,13 @@ ec:Programme rdf:type owl:Class ;
                              ] ;
              dcterms:description """An EditorialObject corresponding to a
             MediaResource ready for publication."""@en ;
-             rdfs:label "Programme"@en .
+             rdfs:label "Programme"@en ;
+             skos:definition "an EditorialWork as a stand-alone piece or an episode of a Serial or Series, intended to be consumed as a whole"@en ;
+             skos:example """- the movie \"Titanic\"
+- the episode 2 \"The Blind Banker\" of the series \"Sherlock\", a detective series
+- today's episode of \"BBC News\", the daily news show serial
+- the episode 2 \"Frozen Worlds\" of the series \"Our Planet\", a nature documentary series 
+- next Monday's episode of the BBC serial \"Panorama\", a political report"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Promotion
@@ -9637,7 +9690,10 @@ ec:Promotion rdf:type owl:Class ;
                                owl:onProperty ec:isMemberOf ;
                                owl:allValuesFrom ec:CampaignPackage
                              ] ;
-             rdfs:label "Promotion"@en .
+             rdfs:label "Promotion"@en ;
+             skos:definition "an EditorialWork for advertising purposes"@en ;
+             skos:example """- an ad for an insurance company
+- a promotion-clip for a PSM, one of its channels, its brands"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Props
@@ -10378,7 +10434,9 @@ ec:Reminder rdf:type owl:Class ;
                               owl:onProperty ec:isMemberOf ;
                               owl:allValuesFrom ec:CampaignPackage
                             ] ;
-            rdfs:label "Reminder"@en .
+            rdfs:label "Reminder"@en ;
+            skos:definition "an EditorialWork referring to a previously published advertisement, promotion or alike, as a reminder to it"@en ;
+            skos:example "- a 4 second repetition of the logo and the jingle of an insurance company, minutes after a 15 second advertisement"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
@@ -10649,7 +10707,9 @@ ec:Scene rdf:type owl:Class ;
          owl:disjointWith ec:Shot ,
                           ec:Take ;
          dcterms:description "A sequence of continuous action"@en ;
-         rdfs:label "Scene"@en .
+         rdfs:label "Scene"@en ;
+         skos:definition "an EditorialSegment incorporated in an EditorialWork and representing a part of a story without leaps in time or location"@en ;
+         skos:example "- the final goodbye of Humphrey Bogart und Ingrid Bergman at the airport of Casablanca in the equally named film."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Season
@@ -10675,14 +10735,19 @@ ec:Season rdf:type owl:Class ;
           dcterms:description """A series can be composed of one or more seasons
             clustering a certain number of episodes. Fro this reason, seasons are related to series
             using the isRelatedTo property."""@en ;
-          rdfs:label "Season"@en .
+          rdfs:label "Season"@en ;
+          skos:definition "a sub-group of episodes of a serial or a series, usually grouped due to a common time frame for production"@en ;
+          skos:example """- the 216 episodes of 2018 of BBC series \"EastEnder\"
+- season 1 with 8 episodes of German serial \"Babylon Berlin\""""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Serial
 ec:Serial rdf:type owl:Class ;
           rdfs:subClassOf ec:EditorialGroup ;
           dcterms:description "works appearing (as in a magazine or on television) in parts at intervals"@en ;
-          rdfs:label "Serial"@en .
+          rdfs:label "Serial"@en ;
+          skos:definition "a EditorialGroup telling a whole story in parts, each continuing the preceding part"@en ;
+          skos:example "- German serial \"Babylon Berlin\" with several seasons"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Series
@@ -10702,7 +10767,11 @@ ec:Series rdf:type owl:Class ;
                           ] ;
           dcterms:description """Series is a particular type of collection. TV
             or Radio Series are composed of Episodes."""@en ;
-          rdfs:label "Series"@en .
+          rdfs:label "Series"@en ;
+          skos:definition "an EditorialGroup of Programmes, grouped by characters or topics or publication scheme, not by a sequential story"@en ;
+          skos:example """- ABC serial \"Friends\"
+- BBC's daily news programme \"BBC News\"
+- ARD's Sunday night drama \"Tatort\""""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service_Type
@@ -10725,7 +10794,9 @@ ec:Shot rdf:type owl:Class ;
                         ] ;
         owl:disjointWith ec:Take ;
         dcterms:description "A film sequence photographed continuously by one camera"@en ;
-        rdfs:label "Shot"@en .
+        rdfs:label "Shot"@en ;
+        skos:definition "an EditorialSegment filmed with one camera without interruption"@en ;
+        skos:example "- a part of the final Scene of \"Casablance\" showing Humphrey Bogart from behind while watching Ingrid Bergman and Paul Henreid walking to the plane, filmed from one camera without interruption"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#SignLanguageCode
@@ -10854,7 +10925,9 @@ ec:Take rdf:type owl:Class ;
                           owl:allValuesFrom ec:Scene
                         ] ;
         dcterms:description "A particular version of a scene or sequence of sound or vision photographed or recorded continuously at one time"@en ;
-        rdfs:label "Take"@en .
+        rdfs:label "Take"@en ;
+        skos:definition "a particular instance of a Shot or a Scene amongst a number of similar instances for selection during post-production"@en ;
+        skos:example "- an EditorialWork consists of selected Takes, while discarded Takes sometimes are published as \"outtakes\", for which examples can be easily found in the web"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetPlatform
@@ -11191,7 +11264,10 @@ ec:Trailer rdf:type owl:Class ;
                              owl:onProperty ec:promotes ;
                              owl:allValuesFrom ec:EditorialWork
                            ] ;
-           dcterms:description "Trailer"@en .
+           dcterms:description "Trailer"@en ;
+           skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ;
+           skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
+- a promo-clip for a sports-cup-final later tonight"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type
