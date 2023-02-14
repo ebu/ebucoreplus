@@ -6987,7 +6987,9 @@ ec:AudioFormat rdf:type owl:Class ;
 ec:AudioObject rdf:type owl:Class ;
                rdfs:subClassOf ec:MediaResource ;
                dcterms:description "To define an audio object in reference to the Audio Definition Model (ADM)"@en ;
-               rdfs:label "Audio object"@en .
+               rdfs:label "Audio object"@en ;
+               skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ;
+               skos:editorialNote "2023-02-14: one or more examples for AudioObject are needed"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioProgramme
@@ -7329,7 +7331,8 @@ ec:CommercialCode rdf:type owl:Class ;
 ec:Component rdf:type owl:Class ;
              rdfs:subClassOf ec:MediaResource ;
              dcterms:description "A component e.g. audio, video, data or else or a MediaResource or Essence."@en ;
-             rdfs:label "Component"@en .
+             rdfs:label "Component"@en ;
+             skos:definition "a MediaResource that is a component of another MediaResource"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact
@@ -7561,7 +7564,11 @@ ec:Document rdf:type owl:Class ;
                             ] ;
             dcterms:description """To describe a publication in the form of a
             document e.g. a html webpage (news item) or a pdf document e.g. a script."""@en ;
-            rdfs:label "Document"@en .
+            rdfs:label "Document"@en ;
+            skos:definition "a Resource in the form of encoded text and/or graphics"@en ;
+            skos:example """- a text file
+- a paper book
+- a web page or a reusable block thereof"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DocumentFormat
@@ -7578,7 +7585,8 @@ ec:DocumentFormat rdf:type owl:Class ;
 ec:Dopesheet rdf:type owl:Class ;
              rdfs:subClassOf ec:Document ;
              dcterms:description "Provides additional information about a NewsItem, e.g. date and place, subject."@en ;
-             rdfs:label "Dopesheet"@en .
+             rdfs:label "Dopesheet"@en ;
+             skos:definition "a Document containing additional information about a news item."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditUnitCount
@@ -8242,7 +8250,10 @@ Die Essenz ist eine physische Repräsentation einer Medienressource in einem spe
       brands)."""@en ;
            rdfs:label "Essence" ,
                       "Essence"@en ,
-                      "Essenz"@de .
+                      "Essenz"@de ;
+           skos:definition "a MediaRessource in the form of a simple file or a complex file package for play-out or publishing"@en ;
+           skos:example """- a mxf file
+- a file package delivered by a camera of a specific brand"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
@@ -8755,7 +8766,9 @@ ec:MediaFragment rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ;
                  dcterms:description "A MediaFragment is a temporal or spatial segment of a resource identified by a MediaGragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@en ;
-                 rdfs:label "Media Fragment"@en .
+                 rdfs:label "Media Fragment"@en ;
+                 skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as identified by a MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ;
+                 skos:editorialNote "2023-02-14: examples need to be added"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource
@@ -9216,7 +9229,13 @@ ec:MediaResource rdf:type owl:Class ;
                                      "Une MediaResource audiovisuelle, qui peut être composée d'une ou plusieurs Pistes. Une ressource multimédia, MediaResource est définie par un objet éditorial EditorialObject, (domaine éditorial), qui peut être réalisé dans des essences dans un ou plusieurs formats pour différents médias ou plateformes de diffusion."@fr ;
                  rdfs:comment "Ressource médiatique" ;
                  rdfs:label "Media resource"@en ,
-                            "Medienressource"@de .
+                            "Medienressource"@de ;
+                 skos:definition "a Resource that comprises encoded audio, video, graphics, data or text"@en ;
+                 skos:example """- an audio CD 
+- an audio track on a CD
+- an audio file
+- a video file
+- a video DVD"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource_Type
@@ -9517,7 +9536,8 @@ ec:PhysicalResource rdf:type owl:Class ;
                                         "To describe a physical resource e.g. a tape."@en ;
                     rdfs:label "Physical resource"@en ,
                                "Physische Ressource"@de ,
-                               "Ressource physique"@fr .
+                               "Ressource physique"@fr ;
+                    skos:editorialNote "2023-02-14: the need for this class must be reviewed"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Pictogram
@@ -9568,7 +9588,10 @@ ec:Picture rdf:type owl:Class ;
                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            dcterms:description "A photography, a logo, a pictogram, etc."@en ;
-           rdfs:label "Picture"@en .
+           rdfs:label "Picture"@en ;
+           skos:definition "a Resource in the form of an encoded picture"@en ;
+           skos:example """- a JPEG file of a photo, a logo, a graphic, ... 
+- a PNG file of a photo, a logo, a graphic, ..."""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PictureDisplayFormat
@@ -10458,7 +10481,16 @@ ec:Resource rdf:type owl:Class ;
             rdfs:comment "Une ressource est utilisée ou référencé dans un workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de la ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée"@fr ;
             rdfs:label "Resource"@en ,
                        "Ressource"@de ,
-                       "Ressource"@fr .
+                       "Ressource"@fr ;
+            skos:definition "a Thing that is created, published, distributed and consumed in a media related workflow"@en ;
+            skos:example """- a paper document
+- a digital document
+- a digital picture
+- a vynil record
+- an audio CD
+- an audio tape
+- a video tape
+- a film dvd"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource_Type
@@ -10804,7 +10836,10 @@ ec:Storage_Type rdf:type owl:Class ;
 ec:Stream rdf:type owl:Class ;
           rdfs:subClassOf ec:Component ;
           dcterms:description "A continuous stream of bits."@en ;
-          rdfs:label "Stream"@en .
+          rdfs:label "Stream"@en ;
+          skos:definition "a Component in form of a continuous flow of bits"@en ;
+          skos:example """- an audio stream from an audio on demand service
+- a video stream from a video on demand service"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Subject
@@ -10880,7 +10915,10 @@ ec:Team rdf:type owl:Class ;
 ec:Template rdf:type owl:Class ;
             rdfs:subClassOf ec:MediaResource ;
             dcterms:description "An Essence defined as a Template with all associated technical parameters."@en ;
-            rdfs:label "Template"@en .
+            rdfs:label "Template"@en ;
+            skos:definition "An Essence in the form of a template for Essences with all associated technical parameters"@en ;
+            skos:editorialNote """2023-02-14: following the definition, this class should be a subclass of Essence.
+2023-02-14: examples need to be added"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TerritoryCode
@@ -11163,7 +11201,9 @@ ec:Track rdf:type owl:Class ;
                              "z.B. Audio-, Video-, Timecode- und/oder Datenspuren bilden eine Medienressource."@de ;
          rdfs:label "Piste"@fr ,
                     "Spur"@de ,
-                    "Track"@en .
+                    "Track"@en ;
+         skos:definition "a MediaResource in the form of time-based elements for audio, video or data (\"track\") comprised in an \"aggregated\" MediaResource."@en ;
+         skos:example "- the audio in a MPEG4 video file"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TrackPurpose
