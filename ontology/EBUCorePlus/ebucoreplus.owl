@@ -8560,7 +8560,7 @@ ec:Item rdf:type owl:Class ;
                         ] ;
         dcterms:description "An item e.g. newsItem or sportItem"@en ;
         rdfs:label "Item"@en ;
-        skos:definition "an EditorialWork to be incorporated into a Programme designed to accomodate Items"@en ;
+        skos:definition "an EditorialWork to be incorporated into a Programme, an Article or a Post"@en ;
         skos:example """- a news item to be incorporated in a news programme
 - a survey-clip to be incorporated in a debate"""@en .
 
