@@ -4981,7 +4981,10 @@ ebuccdm:Account rdf:type owl:Class ;
                                     "Un compte d'inscription à un service. Les informations relatives au compte peuvent varier d'un service à l'autre. Ces informations couvrent par exemple un nom, un surnom, un loggin, un âge, le sexe, des domaines d'intérêt."@fr ;
                 rdfs:label "Account"@en ,
                            "Compte"@en ,
-                           "Nutzerkonto"@de .
+                           "Nutzerkonto"@de ;
+                skos:definition "a registration identity for a media service"@en ;
+                skos:example """- a registered user to access netflix
+- a registered family with nicknames and devices to access a VOD service"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AssetValue
@@ -5221,7 +5224,10 @@ Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzun
                                      "Un individu qui consomme le service en utilisant un ConsumptionDevice. Le Consommateur peut être associé à une Audience. Ses actions conduisent à des données autour des ConsumptionEvents et des ResonanceEvents associés. Un consommateur peut être enregistré auprès d'un service par le biais d'un compte contenant des informations plus ou moins détaillées sur ce consommateur (par exemple, âge, sexe, situation matrimoniale, adresse). Ces informations sont définies plus précisément dans la licence de consommation, le cas échéant."@fr ;
                  rdfs:label "Consommateur"@fr ,
                             "Consumer"@en ,
-                            "Nutzer"@de .
+                            "Nutzer"@de ;
+                 skos:definition "a Person consuming a media service"@en ;
+                 skos:example """- a radio listener
+- a video stream viewer"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionCount
@@ -5329,7 +5335,12 @@ ebuccdm:ConsumptionDevice rdf:type owl:Class ;
                                               "Un appareil utilisé pour consommer un contenu médiatique."@fr ;
                           rdfs:label "Appareil"@fr ,
                                      "Device"@en ,
-                                     "Endgerät"@de .
+                                     "Endgerät"@de ;
+                          skos:definition "a Thing to facilitate consumption of a media service"@en ;
+                          skos:example """- a smartphone
+- a smart TV
+- a fm radio set
+- a beamer fed with a media signal and projecting onto a screen"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDeviceProfile
@@ -5408,7 +5419,11 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                                      "The profile of a ConsumptionDevice."@en ;
                                  rdfs:label "Consumption device profile"@en ,
                                             "Endgeräteprofil"@de ,
-                                            "Profile d'un appareil"@fr .
+                                            "Profile d'un appareil"@fr ;
+                                 skos:definition "a number of properties of an individual ConsumptionDevice that allows classification of the device"@en ;
+                                 skos:example """- an Apple smartphone with iOS version > 16
+- a smart TV with screen 50' to 60' and HDR support
+- a VR headset"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionEvent
