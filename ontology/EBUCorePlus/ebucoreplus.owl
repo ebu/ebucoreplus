@@ -5066,7 +5066,16 @@ ebuccdm:Audience rdf:type owl:Class ;
                                      "Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle."@fr ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
-                            "Publikum"@de .
+                            "Publikum"@de ;
+                 skos:definition "a segment of the potential consumers of media services distinguished by criteria that shape their consumption behaviour, like age, education, sex, social status, residence, attitudes, etc"@en ;
+                 skos:example """- age 14 to 29
+- rural youth
+- males over 70
+- culture oriented people
+- fun oriented people
+- school kid's parents
+- low educated males under 25
+- young progressive people"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
