@@ -5281,7 +5281,13 @@ ebuccdm:ConsumptionCount rdf:type owl:Class ;
                                            owl:allValuesFrom rdfs:Literal
                                          ] ;
                          dcterms:description "An aggregation of groups of counted Consumers"@en ;
-                         rdfs:label "Consumption count"@en .
+                         rdfs:label "Consumption count"@en ;
+                         skos:definition "the actual number and circumstances of ConsumptionEvents for a single PublicationEvent"@en ;
+                         skos:example """- a 46% market share of French viewers for the football world cup final 2022
+- a 72% market share of French viewers aged 14 to 29 for the football world cup final 2022 
+- 18.7 million live stream views of the funeral of former pope Benedict in Europe
+- 36973 views of the youtube-video \"Tom Hanks had an ICONIC chat with the Queen\" from BBC's \"The One Show\" 6 months aber publishing
+- 2080 attendees at Stuttgart Liederhalle for a live concert of SWR's symphonic orchestra on April 8, 2022"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDevice
@@ -5495,7 +5501,11 @@ Das Nutzunsereignis führt zu Resonanzereignissen, die zu Resonanzdaten aggregie
                                              "Un événement de consommation, ConsumptionEvent, décrit la consommation de contenu médiatique durant un évènement de publication, PublicationEvent. Pour les services linéaires, le ConsumptionEvent et le PuclicationEvent, se produisent en même temps. Pour les services non linéaires, le consommateur décide du moment du ConsumptionEvent. Dans  les deux cas, un ConsumptionEvent génère un évènement de raisonance, ResonanceEvent qui est agrégé aux données de raisonance, ResonanceData."@fr ;
                          rdfs:label "Consumption event"@en ,
                                     "Nutzungsereignis"@de ,
-                                    "Événement de consommation"@fr .
+                                    "Événement de consommation"@fr ;
+                         skos:definition "the event of a Consumer consuming a media service"@en ;
+                         skos:example """- a person watching a news show on linear tv
+- a family listening to linear radio while having breakfast at home
+- a couple on their living room couch streaming a movie from a VoD service"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionLicence
@@ -5534,7 +5544,11 @@ ebuccdm:ConsumptionLicence rdf:type owl:Class ;
                                                "Licence attribuée à un consommateur, Consumer, définissant les conditions de consommation d'un contenu. La licence de consommation, ConsumptionLicence, est vérifiée par un mécanisme généralement situé dans l'appareil, Device, et appelé DRM (Digital Rights Management)"@fr ;
                            rdfs:label "Consumption licence"@en ,
                                       "Licence de consommation"@fr ,
-                                      "Nutzungslizenz"@de .
+                                      "Nutzungslizenz"@de ;
+                           skos:definition "a permit to consume a media service"@en ;
+                           skos:example """- a subscription to unlimited streaming from spotify, encompassing 3 devices
+- a 3 month test subscription to a VoD service
+- the entitlement to consume free-to-air broadcast services as the resident of a country"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Contract
