@@ -5212,7 +5212,8 @@ Der Nutzer kann zu einem Publikum gehören. Seine Aktivitäten führen zu Nutzun
                                      "Un individu qui consomme le service en utilisant un ConsumptionDevice. Le Consommateur peut être associé à une Audience. Ses actions conduisent à des données autour des ConsumptionEvents et des ResonanceEvents associés. Un consommateur peut être enregistré auprès d'un service par le biais d'un compte contenant des informations plus ou moins détaillées sur ce consommateur (par exemple, âge, sexe, situation matrimoniale, adresse). Ces informations sont définies plus précisément dans la licence de consommation, le cas échéant."@fr ;
                  rdfs:label "Consommateur"@fr ,
                             "Consumer"@en ,
-                            "Nutzer"@de .
+                            "Nutzer"@de ;
+                 skos:definition "a Person consuming a media service"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionCount
@@ -5552,7 +5553,10 @@ ebuccdm:Contract rdf:type owl:Class ;
                                      "Un ensemble de conditions contractuelles impliquant différentes parties et droits, RIghts. Un contrat est utilisé pour commander et contracter la création de ressources. Un Contrat couvre l'ordre de production, ProductionOrder et la commande de vente, combinés. Le contrat relie les droits, Rights, à toutes les parties contractantes. Un contrat définit un ou plusieurs ensembles de droits."@fr ;
                  rdfs:label "Contract"@en ,
                             "Contrat"@fr ,
-                            "Vertrag"@de .
+                            "Vertrag"@de ;
+                 skos:example """- a contract between a PSM and a production company for the delivery of a series
+- a law about copyrights of news articles"""@en ,
+                              "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
@@ -5712,7 +5716,14 @@ ebuccdm:ProductionDevice rdf:type owl:Class ;
                                              "Un appareil utilisé pour créer/traiter une resource médiatique, MediaResource."@fr ;
                          rdfs:label "Appareil de production"@fr ,
                                     "Production device"@en ,
-                                    "Produktionswerkzeug"@de .
+                                    "Produktionswerkzeug"@de ;
+                         skos:definition "a tool to facilitate activities in a ProductionJob"@en ;
+                         skos:example """- a camera
+- a microphone
+- a video or sound mixer
+- a video or sound editor
+- spot lights
+- a LED wall"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob
@@ -5795,7 +5806,11 @@ Medienressource und Essenz werden gemäß einen Medieninhalt hergestellt. Die Pr
                                           "Une tâche / un processus à exécuter pour manipuler/créer/modifier/stocker/etc. des MediaResources et Essences telles que définies dans un EditorialObject. Il est commandé par contrat, Contract."@fr ;
                       rdfs:label "Production job"@en ,
                                  "Produktionsaufgabe"@de ,
-                                 "Tâche de production"@fr .
+                                 "Tâche de production"@fr ;
+                      skos:definition "a task or set of tasks to create, modify, manipulate, store, etc a MediaResource"@en ;
+                      skos:example """- a live show production for broadcasting
+- filming and editing a news clip
+- an outsourced production of a complete movie""" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionOrder
@@ -5826,7 +5841,8 @@ Die Bedingungen eines Produktionsauftrages sind in einem Vertrag definiert."""@d
                                             "The act of ordering the creation/production, purchase or reuse of MediaResources.  The terms of a ProductionOrder are defined by Contract."@en ;
                         rdfs:label "Production order"@en ,
                                    "Production order"@fr ,
-                                   "Produktionsauftrag"@de .
+                                   "Produktionsauftrag"@de ;
+                        skos:definition "the act of ordering the creation/production, purchase or reuse of a MediaResource" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Resonance
@@ -6083,7 +6099,10 @@ ec:Affiliation rdf:type owl:Class ;
                                  owl:allValuesFrom rdfs:Literal
                                ] ;
                dcterms:description "An Organisation to which a Contact is affiliated (with period of validity)."@en ;
-               rdfs:label "Affiliation"@en .
+               rdfs:label "Affiliation"@en ;
+               skos:definition "an association of a Person to an Organisation for a period of time"@en ;
+               skos:example """- a person's employment with the BBC from hiring to retirement
+- the hosting of a BBC weekly radio show on a radio channel over 8 years"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
@@ -6250,7 +6269,17 @@ ec:Agent rdf:type owl:Class ;
          rdfs:isDefinedBy dc:Agent ;
          rdfs:label "Agent"@en ,
                     "Akteur"@de ,
-                    "Un acteur"@fr .
+                    "Un acteur"@fr ;
+         skos:definition "an entity performing an activity in the media business"@en ;
+         skos:example """- a film director
+- a camera woman
+- a sound engineer
+- an actress
+- an author
+- a publishing media enterprise
+- a content providing enterprise
+- a distribution network enterprise
+- a consumption device manufacturing enterprise"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AlternativeTitle
@@ -6621,7 +6650,10 @@ ec:Artefact rdf:type owl:Class ;
  products."""@en ;
             rdfs:label "Artefact"@en ,
                        "Artefact"@fr ,
-                       "Artefakt"@de .
+                       "Artefakt"@de ;
+            skos:definition "a Thing used in a ProductionJob, often visible and deliberately chosen for its value to the meaning of the content"@en ;
+            skos:example """- the costumes and props in a movie
+- the non-dynamic backdrop, chairs, table in a talk show"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact_Type
@@ -7336,10 +7368,10 @@ ec:Component rdf:type owl:Class ;
 ec:Contact rdf:type owl:Class ;
            rdfs:subClassOf ec:Person ;
            dcterms:description "A Contact e.g. for a Person or Organisation."@en ,
+                               "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
                                "Un contact pour un personne ou une organisation"@fr ;
            rdfs:label "Contact"@en ,
                       "Contact"@fr ,
-                      "Die Kontaktinformationen einer Person oder einer Organisation"@de ,
                       "Kontakt"@de .
 
 
@@ -7438,7 +7470,9 @@ ec:Costume rdf:type owl:Class ;
                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                            ] ;
            dcterms:description "To identify and describe Costumes used in productions."@en ;
-           rdfs:label "Costume"@en .
+           rdfs:label "Costume"@en ;
+           skos:definition "a dress of an actress/actor used in a production"@en ;
+           skos:example "- the uniforms worn by the Star Trek crew"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CostumeType
@@ -8684,7 +8718,11 @@ Ein Ort definiert den räumliche Bezug der Geschichte oder des Aufnahmeortes in 
 Une localisation est utilisée pour définir la couverture spatiale du reportage ou des lieux d'enregistrement comme par exemple : studios ou sur le terrain, associés aux EditorialObjects (ou à une partie des EditorialObjects)."""@fr ;
             rdfs:label "Localisation"@fr ,
                        "Location"@en ,
-                       "Ort"@de .
+                       "Ort"@de ;
+            skos:definition "a spatial assignment to a media related locatable Thing"@en ;
+            skos:example """- London as a place where BBC produces news shows
+- London as a place for a screenplay
+- London as a place for the prime minister's public announcement covered in a BBC news show"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationCode
@@ -9332,7 +9370,14 @@ ec:Organisation rdf:type owl:Class ;
                                   owl:onClass time:Instant
                                 ] ;
                 dcterms:description "An organisation (business, corporation, federation, etc.) or moral agent (government body)."@en ;
-                rdfs:label "Organisation"@en .
+                rdfs:label "Organisation"@en ;
+                skos:definition "an Agent in the form of an administrative and functional structure participating in media related activities"@en ;
+                skos:example """- PSM organisations
+- EBU
+- collecting society
+- film studios
+- cinemas
+- authors' union"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OriginalLanguage
@@ -9506,7 +9551,12 @@ ec:Person rdf:type owl:Class ;
           rdfs:comment "Une personne physique."@fr ;
           rdfs:label "Person"@de ,
                      "Person"@en ,
-                     "Personne"@fr .
+                     "Personne"@fr ;
+          skos:definition "an individual Agent"@en ;
+          skos:example """- Albert Hitchcock (director)
+- James Bond (character)
+- Sean Connery (actor)
+- John Ford (pseudonym used by the director John Martin Feeney)"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource
@@ -9644,7 +9694,11 @@ ec:Promotion rdf:type owl:Class ;
 ec:Props rdf:type owl:Class ;
          rdfs:subClassOf ec:Artefact ;
          dcterms:description "To identify and describe Props used in productions (e.g. vehicles, objects of various shapes and brand and purpose, etc.)."@en ;
-         rdfs:label "Props"@en .
+         rdfs:label "Props"@en ;
+         skos:definition "an Artefact deliberately chosen to appear in a video"@en ;
+         skos:example """- a car in a movie
+- furniture in a movie
+- a buzzer in a quiz show"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance
@@ -10628,7 +10682,12 @@ Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."""@de ,
                             "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
         rdfs:label "Role"@en ,
                    "Rolle"@de ,
-                   "Rôle"@fr .
+                   "Rôle"@fr ;
+        skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ;
+        skos:example """- authoring a screenplay for a film production
+- directing a movie
+- sound engineering of a talk show
+- creation special effects for a movie"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
