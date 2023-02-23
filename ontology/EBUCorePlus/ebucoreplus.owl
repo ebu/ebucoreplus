@@ -5867,7 +5867,13 @@ Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnen
 The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."""@en ;
                   rdfs:label "Resonance"@en ,
                              "Resonanz"@de ,
-                             "Résonance"@fr .
+                             "Résonance"@fr ;
+                  skos:definition "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
+                  skos:example """- market share of viewers on a sports live broadcast
+- weekly page impressions of a news website
+- number of daily unique users on a news website
+- number of likes on an instagram post 
+- number of views of a movie from a VOD portal"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ResonanceEvent
@@ -5905,7 +5911,16 @@ Les ResonanceEvents représentent des données brutes, qui doivent être agrég�
 L'agrégation de ces données est un ensemble de résultats de résonance."""@fr ;
                        rdfs:label "Resonance event"@en ,
                                   "Resonanzereignis"@de ,
-                                  "Événement de résonance"@fr .
+                                  "Événement de résonance"@fr ;
+                       skos:definition "a countable or noticeable consumption-related action by a Consumer during or after a ConsumptionEvent"@en ;
+                       skos:example """- turning off the TV set
+- switching to another radio channel
+- pausing the playback of a video from a VOD portal
+- searching for content on a VOD portal
+- liking, sharing or commenting a twitter post
+- commenting a video on youtube
+- calling the PSM's program hotline by phone to complain
+- rating a radio show in the radio station's app"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Rule
