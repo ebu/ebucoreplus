@@ -10558,7 +10558,17 @@ Les droits proviennent d'un contrat, Contract. Les droits sont associés à des 
                               "Urheber- oder vertragliches Verwertungsrecht an einem Asset, einem Vertrag oder einem Publikationsereignis. Rechte entstammen einem Vertrag. Rechte sind gebunden an einen Medieninhalt, eine Medienressource oder eine Essenz durch die Definition des Assets. Rechte haben zugeordnete Rechteinhaber."@de ;
           rdfs:label "Droits"@fr ,
                      "Recht"@de ,
-                     "Rights"@en .
+                     "Rights"@en ;
+          skos:definition "the intellectual property rights or other contractual rights associated to an Asset, a PublicationEvent or a Contract"@en ;
+          skos:example """- the intellectual property rights of the author of a playbook
+- the right of a media enterprise to edit or use sourced content
+- the right of a media enterprise to broadcast a live sports event in a country, but not to stream it live on the internet in the same country
+- the right of a subscriber to consume a paid VOD service or content
+- the right of a media enterprise to publish a movie in low-resolution format, but not in high-resolution
+- the right of a media enterprise to publish a movie only after a date and for a limited time
+- the right of a person to edit and publish a photo
+- the right of a person to use a photo in another piece of work, along with the obligation to publish such work under the same rights
+-"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#RightsClearance
