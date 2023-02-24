@@ -5085,7 +5085,11 @@ ebuccdm:AuditJob rdf:type owl:Class ;
                                      "The assessment of compliance is made against a Measure associated with a Rule via an AuditJob."@en ;
                  rdfs:label "Audit Job"@en ,
                             "Prüfaufgabe"@de ,
-                            "Une tâche d'audit"@fr .
+                            "Une tâche d'audit"@fr ;
+                 skos:definition "assessment of compliance against a Measure"@en ;
+                 skos:example """- measuring the maximum volume level in the audio track of a video file
+- measuring the share of speaker time in a debate of the candidates before an election
+- measuring the share of male/femals experts across all programmes of a publication service"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditReport
@@ -5131,7 +5135,8 @@ ebuccdm:AuditReport rdf:type owl:Class ;
                                         "Un rapport d'audit regroupe les résultats des tâche de contrôle auxquelles il est lié."@fr ;
                     rdfs:label "Audit Report"@en ,
                                "Prüfbericht"@de ,
-                               "Rapport d'audit"@fr .
+                               "Rapport d'audit"@fr ;
+                    skos:definition "a report on aggregated results from auditing"@en .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource ebuccdm:AuditReport ;
@@ -5632,7 +5637,11 @@ ebuccdm:Measure rdf:type owl:Class ;
                                     "Une mesure associée à une règle, Rule, pour évaluer la conformité à travers des AuditJobs."@fr ;
                 rdfs:label "Measure"@en ,
                            "Messung"@de ,
-                           "Mesure"@fr .
+                           "Mesure"@fr ;
+                skos:definition "act of determining a number and a unit to answer a given question, by counting, comparing, aggregating or calculating"@en ;
+                skos:example """- determining the volume level of audio track
+- counting the minutes that a speaker has during a debate
+- counting the number of female experts in all programmes of BBC One"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#OnStagePosition
@@ -5947,7 +5956,11 @@ ebuccdm:Rule rdf:type owl:Class ;
              rdfs:label "Regel"@de ,
                         "Rule"@en ,
                         "Règle"@fr ,
-                        "Une règle définie à partir de contraintes légales, techniques, éditoriales ou réglementaires."@fr .
+                        "Une règle définie à partir de contraintes légales, techniques, éditoriales ou réglementaires."@fr ;
+             skos:definition "a legal, regulatory, technical or editorial guideline"@en ;
+             skos:example """- audio track volume level must be below 0dB
+- speaker time in a debate between two candidates must be equal
+- the share of male/female experts in all porgrammes of BBC One should be 50% each"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Stage
