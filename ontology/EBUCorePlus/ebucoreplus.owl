@@ -5554,9 +5554,9 @@ ebuccdm:Contract rdf:type owl:Class ;
                  rdfs:label "Contract"@en ,
                             "Contrat"@fr ,
                             "Vertrag"@de ;
+                 skos:definition "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en ;
                  skos:example """- a contract between a PSM and a production company for the delivery of a series
-- a law about copyrights of news articles"""@en ,
-                              "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en .
+- a law about copyrights of news articles"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
