@@ -22,6 +22,8 @@
                                                          owl:imports <http://www.w3.org/2004/02/skos/core> ;
                                                          cc:licence "http://creativecommons.org/licenses/by-sa/3.0/" ;
                                                          dc:contributor "Adam Wead, Penn State University"@en-us ,
+                                                                        "Alexander Schulze, Innotrade"@de ,
+                                                                        "Alexandre Rouxel, EBU"@ch ,
                                                                         "Are Tverberg, TV2"@no ,
                                                                         "Casey Davis, WGBH"@en-us ,
                                                                         "Cedric Klein, Perfect Memory"@fr ,
@@ -58,47 +60,21 @@
                                                                         "Valerie J. Miller, PBS"@en-us ,
                                                                         "Vincent Dabouineau"@fr ;
                                                          dc:creator "Jean Pierre Evain, EBU"@ch ;
-                                                         dc:description "Note to implementers: The EBUCore ontology is used by a variety of users with different needs. Several EBUCore properties have no range to allow different implementations using entities or literals. As an implementer, it is your choice to go for one or the other for each property to have consistent expectations when parsing individuals. EBUCore also provides different classes defined as subclasses of skos:Concept. You can use these classes as entities in range of several properties currently left without range. EBUCore is expressed in RDF in order to facilitate such modelling and flexibility. As a consequence, propoerties appear in the documentation as annotation properties."@en ,
-                                                                        "The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate EditorialObjects or Resources or Agents) and subproperties."@en ,
-                                                                        "The development of the EBUCore ontology is a joint effort of the EBUCore and PBCore communities."@en ;
+                                                         dc:description """Note to implementers: The EBUCore ontology is used by a variety of users with different needs. Several EBUCore properties have no range to allow different implementations using entities or literals. As an implementer, it is your choice to go for one or the other for each property to have consistent expectations when parsing individuals. EBUCore also provides different classes defined as subclasses of skos:Concept. You can use these classes as entities in range of several properties currently left without range. EBUCore is expressed in RDF in order to facilitate such modelling and flexibility. As a consequence, propoerties appear in the documentation as annotation properties.
+TO BE UPDATED"""@en ,
+                                                                        """The EBUCore has been designed to make users benefit from the flexibility of RDF to adapt the names of Classes and properties to their respective needs. This means users are welcome to add their own subclasses (e.g. to define the most appropriate EditorialObjects or Resources or Agents) and subproperties.
+TO BE UPDATED"""@en ,
+                                                                        """The EBUCorePlus ontology is developed by the EBU Metadata Modelling Working Group. Its Editorial Board reviews and implements requests for changes and improvements submitted by EBU Members and media organizations.
+TO BE REVIEWED"""@en ;
                                                          dc:publisher "European Broadcasting Union (EBU)"@ch ;
-                                                         dc:rights "Copyright 2022 EBU"@en ;
+                                                         dc:rights "Copyright 2023 EBU"@en ;
                                                          vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" ;
                                                          spin:imports <http://topbraid.org/spin/owlrl-all> ;
-                                                         owl:backwardCompatibleWith <http://www.ebu.ch/metadata/ontologies/ebucore/20182011/ebucore.rdf> ;
-                                                         owl:priorVersion <http://www.ebu.ch/metadata/ontologies/ebucore/20182011/ebucore.rdf> ;
-                                                         owl:versionInfo "Add Concept TargetPlatform and property hasTargetPlatform as a subproperty of Type."@en ,
-                                                                         "Add Concept Theme and define property hasTheme as subproperty of hasSubject."@en ,
-                                                                         "Add ContentEditorialFormat as subclass of Type + hasContentEditorialFormat property as subpropertyof hastype."@en ,
-                                                                         "Add abstract as subpropertyOf description."@en ,
-                                                                         "Add formatId to Format."@en ,
-                                                                         "Add hasRatingProvider equivalent to hasRatingSource in specific environments"@en ,
-                                                                         "Add hasRelationType with domain Relation."@en ,
-                                                                         "Add isScheduledOn to associate a PublicationEvent directly with an EditorialObject."@en ,
-                                                                         "Add lead as subproperty of description."@en ,
-                                                                         "Add missing Concepts and propose default types."@en ,
-                                                                         "Add missing multiple range definitions."@en ,
-                                                                         "Add productionSynopsis as subproperty of description."@en ,
-                                                                         "Add property dateProduced and property hasProducer."@en ,
-                                                                         "Add reverse property isTimelineTrackPartOf."@en ,
-                                                                         "Add roleId to identify a Role."@en ,
-                                                                         "Add roleType to define a type of Role."@en ,
-                                                                         "Alignment of Concepts and Types with original EBU and new Dwerft SKOS vocabularies"@en ,
-                                                                         "Change hierarchy between Resource and MediaResource and provide hasRelatedResource and hasRelatedMediaResource and similar properties."@en ,
-                                                                         "Change identifier into hasIdentifier."@en ,
-                                                                         "Changed subclasses to dc: with owl:equivalentClass or owl:equivalentProperty."@en ,
-                                                                         "Correct misstyped owl:Classes into rdfs:Classes."@en ,
-                                                                         "Correct target of end and start as MediaResource."@en ,
-                                                                         "Corrected property actionType into hasActionType of rnage string or ActionType subclass of Concept."@en ,
-                                                                         "Create property Asset / hasCopyright with range string or Copyright. Same correction for all Rights subclasses e.g. AccessConditions"@en ,
-                                                                         "Delete formatName and use skos:prefLabel and skos:definition."@en ,
-                                                                         "Delete hasAssociatedRights has already covered by isCoveredBy."@en ,
-                                                                         "Delete roleDefinition and use skos:definition instead as Role is a subclass of Concept."@en ,
-                                                                         "Had Review and hasReview."@en ,
-                                                                         "Harmonise multi-range definition of properties, when applicable."@en ,
-                                                                         "Move generic properties from EditorialObject, Resource and MediaResource at Asset level (e.g. title, etc.)."@en ,
-                                                                         "Separate mutli-domains and multi-ranges to avoid owl:unionOf statements."@en ,
-                                                                         "Version 1.10"@en ;
+                                                         owl:backwardCompatibleWith "None"@en ,
+                                                                                    "None TBC"@en ;
+                                                         owl:priorVersion "None"@en ;
+                                                         owl:versionInfo "TBD"@en ,
+                                                                         "Version 1.0"@en ;
                                                          vs:term_status "stable"@en .
 
 #################################################################
@@ -15267,8 +15243,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
