@@ -7423,9 +7423,15 @@ ebuccdm:Account rdf:type owl:Class ;
                 rdfs:label "Account"@en ,
                            "Compte"@fr ,
                            "Nutzerkonto"@de ;
-                skos:definition "a registration identity for a media service"@en ;
+                skos:definition "a registration identity for a media service"@en ,
+                                "eine Registrierungsidentität für einen Mediendienst"@de ,
+                                "une identité d'enregistrement pour un service de médias"@fr ;
                 skos:example """- a registered user to access netflix
-- a registered family with nicknames and devices to access a VOD service"""@en .
+- a registered family with nicknames and devices to access a VOD service"""@en ,
+                             """- ein registrierter Benutzer für den Zugang zu Netflix
+- eine registrierte Familie mit Nicknames und Geräten für den Zugang zu einem VOD-Dienst"""@de ,
+                             """- un utilisateur enregistré pour accéder à Netflix
+- une famille enregistrée avec des surnoms et des appareils pour accéder à un service de VOD"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AssetValue
@@ -7510,15 +7516,33 @@ ebuccdm:Audience rdf:type owl:Class ;
                  rdfs:label "Audience"@en ,
                             "Audience"@fr ,
                             "Publikum"@de ;
-                 skos:definition "a segment of the potential consumers of media services distinguished by criteria that shape their consumption behaviour, like age, education, sex, social status, residence, attitudes, etc"@en ;
-                 skos:example """- age 14 to 29
+                 skos:definition "a segment of the potential consumers of media services distinguished by criteria that shape their consumption behaviour, like age, education, sex, social status, residence, attitudes, etc"@en ,
+                                 "ein Segment der potenziellen Konsumenten von Mediendiensten, das sich durch Kriterien wie Alter, Bildung, Geschlecht, sozialer Status, Wohnort, Einstellungen usw. auszeichnet, die ihr Konsumverhalten beeinflussen"@de ,
+                                 "un segment de consommateurs potentiels de services de médias qui se distingue par des critères qui déterminent son comportement de consommation, comme l'âge, l'éducation, le sexe, le statut social, le lieu de résidence, les attitudes, etc."@fr ;
+                 skos:example """- 14 bis 29 Jahre
+- Landjugend
+- Männer über 70
+- kulturinteressierte Menschen
+- Spaßorientierte Menschen
+- Eltern von Schulkindern
+- Gering gebildete Männer unter 25
+- junge progressive Menschen"""@de ,
+                              """- age 14 to 29
 - rural youth
 - males over 70
 - culture oriented people
 - fun oriented people
 - school kid's parents
 - low educated males under 25
-- young progressive people"""@en .
+- young progressive people"""@en ,
+                              """- de 14 à 29 ans
+- les jeunes ruraux
+- les hommes de plus de 70 ans
+- personnes orientées vers la culture
+- personnes orientées vers le divertissement
+- parents d'écoliers
+- hommes peu instruits de moins de 25 ans
+- jeunes progressistes"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditJob
@@ -7538,10 +7562,18 @@ ebuccdm:AuditJob rdf:type owl:Class ;
                  rdfs:label "Audit Job"@en ,
                             "Prüfaufgabe"@de ,
                             "Une tâche d'audit"@fr ;
-                 skos:definition "assessment of compliance against a Measure"@en ;
-                 skos:example """- measuring the maximum volume level in the audio track of a video file
+                 skos:definition "Bewertung der Einhaltung einer Maßnahme"@de ,
+                                 "assessment of compliance against a Measure"@en ,
+                                 "évaluation de la conformité par rapport à une mesure"@fr ;
+                 skos:example """- Messung des maximalen Lautstärkepegels in der Tonspur einer Videodatei
+- Messung des Anteils der Redezeit in einer Debatte der Kandidaten vor einer Wahl
+- Messung des Anteils der männlichen/weiblichen Experten in allen Programmen eines Publikationsdienstes"""@de ,
+                              """- measuring the maximum volume level in the audio track of a video file
 - measuring the share of speaker time in a debate of the candidates before an election
-- measuring the share of male/femals experts across all programmes of a publication service"""@en .
+- measuring the share of male/femals experts across all programmes of a publication service"""@en ,
+                              """- mesurer le niveau de volume maximal de la piste audio d'un fichier vidéo
+- mesurer la part du temps de parole dans un débat des candidats avant une élection
+- mesurer la part des experts hommes/femmes dans l'ensemble des programmes d'un service de publication"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#AuditReport
@@ -7643,6 +7675,10 @@ ebuccdm:Campaign rdf:type owl:Class ;
                             "Kampagne"@de ;
                  skos:example """- an advertisement effort for a product, by publishing a set of videos at a time and on a channel, when and where the target audience can be effectively reached
 - an announcement of the journalistic coverage of an upcoming government election from many different perspectives and for a variety of target audiences published on several channels of linear TV, linear radio, social media, podcast portals, etc."""@en ,
+                              """- eine Werbemaßnahme für ein Produkt, bei der eine Reihe von Videos zu einem Zeitpunkt und auf einem Kanal veröffentlicht wird, zu dem und an dem das Zielpublikum effektiv erreicht werden kann
+- eine Ankündigung der journalistischen Berichterstattung über eine bevorstehende Regierungswahl aus vielen verschiedenen Perspektiven und für eine Vielzahl von Zielgruppen, die auf mehreren Kanälen des linearen Fernsehens, des linearen Radios, der sozialen Medien, der Podcast-Portale usw. veröffentlicht wird"""@de ,
+                              """- un effort publicitaire pour un produit, en publiant un ensemble de vidéos à un moment et sur un canal, quand et où le public cible peut être atteint efficacement
+- une annonce de la couverture journalistique d'une élection gouvernementale à venir sous de nombreux angles différents et pour une variété de publics cibles, publiée sur plusieurs canaux de télévision linéaire, de radio linéaire, de médias sociaux, de portails de podcasts, etc."""@fr ,
                               "a strategy for coordinated publishing effort towards a target audience"@en .
 
 
@@ -7671,9 +7707,15 @@ ebuccdm:Consumer rdf:type owl:Class ;
                  rdfs:label "Consommateur"@fr ,
                             "Consumer"@en ,
                             "Nutzer"@de ;
-                 skos:definition "a Person consuming a media service"@en ;
+                 skos:definition "a Person consuming a media service"@en ,
+                                 "eine Person, die einen Mediendienst konsumiert"@de ,
+                                 "une personne consommant un service de médias"@fr ;
                  skos:example """- a radio listener
-- a video stream viewer"""@en .
+- a video stream viewer"""@en ,
+                              """- ein Radiohörer
+- ein Videostream-Zuschauer"""@de ,
+                              """- un auditeur de radio
+- un spectateur de flux vidéo"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionCount
@@ -7732,12 +7774,24 @@ ebuccdm:ConsumptionCount rdf:type owl:Class ;
                          rdfs:label "Comptage des consommations"@fr ,
                                     "Consumption count"@en ,
                                     "Verbrauch zählen"@de ;
-                         skos:definition "the actual number and circumstances of ConsumptionEvents for a single PublicationEvent"@en ;
-                         skos:example """- a 46% market share of French viewers for the football world cup final 2022
-- a 72% market share of French viewers aged 14 to 29 for the football world cup final 2022 
+                         skos:definition "die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzelnes PublicationEvent"@de ,
+                                         "le nombre réel et les circonstances des ConsumptionEvents pour un seul PublicationEvent"@fr ,
+                                         "the actual number and circumstances of ConsumptionEvents for a single PublicationEvent"@en ;
+                         skos:example """- 46% de part de marché des téléspectateurs français pour la finale de la coupe du monde de football 2022
+- 72% de part de marché des téléspectateurs français âgés de 14 à 29 ans pour la finale de la coupe du monde de football 2022
+- 18,7 millions de vues en direct des funérailles de l'ancien pape Benoît XVI en Europe
+- 36973 vues de la vidéo youtube \"Tom Hanks had an ICONIC chat with the Queen\" de l'émission \"The One Show\" de la BBC publiée 6 mois plus tôt
+- 2080 personnes présentes à la Liederhalle de Stuttgart pour un concert en direct de l'orchestre symphonique du SWR le 8 avril 2022"""@fr ,
+                                      """- a 46% market share of French viewers for the football world cup final 2022
+- a 72% market share of French viewers aged 14 to 29 for the football world cup final 2022
 - 18.7 million live stream views of the funeral of former pope Benedict in Europe
 - 36973 views of the youtube-video \"Tom Hanks had an ICONIC chat with the Queen\" from BBC's \"The One Show\" 6 months aber publishing
-- 2080 attendees at Stuttgart Liederhalle for a live concert of SWR's symphonic orchestra on April 8, 2022"""@en .
+- 2080 attendees at Stuttgart Liederhalle for a live concert of SWR's symphonic orchestra on April 8, 2022"""@en ,
+                                      """- einen Marktanteil von 46 % bei den französischen Zuschauern für das Endspiel der Fußballweltmeisterschaft 2022
+- 72 % Marktanteil bei den französischen Zuschauern zwischen 14 und 29 Jahren für das Endspiel der Fußballweltmeisterschaft 2022
+- 18,7 Millionen Live-Stream-Zugriffe auf die Beerdigung des ehemaligen Papstes Benedikt in Europa
+- 36973 Aufrufe des youtube-Videos \"Tom Hanks had an ICONIC chat with the Queen\" von BBC's \"The One Show\" 6 Monate aber Veröffentlichung
+- 2080 Besucher in der Stuttgarter Liederhalle bei einem Live-Konzert des SWR-Sinfonieorchesters am 8. April 2022"""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDevice
@@ -7792,11 +7846,21 @@ ebuccdm:ConsumptionDevice rdf:type owl:Class ;
                           rdfs:label "Appareil"@fr ,
                                      "Device"@en ,
                                      "Endgerät"@de ;
-                          skos:definition "a Thing to facilitate consumption of a media service"@en ;
+                          skos:definition "a Thing to facilitate consumption of a media service"@en ,
+                                          "eine Sache, die den Konsum eines Mediendienstes erleichtern soll"@de ,
+                                          "une Thing pour faciliter la consommation d'un service média"@fr ;
                           skos:example """- a smartphone
 - a smart TV
 - a fm radio set
-- a beamer fed with a media signal and projecting onto a screen"""@en .
+- a beamer fed with a media signal and projecting onto a screen"""@en ,
+                                       """- ein Smartphone
+- ein Smart-TV-Gerät
+- ein UKW-Radio
+- ein Beamer, der mit einem Mediensignal gespeist wird und auf eine Leinwand projiziert"""@de ,
+                                       """- un smartphone
+- un téléviseur intelligent
+- un poste de radio fm
+- un beamer alimenté par un signal média et projetant sur un écran"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionDeviceProfile
@@ -7875,10 +7939,18 @@ ebuccdm:ConsumptionDeviceProfile rdf:type owl:Class ;
                                  rdfs:label "Consumption device profile"@en ,
                                             "Endgeräteprofil"@de ,
                                             "Profile d'un appareil"@fr ;
-                                 skos:definition "a number of properties of an individual ConsumptionDevice that allows classification of the device"@en ;
+                                 skos:definition "a number of properties of an individual ConsumptionDevice that allows classification of the device"@en ,
+                                                 "eine Reihe von Eigenschaften eines einzelnen ConsumptionDevice, die eine Klassifizierung des Geräts ermöglichen"@de ,
+                                                 "un certain nombre de propriétés d'un ConsumptionDevice individuel qui permettent la classification du dispositif"@fr ;
                                  skos:example """- an Apple smartphone with iOS version > 16
 - a smart TV with screen 50' to 60' and HDR support
-- a VR headset"""@en .
+- a VR headset"""@en ,
+                                              """- ein Apple-Smartphone mit iOS-Version > 16
+- einen Smart TV mit einem Bildschirm von 50' bis 60' und HDR-Unterstützung
+- ein VR-Headset"""@de ,
+                                              """- un smartphone Apple avec une version iOS > 16
+- une smart TV avec un écran de 50' à 60' et supportant le HDR
+- un casque VR"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionEvent
@@ -7949,10 +8021,18 @@ ebuccdm:ConsumptionEvent rdf:type owl:Class ;
                          rdfs:label "Consumption event"@en ,
                                     "Nutzungsereignis"@de ,
                                     "Événement de consommation"@fr ;
-                         skos:definition "the event of a Consumer consuming a media service"@en ;
+                         skos:definition "den Fall, dass ein Verbraucher einen Mediendienst konsumiert"@de ,
+                                         "le cas où un consommateur consomme un service de médias"@fr ,
+                                         "the event of a Consumer consuming a media service"@en ;
                          skos:example """- a person watching a news show on linear tv
 - a family listening to linear radio while having breakfast at home
-- a couple on their living room couch streaming a movie from a VoD service"""@en .
+- a couple on their living room couch streaming a movie from a VoD service"""@en ,
+                                      """- eine Person, die eine Nachrichtensendung im linearen Fernsehen sieht
+- eine Familie, die beim Frühstück zu Hause lineares Radio hört
+- ein Paar auf der Couch im Wohnzimmer, das einen Film von einem VoD-Dienst streamt"""@de ,
+                                      """- une personne regardant une émission d'information sur la télévision linéaire
+- une famille qui écoute la radio linéaire en prenant son petit-déjeuner à la maison
+- un couple sur le canapé de leur salon en train de regarder un film en streaming depuis un service de VoD"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ConsumptionLicence
@@ -7992,10 +8072,18 @@ ebuccdm:ConsumptionLicence rdf:type owl:Class ;
                            rdfs:label "Consumption licence"@en ,
                                       "Licence de consommation"@fr ,
                                       "Nutzungslizenz"@de ;
-                           skos:definition "a permit to consume a media service"@en ;
+                           skos:definition "a permit to consume a media service"@en ,
+                                           "eine Genehmigung zum Konsumieren eines Mediendienstes"@de ,
+                                           "un permis de consommer un service de médias"@fr ;
                            skos:example """- a subscription to unlimited streaming from spotify, encompassing 3 devices
 - a 3 month test subscription to a VoD service
-- the entitlement to consume free-to-air broadcast services as the resident of a country"""@en .
+- the entitlement to consume free-to-air broadcast services as the resident of a country"""@en ,
+                                        """- ein Abonnement für unbegrenztes Streaming von Spotify, das 3 Geräte umfasst
+- ein 3-monatiges Testabonnement für einen VoD-Dienst
+- die Berechtigung, als Einwohner eines Landes frei empfangbare Rundfunkdienste zu konsumieren"""@de ,
+                                        """- un abonnement au streaming illimité de spotify, englobant 3 appareils
+- un abonnement d'essai de 3 mois à un service de VoD
+- le droit de consommer des services de radiodiffusion en clair en tant que résident d'un pays."""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Contract
@@ -8038,9 +8126,15 @@ ebuccdm:Contract rdf:type owl:Class ;
                  rdfs:label "Contract"@en ,
                             "Contrat"@fr ,
                             "Vertrag"@de ;
-                 skos:definition "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en ;
+                 skos:definition "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en ,
+                                 "eine Vereinbarung zwischen den Parteien oder ein Gesetz über die Rechte und Pflichten bei der Erstellung oder Veröffentlichung von MediaResources"@de ,
+                                 "un accord entre les parties ou une loi concernant les droits et devoirs dans la création ou la publication de MediaResources"@fr ;
                  skos:example """- a contract between a PSM and a production company for the delivery of a series
-- a law about copyrights of news articles"""@en .
+- a law about copyrights of news articles"""@en ,
+                              """- ein Vertrag zwischen einem PSM und einer Produktionsfirma über die Lieferung einer Serie
+- ein Gesetz über das Urheberrecht von Nachrichtenartikeln"""@de ,
+                              """- un contrat entre un PSM et une société de production pour la livraison d'une série
+- une loi sur les droits d'auteur des articles de presse"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ContractCost
@@ -8121,10 +8215,18 @@ ebuccdm:Measure rdf:type owl:Class ;
                 rdfs:label "Measure"@en ,
                            "Messung"@de ,
                            "Mesure"@fr ;
-                skos:definition "act of determining a number and a unit to answer a given question, by counting, comparing, aggregating or calculating"@en ;
-                skos:example """- determining the volume level of audio track
+                skos:definition "Bestimmung einer Zahl und einer Einheit zur Beantwortung einer bestimmten Frage durch Zählen, Vergleichen, Aggregieren oder Berechnen"@de ,
+                                "act of determining a number and a unit to answer a given question, by counting, comparing, aggregating or calculating"@en ,
+                                "action de déterminer un nombre et une unité pour répondre à une question donnée, en comptant, comparant, agrégeant ou calculant."@fr ;
+                skos:example """- Bestimmung des Lautstärkepegels einer Tonspur
+- Zählen der Minuten, die ein Redner während einer Debatte hat
+- Zählen der Anzahl der weiblichen Experten in allen Sendungen von BBC One"""@de ,
+                             """- determining the volume level of audio track
 - counting the minutes that a speaker has during a debate
-- counting the number of female experts in all programmes of BBC One"""@en .
+- counting the number of female experts in all programmes of BBC One"""@en ,
+                             """- déterminer le niveau de volume d'une piste audio
+- compter les minutes dont dispose un orateur pendant un débat
+- compter le nombre de femmes expertes dans tous les programmes de BBC One"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#OnStagePosition
@@ -8205,13 +8307,27 @@ ebuccdm:ProductionDevice rdf:type owl:Class ;
                          rdfs:label "Appareil de production"@fr ,
                                     "Production device"@en ,
                                     "Produktionswerkzeug"@de ;
-                         skos:definition "a tool to facilitate activities in a ProductionJob"@en ;
+                         skos:definition "a tool to facilitate activities in a ProductionJob"@en ,
+                                         "ein Werkzeug zur Erleichterung der Aktivitäten in einem ProductionJob"@de ,
+                                         "un outil pour faciliter les activités dans une ProductionJob"@fr ;
                          skos:example """- a camera
 - a microphone
 - a video or sound mixer
 - a video or sound editor
 - spot lights
-- a LED wall"""@en .
+- a LED wall"""@en ,
+                                      """- eine Kamera
+- ein Mikrofon
+- ein Video- oder Tonmischpult
+- einen Video- oder Ton-Editor
+- Scheinwerfer
+- eine LED-Wand"""@de ,
+                                      """- une caméra
+- un microphone
+- un mixeur vidéo ou son
+- un monteur vidéo ou son
+- des spots
+- un mur de LED"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionJob
@@ -8294,10 +8410,18 @@ ebuccdm:ProductionJob rdf:type owl:Class ;
                       rdfs:label "Production job"@en ,
                                  "Produktionsaufgabe"@de ,
                                  "Tâche de production"@fr ;
-                      skos:definition "a task or set of tasks to create, modify, manipulate, store, etc a MediaResource"@en ;
-                      skos:example """- a live show production for broadcasting
+                      skos:definition "a task or set of tasks to create, modify, manipulate, store, etc a MediaResource"@en ,
+                                      "eine Aufgabe oder eine Reihe von Aufgaben zum Erstellen, Ändern, Manipulieren, Speichern usw. einer MediaResource"@de ,
+                                      "une tâche ou un ensemble de tâches pour créer, modifier, manipuler, stocker, etc. une MediaResource"@fr ;
+                      skos:example """- Produktion einer Live-Show für die Ausstrahlung
+- das Filmen und Bearbeiten eines Nachrichtenclips
+- eine ausgelagerte Produktion eines kompletten Films"""@de ,
+                                   """- a live show production for broadcasting
 - filming and editing a news clip
-- an outsourced production of a complete movie""" .
+- an outsourced production of a complete movie"""@en ,
+                                   """- la production d'une émission en direct pour la diffusion
+- le tournage et le montage d'un clip d'information
+- la production externalisée d'un film complet"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ProductionOrder
@@ -8366,12 +8490,24 @@ ebuccdm:Resonance rdf:type owl:Class ;
                   rdfs:label "Resonance"@en ,
                              "Resonanz"@de ,
                              "Résonance"@fr ;
-                  skos:definition "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
-                  skos:example """- market share of viewers on a sports live broadcast
+                  skos:definition "die Aggregation von ResonanceEvents zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
+                                  "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
+                                  "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
+                  skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
+- Wöchentliche Seitenaufrufe einer Nachrichten-Website
+- Anzahl der täglichen Unique User auf einer Nachrichten-Website
+- Anzahl der Likes für einen Instagram-Post
+- Anzahl der Aufrufe eines Films auf einem VOD-Portal"""@de ,
+                               """- market share of viewers on a sports live broadcast
 - weekly page impressions of a news website
 - number of daily unique users on a news website
-- number of likes on an instagram post 
-- number of views of a movie from a VOD portal"""@en .
+- number of likes on an instagram post
+- number of views of a movie from a VOD portal"""@en ,
+                               """- part de marché des téléspectateurs sur une émission sportive en direct
+- nombre de pages vues par semaine sur un site d'information
+- nombre d'utilisateurs uniques quotidiens sur un site d'information
+- nombre de likes sur un message instagram
+- nombre de vues d'un film sur un portail VOD"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#ResonanceEvent
@@ -8409,15 +8545,33 @@ L'agrégation de ces données est un ensemble de résultats de résonance."""@fr
                        rdfs:label "Resonance event"@en ,
                                   "Resonanzereignis"@de ,
                                   "Événement de résonance"@fr ;
-                       skos:definition "a countable or noticeable consumption-related action by a Consumer during or after a ConsumptionEvent"@en ;
-                       skos:example """- turning off the TV set
+                       skos:definition "a countable or noticeable consumption-related action by a Consumer during or after a ConsumptionEvent"@en ,
+                                       "eine zählbare oder spürbare verbrauchsbezogene Handlung eines Verbrauchers während oder nach einem Verbrauchsereignis"@de ,
+                                       "une action liée à la consommation, dénombrable ou perceptible, effectuée par un consommateur pendant ou après un événement de consommation."@fr ;
+                       skos:example """- Ausschalten des Fernsehgeräts
+- Umschalten auf einen anderen Radiosender
+- Pausieren der Wiedergabe eines Videos von einem VOD-Portal
+- Suche nach Inhalten in einem VOD-Portal
+- einen Twitter-Beitrag liken, teilen oder kommentieren
+- ein Video auf youtube kommentieren
+- sich telefonisch bei der Programm-Hotline der PSM beschweren
+- Bewertung einer Radiosendung in der App des Radiosenders"""@de ,
+                                    """- turning off the TV set
 - switching to another radio channel
 - pausing the playback of a video from a VOD portal
 - searching for content on a VOD portal
 - liking, sharing or commenting a twitter post
 - commenting a video on youtube
 - calling the PSM's program hotline by phone to complain
-- rating a radio show in the radio station's app"""@en .
+- rating a radio show in the radio station's app"""@en ,
+                                    """- éteindre le téléviseur
+- passer à une autre chaîne de radio
+- mettre en pause la lecture d'une vidéo provenant d'un portail VOD
+- rechercher un contenu sur un portail de vidéo à la demande
+- liker, partager ou commenter un message sur Twitter
+- commenter une vidéo sur youtube
+- appeler la hotline des programmes du PSM par téléphone pour se plaindre
+- évaluer une émission de radio dans l'application de la station de radio."""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Rule
@@ -8461,10 +8615,18 @@ ebuccdm:Rule rdf:type owl:Class ;
                         "Rule"@en ,
                         "Règle"@fr ,
                         "Une règle définie à partir de contraintes légales, techniques, éditoriales ou réglementaires."@fr ;
-             skos:definition "a legal, regulatory, technical or editorial guideline"@en ;
-             skos:example """- audio track volume level must be below 0dB
+             skos:definition "a legal, regulatory, technical or editorial guideline"@en ,
+                             "eine rechtliche, regulatorische, technische oder redaktionelle Vorgabe"@de ,
+                             "une directive légale, réglementaire, technique ou éditoriale"@fr ;
+             skos:example """- Die Lautstärke der Tonspur muss unter 0 dB liegen.
+- die Redezeit bei einer Debatte zwischen zwei Kandidaten muss gleich sein
+- der Anteil männlicher/weiblicher Experten in allen Sendungen von BBC One sollte jeweils 50% betragen"""@de ,
+                          """- audio track volume level must be below 0dB
 - speaker time in a debate between two candidates must be equal
-- the share of male/female experts in all porgrammes of BBC One should be 50% each"""@en .
+- the share of male/female experts in all porgrammes of BBC One should be 50% each"""@en ,
+                          """- le niveau de volume de la piste audio doit être inférieur à 0dB
+- le temps de parole dans un débat entre deux candidats doit être égal
+- la part des experts hommes/femmes dans tous les programmes de BBC One doit être de 50% chacun"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebuccdm#Stage
@@ -8621,9 +8783,15 @@ ec:Affiliation rdf:type owl:Class ;
                rdfs:label "Affiliation"@en ,
                           "Affiliation"@fr ,
                           "Zugehörigkeit"@de ;
-               skos:definition "an association of a Person to an Organisation for a period of time"@en ;
+               skos:definition "an association of a Person to an Organisation for a period of time"@en ,
+                               "eine Verbindung einer Person mit einer Organisation für einen bestimmten Zeitraum"@de ,
+                               "l'association d'une personne à une organisation pour une période donnée"@fr ;
                skos:example """- a person's employment with the BBC from hiring to retirement
-- the hosting of a BBC weekly radio show on a radio channel over 8 years"""@en .
+- the hosting of a BBC weekly radio show on a radio channel over 8 years"""@en ,
+                            """- die Beschäftigung einer Person bei der BBC von der Einstellung bis zum Eintritt in den Ruhestand
+- die Moderation einer wöchentlichen BBC-Radiosendung auf einem Radiokanal über 8 Jahre"""@de ,
+                            """- l'emploi d'une personne à la BBC, de son embauche à sa retraite
+- l'animation d'une émission hebdomadaire de la BBC sur une chaîne de radio pendant 8 ans"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent
@@ -8791,7 +8959,9 @@ ec:Agent rdf:type owl:Class ;
          rdfs:label "Agent"@en ,
                     "Akteur"@de ,
                     "Un acteur"@fr ;
-         skos:definition "an entity performing an activity in the media business"@en ;
+         skos:definition "an entity performing an activity in the media business"@en ,
+                         "eine Einrichtung, die eine Tätigkeit in der Medienbranche ausübt"@de ,
+                         "une entité exerçant une activité dans le secteur des médias"@fr ;
          skos:example """- a film director
 - a camera woman
 - a sound engineer
@@ -8800,7 +8970,25 @@ ec:Agent rdf:type owl:Class ;
 - a publishing media enterprise
 - a content providing enterprise
 - a distribution network enterprise
-- a consumption device manufacturing enterprise"""@en .
+- a consumption device manufacturing enterprise"""@en ,
+                      """- ein Filmregisseur
+- eine Kamerafrau
+- ein Tontechniker
+- eine Schauspielerin
+- eine Autorin
+- ein veröffentlichendes Medienunternehmen
+- ein Unternehmen, das Inhalte bereitstellt
+- ein Vertriebsnetzunternehmen
+- ein Unternehmen, das Konsumgeräte herstellt"""@de ,
+                      """- un réalisateur de films
+- une caméraman
+- un ingénieur du son
+- une actrice
+- un auteur
+- une entreprise de médias d'édition
+- une entreprise de fourniture de contenu
+- une entreprise de réseau de distribution
+- une entreprise de fabrication de dispositifs de consommation"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AlternativeTitle
@@ -9197,8 +9385,14 @@ ec:Artefact rdf:type owl:Class ;
             rdfs:label "Artefact"@en ,
                        "Artefact"@fr ,
                        "Artefakt"@de ;
-            skos:definition "a Thing used in a ProductionJob, often visible and deliberately chosen for its value to the meaning of the content"@en ;
-            skos:example """- the costumes and props in a movie
+            skos:definition "a Thing used in a ProductionJob, often visible and deliberately chosen for its value to the meaning of the content"@en ,
+                            "ein Thing, das in einem ProductionJob verwendet wird, oft sichtbar und absichtlich wegen seines Wertes für die Bedeutung des Inhalts ausgewählt"@de ,
+                            "une chose utilisée dans un travail de production, souvent visible et délibérément choisie pour sa valeur pour le sens du contenu."@fr ;
+            skos:example """- die Kostüme und Requisiten in einem Film
+- die nicht-dynamische Kulisse, Stühle, Tische in einer Talkshow"""@de ,
+                         """- les costumes et les accessoires dans un film
+- la toile de fond non dynamique, les chaises, la table dans un talk-show"""@fr ,
+                         """- the costumes and props in a movie
 - the non-dynamic backdrop, chairs, table in a talk show"""@en .
 
 
@@ -9216,8 +9410,12 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Article
 ec:Article rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialWork ;
-           skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on web-sites, blogs and other channels similar to the more traditional paper-based publications"@en ;
-           skos:example "- a news article on BBC's website"@en .
+           skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on web-sites, blogs and other channels similar to the more traditional paper-based publications"@en ,
+                           "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Websites, Blogs und anderen Kanälen erstellt wird, die den traditionelleren papierbasierten Publikationen ähneln"@de ,
+                           "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des sites web, des blogs et d'autres canaux similaires aux publications papier plus traditionnelles."@fr ;
+           skos:example "- a news article on BBC's website"@en ,
+                        "- ein Nachrichtenartikel auf der Website der BBC"@de ,
+                        "- un article de presse sur le site de la BBC"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset
@@ -9413,11 +9611,21 @@ ec:Asset rdf:type owl:Class ;
          rdfs:label "Actif"@fr ,
                     "Asset"@de ,
                     "Asset"@en ;
-         skos:definition "a media object that is intended for publication and consumption, attributed with author's rights and copyrights, and representing value."@en ;
+         skos:definition "a media object that is intended for publication and consumption, attributed with author's rights and copyrights, and representing value."@en ,
+                         "ein Medienobjekt, das für die Veröffentlichung und den Konsum bestimmt ist, mit Urheberrechten und Copyrights versehen ist und einen Wert darstellt."@de ,
+                         "un objet médiatique destiné à être publié et consommé, auquel sont attribués des droits d'auteur et des droits de reproduction, et qui représente une valeur."@fr ;
          skos:example """- a film on tape in the archive
 - a digital audio recording with associated author's right and copyright
 - a book
-- a collection of books"""@en .
+- a collection of books"""@en ,
+                      """- ein Film auf Band im Archiv
+- eine digitale Tonaufnahme mit Urheberrecht und Copyright
+- ein Buch
+- eine Sammlung von Büchern"""@de ,
+                      """- un film sur bande dans les archives
+- un enregistrement audio numérique avec droits d'auteur et copyright associés
+- un livre
+- une collection de livres"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset_Type
@@ -9825,8 +10033,12 @@ ec:Bonus rdf:type owl:Class ;
          rdfs:label "Bonus"@de ,
                     "Bonus"@en ,
                     "Bonus"@fr ;
-         skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ;
-         skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en .
+         skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ,
+                         "ein EditorialWork, das als erweiternder Inhalt eines Haupt-EditorialWorks gedacht ist."@de ,
+                         "un travail de rédaction destiné à enrichir le contenu d'un travail de rédaction principal."@fr ;
+         skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en ,
+                      "- Contenu additionnel pour un film à consommer séparément en tant que complément."@fr ,
+                      "- Zusätzliche Inhalte für einen Film, die separat als Erweiterung konsumiert werden können"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Brand
@@ -9838,8 +10050,18 @@ ec:Brand rdf:type owl:Class ;
          rdfs:label "Brand"@en ,
                     "Marke"@de ,
                     "Marque"@fr ;
-         skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ;
-         skos:example """- the name of a PSM organization: \"BBC\"
+         skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ,
+                         "ein Name, oft zusammen mit einem Logo, der einem Vermögenswert oder einer Dienstleistung oder einer Gruppe davon gegeben wird, um sie von Vermögenswerten oder Dienstleistungen anderer Hersteller oder Händler zu unterscheiden."@de ,
+                         "un nom, souvent accompagné d'un logo, et donné à un bien ou à un service ou à un groupe de ceux-ci pour les distinguer des biens ou des services fournis par d'autres fabricants ou commerçants."@fr ;
+         skos:example """- der Name einer PSM-Organisation: \"BBC\"
+- der Name eines Medienkanals: \"BBC4\"
+- der Name einer Serie: \"Downton Abbey\"
+- der Name einer Serie: \"BBC Nachrichten\""""@de ,
+                      """- le nom d'une organisation PSM : \"BBC\"
+- le nom d'une chaîne média : \"BBC4\"
+- le nom d'une série : \"Downton Abbey\"
+- le nom d'une série : \"BBC News\""""@fr ,
+                      """- the name of a PSM organization: \"BBC\"
 - the name of a media channel: \"BBC4\"
 - the name of a series: \"Downton Abbey\"
 - the name of a serial: \"BBC News\""""@en .
@@ -9862,9 +10084,15 @@ ec:CampaignPackage rdf:type owl:Class ;
                    rdfs:label "Campaign package"@en ,
                               "Kampagnen-Paket"@de ,
                               "Paquet de campagne"@fr ;
-                   skos:definition "a group of EditorialObjects to advertise a product, a service, an event ..."@en ;
+                   skos:definition "a group of EditorialObjects to advertise a product, a service, an event ..."@en ,
+                                   "eine Gruppe von EditorialObjects, um ein Produkt, eine Dienstleistung, ein Ereignis zu bewerben ..."@de ,
+                                   "un groupe d'EditorialObjects pour faire la publicité d'un produit, d'un service, d'un événement ..."@fr ;
                    skos:example """- a set of different ads for one product
-- a set of different trailers for a film"""@en .
+- a set of different trailers for a film"""@en ,
+                                """- eine Reihe von verschiedenen Anzeigen für ein Produkt
+- eine Reihe von verschiedenen Trailern für einen Film"""@de ,
+                                """- un ensemble de publicités différentes pour un produit
+- un ensemble de bandes-annonces différentes pour un film"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning
@@ -10187,8 +10415,12 @@ ec:Costume rdf:type owl:Class ;
            rdfs:label "Costume"@en ,
                       "Costume"@fr ,
                       "Kostüm"@de ;
-           skos:definition "a dress of an actress/actor used in a production"@en ;
-           skos:example "- the uniforms worn by the Star Trek crew"@en .
+           skos:definition "a dress of an actress/actor used in a production"@en ,
+                           "ein Kleid einer Schauspielerin/eines Schauspielers, das in einer Produktion verwendet wird"@de ,
+                           "une robe d'une actrice/acteur utilisée dans une production"@fr ;
+           skos:example "- die Uniformen der Star Trek-Besatzung"@de ,
+                        "- les uniformes portés par l'équipage de Star Trek"@fr ,
+                        "- the uniforms worn by the Star Trek crew"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CostumeType
@@ -10349,10 +10581,18 @@ ec:Document rdf:type owl:Class ;
             rdfs:label "Document"@en ,
                        "Document"@fr ,
                        "Dokument"@de ;
-            skos:definition "a Resource in the form of encoded text and/or graphics"@en ;
+            skos:definition "a Resource in the form of encoded text and/or graphics"@en ,
+                            "eine Ressource in Form von kodiertem Text und/oder Grafiken"@de ,
+                            "une ressource sous forme de texte et/ou de graphiques codés"@fr ;
             skos:example """- a text file
 - a paper book
-- a web page or a reusable block thereof"""@en .
+- a web page or a reusable block thereof"""@en ,
+                         """- eine Textdatei
+- ein Papierbuch
+- eine Webseite oder ein wiederverwendbarer Block davon"""@de ,
+                         """- un fichier texte
+- un livre papier
+- une page web ou un bloc réutilisable de celle-ci"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DocumentFormat
@@ -10890,10 +11130,18 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
                    rdfs:label "Editorial object"@en ,
                               "Medieninhalt"@de ,
                               "Objet éditorial"@fr ;
-                   skos:definition "an Asset in the form of content related information about a MediaResource that may or may not exist."@en ;
+                   skos:definition "an Asset in the form of content related information about a MediaResource that may or may not exist."@en ,
+                                   "ein Asset in Form von inhaltsbezogenen Informationen über eine MediaResource, die existieren kann oder auch nicht."@de ,
+                                   "un actif sous forme d'informations liées au contenu d'une MediaResource qui peut ou non exister."@fr ;
                    skos:example """- a group of EditorialObjects
 - a single \"work of the mind\", a piece
-- a segment of a \"work of the mind\""""@en .
+- a segment of a \"work of the mind\""""@en ,
+                                """- eine Gruppe von EditorialObjects
+- ein einzelnes \"Werk des Geistes\", ein Stück
+- ein Segment eines \"geistigen Werks\""""@de ,
+                                """- un groupe d'EditorialObjects
+- une \"œuvre de l'esprit\" unique, un morceau
+- un segment d'une \"œuvre de l'esprit\"."""@fr .
 
 [ rdf:type owl:Axiom ;
    owl:annotatedSource ec:EditorialObject ;
@@ -10954,12 +11202,24 @@ ec:EditorialWork rdf:type owl:Class ;
                                    owl:onProperty ec:promotes ;
                                    owl:allValuesFrom ec:EditorialWork
                                  ] ;
-                 skos:definition "an EditorialObject describing a \"work of the mind\", a piece."@en ;
+                 skos:definition "an EditorialObject describing a \"work of the mind\", a piece."@en ,
+                                 "ein EditorialObjekt, das ein \"Werk des Geistes\", ein Stück beschreibt."@de ,
+                                 "un EditorialObject décrivant une \"œuvre de l'esprit\", une pièce."@fr ;
                  skos:example """- a film based on a playbook
 - a radio drama based on a playbook
 - a news programme with several items
 - an item in a news programme
-- an episode of a series"""@en .
+- an episode of a series"""@en ,
+                              """- ein Film nach einem Drehbuch
+- ein Hörspiel auf der Grundlage eines Spielbuchs
+- eine Nachrichtensendung mit mehreren Beiträgen
+- ein Beitrag in einer Nachrichtensendung
+- eine Folge einer Serie"""@de ,
+                              """- un film basé sur un livret de jeu
+- un feuilleton radiophonique basé sur un livret de jeu
+- un journal télévisé avec plusieurs sujets
+- un article dans un journal télévisé
+- un épisode d'une série"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EidrIdentifier
@@ -11054,9 +11314,15 @@ ec:Essence rdf:type owl:Class ;
            rdfs:label "Essence"@en ,
                       "Essence"@fr ,
                       "Essenz"@de ;
-           skos:definition "a MediaRessource in the form of a simple file or a complex file package for play-out or publishing"@en ;
+           skos:definition "a MediaRessource in the form of a simple file or a complex file package for play-out or publishing"@en ,
+                           "eine MediaRessource in Form einer einfachen Datei oder eines komplexen Dateipakets zur Wiedergabe oder Veröffentlichung"@de ,
+                           "une MediaRessource sous la forme d'un fichier simple ou d'un paquet de fichiers complexes pour la lecture ou la publication."@fr ;
            skos:example """- a mxf file
-- a file package delivered by a camera of a specific brand"""@en .
+- a file package delivered by a camera of a specific brand"""@en ,
+                        """- eine mxf-Datei
+- ein Dateipaket, das von einer Kamera einer bestimmten Marke geliefert wird"""@de ,
+                        """- un fichier mxf
+- un paquet de fichiers fourni par un appareil photo d'une marque spécifique"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event
@@ -11406,9 +11672,15 @@ ec:Item rdf:type owl:Class ;
         rdfs:label "Article"@fr ,
                    "Artikel"@de ,
                    "Item"@en ;
-        skos:definition "an EditorialWork to be incorporated into a Programme, an Article or a Post"@en ;
+        skos:definition "an EditorialWork to be incorporated into a Programme, an Article or a Post"@en ,
+                        "ein EditorialWork, das in ein Programm, einen Artikel oder einen Beitrag integriert werden soll"@de ,
+                        "un travail de rédaction à incorporer dans un programme, un article ou un message."@fr ;
         skos:example """- a news item to be incorporated in a news programme
-- a survey-clip to be incorporated in a debate"""@en .
+- a survey-clip to be incorporated in a debate"""@en ,
+                     """- eine Nachricht, die in eine Nachrichtensendung integriert werden soll
+- ein Umfrage-Clip, der in eine Debatte integriert werden soll"""@de ,
+                     """- un article d'actualité à intégrer dans un programme d'information
+- un clip d'enquête à intégrer dans un débat"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#KeyCareerEvent
@@ -11586,10 +11858,18 @@ ec:Location rdf:type owl:Class ;
             rdfs:label "Localisation"@fr ,
                        "Location"@en ,
                        "Ort"@de ;
-            skos:definition "a spatial assignment to a media related locatable Thing"@en ;
-            skos:example """- London as a place where BBC produces news shows
+            skos:definition "a spatial assignment to a media related locatable Thing"@en ,
+                            "eine räumliche Zuordnung zu einer medienbezogenen lokalisierbaren Sache"@de ,
+                            "une affectation spatiale à un élément localisable lié aux médias"@fr ;
+            skos:example """- London als Ort, an dem die BBC Nachrichtensendungen produziert
+- London als Schauplatz eines Drehbuchs
+- London als Ort der öffentlichen Ankündigung des Premierministers in einer BBC-Nachrichtensendung"""@de ,
+                         """- London as a place where BBC produces news shows
 - London as a place for a screenplay
-- London as a place for the prime minister's public announcement covered in a BBC news show"""@en .
+- London as a place for the prime minister's public announcement covered in a BBC news show"""@en ,
+                         """- Londres, lieu de production des émissions d'information de la BBC
+- Londres comme lieu de tournage d'un scénario
+- Londres, lieu de l'annonce publique du Premier ministre couverte par un journal télévisé de la BBC"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationCode
@@ -11668,8 +11948,12 @@ ec:MakingOf rdf:type owl:Class ;
             rdfs:label "Making-of"@de ,
                        "Making-of"@en ,
                        "Making-of"@fr ;
-            skos:definition "an EditorialWork about the making of a film or a Programme"@en ;
-            skos:example "- the making of a movie"@en .
+            skos:definition "an EditorialWork about the making of a film or a Programme"@en ,
+                            "eine redaktionelle Arbeit über die Entstehung eines Films oder eines Programms"@de ,
+                            "un travail éditorial sur la réalisation d'un film ou d'un programme."@fr ;
+            skos:example "- Das Making-of eines Films"@de ,
+                         "- le tournage d'un film"@fr ,
+                         "- the making of a movie"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment
@@ -12148,12 +12432,24 @@ ec:MediaResource rdf:type owl:Class ;
                  rdfs:label "Media resource"@en ,
                             "Medienressource"@de ,
                             "Ressource médiatique"@fr ;
-                 skos:definition "a Resource that comprises encoded audio, video, graphics, data or text"@en ;
-                 skos:example """- an audio CD 
+                 skos:definition "a Resource that comprises encoded audio, video, graphics, data or text"@en ,
+                                 "eine Ressource, die kodierte Audio-, Video-, Grafik-, Daten- oder Textinhalte enthält"@de ,
+                                 "une ressource qui comprend du son, de la vidéo, des graphiques, des données ou du texte codés."@fr ;
+                 skos:example """- an audio CD
 - an audio track on a CD
 - an audio file
 - a video file
-- a video DVD"""@en .
+- a video DVD"""@en ,
+                              """- eine Audio-CD
+- ein Audiotitel auf einer CD
+- eine Audiodatei
+- eine Videodatei
+- eine Video-DVD"""@de ,
+                              """- un CD audio
+- une piste audio sur un CD
+- un fichier audio
+- un fichier vidéo
+- un DVD vidéo"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource_Type
@@ -12301,13 +12597,27 @@ ec:Organisation rdf:type owl:Class ;
                 rdfs:label "Organisation"@de ,
                            "Organisation"@en ,
                            "Organisation"@fr ;
-                skos:definition "an Agent in the form of an administrative and functional structure participating in media related activities"@en ;
-                skos:example """- PSM organisations
+                skos:definition "an Agent in the form of an administrative and functional structure participating in media related activities"@en ,
+                                "ein Agent in Form einer Verwaltungs- und Funktionsstruktur, der an medienbezogenen Aktivitäten beteiligt ist"@de ,
+                                "un agent sous la forme d'une structure administrative et fonctionnelle participant à des activités liées aux médias"@fr ;
+                skos:example """- Organisations PSM
+- UER
+- société de gestion collective
+- studios de cinéma
+- cinémas
+- syndicat des auteurs"""@fr ,
+                             """- PSM organisations
 - EBU
 - collecting society
 - film studios
 - cinemas
-- authors' union"""@en .
+- authors' union"""@en ,
+                             """- PSM-Organisationen
+- EBU
+- Verwertungsgesellschaft
+- Filmstudios
+- Kinos
+- Autorenvereinigung"""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OriginalLanguage
@@ -12327,8 +12637,12 @@ ec:Outtakes rdf:type owl:Class ;
             rdfs:label "Outtakes"@de ,
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
-            skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ;
-            skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en .
+            skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
+                            "ein EditorialWork, in dem Aufnahmen oder Szenen gesammelt werden, die bei der Nachbearbeitung aussortiert wurden, aber dennoch den Verbraucher aus Spaß, Neugier usw. ansprechen"@de ,
+                            "un travail éditorial rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
+            skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en ,
+                         "- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film"@de ,
+                         "- un clip avec une collection de chutes sur le DVD bonus d'un film"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part_Type
@@ -12492,11 +12806,21 @@ ec:Person rdf:type owl:Class ;
           rdfs:label "Person"@de ,
                      "Person"@en ,
                      "Personne"@fr ;
-          skos:definition "an individual Agent"@en ;
-          skos:example """- Albert Hitchcock (director)
+          skos:definition "an individual Agent"@en ,
+                          "ein einzelner Agent"@de ,
+                          "un agent individuel"@fr ;
+          skos:example """- Albert Hitchcock (Regisseur)
+- James Bond (Figur)
+- Sean Connery (Schauspieler)
+- John Ford (Pseudonym des Regisseurs John Martin Feeney)"""@de ,
+                       """- Albert Hitchcock (director)
 - James Bond (character)
 - Sean Connery (actor)
-- John Ford (pseudonym used by the director John Martin Feeney)"""@en .
+- John Ford (pseudonym used by the director John Martin Feeney)"""@en ,
+                       """- Albert Hitchcock (réalisateur)
+- James Bond (personnage)
+- Sean Connery (acteur)
+- John Ford (pseudonyme utilisé par le réalisateur John Martin Feeney)"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource
@@ -12568,9 +12892,15 @@ ec:Picture rdf:type owl:Class ;
            rdfs:label "Bild"@de ,
                       "Photo"@fr ,
                       "Picture"@en ;
-           skos:definition "a Resource in the form of an encoded picture"@en ;
-           skos:example """- a JPEG file of a photo, a logo, a graphic, ... 
-- a PNG file of a photo, a logo, a graphic, ..."""@en .
+           skos:definition "a Resource in the form of an encoded picture"@en ,
+                           "eine Ressource in Form eines kodierten Bildes"@de ,
+                           "une ressource sous la forme d'une image codée"@fr ;
+           skos:example """- a JPEG file of a photo, a logo, a graphic, ...
+- a PNG file of a photo, a logo, a graphic, ..."""@en ,
+                        """- eine JPEG-Datei eines Fotos, eines Logos, einer Grafik, ...
+- eine PNG-Datei eines Fotos, eines Logos, einer Grafik, ..."""@de ,
+                        """- un fichier JPEG d'une photo, d'un logo, d'un graphique, ...
+- un fichier PNG d'une photo, d'un logo, d'un graphique, ..."""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PictureDisplayFormat
@@ -12587,11 +12917,21 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Post
 ec:Post rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialWork ;
-        skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on social media platforms and alike"@en ;
+        skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on social media platforms and alike"@en ,
+                        "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Plattformen sozialer Medien und ähnlichem erstellt wird"@de ,
+                        "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des plateformes de médias sociaux ou autres."@fr ;
         skos:example """- a tweet on twitter
 - a post on Facebook
 - a post on Instagram
-- a video-post on Youtube"""@en .
+- a video-post on Youtube"""@en ,
+                     """- ein Tweet auf Twitter
+- ein Beitrag auf Facebook
+- ein Beitrag auf Instagram
+- ein Video-Beitrag auf Youtube"""@de ,
+                     """- un tweet sur Twitter
+- une publication sur Facebook
+- un post sur Instagram
+- une vidéo postée sur Youtube"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Programme
@@ -12642,11 +12982,23 @@ ec:Programme rdf:type owl:Class ;
              rdfs:label "Programm"@de ,
                         "Programme"@en ,
                         "Programme"@fr ;
-             skos:definition "an EditorialWork as a stand-alone piece or an episode of a Serial or Series, intended to be consumed as a whole"@en ;
-             skos:example """- the movie \"Titanic\"
+             skos:definition "an EditorialWork as a stand-alone piece or an episode of a Serial or Series, intended to be consumed as a whole"@en ,
+                             "ein EditorialWork als eigenständiges Stück oder eine Episode einer Serie oder Reihe, die als Ganzes konsumiert werden soll"@de ,
+                             "une Œuvre de rédaction en tant que pièce autonome ou épisode d'un feuilleton ou d'une série, destinée à être consommée comme un tout."@fr ;
+             skos:example """- den Film \"Titanic\"
+- die Folge 2 \"Der blinde Bankier\" der Serie \"Sherlock\", einer Detektivserie
+- die heutige Folge von \"BBC News\", der täglichen Nachrichtensendung
+- die Folge 2 \"Frozen Worlds\" der Serie \"Our Planet\", einer Naturdokumentationsserie
+- am kommenden Montag die Folge der BBC-Serie \"Panorama\", eine politische Reportage"""@de ,
+                          """- le film \"Titanic\"
+- l'épisode 2 \"Le banquier aveugle\" de la série \"Sherlock\", une série policière
+- l'épisode du jour de \"BBC News\", la série d'émissions d'information quotidienne
+- l'épisode 2 \"Frozen Worlds\" de la série \"Our Planet\", une série documentaire sur la nature
+- l'épisode de lundi prochain de la série \"Panorama\" de la BBC, un reportage politique"""@fr ,
+                          """- the movie \"Titanic\"
 - the episode 2 \"The Blind Banker\" of the series \"Sherlock\", a detective series
 - today's episode of \"BBC News\", the daily news show serial
-- the episode 2 \"Frozen Worlds\" of the series \"Our Planet\", a nature documentary series 
+- the episode 2 \"Frozen Worlds\" of the series \"Our Planet\", a nature documentary series
 - next Monday's episode of the BBC serial \"Panorama\", a political report"""@en .
 
 
@@ -12660,9 +13012,15 @@ ec:Promotion rdf:type owl:Class ;
              rdfs:label "Förderung"@de ,
                         "Promotion"@en ,
                         "Promotion"@fr ;
-             skos:definition "an EditorialWork for advertising purposes"@en ;
+             skos:definition "an EditorialWork for advertising purposes"@en ,
+                             "ein EditorialWork zu Werbezwecken"@de ,
+                             "un EditorialWork à des fins publicitaires"@fr ;
              skos:example """- an ad for an insurance company
-- a promotion-clip for a PSM, one of its channels, its brands"""@en .
+- a promotion-clip for a PSM, one of its channels, its brands"""@en ,
+                          """- ein Werbespot für eine Versicherungsgesellschaft
+- ein Werbeclip für ein PSM, einen seiner Kanäle, seine Marken"""@de ,
+                          """- une publicité pour une compagnie d'assurance
+- un clip de promotion pour un GSP, une de ses chaînes, ses marques"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Props
@@ -12674,10 +13032,18 @@ ec:Props rdf:type owl:Class ;
          rdfs:label "Accessoires"@fr ,
                     "Props"@en ,
                     "Requisiten"@de ;
-         skos:definition "an Artefact deliberately chosen to appear in a video"@en ;
+         skos:definition "an Artefact deliberately chosen to appear in a video"@en ,
+                         "ein Artefakt, das absichtlich ausgewählt wurde, um in einem Video zu erscheinen"@de ,
+                         "un artefact délibérément choisi pour apparaître dans une vidéo"@fr ;
          skos:example """- a car in a movie
 - furniture in a movie
-- a buzzer in a quiz show"""@en .
+- a buzzer in a quiz show"""@en ,
+                      """- ein Auto in einem Film
+- Möbel in einem Film
+- ein Buzzer in einer Quizshow"""@de ,
+                      """- une voiture dans un film
+- un meuble dans un film
+- un buzzer dans un jeu télévisé"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance
@@ -12804,8 +13170,20 @@ ec:PublicationChannel rdf:type owl:Class ;
                       rdfs:label "Canal de publication"@de ,
                                  "Canal de publication"@fr ,
                                  "Publication channel"@en ;
-                      skos:definition "a connection to exchange content between provider and consumer operated on a PublicationPlatform"@en ;
-                      skos:example """- the DVB-S channel at 10714 MHz H on the Astra 2E satellite for the linear video service \"BBC One HD\"
+                      skos:definition "a connection to exchange content between provider and consumer operated on a PublicationPlatform"@en ,
+                                      "eine Verbindung zum Austausch von Inhalten zwischen Anbieter und Verbraucher, die über eine PublicationPlatform betrieben wird"@de ,
+                                      "une connexion pour échanger du contenu entre le fournisseur et le consommateur, opérée sur une plateforme de publication."@fr ;
+                      skos:example """- der DVB-S-Kanal auf 10714 MHz H auf dem Satelliten Astra 2E für den linearen Videodienst \"BBC One HD\".
+- der DVB-T-Kanal E23 in London/Chrystal Palace für den linearen Videodienst \"BBC One London\".
+- den Live-Videostream \"BBC One\" im Rahmen des BBC iPlayers
+- den Kanal @bbcradio1 auf youtube für den On-Demand-Videodienst \"BBC Radio 1 visual radio\".
+- den Kanal @elonmusk auf Twitter für einen sozialen Textdienst \"Elon Musk's Tweets\"."""@de ,
+                                   """- le canal DVB-S à 10714 MHz H sur le satellite Astra 2E pour le service vidéo linéaire \"BBC One HD\".
+- le canal DVB-T E23 à Londres/Chrystal Palace pour le service vidéo linéaire \"BBC One London\".
+- le flux vidéo en direct \"BBC One\" dans le cadre de BBC iPlayer
+- la chaîne @bbcradio1 sur youtube pour le service vidéo à la demande \"BBC Radio 1 visual radio\".
+- la chaîne @elonmusk sur twitter pour le service de texte social \"Elon Musk's Tweets\"."""@fr ,
+                                   """- the DVB-S channel at 10714 MHz H on the Astra 2E satellite for the linear video service \"BBC One HD\"
 - the DVB-T channel E23 in London/Chrystal Palace for the linear video service \"BBC One London\"
 - the live video stream \"BBC One\" within the BBC iPlayer
 - the channel @bbcradio1 on youtube for the on demand video service \"BBC Radio 1 visual radio\"
@@ -12960,8 +13338,14 @@ ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:label "Publication Event"@en ,
                                "Publikationsereignis"@de ,
                                "Événement de publication"@fr ;
-                    skos:definition "the event of publishing an Essence by a service to a channel under rights conditions"@en ;
-                    skos:example """- the broadcasting of the footbal world cup final 2022 in a live video service over satellite by the BBC in Great Britain
+                    skos:definition "der Fall der Veröffentlichung einer Essenz durch einen Dienst an einen Kanal unter Rechtebedingungen"@de ,
+                                    "l'événement de publication d'une Essence par un service à un canal sous conditions de droits"@fr ,
+                                    "the event of publishing an Essence by a service to a channel under rights conditions"@en ;
+                    skos:example """- die Übertragung des Endspiels der Fußballweltmeisterschaft 2022 in einem Live-Videodienst über Satellit durch die BBC in Großbritannien
+- die Veröffentlichung von Elon Musks Text \"Next I'm buying Cocal Cola to put the cocaine back in\" auf Twitter, 27. April 2022, in seinem Kanal @elonmusk"""@de ,
+                                 """- la diffusion de la finale de la coupe du monde de football 2022 dans un service de vidéo en direct par satellite par la BBC en Grande-Bretagne
+- la publication du texte d'Elon Musk \"Next I'm buying Cocal Cola to put the cocaine back in\" sur twitter, le 27 avril 2022, dans sa chaîne @elonmusk"""@fr ,
+                                 """- the broadcasting of the footbal world cup final 2022 in a live video service over satellite by the BBC in Great Britain
 - the posting of Elon Musk's text \"Next I'm buying Cocal Cola to put the cocaine back in\" on twitter, April 27, 2022, in his channel @elonmusk"""@en .
 
 
@@ -13024,8 +13408,14 @@ ec:PublicationLogg rdf:type owl:Class ;
                    rdfs:label "Journal de bord de la publication"@fr ,
                               "Protokoll der Veröffentlichung"@de ,
                               "Publication logg"@en ;
-                   skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ;
-                   skos:example """- the \"as run log\" of a linear TV playout system for a full day
+                   skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
+                                   "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
+                                   "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
+                   skos:example """- das \"as run log\" eines linearen TV-Wiedergabesystems für einen ganzen Tag
+- das \"As-Run-Log\" eines linearen Radio-Playout-Systems für den Vormittag"""@de ,
+                                """- le \"journal de bord\" d'un système de diffusion TV linéaire pour une journée entière
+- le \"journal de bord\" d'un système de diffusion radio linéaire pour la matinée"""@fr ,
+                                """- the \"as run log\" of a linear TV playout system for a full day
 - the \"as run log\" of a linear radio playout system for the morning"""@en .
 
 
@@ -13115,8 +13505,18 @@ Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiée
                    rdfs:label "Plan de publication"@fr ,
                               "Publication plan"@en ,
                               "Publikationsplan"@de ;
-                   skos:definition "a schedule for one or many PublicationEvents to adress a target audience, or a hierarchy of PublicationPlans"@en ;
-                   skos:example """- the planned date, time and channel for the publication of a movie
+                   skos:definition "a schedule for one or many PublicationEvents to adress a target audience, or a hierarchy of PublicationPlans"@en ,
+                                   "einen Zeitplan für eine oder mehrere PublicationEvents, um eine Zielgruppe anzusprechen, oder eine Hierarchie von PublicationPlans"@de ,
+                                   "un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cible, ou une hiérarchie de PublicationPlans"@fr ;
+                   skos:example """- das geplante Datum, die Uhrzeit und den Kanal für die Veröffentlichung eines Films
+- die geplanten Daten, Uhrzeiten und Kanäle für die Veröffentlichung der Episoden einer Serie
+- das geplante Programm eines Senders für einen Tag
+- die geplanten Daten, Uhrzeiten und Kanäle für eine Sammlung von Inhalten zu einem gemeinsamen Thema"""@de ,
+                                """- la date, l'heure et le canal prévus pour la publication d'un film
+- les dates, heures et chaînes prévues pour la publication des épisodes d'un feuilleton
+- l'horaire prévu pour une chaîne pendant une journée
+- les dates, heures et canaux prévus pour une collection de contenus sur un thème commun"""@fr ,
+                                """- the planned date, time and channel for the publication of a movie
 - the planned dates, times and channels for the publication of the episodes of a serial
 - the planned schedule for a channel during one day
 - the planned dates, times and channels for a collection of content about a common theme"""@en .
@@ -13211,8 +13611,18 @@ ec:PublicationPlatform rdf:type owl:Class ;
                        rdfs:label "Plate-forme de publication"@fr ,
                                   "Plattform für Veröffentlichungen"@de ,
                                   "Publication platform"@en ;
-                       skos:definition "a facility that allows to connect sources and targets of content through uni- or bidirectional channels"@en ;
-                       skos:example """- the Eutelsat DVB-S broadcasting platform
+                       skos:definition "a facility that allows to connect sources and targets of content through uni- or bidirectional channels"@en ,
+                                       "eine Einrichtung, die es ermöglicht, Quellen und Ziele von Inhalten über uni- oder bidirektionale Kanäle zu verbinden"@de ,
+                                       "une installation qui permet de connecter des sources et des cibles de contenu par des canaux uni- ou bidirectionnels"@fr ;
+                       skos:example """- die Eutelsat-DVB-S-Übertragungsplattform
+- die youtube-Video-on-Demand-Plattform
+- alle Server, die über Internetprotokolle zugänglich sind und in HTML oder ähnlich kodierte Inhalte anbieten/aufnehmen
+- Fortnite, Dezentraland oder Roblox als Metaversen"""@de ,
+                                    """- la plate-forme de diffusion DVB-S d'Eutelsat
+- la plateforme de vidéo à la demande youtube
+- tous les serveurs accessibles via les protocoles internet et offrant/prenant du contenu codé en HTML ou similaire
+- Fortnite, Decentraland ou Roblox comme métaverses"""@fr ,
+                                    """- the Eutelsat DVB-S broadcasting platform
 - the youtube video on demand platform
 - all servers accessible via internet protocols and offering / taking content encoded in HTML or similar
 - Fortnite, Decentraland or Roblox as metaverses"""@en .
@@ -13289,8 +13699,14 @@ ec:PublicationService rdf:type owl:Class ;
                       rdfs:label "Publication service"@en ,
                                  "Service"@de ,
                                  "Service"@fr ;
-                      skos:definition "a service by which a publishing organisation or person publishes its content and offers access to consumers"@en ;
-                      skos:example """- the linear video service named \"BBC One\"
+                      skos:definition "a service by which a publishing organisation or person publishes its content and offers access to consumers"@en ,
+                                      "ein Dienst, über den eine Verlagsorganisation oder eine Person ihre Inhalte veröffentlicht und den Verbrauchern Zugang dazu bietet"@de ,
+                                      "un service par lequel une organisation ou une personne publie son contenu et en offre l'accès aux consommateurs"@fr ;
+                      skos:example """- der lineare Videodienst mit dem Namen \"BBC One\"
+- der Video-on-Demand-Dienst von Netflix"""@de ,
+                                   """- le service vidéo linéaire dénommé \"BBC One
+- le service de vidéo à la demande de Netflix"""@fr ,
+                                   """- the linear video service named \"BBC One\"
 - the video on demand service of Netflix"""@en .
 
 
@@ -13479,8 +13895,12 @@ ec:Reminder rdf:type owl:Class ;
             rdfs:label "Erinnerung"@de ,
                        "Rappel"@fr ,
                        "Reminder"@en ;
-            skos:definition "an EditorialWork referring to a previously published advertisement, promotion or alike, as a reminder to it"@en ;
-            skos:example "- a 4 second repetition of the logo and the jingle of an insurance company, minutes after a 15 second advertisement"@en .
+            skos:definition "an EditorialWork referring to a previously published advertisement, promotion or alike, as a reminder to it"@en ,
+                            "ein EditorialWork, das auf eine zuvor veröffentlichte Anzeige, Werbung oder ähnliches verweist, um daran zu erinnern"@de ,
+                            "un EditorialWork faisant référence à une annonce, une promotion ou autre publiée précédemment, pour la rappeler à l'ordre"@fr ;
+            skos:example "- a 4 second repetition of the logo and the jingle of an insurance company, minutes after a 15 second advertisement"@en ,
+                         "- eine 4-sekündige Wiederholung des Logos und des Jingles einer Versicherungsgesellschaft, Minuten nach einer 15-sekündigen Werbung"@de ,
+                         "- une répétition de 4 secondes du logo et du jingle d'une compagnie d'assurance, quelques minutes après une publicité de 15 secondes"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource
@@ -13562,7 +13982,9 @@ ec:Resource rdf:type owl:Class ;
             rdfs:label "Resource"@en ,
                        "Ressource"@de ,
                        "Ressource"@fr ;
-            skos:definition "a Thing that is created, published, distributed and consumed in a media related workflow"@en ;
+            skos:definition "a Thing that is created, published, distributed and consumed in a media related workflow"@en ,
+                            "eine Sache, die in einem medienbezogenen Arbeitsablauf erstellt, veröffentlicht, verbreitet und konsumiert wird"@de ,
+                            "une Chose qui est créée, publiée, distribuée et consommée dans un flux de travail lié aux médias"@fr ;
             skos:example """- a paper document
 - a digital document
 - a digital picture
@@ -13570,7 +13992,23 @@ ec:Resource rdf:type owl:Class ;
 - an audio CD
 - an audio tape
 - a video tape
-- a film dvd"""@en .
+- a film dvd"""@en ,
+                         """- ein Papierdokument
+- ein digitales Dokument
+- ein digitales Bild
+- eine Schallplatte
+- eine Audio-CD
+- eine Audiokassette
+- eine Videokassette
+- eine Film-DVD"""@de ,
+                         """- un document papier
+- un document numérique
+- une image numérique
+- un disque vynil
+- un CD audio
+- une bande audio
+- une cassette vidéo
+- un dvd de film"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource_Type
@@ -13754,11 +14192,21 @@ ec:Role rdf:type owl:Class ;
         rdfs:label "Role"@en ,
                    "Rolle"@de ,
                    "Rôle"@fr ;
-        skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ;
-        skos:example """- authoring a screenplay for a film production
+        skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ,
+                        "die Beteiligung eines Beauftragten an der Erstellung oder Veröffentlichung einer MedienRessource"@de ,
+                        "l'engagement d'un Agent dans la création ou la publication d'une RessourceMédia"@fr ;
+        skos:example """- Verfassen eines Drehbuchs für eine Filmproduktion
+- Regie bei einem Film
+- Tontechnik für eine Talkshow
+- Erstellung von Spezialeffekten für einen Film"""@de ,
+                     """- authoring a screenplay for a film production
 - directing a movie
 - sound engineering of a talk show
-- creation special effects for a movie"""@en .
+- creation special effects for a movie"""@en ,
+                     """- rédiger un scénario pour une production cinématographique
+- réalisation d'un film
+- ingénierie du son d'un talk-show
+- création d'effets spéciaux pour un film"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Scene
@@ -13784,8 +14232,12 @@ ec:Scene rdf:type owl:Class ;
          rdfs:label "Scene"@en ,
                     "Schauplatz"@de ,
                     "Scène"@fr ;
-         skos:definition "an EditorialSegment incorporated in an EditorialWork and representing a part of a story without leaps in time or location"@en ;
-         skos:example "- the final goodbye of Humphrey Bogart und Ingrid Bergman at the airport of Casablanca in the equally named film."@en .
+         skos:definition "an EditorialSegment incorporated in an EditorialWork and representing a part of a story without leaps in time or location"@en ,
+                         "ein EditorialSegment, das in ein EditorialWork eingebunden ist und einen Teil einer Geschichte ohne Zeit- oder Ortssprünge darstellt"@de ,
+                         "un segment éditorial incorporé dans un travail éditorial et représentant une partie d'une histoire sans saut dans le temps ou le lieu."@fr ;
+         skos:example "- der letzte Abschied von Humphrey Bogart und Ingrid Bergman auf dem Flughafen von Casablanca im gleichnamigen Film."@de ,
+                      "- le dernier adieu de Humphrey Bogart et Ingrid Bergman à l'aéroport de Casablanca dans le film du même nom."@fr ,
+                      "- the final goodbye of Humphrey Bogart und Ingrid Bergman at the airport of Casablanca in the equally named film."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Season
@@ -13814,8 +14266,14 @@ ec:Season rdf:type owl:Class ;
           rdfs:label "Saison"@de ,
                      "Saison"@fr ,
                      "Season"@en ;
-          skos:definition "a sub-group of episodes of a serial or a series, usually grouped due to a common time frame for production"@en ;
-          skos:example """- the 216 episodes of 2018 of BBC series \"EastEnder\"
+          skos:definition "a sub-group of episodes of a serial or a series, usually grouped due to a common time frame for production"@en ,
+                          "eine Untergruppe von Episoden einer Serie oder eines Zyklus, die in der Regel aufgrund eines gemeinsamen Zeitrahmens für die Produktion gruppiert werden"@de ,
+                          "un sous-groupe d'épisodes d'un feuilleton ou d'une série, généralement regroupés en raison d'une période de production commune."@fr ;
+          skos:example """- die 216 Episoden des Jahres 2018 der BBC-Serie \"EastEnder\"
+- Staffel 1 mit 8 Episoden der deutschen Serie \"Babylon Berlin\""""@de ,
+                       """- les 216 épisodes de 2018 de la série \"EastEnder\" de la BBC
+- la saison 1 avec 8 épisodes de la série allemande \"Babylon Berlin\"."""@fr ,
+                       """- the 216 episodes of 2018 of BBC series \"EastEnder\"
 - season 1 with 8 episodes of German serial \"Babylon Berlin\""""@en .
 
 
@@ -13828,8 +14286,12 @@ ec:Serial rdf:type owl:Class ;
           rdfs:label "Serial"@en ,
                      "Seriennummer"@de ,
                      "Série"@fr ;
-          skos:definition "a EditorialGroup telling a whole story in parts, each continuing the preceding part"@en ;
-          skos:example "- German serial \"Babylon Berlin\" with several seasons"@en .
+          skos:definition "a EditorialGroup telling a whole story in parts, each continuing the preceding part"@en ,
+                          "eine EditorialGroup, die eine ganze Geschichte in Teilen erzählt, wobei jeder Teil an den vorangegangenen anknüpft"@de ,
+                          "un groupe éditorial racontant une histoire en plusieurs parties, chacune d'entre elles poursuivant la partie précédente."@fr ;
+          skos:example "- Deutsche Serie \"Babylon Berlin\" mit mehreren Staffeln"@de ,
+                       "- German serial \"Babylon Berlin\" with several seasons"@en ,
+                       "- Série allemande \"Babylon Berlin\" avec plusieurs saisons"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Series
@@ -13853,10 +14315,18 @@ ec:Series rdf:type owl:Class ;
           rdfs:label "Serie"@de ,
                      "Series"@en ,
                      "Série"@fr ;
-          skos:definition "an EditorialGroup of Programmes, grouped by characters or topics or publication scheme, not by a sequential story"@en ;
+          skos:definition "an EditorialGroup of Programmes, grouped by characters or topics or publication scheme, not by a sequential story"@en ,
+                          "eine redaktionelle Gruppe von Sendungen, gruppiert nach Personen oder Themen oder Veröffentlichungsschema, nicht nach einer fortlaufenden Geschichte"@de ,
+                          "un groupe éditorial de programmes, regroupés par personnages ou sujets ou schéma de publication, et non par une histoire séquentielle"@fr ;
           skos:example """- ABC serial \"Friends\"
 - BBC's daily news programme \"BBC News\"
-- ARD's Sunday night drama \"Tatort\""""@en .
+- ARD's Sunday night drama \"Tatort\""""@en ,
+                       """- ABC-Serie \"Freunde\"
+- BBCs tägliche Nachrichtensendung \"BBC News\"
+- ARD-Sonntagabendserie \"Tatort\""""@de ,
+                       """- Série ABC \"Friends\" (en anglais)
+- Le programme d'information quotidien de la BBC \"BBC News\".
+- Tatort, le feuilleton du dimanche soir d'ARD"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service_Type
@@ -13888,8 +14358,12 @@ ec:Shot rdf:type owl:Class ;
         rdfs:label "Coup de feu"@fr ,
                    "Schuss"@de ,
                    "Shot"@en ;
-        skos:definition "an EditorialSegment filmed with one camera without interruption"@en ;
-        skos:example "- a part of the final Scene of \"Casablance\" showing Humphrey Bogart from behind while watching Ingrid Bergman and Paul Henreid walking to the plane, filmed from one camera without interruption"@en .
+        skos:definition "an EditorialSegment filmed with one camera without interruption"@en ,
+                        "ein EditorialSegment mit einer Kamera ohne Unterbrechung gefilmt"@de ,
+                        "un segment éditorial filmé avec une seule caméra, sans interruption."@fr ;
+        skos:example "- a part of the final Scene of \"Casablance\" showing Humphrey Bogart from behind while watching Ingrid Bergman and Paul Henreid walking to the plane, filmed from one camera without interruption"@en ,
+                     "- ein Ausschnitt aus der Schlussszene von \"Casablance\", der Humphrey Bogart von hinten zeigt, während er Ingrid Bergman und Paul Henreid beim Gang zum Flugzeug beobachtet, gefilmt von einer einzigen Kamera ohne Unterbrechung"@de ,
+                     "- une partie de la scène finale de \"Casablance\" montrant Humphrey Bogart de dos tout en regardant Ingrid Bergman et Paul Henreid se diriger vers l'avion, filmée par une seule caméra sans interruption"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#SignLanguageCode
@@ -13999,9 +14473,15 @@ ec:Stream rdf:type owl:Class ;
           rdfs:label "Stream"@de ,
                      "Stream"@en ,
                      "Stream"@fr ;
-          skos:definition "a Component in form of a continuous flow of bits"@en ;
+          skos:definition "a Component in form of a continuous flow of bits"@en ,
+                          "eine Komponente in Form eines kontinuierlichen Flusses von Bits"@de ,
+                          "un Composant sous forme d'un flux continu de bits"@fr ;
           skos:example """- an audio stream from an audio on demand service
-- a video stream from a video on demand service"""@en .
+- a video stream from a video on demand service"""@en ,
+                       """- einen Audiostrom von einem Audio-on-Demand-Dienst
+- einen Videostream von einem Video-on-Demand-Dienst"""@de ,
+                       """- un flux audio provenant d'un service audio à la demande
+- un flux vidéo provenant d'un service de vidéo à la demande"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Subject
@@ -14065,8 +14545,12 @@ ec:Take rdf:type owl:Class ;
         rdfs:label "Nehmen Sie"@de ,
                    "Prenez"@fr ,
                    "Take"@en ;
-        skos:definition "a particular instance of a Shot or a Scene amongst a number of similar instances for selection during post-production"@en ;
-        skos:example "- an EditorialWork consists of selected Takes, while discarded Takes sometimes are published as \"outtakes\", for which examples can be easily found in the web"@en .
+        skos:definition "a particular instance of a Shot or a Scene amongst a number of similar instances for selection during post-production"@en ,
+                        "eine bestimmte Aufnahme oder Szene aus einer Reihe ähnlicher Aufnahmen für die Auswahl bei der Nachbearbeitung"@de ,
+                        "une instance particulière d'un plan ou d'une scène parmi un certain nombre d'instances similaires en vue d'une sélection pendant la postproduction."@fr ;
+        skos:example "- an EditorialWork consists of selected Takes, while discarded Takes sometimes are published as \"outtakes\", for which examples can be easily found in the web"@en ,
+                     "- ein EditorialWork besteht aus ausgewählten Takes, während verworfene Takes manchmal als \"Outtakes\" veröffentlicht werden, wofür sich im Internet leicht Beispiele finden lassen"@de ,
+                     "- une ŒuvreRédactionnelle est constituée de prises sélectionnées, tandis que les prises écartées sont parfois publiées comme \"outtakes\", dont on peut facilement trouver des exemples sur le web"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetPlatform
@@ -14445,8 +14929,12 @@ ec:Track rdf:type owl:Class ;
          rdfs:label "Piste"@fr ,
                     "Spur"@de ,
                     "Track"@en ;
-         skos:definition "a MediaResource in the form of time-based elements for audio, video or data (\"track\") comprised in an \"aggregated\" MediaResource."@en ;
-         skos:example "- the audio in a MPEG4 video file"@en .
+         skos:definition "a MediaResource in the form of time-based elements for audio, video or data (\"track\") comprised in an \"aggregated\" MediaResource."@en ,
+                         "eine MediaResource in Form von zeitbasierten Elementen für Audio, Video oder Daten (\"Track\"), die in einer \"aggregierten\" MediaResource enthalten sind."@de ,
+                         "une MediaResource sous forme d'éléments temporels pour l'audio, la vidéo ou les données (\"piste\") comprise dans une MediaResource \"agrégée\"."@fr ;
+         skos:example "- das Audio in einer MPEG4-Videodatei"@de ,
+                      "- l'audio dans un fichier vidéo MPEG4"@fr ,
+                      "- the audio in a MPEG4 video file"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TrackPurpose
@@ -14488,9 +14976,15 @@ ec:Trailer rdf:type owl:Class ;
            rdfs:label "Anhänger"@de ,
                       "Bande annonce"@fr ,
                       "Trailer"@en ;
-           skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ;
+           skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
+                           "eine redaktionelle Arbeit mit einer typischen Werbelänge von bis zu 2 Minuten, die ein Programm, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
+                           "un travail éditorial avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
            skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
-- a promo-clip for a sports-cup-final later tonight"""@en .
+- a promo-clip for a sports-cup-final later tonight"""@en ,
+                        """- eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
+- ein Promo-Clip für ein Sport-Pokal-Finale heute Abend"""@de ,
+                        """- un aperçu d'une minute de l'épisode de dimanche prochain de la série allemande \"Tatort\".
+- un clip promotionnel pour la finale de la coupe du sport qui aura lieu ce soir"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type
@@ -14773,8 +15267,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
