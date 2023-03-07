@@ -130,3 +130,5 @@ venv.bak/
 
 #for MAC User
 .DS_Store
+ontology/EBUCorePlus/catalog-v001.xml
+ontology/EBUCore/catalog-v001.xml
