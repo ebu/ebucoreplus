@@ -21,8 +21,10 @@
                                                      owl:imports <http://www.w3.org/2004/02/skos/core> ;
                                                      cc:licence "http://creativecommons.org/licenses/by-sa/3.0/" ;
                                                      dc:contributor "Adam Wead, Penn State University"@en-us ,
+
                                                                     "Alexander Schulze, Innotrade"@de ,
                                                                     "Alexandre Rouxel, EBU"@ch ,
+
                                                                     "Are Tverberg, TV2"@no ,
                                                                     "Casey Davis, WGBH"@en-us ,
                                                                     "Cedric Klein, Perfect Memory"@fr ,
@@ -74,6 +76,7 @@ The EBU Metadata Modelling Working Group provides access, upon request, to a clo
                                                      dc:rights "Copyright 2023 EBU"@en ;
                                                      vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucoreplus#" ;
                                                      owl:versionInfo "Version 1.0.0"@en ;
+
                                                      vs:term_status "stable"@en .
 
 #################################################################
