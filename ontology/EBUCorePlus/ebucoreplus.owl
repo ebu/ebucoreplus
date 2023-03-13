@@ -1078,7 +1078,8 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                                      "To identify the role of an animal."@en ;
                  rdfs:label "Animal role"@en ,
                             "Rôle des animaux"@fr ,
-                            "Tierische Rolle"@de .
+                            "Tierische Rolle"@de ;
+                 owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationAgent
@@ -2955,7 +2956,8 @@ ec:hasRole rdf:type owl:ObjectProperty ;
                                "To define the role of an Agent (Contact/person or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the EditorialObject."@en ;
            rdfs:label "Role"@en ,
                       "Rolle"@de ,
-                      "Rôle"@fr .
+                      "Rôle"@fr ;
+           owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
