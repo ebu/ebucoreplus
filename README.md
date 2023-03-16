@@ -1,8 +1,5 @@
 # EBUCorePlus
 
-This is collaborative project managed by the **EBU Metadata Models** working group :
->https://tech.ebu.ch/groups/mm
 
-For more information about the EBU METADATA SPECIFICATIONS please visit our
-dedicated website:
->https://tech.ebu.ch/MetadataEbuCore  
+![EBUCore_plus-Overview-Review-2023-03-16](https://user-images.githubusercontent.com/32091198/225748467-7b702fbc-b1d6-47b4-9fd6-9f15c093cc88.png)
+
