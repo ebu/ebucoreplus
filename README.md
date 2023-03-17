@@ -7,7 +7,7 @@ The <a href="https://www.ebu.ch/metadata/ontologies/ebucoreplus/index.html"> EBU
 EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced when using EBUCore and CCDM classes in one graph. It has its own, new name space therefore it is not backward compatible, but can be mapped to its predecessors. It provides complete documentation of all entities in English, French and German (English being normative).
 </p>
 <p align="center" >
-<img width="1440" alt="EBUCore_plus-Overview-Review-2023-03-16" src="https://user-images.githubusercontent.com/32091198/225752320-1ac90d9c-70b4-4b69-b1d9-6e60f47e6b66.png">
+<img width="1440" alt="EBUCore_plus-Overview-Review-2023-03-16" src="https://user-images.githubusercontent.com/32091198/225969386-7785f0db-47a0-499f-a363-aec0ffb4d6f4.jpg">
 <em>Overview of the EBUCorePlus</em>  
 </p>
 
