@@ -21,10 +21,8 @@
                                                      owl:imports <http://www.w3.org/2004/02/skos/core> ;
                                                      cc:licence "http://creativecommons.org/licenses/by-sa/3.0/" ;
                                                      dc:contributor "Adam Wead, Penn State University"@en-us ,
-
                                                                     "Alexander Schulze, Innotrade"@de ,
                                                                     "Alexandre Rouxel, EBU"@ch ,
-
                                                                     "Are Tverberg, TV2"@no ,
                                                                     "Casey Davis, WGBH"@en-us ,
                                                                     "Cedric Klein, Perfect Memory"@fr ,
@@ -76,7 +74,6 @@ The EBU Metadata Modelling Working Group provides access, upon request, to a clo
                                                      dc:rights "Copyright 2023 EBU"@en ;
                                                      vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucoreplus#" ;
                                                      owl:versionInfo "Version 1.0.0"@en ;
-
                                                      vs:term_status "stable"@en .
 
 #################################################################
@@ -10685,14 +10682,6 @@ ec:EditorialWork rdf:type owl:Class ;
 - un épisode d'une série"""@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EidrIdentifier
-ec:EidrIdentifier rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Identifier ;
-                  rdfs:label "EIDR"@de ,
-                             "EIDR"@en ,
-                             "IEDR"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Emotion
 ec:Emotion rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -11007,14 +10996,6 @@ ec:Genre rdf:type owl:Class ;
                     "Genre"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#IMediaIdentifier
-ec:IMediaIdentifier rdf:type owl:Class ;
-                    rdfs:subClassOf ec:Identifier ;
-                    rdfs:label "IMedia Identifier"@en ,
-                               "IMedia-Bezeichner"@de ,
-                               "Identificateur de média"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#IPRRestrictions
 ec:IPRRestrictions rdf:type owl:Class ;
                    rdfs:subClassOf ec:Rights ;
@@ -11104,14 +11085,6 @@ ec:IntentionCode rdf:type owl:Class ;
                  rdfs:label "Absichtscode"@de ,
                             "Code d'intention"@fr ,
                             "Intention code"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#IsanIdentifier
-ec:IsanIdentifier rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Identifier ;
-                  rdfs:label "ISAN"@de ,
-                             "ISAN"@en ,
-                             "ISAN"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Item
@@ -14498,18 +14471,6 @@ ec:Take rdf:type owl:Class ;
         skos:example "- an EditorialWork consists of selected Takes, while discarded Takes sometimes are published as \"outtakes\", for which examples can be easily found in the web"@en ,
                      "- ein EditorialWork besteht aus ausgewählten Takes, während verworfene Takes manchmal als \"Outtakes\" veröffentlicht werden, wofür sich im Internet leicht Beispiele finden lassen"@de ,
                      "- une ŒuvreRédactionnelle est constituée de prises sélectionnées, tandis que les prises écartées sont parfois publiées comme \"outtakes\", dont on peut facilement trouver des exemples sur le web"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TargetPlatform
-ec:TargetPlatform rdf:type owl:Class ;
-                  rdfs:subClassOf skos:Concept ;
-                  dcterms:description "Pour spécifier une plate-forme cible."@fr ,
-                                      "To specify a target platform."@en ,
-                                      "Um eine Zielplattform anzugeben."@de ;
-                  rdfs:label "Plate-forme cible"@fr ,
-                             "Target Platform"@en ,
-                             "Ziel-Plattform"@de ;
-                  owl:deprecated "true"^^xsd:boolean .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Team
