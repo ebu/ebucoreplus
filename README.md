@@ -24,30 +24,37 @@ The ontology is developed by the EBU Metadata Modelling Working Group as an open
 The <a href="https://tech.ebu.ch/groups/mm"> EBU Metadata Modelling Working Group </a> provides access, <a href="mailto:rouxel@ebu.ch"> upon request </a> to a cloud hosted demonstration kit to explore and better understand the whole EBUCorePlus model.
 </p>
 
-## How we use annotation properties for definition, examples and description
+# How we use annotation properties for definition, examples and description
 
-Starting with **dcterms:description**
-The preceding ontologies EBUCore and CCDM annotated their entities with the property **dcterms:description**. The Literals were filled with descriptive text, mostly explaining, what the entity’s intended use was:\
-isBrand: dcterms:description = “To identify a brand”\
-Or they reused the term itself to be described:\
-Person: dcterms:description = “A Person”
+## Starting with **dcterms:description**
+The preceding ontologies EBUCore and CCDM annotated their entities with the property **dcterms:description**. The Literals were filled with descriptive text, mostly explaining, what the entity’s purpose was:
+```
+ec:isBrand dcterms:description “To identify a Brand.”@en
+```
+Or the Literals referenced the term itself to be described:
+```
+ec:Person dcterms:description "A Person."@en
+```
 
 ## Applying guidelines
 While the **dcterms:descriptions** are useful in many circumstances, they seemed insufficient to us. We wanted to achieve the best possible precision and common understanding for EBUCorePlus entities. So, we applied the <a href="https://philpapers.org/archive/SEPGFW.pdf"> “Guidelines for writing definition in ontologies”  </a> , a great paper by Seppälä, Ruttenberg and Smith.
 
 ## Using skos:definition and skos:examples
-SKOS provides the annotation properties **skos:definition** and **skos:example** that match our intended use perfectly. The Literals in these annotations are created according to the guidelines of the paper. E.g. 
-Person: skos:definition = “an individual Agent”
-In this case it is stated that “Person” is a sub-class of “Agent” and representing an indivisible human being.
+SKOS provides the annotation properties **skos:definition** and **skos:example** that match our intended use perfectly. The Literals in these annotations are created according to the guidelines of the paper. E.g.
+```
+ec:Person skos:definition = “an individual Agent”@en
+```
+In this case it is stated that “Person” is a specific “Agent” representing an indivisible human being.
 
-The Literals in skos:example list representatives that are most common, but sometimes also most rare, in order to enlighten the borders of the defintion’s scope:
-Person: skos:example = “	- Alfred Hitchcock (director)
-- James Bond (character)
-- Sean Connery (actor)
-- John Ford (pseudonym used by the director John Martin Feeney)” 
-
+The Literals in **skos:example** list representatives that are most common, but sometimes also most rare, in order to enlighten the borders of the defintion’s scope:
+```
+ec:Person skos:example """- Alfred Hitchcock (director)
+                          - James Bond (character)
+                          - Sean Connery (actor)
+                          - John Ford (pseudonym used by the director John Martin Feeney)"""
+```
 ## Examining annotations
-We consider **skos:definition** to provide the normative text for defintions and skos:example as a way to simplify understanding of the definitions, because sometimes the definitions are very formal. However, we have not yet equipped all entities with skos:definitions yet and we understand that dcterms:descriptions are covering almost all entities and therefore are still helpful, even if they might be unprecise, outdated or even wrong (e.g because the meaning of an entity has changed from EBUCore to EBUCorePlus). So, when examining the annotations, be aware that skos:definition is normative but may be lacking and dcterms:description is complete but to be interpreted carefully.
+We consider **skos:definition** to provide the normative text for defintions and **skos:example** as a way to simplify understanding of the definitions, because sometimes the definitions are very formal. However, we have not yet equipped all entities with **skos:definitions** yet and we understand that **dcterms:descriptions** are covering almost all entities and therefore are still helpful, even if they might be unprecise, outdated or even wrong (e.g because the meaning of an entity has changed from EBUCore to EBUCorePlus). So, when examining the annotations, be aware that **skos:definition** is normative but may be lacking and **dcterms:description** is complete but to be interpreted carefully.
 
 ## Translations to French and German
 EBUCorePlus aims to provide full documentation in 3 languages: English, French and German. We hope to lower the barriers for non-native English speakers. To accomplish this in due time, we made heavy use of automatic translations from English to French and German. Be aware, that automatic translation is varying in quality. But so are many English texts in EBUCore and CCDM, because they were created by non-native speakers. The EBU working group is editing and improving the Literals in EBUCorePlus step by step.
