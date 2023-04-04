@@ -7687,7 +7687,7 @@ ec:Agent rdf:type owl:Class ;
                     "Akteur"@de ,
                     "Un acteur"@fr ;
          skos:definition "an entity performing an activity in the media business"@en ,
-                         "eine Einrichtung, die eine Tätigkeit in der Medienbranche ausübt"@de ,
+                         "eine Entität, die eine Tätigkeit in der Medienbranche ausübt"@de ,
                          "une entité exerçant une activité dans le secteur des médias"@fr ;
          skos:example """- a film director
 - a camera woman
@@ -7705,8 +7705,8 @@ ec:Agent rdf:type owl:Class ;
 - eine Autorin
 - ein veröffentlichendes Medienunternehmen
 - ein Unternehmen, das Inhalte bereitstellt
-- ein Vertriebsnetzunternehmen
-- ein Unternehmen, das Konsumgeräte herstellt"""@de ,
+- ein Unternehmen, das ein Vertriebsnetz bereitstellt
+- ein Unternehmen, das Endgeräte herstellt"""@de ,
                       """- un réalisateur de films
 - une caméraman
 - un ingénieur du son
@@ -8113,7 +8113,7 @@ ec:Artefact rdf:type owl:Class ;
                        "Artefact"@fr ,
                        "Artefakt"@de ;
             skos:definition "a Thing used in a ProductionJob, often visible and deliberately chosen for its value to the meaning of the content"@en ,
-                            "ein Thing, das in einem ProductionJob verwendet wird, oft sichtbar und absichtlich wegen seines Wertes für die Bedeutung des Inhalts ausgewählt"@de ,
+                            "ein Ding, das in einer Produktion verwendet wird, oft sichtbar und absichtlich wegen seines Wertes für die Bedeutung des Inhalts ausgewählt"@de ,
                             "une chose utilisée dans un travail de production, souvent visible et délibérément choisie pour sa valeur pour le sens du contenu."@fr ;
             skos:example """- die Kostüme und Requisiten in einem Film
 - die nicht-dynamische Kulisse, Stühle, Tische in einer Talkshow"""@de ,
@@ -8137,6 +8137,9 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Article
 ec:Article rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialWork ;
+           rdfs:label "Article"@en ,
+                      "Article"@fr ,
+                      "Artikel"@de ;
            skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on web-sites, blogs and other channels similar to the more traditional paper-based publications"@en ,
                            "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Websites, Blogs und anderen Kanälen erstellt wird, die den traditionelleren papierbasierten Publikationen ähneln"@de ,
                            "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des sites web, des blogs et d'autres canaux similaires aux publications papier plus traditionnelles."@fr ;
@@ -8594,8 +8597,9 @@ ec:AudioContent rdf:type owl:Class ;
                                     "Ein audioContent definiert eine Komponente eines Programms (z.B. Hintergrundmusik Musik), seine Zuordnung zu einer audioGroup (z.B. ein 2.0 audioPackFormat von audioChannelFormats für die Stereowiedergabe), seine Zuordnung zu einem audioStreamFormat und seine Lautheitsparameter."@de ,
                                     "Un AudioContent définit un composant d'un programme (par exemple, une musique de fond musique), son association avec un audioGroup (par exemple, un 2.0 audioPackFormat de audioChannelFormats pour la reproduction stéréo), son association avec un audioStreamFormat, et son ensemble de paramètres d'intensité sonore."@fr ;
                 rdfs:label "Audio content"@en ,
-                           "Audio-Inhalt"@de ,
-                           "Contenu audio"@fr .
+                           "Audio-inhalt"@de ,
+                           "Contenu audio"@fr ;
+                skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialSegment."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContent_Type
@@ -8692,7 +8696,8 @@ ec:AudioProgramme rdf:type owl:Class ;
                                       "Un ensemble d'un ou plusieurs contenus audio qui dérivent du même matériel, c'est-à-dire un audioMultiplex, et la définition de sesContenus audio multiplexés (par ex. avant-plan et commentaire, musique de fond)."@fr ;
                   rdfs:label "Audio Programm"@de ,
                              "Audio programme"@en ,
-                             "Programme audio"@fr .
+                             "Programme audio"@fr ;
+                  skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialWork."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme_Type
@@ -8956,7 +8961,7 @@ ec:Bonus rdf:type owl:Class ;
                     "Bonus"@en ,
                     "Bonus"@fr ;
          skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ,
-                         "ein EditorialWork, das als erweiternder Inhalt eines Haupt-EditorialWorks gedacht ist."@de ,
+                         "ein Werk, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist."@de ,
                          "un travail de rédaction destiné à enrichir le contenu d'un travail de rédaction principal."@fr ;
          skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en ,
                       "- Contenu additionnel pour un film à consommer séparément en tant que complément."@fr ,
@@ -9128,7 +9133,7 @@ ec:Character rdf:type owl:Class ;
                                  "Z.B. ein fiktiver Kontakt / eine fiktive Person."@de ;
              rdfs:label "Caractère"@fr ,
                         "Character"@en ,
-                        "Charakter"@de .
+                        "Rolle"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#CityCode
@@ -9876,7 +9881,7 @@ ec:Costume rdf:type owl:Class ;
                       "Costume"@fr ,
                       "Kostüm"@de ;
            skos:definition "a dress of an actress/actor used in a production"@en ,
-                           "ein Kleid einer Schauspielerin/eines Schauspielers, das in einer Produktion verwendet wird"@de ,
+                           "die Kleidung einer Schauspielerin/eines Schauspielers in einer Produktion"@de ,
                            "une robe d'une actrice/acteur utilisée dans une production"@fr ;
            skos:example "- die Uniformen der Star Trek-Besatzung"@de ,
                         "- les uniformes portés par l'équipage de Star Trek"@fr ,
@@ -9932,9 +9937,9 @@ ec:CrewMember rdf:type owl:Class ;
               rdfs:subClassOf ec:Person ;
               dcterms:description "Permet d'identifier un membre d'une équipe."@fr ,
                                   "To identify a member of the crew."@en ,
-                                  "Zur Identifikation eines Besatzungsmitglieds."@de ;
-              rdfs:label "Besatzung"@de ,
-                         "Crew"@en ,
+                                  "Zur Identifikation eines Stabsmitglieds"@de ;
+              rdfs:label "Crew"@en ,
+                         "Stab"@de ,
                          "Équipe"@fr .
 
 
@@ -10123,7 +10128,7 @@ ec:EditorialGroup rdf:type owl:Class ;
                                       "Zur Definition einer Sammlung/Gruppe von Medien Ressourcen zu definieren, zum Beispiel eine Serie, die aus Episoden besteht."@de ;
                   rdfs:label "Editorial group"@en ,
                              "Groupe de rédaction"@fr ,
-                             "Redaktionelle Gruppe"@de .
+                             "Gruppe von Medieninhalten"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObject
@@ -10644,7 +10649,17 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:onProperty ec:segmentNumber ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
-                                    ] .
+                                    ] ;
+                    skos:definition "Ein Medieninhalt, der einen Ausschnitt eines anderen Medieninhaltes darstellt"@de ,
+                                    "an EditorialObject representing a fraction of an EditorialObject"@en ;
+                    skos:example """- a scene in a movie
+- a section of an interview
+- an intro of a song
+- a paragraph of a text"""@en ,
+                                 """- eine Filmszene
+- eine Passage eines Interviews
+- das Intro eines Liedes
+- ein Textabschnitt"""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialWork
@@ -10662,9 +10677,12 @@ ec:EditorialWork rdf:type owl:Class ;
                                    owl:onProperty ec:promotes ;
                                    owl:allValuesFrom ec:EditorialWork
                                  ] ;
+                 rdfs:label "Editorial work"@en ,
+                            "Werk"@de ,
+                            "Œuvre"@fr ;
                  skos:definition "an EditorialObject describing a \"work of the mind\", a piece."@en ,
-                                 "ein EditorialObjekt, das ein \"Werk des Geistes\", ein Stück beschreibt."@de ,
-                                 "un EditorialObject décrivant une \"œuvre de l'esprit\", une pièce."@fr ;
+                                 "ein Medieninhalt, der ein geistiges Werk, ein \"Stück\" ist"@de ,
+                                 "un objet éditorial décrivant une \"œuvre de l'esprit\", une pièce."@fr ;
                  skos:example """- a film based on a playbook
 - a radio drama based on a playbook
 - a news programme with several items
@@ -11106,10 +11124,10 @@ ec:Item rdf:type owl:Class ;
                             "Ein Element, z.B. newsItem oder sportItem"@de ,
                             "Un élément, par exemple newsItem ou sportItem"@fr ;
         rdfs:label "Article"@fr ,
-                   "Artikel"@de ,
+                   "Beitrag"@de ,
                    "Item"@en ;
         skos:definition "an EditorialWork to be incorporated into a Programme, an Article or a Post"@en ,
-                        "ein EditorialWork, das in ein Programm, einen Artikel oder einen Beitrag integriert werden soll"@de ,
+                        "ein Werk, das in ein Programm, einen Artikel oder einen Beitrag integriert werden soll"@de ,
                         "un travail de rédaction à incorporer dans un programme, un article ou un message."@fr ;
         skos:example """- a news item to be incorporated in a news programme
 - a survey-clip to be incorporated in a debate"""@en ,
@@ -11385,7 +11403,7 @@ ec:MakingOf rdf:type owl:Class ;
                        "Making-of"@en ,
                        "Making-of"@fr ;
             skos:definition "an EditorialWork about the making of a film or a Programme"@en ,
-                            "eine redaktionelle Arbeit über die Entstehung eines Films oder eines Programms"@de ,
+                            "ein Werk, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
                             "un travail éditorial sur la réalisation d'un film ou d'un programme."@fr ;
             skos:example "- Das Making-of eines Films"@de ,
                          "- le tournage d'un film"@fr ,
@@ -12011,7 +12029,7 @@ ec:NewsItem rdf:type owl:Class ;
             dcterms:description "A NewsItem aggregates all information about a particular news event."@en ,
                                 "Ein NewsItem fasst alle Informationen über ein bestimmtes Nachrichtenereignis zusammen."@de ,
                                 "Un NewsItem regroupe toutes les informations sur un événement d'actualité particulier."@fr ;
-            rdfs:label "Nachrichten"@de ,
+            rdfs:label "Nachrichtenbeitrag"@de ,
                        "News Item"@en ,
                        "Nouvelles"@fr .
 
@@ -12178,7 +12196,7 @@ ec:Outtakes rdf:type owl:Class ;
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
             skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
-                            "ein EditorialWork, in dem Aufnahmen oder Szenen gesammelt werden, die bei der Nachbearbeitung aussortiert wurden, aber dennoch den Verbraucher aus Spaß, Neugier usw. ansprechen"@de ,
+                            "ein Werk, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen"@de ,
                             "un travail éditorial rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
             skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en ,
                          "- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film"@de ,
@@ -12457,6 +12475,9 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Post
 ec:Post rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialWork ;
+        rdfs:label "Post"@de ,
+                   "Post"@en ,
+                   "Post"@fr ;
         skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on social media platforms and alike"@en ,
                         "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Plattformen sozialer Medien und ähnlichem erstellt wird"@de ,
                         "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des plateformes de médias sociaux ou autres."@fr ;
@@ -12698,11 +12719,11 @@ ec:Programme rdf:type owl:Class ;
              dcterms:description "An EditorialObject corresponding to a MediaResource ready for publication."@en ,
                                  "Ein EditorialObject, das einer MediaResource, die zur Veröffentlichung bereit ist."@de ,
                                  "Un EditorialObject correspondant à une MediaResource prête à être publiée."@fr ;
-             rdfs:label "Programm"@de ,
-                        "Programme"@en ,
-                        "Programme"@fr ;
+             rdfs:label "Programme"@en ,
+                        "Programme"@fr ,
+                        "Sendung"@de ;
              skos:definition "an EditorialWork as a stand-alone piece or an episode of a Serial or Series, intended to be consumed as a whole"@en ,
-                             "ein EditorialWork als eigenständiges Stück oder eine Episode einer Serie oder Reihe, die als Ganzes konsumiert werden soll"@de ,
+                             "ein Werk als eigenständiges Stück oder eine Episode einer Serie oder Reihe, die als Ganzes konsumiert werden soll"@de ,
                              "une Œuvre de rédaction en tant que pièce autonome ou épisode d'un feuilleton ou d'une série, destinée à être consommée comme un tout."@fr ;
              skos:example """- den Film \"Titanic\"
 - die Folge 2 \"Der blinde Bankier\" der Serie \"Sherlock\", einer Detektivserie
@@ -12728,11 +12749,11 @@ ec:Promotion rdf:type owl:Class ;
                                owl:onProperty ec:isMemberOf ;
                                owl:allValuesFrom ec:CampaignPackage
                              ] ;
-             rdfs:label "Förderung"@de ,
-                        "Promotion"@en ,
-                        "Promotion"@fr ;
+             rdfs:label "Promotion"@en ,
+                        "Promotion"@fr ,
+                        "Werbung"@de ;
              skos:definition "an EditorialWork for advertising purposes"@en ,
-                             "ein EditorialWork zu Werbezwecken"@de ,
+                             "ein Werk für Werbezwecke"@de ,
                              "un EditorialWork à des fins publicitaires"@fr ;
              skos:example """- an ad for an insurance company
 - a promotion-clip for a PSM, one of its channels, its brands"""@en ,
@@ -13429,11 +13450,11 @@ ec:PublicationService rdf:type owl:Class ;
 ec:RadioProgramme rdf:type owl:Class ;
                   rdfs:subClassOf ec:Programme ;
                   dcterms:description "A programme for distribution on radio channels."@en ,
-                                      "Ein Programm zur Verbreitung im Radio Kanäle."@de ,
+                                      "Ein Sendung zur Verbreitung in einem Radiokanal."@de ,
                                       "Un programme pour la distribution sur les chaînes."@fr ;
                   rdfs:label "Programme radio"@fr ,
                              "Radio Programme"@en ,
-                             "Radioprogramm"@de .
+                             "Radiosendung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rating
@@ -13611,7 +13632,7 @@ ec:Reminder rdf:type owl:Class ;
                        "Rappel"@fr ,
                        "Reminder"@en ;
             skos:definition "an EditorialWork referring to a previously published advertisement, promotion or alike, as a reminder to it"@en ,
-                            "ein EditorialWork, das auf eine zuvor veröffentlichte Anzeige, Werbung oder ähnliches verweist, um daran zu erinnern"@de ,
+                            "ein Werk, das auf eine zuvor veröffentlichte Anzeige, Werbung oder ähnliches verweist, um daran zu erinnern"@de ,
                             "un EditorialWork faisant référence à une annonce, une promotion ou autre publiée précédemment, pour la rappeler à l'ordre"@fr ;
             skos:example "- a 4 second repetition of the logo and the jingle of an insurance company, minutes after a 15 second advertisement"@en ,
                          "- eine 4-sekündige Wiederholung des Logos und des Jingles einer Versicherungsgesellschaft, Minuten nach einer 15-sekündigen Werbung"@de ,
@@ -13865,7 +13886,7 @@ ec:Review rdf:type owl:Class ;
                               "Um eine Rezension zu erstellen."@de ;
           rdfs:label "Consulter"@fr ,
                      "Review"@en ,
-                     "Überprüfung"@de .
+                     "Rezension"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rights
@@ -14120,10 +14141,10 @@ ec:Scene rdf:type owl:Class ;
                              "Eine Sequenz mit kontinuierlicher Handlung"@de ,
                              "Une séquence d'action continue"@fr ;
          rdfs:label "Scene"@en ,
-                    "Schauplatz"@de ,
-                    "Scène"@fr ;
+                    "Scène"@fr ,
+                    "Szene"@de ;
          skos:definition "an EditorialSegment incorporated in an EditorialWork and representing a part of a story without leaps in time or location"@en ,
-                         "ein EditorialSegment, das in ein EditorialWork eingebunden ist und einen Teil einer Geschichte ohne Zeit- oder Ortssprünge darstellt"@de ,
+                         "ein Mediensegment, das in ein Inhaltsobjekt eingebunden ist und einen Teil einer Geschichte ohne Zeit- oder Ortssprünge darstellt"@de ,
                          "un segment éditorial incorporé dans un travail éditorial et représentant une partie d'une histoire sans saut dans le temps ou le lieu."@fr ;
          skos:example "- der letzte Abschied von Humphrey Bogart und Ingrid Bergman auf dem Flughafen von Casablanca im gleichnamigen Film."@de ,
                       "- le dernier adieu de Humphrey Bogart et Ingrid Bergman à l'aéroport de Casablanca dans le film du même nom."@fr ,
@@ -14153,11 +14174,11 @@ ec:Season rdf:type owl:Class ;
           dcterms:description "A series can be composed of one or more seasons clustering a certain number of episodes. Fro this reason, seasons are related to series using the isRelatedTo property."@en ,
                               "Eine Serie kann aus einer oder mehreren Staffeln bestehen die eine bestimmte Anzahl von Episoden zusammenfassen. Aus diesem Grund werden Staffeln mit Serien verknüpft mit Hilfe der Eigenschaft isRelatedTo."@de ,
                               "Une série peut être composée d'une ou plusieurs saisons regroupant un certain nombre d'épisodes. Pour cette raison, les saisons sont liées aux séries à l'aide de la propriété isRelatedTo."@fr ;
-          rdfs:label "Saison"@de ,
-                     "Saison"@fr ,
-                     "Season"@en ;
+          rdfs:label "Saison"@fr ,
+                     "Season"@en ,
+                     "Staffel"@de ;
           skos:definition "a sub-group of episodes of a serial or a series, usually grouped due to a common time frame for production"@en ,
-                          "eine Untergruppe von Episoden einer Serie oder eines Zyklus, die in der Regel aufgrund eines gemeinsamen Zeitrahmens für die Produktion gruppiert werden"@de ,
+                          "eine Gruppe von Episoden einer Serie oder einer Reihe, die in der Regel aufgrund eines gemeinsamen Zeitrahmens für die Produktion gruppiert werden"@de ,
                           "un sous-groupe d'épisodes d'un feuilleton ou d'une série, généralement regroupés en raison d'une période de production commune."@fr ;
           skos:example """- die 216 Episoden des Jahres 2018 der BBC-Serie \"EastEnder\"
 - Staffel 1 mit 8 Episoden der deutschen Serie \"Babylon Berlin\""""@de ,
@@ -14170,14 +14191,14 @@ ec:Season rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Serial
 ec:Serial rdf:type owl:Class ;
           rdfs:subClassOf ec:EditorialGroup ;
-          dcterms:description "Werke, die (z. B. in einer Zeitschrift oder im Fernsehen) in regelmäßigen Abständen in Teilen erscheinen"@de ,
-                              "works appearing (as in a magazine or on television) in parts at intervals"@en ,
-                              "œuvres apparaissant (comme dans un magazine ou à la télévision) en parties à intervalles réguliers"@fr ;
+          dcterms:description "Werke, die (z. B. in einer Zeitschrift oder im Fernsehen) in Teilen erscheinen"@de ,
+                              "a work appearing (as in a magazine or on television) in parts"@en ,
+                              "œuvres apparaissant (comme dans un magazine ou à la télévision) en parties"@fr ;
           rdfs:label "Serial"@en ,
-                     "Seriennummer"@de ,
+                     "Serie"@de ,
                      "Série"@fr ;
           skos:definition "a EditorialGroup telling a whole story in parts, each continuing the preceding part"@en ,
-                          "eine EditorialGroup, die eine ganze Geschichte in Teilen erzählt, wobei jeder Teil an den vorangegangenen anknüpft"@de ,
+                          "eine Gruppe von Medieninhalten, die eine ganze Geschichte in Teilen erzählt, wobei jeder Teil an den vorangegangenen anknüpft"@de ,
                           "un groupe éditorial racontant une histoire en plusieurs parties, chacune d'entre elles poursuivant la partie précédente."@fr ;
           skos:example "- Deutsche Serie \"Babylon Berlin\" mit mehreren Staffeln"@de ,
                        "- German serial \"Babylon Berlin\" with several seasons"@en ,
@@ -14199,21 +14220,21 @@ ec:Series rdf:type owl:Class ;
                             owl:onProperty ec:isSeriesOf ;
                             owl:allValuesFrom ec:Brand
                           ] ;
-          dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes."@fr ,
-                              "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden."@de ,
-                              "Series is a particular type of collection. TV or Radio Series are composed of Episodes."@en ;
-          rdfs:label "Serie"@de ,
+          dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes. Les épisodes suivent souvent un schéma de publication régulier ou traitent de sujets similaires ou des mêmes personnages."@fr ,
+                              "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden. Episoden folgen häufig einem Publikationsschema oder behandeln ähnliche Themen oder beinhalten dieselben Figuren."@de ,
+                              "Series is a particular type of collection. TV or Radio Series are composed of Episodes. Episodes often follow a regular publication scheme or deal with similar topics or the same characters."@en ;
+          rdfs:label "Reihe"@de ,
                      "Series"@en ,
                      "Série"@fr ;
           skos:definition "an EditorialGroup of Programmes, grouped by characters or topics or publication scheme, not by a sequential story"@en ,
-                          "eine redaktionelle Gruppe von Sendungen, gruppiert nach Personen oder Themen oder Veröffentlichungsschema, nicht nach einer fortlaufenden Geschichte"@de ,
+                          "eine Gruppe Medieninhalten, in der Regel gruppiert nach Personen oder Themen oder Veröffentlichungsschemata, nicht unbedingt nach einer fortlaufenden Geschichte"@de ,
                           "un groupe éditorial de programmes, regroupés par personnages ou sujets ou schéma de publication, et non par une histoire séquentielle"@fr ;
           skos:example """- ABC serial \"Friends\"
 - BBC's daily news programme \"BBC News\"
 - ARD's Sunday night drama \"Tatort\""""@en ,
-                       """- ABC-Serie \"Freunde\"
+                       """- ABC-Sendereihe \"Friends\"
 - BBCs tägliche Nachrichtensendung \"BBC News\"
-- ARD-Sonntagabendserie \"Tatort\""""@de ,
+- ARD-Sendereihe \"Tatort\""""@de ,
                        """- Série ABC \"Friends\" (en anglais)
 - Le programme d'information quotidien de la BBC \"BBC News\".
 - Tatort, le feuilleton du dimanche soir d'ARD"""@fr .
@@ -14307,17 +14328,17 @@ ec:SportItem rdf:type owl:Class ;
                                  "Un SportItem regroupe toutes les informations sur un événement sportif."@fr ;
              rdfs:label "Article de sport"@fr ,
                         "Sport item"@en ,
-                        "Sportartikel"@de .
+                        "Sportbeitrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#StaffMember
 ec:StaffMember rdf:type owl:Class ;
                rdfs:subClassOf ec:Person ;
                dcterms:description "A member of Staff."@en ,
-                                   "Ein Mitglied des Personals."@de ,
+                                   "Ein Mitglied der Belegschaft"@de ,
                                    "Un membre du personnel."@fr ;
                rdfs:label "Membre du personnel."@fr ,
-                          "Mitarbeiterin."@de ,
+                          "Mitarbeiterin"@de ,
                           "Staff member."@en .
 
 
@@ -14449,7 +14470,7 @@ ec:TVProgramme rdf:type owl:Class ;
                                    "Un programme destiné à être distribué sur les chaînes."@fr ;
                rdfs:label "Programme TV"@fr ,
                           "TV Programme"@en ,
-                          "TV-Programm"@de .
+                          "TV-Sendung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Take
@@ -14881,11 +14902,11 @@ ec:Trailer rdf:type owl:Class ;
            dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
                                "An AV sequence promoting a film, series or television programme."@en ,
                                "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
-           rdfs:label "Anhänger"@de ,
-                      "Bande annonce"@fr ,
+           rdfs:label "Bande annonce"@fr ,
+                      "Trailer"@de ,
                       "Trailer"@en ;
            skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
-                           "eine redaktionelle Arbeit mit einer typischen Werbelänge von bis zu 2 Minuten, die ein Programm, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
+                           "eine Werk mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
                            "un travail éditorial avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
            skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
 - a promo-clip for a sports-cup-final later tonight"""@en ,
@@ -15175,8 +15196,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
