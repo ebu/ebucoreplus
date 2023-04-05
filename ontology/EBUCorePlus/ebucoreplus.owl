@@ -8556,8 +8556,8 @@ ec:AudioCodec rdf:type owl:Class ;
               dcterms:description "Pour fournir des informations sur un codec audio."@fr ,
                                   "To provide information about an audio codec."@en ,
                                   "Zur Bereitstellung von Informationen über einen Audiocodec."@de ;
-              rdfs:label "Audio Codec"@de ,
-                         "Audio codec"@en ,
+              rdfs:label "Audio codec"@en ,
+                         "Audio-Codec"@de ,
                          "Codec audio"@fr .
 
 
@@ -9039,19 +9039,21 @@ ec:Campaign rdf:type owl:Class ;
                               owl:onProperty ec:title ;
                               owl:allValuesFrom rdfs:Literal
                             ] ;
-            dcterms:description "A Campaign defines a strategy for publishing content (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience according to a PublicationPlan. Campaign strategies can be refined taking into account the analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns, promotional campaigns or else."@en ,
-                                "Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest. Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."@de ,
-                                "Une campagne définit une stratégie de publication de contenu (objets éditoriaux et ressources/médias/essence) auprès d'un public cible conformément à un plan de publication. Les stratégies de campagne peuvent être affinées en fonction l'analyse de la Résonance de la Consommation des Evenements associée ( par exemple le nombre de like ou de téléchargements, etc ...). Les campagnes s'appliquent à différentes stratégies de diffusion, on peut citer par exemple les campagnes publicitaires ou les campagnes promotionnelles."@fr ;
+            dcterms:description "A Campaign defines a strategy for publishing content (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience according to a PublicationPlan. Campaign strategies can be adapted taking into account the analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns, promotional campaigns or else."@en ,
+                                "Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest. Kampagnenstrategien können angepasst werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."@de ,
+                                "Une campagne définit une stratégie de publication de contenu (objets éditoriaux et ressources/médias/essence) auprès d'un public cible conformément à un plan de publication. Les stratégies de campagne peuvent être adaptées en fonction l'analyse de la Résonance de la Consommation des Evenements associée ( par exemple le nombre de like ou de téléchargements, etc ...). Les campagnes s'appliquent à différentes stratégies de diffusion, on peut citer par exemple les campagnes publicitaires ou les campagnes promotionnelles."@fr ;
             rdfs:label "Campagne"@fr ,
                        "Campaign"@en ,
                        "Kampagne"@de ;
+            skos:definition "a strategy for coordinated publishing effort towards a target audience"@en ,
+                            "eine Strategie zur koordinierten Veröffentlichung von Medieninhalten für ein Zielpublikum"@de ,
+                            "une stratégie de coordination des efforts de publication en direction d'un public cible"@fr ;
             skos:example """- an advertisement effort for a product, by publishing a set of videos at a time and on a channel, when and where the target audience can be effectively reached
 - an announcement of the journalistic coverage of an upcoming government election from many different perspectives and for a variety of target audiences published on several channels of linear TV, linear radio, social media, podcast portals, etc."""@en ,
                          """- eine Werbemaßnahme für ein Produkt, bei der eine Reihe von Videos zu einem Zeitpunkt und auf einem Kanal veröffentlicht wird, zu dem und an dem das Zielpublikum effektiv erreicht werden kann
 - eine Ankündigung der journalistischen Berichterstattung über eine bevorstehende Regierungswahl aus vielen verschiedenen Perspektiven und für eine Vielzahl von Zielgruppen, die auf mehreren Kanälen des linearen Fernsehens, des linearen Radios, der sozialen Medien, der Podcast-Portale usw. veröffentlicht wird"""@de ,
                          """- un effort publicitaire pour un produit, en publiant un ensemble de vidéos à un moment et sur un canal, quand et où le public cible peut être atteint efficacement
-- une annonce de la couverture journalistique d'une élection gouvernementale à venir sous de nombreux angles différents et pour une variété de publics cibles, publiée sur plusieurs canaux de télévision linéaire, de radio linéaire, de médias sociaux, de portails de podcasts, etc."""@fr ,
-                         "a strategy for coordinated publishing effort towards a target audience"@en .
+- une annonce de la couverture journalistique d'une élection gouvernementale à venir sous de nombreux angles différents et pour une variété de publics cibles, publiée sur plusieurs canaux de télévision linéaire, de radio linéaire, de médias sociaux, de portails de podcasts, etc."""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#CampaignPackage
@@ -9343,7 +9345,7 @@ ec:ConsumptionCount rdf:type owl:Class ;
                                         "Une agrégation de groupes de Consommateurs comptés"@fr ;
                     rdfs:label "Comptage des consommations"@fr ,
                                "Consumption count"@en ,
-                               "Verbrauch zählen"@de ;
+                               "Nutzungszahl/-anteil"@de ;
                     skos:definition "die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzelnes PublicationEvent"@de ,
                                     "le nombre réel et les circonstances des ConsumptionEvents pour un seul PublicationEvent"@fr ,
                                     "the actual number and circumstances of ConsumptionEvents for a single PublicationEvent"@en ;
@@ -9413,12 +9415,12 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                      dcterms:description "A device used to consume content."@en ,
                                          "Ein Gerät zur Nutzung eines Medienproduktes."@de ,
                                          "Un appareil utilisé pour consommer un contenu médiatique."@fr ;
-                     rdfs:label "Appareil"@fr ,
-                                "Device"@en ,
+                     rdfs:label "Appareil de consommation"@fr ,
+                                "Consumption Device"@en ,
                                 "Endgerät"@de ;
-                     skos:definition "a Thing to facilitate consumption of a media service"@en ,
-                                     "eine Sache, die den Konsum eines Mediendienstes erleichtern soll"@de ,
-                                     "une Thing pour faciliter la consommation d'un service média"@fr ;
+                     skos:definition "a device for using media services"@en ,
+                                     "ein Gerät zur Nutzung von Mediendiensten"@de ,
+                                     "un appareil permettant d'utiliser les services de médias"@fr ;
                      skos:example """- a smartphone
 - a smart TV
 - a fm radio set
@@ -9508,10 +9510,10 @@ ec:ConsumptionDeviceProfile rdf:type owl:Class ;
                                                 "The profile of a ConsumptionDevice."@en ;
                             rdfs:label "Consumption device profile"@en ,
                                        "Endgeräteprofil"@de ,
-                                       "Profile d'un appareil"@fr ;
+                                       "Profile d'un appareil de consommation"@fr ;
                             skos:definition "a number of properties of an individual ConsumptionDevice that allows classification of the device"@en ,
-                                            "eine Reihe von Eigenschaften eines einzelnen ConsumptionDevice, die eine Klassifizierung des Geräts ermöglichen"@de ,
-                                            "un certain nombre de propriétés d'un ConsumptionDevice individuel qui permettent la classification du dispositif"@fr ;
+                                            "eine Reihe von Eigenschaften eines einzelnen Endgerätes, die eine Klassifizierung des Geräts ermöglichen"@de ,
+                                            "un certain nombre de propriétés d'un appareil de consommation individuel qui permettent la classification du dispositif"@fr ;
                             skos:example """- an Apple smartphone with iOS version > 16
 - a smart TV with screen 50' to 60' and HDR support
 - a VR headset"""@en ,
@@ -9591,7 +9593,7 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                     rdfs:label "Consumption event"@en ,
                                "Nutzungsereignis"@de ,
                                "Événement de consommation"@fr ;
-                    skos:definition "den Fall, dass ein Verbraucher einen Mediendienst konsumiert"@de ,
+                    skos:definition "das Ereignis, dass ein Nutzer einen Mediendienst konsumiert"@de ,
                                     "le cas où un consommateur consomme un service de médias"@fr ,
                                     "the event of a Consumer consuming a media service"@en ;
                     skos:example """- a person watching a news show on linear tv
@@ -9643,7 +9645,7 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                  "Licence de consommation"@fr ,
                                  "Nutzungslizenz"@de ;
                       skos:definition "a permit to consume a media service"@en ,
-                                      "eine Genehmigung zum Konsumieren eines Mediendienstes"@de ,
+                                      "eine Genehmigung zur Nutzung eines Mediendienstes"@de ,
                                       "un permis de consommer un service de médias"@fr ;
                       skos:example """- a subscription to unlimited streaming from spotify, encompassing 3 devices
 - a 3 month test subscription to a VoD service
@@ -9674,8 +9676,8 @@ ec:ContainerCodec rdf:type owl:Class ;
                                       "To identify an container codec, e.g. MXF"@en ,
                                       "Zur Identifizierung eines Container-Codecs, z.B. MXF"@de ;
                   rdfs:label "Codec de conteneur"@fr ,
-                             "Container Codec"@de ,
-                             "Container codec"@en .
+                             "Container codec"@en ,
+                             "Container-Codec"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ContainerEncodingFormat
@@ -9785,8 +9787,8 @@ ec:Contract rdf:type owl:Class ;
                        "Contrat"@fr ,
                        "Vertrag"@de ;
             skos:definition "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en ,
-                            "eine Vereinbarung zwischen den Parteien oder ein Gesetz über die Rechte und Pflichten bei der Erstellung oder Veröffentlichung von MediaResources"@de ,
-                            "un accord entre les parties ou une loi concernant les droits et devoirs dans la création ou la publication de MediaResources"@fr ;
+                            "eine Vereinbarung zwischen Parteien oder ein Gesetz über die Rechte und Pflichten bei der Erstellung oder Veröffentlichung von Medienressourcen"@de ,
+                            "un accord entre parties ou une loi concernant les droits et devoirs dans la création ou la publication de une ressource médiatique"@fr ;
             skos:example """- a contract between a PSM and a production company for the delivery of a series
 - a law about copyrights of news articles"""@en ,
                          """- ein Vertrag zwischen einem PSM und einer Produktionsfirma über die Lieferung einer Serie
@@ -14991,8 +14993,8 @@ ec:VideoCodec rdf:type owl:Class ;
                                   "To provide information about a video codec."@en ,
                                   "Zur Bereitstellung von Informationen über einen Videocodec."@de ;
               rdfs:label "Codec vidéo"@fr ,
-                         "Video Codec"@de ,
-                         "Video codec"@en .
+                         "Video codec"@en ,
+                         "Video-Codec"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#VideoEncodingFormat
