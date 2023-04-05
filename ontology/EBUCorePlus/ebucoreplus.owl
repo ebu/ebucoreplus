@@ -8494,7 +8494,7 @@ ec:AudienceLevel rdf:type owl:Class ;
                                    owl:onProperty ec:targetAudienceSystem ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ;
-                 dcterms:description "Das Zielpublikum (Zielregion, Zielgruppen Kategorie der Zielgruppe, aber auch Empfehlung der Eltern), für die die Medienressource Ressource bestimmt ist."@de ,
+                 dcterms:description "Das Zielpublikum (Zielregion, Zielgruppen Kategorie der Zielgruppe, aber auch Empfehlung der Eltern), für die die Medienressource bestimmt ist."@de ,
                                      "Le public cible (région cible, catégorie de catégorie de public cible mais aussi recommandation d'orientation parentale) à laquelle la ressource médiatique est destinée."@fr ,
                                      "The target audience (target region, target audience category but also parental guidance recommendation) for which the media resource is intended. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
                  rdfs:label "Public cible"@fr ,
@@ -13130,11 +13130,11 @@ ec:PublicationHistory rdf:type owl:Class ;
                                         owl:someValuesFrom ec:PublicationEvent
                                       ] ;
                       dcterms:description "A collection of PublicationEvents through which a resource has been published."@en ,
-                                          "Eine Sammlung von PublicationEvents, durch die eine Ressource veröffentlicht wurde."@de ,
+                                          "Eine Sammlung von Publikationsereignissen, durch die eine Ressource veröffentlicht wurde."@de ,
                                           "Une collection de PublicationEvents par lesquels une ressource a été publiée."@fr ;
-                      rdfs:label "Geschichte der Veröffentlichung"@de ,
-                                 "Histoire de la publication"@fr ,
-                                 "Publication History"@en .
+                      rdfs:label "Histoire de la publication"@fr ,
+                                 "Publication History"@en ,
+                                 "Veröffentlichungshistorie"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLogg
@@ -13169,8 +13169,8 @@ ec:PublicationLogg rdf:type owl:Class ;
                                    ] ;
                    dc:description "For colecting data from the \"As run logg\""@en ;
                    rdfs:label "Journal de bord de la publication"@fr ,
-                              "Protokoll der Veröffentlichung"@de ,
-                              "Publication logg"@en ;
+                              "Playout-Protokoll"@de ,
+                              "Publication log"@en ;
                    skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
                                    "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
                                    "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
@@ -13265,7 +13265,7 @@ Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiée
                               "Publication plan"@en ,
                               "Publikationsplan"@de ;
                    skos:definition "a schedule for one or many PublicationEvents to adress a target audience, or a hierarchy of PublicationPlans"@en ,
-                                   "einen Zeitplan für eine oder mehrere PublicationEvents, um eine Zielgruppe anzusprechen, oder eine Hierarchie von PublicationPlans"@de ,
+                                   "ein Zeitplan für eine oder mehrere Publikationsereignissen, um eine Zielgruppe anzusprechen, oder eine Hierarchie von Publikationsereignissen"@de ,
                                    "un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cible, ou une hiérarchie de PublicationPlans"@fr ;
                    skos:example """- das geplante Datum, die Uhrzeit und den Kanal für die Veröffentlichung eines Films
 - die geplanten Daten, Uhrzeiten und Kanäle für die Veröffentlichung der Episoden einer Serie
@@ -13371,12 +13371,12 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                   "Publication platform"@en ,
                                   "Publikationsplattform"@de ;
                        skos:definition "a facility that allows to connect sources and targets of content through uni- or bidirectional channels"@en ,
-                                       "eine Einrichtung, die es ermöglicht, Quellen und Ziele von Inhalten über uni- oder bidirektionale Kanäle zu verbinden"@de ,
+                                       "eine technische Einrichtung, die es ermöglicht, Quellen und Ziele von Medienressourcen über uni- oder bidirektionale Kanäle zu verbinden"@de ,
                                        "une installation qui permet de connecter des sources et des cibles de contenu par des canaux uni- ou bidirectionnels"@fr ;
                        skos:example """- die Eutelsat-DVB-S-Übertragungsplattform
 - die youtube-Video-on-Demand-Plattform
 - alle Server, die über Internetprotokolle zugänglich sind und in HTML oder ähnlich kodierte Inhalte anbieten/aufnehmen
-- Fortnite, Dezentraland oder Roblox als Metaversen"""@de ,
+- Fortnite, Decentraland oder Roblox als Metaversen"""@de ,
                                     """- la plate-forme de diffusion DVB-S d'Eutelsat
 - la plateforme de vidéo à la demande youtube
 - tous les serveurs accessibles via les protocoles internet et offrant/prenant du contenu codé en HTML ou similaire
@@ -13455,11 +13455,11 @@ ec:PublicationService rdf:type owl:Class ;
                                           "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ,
                                           "Un service de publication est un canal ou une plate-forme de publication qui diffuse le contenu à une audience donnée."@fr ;
                       rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
-                      rdfs:label "Publication service"@en ,
-                                 "Service"@de ,
+                      rdfs:label "Medienservice"@de ,
+                                 "Publication service"@en ,
                                  "Service"@fr ;
                       skos:definition "a service by which a publishing organisation or person publishes its content and offers access to consumers"@en ,
-                                      "ein Dienst, über den eine Verlagsorganisation oder eine Person ihre Inhalte veröffentlicht und den Verbrauchern Zugang dazu bietet"@de ,
+                                      "ein Dienst, über den eine Verlagsorganisation oder eine Person ihre Medienressourcen veröffentlicht und den Nutzern Zugang dazu bietet"@de ,
                                       "un service par lequel une organisation ou une personne publie son contenu et en offre l'accès aux consommateurs"@fr ;
                       skos:example """- der lineare Videodienst mit dem Namen \"BBC One\"
 - der Video-on-Demand-Dienst von Netflix"""@de ,
@@ -13698,7 +13698,7 @@ ec:Resonance rdf:type owl:Class ;
              rdfs:label "Resonance"@en ,
                         "Resonanz"@de ,
                         "Résonance"@fr ;
-             skos:definition "die Aggregation von ResonanceEvents zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
+             skos:definition "die Aggregation von Resonanzereignissen zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
                              "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
                              "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
              skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
@@ -13754,7 +13754,7 @@ L'agrégation de ces données est un ensemble de résultats de résonance."""@fr
                              "Resonanzereignis"@de ,
                              "Événement de résonance"@fr ;
                   skos:definition "a countable or noticeable consumption-related action by a Consumer during or after a ConsumptionEvent"@en ,
-                                  "eine zählbare oder spürbare verbrauchsbezogene Handlung eines Verbrauchers während oder nach einem Verbrauchsereignis"@de ,
+                                  "eine zählbare oder spürbare nuztungsbezogene Handlung eines Nutzers während oder nach einem Nutzungsereignis"@de ,
                                   "une action liée à la consommation, dénombrable ou perceptible, effectuée par un consommateur pendant ou après un événement de consommation."@fr ;
                   skos:example """- Ausschalten des Fernsehgeräts
 - Umschalten auf einen anderen Radiosender
