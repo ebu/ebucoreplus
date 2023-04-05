@@ -9020,7 +9020,7 @@ ec:Campaign rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasInputResonance ;
-                              owl:allValuesFrom ec:Resonance
+                              owl:allValuesFrom ec:ResonanceCount
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasPublicationPlan ;
@@ -13142,48 +13142,48 @@ ec:PublicationHistory rdf:type owl:Class ;
                                  "Veröffentlichungshistorie"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLogg
-ec:PublicationLogg rdf:type owl:Class ;
-                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:resourceOffset ;
-                                     owl:someValuesFrom ec:TimelinePoint
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:loggsPublicationEvent ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:PublicationEvent
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:startDateTime ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:endDateTime ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectType ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:description ;
-                                     owl:allValuesFrom rdfs:Literal
-                                   ] ;
-                   dc:description "For colecting data from the \"As run logg\""@en ;
-                   rdfs:label "Journal de bord de la publication"@fr ,
-                              "Playout-Protokoll"@de ,
-                              "Publication log"@en ;
-                   skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
-                                   "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
-                                   "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
-                   skos:example """- das \"as run log\" eines linearen TV-Wiedergabesystems für einen ganzen Tag
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLog
+ec:PublicationLog rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:resourceOffset ;
+                                    owl:someValuesFrom ec:TimelinePoint
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loggsPublicationEvent ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:PublicationEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:startDateTime ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:endDateTime ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:objectType ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass skos:Concept
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ;
+                  dc:description "For colecting data from the \"As run logg\""@en ;
+                  rdfs:label "Journal de bord de la publication"@fr ,
+                             "Playout-Protokoll"@de ,
+                             "Publication log"@en ;
+                  skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
+                                  "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
+                                  "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
+                  skos:example """- das \"as run log\" eines linearen TV-Wiedergabesystems für einen ganzen Tag
 - das \"As-Run-Log\" eines linearen Radio-Playout-Systems für den Vormittag"""@de ,
-                                """- le \"journal de bord\" d'un système de diffusion TV linéaire pour une journée entière
+                               """- le \"journal de bord\" d'un système de diffusion TV linéaire pour une journée entière
 - le \"journal de bord\" d'un système de diffusion radio linéaire pour la matinée"""@fr ,
-                                """- the \"as run log\" of a linear TV playout system for a full day
+                               """- the \"as run log\" of a linear TV playout system for a full day
 - the \"as run log\" of a linear radio playout system for the morning"""@en .
 
 
@@ -13667,56 +13667,56 @@ ec:Reminder rdf:type owl:Class ;
                          "- une répétition de 4 secondes du logo et du jingle d'une compagnie d'assurance, quelques minutes après une publicité de 15 secondes"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Resonance
-ec:Resonance rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:compilesResonanceEvents ;
-                               owl:allValuesFrom ec:ResonanceEvent
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:hasIdentifier ;
-                               owl:allValuesFrom ec:Identifier
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:hasLocator ;
-                               owl:allValuesFrom ec:Locator
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isMeasuredBy ;
-                               owl:allValuesFrom ec:Agent
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:objectType ;
-                               owl:allValuesFrom skos:Concept
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:description ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:name ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ;
-             dcterms:description "Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern. Repräsentiert alle zählbaren oder erfassbaren Nutzungsaktivitäten durch Nutzer während des Nutzungsereignisses, aber zu nicht-individualisierbaren Ausdrücken zusammengefasst, z.B. click-Zahlen, Anzahl von Likes, Prozentsatz von Stimmen, Anzahl der Downloads, ... Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnenstrategie und des verknüpften Publikationsplans."@de ,
-                                 "La raisonance est une agrégation des données relatives à la consommation de contenu par un groupe de consommateurs. Représente toutes les actions de consommation dénombrables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent agrégées pour former une expression non individuelle, par exemple taux de clics, nombre d'appréciations, pourcentage de votes, nombre de téléchargements, likes, pourcentage de votes, nombre de téléchargements. L'analyse des données de résonance permet plus particulièrement d'affiner une stratégie de Campagne et son plan de publication, PublicationPlan."@fr ,
-                                 "The aggregation of data about the conumption of content by a group of Consumers. Represents all countable or noticeable consumption actions by consumers during a ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of likes, percentage of votes, number of downloads... The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."@en ;
-             rdfs:label "Resonance"@en ,
-                        "Resonanz"@de ,
-                        "Résonance"@fr ;
-             skos:definition "die Aggregation von Resonanzereignissen zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
-                             "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
-                             "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
-             skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ResonanceCount
+ec:ResonanceCount rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:compilesResonanceEvents ;
+                                    owl:allValuesFrom ec:ResonanceEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasIdentifier ;
+                                    owl:allValuesFrom ec:Identifier
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasLocator ;
+                                    owl:allValuesFrom ec:Locator
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isMeasuredBy ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:objectType ;
+                                    owl:allValuesFrom skos:Concept
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:name ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ;
+                  dcterms:description "Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern. Repräsentiert alle zählbaren oder erfassbaren Nutzungsaktivitäten durch Nutzer während des Nutzungsereignisses, aber zu nicht-individualisierbaren Ausdrücken zusammengefasst, z.B. click-Zahlen, Anzahl von Likes, Prozentsatz von Stimmen, Anzahl der Downloads, ... Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnenstrategie und des verknüpften Publikationsplans."@de ,
+                                      "La raisonance est une agrégation des données relatives à la consommation de contenu par un groupe de consommateurs. Représente toutes les actions de consommation dénombrables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent agrégées pour former une expression non individuelle, par exemple taux de clics, nombre d'appréciations, pourcentage de votes, nombre de téléchargements, likes, pourcentage de votes, nombre de téléchargements. L'analyse des données de résonance permet plus particulièrement d'affiner une stratégie de Campagne et son plan de publication, PublicationPlan."@fr ,
+                                      "The aggregation of data about the conumption of content by a group of Consumers. Represents all countable or noticeable consumption actions by consumers during a ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of likes, percentage of votes, number of downloads... The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."@en ;
+                  rdfs:label "Resonance"@en ,
+                             "Resonanz"@de ,
+                             "Résonance"@fr ;
+                  skos:definition "die Aggregation von Resonanzereignissen zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
+                                  "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
+                                  "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
+                  skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
 - Wöchentliche Seitenaufrufe einer Nachrichten-Website
 - Anzahl der täglichen Unique User auf einer Nachrichten-Website
 - Anzahl der Likes für einen Instagram-Post
 - Anzahl der Aufrufe eines Films auf einem VOD-Portal"""@de ,
-                          """- market share of viewers on a sports live broadcast
+                               """- market share of viewers on a sports live broadcast
 - weekly page impressions of a news website
 - number of daily unique users on a news website
 - number of likes on an instagram post
 - number of views of a movie from a VOD portal"""@en ,
-                          """- part de marché des téléspectateurs sur une émission sportive en direct
+                               """- part de marché des téléspectateurs sur une émission sportive en direct
 - nombre de pages vues par semaine sur un site d'information
 - nombre d'utilisateurs uniques quotidiens sur un site d'information
 - nombre de likes sur un message instagram
