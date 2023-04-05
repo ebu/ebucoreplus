@@ -11060,7 +11060,16 @@ ec:Identifier rdf:type owl:Class ;
                                   "Zur Unterstützung der Verwendung von strukturierten Identifikatoren."@de ;
               rdfs:label "Identifiant"@fr ,
                          "Identifier"@en ,
-                         "Kennung"@de .
+                         "Identifikator"@de ;
+              skos:definition "a unique string associated to an entity"@en ,
+                              "eine eindeutige Zeichenkette, die einer Entität zugeordnet ist"@de ,
+                              "une chaîne de caractères unique associée à une entité"@fr ;
+              skos:example """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" est une identifiant d'ISAN
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" est une identifiant de EIDR pour le film \"Blade Runner\""""@fr ,
+                           """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" is an ISAN Identifier
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" is an EIDR Identifier for the movie \"Blade Runner\""""@en ,
+                           """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" ist ein ISAN Identifikator
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" ist ein EIDR Identifikator des Films \"Blade Runner\""""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#IdentifierType
@@ -12530,8 +12539,8 @@ ec:ProductionDevice rdf:type owl:Class ;
                                "Production device"@en ,
                                "Produktionswerkzeug"@de ;
                     skos:definition "a tool to facilitate activities in a ProductionJob"@en ,
-                                    "ein Werkzeug zur Erleichterung der Aktivitäten in einem ProductionJob"@de ,
-                                    "un outil pour faciliter les activités dans une ProductionJob"@fr ;
+                                    "ein Werkzeug zur Erleichterung der Aktivitäten im Rahmen einer Produktionsaufgabe"@de ,
+                                    "un outil pour faciliter les activités dans une tâche de production"@fr ;
                     skos:example """- a camera
 - a microphone
 - a video or sound mixer
@@ -12633,8 +12642,8 @@ ec:ProductionJob rdf:type owl:Class ;
                             "Produktionsaufgabe"@de ,
                             "Tâche de production"@fr ;
                  skos:definition "a task or set of tasks to create, modify, manipulate, store, etc a MediaResource"@en ,
-                                 "eine Aufgabe oder eine Reihe von Aufgaben zum Erstellen, Ändern, Manipulieren, Speichern usw. einer MediaResource"@de ,
-                                 "une tâche ou un ensemble de tâches pour créer, modifier, manipuler, stocker, etc. une MediaResource"@fr ;
+                                 "eine Aufgabe oder eine Reihe von Aufgaben zum Erstellen, Ändern, Manipulieren, Speichern usw. einer Medienressource"@de ,
+                                 "une tâche ou un ensemble de tâches pour créer, modifier, manipuler, stocker, etc. une ressource médiatique"@fr ;
                  skos:example """- Produktion einer Live-Show für die Ausstrahlung
 - das Filmen und Bearbeiten eines Nachrichtenclips
 - eine ausgelagerte Produktion eines kompletten Films"""@de ,
@@ -12669,7 +12678,7 @@ ec:ProductionOrder rdf:type owl:Class ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ;
                    dcterms:description "Die Beauftragung zur Erstellung, zum Kauf oder zur Wiederverwendung einer Medienressource. Die Bedingungen eines Produktionsauftrages sind in einem Vertrag definiert."@de ,
-                                       "L'acte d'ordonner la création/production, l'achat ou la réutilisation de MediaResources. Les termes d'un ProductionOrder sont définis par Contrat."@fr ,
+                                       "L'acte d'ordonner la création/production, l'achat ou la réutilisation des ressources mediatiques. Les termes d'un commande de production sont définis par Contrat."@fr ,
                                        "The act of ordering the creation/production, purchase or reuse of MediaResources. The terms of a ProductionOrder are defined by Contract."@en ;
                    rdfs:label "Commande de production"@fr ,
                               "Production order"@en ,
@@ -12824,6 +12833,18 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:onProperty ec:name ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ;
+              rdfs:label "Herkunft"@de ,
+                         "Origine"@fr ,
+                         "Provenance"@en ;
+              skos:definition "a set of properties describing the origin and lifecycle of a data object"@en ,
+                              "une Reihe von Eigenschaften, welche die Herkunft und den Lebenszyklus eines Datenobjektes beschreiben"@de ,
+                              "une chaîne de caractères unique associée à une entité"@fr ;
+              skos:example """- das Erzeugungsdatum eines Datenobjektes
+- das System, aus welchem das Datenobjekt ursprünglich stammt"""@de ,
+                           """- la date de création d'un objet de données
+- le système à partir duquel l'objet de données a été récupéré à l'origine"""@fr ,
+                           """- the creationDate of a data object
+- the system from which the data object was originally retrieved"""@en ;
               skos:note "Provenance"@en .
 
 
@@ -12909,11 +12930,11 @@ ec:PublicationChannel rdf:type owl:Class ;
                       dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ,
                                           "Ein Kanal, über den Inhalte veröffentlicht werden. Er kann eine Vielzahl von Formen annehmen, die über Rundfunk und Internet-Streaming hinausgehen, z. B. den physischen Vertrieb von CDs/DVDs usw."@de ,
                                           "Un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD /DVD, etc."@fr ;
-                      rdfs:label "Canal de publication"@de ,
-                                 "Canal de publication"@fr ,
-                                 "Publication channel"@en ;
+                      rdfs:label "Canal de publication"@fr ,
+                                 "Publication channel"@en ,
+                                 "Publikationskanal"@de ;
                       skos:definition "a connection to exchange content between provider and consumer operated on a PublicationPlatform"@en ,
-                                      "eine Verbindung zum Austausch von Inhalten zwischen Anbieter und Verbraucher, die über eine PublicationPlatform betrieben wird"@de ,
+                                      "eine Verbindung zum Austausch von Inhalten zwischen Anbieter und Verbraucher, die über eine Publikationsplattform betrieben wird"@de ,
                                       "une connexion pour échanger du contenu entre le fournisseur et le consommateur, opérée sur une plateforme de publication."@fr ;
                       skos:example """- der DVB-S-Kanal auf 10714 MHz H auf dem Satelliten Astra 2E für den linearen Videodienst \"BBC One HD\".
 - der DVB-T-Kanal E23 in London/Chrystal Palace für den linearen Videodienst \"BBC One London\".
@@ -13080,7 +13101,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:label "Publication Event"@en ,
                                "Publikationsereignis"@de ,
                                "Événement de publication"@fr ;
-                    skos:definition "der Fall der Veröffentlichung einer Essenz durch einen Dienst an einen Kanal unter Rechtebedingungen"@de ,
+                    skos:definition "das Ereignis der Veröffentlichung einer Essenz durch einen Dienst an einen Kanal unter Rechtebedingungen"@de ,
                                     "l'événement de publication d'une Essence par un service à un canal sous conditions de droits"@fr ,
                                     "the event of publishing an Essence by a service to a channel under rights conditions"@en ;
                     skos:example """- die Übertragung des Endspiels der Fußballweltmeisterschaft 2022 in einem Live-Videodienst über Satellit durch die BBC in Großbritannien
@@ -13347,8 +13368,8 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                            "Eine Plattform wie ein Netzwerk oder eine Betreiberplattform."@de ,
                                            "Une plateforme comme celle d'un réseau ou d'un opérateur."@fr ;
                        rdfs:label "Plate-forme de publication"@fr ,
-                                  "Plattform für Veröffentlichungen"@de ,
-                                  "Publication platform"@en ;
+                                  "Publication platform"@en ,
+                                  "Publikationsplattform"@de ;
                        skos:definition "a facility that allows to connect sources and targets of content through uni- or bidirectional channels"@en ,
                                        "eine Einrichtung, die es ermöglicht, Quellen und Ziele von Inhalten über uni- oder bidirektionale Kanäle zu verbinden"@de ,
                                        "une installation qui permet de connecter des sources et des cibles de contenu par des canaux uni- ou bidirectionnels"@fr ;
