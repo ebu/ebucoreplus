@@ -8499,7 +8499,8 @@ ec:AudienceLevel rdf:type owl:Class ;
                                      "The target audience (target region, target audience category but also parental guidance recommendation) for which the media resource is intended. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
                  rdfs:label "Public cible"@fr ,
                             "Target audience"@en ,
-                            "Zielpublikum"@de .
+                            "Zielpublikum"@de ;
+                 skos:editorialNote "2023-04-05: the existence of this class needs to be discussed" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceRating
@@ -8513,8 +8514,8 @@ ec:AudienceRating rdf:type owl:Class ;
                                       "Le public par lequel la ressource peut être vu selon des classements tels que MPAA (http://en.wikipedia.org/wiki/Motion_picture_rating_system) ou d'autres normes organisationnelles / nationales / locales."@fr ,
                                       "The audience by which the Resource can be seen according to ratings like MPAA (http://en.wikipedia.org/wiki/Motion_picture_rating_system) or other organisational / national / local standards."@en ;
                   rdfs:label "Audience rating"@en ,
-                             "Bewertung des Publikums"@de ,
-                             "Classification du public"@fr .
+                             "Classification du public"@fr ,
+                             "Eignung für Publikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceScoreRecordingTechnique
@@ -8655,7 +8656,9 @@ ec:AudioObject rdf:type owl:Class ;
                rdfs:label "Audio object"@en ,
                           "Audio-Objekt"@de ,
                           "Objet audio"@fr ;
-               skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ;
+               skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ,
+                               "eine Medienressource in Form eines Objektes wie es im Audio Definition Model (ADM) beschrieben ist"@de ,
+                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr ;
                skos:editorialNote "2023-02-14: one or more examples for AudioObject are needed"@en .
 
 
@@ -10787,8 +10790,8 @@ ec:Essence rdf:type owl:Class ;
                       "Essence"@fr ,
                       "Essenz"@de ;
            skos:definition "a MediaRessource in the form of a simple file or a complex file package for play-out or publishing"@en ,
-                           "eine MediaRessource in Form einer einfachen Datei oder eines komplexen Dateipakets zur Wiedergabe oder Veröffentlichung"@de ,
-                           "une MediaRessource sous la forme d'un fichier simple ou d'un paquet de fichiers complexes pour la lecture ou la publication."@fr ;
+                           "eine Medienressource in Form einer einfachen Datei oder eines komplexen Dateipakets zur Ausspielung oder Veröffentlichung"@de ,
+                           "une ressource média sous la forme d'un fichier simple ou d'un paquet de fichiers complexes pour la diffusion ou la publication."@fr ;
            skos:example """- a mxf file
 - a file package delivered by a camera of a specific brand"""@en ,
                         """- eine mxf-Datei
@@ -11185,9 +11188,9 @@ ec:KeyPersonalEvent rdf:type owl:Class ;
 ec:Keyframe rdf:type owl:Class ;
             rdfs:subClassOf ec:Picture ;
             dcterms:description "A key frame is a frame extarcted from video, e.g. representative of a part of a MediaResource."@en ,
-                                "Ein Schlüsselbild ist ein aus einem Video extrahiertes Bild, z.B. repräsentativ für einen Teil einer MediaResource."@de ,
+                                "Ein Keyframe ist ein aus einem Video extrahiertes Bild, z.B. repräsentativ für einen Teil einer Medienressource."@de ,
                                 "Une image clé est une image extraite d'une vidéo, par exemple, représentative d'une partie d'une MediaResource."@fr ;
-            rdfs:label "Schlüsselbild"@de ,
+            rdfs:label "Keyframe"@de ,
                        "cadre de la clé"@fr ,
                        "key frame"@en .
 
@@ -11491,8 +11494,10 @@ ec:MediaFragment rdf:type owl:Class ;
                                      "Un MediaFragment est un segment temporel ou spatial d'une ressource identifiée par un URI MediaGragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
                  rdfs:label "Fragment de média"@fr ,
                             "Media Fragment"@en ,
-                            "Medien Fragment"@de ;
-                 skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as identified by a MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ;
+                            "Medienfragment"@de ;
+                 skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as defined by the MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ,
+                                 "eine Medienressource, die ein zeitliches oder räumliches Segment einer Ressource ist, das wie in MediaFragment-URI  (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/) beschrieben ist"@de ,
+                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
                  skos:editorialNote "2023-02-14: examples need to be added"@en .
 
 
@@ -11956,7 +11961,7 @@ ec:MediaResource rdf:type owl:Class ;
                             "Medienressource"@de ,
                             "Ressource médiatique"@fr ;
                  skos:definition "a Resource that comprises encoded audio, video, graphics, data or text"@en ,
-                                 "eine Ressource, die kodierte Audio-, Video-, Grafik-, Daten- oder Textinhalte enthält"@de ,
+                                 "eine Ressource, die aus kodierten Audio-, Video-, Grafik-, Daten- oder Textinhalten besteht"@de ,
                                  "une ressource qui comprend du son, de la vidéo, des graphiques, des données ou du texte codés."@fr ;
                  skos:example """- an audio CD
 - an audio track on a CD
@@ -13857,7 +13862,6 @@ ec:Resource rdf:type owl:Class ;
             dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Ressource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Ressource). Die Ressource hat einen Locator, der angibt, wo auf die Ressource zugegriffen werden kann."@de ,
                                 "Une ressource utilisée ou à laquelle il est fait référence dans le workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de Ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée."@fr ;
-            rdfs:comment "Une ressource est utilisée ou référencé dans un workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de la ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée"@fr ;
             rdfs:label "Resource"@en ,
                        "Ressource"@de ,
                        "Ressource"@fr ;
@@ -14068,11 +14072,11 @@ ec:Role rdf:type owl:Class ;
         dcterms:description "Definiert eine Rolle, die ein Akteur übernimmt. Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."@de ,
                             "Permet de définir le rôle, Role, joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
                             "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
-        rdfs:label "Role"@en ,
-                   "Rolle"@de ,
+        rdfs:label "Beteiligung"@de ,
+                   "Role"@en ,
                    "Rôle"@fr ;
         skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ,
-                        "die Beteiligung eines Beauftragten an der Erstellung oder Veröffentlichung einer MedienRessource"@de ,
+                        "die Beteiligung eines Akteurs an der Erstellung oder Veröffentlichung einer Medienressource"@de ,
                         "l'engagement d'un Agent dans la création ou la publication d'une RessourceMédia"@fr ;
         skos:example """- Verfassen eines Drehbuchs für eine Filmproduktion
 - Regie bei einem Film
@@ -14442,7 +14446,7 @@ ec:Stream rdf:type owl:Class ;
                           "un Composant sous forme d'un flux continu de bits"@fr ;
           skos:example """- an audio stream from an audio on demand service
 - a video stream from a video on demand service"""@en ,
-                       """- einen Audiostrom von einem Audio-on-Demand-Dienst
+                       """- einen Audiostream von einem Audio-on-Demand-Dienst
 - einen Videostream von einem Video-on-Demand-Dienst"""@de ,
                        """- un flux audio provenant d'un service audio à la demande
 - un flux vidéo provenant d'un service de vidéo à la demande"""@fr .
@@ -14795,7 +14799,7 @@ ec:TimelinePoint rdf:type owl:Class ;
                                  ] ;
                  dc:description "A precise time point  of a media resource"@en ;
                  rdfs:label "Point de repère chronologique"@fr ,
-                            "Punkt der Zeitleiste"@de ,
+                            "Punkt auf der Zeitachse"@de ,
                             "Timeline point"@en .
 
 
@@ -14831,9 +14835,9 @@ ec:TimelineTrack rdf:type owl:Class ;
                                      "Definiert den zeitlichen Ablauf von Medieninhalten."@fr ,
                                      "To define a timed sequence of EditorialObjects."@en ;
                  rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
-                 rdfs:label "Ablaufplan"@de ,
-                            "Piste chronologique"@fr ,
-                            "Timeline track"@en .
+                 rdfs:label "Piste chronologique"@fr ,
+                            "Timeline track"@en ,
+                            "Zeitachse"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TimelineTrack_Type
@@ -14882,7 +14886,7 @@ ec:Track rdf:type owl:Class ;
                     "Spur"@de ,
                     "Track"@en ;
          skos:definition "a MediaResource in the form of time-based elements for audio, video or data (\"track\") comprised in an \"aggregated\" MediaResource."@en ,
-                         "eine MediaResource in Form von zeitbasierten Elementen für Audio, Video oder Daten (\"Track\"), die in einer \"aggregierten\" MediaResource enthalten sind."@de ,
+                         "eine Medienressource in Form von zeitbasierten Elementen für Audio, Video oder Daten (\"Track\"), die in einer \"aggregierten\" Medienressource enthalten sind."@de ,
                          "une MediaResource sous forme d'éléments temporels pour l'audio, la vidéo ou les données (\"piste\") comprise dans une MediaResource \"agrégée\"."@fr ;
          skos:example "- das Audio in einer MPEG4-Videodatei"@de ,
                       "- l'audio dans un fichier vidéo MPEG4"@fr ,
