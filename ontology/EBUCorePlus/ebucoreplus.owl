@@ -7687,7 +7687,7 @@ ec:Agent rdf:type owl:Class ;
                     "Akteur"@de ,
                     "Un acteur"@fr ;
          skos:definition "an entity performing an activity in the media business"@en ,
-                         "eine Einrichtung, die eine Tätigkeit in der Medienbranche ausübt"@de ,
+                         "eine Entität, die eine Tätigkeit in der Medienbranche ausübt"@de ,
                          "une entité exerçant une activité dans le secteur des médias"@fr ;
          skos:example """- a film director
 - a camera woman
@@ -7705,8 +7705,8 @@ ec:Agent rdf:type owl:Class ;
 - eine Autorin
 - ein veröffentlichendes Medienunternehmen
 - ein Unternehmen, das Inhalte bereitstellt
-- ein Vertriebsnetzunternehmen
-- ein Unternehmen, das Konsumgeräte herstellt"""@de ,
+- ein Unternehmen, das ein Vertriebsnetz bereitstellt
+- ein Unternehmen, das Endgeräte herstellt"""@de ,
                       """- un réalisateur de films
 - une caméraman
 - un ingénieur du son
@@ -8113,7 +8113,7 @@ ec:Artefact rdf:type owl:Class ;
                        "Artefact"@fr ,
                        "Artefakt"@de ;
             skos:definition "a Thing used in a ProductionJob, often visible and deliberately chosen for its value to the meaning of the content"@en ,
-                            "ein Thing, das in einem ProductionJob verwendet wird, oft sichtbar und absichtlich wegen seines Wertes für die Bedeutung des Inhalts ausgewählt"@de ,
+                            "ein Ding, das in einer Produktion verwendet wird, oft sichtbar und absichtlich wegen seines Wertes für die Bedeutung des Inhalts ausgewählt"@de ,
                             "une chose utilisée dans un travail de production, souvent visible et délibérément choisie pour sa valeur pour le sens du contenu."@fr ;
             skos:example """- die Kostüme und Requisiten in einem Film
 - die nicht-dynamische Kulisse, Stühle, Tische in einer Talkshow"""@de ,
@@ -8137,6 +8137,9 @@ ec:Artefact_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Article
 ec:Article rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialWork ;
+           rdfs:label "Article"@en ,
+                      "Article"@fr ,
+                      "Artikel"@de ;
            skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on web-sites, blogs and other channels similar to the more traditional paper-based publications"@en ,
                            "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Websites, Blogs und anderen Kanälen erstellt wird, die den traditionelleren papierbasierten Publikationen ähneln"@de ,
                            "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des sites web, des blogs et d'autres canaux similaires aux publications papier plus traditionnelles."@fr ;
@@ -8491,12 +8494,13 @@ ec:AudienceLevel rdf:type owl:Class ;
                                    owl:onProperty ec:targetAudienceSystem ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ;
-                 dcterms:description "Das Zielpublikum (Zielregion, Zielgruppen Kategorie der Zielgruppe, aber auch Empfehlung der Eltern), für die die Medienressource Ressource bestimmt ist."@de ,
+                 dcterms:description "Das Zielpublikum (Zielregion, Zielgruppen Kategorie der Zielgruppe, aber auch Empfehlung der Eltern), für die die Medienressource bestimmt ist."@de ,
                                      "Le public cible (région cible, catégorie de catégorie de public cible mais aussi recommandation d'orientation parentale) à laquelle la ressource médiatique est destinée."@fr ,
                                      "The target audience (target region, target audience category but also parental guidance recommendation) for which the media resource is intended. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
                  rdfs:label "Public cible"@fr ,
                             "Target audience"@en ,
-                            "Zielpublikum"@de .
+                            "Zielpublikum"@de ;
+                 skos:editorialNote "2023-04-05: the existence of this class needs to be discussed" .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceRating
@@ -8510,8 +8514,8 @@ ec:AudienceRating rdf:type owl:Class ;
                                       "Le public par lequel la ressource peut être vu selon des classements tels que MPAA (http://en.wikipedia.org/wiki/Motion_picture_rating_system) ou d'autres normes organisationnelles / nationales / locales."@fr ,
                                       "The audience by which the Resource can be seen according to ratings like MPAA (http://en.wikipedia.org/wiki/Motion_picture_rating_system) or other organisational / national / local standards."@en ;
                   rdfs:label "Audience rating"@en ,
-                             "Bewertung des Publikums"@de ,
-                             "Classification du public"@fr .
+                             "Classification du public"@fr ,
+                             "Eignung für Publikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceScoreRecordingTechnique
@@ -8553,8 +8557,8 @@ ec:AudioCodec rdf:type owl:Class ;
               dcterms:description "Pour fournir des informations sur un codec audio."@fr ,
                                   "To provide information about an audio codec."@en ,
                                   "Zur Bereitstellung von Informationen über einen Audiocodec."@de ;
-              rdfs:label "Audio Codec"@de ,
-                         "Audio codec"@en ,
+              rdfs:label "Audio codec"@en ,
+                         "Audio-Codec"@de ,
                          "Codec audio"@fr .
 
 
@@ -8594,8 +8598,9 @@ ec:AudioContent rdf:type owl:Class ;
                                     "Ein audioContent definiert eine Komponente eines Programms (z.B. Hintergrundmusik Musik), seine Zuordnung zu einer audioGroup (z.B. ein 2.0 audioPackFormat von audioChannelFormats für die Stereowiedergabe), seine Zuordnung zu einem audioStreamFormat und seine Lautheitsparameter."@de ,
                                     "Un AudioContent définit un composant d'un programme (par exemple, une musique de fond musique), son association avec un audioGroup (par exemple, un 2.0 audioPackFormat de audioChannelFormats pour la reproduction stéréo), son association avec un audioStreamFormat, et son ensemble de paramètres d'intensité sonore."@fr ;
                 rdfs:label "Audio content"@en ,
-                           "Audio-Inhalt"@de ,
-                           "Contenu audio"@fr .
+                           "Audio-inhalt"@de ,
+                           "Contenu audio"@fr ;
+                skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialSegment."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContent_Type
@@ -8651,7 +8656,9 @@ ec:AudioObject rdf:type owl:Class ;
                rdfs:label "Audio object"@en ,
                           "Audio-Objekt"@de ,
                           "Objet audio"@fr ;
-               skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ;
+               skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ,
+                               "eine Medienressource in Form eines Objektes wie es im Audio Definition Model (ADM) beschrieben ist"@de ,
+                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr ;
                skos:editorialNote "2023-02-14: one or more examples for AudioObject are needed"@en .
 
 
@@ -8692,7 +8699,8 @@ ec:AudioProgramme rdf:type owl:Class ;
                                       "Un ensemble d'un ou plusieurs contenus audio qui dérivent du même matériel, c'est-à-dire un audioMultiplex, et la définition de sesContenus audio multiplexés (par ex. avant-plan et commentaire, musique de fond)."@fr ;
                   rdfs:label "Audio Programm"@de ,
                              "Audio programme"@en ,
-                             "Programme audio"@fr .
+                             "Programme audio"@fr ;
+                  skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialWork."@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme_Type
@@ -8956,7 +8964,7 @@ ec:Bonus rdf:type owl:Class ;
                     "Bonus"@en ,
                     "Bonus"@fr ;
          skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ,
-                         "ein EditorialWork, das als erweiternder Inhalt eines Haupt-EditorialWorks gedacht ist."@de ,
+                         "ein Werk, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist."@de ,
                          "un travail de rédaction destiné à enrichir le contenu d'un travail de rédaction principal."@fr ;
          skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en ,
                       "- Contenu additionnel pour un film à consommer séparément en tant que complément."@fr ,
@@ -9012,7 +9020,7 @@ ec:Campaign rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasInputResonance ;
-                              owl:allValuesFrom ec:Resonance
+                              owl:allValuesFrom ec:ResonanceCount
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasPublicationPlan ;
@@ -9034,19 +9042,21 @@ ec:Campaign rdf:type owl:Class ;
                               owl:onProperty ec:title ;
                               owl:allValuesFrom rdfs:Literal
                             ] ;
-            dcterms:description "A Campaign defines a strategy for publishing content (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience according to a PublicationPlan. Campaign strategies can be refined taking into account the analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns, promotional campaigns or else."@en ,
-                                "Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest. Kampagnenstrategien können verfeinert werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."@de ,
-                                "Une campagne définit une stratégie de publication de contenu (objets éditoriaux et ressources/médias/essence) auprès d'un public cible conformément à un plan de publication. Les stratégies de campagne peuvent être affinées en fonction l'analyse de la Résonance de la Consommation des Evenements associée ( par exemple le nombre de like ou de téléchargements, etc ...). Les campagnes s'appliquent à différentes stratégies de diffusion, on peut citer par exemple les campagnes publicitaires ou les campagnes promotionnelles."@fr ;
+            dcterms:description "A Campaign defines a strategy for publishing content (EditorialObjects and related Resources/MediaResources/Essences) to a targeted Audience according to a PublicationPlan. Campaign strategies can be adapted taking into account the analysis of the Resonance of related ConsumptionEvents (e.g. likes, downloads, etc). Campaigns can apply to a variety of broadcasting strategies e.g. advertising campaigns, promotional campaigns or else."@en ,
+                                "Eine Kampagne legt die Strategie zur Publikation eines Produktes (Medieninhalt und damit verbundene Ressourcen/Medienobjekte/Essenzen) für ein Zielpublikum gemäß eines Publikationsplans fest. Kampagnenstrategien können angepasst werden, indem die Resonanz auf Nutzungsereignisse (z.B. likes, downloads, etc.) analysiert wird. Kampagnen können für unterschiedlichste Produkte angewendet werden, z.B. Werbekampagnen, Promotionskampagnen, o.ä."@de ,
+                                "Une campagne définit une stratégie de publication de contenu (objets éditoriaux et ressources/médias/essence) auprès d'un public cible conformément à un plan de publication. Les stratégies de campagne peuvent être adaptées en fonction l'analyse de la Résonance de la Consommation des Evenements associée ( par exemple le nombre de like ou de téléchargements, etc ...). Les campagnes s'appliquent à différentes stratégies de diffusion, on peut citer par exemple les campagnes publicitaires ou les campagnes promotionnelles."@fr ;
             rdfs:label "Campagne"@fr ,
                        "Campaign"@en ,
                        "Kampagne"@de ;
+            skos:definition "a strategy for coordinated publishing effort towards a target audience"@en ,
+                            "eine Strategie zur koordinierten Veröffentlichung von Medieninhalten für ein Zielpublikum"@de ,
+                            "une stratégie de coordination des efforts de publication en direction d'un public cible"@fr ;
             skos:example """- an advertisement effort for a product, by publishing a set of videos at a time and on a channel, when and where the target audience can be effectively reached
 - an announcement of the journalistic coverage of an upcoming government election from many different perspectives and for a variety of target audiences published on several channels of linear TV, linear radio, social media, podcast portals, etc."""@en ,
                          """- eine Werbemaßnahme für ein Produkt, bei der eine Reihe von Videos zu einem Zeitpunkt und auf einem Kanal veröffentlicht wird, zu dem und an dem das Zielpublikum effektiv erreicht werden kann
 - eine Ankündigung der journalistischen Berichterstattung über eine bevorstehende Regierungswahl aus vielen verschiedenen Perspektiven und für eine Vielzahl von Zielgruppen, die auf mehreren Kanälen des linearen Fernsehens, des linearen Radios, der sozialen Medien, der Podcast-Portale usw. veröffentlicht wird"""@de ,
                          """- un effort publicitaire pour un produit, en publiant un ensemble de vidéos à un moment et sur un canal, quand et où le public cible peut être atteint efficacement
-- une annonce de la couverture journalistique d'une élection gouvernementale à venir sous de nombreux angles différents et pour une variété de publics cibles, publiée sur plusieurs canaux de télévision linéaire, de radio linéaire, de médias sociaux, de portails de podcasts, etc."""@fr ,
-                         "a strategy for coordinated publishing effort towards a target audience"@en .
+- une annonce de la couverture journalistique d'une élection gouvernementale à venir sous de nombreux angles différents et pour une variété de publics cibles, publiée sur plusieurs canaux de télévision linéaire, de radio linéaire, de médias sociaux, de portails de podcasts, etc."""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#CampaignPackage
@@ -9128,7 +9138,7 @@ ec:Character rdf:type owl:Class ;
                                  "Z.B. ein fiktiver Kontakt / eine fiktive Person."@de ;
              rdfs:label "Caractère"@fr ,
                         "Character"@en ,
-                        "Charakter"@de .
+                        "Rolle"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#CityCode
@@ -9338,7 +9348,7 @@ ec:ConsumptionCount rdf:type owl:Class ;
                                         "Une agrégation de groupes de Consommateurs comptés"@fr ;
                     rdfs:label "Comptage des consommations"@fr ,
                                "Consumption count"@en ,
-                               "Verbrauch zählen"@de ;
+                               "Nutzungszahl/-anteil"@de ;
                     skos:definition "die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzelnes PublicationEvent"@de ,
                                     "le nombre réel et les circonstances des ConsumptionEvents pour un seul PublicationEvent"@fr ,
                                     "the actual number and circumstances of ConsumptionEvents for a single PublicationEvent"@en ;
@@ -9408,12 +9418,12 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                      dcterms:description "A device used to consume content."@en ,
                                          "Ein Gerät zur Nutzung eines Medienproduktes."@de ,
                                          "Un appareil utilisé pour consommer un contenu médiatique."@fr ;
-                     rdfs:label "Appareil"@fr ,
-                                "Device"@en ,
+                     rdfs:label "Appareil de consommation"@fr ,
+                                "Consumption Device"@en ,
                                 "Endgerät"@de ;
-                     skos:definition "a Thing to facilitate consumption of a media service"@en ,
-                                     "eine Sache, die den Konsum eines Mediendienstes erleichtern soll"@de ,
-                                     "une Thing pour faciliter la consommation d'un service média"@fr ;
+                     skos:definition "a device for using media services"@en ,
+                                     "ein Gerät zur Nutzung von Mediendiensten"@de ,
+                                     "un appareil permettant d'utiliser les services de médias"@fr ;
                      skos:example """- a smartphone
 - a smart TV
 - a fm radio set
@@ -9503,10 +9513,10 @@ ec:ConsumptionDeviceProfile rdf:type owl:Class ;
                                                 "The profile of a ConsumptionDevice."@en ;
                             rdfs:label "Consumption device profile"@en ,
                                        "Endgeräteprofil"@de ,
-                                       "Profile d'un appareil"@fr ;
+                                       "Profile d'un appareil de consommation"@fr ;
                             skos:definition "a number of properties of an individual ConsumptionDevice that allows classification of the device"@en ,
-                                            "eine Reihe von Eigenschaften eines einzelnen ConsumptionDevice, die eine Klassifizierung des Geräts ermöglichen"@de ,
-                                            "un certain nombre de propriétés d'un ConsumptionDevice individuel qui permettent la classification du dispositif"@fr ;
+                                            "eine Reihe von Eigenschaften eines einzelnen Endgerätes, die eine Klassifizierung des Geräts ermöglichen"@de ,
+                                            "un certain nombre de propriétés d'un appareil de consommation individuel qui permettent la classification du dispositif"@fr ;
                             skos:example """- an Apple smartphone with iOS version > 16
 - a smart TV with screen 50' to 60' and HDR support
 - a VR headset"""@en ,
@@ -9586,7 +9596,7 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                     rdfs:label "Consumption event"@en ,
                                "Nutzungsereignis"@de ,
                                "Événement de consommation"@fr ;
-                    skos:definition "den Fall, dass ein Verbraucher einen Mediendienst konsumiert"@de ,
+                    skos:definition "das Ereignis, dass ein Nutzer einen Mediendienst konsumiert"@de ,
                                     "le cas où un consommateur consomme un service de médias"@fr ,
                                     "the event of a Consumer consuming a media service"@en ;
                     skos:example """- a person watching a news show on linear tv
@@ -9638,7 +9648,7 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                  "Licence de consommation"@fr ,
                                  "Nutzungslizenz"@de ;
                       skos:definition "a permit to consume a media service"@en ,
-                                      "eine Genehmigung zum Konsumieren eines Mediendienstes"@de ,
+                                      "eine Genehmigung zur Nutzung eines Mediendienstes"@de ,
                                       "un permis de consommer un service de médias"@fr ;
                       skos:example """- a subscription to unlimited streaming from spotify, encompassing 3 devices
 - a 3 month test subscription to a VoD service
@@ -9669,8 +9679,8 @@ ec:ContainerCodec rdf:type owl:Class ;
                                       "To identify an container codec, e.g. MXF"@en ,
                                       "Zur Identifizierung eines Container-Codecs, z.B. MXF"@de ;
                   rdfs:label "Codec de conteneur"@fr ,
-                             "Container Codec"@de ,
-                             "Container codec"@en .
+                             "Container codec"@en ,
+                             "Container-Codec"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ContainerEncodingFormat
@@ -9780,8 +9790,8 @@ ec:Contract rdf:type owl:Class ;
                        "Contrat"@fr ,
                        "Vertrag"@de ;
             skos:definition "an agreement between parties or a law concerning the rights and duties in the creation or publication of MediaResources"@en ,
-                            "eine Vereinbarung zwischen den Parteien oder ein Gesetz über die Rechte und Pflichten bei der Erstellung oder Veröffentlichung von MediaResources"@de ,
-                            "un accord entre les parties ou une loi concernant les droits et devoirs dans la création ou la publication de MediaResources"@fr ;
+                            "eine Vereinbarung zwischen Parteien oder ein Gesetz über die Rechte und Pflichten bei der Erstellung oder Veröffentlichung von Medienressourcen"@de ,
+                            "un accord entre parties ou une loi concernant les droits et devoirs dans la création ou la publication de une ressource médiatique"@fr ;
             skos:example """- a contract between a PSM and a production company for the delivery of a series
 - a law about copyrights of news articles"""@en ,
                          """- ein Vertrag zwischen einem PSM und einer Produktionsfirma über die Lieferung einer Serie
@@ -9876,7 +9886,7 @@ ec:Costume rdf:type owl:Class ;
                       "Costume"@fr ,
                       "Kostüm"@de ;
            skos:definition "a dress of an actress/actor used in a production"@en ,
-                           "ein Kleid einer Schauspielerin/eines Schauspielers, das in einer Produktion verwendet wird"@de ,
+                           "die Kleidung einer Schauspielerin/eines Schauspielers in einer Produktion"@de ,
                            "une robe d'une actrice/acteur utilisée dans une production"@fr ;
            skos:example "- die Uniformen der Star Trek-Besatzung"@de ,
                         "- les uniformes portés par l'équipage de Star Trek"@fr ,
@@ -9932,9 +9942,9 @@ ec:CrewMember rdf:type owl:Class ;
               rdfs:subClassOf ec:Person ;
               dcterms:description "Permet d'identifier un membre d'une équipe."@fr ,
                                   "To identify a member of the crew."@en ,
-                                  "Zur Identifikation eines Besatzungsmitglieds."@de ;
-              rdfs:label "Besatzung"@de ,
-                         "Crew"@en ,
+                                  "Zur Identifikation eines Stabsmitglieds"@de ;
+              rdfs:label "Crew"@en ,
+                         "Stab"@de ,
                          "Équipe"@fr .
 
 
@@ -10123,7 +10133,7 @@ ec:EditorialGroup rdf:type owl:Class ;
                                       "Zur Definition einer Sammlung/Gruppe von Medien Ressourcen zu definieren, zum Beispiel eine Serie, die aus Episoden besteht."@de ;
                   rdfs:label "Editorial group"@en ,
                              "Groupe de rédaction"@fr ,
-                             "Redaktionelle Gruppe"@de .
+                             "Gruppe von Medieninhalten"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObject
@@ -10644,7 +10654,17 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:onProperty ec:segmentNumber ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
-                                    ] .
+                                    ] ;
+                    skos:definition "Ein Medieninhalt, der einen Ausschnitt eines anderen Medieninhaltes darstellt"@de ,
+                                    "an EditorialObject representing a fraction of an EditorialObject"@en ;
+                    skos:example """- a scene in a movie
+- a section of an interview
+- an intro of a song
+- a paragraph of a text"""@en ,
+                                 """- eine Filmszene
+- eine Passage eines Interviews
+- das Intro eines Liedes
+- ein Textabschnitt"""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialWork
@@ -10662,9 +10682,12 @@ ec:EditorialWork rdf:type owl:Class ;
                                    owl:onProperty ec:promotes ;
                                    owl:allValuesFrom ec:EditorialWork
                                  ] ;
+                 rdfs:label "Editorial work"@en ,
+                            "Werk"@de ,
+                            "Œuvre"@fr ;
                  skos:definition "an EditorialObject describing a \"work of the mind\", a piece."@en ,
-                                 "ein EditorialObjekt, das ein \"Werk des Geistes\", ein Stück beschreibt."@de ,
-                                 "un EditorialObject décrivant une \"œuvre de l'esprit\", une pièce."@fr ;
+                                 "ein Medieninhalt, der ein geistiges Werk, ein \"Stück\" ist"@de ,
+                                 "un objet éditorial décrivant une \"œuvre de l'esprit\", une pièce."@fr ;
                  skos:example """- a film based on a playbook
 - a radio drama based on a playbook
 - a news programme with several items
@@ -10767,8 +10790,8 @@ ec:Essence rdf:type owl:Class ;
                       "Essence"@fr ,
                       "Essenz"@de ;
            skos:definition "a MediaRessource in the form of a simple file or a complex file package for play-out or publishing"@en ,
-                           "eine MediaRessource in Form einer einfachen Datei oder eines komplexen Dateipakets zur Wiedergabe oder Veröffentlichung"@de ,
-                           "une MediaRessource sous la forme d'un fichier simple ou d'un paquet de fichiers complexes pour la lecture ou la publication."@fr ;
+                           "eine Medienressource in Form einer einfachen Datei oder eines komplexen Dateipakets zur Ausspielung oder Veröffentlichung"@de ,
+                           "une ressource média sous la forme d'un fichier simple ou d'un paquet de fichiers complexes pour la diffusion ou la publication."@fr ;
            skos:example """- a mxf file
 - a file package delivered by a camera of a specific brand"""@en ,
                         """- eine mxf-Datei
@@ -11040,7 +11063,16 @@ ec:Identifier rdf:type owl:Class ;
                                   "Zur Unterstützung der Verwendung von strukturierten Identifikatoren."@de ;
               rdfs:label "Identifiant"@fr ,
                          "Identifier"@en ,
-                         "Kennung"@de .
+                         "Identifikator"@de ;
+              skos:definition "a unique string associated to an entity"@en ,
+                              "eine eindeutige Zeichenkette, die einer Entität zugeordnet ist"@de ,
+                              "une chaîne de caractères unique associée à une entité"@fr ;
+              skos:example """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" est une identifiant d'ISAN
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" est une identifiant de EIDR pour le film \"Blade Runner\""""@fr ,
+                           """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" is an ISAN Identifier
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" is an EIDR Identifier for the movie \"Blade Runner\""""@en ,
+                           """- \"ISAN 0000-0001-8947-0000-8-0000-0000-D\" ist ein ISAN Identifikator
+- \"10.5240/EA73-79D7-1B2B-B378-3A73-M\" ist ein EIDR Identifikator des Films \"Blade Runner\""""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#IdentifierType
@@ -11106,10 +11138,10 @@ ec:Item rdf:type owl:Class ;
                             "Ein Element, z.B. newsItem oder sportItem"@de ,
                             "Un élément, par exemple newsItem ou sportItem"@fr ;
         rdfs:label "Article"@fr ,
-                   "Artikel"@de ,
+                   "Beitrag"@de ,
                    "Item"@en ;
         skos:definition "an EditorialWork to be incorporated into a Programme, an Article or a Post"@en ,
-                        "ein EditorialWork, das in ein Programm, einen Artikel oder einen Beitrag integriert werden soll"@de ,
+                        "ein Werk, das in ein Programm, einen Artikel oder einen Beitrag integriert werden soll"@de ,
                         "un travail de rédaction à incorporer dans un programme, un article ou un message."@fr ;
         skos:example """- a news item to be incorporated in a news programme
 - a survey-clip to be incorporated in a debate"""@en ,
@@ -11156,9 +11188,9 @@ ec:KeyPersonalEvent rdf:type owl:Class ;
 ec:Keyframe rdf:type owl:Class ;
             rdfs:subClassOf ec:Picture ;
             dcterms:description "A key frame is a frame extarcted from video, e.g. representative of a part of a MediaResource."@en ,
-                                "Ein Schlüsselbild ist ein aus einem Video extrahiertes Bild, z.B. repräsentativ für einen Teil einer MediaResource."@de ,
+                                "Ein Keyframe ist ein aus einem Video extrahiertes Bild, z.B. repräsentativ für einen Teil einer Medienressource."@de ,
                                 "Une image clé est une image extraite d'une vidéo, par exemple, représentative d'une partie d'une MediaResource."@fr ;
-            rdfs:label "Schlüsselbild"@de ,
+            rdfs:label "Keyframe"@de ,
                        "cadre de la clé"@fr ,
                        "key frame"@en .
 
@@ -11385,7 +11417,7 @@ ec:MakingOf rdf:type owl:Class ;
                        "Making-of"@en ,
                        "Making-of"@fr ;
             skos:definition "an EditorialWork about the making of a film or a Programme"@en ,
-                            "eine redaktionelle Arbeit über die Entstehung eines Films oder eines Programms"@de ,
+                            "ein Werk, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
                             "un travail éditorial sur la réalisation d'un film ou d'un programme."@fr ;
             skos:example "- Das Making-of eines Films"@de ,
                          "- le tournage d'un film"@fr ,
@@ -11462,8 +11494,10 @@ ec:MediaFragment rdf:type owl:Class ;
                                      "Un MediaFragment est un segment temporel ou spatial d'une ressource identifiée par un URI MediaGragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
                  rdfs:label "Fragment de média"@fr ,
                             "Media Fragment"@en ,
-                            "Medien Fragment"@de ;
-                 skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as identified by a MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ;
+                            "Medienfragment"@de ;
+                 skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as defined by the MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ,
+                                 "eine Medienressource, die ein zeitliches oder räumliches Segment einer Ressource ist, das wie in MediaFragment-URI  (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/) beschrieben ist"@de ,
+                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
                  skos:editorialNote "2023-02-14: examples need to be added"@en .
 
 
@@ -11927,7 +11961,7 @@ ec:MediaResource rdf:type owl:Class ;
                             "Medienressource"@de ,
                             "Ressource médiatique"@fr ;
                  skos:definition "a Resource that comprises encoded audio, video, graphics, data or text"@en ,
-                                 "eine Ressource, die kodierte Audio-, Video-, Grafik-, Daten- oder Textinhalte enthält"@de ,
+                                 "eine Ressource, die aus kodierten Audio-, Video-, Grafik-, Daten- oder Textinhalten besteht"@de ,
                                  "une ressource qui comprend du son, de la vidéo, des graphiques, des données ou du texte codés."@fr ;
                  skos:example """- an audio CD
 - an audio track on a CD
@@ -12011,7 +12045,7 @@ ec:NewsItem rdf:type owl:Class ;
             dcterms:description "A NewsItem aggregates all information about a particular news event."@en ,
                                 "Ein NewsItem fasst alle Informationen über ein bestimmtes Nachrichtenereignis zusammen."@de ,
                                 "Un NewsItem regroupe toutes les informations sur un événement d'actualité particulier."@fr ;
-            rdfs:label "Nachrichten"@de ,
+            rdfs:label "Nachrichtenbeitrag"@de ,
                        "News Item"@en ,
                        "Nouvelles"@fr .
 
@@ -12178,7 +12212,7 @@ ec:Outtakes rdf:type owl:Class ;
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
             skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
-                            "ein EditorialWork, in dem Aufnahmen oder Szenen gesammelt werden, die bei der Nachbearbeitung aussortiert wurden, aber dennoch den Verbraucher aus Spaß, Neugier usw. ansprechen"@de ,
+                            "ein Werk, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen"@de ,
                             "un travail éditorial rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
             skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en ,
                          "- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film"@de ,
@@ -12457,6 +12491,9 @@ ec:PictureDisplayFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Post
 ec:Post rdf:type owl:Class ;
         rdfs:subClassOf ec:EditorialWork ;
+        rdfs:label "Post"@de ,
+                   "Post"@en ,
+                   "Post"@fr ;
         skos:definition "an EditorialWork consisting of text, graphic, sometimes video or audio, created for publication on social media platforms and alike"@en ,
                         "ein redaktionelles Werk, das aus Text, Grafik, manchmal auch Video oder Audio besteht und für die Veröffentlichung auf Plattformen sozialer Medien und ähnlichem erstellt wird"@de ,
                         "une œuvre éditoriale composée de texte, de graphiques, parfois de vidéo ou d'audio, créée pour être publiée sur des plateformes de médias sociaux ou autres."@fr ;
@@ -12507,8 +12544,8 @@ ec:ProductionDevice rdf:type owl:Class ;
                                "Production device"@en ,
                                "Produktionswerkzeug"@de ;
                     skos:definition "a tool to facilitate activities in a ProductionJob"@en ,
-                                    "ein Werkzeug zur Erleichterung der Aktivitäten in einem ProductionJob"@de ,
-                                    "un outil pour faciliter les activités dans une ProductionJob"@fr ;
+                                    "ein Werkzeug zur Erleichterung der Aktivitäten im Rahmen einer Produktionsaufgabe"@de ,
+                                    "un outil pour faciliter les activités dans une tâche de production"@fr ;
                     skos:example """- a camera
 - a microphone
 - a video or sound mixer
@@ -12610,8 +12647,8 @@ ec:ProductionJob rdf:type owl:Class ;
                             "Produktionsaufgabe"@de ,
                             "Tâche de production"@fr ;
                  skos:definition "a task or set of tasks to create, modify, manipulate, store, etc a MediaResource"@en ,
-                                 "eine Aufgabe oder eine Reihe von Aufgaben zum Erstellen, Ändern, Manipulieren, Speichern usw. einer MediaResource"@de ,
-                                 "une tâche ou un ensemble de tâches pour créer, modifier, manipuler, stocker, etc. une MediaResource"@fr ;
+                                 "eine Aufgabe oder eine Reihe von Aufgaben zum Erstellen, Ändern, Manipulieren, Speichern usw. einer Medienressource"@de ,
+                                 "une tâche ou un ensemble de tâches pour créer, modifier, manipuler, stocker, etc. une ressource médiatique"@fr ;
                  skos:example """- Produktion einer Live-Show für die Ausstrahlung
 - das Filmen und Bearbeiten eines Nachrichtenclips
 - eine ausgelagerte Produktion eines kompletten Films"""@de ,
@@ -12646,7 +12683,7 @@ ec:ProductionOrder rdf:type owl:Class ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ;
                    dcterms:description "Die Beauftragung zur Erstellung, zum Kauf oder zur Wiederverwendung einer Medienressource. Die Bedingungen eines Produktionsauftrages sind in einem Vertrag definiert."@de ,
-                                       "L'acte d'ordonner la création/production, l'achat ou la réutilisation de MediaResources. Les termes d'un ProductionOrder sont définis par Contrat."@fr ,
+                                       "L'acte d'ordonner la création/production, l'achat ou la réutilisation des ressources mediatiques. Les termes d'un commande de production sont définis par Contrat."@fr ,
                                        "The act of ordering the creation/production, purchase or reuse of MediaResources. The terms of a ProductionOrder are defined by Contract."@en ;
                    rdfs:label "Commande de production"@fr ,
                               "Production order"@en ,
@@ -12698,11 +12735,11 @@ ec:Programme rdf:type owl:Class ;
              dcterms:description "An EditorialObject corresponding to a MediaResource ready for publication."@en ,
                                  "Ein EditorialObject, das einer MediaResource, die zur Veröffentlichung bereit ist."@de ,
                                  "Un EditorialObject correspondant à une MediaResource prête à être publiée."@fr ;
-             rdfs:label "Programm"@de ,
-                        "Programme"@en ,
-                        "Programme"@fr ;
+             rdfs:label "Programme"@en ,
+                        "Programme"@fr ,
+                        "Sendung"@de ;
              skos:definition "an EditorialWork as a stand-alone piece or an episode of a Serial or Series, intended to be consumed as a whole"@en ,
-                             "ein EditorialWork als eigenständiges Stück oder eine Episode einer Serie oder Reihe, die als Ganzes konsumiert werden soll"@de ,
+                             "ein Werk als eigenständiges Stück oder eine Episode einer Serie oder Reihe, die als Ganzes konsumiert werden soll"@de ,
                              "une Œuvre de rédaction en tant que pièce autonome ou épisode d'un feuilleton ou d'une série, destinée à être consommée comme un tout."@fr ;
              skos:example """- den Film \"Titanic\"
 - die Folge 2 \"Der blinde Bankier\" der Serie \"Sherlock\", einer Detektivserie
@@ -12728,11 +12765,11 @@ ec:Promotion rdf:type owl:Class ;
                                owl:onProperty ec:isMemberOf ;
                                owl:allValuesFrom ec:CampaignPackage
                              ] ;
-             rdfs:label "Förderung"@de ,
-                        "Promotion"@en ,
-                        "Promotion"@fr ;
+             rdfs:label "Promotion"@en ,
+                        "Promotion"@fr ,
+                        "Werbung"@de ;
              skos:definition "an EditorialWork for advertising purposes"@en ,
-                             "ein EditorialWork zu Werbezwecken"@de ,
+                             "ein Werk für Werbezwecke"@de ,
                              "un EditorialWork à des fins publicitaires"@fr ;
              skos:example """- an ad for an insurance company
 - a promotion-clip for a PSM, one of its channels, its brands"""@en ,
@@ -12801,6 +12838,18 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:onProperty ec:name ;
                                 owl:allValuesFrom rdfs:Literal
                               ] ;
+              rdfs:label "Herkunft"@de ,
+                         "Origine"@fr ,
+                         "Provenance"@en ;
+              skos:definition "a set of properties describing the origin and lifecycle of a data object"@en ,
+                              "une Reihe von Eigenschaften, welche die Herkunft und den Lebenszyklus eines Datenobjektes beschreiben"@de ,
+                              "une chaîne de caractères unique associée à une entité"@fr ;
+              skos:example """- das Erzeugungsdatum eines Datenobjektes
+- das System, aus welchem das Datenobjekt ursprünglich stammt"""@de ,
+                           """- la date de création d'un objet de données
+- le système à partir duquel l'objet de données a été récupéré à l'origine"""@fr ,
+                           """- the creationDate of a data object
+- the system from which the data object was originally retrieved"""@en ;
               skos:note "Provenance"@en .
 
 
@@ -12886,11 +12935,11 @@ ec:PublicationChannel rdf:type owl:Class ;
                       dcterms:description "A channel through which content is published. It can take a variety of forms beyond broadcast and internet streaming, e.g. physical distribution of CDs /DVDs, etc."@en ,
                                           "Ein Kanal, über den Inhalte veröffentlicht werden. Er kann eine Vielzahl von Formen annehmen, die über Rundfunk und Internet-Streaming hinausgehen, z. B. den physischen Vertrieb von CDs/DVDs usw."@de ,
                                           "Un canal par lequel le contenu est publié. Il peut prendre diverses formes au-delà de la diffusion et du streaming sur Internet, par exemple la distribution physique de CD /DVD, etc."@fr ;
-                      rdfs:label "Canal de publication"@de ,
-                                 "Canal de publication"@fr ,
-                                 "Publication channel"@en ;
+                      rdfs:label "Canal de publication"@fr ,
+                                 "Publication channel"@en ,
+                                 "Publikationskanal"@de ;
                       skos:definition "a connection to exchange content between provider and consumer operated on a PublicationPlatform"@en ,
-                                      "eine Verbindung zum Austausch von Inhalten zwischen Anbieter und Verbraucher, die über eine PublicationPlatform betrieben wird"@de ,
+                                      "eine Verbindung zum Austausch von Inhalten zwischen Anbieter und Verbraucher, die über eine Publikationsplattform betrieben wird"@de ,
                                       "une connexion pour échanger du contenu entre le fournisseur et le consommateur, opérée sur une plateforme de publication."@fr ;
                       skos:example """- der DVB-S-Kanal auf 10714 MHz H auf dem Satelliten Astra 2E für den linearen Videodienst \"BBC One HD\".
 - der DVB-T-Kanal E23 in London/Chrystal Palace für den linearen Videodienst \"BBC One London\".
@@ -13057,7 +13106,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                     rdfs:label "Publication Event"@en ,
                                "Publikationsereignis"@de ,
                                "Événement de publication"@fr ;
-                    skos:definition "der Fall der Veröffentlichung einer Essenz durch einen Dienst an einen Kanal unter Rechtebedingungen"@de ,
+                    skos:definition "das Ereignis der Veröffentlichung einer Essenz durch einen Dienst an einen Kanal unter Rechtebedingungen"@de ,
                                     "l'événement de publication d'une Essence par un service à un canal sous conditions de droits"@fr ,
                                     "the event of publishing an Essence by a service to a channel under rights conditions"@en ;
                     skos:example """- die Übertragung des Endspiels der Fußballweltmeisterschaft 2022 in einem Live-Videodienst über Satellit durch die BBC in Großbritannien
@@ -13086,55 +13135,55 @@ ec:PublicationHistory rdf:type owl:Class ;
                                         owl:someValuesFrom ec:PublicationEvent
                                       ] ;
                       dcterms:description "A collection of PublicationEvents through which a resource has been published."@en ,
-                                          "Eine Sammlung von PublicationEvents, durch die eine Ressource veröffentlicht wurde."@de ,
+                                          "Eine Sammlung von Publikationsereignissen, durch die eine Ressource veröffentlicht wurde."@de ,
                                           "Une collection de PublicationEvents par lesquels une ressource a été publiée."@fr ;
-                      rdfs:label "Geschichte der Veröffentlichung"@de ,
-                                 "Histoire de la publication"@fr ,
-                                 "Publication History"@en .
+                      rdfs:label "Histoire de la publication"@fr ,
+                                 "Publication History"@en ,
+                                 "Veröffentlichungshistorie"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLogg
-ec:PublicationLogg rdf:type owl:Class ;
-                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:resourceOffset ;
-                                     owl:someValuesFrom ec:TimelinePoint
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:loggsPublicationEvent ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:PublicationEvent
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:startDateTime ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:endDateTime ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectType ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:description ;
-                                     owl:allValuesFrom rdfs:Literal
-                                   ] ;
-                   dc:description "For colecting data from the \"As run logg\""@en ;
-                   rdfs:label "Journal de bord de la publication"@fr ,
-                              "Protokoll der Veröffentlichung"@de ,
-                              "Publication logg"@en ;
-                   skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
-                                   "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
-                                   "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
-                   skos:example """- das \"as run log\" eines linearen TV-Wiedergabesystems für einen ganzen Tag
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLog
+ec:PublicationLog rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:resourceOffset ;
+                                    owl:someValuesFrom ec:TimelinePoint
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loggsPublicationEvent ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:PublicationEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:startDateTime ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:endDateTime ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:objectType ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass skos:Concept
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ;
+                  dc:description "For colecting data from the \"As run logg\""@en ;
+                  rdfs:label "Journal de bord de la publication"@fr ,
+                             "Playout-Protokoll"@de ,
+                             "Publication log"@en ;
+                  skos:definition "a collection of consecutive PublicationEvents of a (typically linear) playout system"@en ,
+                                  "eine Sammlung aufeinanderfolgender PublicationEvents eines (in der Regel linearen) Ausspielsystems"@de ,
+                                  "une collection de PublicationEvents consécutifs d'un système de diffusion (typiquement linéaire)"@fr ;
+                  skos:example """- das \"as run log\" eines linearen TV-Wiedergabesystems für einen ganzen Tag
 - das \"As-Run-Log\" eines linearen Radio-Playout-Systems für den Vormittag"""@de ,
-                                """- le \"journal de bord\" d'un système de diffusion TV linéaire pour une journée entière
+                               """- le \"journal de bord\" d'un système de diffusion TV linéaire pour une journée entière
 - le \"journal de bord\" d'un système de diffusion radio linéaire pour la matinée"""@fr ,
-                                """- the \"as run log\" of a linear TV playout system for a full day
+                               """- the \"as run log\" of a linear TV playout system for a full day
 - the \"as run log\" of a linear radio playout system for the morning"""@en .
 
 
@@ -13221,7 +13270,7 @@ Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiée
                               "Publication plan"@en ,
                               "Publikationsplan"@de ;
                    skos:definition "a schedule for one or many PublicationEvents to adress a target audience, or a hierarchy of PublicationPlans"@en ,
-                                   "einen Zeitplan für eine oder mehrere PublicationEvents, um eine Zielgruppe anzusprechen, oder eine Hierarchie von PublicationPlans"@de ,
+                                   "ein Zeitplan für eine oder mehrere Publikationsereignissen, um eine Zielgruppe anzusprechen, oder eine Hierarchie von Publikationsereignissen"@de ,
                                    "un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cible, ou une hiérarchie de PublicationPlans"@fr ;
                    skos:example """- das geplante Datum, die Uhrzeit und den Kanal für die Veröffentlichung eines Films
 - die geplanten Daten, Uhrzeiten und Kanäle für die Veröffentlichung der Episoden einer Serie
@@ -13324,15 +13373,15 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                            "Eine Plattform wie ein Netzwerk oder eine Betreiberplattform."@de ,
                                            "Une plateforme comme celle d'un réseau ou d'un opérateur."@fr ;
                        rdfs:label "Plate-forme de publication"@fr ,
-                                  "Plattform für Veröffentlichungen"@de ,
-                                  "Publication platform"@en ;
+                                  "Publication platform"@en ,
+                                  "Publikationsplattform"@de ;
                        skos:definition "a facility that allows to connect sources and targets of content through uni- or bidirectional channels"@en ,
-                                       "eine Einrichtung, die es ermöglicht, Quellen und Ziele von Inhalten über uni- oder bidirektionale Kanäle zu verbinden"@de ,
+                                       "eine technische Einrichtung, die es ermöglicht, Quellen und Ziele von Medienressourcen über uni- oder bidirektionale Kanäle zu verbinden"@de ,
                                        "une installation qui permet de connecter des sources et des cibles de contenu par des canaux uni- ou bidirectionnels"@fr ;
                        skos:example """- die Eutelsat-DVB-S-Übertragungsplattform
 - die youtube-Video-on-Demand-Plattform
 - alle Server, die über Internetprotokolle zugänglich sind und in HTML oder ähnlich kodierte Inhalte anbieten/aufnehmen
-- Fortnite, Dezentraland oder Roblox als Metaversen"""@de ,
+- Fortnite, Decentraland oder Roblox als Metaversen"""@de ,
                                     """- la plate-forme de diffusion DVB-S d'Eutelsat
 - la plateforme de vidéo à la demande youtube
 - tous les serveurs accessibles via les protocoles internet et offrant/prenant du contenu codé en HTML ou similaire
@@ -13411,11 +13460,11 @@ ec:PublicationService rdf:type owl:Class ;
                                           "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ,
                                           "Un service de publication est un canal ou une plate-forme de publication qui diffuse le contenu à une audience donnée."@fr ;
                       rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
-                      rdfs:label "Publication service"@en ,
-                                 "Service"@de ,
+                      rdfs:label "Medienservice"@de ,
+                                 "Publication service"@en ,
                                  "Service"@fr ;
                       skos:definition "a service by which a publishing organisation or person publishes its content and offers access to consumers"@en ,
-                                      "ein Dienst, über den eine Verlagsorganisation oder eine Person ihre Inhalte veröffentlicht und den Verbrauchern Zugang dazu bietet"@de ,
+                                      "ein Dienst, über den eine Verlagsorganisation oder eine Person ihre Medienressourcen veröffentlicht und den Nutzern Zugang dazu bietet"@de ,
                                       "un service par lequel une organisation ou une personne publie son contenu et en offre l'accès aux consommateurs"@fr ;
                       skos:example """- der lineare Videodienst mit dem Namen \"BBC One\"
 - der Video-on-Demand-Dienst von Netflix"""@de ,
@@ -13429,11 +13478,11 @@ ec:PublicationService rdf:type owl:Class ;
 ec:RadioProgramme rdf:type owl:Class ;
                   rdfs:subClassOf ec:Programme ;
                   dcterms:description "A programme for distribution on radio channels."@en ,
-                                      "Ein Programm zur Verbreitung im Radio Kanäle."@de ,
+                                      "Ein Sendung zur Verbreitung in einem Radiokanal."@de ,
                                       "Un programme pour la distribution sur les chaînes."@fr ;
                   rdfs:label "Programme radio"@fr ,
                              "Radio Programme"@en ,
-                             "Radioprogramm"@de .
+                             "Radiosendung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rating
@@ -13611,63 +13660,63 @@ ec:Reminder rdf:type owl:Class ;
                        "Rappel"@fr ,
                        "Reminder"@en ;
             skos:definition "an EditorialWork referring to a previously published advertisement, promotion or alike, as a reminder to it"@en ,
-                            "ein EditorialWork, das auf eine zuvor veröffentlichte Anzeige, Werbung oder ähnliches verweist, um daran zu erinnern"@de ,
+                            "ein Werk, das auf eine zuvor veröffentlichte Anzeige, Werbung oder ähnliches verweist, um daran zu erinnern"@de ,
                             "un EditorialWork faisant référence à une annonce, une promotion ou autre publiée précédemment, pour la rappeler à l'ordre"@fr ;
             skos:example "- a 4 second repetition of the logo and the jingle of an insurance company, minutes after a 15 second advertisement"@en ,
                          "- eine 4-sekündige Wiederholung des Logos und des Jingles einer Versicherungsgesellschaft, Minuten nach einer 15-sekündigen Werbung"@de ,
                          "- une répétition de 4 secondes du logo et du jingle d'une compagnie d'assurance, quelques minutes après une publicité de 15 secondes"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Resonance
-ec:Resonance rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:compilesResonanceEvents ;
-                               owl:allValuesFrom ec:ResonanceEvent
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:hasIdentifier ;
-                               owl:allValuesFrom ec:Identifier
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:hasLocator ;
-                               owl:allValuesFrom ec:Locator
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isMeasuredBy ;
-                               owl:allValuesFrom ec:Agent
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:objectType ;
-                               owl:allValuesFrom skos:Concept
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:description ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:name ;
-                               owl:allValuesFrom rdfs:Literal
-                             ] ;
-             dcterms:description "Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern. Repräsentiert alle zählbaren oder erfassbaren Nutzungsaktivitäten durch Nutzer während des Nutzungsereignisses, aber zu nicht-individualisierbaren Ausdrücken zusammengefasst, z.B. click-Zahlen, Anzahl von Likes, Prozentsatz von Stimmen, Anzahl der Downloads, ... Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnenstrategie und des verknüpften Publikationsplans."@de ,
-                                 "La raisonance est une agrégation des données relatives à la consommation de contenu par un groupe de consommateurs. Représente toutes les actions de consommation dénombrables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent agrégées pour former une expression non individuelle, par exemple taux de clics, nombre d'appréciations, pourcentage de votes, nombre de téléchargements, likes, pourcentage de votes, nombre de téléchargements. L'analyse des données de résonance permet plus particulièrement d'affiner une stratégie de Campagne et son plan de publication, PublicationPlan."@fr ,
-                                 "The aggregation of data about the conumption of content by a group of Consumers. Represents all countable or noticeable consumption actions by consumers during a ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of likes, percentage of votes, number of downloads... The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."@en ;
-             rdfs:label "Resonance"@en ,
-                        "Resonanz"@de ,
-                        "Résonance"@fr ;
-             skos:definition "die Aggregation von ResonanceEvents zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
-                             "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
-                             "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
-             skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ResonanceCount
+ec:ResonanceCount rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:compilesResonanceEvents ;
+                                    owl:allValuesFrom ec:ResonanceEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasIdentifier ;
+                                    owl:allValuesFrom ec:Identifier
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasLocator ;
+                                    owl:allValuesFrom ec:Locator
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isMeasuredBy ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:objectType ;
+                                    owl:allValuesFrom skos:Concept
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:name ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ;
+                  dcterms:description "Die Aggregation von Daten über die Nutzung von Produkten durch eine Gruppe von Nutzern. Repräsentiert alle zählbaren oder erfassbaren Nutzungsaktivitäten durch Nutzer während des Nutzungsereignisses, aber zu nicht-individualisierbaren Ausdrücken zusammengefasst, z.B. click-Zahlen, Anzahl von Likes, Prozentsatz von Stimmen, Anzahl der Downloads, ... Die Analyse der Resonanzdaten erlaubt eine genauere Verfeinerung einer Kampagnenstrategie und des verknüpften Publikationsplans."@de ,
+                                      "La raisonance est une agrégation des données relatives à la consommation de contenu par un groupe de consommateurs. Représente toutes les actions de consommation dénombrables ou perceptibles par les consommateurs au cours d'un ConsumptionEvent agrégées pour former une expression non individuelle, par exemple taux de clics, nombre d'appréciations, pourcentage de votes, nombre de téléchargements, likes, pourcentage de votes, nombre de téléchargements. L'analyse des données de résonance permet plus particulièrement d'affiner une stratégie de Campagne et son plan de publication, PublicationPlan."@fr ,
+                                      "The aggregation of data about the conumption of content by a group of Consumers. Represents all countable or noticeable consumption actions by consumers during a ConsumptionEvent aggregated to form a non-individual expression, e.g. click rates, number of likes, percentage of votes, number of downloads... The analysis of the Resonance Data allows more particularly refining a Campaign strategy and its associated PublicationPlan."@en ;
+                  rdfs:label "Resonance"@en ,
+                             "Resonanz"@de ,
+                             "Résonance"@fr ;
+                  skos:definition "die Aggregation von Resonanzereignissen zur Anzeige der Leistung eines Inhalts oder eines Dienstes"@de ,
+                                  "l'agrégation des ResonanceEvents pour indiquer la performance d'un contenu ou d'un service"@fr ,
+                                  "the aggregation of ResonanceEvents to indicate performance of a content or a service"@en ;
+                  skos:example """- Marktanteil bei den Zuschauern einer Sport-Live-Übertragung
 - Wöchentliche Seitenaufrufe einer Nachrichten-Website
 - Anzahl der täglichen Unique User auf einer Nachrichten-Website
 - Anzahl der Likes für einen Instagram-Post
 - Anzahl der Aufrufe eines Films auf einem VOD-Portal"""@de ,
-                          """- market share of viewers on a sports live broadcast
+                               """- market share of viewers on a sports live broadcast
 - weekly page impressions of a news website
 - number of daily unique users on a news website
 - number of likes on an instagram post
 - number of views of a movie from a VOD portal"""@en ,
-                          """- part de marché des téléspectateurs sur une émission sportive en direct
+                               """- part de marché des téléspectateurs sur une émission sportive en direct
 - nombre de pages vues par semaine sur un site d'information
 - nombre d'utilisateurs uniques quotidiens sur un site d'information
 - nombre de likes sur un message instagram
@@ -13710,7 +13759,7 @@ L'agrégation de ces données est un ensemble de résultats de résonance."""@fr
                              "Resonanzereignis"@de ,
                              "Événement de résonance"@fr ;
                   skos:definition "a countable or noticeable consumption-related action by a Consumer during or after a ConsumptionEvent"@en ,
-                                  "eine zählbare oder spürbare verbrauchsbezogene Handlung eines Verbrauchers während oder nach einem Verbrauchsereignis"@de ,
+                                  "eine zählbare oder spürbare nuztungsbezogene Handlung eines Nutzers während oder nach einem Nutzungsereignis"@de ,
                                   "une action liée à la consommation, dénombrable ou perceptible, effectuée par un consommateur pendant ou après un événement de consommation."@fr ;
                   skos:example """- Ausschalten des Fernsehgeräts
 - Umschalten auf einen anderen Radiosender
@@ -13813,7 +13862,6 @@ ec:Resource rdf:type owl:Class ;
             dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Ressource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Ressource). Die Ressource hat einen Locator, der angibt, wo auf die Ressource zugegriffen werden kann."@de ,
                                 "Une ressource utilisée ou à laquelle il est fait référence dans le workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de Ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée."@fr ;
-            rdfs:comment "Une ressource est utilisée ou référencé dans un workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de la ressource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée"@fr ;
             rdfs:label "Resource"@en ,
                        "Ressource"@de ,
                        "Ressource"@fr ;
@@ -13865,7 +13913,7 @@ ec:Review rdf:type owl:Class ;
                               "Um eine Rezension zu erstellen."@de ;
           rdfs:label "Consulter"@fr ,
                      "Review"@en ,
-                     "Überprüfung"@de .
+                     "Rezension"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rights
@@ -14024,11 +14072,11 @@ ec:Role rdf:type owl:Class ;
         dcterms:description "Definiert eine Rolle, die ein Akteur übernimmt. Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."@de ,
                             "Permet de définir le rôle, Role, joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
                             "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
-        rdfs:label "Role"@en ,
-                   "Rolle"@de ,
+        rdfs:label "Beteiligung"@de ,
+                   "Role"@en ,
                    "Rôle"@fr ;
         skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ,
-                        "die Beteiligung eines Beauftragten an der Erstellung oder Veröffentlichung einer MedienRessource"@de ,
+                        "die Beteiligung eines Akteurs an der Erstellung oder Veröffentlichung einer Medienressource"@de ,
                         "l'engagement d'un Agent dans la création ou la publication d'une RessourceMédia"@fr ;
         skos:example """- Verfassen eines Drehbuchs für eine Filmproduktion
 - Regie bei einem Film
@@ -14120,10 +14168,10 @@ ec:Scene rdf:type owl:Class ;
                              "Eine Sequenz mit kontinuierlicher Handlung"@de ,
                              "Une séquence d'action continue"@fr ;
          rdfs:label "Scene"@en ,
-                    "Schauplatz"@de ,
-                    "Scène"@fr ;
+                    "Scène"@fr ,
+                    "Szene"@de ;
          skos:definition "an EditorialSegment incorporated in an EditorialWork and representing a part of a story without leaps in time or location"@en ,
-                         "ein EditorialSegment, das in ein EditorialWork eingebunden ist und einen Teil einer Geschichte ohne Zeit- oder Ortssprünge darstellt"@de ,
+                         "ein Mediensegment, das in ein Inhaltsobjekt eingebunden ist und einen Teil einer Geschichte ohne Zeit- oder Ortssprünge darstellt"@de ,
                          "un segment éditorial incorporé dans un travail éditorial et représentant une partie d'une histoire sans saut dans le temps ou le lieu."@fr ;
          skos:example "- der letzte Abschied von Humphrey Bogart und Ingrid Bergman auf dem Flughafen von Casablanca im gleichnamigen Film."@de ,
                       "- le dernier adieu de Humphrey Bogart et Ingrid Bergman à l'aéroport de Casablanca dans le film du même nom."@fr ,
@@ -14153,11 +14201,11 @@ ec:Season rdf:type owl:Class ;
           dcterms:description "A series can be composed of one or more seasons clustering a certain number of episodes. Fro this reason, seasons are related to series using the isRelatedTo property."@en ,
                               "Eine Serie kann aus einer oder mehreren Staffeln bestehen die eine bestimmte Anzahl von Episoden zusammenfassen. Aus diesem Grund werden Staffeln mit Serien verknüpft mit Hilfe der Eigenschaft isRelatedTo."@de ,
                               "Une série peut être composée d'une ou plusieurs saisons regroupant un certain nombre d'épisodes. Pour cette raison, les saisons sont liées aux séries à l'aide de la propriété isRelatedTo."@fr ;
-          rdfs:label "Saison"@de ,
-                     "Saison"@fr ,
-                     "Season"@en ;
+          rdfs:label "Saison"@fr ,
+                     "Season"@en ,
+                     "Staffel"@de ;
           skos:definition "a sub-group of episodes of a serial or a series, usually grouped due to a common time frame for production"@en ,
-                          "eine Untergruppe von Episoden einer Serie oder eines Zyklus, die in der Regel aufgrund eines gemeinsamen Zeitrahmens für die Produktion gruppiert werden"@de ,
+                          "eine Gruppe von Episoden einer Serie oder einer Reihe, die in der Regel aufgrund eines gemeinsamen Zeitrahmens für die Produktion gruppiert werden"@de ,
                           "un sous-groupe d'épisodes d'un feuilleton ou d'une série, généralement regroupés en raison d'une période de production commune."@fr ;
           skos:example """- die 216 Episoden des Jahres 2018 der BBC-Serie \"EastEnder\"
 - Staffel 1 mit 8 Episoden der deutschen Serie \"Babylon Berlin\""""@de ,
@@ -14170,14 +14218,14 @@ ec:Season rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Serial
 ec:Serial rdf:type owl:Class ;
           rdfs:subClassOf ec:EditorialGroup ;
-          dcterms:description "Werke, die (z. B. in einer Zeitschrift oder im Fernsehen) in regelmäßigen Abständen in Teilen erscheinen"@de ,
-                              "works appearing (as in a magazine or on television) in parts at intervals"@en ,
-                              "œuvres apparaissant (comme dans un magazine ou à la télévision) en parties à intervalles réguliers"@fr ;
+          dcterms:description "Werke, die (z. B. in einer Zeitschrift oder im Fernsehen) in Teilen erscheinen"@de ,
+                              "a work appearing (as in a magazine or on television) in parts"@en ,
+                              "œuvres apparaissant (comme dans un magazine ou à la télévision) en parties"@fr ;
           rdfs:label "Serial"@en ,
-                     "Seriennummer"@de ,
+                     "Serie"@de ,
                      "Série"@fr ;
           skos:definition "a EditorialGroup telling a whole story in parts, each continuing the preceding part"@en ,
-                          "eine EditorialGroup, die eine ganze Geschichte in Teilen erzählt, wobei jeder Teil an den vorangegangenen anknüpft"@de ,
+                          "eine Gruppe von Medieninhalten, die eine ganze Geschichte in Teilen erzählt, wobei jeder Teil an den vorangegangenen anknüpft"@de ,
                           "un groupe éditorial racontant une histoire en plusieurs parties, chacune d'entre elles poursuivant la partie précédente."@fr ;
           skos:example "- Deutsche Serie \"Babylon Berlin\" mit mehreren Staffeln"@de ,
                        "- German serial \"Babylon Berlin\" with several seasons"@en ,
@@ -14199,21 +14247,21 @@ ec:Series rdf:type owl:Class ;
                             owl:onProperty ec:isSeriesOf ;
                             owl:allValuesFrom ec:Brand
                           ] ;
-          dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes."@fr ,
-                              "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden."@de ,
-                              "Series is a particular type of collection. TV or Radio Series are composed of Episodes."@en ;
-          rdfs:label "Serie"@de ,
+          dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes. Les épisodes suivent souvent un schéma de publication régulier ou traitent de sujets similaires ou des mêmes personnages."@fr ,
+                              "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden. Episoden folgen häufig einem Publikationsschema oder behandeln ähnliche Themen oder beinhalten dieselben Figuren."@de ,
+                              "Series is a particular type of collection. TV or Radio Series are composed of Episodes. Episodes often follow a regular publication scheme or deal with similar topics or the same characters."@en ;
+          rdfs:label "Reihe"@de ,
                      "Series"@en ,
                      "Série"@fr ;
           skos:definition "an EditorialGroup of Programmes, grouped by characters or topics or publication scheme, not by a sequential story"@en ,
-                          "eine redaktionelle Gruppe von Sendungen, gruppiert nach Personen oder Themen oder Veröffentlichungsschema, nicht nach einer fortlaufenden Geschichte"@de ,
+                          "eine Gruppe Medieninhalten, in der Regel gruppiert nach Personen oder Themen oder Veröffentlichungsschemata, nicht unbedingt nach einer fortlaufenden Geschichte"@de ,
                           "un groupe éditorial de programmes, regroupés par personnages ou sujets ou schéma de publication, et non par une histoire séquentielle"@fr ;
           skos:example """- ABC serial \"Friends\"
 - BBC's daily news programme \"BBC News\"
 - ARD's Sunday night drama \"Tatort\""""@en ,
-                       """- ABC-Serie \"Freunde\"
+                       """- ABC-Sendereihe \"Friends\"
 - BBCs tägliche Nachrichtensendung \"BBC News\"
-- ARD-Sonntagabendserie \"Tatort\""""@de ,
+- ARD-Sendereihe \"Tatort\""""@de ,
                        """- Série ABC \"Friends\" (en anglais)
 - Le programme d'information quotidien de la BBC \"BBC News\".
 - Tatort, le feuilleton du dimanche soir d'ARD"""@fr .
@@ -14307,17 +14355,17 @@ ec:SportItem rdf:type owl:Class ;
                                  "Un SportItem regroupe toutes les informations sur un événement sportif."@fr ;
              rdfs:label "Article de sport"@fr ,
                         "Sport item"@en ,
-                        "Sportartikel"@de .
+                        "Sportbeitrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#StaffMember
 ec:StaffMember rdf:type owl:Class ;
                rdfs:subClassOf ec:Person ;
                dcterms:description "A member of Staff."@en ,
-                                   "Ein Mitglied des Personals."@de ,
+                                   "Ein Mitglied der Belegschaft"@de ,
                                    "Un membre du personnel."@fr ;
                rdfs:label "Membre du personnel."@fr ,
-                          "Mitarbeiterin."@de ,
+                          "Mitarbeiterin"@de ,
                           "Staff member."@en .
 
 
@@ -14398,7 +14446,7 @@ ec:Stream rdf:type owl:Class ;
                           "un Composant sous forme d'un flux continu de bits"@fr ;
           skos:example """- an audio stream from an audio on demand service
 - a video stream from a video on demand service"""@en ,
-                       """- einen Audiostrom von einem Audio-on-Demand-Dienst
+                       """- einen Audiostream von einem Audio-on-Demand-Dienst
 - einen Videostream von einem Video-on-Demand-Dienst"""@de ,
                        """- un flux audio provenant d'un service audio à la demande
 - un flux vidéo provenant d'un service de vidéo à la demande"""@fr .
@@ -14449,7 +14497,7 @@ ec:TVProgramme rdf:type owl:Class ;
                                    "Un programme destiné à être distribué sur les chaînes."@fr ;
                rdfs:label "Programme TV"@fr ,
                           "TV Programme"@en ,
-                          "TV-Programm"@de .
+                          "TV-Sendung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Take
@@ -14751,7 +14799,7 @@ ec:TimelinePoint rdf:type owl:Class ;
                                  ] ;
                  dc:description "A precise time point  of a media resource"@en ;
                  rdfs:label "Point de repère chronologique"@fr ,
-                            "Punkt der Zeitleiste"@de ,
+                            "Punkt auf der Zeitachse"@de ,
                             "Timeline point"@en .
 
 
@@ -14787,9 +14835,9 @@ ec:TimelineTrack rdf:type owl:Class ;
                                      "Definiert den zeitlichen Ablauf von Medieninhalten."@fr ,
                                      "To define a timed sequence of EditorialObjects."@en ;
                  rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
-                 rdfs:label "Ablaufplan"@de ,
-                            "Piste chronologique"@fr ,
-                            "Timeline track"@en .
+                 rdfs:label "Piste chronologique"@fr ,
+                            "Timeline track"@en ,
+                            "Zeitachse"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TimelineTrack_Type
@@ -14838,7 +14886,7 @@ ec:Track rdf:type owl:Class ;
                     "Spur"@de ,
                     "Track"@en ;
          skos:definition "a MediaResource in the form of time-based elements for audio, video or data (\"track\") comprised in an \"aggregated\" MediaResource."@en ,
-                         "eine MediaResource in Form von zeitbasierten Elementen für Audio, Video oder Daten (\"Track\"), die in einer \"aggregierten\" MediaResource enthalten sind."@de ,
+                         "eine Medienressource in Form von zeitbasierten Elementen für Audio, Video oder Daten (\"Track\"), die in einer \"aggregierten\" Medienressource enthalten sind."@de ,
                          "une MediaResource sous forme d'éléments temporels pour l'audio, la vidéo ou les données (\"piste\") comprise dans une MediaResource \"agrégée\"."@fr ;
          skos:example "- das Audio in einer MPEG4-Videodatei"@de ,
                       "- l'audio dans un fichier vidéo MPEG4"@fr ,
@@ -14881,11 +14929,11 @@ ec:Trailer rdf:type owl:Class ;
            dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
                                "An AV sequence promoting a film, series or television programme."@en ,
                                "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
-           rdfs:label "Anhänger"@de ,
-                      "Bande annonce"@fr ,
+           rdfs:label "Bande annonce"@fr ,
+                      "Trailer"@de ,
                       "Trailer"@en ;
            skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
-                           "eine redaktionelle Arbeit mit einer typischen Werbelänge von bis zu 2 Minuten, die ein Programm, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
+                           "eine Werk mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
                            "un travail éditorial avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
            skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
 - a promo-clip for a sports-cup-final later tonight"""@en ,
@@ -14970,8 +15018,8 @@ ec:VideoCodec rdf:type owl:Class ;
                                   "To provide information about a video codec."@en ,
                                   "Zur Bereitstellung von Informationen über einen Videocodec."@de ;
               rdfs:label "Codec vidéo"@fr ,
-                         "Video Codec"@de ,
-                         "Video codec"@en .
+                         "Video codec"@en ,
+                         "Video-Codec"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#VideoEncodingFormat
@@ -15175,8 +15223,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
