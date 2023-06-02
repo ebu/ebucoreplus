@@ -1072,7 +1072,7 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalRole
 ec:hasAnimalRole rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Role ;
+                 rdfs:range ec:Involvement ;
                  dcterms:description "Die Rolle eines Tieres zu identifizieren."@de ,
                                      "Identifier le rôle d'un animal."@fr ,
                                      "To identify the role of an animal."@en ;
@@ -1582,7 +1582,7 @@ ec:hasContractualParty rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContributor
 ec:hasContributor rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Role ;
+                  rdfs:range ec:Involvement ;
                   dcterms:description "Pour identifier un contributeur à une Ressource, un EditorialObject, un Événement..."@fr ,
                                       "To identify a contributor to a Resource, a EditorialObject, an Event..."@en ,
                                       "Zur Identifizierung eines Mitwirkenden an einer Ressource, einem Redaktionsobjekt, einem Ereignis..."@de ;
@@ -1661,7 +1661,7 @@ ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCreator
 ec:hasCreator rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Role ;
+              rdfs:range ec:Involvement ;
               dcterms:description "Pour identifier un agent impliqué dans la création de la ressource ou de l'objet éditorial."@fr ,
                                   "To identify an Agent involved in the creation of the Resource or EditorialObject."@en ,
                                   "Zur Identifizierung eines Agenten, der an der Erstellung der Ressource oder des Redaktionsobjekts beteiligt war."@de ;
@@ -2534,7 +2534,7 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Role ;
+                rdfs:range ec:Involvement ;
                 dcterms:description "Pour identifier un agent impliqué dans la publication de l'EditorialObject."@fr ,
                                     "To identify an Agent involved in the publication of the EditorialObject."@en ,
                                     "Zur Identifizierung eines Agenten, der an der Veröffentlichung des EditorialObjects beteiligt ist."@de ;
@@ -2945,17 +2945,6 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
                           rdfs:label "Service cible"@fr ,
                                      "Target service"@en ,
                                      "Zielservice"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRole
-ec:hasRole rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Role ;
-           dcterms:description "Pour définir le rôle d'un agent (Contact/personne ou Organisation). L'association dans un contexte particulier se fait en déclarant, par exemple, le hasCastRole ou le hasCrewRole associé à l'EditorialObject."@fr ,
-                               "So definieren Sie die Rolle eines Agenten (Kontakt/Person oder Organisation). Die Assoziation in einem bestimmten Kontext erfolgt z.B. durch die Angabe von hasCastRole oder hasCrewRole in Verbindung mit dem EditorialObject."@de ,
-                               "To define the role of an Agent (Contact/person or Organisation). The association in a particular context is made by e.g. declaring the hasCastRole or hasCrewRole associated with the EditorialObject."@en ;
-           rdfs:label "Role"@en ,
-                      "Rolle"@de ,
-                      "Rôle"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
@@ -7809,7 +7798,7 @@ ec:Animal rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasAnimalRole ;
-                            owl:allValuesFrom ec:Role
+                            owl:allValuesFrom ec:Involvement
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
@@ -8012,7 +8001,7 @@ ec:Artefact rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasCreator ;
-                              owl:allValuesFrom ec:Role
+                              owl:allValuesFrom ec:Involvement
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasIdentifier ;
@@ -10185,7 +10174,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasContributor ;
-                                     owl:allValuesFrom ec:Role
+                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCoverage ;
@@ -10193,7 +10182,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCreator ;
-                                     owl:allValuesFrom ec:Role
+                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCrewMember ;
@@ -10245,7 +10234,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublisher ;
-                                     owl:allValuesFrom ec:Role
+                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRating ;
@@ -11117,6 +11106,75 @@ ec:IntentionCode rdf:type owl:Class ;
                  rdfs:label "Absichtscode"@de ,
                             "Code d'intention"@fr ,
                             "Intention code"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Involvement
+ec:Involvement rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:bringsRights ;
+                                 owl:allValuesFrom ec:Rights
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasAgent ;
+                                 owl:allValuesFrom ec:Agent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasAgentOnStagePosition ;
+                                 owl:allValuesFrom ec:OnStagePosition
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasAssociatedArtefact ;
+                                 owl:allValuesFrom ec:Artefact
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasIdentifier ;
+                                 owl:allValuesFrom ec:Identifier
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasRelatedArtefact ;
+                                 owl:allValuesFrom ec:Artefact
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:objectType ;
+                                 owl:allValuesFrom skos:Concept
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:playsCharacter ;
+                                 owl:allValuesFrom ec:Character
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:usesProductionDevice ;
+                                 owl:allValuesFrom ec:ProductionDevice
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:description ;
+                                 owl:allValuesFrom rdfs:Literal
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:name ;
+                                 owl:allValuesFrom rdfs:Literal
+                               ] ;
+               dcterms:description "Definiert eine Rolle, die ein Akteur übernimmt. Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."@de ,
+                                   "Permet de définir le rôle, Role, joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
+                                   "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
+               rdfs:label "Beteiligung"@de ,
+                          "Implication"@fr ,
+                          "Involvement"@en ;
+               skos:definition "an Agent's participation in the creation or publication of a MediaResource"@en ,
+                               "die Beteiligung eines Akteurs an der Erstellung oder Veröffentlichung einer Medienressource"@de ,
+                               "la participation d'un Agent dans la création ou la publication d'une RessourceMédia"@fr ;
+               skos:example """- Verfassen eines Drehbuchs für eine Filmproduktion
+- Regie bei einem Film
+- Tontechnik für eine Talkshow
+- Erstellung von Spezialeffekten für einen Film"""@de ,
+                            """- authoring a screenplay for a film production
+- directing a movie
+- sound engineering of a talk show
+- creation special effects for a movie"""@en ,
+                            """- rédiger un scénario pour une production cinématographique
+- réalisation d'un film
+- ingénierie du son d'un talk-show
+- création d'effets spéciaux pour un film"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Item
@@ -12578,7 +12636,7 @@ ec:ProductionJob rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasContributor ;
-                                   owl:allValuesFrom ec:Role
+                                   owl:allValuesFrom ec:Involvement
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasIdentifier ;
@@ -14023,75 +14081,6 @@ ec:RightsType rdf:type owl:Class ;
                          "Type de droits"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Role
-ec:Role rdf:type owl:Class ;
-        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:bringsRights ;
-                          owl:allValuesFrom ec:Rights
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasAgent ;
-                          owl:allValuesFrom ec:Agent
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasAgentOnStagePosition ;
-                          owl:allValuesFrom ec:OnStagePosition
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasAssociatedArtefact ;
-                          owl:allValuesFrom ec:Artefact
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasIdentifier ;
-                          owl:allValuesFrom ec:Identifier
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasRelatedArtefact ;
-                          owl:allValuesFrom ec:Artefact
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:objectType ;
-                          owl:allValuesFrom skos:Concept
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:playsCharacter ;
-                          owl:allValuesFrom ec:Character
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:usesProductionDevice ;
-                          owl:allValuesFrom ec:ProductionDevice
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:description ;
-                          owl:allValuesFrom rdfs:Literal
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:name ;
-                          owl:allValuesFrom rdfs:Literal
-                        ] ;
-        dcterms:description "Definiert eine Rolle, die ein Akteur übernimmt. Eine Rolle kann durch ein Concept aus SKOS repräsentiert werden."@de ,
-                            "Permet de définir le rôle, Role, joué par un agent, Agent. Un rôle sera identifié, par exemple, par un Concept d'un schéma de classification SKOS."@fr ,
-                            "To define Role played by an Agent. A «Role» will be identified e.g. by a Concept from a SKOS Classification Scheme."@en ;
-        rdfs:label "Beteiligung"@de ,
-                   "Role"@en ,
-                   "Rôle"@fr ;
-        skos:definition "an Agent's engagement in the creation or publication of a MediaResource"@en ,
-                        "die Beteiligung eines Akteurs an der Erstellung oder Veröffentlichung einer Medienressource"@de ,
-                        "l'engagement d'un Agent dans la création ou la publication d'une RessourceMédia"@fr ;
-        skos:example """- Verfassen eines Drehbuchs für eine Filmproduktion
-- Regie bei einem Film
-- Tontechnik für eine Talkshow
-- Erstellung von Spezialeffekten für einen Film"""@de ,
-                     """- authoring a screenplay for a film production
-- directing a movie
-- sound engineering of a talk show
-- creation special effects for a movie"""@en ,
-                     """- rédiger un scénario pour une production cinématographique
-- réalisation d'un film
-- ingénierie du son d'un talk-show
-- création d'effets spéciaux pour un film"""@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rule
 ec:Rule rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -15223,8 +15212,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
