@@ -1,0 +1,215 @@
+@prefix : <http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#> .
+@prefix ec: <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/tormodv/ontologies/2023/5/EBU_radioRundown_Example> .
+
+<http://www.semanticweb.org/tormodv/ontologies/2023/5/EBU_radioRundown_Example> rdf:type owl:Ontology ;
+                                                                                 owl:imports <https://raw.githubusercontent.com/ebu/ebucoreplus/main/ontology/EBUCorePlus/ebucoreplus.owl> ;
+                                                                                 rdfs:comment "...!" .
+
+
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimelineTrackPart
+ec:hasTimelineTrackPart owl:inverseOf ec:isTimelineTrackPartOf .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isTimelineTrackPartOf
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#archive_jingle_A154
+:archive_jingle_A154 rdf:type owl:NamedIndividual ,
+                              ec:Item .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#archive_media_100343
+:archive_media_100343 rdf:type owl:NamedIndividual ,
+                               ec:Item .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#archive_media_371532
+:archive_media_371532 rdf:type owl:NamedIndividual ,
+                               ec:Item ;
+                      ec:title "Locus Iste"@en .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#archive_media_395724
+:archive_media_395724 rdf:type owl:NamedIndividual ,
+                               ec:Item .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#mbc_1234
+:mbc_1234 rdf:type owl:NamedIndividual ;
+          ec:identifierValue "mbc_1234"^^xsd:string ;
+          rdfs:comment "In most cases, just the IRI will be enough."@en .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#myRadioShow
+:myRadioShow rdf:type owl:NamedIndividual ,
+                      ec:Programme ;
+             ec:hasIdentifier :mbc_1234 ;
+             ec:hasTimelineTrack :myRadioShowTimeline ;
+             ec:title "My radio Show"@en .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#myRadioShowTimeline
+:myRadioShowTimeline rdf:type owl:NamedIndividual ,
+                              ec:TimelineTrack .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio01
+:studio01 rdf:type owl:NamedIndividual ,
+                   ec:EditorialSegment ;
+          ec:isTimelineTrackPartOf :myRadioShowTimeline .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio02
+:studio02 rdf:type owl:NamedIndividual ,
+                   ec:EditorialSegment ;
+          ec:isTimelineTrackPartOf :myRadioShowTimeline .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio03
+:studio03 rdf:type owl:NamedIndividual ,
+                   ec:EditorialSegment ;
+          ec:isTimelineTrackPartOf :myRadioShowTimeline .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_01_duration
+:studio_01_duration rdf:type owl:NamedIndividual ,
+                             ec:NormalPlayTime ;
+                    ec:isoDuration "PT2M11.124S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_01_start
+:studio_01_start rdf:type owl:NamedIndividual ,
+                          ec:NormalPlayTime ;
+                 ec:isoDuration "PT8.368S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_02_duration
+:studio_02_duration rdf:type owl:NamedIndividual ,
+                             ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_02_start
+:studio_02_start rdf:type owl:NamedIndividual ,
+                          ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_03_duration
+:studio_03_duration rdf:type owl:NamedIndividual ,
+                             ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#studio_03_start
+:studio_03_start rdf:type owl:NamedIndividual ,
+                          ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_01
+:timelineItem_01 rdf:type owl:NamedIndividual ,
+                          ec:EditorialSegment ;
+                 ec:isTimelineTrackPartOf :myRadioShowTimeline ;
+                 ec:isExtractOf :archive_jingle_A154 .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_01_duration
+:timelineItem_01_duration rdf:type owl:NamedIndividual ,
+                                   ec:NormalPlayTime ;
+                          ec:isoDuration "PT12.341S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_01_offset
+:timelineItem_01_offset rdf:type owl:NamedIndividual ,
+                                 ec:NormalPlayTime ;
+                        ec:isoDuration "PT0S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_01_start
+:timelineItem_01_start rdf:type owl:NamedIndividual ,
+                                ec:NormalPlayTime ;
+                       ec:isoDuration "PT0S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_02
+:timelineItem_02 rdf:type owl:NamedIndividual ,
+                          ec:EditorialSegment ;
+                 ec:isTimelineTrackPartOf :myRadioShowTimeline ;
+                 ec:duration :timelineItem_02_duration ;
+                 ec:isExtractOf :archive_media_371532 .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_02_duration
+:timelineItem_02_duration rdf:type owl:NamedIndividual ,
+                                   ec:NormalPlayTime ;
+                          ec:isoDuration "PT3M02.376S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_02_offset
+:timelineItem_02_offset rdf:type owl:NamedIndividual ,
+                                 ec:NormalPlayTime ;
+                        ec:isoDuration "PT0.643S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_02_start
+:timelineItem_02_start rdf:type owl:NamedIndividual ,
+                                ec:NormalPlayTime ;
+                       ec:isoDuration "PT2M19.830S"^^xsd:string .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_03
+:timelineItem_03 rdf:type owl:NamedIndividual ,
+                          ec:EditorialSegment ;
+                 ec:isTimelineTrackPartOf :myRadioShowTimeline ;
+                 ec:isExtractOf :archive_media_100343 .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_03_duration
+:timelineItem_03_duration rdf:type owl:NamedIndividual ,
+                                   ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_03_offset
+:timelineItem_03_offset rdf:type owl:NamedIndividual ,
+                                 ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_03_start
+:timelineItem_03_start rdf:type owl:NamedIndividual ,
+                                ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_04
+:timelineItem_04 rdf:type owl:NamedIndividual ,
+                          ec:EditorialSegment ;
+                 ec:isExtractOf :archive_media_395724 .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_04_duration
+:timelineItem_04_duration rdf:type owl:NamedIndividual ,
+                                   ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_04_offset
+:timelineItem_04_offset rdf:type owl:NamedIndividual ,
+                                 ec:NormalPlayTime .
+
+
+###  http://www.semanticweb.org/tormodv/ontologies/2023/5/untitled-ontology-593#timelineItem_04_start
+:timelineItem_04_start rdf:type owl:NamedIndividual ,
+                                ec:NormalPlayTime .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
