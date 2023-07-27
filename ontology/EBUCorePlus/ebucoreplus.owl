@@ -10670,7 +10670,11 @@ ec:EditorialWork rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:promotes ;
-                                   owl:allValuesFrom ec:EditorialWork
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( ec:EditorialGroup
+                                                                     ec:EditorialWork
+                                                                   )
+                                                     ]
                                  ] ;
                  rdfs:label "Editorial work"@en ,
                             "Werk"@de ,
@@ -14907,15 +14911,7 @@ ec:Track_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
 ec:Trailer rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialWork ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:promotes ;
-                             owl:allValuesFrom ec:EditorialGroup
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:promotes ;
-                             owl:allValuesFrom ec:EditorialWork
-                           ] ;
+           rdfs:subClassOf ec:EditorialWork ;
            dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
                                "An AV sequence promoting a film, series or television programme."@en ,
                                "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
