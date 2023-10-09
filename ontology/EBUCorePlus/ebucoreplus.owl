@@ -3186,8 +3186,12 @@ ec:hasTargetAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTargetChannel
 ec:hasTargetChannel rdf:type owl:ObjectProperty ;
-                    dcterms:description "To identify the target Channel associated with a PublicationEvent."@en ;
-                    rdfs:label "Has target channel"@en .
+                    dcterms:description "Pour spécifier un canal de publication cible."@fr ,
+                                        "To specify the target Channel for publication."@en ,
+                                        "Um einen Zielkanal für die Publikation anzugeben."@de ;
+                    rdfs:label "Canal de publication cible"@fr ,
+                               "Has target channel"@en ,
+                               "Ziel-Kanal für Publikation"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTargetPlatform
@@ -3203,8 +3207,12 @@ ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTargetService
 ec:hasTargetService rdf:type owl:ObjectProperty ;
-                    dcterms:description "To identify the target Service associated with a PublicationEvent."@en ;
-                    rdfs:comment "Has target service"@en .
+                    dcterms:description "Pour spécifier un service de publication cible."@fr ,
+                                        "To specify the target Service for publication."@en ,
+                                        "Um einen Ziel-Medienservice für die Publikation anzugeben."@de ;
+                    rdfs:label "Has target service"@en ,
+                               "Service de publication cible"@fr ,
+                               "Ziel-Medienservice"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTeamMember
