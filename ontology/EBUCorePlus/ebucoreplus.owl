@@ -8929,6 +8929,23 @@ ec:BMTemplate rdf:type owl:Class ;
                          "BMVorlage"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BehindTheScenes
+ec:BehindTheScenes rdf:type owl:Class ;
+                   rdfs:subClassOf ec:Extra ;
+                   dcterms:description "Description of \"BehindTheScenes\""@de ,
+                                       "Description of \"BehindTheScenes\""@en ,
+                                       "Description of \"BehindTheScenes\""@fr ;
+                   rdfs:label "BehindTheScenes"@de ,
+                              "BehindTheScenes"@en ,
+                              "BehindTheScenes"@fr ;
+                   skos:definition "Definition of \"BehindTheScenes\""@de ,
+                                   "Definition of \"BehindTheScenes\""@en ,
+                                   "Definition of \"BehindTheScenes\""@fr ;
+                   skos:example "Example of \"BehindTheScenes\""@de ,
+                                "Example of \"BehindTheScenes\""@en ,
+                                "Example of \"BehindTheScenes\""@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
                          rdfs:subClassOf ec:Asset ,
@@ -8969,7 +8986,10 @@ ec:Biography rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Bonus
 ec:Bonus rdf:type owl:Class ;
-         rdfs:subClassOf ec:EditorialWork ;
+         rdfs:subClassOf ec:Extra ;
+         dcterms:description "Description of \"Bonus\""@de ,
+                             "Description of \"Bonus\""@en ,
+                             "Description of \"Bonus\""@fr ;
          rdfs:label "Bonus"@de ,
                     "Bonus"@en ,
                     "Bonus"@fr ;
@@ -10912,6 +10932,27 @@ ec:ExploitationIssues rdf:type owl:Class ;
                                  "Problèmes d'exploitation"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Extra
+ec:Extra rdf:type owl:Class ;
+         rdfs:subClassOf ec:EditorialWork ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasProgramme ;
+                           owl:allValuesFrom ec:Programme
+                         ] ;
+         dcterms:description "Description of \"Extra\""@de ,
+                             "Description of \"Extra\""@en ,
+                             "Description of \"Extra\""@fr ;
+         rdfs:label "Extra"@de ,
+                    "Extra"@en ,
+                    "Extra"@fr ;
+         skos:definition "Definition of \"Extra\""@de ,
+                         "Definition of \"Extra\""@en ,
+                         "Definition of \"Extra\""@fr ;
+         skos:example "Example of \"Extra\""@de ,
+                      "Example of \"Extra\""@en ,
+                      "Example of \"Extra\""@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#FictionalEvent
 ec:FictionalEvent rdf:type owl:Class ;
                   rdfs:subClassOf ec:Event ;
@@ -10996,6 +11037,23 @@ ec:FoodStyle rdf:type owl:Class ;
              rdfs:label "Essen Stil"@de ,
                         "Food style"@en ,
                         "Style alimentaire"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Footage
+ec:Footage rdf:type owl:Class ;
+           rdfs:subClassOf ec:Extra ;
+           dcterms:description "Description of \"Footage\""@de ,
+                               "Description of \"Footage\""@en ,
+                               "Description of \"Footage\""@fr ;
+           rdfs:label "Footage"@de ,
+                      "Footage"@en ,
+                      "Footage"@fr ;
+           skos:definition "Definition of \"Footage\""@de ,
+                           "Definition of \"Footage\""@en ,
+                           "Definition of \"Footage\""@fr ;
+           skos:example "Example of \"Footage\""@de ,
+                        "Example of \"Footage\""@en ,
+                        "Example of \"Footage\""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Format
@@ -11139,6 +11197,23 @@ ec:IntentionCode rdf:type owl:Class ;
                  rdfs:label "Absichtscode"@de ,
                             "Code d'intention"@fr ,
                             "Intention code"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Interview
+ec:Interview rdf:type owl:Class ;
+             rdfs:subClassOf ec:Extra ;
+             dcterms:description "Description of \"Interview\""@de ,
+                                 "Description of \"Interview\""@en ,
+                                 "Description of \"Interview\""@fr ;
+             rdfs:label "Interview"@de ,
+                        "Interview"@en ,
+                        "Interview"@fr ;
+             skos:definition "Definition of \"Interview\""@de ,
+                             "Definition of \"Interview\""@en ,
+                             "Definition of \"Interview\""@fr ;
+             skos:example "Example of \"Interview\""@de ,
+                          "Example of \"Interview\""@en ,
+                          "Example of \"Interview\""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Involvement
@@ -11496,7 +11571,7 @@ ec:Logo rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MakingOf
 ec:MakingOf rdf:type owl:Class ;
-            rdfs:subClassOf ec:EditorialWork ,
+            rdfs:subClassOf ec:Extra ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTopic ;
                               owl:allValuesFrom ec:EditorialObject
@@ -12298,7 +12373,10 @@ ec:OriginalLanguage rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Outtakes
 ec:Outtakes rdf:type owl:Class ;
-            rdfs:subClassOf ec:EditorialWork ;
+            rdfs:subClassOf ec:Extra ;
+            dcterms:description "Description of \"Outtakes\""@de ,
+                                "Description of \"Outtakes\""@en ,
+                                "Description of \"Outtakes\""@fr ;
             rdfs:label "Outtakes"@de ,
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
@@ -14949,7 +15027,7 @@ ec:Track_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
 ec:Trailer rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialWork ;
+           rdfs:subClassOf ec:Extra ;
            dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
                                "An AV sequence promoting a film, series or television programme."@en ,
                                "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
