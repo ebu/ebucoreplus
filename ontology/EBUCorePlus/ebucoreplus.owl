@@ -4508,7 +4508,7 @@ time:hasTRS rdf:type owl:ObjectProperty ;
                                              rdfs:label "Berechtigungen"@de ,
                                                         "Permissions"@en ,
                                                         "Permissions"@fr ;
-                                             rdfs:prefLabel "Permissions"^^xsd:string .
+                                             rdfs:prefLabel "Permissions" .
 
 
 ###  https://rdf-vocabulary.ddialliance.org/xkos/after
@@ -8931,19 +8931,19 @@ ec:BMTemplate rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BehindTheScenes
 ec:BehindTheScenes rdf:type owl:Class ;
-                   rdfs:subClassOf ec:Extra ;
-                   dcterms:description "Description of \"BehindTheScenes\""@de ,
+                   rdfs:subClassOf ec:EditorialExtra ;
+                   dcterms:description "Beschreibung für \"BehindTheScenes\""@de ,
                                        "Description of \"BehindTheScenes\""@en ,
-                                       "Description of \"BehindTheScenes\""@fr ;
+                                       "Description pour \"BehindTheScenes\""@fr ;
                    rdfs:label "BehindTheScenes"@de ,
                               "BehindTheScenes"@en ,
                               "BehindTheScenes"@fr ;
-                   skos:definition "Definition of \"BehindTheScenes\""@de ,
-                                   "Definition of \"BehindTheScenes\""@en ,
-                                   "Definition of \"BehindTheScenes\""@fr ;
-                   skos:example "Example of \"BehindTheScenes\""@de ,
+                   skos:definition "Definition of \"BehindTheScenes\""@en ,
+                                   "Definition von \"BehindTheScenes\""@de ,
+                                   "Définition de \"BehindTheScenes\""@fr ;
+                   skos:example "Beispiel für \"BehindTheScenes\""@de ,
                                 "Example of \"BehindTheScenes\""@en ,
-                                "Example of \"BehindTheScenes\""@fr .
+                                "Exemple pour \"BehindTheScenes\""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
@@ -8986,10 +8986,10 @@ ec:Biography rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Bonus
 ec:Bonus rdf:type owl:Class ;
-         rdfs:subClassOf ec:Extra ;
-         dcterms:description "Description of \"Bonus\""@de ,
+         rdfs:subClassOf ec:EditorialExtra ;
+         dcterms:description "Beschreibung für \"Bonus\""@de ,
                              "Description of \"Bonus\""@en ,
-                             "Description of \"Bonus\""@fr ;
+                             "Description pour \"Bonus\""@fr ;
          rdfs:label "Bonus"@de ,
                     "Bonus"@en ,
                     "Bonus"@fr ;
@@ -10139,6 +10139,27 @@ ec:EditUnitCount rdf:type owl:Class ;
                             "Modifier le nombre d'unités"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialExtra
+ec:EditorialExtra rdf:type owl:Class ;
+                  rdfs:subClassOf ec:EditorialWork ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasProgramme ;
+                                    owl:allValuesFrom ec:Programme
+                                  ] ;
+                  dcterms:description "Beschreibung für \"Extra\""@de ,
+                                      "Description of \"Extra\""@en ,
+                                      "Description pour \"Extra\""@fr ;
+                  rdfs:label "Editorial extra"@de ,
+                             "Editorial extra"@en ,
+                             "Editorial extra"@fr ;
+                  skos:definition "Definition of \"Extra\""@en ,
+                                  "Definition von \"Extra\""@de ,
+                                  "Définition de \"Extra\""@fr ;
+                  skos:example "Beispiel für \"Extra\""@de ,
+                               "Example of \"Extra\""@en ,
+                               "Exemple pour \"Extra\""@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialGroup
 ec:EditorialGroup rdf:type owl:Class ;
                   rdfs:subClassOf ec:EditorialObject ,
@@ -10932,27 +10953,6 @@ ec:ExploitationIssues rdf:type owl:Class ;
                                  "Problèmes d'exploitation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Extra
-ec:Extra rdf:type owl:Class ;
-         rdfs:subClassOf ec:EditorialWork ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasProgramme ;
-                           owl:allValuesFrom ec:Programme
-                         ] ;
-         dcterms:description "Description of \"Extra\""@de ,
-                             "Description of \"Extra\""@en ,
-                             "Description of \"Extra\""@fr ;
-         rdfs:label "Extra"@de ,
-                    "Extra"@en ,
-                    "Extra"@fr ;
-         skos:definition "Definition of \"Extra\""@de ,
-                         "Definition of \"Extra\""@en ,
-                         "Definition of \"Extra\""@fr ;
-         skos:example "Example of \"Extra\""@de ,
-                      "Example of \"Extra\""@en ,
-                      "Example of \"Extra\""@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#FictionalEvent
 ec:FictionalEvent rdf:type owl:Class ;
                   rdfs:subClassOf ec:Event ;
@@ -11041,19 +11041,19 @@ ec:FoodStyle rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Footage
 ec:Footage rdf:type owl:Class ;
-           rdfs:subClassOf ec:Extra ;
-           dcterms:description "Description of \"Footage\""@de ,
+           rdfs:subClassOf ec:EditorialExtra ;
+           dcterms:description "Beschreibung für \"Footage\""@de ,
                                "Description of \"Footage\""@en ,
-                               "Description of \"Footage\""@fr ;
+                               "Description pour \"Footage\""@fr ;
            rdfs:label "Footage"@de ,
                       "Footage"@en ,
                       "Footage"@fr ;
-           skos:definition "Definition of \"Footage\""@de ,
-                           "Definition of \"Footage\""@en ,
-                           "Definition of \"Footage\""@fr ;
-           skos:example "Example of \"Footage\""@de ,
+           skos:definition "Definition of \"Footage\""@en ,
+                           "Definition von \"Footage\""@de ,
+                           "Définition de \"Footage\""@fr ;
+           skos:example "Beispiel für \"Footage\""@de ,
                         "Example of \"Footage\""@en ,
-                        "Example of \"Footage\""@fr .
+                        "Exemple pour \"Footage\""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Format
@@ -11201,19 +11201,19 @@ ec:IntentionCode rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Interview
 ec:Interview rdf:type owl:Class ;
-             rdfs:subClassOf ec:Extra ;
-             dcterms:description "Description of \"Interview\""@de ,
+             rdfs:subClassOf ec:EditorialExtra ;
+             dcterms:description "Beschreibung für \"Interview\""@de ,
                                  "Description of \"Interview\""@en ,
-                                 "Description of \"Interview\""@fr ;
+                                 "Description pour \"Interview\""@fr ;
              rdfs:label "Interview"@de ,
                         "Interview"@en ,
                         "Interview"@fr ;
-             skos:definition "Definition of \"Interview\""@de ,
-                             "Definition of \"Interview\""@en ,
-                             "Definition of \"Interview\""@fr ;
-             skos:example "Example of \"Interview\""@de ,
+             skos:definition "Definition of \"Interview\""@en ,
+                             "Definition von \"Interview\""@de ,
+                             "Définition de \"Interview\""@fr ;
+             skos:example "Beispiel für \"Interview\""@de ,
                           "Example of \"Interview\""@en ,
-                          "Example of \"Interview\""@fr .
+                          "Exemple pour \"Interview\""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Involvement
@@ -11571,7 +11571,7 @@ ec:Logo rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MakingOf
 ec:MakingOf rdf:type owl:Class ;
-            rdfs:subClassOf ec:Extra ,
+            rdfs:subClassOf ec:EditorialExtra ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTopic ;
                               owl:allValuesFrom ec:EditorialObject
@@ -12373,10 +12373,10 @@ ec:OriginalLanguage rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Outtakes
 ec:Outtakes rdf:type owl:Class ;
-            rdfs:subClassOf ec:Extra ;
+            rdfs:subClassOf ec:EditorialExtra ;
             dcterms:description "Description of \"Outtakes\""@de ,
                                 "Description of \"Outtakes\""@en ,
-                                "Description of \"Outtakes\""@fr ;
+                                "Description pour \"Outtakes\""@fr ;
             rdfs:label "Outtakes"@de ,
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
@@ -15027,7 +15027,7 @@ ec:Track_Type rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
 ec:Trailer rdf:type owl:Class ;
-           rdfs:subClassOf ec:Extra ;
+           rdfs:subClassOf ec:EditorialExtra ;
            dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
                                "An AV sequence promoting a film, series or television programme."@en ,
                                "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
@@ -15243,7 +15243,7 @@ time:TRS rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#SOMEPROGRAMME
 ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                           ec:EditorialObject ;
-                 ec:aspectRatio "16:9"^^xsd:string ;
+                 ec:aspectRatio "16:9" ;
                  ec:tag "Et merke"@nb ,
                         "et annet merke (some tag)"@nb .
 
@@ -15325,8 +15325,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
