@@ -8932,18 +8932,16 @@ ec:BMTemplate rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BehindTheScenes
 ec:BehindTheScenes rdf:type owl:Class ;
                    rdfs:subClassOf ec:EditorialExtra ;
-                   dcterms:description "Beschreibung für \"BehindTheScenes\""@de ,
-                                       "Description of \"BehindTheScenes\""@en ,
-                                       "Description pour \"BehindTheScenes\""@fr ;
                    rdfs:label "BehindTheScenes"@de ,
                               "BehindTheScenes"@en ,
                               "BehindTheScenes"@fr ;
-                   skos:definition "Definition of \"BehindTheScenes\""@en ,
-                                   "Definition von \"BehindTheScenes\""@de ,
-                                   "Définition de \"BehindTheScenes\""@fr ;
-                   skos:example "Beispiel für \"BehindTheScenes\""@de ,
-                                "Example of \"BehindTheScenes\""@en ,
-                                "Exemple pour \"BehindTheScenes\""@fr .
+                   skos:definition "Ein Editorial Extra, das eine Geschichte über Szenen des Werkes erzählt."@de ,
+                                   """Un éditorial extra qui rapport une histoire sur scenes de l'œuvre
+."""@fr ,
+                                   "an editorial extra that provides a story about scenes of the EditorialWork"@en ;
+                   skos:example "- Kurzfilm mit Erklärungen zu den Stunts in einem Actionfilm"@de ,
+                                "- petit film expliquant les scènes de cascades d'un film d'action"@fr ,
+                                "- short film with explanations on the stunt scenes in an action movie"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
@@ -8987,15 +8985,12 @@ ec:Biography rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Bonus
 ec:Bonus rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialExtra ;
-         dcterms:description "Beschreibung für \"Bonus\""@de ,
-                             "Description of \"Bonus\""@en ,
-                             "Description pour \"Bonus\""@fr ;
          rdfs:label "Bonus"@de ,
                     "Bonus"@en ,
                     "Bonus"@fr ;
-         skos:definition "an EditorialWork intended as an enhancing content of a main EditorialWork."@en ,
-                         "ein Werk, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist."@de ,
-                         "un travail de rédaction destiné à enrichir le contenu d'un travail de rédaction principal."@fr ;
+         skos:definition "an Editorial Extra intended as an enhancing content of a main EditorialWork."@en ,
+                         "ein Editorial Extra, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist."@de ,
+                         "un Éditorial Extra destiné à enrichir le contenu d'une œuvre principal."@fr ;
          skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en ,
                       "- Contenu additionnel pour un film à consommer séparément en tant que complément."@fr ,
                       "- Zusätzliche Inhalte für einen Film, die separat als Erweiterung konsumiert werden können"@de .
@@ -10146,18 +10141,15 @@ ec:EditorialExtra rdf:type owl:Class ;
                                     owl:onProperty ec:hasProgramme ;
                                     owl:allValuesFrom ec:Programme
                                   ] ;
-                  dcterms:description "Beschreibung für \"Extra\""@de ,
-                                      "Description of \"Extra\""@en ,
-                                      "Description pour \"Extra\""@fr ;
-                  rdfs:label "Editorial extra"@de ,
-                             "Editorial extra"@en ,
-                             "Editorial extra"@fr ;
-                  skos:definition "Definition of \"Extra\""@en ,
-                                  "Definition von \"Extra\""@de ,
-                                  "Définition de \"Extra\""@fr ;
-                  skos:example "Beispiel für \"Extra\""@de ,
-                               "Example of \"Extra\""@en ,
-                               "Exemple pour \"Extra\""@fr .
+                  rdfs:label "Editorial Extra"@de ,
+                             "Editorial Extra"@en ,
+                             "Éditorial Extra"@fr ;
+                  skos:definition "Ein Werk, das ein optionale Ergänzung zu einem anderen Werk ist und dazu dient zu erklären, zu unterhalten, zu werben oder ähnliches."@de ,
+                                  "an EditiorialWork that serves as an optional addition to a main EditorialWork and intends  to explain, entertain, advertise or similar."@en ,
+                                  "une œuvre qui sert de complément facultatif à une œuvre principal et qui vise à expliquer, à divertir, à faire de la publicité ou autre."@fr ;
+                  skos:example "Contenu supplémentaire pour un film de cinéma: bande-annonce, making of, bonus, outtakes, ..."@fr ,
+                               "Extra content for a movie: trailer, making of, bonus material, outtakes, ..."@en ,
+                               "Extra-Inhalte für einen Kinofilm: Trailer, Making of, Bonus-Material, Outtakes, ..."@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialGroup
@@ -11042,18 +11034,18 @@ ec:FoodStyle rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Footage
 ec:Footage rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialExtra ;
-           dcterms:description "Beschreibung für \"Footage\""@de ,
-                               "Description of \"Footage\""@en ,
-                               "Description pour \"Footage\""@fr ;
-           rdfs:label "Footage"@de ,
-                      "Footage"@en ,
-                      "Footage"@fr ;
-           skos:definition "Definition of \"Footage\""@en ,
-                           "Definition von \"Footage\""@de ,
-                           "Définition de \"Footage\""@fr ;
-           skos:example "Beispiel für \"Footage\""@de ,
-                        "Example of \"Footage\""@en ,
-                        "Exemple pour \"Footage\""@fr .
+           rdfs:label "Footage"@en ,
+                      "Matériel Enregistrement"@fr ,
+                      "Rohmaterial"@de ;
+           skos:definition "Audio or video recordings (to be) used in editing for a work"@en ,
+                           "Audio- oder Videoaufnahmen, aus denen ein Werk entstanden ist bzw. entstehen soll."@de ,
+                           "Enregistrements audio ou vidéo pour la réalisation d'une œuvre"@fr ;
+           skos:example """- Rohmaterial zur Herstellung eines Kinofilms
+- Rohmaterial zur Herstellung eines Nachrichtenbeitrages"""@de ,
+                        """- enregistrement audio-visuel pour créer un film
+- enregistrement audio-visuel pour créer un article d'actualité"""@fr ,
+                        """- video recordings to create a movie
+- video recordings to create a news item"""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Format
@@ -11202,18 +11194,18 @@ ec:IntentionCode rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Interview
 ec:Interview rdf:type owl:Class ;
              rdfs:subClassOf ec:EditorialExtra ;
-             dcterms:description "Beschreibung für \"Interview\""@de ,
-                                 "Description of \"Interview\""@en ,
-                                 "Description pour \"Interview\""@fr ;
              rdfs:label "Interview"@de ,
                         "Interview"@en ,
                         "Interview"@fr ;
-             skos:definition "Definition of \"Interview\""@en ,
-                             "Definition von \"Interview\""@de ,
-                             "Définition de \"Interview\""@fr ;
-             skos:example "Beispiel für \"Interview\""@de ,
-                          "Example of \"Interview\""@en ,
-                          "Exemple pour \"Interview\""@fr .
+             skos:definition "Editorial extra, consisting of a conversation about a work with a person involved in the production of that work."@en ,
+                             "ein Editorial Extra, das ein Gespräch mit einer/m Beteiligten an der Herstellung des Werkes wiedergibt."@de ,
+                             "Éditorial extra, consistant en une conversation sur une œuvre par une personne impliquée dans sa production."@fr ;
+             skos:example """- Aufzeichnung eines Gespräches mit der Hauptdarstellerin eines Kinofilms
+- Aufzeichnung eines Gesprächs mit dem Regisseur eines Kinofilms"""@de ,
+                          """- Recording of a conversation with the lead actress in a feature film
+- Recording of a conversation with the director of a cinema film"""@en ,
+                          """- enregistrement d'un entretien avec l'actrice principale d'un film de cinéma
+- enregistrement d'un entretien avec le réalisateur d'un film de cinéma"""@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Involvement
@@ -11576,18 +11568,15 @@ ec:MakingOf rdf:type owl:Class ;
                               owl:onProperty ec:hasTopic ;
                               owl:allValuesFrom ec:EditorialObject
                             ] ;
-            dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
-                                "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
-                                "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
             rdfs:label "Making-of"@de ,
                        "Making-of"@en ,
                        "Making-of"@fr ;
-            skos:definition "an EditorialWork about the making of a film or a Programme"@en ,
-                            "ein Werk, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
-                            "un travail éditorial sur la réalisation d'un film ou d'un programme."@fr ;
-            skos:example "- Das Making-of eines Films"@de ,
-                         "- le tournage d'un film"@fr ,
-                         "- the making of a movie"@en .
+            skos:definition "an EditorialExtra about the making of a film or a Programme"@en ,
+                            "ein EditorialExtra, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
+                            "un éditorial extra sur la réalisation d'un film ou d'un programme"@fr ;
+            skos:example "- Das Making-of eines Films oder einer Serie"@de ,
+                         "- le making-of d'un film ou une serié"@fr ,
+                         "- the making of a movie or a serial"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Measure
@@ -12374,15 +12363,12 @@ ec:OriginalLanguage rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Outtakes
 ec:Outtakes rdf:type owl:Class ;
             rdfs:subClassOf ec:EditorialExtra ;
-            dcterms:description "Description of \"Outtakes\""@de ,
-                                "Description of \"Outtakes\""@en ,
-                                "Description pour \"Outtakes\""@fr ;
             rdfs:label "Outtakes"@de ,
                        "Outtakes"@en ,
                        "Outtakes"@fr ;
-            skos:definition "an EditorialWork collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
-                            "ein Werk, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen"@de ,
-                            "un travail éditorial rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
+            skos:definition "an Editorial Extra collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
+                            "ein Editorial Extra, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen"@de ,
+                            "un Éditorial Extra rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
             skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en ,
                          "- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film"@de ,
                          "- un clip avec une collection de chutes sur le DVD bonus d'un film"@fr .
@@ -15028,15 +15014,12 @@ ec:Track_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
 ec:Trailer rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialExtra ;
-           dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
-                               "An AV sequence promoting a film, series or television programme."@en ,
-                               "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
            rdfs:label "Bande annonce"@fr ,
                       "Trailer"@de ,
                       "Trailer"@en ;
-           skos:definition "an EditorialWork with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
-                           "eine Werk mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
-                           "un travail éditorial avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
+           skos:definition "an Editorial Extra with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
+                           "ein Editorial Extra mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
+                           "une Éditorial Extra avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
            skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
 - a promo-clip for a sports-cup-final later tonight"""@en ,
                         """- eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
@@ -15325,8 +15308,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
