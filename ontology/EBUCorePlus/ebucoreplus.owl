@@ -1,6 +1,7 @@
-@prefix : <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
+@prefix :<http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>
+ .
 @prefix ec: <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,9 +12,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/>
+ .
+@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/>
+ .
+@prefix dcterms: <http://purl.org/dc/terms/>
+ .
 @base <http://www.ebu.ch/metadata/ontologies/ebucoreplus> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucoreplus> rdf:type owl:Ontology ;
@@ -10619,7 +10623,7 @@ ec:EditorialObject rdf:type owl:Class ;
                    dcterms:description """An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain). An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline. Examples of simple EditorialObjects: Programme, Item, Shot,Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc.
 
 A simplifieduse-case:
-A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50\" >60\" ). This could be modelled as follows:
+A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50\">60\" ). This could be modelled as follows:
 • The NewsBroadcast is linked to a MediaResource using the instantiates-property
 • The NewsItems are linked to the NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13
 • The InterviewPart is linked to the NewsItem using the hasMember-property. Start and Duration are properties within the InterviewPart indicating its appearance within the NewsItem2.
@@ -11554,6 +11558,9 @@ ec:MakingOf rdf:type owl:Class ;
             rdfs:label "Making-of"@de ,
                        "Making-of"@en ,
                        "Making-of"@fr ;
+            dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
+                       "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
+                       "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
             skos:definition "an EditorialExtra about the making of a film or a Programme"@en ,
                             "ein EditorialExtra, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
                             "un éditorial extra sur la réalisation d'un film ou d'un programme"@fr ;
@@ -15000,6 +15007,9 @@ ec:Trailer rdf:type owl:Class ;
            rdfs:label "Bande annonce"@fr ,
                       "Trailer"@de ,
                       "Trailer"@en ;
+           dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
+                      "An AV sequence promoting a film, series or television programme."@en ,
+                      "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
            skos:definition "an Editorial Extra with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
                            "ein Editorial Extra mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
                            "une Éditorial Extra avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
