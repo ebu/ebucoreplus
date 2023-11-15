@@ -209,10 +209,6 @@ spin:imports rdf:type owl:AnnotationProperty .
 rdfs:example rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2000/01/rdf-schema#prefLabel
-rdfs:prefLabel rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
 owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 
@@ -4512,7 +4508,7 @@ time:hasTRS rdf:type owl:ObjectProperty ;
                                              rdfs:label "Berechtigungen"@de ,
                                                         "Permissions"@en ,
                                                         "Permissions"@fr ;
-                                             rdfs:prefLabel "Permissions" .
+                                             skos:prefLabel "Permissions"^^xsd:string .
 
 
 ###  https://rdf-vocabulary.ddialliance.org/xkos/after
@@ -8940,8 +8936,7 @@ ec:BehindTheScenes rdf:type owl:Class ;
                               "BehindTheScenes"@en ,
                               "BehindTheScenes"@fr ;
                    skos:definition "Ein Editorial Extra, das eine Geschichte über Szenen des Werkes erzählt."@de ,
-                                   """Un éditorial extra qui rapport une histoire sur scenes de l'œuvre
-."""@fr ,
+                                   "Un éditorial extra qui rapport une histoire sur scenes de l'œuvre."@fr ,
                                    "an editorial extra that provides a story about scenes of the EditorialWork"@en ;
                    skos:example "- Kurzfilm mit Erklärungen zu den Stunts in einem Actionfilm"@de ,
                                 "- petit film expliquant les scènes de cascades d'un film d'action"@fr ,
@@ -11555,12 +11550,12 @@ ec:MakingOf rdf:type owl:Class ;
                               owl:onProperty ec:hasTopic ;
                               owl:allValuesFrom ec:EditorialObject
                             ] ;
+            dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
+                                "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
+                                "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
             rdfs:label "Making-of"@de ,
                        "Making-of"@en ,
                        "Making-of"@fr ;
-            dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
-                       "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
-                       "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
             skos:definition "an EditorialExtra about the making of a film or a Programme"@en ,
                             "ein EditorialExtra, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
                             "un éditorial extra sur la réalisation d'un film ou d'un programme"@fr ;
@@ -15004,12 +14999,12 @@ ec:Track_Type rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
 ec:Trailer rdf:type owl:Class ;
            rdfs:subClassOf ec:EditorialExtra ;
+           dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
+                               "An AV sequence promoting a film, series or television programme."@en ,
+                               "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
            rdfs:label "Bande annonce"@fr ,
                       "Trailer"@de ,
                       "Trailer"@en ;
-           dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
-                      "An AV sequence promoting a film, series or television programme."@en ,
-                      "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
            skos:definition "an Editorial Extra with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
                            "ein Editorial Extra mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
                            "une Éditorial Extra avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
@@ -15301,8 +15296,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
