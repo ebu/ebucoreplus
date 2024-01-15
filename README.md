@@ -9,7 +9,7 @@ EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced whe
 
 ![EBUCorePlus-Overview-1-0-6-transparent](https://github.com/ebu/ebucoreplus/assets/80782611/74bb36b1-5edb-4348-9b2a-ebe730ad195e)
 <p align="center">
-  <em>Overview of the EBUCorePlus</em>  
+  <em>Overview of the EBUCorePlus (1.0.6)</em>  
 </p>
 
 </p>
