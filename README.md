@@ -7,10 +7,10 @@ The <a href="https://www.ebu.ch/metadata/ontologies/ebucoreplus/index.html"> EBU
 EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced when using EBUCore and CCDM classes in one graph. It has its own, new name space therefore it is not backward compatible, but can be mapped to its predecessors. It provides complete documentation of all entities in English, French and German (English being normative).
 </p>
 
-
 ![EBUCorePlus-Overview-1-0-6-transparent](https://github.com/ebu/ebucoreplus/assets/80782611/74bb36b1-5edb-4348-9b2a-ebe730ad195e)
-<em>Overview of the EBUCorePlus</em>  
-
+<p align="center">
+  <em>Overview of the EBUCorePlus</em>  
+</p>
 
 </p>
 One major problem of EBUCore and CCDM was the use of ranges: semantically similar object properties needed to be defined in parallel for each class that the property referred to. Another case was the use of multi-range properties, leading to insufficient type safety. EBUCorePlus now uses class restrictions instead, leading to less and more coherent properties. 
