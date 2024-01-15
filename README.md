@@ -8,7 +8,7 @@ EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced whe
 </p>
 
 <p align="center" >
-<img width="1440" alt="EBUCorePlus-Overview-1-0-2-transparent" src="https://user-images.githubusercontent.com/32091198/235692418-6cd35145-4f7f-4727-805b-f1ec2ded40ef.png">
+![EBUCorePlus-Overview-1-0-6-transparent](https://github.com/ebu/ebucoreplus/assets/80782611/74bb36b1-5edb-4348-9b2a-ebe730ad195e)
 <em>Overview of the EBUCorePlus</em>  
 </p>
 
