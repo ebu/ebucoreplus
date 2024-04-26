@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateLicenseEnd
-ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
-                                      "La date à laquelle la licence de l'actif prend fin."@fr ,
-                                      "The date when the licence for the Asset ends."@en ;
-                  rdfs:label "Date de fin de licence"@fr ,
-                             "Enddatum der Lizenz"@de ,
-                             "Licence end date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateMigrated
 ec:dateMigrated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateIssued rdf:type owl:ObjectProperty ;
                  rdfs:label "Date d'émission"@fr ,
                             "Date issued"@en ,
                             "Datum der Ausstellung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicenseEnd
+ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:date ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
+                                         "La date à laquelle la licence de l'actif prend fin."@fr ,
+                                         "The date when the licence for the Asset ends."@en ;
+                     rdfs:label "Date de fin de licence"@fr ,
+                                "Enddatum der Lizenz"@de ,
+                                "Licence end date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8269,11 +8269,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateLicenseEnd ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateModified ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8310,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDateDistributed ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateLicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
