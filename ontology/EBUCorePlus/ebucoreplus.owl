@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIngested
-ec:dateIngested rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
-                                    "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
-                                    "The date when the Resource was ingested/acquired in institutional holdings."@en ;
-                rdfs:label "Date d'ingestion"@fr ,
-                           "Ingest date"@en ,
-                           "Ingest-Datum"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIssued
 ec:dateIssued rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateDistributed rdf:type owl:ObjectProperty ;
                       rdfs:label "Date de distribution"@fr ,
                                  "Datum der Verteilung"@de ,
                                  "Distribution date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIngested
+ec:hasDateIngested rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
+                                       "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
+                                       "The date when the Resource was ingested/acquired in institutional holdings."@en ;
+                   rdfs:label "Date d'ingestion"@fr ,
+                              "Ingest date"@en ,
+                              "Ingest-Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -11749,11 +11749,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateIngested ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateMigrated ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
@@ -11815,6 +11810,11 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDateDigitised ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateIngested ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
