@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDistributed
-ec:dateDistributed rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:range time:Instant ;
-                   dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
-                                       "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
-                                       "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:label "Date de distribution"@fr ,
-                              "Datum der Verteilung"@de ,
-                              "Distribution date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIngested
 ec:dateIngested rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateDigitised rdf:type owl:ObjectProperty ;
                     rdfs:label "Date de numérisation"@fr ,
                                "Datum der Digitalisierung"@de ,
                                "Digitisation date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDistributed
+ec:hasDateDistributed rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:date ;
+                      rdfs:range time:Instant ;
+                      dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
+                                          "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
+                                          "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                      rdfs:label "Date de distribution"@fr ,
+                                 "Datum der Verteilung"@de ,
+                                 "Distribution date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8269,11 +8269,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDistributed ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateLicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8310,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDateDeleted ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateDistributed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
