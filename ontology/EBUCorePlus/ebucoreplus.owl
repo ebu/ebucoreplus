@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDigitised
-ec:dateDigitised rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
-                                     "La date à laquelle la ressource a été numérisée."@fr ,
-                                     "The date when the Resource was digitised."@en ;
-                 rdfs:label "Date de numérisation"@fr ,
-                            "Datum der Digitalisierung"@de ,
-                            "Digitisation date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDistributed
 ec:dateDistributed rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateDeleted rdf:type owl:ObjectProperty ;
                   rdfs:label "Date de suppression"@fr ,
                              "Datum der Löschung"@de ,
                              "Deletion date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDigitised
+ec:hasDateDigitised rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:date ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
+                                        "La date à laquelle la ressource a été numérisée."@fr ,
+                                        "The date when the Resource was digitised."@en ;
+                    rdfs:label "Date de numérisation"@fr ,
+                               "Datum der Digitalisierung"@de ,
+                               "Digitisation date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -11749,11 +11749,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateDigitised ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateIngested ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
@@ -11817,6 +11812,11 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hasContainerMimeType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateDigitised ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasFileFormat ;
