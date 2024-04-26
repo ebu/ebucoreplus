@@ -1,7 +1,6 @@
-@prefix :<http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
+@prefix : <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/>
- .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ec: <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,12 +11,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/>
- .
-@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/>
- .
-@prefix dcterms: <http://purl.org/dc/terms/>
- .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucoreplus> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucoreplus> rdf:type owl:Ontology ;
@@ -560,18 +556,6 @@ ec:date rdf:type owl:ObjectProperty ;
         rdfs:label "Date"@en ,
                    "Date"@fr ,
                    "Datum"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateArchived
-ec:dateArchived rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
-                                    "La date à laquelle l'actif a été archivé."@fr ,
-                                    "The date when the Asset was archived."@en ;
-                rdfs:label "Archiving date"@en ,
-                           "Date d'archivage"@fr ,
-                           "Datum der Archivierung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateBroadcast
@@ -1724,6 +1708,18 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
                 rdfs:label "Data track"@en ,
                            "Daten verfolgen"@de ,
                            "Suivi des données"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateArchived
+ec:hasDateArchived rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
+                                       "La date à laquelle l'actif a été archivé."@fr ,
+                                       "The date when the Asset was archived."@en ;
+                   rdfs:label "Archiving date"@en ,
+                              "Date d'archivage"@fr ,
+                              "Datum der Archivierung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8273,11 +8269,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateArchived ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8314,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:datelicensedStart ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateArchived ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
