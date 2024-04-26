@@ -1,7 +1,6 @@
-@prefix :<http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
+@prefix : <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/>
- .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ec: <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,12 +11,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix vann: <http://purl.org/vocab/vann/>
- .
-@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/>
- .
-@prefix dcterms: <http://purl.org/dc/terms/>
- .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://www.ebu.ch/metadata/ontologies/ebucoreplus> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucoreplus> rdf:type owl:Ontology ;
@@ -308,18 +304,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:label "Agent"@de ,
                          "Agent"@en ,
                          "Agent"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfPurchase
-ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf ec:date ;
-                          rdfs:range time:Instant ;
-                          dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
-                                              "La date à laquelle un artefact a été acheté. ."@fr ,
-                                              "The date when an Artefact was purchased. ."@en ;
-                          rdfs:label "Artefact date of purchase"@en ,
-                                     "Date d'achat de l'artefact"@fr ,
-                                     "Kaufdatum des Artefakts"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfSell
@@ -1112,6 +1096,18 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:label "Acheteur"@fr ,
                                "Buyer"@en ,
                                "Käufer"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfPurchase
+ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf ec:date ;
+                             rdfs:range time:Instant ;
+                             dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
+                                                 "La date à laquelle un artefact a été acheté. ."@fr ,
+                                                 "The date when an Artefact was purchased. ."@en ;
+                             rdfs:label "Artefact date of purchase"@en ,
+                                        "Date d'achat de l'artefact"@fr ,
+                                        "Kaufdatum des Artefakts"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactOwner
@@ -8045,12 +8041,12 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfPurchase ;
+                              owl:onProperty ec:artefactDateOfSell ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:onProperty ec:hasArtefactDateOfPurchase ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
