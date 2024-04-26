@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDeleted
-ec:dateDeleted rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
-                                   "La date à laquelle la ressource a été supprimée."@fr ,
-                                   "The date when the Resource was deleted."@en ;
-               rdfs:label "Date de suppression"@fr ,
-                          "Datum der Löschung"@de ,
-                          "Deletion date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDigitised
 ec:dateDigitised rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateCreated rdf:type owl:ObjectProperty ;
                   rdfs:label "Creation date/time"@en ,
                              "Date/heure de création"@fr ,
                              "Erstellungsdatum/-zeit"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDeleted
+ec:hasDateDeleted rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
+                                      "La date à laquelle la ressource a été supprimée."@fr ,
+                                      "The date when the Resource was deleted."@en ;
+                  rdfs:label "Date de suppression"@fr ,
+                             "Datum der Löschung"@de ,
+                             "Deletion date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8269,11 +8269,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDeleted ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateDistributed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8310,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDateCreated ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateDeleted ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -13968,12 +13968,12 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateDeleted ;
+                              owl:onProperty ec:dateValidated ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateValidated ;
+                              owl:onProperty ec:hasDateDeleted ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
