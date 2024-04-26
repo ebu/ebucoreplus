@@ -306,18 +306,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
                          "Agent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#awardDate
-ec:awardDate rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf ec:hasDate ;
-             rdfs:range time:Instant ;
-             dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
-                                 "To provide an date when an Award was delivered."@en ,
-                                 "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
-             rdfs:label "Award date"@en ,
-                        "Date d'attribution"@fr ,
-                        "Datum der Vergabe"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#basedOn
 ec:basedOn rdf:type owl:ObjectProperty ;
            dcterms:description "Pour identifier l'EditorialObject auquel se rapporte un ProductionJob à."@fr ,
@@ -1325,6 +1313,18 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
                       rdfs:label "Audit report date"@en ,
                                  "Date du rapport d'audit"@fr ,
                                  "Datum des Prüfungsberichts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
+ec:hasAwardDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:hasDate ;
+                rdfs:range time:Instant ;
+                dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
+                                    "To provide an date when an Award was delivered."@en ,
+                                    "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
+                rdfs:label "Award date"@en ,
+                           "Date d'attribution"@fr ,
+                           "Datum der Vergabe"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBeenAwarded
@@ -8868,7 +8868,7 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:awardDate ;
+                           owl:onProperty ec:hasAwardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
