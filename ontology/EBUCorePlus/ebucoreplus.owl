@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIssued
-ec:dateIssued rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf ec:date ;
-              rdfs:range time:Instant ;
-              dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
-                                  "La date à laquelle l'actif a été émis."@fr ,
-                                  "The date when the Asset was issued."@en ;
-              rdfs:label "Date d'émission"@fr ,
-                         "Date issued"@en ,
-                         "Datum der Ausstellung"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateLicenseEnd
 ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateIngested rdf:type owl:ObjectProperty ;
                    rdfs:label "Date d'ingestion"@fr ,
                               "Ingest date"@en ,
                               "Ingest-Datum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIssued
+ec:hasDateIssued rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:date ;
+                 rdfs:range time:Instant ;
+                 dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
+                                     "La date à laquelle l'actif a été émis."@fr ,
+                                     "The date when the Asset was issued."@en ;
+                 rdfs:label "Date d'émission"@fr ,
+                            "Date issued"@en ,
+                            "Datum der Ausstellung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -10458,11 +10458,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateIssued ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:duration ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
@@ -10474,6 +10469,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasDateBroadcast ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasDateIssued ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
                                    ] ,
