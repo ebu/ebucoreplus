@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateMigrated
-ec:dateMigrated rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
-                                    "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
-                                    "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
-                rdfs:label "Date de migration"@fr ,
-                           "Datum der Migration"@de ,
-                           "Migration date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateModified
 ec:dateModified rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
                      rdfs:label "Date de fin de licence"@fr ,
                                 "Enddatum der Lizenz"@de ,
                                 "Licence end date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateMigrated
+ec:hasDateMigrated rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
+                                       "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
+                                       "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
+                   rdfs:label "Date de migration"@fr ,
+                              "Datum der Migration"@de ,
+                              "Migration date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -11749,11 +11749,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateMigrated ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateNormalized ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
@@ -11815,6 +11810,11 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDateIngested ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateMigrated ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
