@@ -306,16 +306,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
                          "Agent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportDate
-ec:auditReportDate rdf:type owl:ObjectProperty ;
-                   dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
-                                       "La date de publication d'un rapport d'audit."@fr ,
-                                       "The date of release of an AuditReport."@en ;
-                   rdfs:label "Audit report date"@en ,
-                              "Date du rapport d'audit"@fr ,
-                              "Datum des Prüfungsberichts"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#awardDate
 ec:awardDate rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ec:hasDate ;
@@ -1325,6 +1315,16 @@ ec:hasAuditJobRelatedAuditReport rdf:type owl:ObjectProperty ;
                                  rdfs:label "Rapport d'audit connexe"@fr ,
                                             "Related audit report"@en ,
                                             "Zugehöriger Prüfbericht"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuditReportDate
+ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
+                      dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
+                                          "La date de publication d'un rapport d'audit."@fr ,
+                                          "The date of release of an AuditReport."@en ;
+                      rdfs:label "Audit report date"@en ,
+                                 "Date du rapport d'audit"@fr ,
+                                 "Datum des Prüfungsberichts"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBeenAwarded
@@ -8787,7 +8787,7 @@ ec:AuditJob rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AuditReport
 ec:AuditReport rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:auditReportDate ;
+                                 owl:onProperty ec:hasAuditReportDate ;
                                  owl:allValuesFrom time:Instant
                                ] ,
                                [ rdf:type owl:Restriction ;
