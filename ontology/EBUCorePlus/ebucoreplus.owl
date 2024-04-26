@@ -395,16 +395,6 @@ ec:consumesEssence rdf:type owl:ObjectProperty ;
                               "Essenz"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionLicenceLink
-ec:consumptionLicenceLink rdf:type owl:ObjectProperty ;
-                          dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
-                                              "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
-                                              "Un lien vers les conditions d'une licence de consommation."@fr ;
-                          rdfs:label "Consumption licence link"@en ,
-                                     "Lien vers le permis de consommation"@fr ,
-                                     "Link zur Verbrauchslizenz"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractCostAmountCurrency
 ec:contractCostAmountCurrency rdf:type owl:ObjectProperty ;
                               dcterms:description "Die Währung des Betrags der ContractCost."@de ,
@@ -1473,6 +1463,16 @@ ec:hasConsumptionEventResumePoint rdf:type owl:ObjectProperty ;
                                   rdfs:label "Consumption event resume point"@en ,
                                              "Point de reprise de l'événement de consommation"@fr ,
                                              "Punkt für die Fortsetzung des Verbrauchsereignisses"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionLicenceLink
+ec:hasConsumptionLicenceLink rdf:type owl:ObjectProperty ;
+                             dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
+                                                 "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
+                                                 "Un lien vers les conditions d'une licence de consommation."@fr ;
+                             rdfs:label "Consumption licence link"@en ,
+                                        "Lien vers le permis de consommation"@fr ,
+                                        "Link zur Verbrauchslizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContact
@@ -9645,7 +9645,7 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                         owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:consumptionLicenceLink ;
+                                        owl:onProperty ec:hasConsumptionLicenceLink ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass ec:Contract
                                       ] ,
