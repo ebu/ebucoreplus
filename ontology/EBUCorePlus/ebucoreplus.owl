@@ -395,16 +395,6 @@ ec:consumesEssence rdf:type owl:ObjectProperty ;
                               "Essenz"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionDeviceManufacturer
-ec:consumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
-                                 dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
-                                                     "Le fabricant d'un ConsumptionDevice."@fr ,
-                                                     "The manufacturer of a ConsumptionDevice."@en ;
-                                 rdfs:label "Consumption device manufacturer"@en ,
-                                            "Fabricant de dispositifs de consommation"@fr ,
-                                            "Hersteller von Verbrauchsgeräten"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionEventResumePoint
 ec:consumptionEventResumePoint rdf:type owl:ObjectProperty ;
                                dcterms:description "Das Datum und der Zeitpunkt, zu dem der Konsum wieder aufgenommen wurde wiederaufgenommen wurde."@de ,
@@ -1463,6 +1453,16 @@ ec:hasConsumptionCount rdf:type owl:ObjectProperty ;
                        rdfs:label "a compte de la consommation"@fr ,
                                   "has consumption count"@en ,
                                   "hat den Verbrauch gezählt"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionDeviceManufacturer
+ec:hasConsumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
+                                    dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
+                                                        "Le fabricant d'un ConsumptionDevice."@fr ,
+                                                        "The manufacturer of a ConsumptionDevice."@en ;
+                                    rdfs:label "Consumption device manufacturer"@en ,
+                                               "Fabricant de dispositifs de consommation"@fr ,
+                                               "Hersteller von Verbrauchsgeräten"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionEvent
@@ -9396,7 +9396,7 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                                        owl:allValuesFrom ec:ConsumptionDeviceProfile
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ec:consumptionDeviceManufacturer ;
+                                       owl:onProperty ec:hasConsumptionDeviceManufacturer ;
                                        owl:allValuesFrom ec:Agent
                                      ] ,
                                      [ rdf:type owl:Restriction ;
