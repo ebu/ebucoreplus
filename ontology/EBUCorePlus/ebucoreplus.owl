@@ -306,16 +306,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
                          "Agent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#assetValueCurrency
-ec:assetValueCurrency rdf:type owl:ObjectProperty ;
-                      dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
-                                          "To provide the currency in which the assetValue is given."@en ,
-                                          "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
-                      rdfs:label "Asset value currency"@en ,
-                                 "Devise de la valeur de l'actif"@fr ,
-                                 "Vermögenswert Währung"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportDate
 ec:auditReportDate rdf:type owl:ObjectProperty ;
                    dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
@@ -1189,6 +1179,16 @@ ec:hasAssetValue rdf:type owl:ObjectProperty ;
                  rdfs:label "Asset value"@en ,
                             "Valeur de l'actif"@fr ,
                             "Vermögenswert"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssetValueCurrency
+ec:hasAssetValueCurrency rdf:type owl:ObjectProperty ;
+                         dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
+                                             "To provide the currency in which the assetValue is given."@en ,
+                                             "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
+                         rdfs:label "Asset value currency"@en ,
+                                    "Devise de la valeur de l'actif"@fr ,
+                                    "Vermögenswert Währung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedArtefact
@@ -8363,7 +8363,7 @@ ec:Asset rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetValue
 ec:AssetValue rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:assetValueCurrency ;
+                                owl:onProperty ec:hasAssetValueCurrency ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
