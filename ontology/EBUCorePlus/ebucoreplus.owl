@@ -306,18 +306,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
                          "Agent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfSell
-ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:hasDate ;
-                      rdfs:range time:Instant ;
-                      dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
-                                          "La date à laquelle un artefact a été vendu."@fr ,
-                                          "The date when an Artefact was sold."@en ;
-                      rdfs:label "Artefact date of sell"@en ,
-                                 "Date de vente de l'artefact"@fr ,
-                                 "Verkaufsdatum des Artefakts"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#assetValueCurrency
 ec:assetValueCurrency rdf:type owl:ObjectProperty ;
                       dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
@@ -1095,6 +1083,18 @@ ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
                              rdfs:label "Artefact date of purchase"@en ,
                                         "Date d'achat de l'artefact"@fr ,
                                         "Kaufdatum des Artefakts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSell
+ec:hasArtefactDateOfSell rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ec:hasDate ;
+                         rdfs:range time:Instant ;
+                         dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
+                                             "La date à laquelle un artefact a été vendu."@fr ,
+                                             "The date when an Artefact was sold."@en ;
+                         rdfs:label "Artefact date of sell"@en ,
+                                    "Date de vente de l'artefact"@fr ,
+                                    "Verkaufsdatum des Artefakts"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactOwner
@@ -8041,12 +8041,12 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:onProperty ec:hasArtefactDateOfPurchase ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasArtefactDateOfPurchase ;
+                              owl:onProperty ec:hasArtefactDateOfSell ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
