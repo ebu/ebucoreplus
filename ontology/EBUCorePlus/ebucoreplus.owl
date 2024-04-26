@@ -558,18 +558,6 @@ ec:date rdf:type owl:ObjectProperty ;
                    "Datum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateCreated
-ec:dateCreated rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum der Erstellung des Assets."@de ,
-                                   "La date de création de l'actif."@fr ,
-                                   "The date of creation of the Asset."@en ;
-               rdfs:label "Creation date/time"@en ,
-                          "Date/heure de création"@fr ,
-                          "Erstellungsdatum/-zeit"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDeleted
 ec:dateDeleted rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateBroadcast rdf:type owl:ObjectProperty ;
                     rdfs:label "Broadcast date"@en ,
                                "Date de diffusion"@fr ,
                                "Datum der Ausstrahlung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateCreated
+ec:hasDateCreated rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum der Erstellung des Assets."@de ,
+                                      "La date de création de l'actif."@fr ,
+                                      "The date of creation of the Asset."@en ;
+                  rdfs:label "Creation date/time"@en ,
+                             "Date/heure de création"@fr ,
+                             "Erstellungsdatum/-zeit"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8269,11 +8269,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateCreated ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateDeleted ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8310,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDateArchived ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -11108,7 +11108,7 @@ ec:Identifier rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
                               ] ,
@@ -12967,12 +12967,12 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:dateModified ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateModified ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
