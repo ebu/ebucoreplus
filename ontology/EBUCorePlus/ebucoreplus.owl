@@ -1458,6 +1458,10 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
                              "Farbraum"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
+ec:hasConsumer rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
 ec:hasConsumptionContract rdf:type owl:ObjectProperty ;
                           dcterms:description "Pour identifier un ConsumptionContract lié à un compte."@fr ,
@@ -4135,6 +4139,14 @@ ec:objectType rdf:type owl:ObjectProperty ;
               rdfs:label "Typ"@de ,
                          "type"@en ,
                          "type"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursIn
+ec:occursIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursOn
+ec:occursOn rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#offers
@@ -9559,6 +9571,10 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasConsumer ;
+                                      owl:allValuesFrom ec:Consumer
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasDevice ;
                                       owl:allValuesFrom ec:ConsumptionDevice
                                     ] ,
@@ -9575,12 +9591,29 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:occursIn ;
+                                      owl:allValuesFrom ec:PublicationChannel
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:occursIn ;
+                                      owl:allValuesFrom ec:PublicationService
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:occursOn ;
+                                      owl:allValuesFrom ec:PublicationPlatform
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:requiresLicence ;
                                       owl:allValuesFrom ec:ConsumptionLicence
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:resultsIn ;
                                       owl:allValuesFrom ec:ResonanceEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:accountingTo ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass ec:Account
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:end ;
