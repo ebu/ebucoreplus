@@ -1340,17 +1340,6 @@ ec:hasAuditJobRelatedAuditReport rdf:type owl:ObjectProperty ;
                                             "Zugehöriger Prüfbericht"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBeenAwarded
-ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Award ;
-                  dcterms:description "Der an einen Agenten verliehene Preis"@de ,
-                                      "Le prix décerné à un agent"@fr ,
-                                      "The Award gievn to an Agent"@en ;
-                  rdfs:label "Agent"@de ,
-                             "Agent"@en ,
-                             "Agent"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBusinessContract
 ec:hasBusinessContract rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier les Contrats associés à un Plan de publication."@fr ,
@@ -3426,6 +3415,14 @@ ec:hasWrappingType rdf:type owl:ObjectProperty ;
                               "Wrapping type"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#holdsAward
+ec:holdsAward rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:isAwardedTo ;
+              rdfs:label "erhält"@de ,
+                         "holds"@en ,
+                         "reçoit"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#holdsLicence
 ec:holdsLicence rdf:type owl:ObjectProperty ;
                 dcterms:description "Die Bedingungen einer ConsumptionLicence, die mit einem Vertrag."@de ,
@@ -3555,6 +3552,14 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAwardedTo
+ec:isAwardedTo rdf:type owl:ObjectProperty ;
+               rdfs:range ec:Award ;
+               rdfs:label "awarded to"@en ,
+                          "décerné à"@fr ,
+                          "verliehen an"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isBrand
@@ -7558,10 +7563,6 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Artefact
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasBeenAwarded ;
-                           owl:allValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -7576,6 +7577,10 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:holdsAward ;
+                           owl:allValuesFrom ec:Award
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isAgent ;
@@ -8844,10 +8849,6 @@ ec:AuditReport rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Award
 ec:Award rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasBeenAwarded ;
-                           owl:allValuesFrom ec:Agent
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasIdentifier ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
@@ -8862,6 +8863,10 @@ ec:Award rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
                            owl:allValuesFrom ec:Event
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:isAwardedTo ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:objectType ;
@@ -15292,8 +15297,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
