@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateValidated
-ec:dateValidated rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
-                                     "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
-                                     "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
-                 rdfs:label "Date de validation"@fr ,
-                            "Datum der Validierung"@de ,
-                            "Validation date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#datelicensedStart
 ec:datelicensedStart rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateTransferred rdf:type owl:ObjectProperty ;
                       rdfs:label "Date de transfert"@fr ,
                                  "Datum der Übertragung"@de ,
                                  "Transfer date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateValidated
+ec:hasDateValidated rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:date ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
+                                        "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
+                                        "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
+                    rdfs:label "Date de validation"@fr ,
+                               "Datum der Validierung"@de ,
+                               "Validation date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -13969,7 +13969,7 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateValidated ;
+                              owl:onProperty ec:hasDateValidated ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
