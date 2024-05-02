@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfRetirement
-ec:dateOfRetirement rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf ec:date ;
-                    rdfs:range time:Instant ;
-                    dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
-                                        "La date à laquelle un contact/personne a pris sa retraite."@fr ,
-                                        "The date when a Contact/Person has retired."@en ;
-                    rdfs:label "Date de la retraite"@fr ,
-                               "Date of retirement"@en ,
-                               "Datum der Pensionierung"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateProduced
 ec:dateProduced rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
                   rdfs:label "Date du décès"@fr ,
                              "Date of death"@en ,
                              "Datum des Todes"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfRetirement
+ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ec:date ;
+                       rdfs:range time:Instant ;
+                       dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
+                                           "La date à laquelle un contact/personne a pris sa retraite."@fr ,
+                                           "The date when a Contact/Person has retired."@en ;
+                       rdfs:label "Date de la retraite"@fr ,
+                                  "Date of retirement"@en ,
+                                  "Datum der Pensionierung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -12382,11 +12382,6 @@ ec:Person rdf:type owl:Class ;
                             owl:allValuesFrom ec:KeyPersonalEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfRetirement ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasCountryOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:CountryCode
@@ -12403,6 +12398,11 @@ ec:Person rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasDateOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfRetirement ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
