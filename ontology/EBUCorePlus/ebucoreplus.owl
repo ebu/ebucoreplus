@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfDeath
-ec:dateOfDeath rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
-                                   "La date à laquelle un contact/personne est décédé."@fr ,
-                                   "The date when a Contact/Person has passed away."@en ;
-               rdfs:label "Date du décès"@fr ,
-                          "Date of death"@en ,
-                          "Datum des Todes"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfRetirement
 ec:dateOfRetirement rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
                   rdfs:label "Date de naissance"@fr ,
                              "Date of birth"@en ,
                              "Geburtsdatum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfDeath
+ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
+                                      "La date à laquelle un contact/personne est décédé."@fr ,
+                                      "The date when a Contact/Person has passed away."@en ;
+                  rdfs:label "Date du décès"@fr ,
+                             "Date of death"@en ,
+                             "Datum des Todes"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -7838,12 +7838,12 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:Character
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfDeath ;
+                            owl:onProperty ec:hasDateOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasDateOfBirth ;
+                            owl:onProperty ec:hasDateOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
@@ -12382,11 +12382,6 @@ ec:Person rdf:type owl:Class ;
                             owl:allValuesFrom ec:KeyPersonalEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfDeath ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:dateOfRetirement ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
@@ -12403,6 +12398,11 @@ ec:Person rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasDateOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
