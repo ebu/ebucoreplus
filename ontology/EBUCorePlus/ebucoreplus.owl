@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateTransferred
-ec:dateTransferred rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:range time:Instant ;
-                   dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
-                                       "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
-                                       "The date when the Asset was moved from one digital or physical location to another."@en ;
-                   rdfs:label "Date de transfert"@fr ,
-                              "Datum der Übertragung"@de ,
-                              "Transfer date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateValidated
 ec:dateValidated rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateReleased rdf:type owl:ObjectProperty ;
                    rdfs:label "Date de sortie"@fr ,
                               "Datum der Veröffentlichung"@de ,
                               "Release date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateTransferred
+ec:hasDateTransferred rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:date ;
+                      rdfs:range time:Instant ;
+                      dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
+                                          "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
+                                          "The date when the Asset was moved from one digital or physical location to another."@en ;
+                      rdfs:label "Date de transfert"@fr ,
+                                 "Datum der Übertragung"@de ,
+                                 "Transfer date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -11760,11 +11760,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateTransferred ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:displayAspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:ActiveFormatDescriptorCode
@@ -11811,6 +11806,11 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDateNormalized ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateTransferred ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
