@@ -822,11 +822,6 @@ ec:dubbedTo rdf:type owl:ObjectProperty ;
                        "Synchronisiert auf"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#duration
-ec:duration rdf:type owl:ObjectProperty ;
-            rdfs:range ec:TimelinePoint .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#end
 ec:end rdf:type owl:ObjectProperty ;
        rdfs:range ec:TimelinePoint .
@@ -1788,6 +1783,11 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:label "Dubbed language"@en ,
                                 "Langue doublée"@fr ,
                                 "Synchronisierte Sprache"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDuration
+ec:hasDuration rdf:type owl:ObjectProperty ;
+               rdfs:range ec:TimelinePoint .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialGroup
@@ -10468,12 +10468,12 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:duration ;
+                                     owl:onProperty ec:end ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:end ;
+                                     owl:onProperty ec:hasDuration ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
@@ -13191,14 +13191,14 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:duration ;
-                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass ec:TimelinePoint
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:endDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:DateTimeDescription
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasDuration ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:publicationScheduleDate ;
@@ -14097,14 +14097,14 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:duration ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass ec:TimelinePoint
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:endDateTime ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDuration ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:TimelinePoint
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:startDateTime ;
@@ -14887,7 +14887,7 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:allValuesFrom ec:EditorialObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:duration ;
+                                   owl:onProperty ec:hasDuration ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:TimelinePoint
                                  ] ,
