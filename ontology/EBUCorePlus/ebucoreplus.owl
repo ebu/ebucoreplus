@@ -842,17 +842,6 @@ ec:existsAs rdf:type owl:ObjectProperty ;
                        "Redaktionelles Objekt"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#formatVersionId
-ec:formatVersionId rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Identifier ;
-                   dcterms:description "A version identifier attributed to a Format."@en ,
-                                       "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
-                                       "Un identifiant de version attribué à un format."@fr ;
-                   rdfs:label "Format version identifier"@en ,
-                              "Identifiant de la version du format"@fr ,
-                              "Kennung der Formatversion"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#geoBlockingBlacklist
 ec:geoBlockingBlacklist rdf:type owl:ObjectProperty ;
                         rdfs:range skos:Concept ;
@@ -1883,6 +1872,17 @@ ec:hasFormatId rdf:type owl:ObjectProperty ;
                rdfs:label "Format Kennung"@de ,
                           "Format identifier"@en ,
                           "Identificateur de format"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatVersionId
+ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:Identifier ;
+                      dcterms:description "A version identifier attributed to a Format."@en ,
+                                          "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
+                                          "Un identifiant de version attribué à un format."@fr ;
+                      rdfs:label "Format version identifier"@en ,
+                                 "Identifiant de la version du format"@fr ,
+                                 "Kennung der Formatversion"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeneration
@@ -11047,12 +11047,12 @@ ec:Footage rdf:type owl:Class ;
 ec:Format rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:formatVersionId ;
+                            owl:onProperty ec:hasFormatId ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasFormatId ;
+                            owl:onProperty ec:hasFormatVersionId ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Identifier
                           ] ;
