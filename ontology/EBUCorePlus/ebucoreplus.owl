@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateProduced
-ec:dateProduced rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum der Produktion des Assets."@de ,
-                                    "La date de production de l'actif."@fr ,
-                                    "The date of production of the Asset."@en ;
-                rdfs:label "Produktionsdatum"@de ,
-                           "date de production"@fr ,
-                           "production date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateReleased
 ec:dateReleased rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
                        rdfs:label "Date de la retraite"@fr ,
                                   "Date of retirement"@en ,
                                   "Datum der Pensionierung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateProduced
+ec:hasDateProduced rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:date ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum der Produktion des Assets."@de ,
+                                       "La date de production de l'actif."@fr ,
+                                       "The date of production of the Asset."@en ;
+                   rdfs:label "Produktionsdatum"@de ,
+                              "date de production"@fr ,
+                              "production date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -8294,11 +8294,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateProduced ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:dateReleased ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -8310,6 +8305,11 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDateModified ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass time:Instant
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasDateProduced ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
