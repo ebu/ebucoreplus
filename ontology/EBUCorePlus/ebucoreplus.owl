@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#datelicensedStart
-ec:datelicensedStart rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ec:date ;
-                     rdfs:range time:Instant ;
-                     dcterms:description "Das Datum, an dem die Lizenz für das Asset beginnt."@de ,
-                                         "La date à laquelle la licence pour le bien commence."@fr ,
-                                         "The date when the licence for the Asset begins."@en ;
-                     rdfs:label "Date de début de la licence"@fr ,
-                                "Licence start date"@en ,
-                                "Startdatum der Lizenz"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
@@ -1612,6 +1600,18 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
                 rdfs:label "Data track"@en ,
                            "Daten verfolgen"@de ,
                            "Suivi des données"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicensedStart
+ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf ec:date ;
+                        rdfs:range time:Instant ;
+                        dcterms:description "Das Datum, an dem die Lizenz für das Asset beginnt."@de ,
+                                            "La date à laquelle la licence pour le bien commence."@fr ,
+                                            "The date when the licence for the Asset begins."@en ;
+                        rdfs:label "Date de début de la licence"@fr ,
+                                   "Licence start date"@en ,
+                                   "Startdatum der Lizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateModified
@@ -8294,7 +8294,7 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:datelicensedStart ;
+                           owl:onProperty ec:hasDateLicensedStart ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
