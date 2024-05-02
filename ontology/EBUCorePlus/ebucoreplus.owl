@@ -2063,6 +2063,17 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                            "Lizenzierung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToLogo
+ec:hasLinkToLogo rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:Logo ;
+                 dcterms:description "Pour fournir un lien vers un logo"@fr ,
+                                     "So erstellen Sie einen Link zu einem Logo"@de ,
+                                     "To provide a link to a Logo"@en ;
+                 rdfs:label "Lien vers le logo"@fr ,
+                            "Link to logo"@en ,
+                            "Link zum Logo"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:range ec:Location ;
@@ -4065,17 +4076,6 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                rdfs:label "Version de"@fr ,
                           "Version of"@en ,
                           "Version von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#linkToLogo
-ec:linkToLogo rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Logo ;
-              dcterms:description "Pour fournir un lien vers un logo"@fr ,
-                                  "So erstellen Sie einen Link zu einem Logo"@de ,
-                                  "To provide a link to a Logo"@en ;
-              rdfs:label "Lien vers le logo"@fr ,
-                         "Link to logo"@en ,
-                         "Link zum Logo"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#linkToSticker
@@ -9880,7 +9880,7 @@ ec:Copyright rdf:type owl:Class ;
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:linkToLogo ;
+                             owl:onProperty ec:hasLinkToLogo ;
                              owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
