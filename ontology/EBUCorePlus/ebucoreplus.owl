@@ -2074,6 +2074,17 @@ ec:hasLinkToLogo rdf:type owl:ObjectProperty ;
                             "Link zum Logo"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToSticker
+ec:hasLinkToSticker rdf:type owl:ObjectProperty ;
+                    rdfs:range ec:Sticker ;
+                    dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
+                                        "So erstellen Sie einen Link zu einem Sticker"@de ,
+                                        "To provide a link to a Sticker"@en ;
+                    rdfs:label "Lien vers l'autocollant"@fr ,
+                               "Link to Sticker"@en ,
+                               "Link zum Aufkleber"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:range ec:Location ;
@@ -4076,17 +4087,6 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                rdfs:label "Version de"@fr ,
                           "Version of"@en ,
                           "Version von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#linkToSticker
-ec:linkToSticker rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Sticker ;
-                 dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
-                                     "So erstellen Sie einen Link zu einem Sticker"@de ,
-                                     "To provide a link to a Sticker"@en ;
-                 rdfs:label "Lien vers l'autocollant"@fr ,
-                            "Link to Sticker"@en ,
-                            "Link zum Aufkleber"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationRegion
@@ -9884,7 +9884,7 @@ ec:Costume rdf:type owl:Class ;
                              owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:linkToSticker ;
+                             owl:onProperty ec:hasLinkToSticker ;
                              owl:allValuesFrom ec:Sticker
                            ] ,
                            [ rdf:type owl:Restriction ;
