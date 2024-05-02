@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfBirth
-ec:dateOfBirth rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
-                                   "La date de naissance d'un contact/personne."@fr ,
-                                   "The date when a Contact/Person is born."@en ;
-               rdfs:label "Date de naissance"@fr ,
-                          "Date of birth"@en ,
-                          "Geburtsdatum"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfDeath
 ec:dateOfDeath rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateNormalized rdf:type owl:ObjectProperty ;
                      rdfs:label "Date de normalisation"@fr ,
                                 "Datum der Normalisierung"@de ,
                                 "Normalization date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfBirth
+ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:date ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
+                                      "La date de naissance d'un contact/personne."@fr ,
+                                      "The date when a Contact/Person is born."@en ;
+                  rdfs:label "Date de naissance"@fr ,
+                             "Date of birth"@en ,
+                             "Geburtsdatum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -7838,12 +7838,12 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:Character
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfBirth ;
+                            owl:onProperty ec:dateOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfDeath ;
+                            owl:onProperty ec:hasDateOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
@@ -12382,11 +12382,6 @@ ec:Person rdf:type owl:Class ;
                             owl:allValuesFrom ec:KeyPersonalEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfBirth ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:dateOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
@@ -12405,6 +12400,11 @@ ec:Person rdf:type owl:Class ;
                             owl:onProperty ec:hasCountryOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasPlaceOfBirth ;
