@@ -842,17 +842,6 @@ ec:existsAs rdf:type owl:ObjectProperty ;
                        "Redaktionelles Objekt"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#geoBlockingWhitelist
-ec:geoBlockingWhitelist rdf:type owl:ObjectProperty ;
-                        rdfs:range skos:Concept ;
-                        dcterms:description "checking a users IP-address against a whitelist"@en ,
-                                            "vérification de l'adresse IP d'un utilisateur par rapport à une liste blanche"@fr ,
-                                            "Überprüfung der IP-Adresse eines Benutzers anhand einer Whitelist"@de ;
-                        rdfs:label "Geoblocking-Whitelist"@de ,
-                                   "geo-blocking whitelist"@en ,
-                                   "liste blanche de géo-blocage"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:isCoveredBy ;
@@ -1904,6 +1893,17 @@ ec:hasGeoBlockingBlacklist rdf:type owl:ObjectProperty ;
                            rdfs:label "Schwarze Liste für Geoblockierung"@de ,
                                       "geo-blocking blacklist"@en ,
                                       "liste noire de géoblocage"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingWhitelist
+ec:hasGeoBlockingWhitelist rdf:type owl:ObjectProperty ;
+                           rdfs:range skos:Concept ;
+                           dcterms:description "checking a users IP-address against a whitelist"@en ,
+                                               "vérification de l'adresse IP d'un utilisateur par rapport à une liste blanche"@fr ,
+                                               "Überprüfung der IP-Adresse eines Benutzers anhand einer Whitelist"@de ;
+                           rdfs:label "Geoblocking-Whitelist"@de ,
+                                      "geo-blocking whitelist"@en ,
+                                      "liste blanche de géo-blocage"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoLocation
@@ -7349,11 +7349,11 @@ dc:Agent rdf:type owl:Class ;
 ec:AccessConditions rdf:type owl:Class ;
                     rdfs:subClassOf ec:Rights ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:geoBlockingWhitelist ;
+                                      owl:onProperty ec:hasGeoBlockingBlacklist ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasGeoBlockingBlacklist ;
+                                      owl:onProperty ec:hasGeoBlockingWhitelist ;
                                       owl:allValuesFrom skos:Concept
                                     ] ;
                     dcterms:description "Die Bedingungen, unter denen auf Inhalte zugegriffen werden kann."@de ,
