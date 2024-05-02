@@ -678,18 +678,6 @@ ec:dateMigrated rdf:type owl:ObjectProperty ;
                            "Migration date"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateNormalized
-ec:dateNormalized rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
-                                      "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
-                                      "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
-                  rdfs:label "Date de normalisation"@fr ,
-                             "Datum der Normalisierung"@de ,
-                             "Normalization date"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfBirth
 ec:dateOfBirth rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:date ;
@@ -1720,6 +1708,18 @@ ec:hasDateModified rdf:type owl:ObjectProperty ;
                    rdfs:label "Date/heure de modification"@fr ,
                               "Datum/Uhrzeit der Änderung"@de ,
                               "Modification date/time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateNormalized
+ec:hasDateNormalized rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:date ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
+                                         "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
+                                         "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
+                     rdfs:label "Date de normalisation"@fr ,
+                                "Datum der Normalisierung"@de ,
+                                "Normalization date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
@@ -11760,11 +11760,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateNormalized ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dateTransferred ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
@@ -11813,6 +11808,11 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hasContainerMimeType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateNormalized ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasFileFormat ;
