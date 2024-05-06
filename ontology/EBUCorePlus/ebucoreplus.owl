@@ -2226,6 +2226,17 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
                           "Type Mime"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasObjectType
+ec:hasObjectType rdf:type owl:ObjectProperty ;
+                 rdfs:range skos:Concept ;
+                 dcterms:description "Die Art oder das Genre der Ressource."@de ,
+                                     "Le type ou le genre de la ressource."@fr ,
+                                     "The kind or genre of the resource."@en ;
+                 rdfs:label "Typ"@de ,
+                            "type"@en ,
+                            "type"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
                         rdfs:range ec:StaffMember ;
@@ -4124,17 +4135,6 @@ ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
                        rdfs:label "Related Rule"@en ,
                                   "Règle connexe"@fr ,
                                   "Verwandte Regel"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#objectType
-ec:objectType rdf:type owl:ObjectProperty ;
-              rdfs:range skos:Concept ;
-              dcterms:description "Die Art oder das Genre der Ressource."@de ,
-                                  "Le type ou le genre de la ressource."@fr ,
-                                  "The kind or genre of the resource."@en ;
-              rdfs:label "Typ"@de ,
-                         "type"@en ,
-                         "type"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#offers
@@ -7375,16 +7375,16 @@ ec:Account rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasObjectType ;
+                             owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedAccount ;
                              owl:allValuesFrom ec:Account
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:holdsLicence ;
                              owl:allValuesFrom ec:ConsumptionLicence
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
-                             owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:description ;
@@ -7418,16 +7418,16 @@ ec:Action rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasObjectType ;
+                            owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRelatedAgent ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRelatedScene ;
                             owl:allValuesFrom ec:Scene
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectType ;
-                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:start ;
@@ -7484,7 +7484,7 @@ ec:Affiliation rdf:type owl:Class ;
                                  owl:allValuesFrom ec:Identifier
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:objectType ;
+                                 owl:onProperty ec:hasObjectType ;
                                  owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -7574,6 +7574,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasObjectType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
                          ] ,
@@ -7584,10 +7588,6 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isCharacter ;
                            owl:allValuesFrom ec:Character
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
-                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
@@ -7731,7 +7731,7 @@ ec:AlternativeTitle rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectType ;
+                                      owl:onProperty ec:hasObjectType ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -7822,16 +7822,16 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasObjectType ;
+                            owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isAnimalGroom ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isAnimalOwner ;
                             owl:allValuesFrom ec:Agent
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectType ;
-                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:portrays ;
@@ -7916,6 +7916,10 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasObjectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasRelatedAgent ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
@@ -7926,10 +7930,6 @@ ec:Annotation rdf:type owl:Class ;
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasRelatedEvent ;
                                 owl:allValuesFrom ec:Event
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectType ;
-                                owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:annotationCurationDateTime ;
@@ -8025,6 +8025,10 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasObjectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedAgent ;
                               owl:allValuesFrom ec:Agent
                             ] ,
@@ -8035,10 +8039,6 @@ ec:Artefact rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedResource ;
                               owl:allValuesFrom ec:Resource
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:artefactDateOfPurchase ;
@@ -8314,14 +8314,14 @@ ec:Asset rdf:type owl:Class ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasObjectType ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isChildOf ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:Asset
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
@@ -8371,7 +8371,7 @@ ec:AssetValue rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectType ;
+                                owl:onProperty ec:hasObjectType ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -8427,12 +8427,12 @@ ec:Audience rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:includesAudience ;
-                              owl:allValuesFrom ec:Audience
+                              owl:onProperty ec:hasObjectType ;
+                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:allValuesFrom skos:Concept
+                              owl:onProperty ec:includesAudience ;
+                              owl:allValuesFrom ec:Audience
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:audienceAgeHigh ;
@@ -8795,16 +8795,16 @@ ec:AuditReport rdf:type owl:Class ;
                                  owl:allValuesFrom ec:Identifier
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasObjectType ;
+                                 owl:allValuesFrom skos:Concept
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasRelatedAuditJob ;
                                  owl:allValuesFrom ec:AuditJob
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:isApprovedBy ;
                                  owl:allValuesFrom ec:Agent
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:objectType ;
-                                 owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:referencesRule ;
@@ -8856,16 +8856,16 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom ec:Logo
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasObjectType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedEvent ;
                            owl:allValuesFrom ec:Event
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
-                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:awardDate ;
@@ -9043,16 +9043,16 @@ ec:Campaign rdf:type owl:Class ;
                               owl:allValuesFrom ec:ResonanceCount
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasObjectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasPublicationPlan ;
                               owl:allValuesFrom ec:PublicationPlan
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTargetAudience ;
                               owl:allValuesFrom ec:Audience
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
@@ -9205,7 +9205,7 @@ ec:Codec rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
+                           owl:onProperty ec:hasObjectType ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -9328,7 +9328,7 @@ ec:ConsumptionCount rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectType ;
+                                      owl:onProperty ec:hasObjectType ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -9404,7 +9404,7 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                                        owl:allValuesFrom ec:Identifier
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ec:objectType ;
+                                       owl:onProperty ec:hasObjectType ;
                                        owl:allValuesFrom skos:Concept
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -9477,7 +9477,7 @@ ec:ConsumptionDeviceProfile rdf:type owl:Class ;
                                               owl:allValuesFrom ec:Identifier
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty ec:objectType ;
+                                              owl:onProperty ec:hasObjectType ;
                                               owl:allValuesFrom skos:Concept
                                             ] ,
                                             [ rdf:type owl:Restriction ;
@@ -9567,12 +9567,12 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasRelatedConsumptionEvent ;
-                                      owl:allValuesFrom ec:ConsumptionEvent
+                                      owl:onProperty ec:hasObjectType ;
+                                      owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectType ;
-                                      owl:allValuesFrom skos:Concept
+                                      owl:onProperty ec:hasRelatedConsumptionEvent ;
+                                      owl:allValuesFrom ec:ConsumptionEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:requiresLicence ;
@@ -9641,7 +9641,7 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Identifier
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:objectType ;
+                                        owl:onProperty ec:hasObjectType ;
                                         owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
@@ -9792,7 +9792,7 @@ ec:Contract rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
+                              owl:onProperty ec:hasObjectType ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -9831,7 +9831,7 @@ ec:ContractCost rdf:type owl:Class ;
                                   owl:allValuesFrom ec:Identifier
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:objectType ;
+                                  owl:onProperty ec:hasObjectType ;
                                   owl:allValuesFrom skos:Concept
                                 ] ,
                                 [ rdf:type owl:Restriction ;
@@ -10762,16 +10762,16 @@ ec:Emotion rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasObjectType ;
+                             owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedAgent ;
                              owl:allValuesFrom ec:Agent
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedScene ;
                              owl:allValuesFrom ec:Scene
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
-                             owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:start ;
@@ -10857,6 +10857,10 @@ ec:Event rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasObjectType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
@@ -10871,10 +10875,6 @@ ec:Event rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedResource ;
                            owl:allValuesFrom ec:Resource
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
-                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:endDateTime ;
@@ -11100,12 +11100,12 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:isIssuedBy ;
-                                owl:allValuesFrom ec:Agent
+                                owl:onProperty ec:hasObjectType ;
+                                owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectType ;
-                                owl:allValuesFrom skos:Concept
+                                owl:onProperty ec:isIssuedBy ;
+                                owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:dateCreated ;
@@ -11209,12 +11209,12 @@ ec:Involvement rdf:type owl:Class ;
                                  owl:allValuesFrom ec:Identifier
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:hasRelatedArtefact ;
-                                 owl:allValuesFrom ec:Artefact
+                                 owl:onProperty ec:hasObjectType ;
+                                 owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:objectType ;
-                                 owl:allValuesFrom skos:Concept
+                                 owl:onProperty ec:hasRelatedArtefact ;
+                                 owl:allValuesFrom ec:Artefact
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:playsCharacter ;
@@ -11379,6 +11379,10 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Picture
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasObjectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedArtefact ;
                               owl:allValuesFrom ec:Artefact
                             ] ,
@@ -11389,10 +11393,6 @@ ec:Location rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedResource ;
                               owl:allValuesFrom ec:Resource
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:locationRegion ;
@@ -11505,7 +11505,7 @@ ec:Locator rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
+                             owl:onProperty ec:hasObjectType ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -11571,12 +11571,12 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:measuresAgainstRule ;
-                             owl:allValuesFrom ec:Rule
+                             owl:onProperty ec:hasObjectType ;
+                             owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:objectType ;
-                             owl:allValuesFrom skos:Concept
+                             owl:onProperty ec:measuresAgainstRule ;
+                             owl:allValuesFrom ec:Rule
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:description ;
@@ -12207,12 +12207,12 @@ ec:OnStagePosition rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasRelatedStage ;
-                                     owl:allValuesFrom ec:Stage
+                                     owl:onProperty ec:hasObjectType ;
+                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectType ;
-                                     owl:allValuesFrom skos:Concept
+                                     owl:onProperty ec:hasRelatedStage ;
+                                     owl:allValuesFrom ec:Stage
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -12650,16 +12650,16 @@ ec:ProductionDevice rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasObjectType ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasProductionDeviceOnStagePosition ;
                                       owl:allValuesFrom ec:OnStagePosition
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasUsageContract ;
                                       owl:allValuesFrom ec:Contract
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectType ;
-                                      owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:description ;
@@ -12725,6 +12725,10 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasObjectType ;
+                                   owl:allValuesFrom skos:Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasOutputEssence ;
                                    owl:allValuesFrom ec:Essence
                                  ] ,
@@ -12751,10 +12755,6 @@ ec:ProductionJob rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isOrderedBy ;
                                    owl:allValuesFrom ec:Contract
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectType ;
-                                   owl:allValuesFrom skos:Concept
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:previousRelatedProductionJob ;
@@ -12809,12 +12809,12 @@ ec:ProductionOrder rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasProductionContract ;
-                                     owl:allValuesFrom ec:Contract
+                                     owl:onProperty ec:hasObjectType ;
+                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectType ;
-                                     owl:allValuesFrom skos:Concept
+                                     owl:onProperty ec:hasProductionContract ;
+                                     owl:allValuesFrom ec:Contract
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -12951,16 +12951,16 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasObjectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasProvenanceTarget ;
                                 owl:allValuesFrom owl:Thing
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:isAttributedTo ;
                                 owl:allValuesFrom ec:Agent
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:objectType ;
-                                owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:dateCreated ;
@@ -13029,6 +13029,10 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Logo
                                       ] ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasObjectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationChannel ;
                                         owl:allValuesFrom ec:PublicationChannel
                                       ] ,
@@ -13043,10 +13047,6 @@ ec:PublicationChannel rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:isOwnedBy ;
                                         owl:allValuesFrom ec:Agent
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:objectType ;
-                                        owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:offers ;
@@ -13138,6 +13138,10 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasObjectType ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasPublicationChannel ;
                                       owl:allValuesFrom ec:PublicationChannel
                                     ] ,
@@ -13172,10 +13176,6 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
                                       owl:allValuesFrom ec:PublicationService
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:objectType ;
-                                      owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:playsOut ;
@@ -13306,7 +13306,7 @@ ec:PublicationLog rdf:type owl:Class ;
                                     owl:onClass time:Instant
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:objectType ;
+                                    owl:onProperty ec:hasObjectType ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass skos:Concept
                                   ] ,
@@ -13360,6 +13360,10 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasObjectType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublicationPlanMember ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
@@ -13370,10 +13374,6 @@ ec:PublicationPlan rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isMemberOfPublicationPlan ;
                                      owl:allValuesFrom ec:PublicationPlan
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:objectType ;
-                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:endDateTime ;
@@ -13462,6 +13462,10 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:Logo
                                        ] ,
                                        [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:hasObjectType ;
+                                         owl:allValuesFrom skos:Concept
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:hasPublicationChannel ;
                                          owl:allValuesFrom ec:PublicationChannel
                                        ] ,
@@ -13476,10 +13480,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:isOwnedBy ;
                                          owl:allValuesFrom ec:Agent
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:objectType ;
-                                         owl:allValuesFrom skos:Concept
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:offers ;
@@ -13557,6 +13557,10 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Logo
                                       ] ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:hasObjectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationService ;
                                         owl:allValuesFrom ec:PublicationService
                                       ] ,
@@ -13571,10 +13575,6 @@ ec:PublicationService rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:isOwnedBy ;
                                         owl:allValuesFrom ec:Agent
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:objectType ;
-                                        owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:offers ;
@@ -13642,12 +13642,12 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:Logo
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasPictogram ;
-                            owl:allValuesFrom ec:Picture
+                            owl:onProperty ec:hasObjectType ;
+                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectType ;
-                            owl:allValuesFrom skos:Concept
+                            owl:onProperty ec:hasPictogram ;
+                            owl:allValuesFrom ec:Picture
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:appliesTo ;
@@ -13733,7 +13733,7 @@ ec:Relation rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
+                              owl:onProperty ec:hasObjectType ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -13824,12 +13824,12 @@ ec:ResonanceCount rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Locator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:isMeasuredBy ;
-                                    owl:allValuesFrom ec:Agent
+                                    owl:onProperty ec:hasObjectType ;
+                                    owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:objectType ;
-                                    owl:allValuesFrom skos:Concept
+                                    owl:onProperty ec:isMeasuredBy ;
+                                    owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:description ;
@@ -13948,6 +13948,10 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Locator
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasObjectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageId ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
@@ -13960,10 +13964,6 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Contract
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:dateDeleted ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
@@ -13974,7 +13974,7 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
+                              owl:onProperty ec:hasObjectType ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass skos:Concept
                             ] ,
@@ -14073,16 +14073,16 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasObjectType ;
+                            owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsHolder ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsTargetService ;
                             owl:allValuesFrom ec:PublicationService
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:objectType ;
-                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:originateFrom ;
@@ -14172,12 +14172,12 @@ ec:Rule rdf:type owl:Class ;
                           owl:allValuesFrom ec:Identifier
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:isDefinedBy ;
-                          owl:allValuesFrom ec:Contract
+                          owl:onProperty ec:hasObjectType ;
+                          owl:allValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:objectType ;
-                          owl:allValuesFrom skos:Concept
+                          owl:onProperty ec:isDefinedBy ;
+                          owl:allValuesFrom ec:Contract
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:rulePriority ;
@@ -14449,12 +14449,12 @@ ec:Stage rdf:type owl:Class ;
                            owl:allValuesFrom ec:Locator
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasStageLocation ;
-                           owl:allValuesFrom ec:Location
+                           owl:onProperty ec:hasObjectType ;
+                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:objectType ;
-                           owl:allValuesFrom skos:Concept
+                           owl:onProperty ec:hasStageLocation ;
+                           owl:allValuesFrom ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
@@ -14679,14 +14679,14 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onClass ec:TimelinePoint
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasObjectType ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTextLineSource ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:Agent
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:objectType ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:start ;
@@ -14892,7 +14892,7 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:onClass ec:TimelinePoint
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectType ;
+                                   owl:onProperty ec:hasObjectType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass skos:Concept
                                  ] ,
@@ -15028,7 +15028,7 @@ ec:UncertainDate rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:objectType ;
+                                   owl:onProperty ec:hasObjectType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass skos:Concept
                                  ] ,
