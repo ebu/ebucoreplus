@@ -3121,6 +3121,18 @@ ec:hasStart rdf:type owl:ObjectProperty ;
                        "Start"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStartDateTime
+ec:hasStartDateTime rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:date ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "A point of time or start of an interval"@en ,
+                                        "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
+                                        "Un instant ou l'nstant de départ d'un intervalle"@fr ;
+                    rdfs:label "Date de début"@fr ,
+                               "Start date time"@en ,
+                               "Startdatum Uhrzeit"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
 ec:hasStorageId rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Identifier ;
@@ -4411,18 +4423,6 @@ ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:label "Ausgeschlossene Territorien"@de ,
                                       "Excluded territories"@en ,
                                       "Territoires exclus"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#startDateTime
-ec:startDateTime rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "A point of time or start of an interval"@en ,
-                                     "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
-                                     "Un instant ou l'nstant de départ d'un intervalle"@fr ;
-                 rdfs:label "Date de début"@fr ,
-                            "Start date time"@en ,
-                            "Startdatum Uhrzeit"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#supportsConsumptionDeviceProfile
@@ -7498,7 +7498,7 @@ ec:Affiliation rdf:type owl:Class ;
                                  owl:onClass time:Instant
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:startDateTime ;
+                                 owl:onProperty ec:hasStartDateTime ;
                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass time:Instant
                                ] ,
@@ -7740,7 +7740,7 @@ ec:AlternativeTitle rdf:type owl:Class ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -9347,7 +9347,7 @@ ec:ConsumptionCount rdf:type owl:Class ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -9598,7 +9598,7 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -10887,7 +10887,7 @@ ec:Event rdf:type owl:Class ;
                            owl:onClass ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:startDateTime ;
+                           owl:onProperty ec:hasStartDateTime ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -12293,7 +12293,7 @@ ec:Organisation rdf:type owl:Class ;
                                   owl:onClass time:Instant
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:startDateTime ;
+                                  owl:onProperty ec:hasStartDateTime ;
                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass time:Instant
                                 ] ;
@@ -12770,7 +12770,7 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:startDateTime ;
+                                   owl:onProperty ec:hasStartDateTime ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
@@ -13062,7 +13062,7 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:onClass time:Instant
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:startDateTime ;
+                                        owl:onProperty ec:hasStartDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
@@ -13186,7 +13186,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:EditorialObject
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -13291,14 +13291,14 @@ ec:PublicationLog rdf:type owl:Class ;
                                     owl:someValuesFrom ec:TimelinePoint
                                   ] ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasStartDateTime ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loggsPublicationEvent ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:PublicationEvent
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:startDateTime ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass time:Instant
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:endDateTime ;
@@ -13381,14 +13381,14 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasStartDateTime ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:publicationPlanStatus ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass skos:Collection
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:startDateTime ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -13499,7 +13499,7 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:onClass time:Instant
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:startDateTime ;
+                                         owl:onProperty ec:hasStartDateTime ;
                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass time:Instant
                                        ] ,
@@ -13586,7 +13586,7 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:onClass time:Instant
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:startDateTime ;
+                                        owl:onProperty ec:hasStartDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
@@ -14107,7 +14107,7 @@ ec:Rights rdf:type owl:Class ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:startDateTime ;
+                            owl:onProperty ec:hasStartDateTime ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
@@ -15028,14 +15028,14 @@ ec:UncertainDate rdf:type owl:Class ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasStartDateTime ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:objectType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass skos:Concept
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:startDateTime ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:description ;
