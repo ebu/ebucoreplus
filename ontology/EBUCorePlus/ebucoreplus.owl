@@ -2963,6 +2963,17 @@ ec:hasRelationSource rdf:type owl:ObjectProperty ;
                                 "Source de la relation"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasResourceOffset
+ec:hasResourceOffset rdf:type owl:ObjectProperty ;
+                     rdfs:range ec:TimelinePoint ;
+                     dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
+                                         "Le décalage de départ dans une ressource."@fr ,
+                                         "The start offset within a Resource."@en ;
+                     rdfs:label "Compensation des ressources"@fr ,
+                                "Resource offset"@en ,
+                                "Ressourcenausgleich"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRestrictedAudience
 ec:hasRestrictedAudience rdf:type owl:ObjectProperty ;
                          dcterms:description "Pour identifier une audience pour laquelle l'accès est restreint."@fr ,
@@ -4332,17 +4343,6 @@ ec:requiresLicence rdf:type owl:ObjectProperty ;
                    rdfs:label "Erforderliche Lizenz"@de ,
                               "Licence requise"@fr ,
                               "Required licence"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#resourceOffset
-ec:resourceOffset rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:TimelinePoint ;
-                  dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
-                                      "Le décalage de départ dans une ressource."@fr ,
-                                      "The start offset within a Resource."@en ;
-                  rdfs:label "Compensation des ressources"@fr ,
-                             "Resource offset"@en ,
-                             "Ressourcenausgleich"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#resultsIn
@@ -10475,6 +10475,11 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass ec:Location
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasResourceOffset ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isNextInSequence ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:EditorialObject
@@ -10483,11 +10488,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onProperty ec:isPreviousInSequence ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:resourceOffset ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:start ;
@@ -13279,7 +13279,7 @@ ec:PublicationHistory rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLog
 ec:PublicationLog rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:resourceOffset ;
+                                    owl:onProperty ec:hasResourceOffset ;
                                     owl:someValuesFrom ec:TimelinePoint
                                   ] ,
                                   [ rdf:type owl:Restriction ;
