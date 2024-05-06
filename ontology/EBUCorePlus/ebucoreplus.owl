@@ -3029,6 +3029,17 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
                                      "Zielservice"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryExcludes
+ec:hasRightsTerritoryExcludes rdf:type owl:ObjectProperty ;
+                              rdfs:range ec:CountryCode ;
+                              dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
+                                                  "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
+                                                  "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
+                              rdfs:label "Ausgeschlossene Territorien"@de ,
+                                         "Excluded territories"@en ,
+                                         "Territoires exclus"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
 ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
@@ -4353,17 +4364,6 @@ ec:resultsIn rdf:type owl:ObjectProperty ;
              rdfs:label "Resonance event"@en ,
                         "Resonanz Ereignis"@de ,
                         "Événement de résonance"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rightsTerritoryExcludes
-ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:CountryCode ;
-                           dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
-                                               "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
-                                               "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
-                           rdfs:label "Ausgeschlossene Territorien"@de ,
-                                      "Excluded territories"@en ,
-                                      "Territoires exclus"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rightsTerritoryIncludes
@@ -14077,12 +14077,12 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:PublicationService
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:originateFrom ;
-                            owl:allValuesFrom ec:Contract
+                            owl:onProperty ec:hasRightsTerritoryExcludes ;
+                            owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:rightsTerritoryExcludes ;
-                            owl:allValuesFrom ec:CountryCode
+                            owl:onProperty ec:originateFrom ;
+                            owl:allValuesFrom ec:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryIncludes ;
