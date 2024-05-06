@@ -251,17 +251,6 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#annotationCurationDateTime
-ec:annotationCurationDateTime rdf:type owl:ObjectProperty ;
-                              rdfs:range time:Instant ;
-                              dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
-                                                  "To provide the date and time when an Annotation has been reviewed."@en ,
-                                                  "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
-                              rdfs:label "Annotation curation date & time"@en ,
-                                         "Date et heure de la curation des annotations"@fr ,
-                                         "Datum und Uhrzeit der Kommentarkuration"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#appliesOutOf
 ec:appliesOutOf rdf:type owl:ObjectProperty ;
                 rdfs:range ec:CountryCode ;
@@ -1076,6 +1065,17 @@ ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
                       rdfs:label "Agent d'annotation"@fr ,
                                  "Agent für Anmerkungen"@de ,
                                  "Annotation agent"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationCurationDateTime
+ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
+                                 rdfs:range time:Instant ;
+                                 dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
+                                                     "To provide the date and time when an Annotation has been reviewed."@en ,
+                                                     "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
+                                 rdfs:label "Annotation curation date & time"@en ,
+                                            "Date et heure de la curation des annotations"@fr ,
+                                            "Datum und Uhrzeit der Kommentarkuration"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationTarget
@@ -7932,7 +7932,7 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:annotationCurationDateTime ;
+                                owl:onProperty ec:hasAnnotationCurationDateTime ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
                               ] ,
