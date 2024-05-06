@@ -2474,9 +2474,13 @@ ec:hasPromotion rdf:type owl:ObjectProperty ;
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
                  rdfs:domain owl:Thing ;
-                 rdfs:range ec:Provenance ;
+                 rdfs:range ec:Agent ,
+                            ec:Provenance ;
                  dcterms:description "Bereich: String, anyURI oder Konzept."@de ,
+                                     "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
+                                     "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
                                      "Plage : chaîne, anyURI ou Concept."@fr ,
+                                     "The person or company that is providing the metadata."@en ,
                                      "To associate information on Provenance to an EBUCore class. Range: string, anyURI or Concept."@en ;
                  rdfs:label "Provenance"@en ,
                             "Provenance"@fr ,
@@ -4215,18 +4219,6 @@ ec:promotes rdf:type owl:ObjectProperty ;
             rdfs:label "favorise"@fr ,
                        "fördert"@de ,
                        "promotes"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#provenance
-ec:provenance rdf:type owl:ObjectProperty ;
-              rdfs:domain owl:Thing ;
-              rdfs:range ec:Agent ;
-              dcterms:description "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
-                                  "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
-                                  "The person or company that is providing the metadata."@en ;
-              rdfs:label "Provenance"@en ,
-                         "Provenance"@fr ,
-                         "Provenienz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publicationPlanStatus
