@@ -3431,6 +3431,16 @@ ec:hasVersion rdf:type owl:ObjectProperty ;
                          "Version"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVersionType
+ec:hasVersionType rdf:type owl:ObjectProperty ;
+                  dcterms:description "Pour spécifier un type de version pour un EditorialObject."@fr ,
+                                      "To specify a type of version for an EditorialObject."@en ,
+                                      "Um eine Art von Version für ein EditorialObject anzugeben."@de ;
+                  rdfs:label "Type de version"@fr ,
+                             "Version Typ"@de ,
+                             "Version type"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoCodec
 ec:hasVideoCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
@@ -4470,16 +4480,6 @@ ec:usesProductionDevice rdf:type owl:ObjectProperty ;
                         rdfs:label "Dispositif de production"@fr ,
                                    "Production device"@en ,
                                    "Produktionsgerät"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#versionType
-ec:versionType rdf:type owl:ObjectProperty ;
-               dcterms:description "Pour spécifier un type de version pour un EditorialObject."@fr ,
-                                   "To specify a type of version for an EditorialObject."@en ,
-                                   "Um eine Art von Version für ein EditorialObject anzugeben."@de ;
-               rdfs:label "Type de version"@fr ,
-                          "Version Typ"@de ,
-                          "Version type"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#related
@@ -10386,6 +10386,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasVersionType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isBrand ;
                                      owl:allValuesFrom ec:Brand
                                    ] ,
@@ -10452,10 +10456,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:requires ;
                                      owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:versionType ;
-                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:dateBroadcast ;
