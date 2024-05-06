@@ -2559,6 +2559,17 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
                                        "Publication plan member."@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanStatus
+ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
+                            rdfs:range skos:Concept ;
+                            dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
+                                                "To provide a status regarding the PublicationPlan."@en ,
+                                                "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
+                            rdfs:label "PublicationPlan status"@en ,
+                                       "Statut du plan de publication"@fr ,
+                                       "VeröffentlichungPlan Status"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                         rdfs:range ec:Location ;
@@ -4219,17 +4230,6 @@ ec:promotes rdf:type owl:ObjectProperty ;
             rdfs:label "favorise"@fr ,
                        "fördert"@de ,
                        "promotes"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publicationPlanStatus
-ec:publicationPlanStatus rdf:type owl:ObjectProperty ;
-                         rdfs:range skos:Concept ;
-                         dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
-                                             "To provide a status regarding the PublicationPlan."@en ,
-                                             "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
-                         rdfs:label "PublicationPlan status"@en ,
-                                    "Statut du plan de publication"@fr ,
-                                    "VeröffentlichungPlan Status"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publicationScheduleDate
@@ -13373,7 +13373,7 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:publicationPlanStatus ;
+                                     owl:onProperty ec:hasPublicationPlanStatus ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass skos:Collection
                                    ] ,
