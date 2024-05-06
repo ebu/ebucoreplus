@@ -481,16 +481,6 @@ ec:consumptionLicenceLink rdf:type owl:ObjectProperty ;
                                      "Link zur Verbrauchslizenz"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractCostAmountCurrency
-ec:contractCostAmountCurrency rdf:type owl:ObjectProperty ;
-                              dcterms:description "Die Währung des Betrags der ContractCost."@de ,
-                                                  "La devise du montant du ContractCost."@fr ,
-                                                  "The currency of the amount of the ContractCost."@en ;
-                              rdfs:label "Cost currency"@en ,
-                                         "Devise de coût"@fr ,
-                                         "Kostenwährung"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractLink
 ec:contractLink rdf:type owl:ObjectProperty ;
                 dcterms:description "A link to a location where information can be found about a Contract."@en ,
@@ -1544,6 +1534,16 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
                              rdfs:label "Editorial format"@en ,
                                         "Format rédactionnel"@fr ,
                                         "Redaktionelles Format"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractRelatedCost
@@ -9823,7 +9823,7 @@ ec:Contract rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ContractCost
 ec:ContractCost rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:contractCostAmountCurrency ;
+                                  owl:onProperty ec:hasContractCostAmountCurrency ;
                                   owl:allValuesFrom skos:Concept
                                 ] ,
                                 [ rdf:type owl:Restriction ;
