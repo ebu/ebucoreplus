@@ -2941,6 +2941,17 @@ ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
                                  "Zugehörige Textzeile"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationLink
+ec:hasRelationLink rdf:type owl:ObjectProperty ;
+                   rdfs:range owl:Thing ;
+                   dcterms:description "Pour définir un lien dans une Relation."@fr ,
+                                       "So definieren Sie eine Verknüpfung in einer Relation."@de ,
+                                       "To define a link in a Relation."@en ;
+                   rdfs:label "Lien"@fr ,
+                              "Link"@de ,
+                              "Link"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationSource
 ec:hasRelationSource rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
@@ -4272,17 +4283,6 @@ ec:referencesRule rdf:type owl:ObjectProperty ;
                   rdfs:label "Referenced Rule"@en ,
                              "Referenzierte Regel"@de ,
                              "Règle référencée"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#relationLink
-ec:relationLink rdf:type owl:ObjectProperty ;
-                rdfs:range owl:Thing ;
-                dcterms:description "Pour définir un lien dans une Relation."@fr ,
-                                    "So definieren Sie eine Verknüpfung in einer Relation."@de ,
-                                    "To define a link in a Relation."@en ;
-                rdfs:label "Lien"@fr ,
-                           "Link"@de ,
-                           "Link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#renders
@@ -13729,13 +13729,13 @@ ec:Relation rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelationLink ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelationSource ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:Agent
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:relationLink ;
-                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
