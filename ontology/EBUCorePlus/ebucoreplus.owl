@@ -2383,6 +2383,17 @@ ec:hasPost rdf:type owl:ObjectProperty ;
                       "hat Post"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelatedProductionJob
+ec:hasPreviousRelatedProductionJob rdf:type owl:ObjectProperty ;
+                                   rdfs:range ec:ProductionJob ;
+                                   dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
+                                                       "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
+                                                       "To identify a previous associated ProductionJob"@en ;
+                                   rdfs:label "Emploi précédent"@fr ,
+                                              "Previous job"@en ,
+                                              "Vorheriger Job"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:range ec:Agent ;
@@ -4194,17 +4205,6 @@ ec:portrays rdf:type owl:ObjectProperty ;
             rdfs:label "dépeint"@fr ,
                        "portrays"@en ,
                        "porträtiert"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#previousRelatedProductionJob
-ec:previousRelatedProductionJob rdf:type owl:ObjectProperty ;
-                                rdfs:range ec:ProductionJob ;
-                                dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
-                                                    "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
-                                                    "To identify a previous associated ProductionJob"@en ;
-                                rdfs:label "Emploi précédent"@fr ,
-                                           "Previous job"@en ,
-                                           "Vorheriger Job"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#promotes
@@ -12741,6 +12741,10 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasPreviousRelatedProductionJob ;
+                                   owl:allValuesFrom ec:ProductionJob
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasProductionJobEvent ;
                                    owl:allValuesFrom ec:Event
                                  ] ,
@@ -12755,10 +12759,6 @@ ec:ProductionJob rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:isOrderedBy ;
                                    owl:allValuesFrom ec:Contract
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:previousRelatedProductionJob ;
-                                   owl:allValuesFrom ec:ProductionJob
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:usesProductionDevice ;
