@@ -2943,6 +2943,17 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
                                      "Zielservice"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryIncludes
+ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
+                              rdfs:range ec:CountryCode ;
+                              dcterms:description "A list of country or region codes to which Rights apply."@en ,
+                                                  "Eine Liste der Länder- oder Regionencodes, für die Rechte gelten."@de ,
+                                                  "Une liste des codes de pays ou de région auxquels les droits s'appliquent."@fr ;
+                              rdfs:label "Enthaltene Territorien"@de ,
+                                         "Included territories"@en ,
+                                         "Territoires inclus"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
 ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
@@ -4372,17 +4383,6 @@ ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:label "Ausgeschlossene Territorien"@de ,
                                       "Excluded territories"@en ,
                                       "Territoires exclus"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rightsTerritoryIncludes
-ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:CountryCode ;
-                           dcterms:description "A list of country or region codes to which Rights apply."@en ,
-                                               "Eine Liste der Länder- oder Regionencodes, für die Rechte gelten."@de ,
-                                               "Une liste des codes de pays ou de région auxquels les droits s'appliquent."@fr ;
-                           rdfs:label "Enthaltene Territorien"@de ,
-                                      "Included territories"@en ,
-                                      "Territoires inclus"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rulePriority
@@ -14081,6 +14081,10 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:PublicationService
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasRightsTerritoryIncludes ;
+                            owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:objectType ;
                             owl:allValuesFrom skos:Concept
                           ] ,
@@ -14090,10 +14094,6 @@ ec:Rights rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:rightsTerritoryExcludes ;
-                            owl:allValuesFrom ec:CountryCode
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:rightsTerritoryIncludes ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
