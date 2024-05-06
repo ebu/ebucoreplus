@@ -2954,6 +2954,16 @@ ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                                          "Territoires inclus"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRulePriority
+ec:hasRulePriority rdf:type owl:ObjectProperty ;
+                   dcterms:description "Pour définir la priorité associée à une règle."@fr ,
+                                       "To define the priority associated to a Rule."@en ,
+                                       "Um die Priorität einer Regel zu definieren."@de ;
+                   rdfs:label "Priorität der Regel"@de ,
+                              "Priorité de la règle"@fr ,
+                              "Rule priority"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
 ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
@@ -4383,16 +4393,6 @@ ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:label "Ausgeschlossene Territorien"@de ,
                                       "Excluded territories"@en ,
                                       "Territoires exclus"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rulePriority
-ec:rulePriority rdf:type owl:ObjectProperty ;
-                dcterms:description "Pour définir la priorité associée à une règle."@fr ,
-                                    "To define the priority associated to a Rule."@en ,
-                                    "Um die Priorität einer Regel zu definieren."@de ;
-                rdfs:label "Priorität der Regel"@de ,
-                           "Priorité de la règle"@fr ,
-                           "Rule priority"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ruleReference
@@ -14172,15 +14172,15 @@ ec:Rule rdf:type owl:Class ;
                           owl:allValuesFrom ec:Identifier
                         ] ,
                         [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasRulePriority ;
+                          owl:allValuesFrom skos:Concept
+                        ] ,
+                        [ rdf:type owl:Restriction ;
                           owl:onProperty ec:isDefinedBy ;
                           owl:allValuesFrom ec:Contract
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:objectType ;
-                          owl:allValuesFrom skos:Concept
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:rulePriority ;
                           owl:allValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
