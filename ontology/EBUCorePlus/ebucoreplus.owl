@@ -427,124 +427,8 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateArchived
-ec:dateArchived rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:hasDate ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
-                                    "La date à laquelle l'actif a été archivé."@fr ,
-                                    "The date when the Asset was archived."@en ;
-                rdfs:label "Archiving date"@en ,
-                           "Date d'archivage"@fr ,
-                           "Datum der Archivierung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateBroadcast
-ec:dateBroadcast rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:hasDate ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
-                                     "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
-                                     "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
-                 rdfs:label "Broadcast date"@en ,
-                            "Date de diffusion"@fr ,
-                            "Datum der Ausstrahlung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateCreated
-ec:dateCreated rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:hasDate ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum der Erstellung des Assets."@de ,
-                                   "La date de création de l'actif."@fr ,
-                                   "The date of creation of the Asset."@en ;
-               rdfs:label "Creation date/time"@en ,
-                          "Date/heure de création"@fr ,
-                          "Erstellungsdatum/-zeit"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDeleted
-ec:dateDeleted rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:hasDate ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
-                                   "La date à laquelle la ressource a été supprimée."@fr ,
-                                   "The date when the Resource was deleted."@en ;
-               rdfs:label "Date de suppression"@fr ,
-                          "Datum der Löschung"@de ,
-                          "Deletion date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDigitised
-ec:dateDigitised rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:hasDate ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
-                                     "La date à laquelle la ressource a été numérisée."@fr ,
-                                     "The date when the Resource was digitised."@en ;
-                 rdfs:label "Date de numérisation"@fr ,
-                            "Datum der Digitalisierung"@de ,
-                            "Digitisation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDistributed
-ec:dateDistributed rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:hasDate ;
-                   rdfs:range time:Instant ;
-                   dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
-                                       "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
-                                       "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:label "Date de distribution"@fr ,
-                              "Datum der Verteilung"@de ,
-                              "Distribution date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIngested
-ec:dateIngested rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:hasDate ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
-                                    "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
-                                    "The date when the Resource was ingested/acquired in institutional holdings."@en ;
-                rdfs:label "Date d'ingestion"@fr ,
-                           "Ingest date"@en ,
-                           "Ingest-Datum"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIssued
-ec:dateIssued rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf ec:hasDate ;
-              rdfs:range time:Instant ;
-              dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
-                                  "La date à laquelle l'actif a été émis."@fr ,
-                                  "The date when the Asset was issued."@en ;
-              rdfs:label "Date d'émission"@fr ,
-                         "Date issued"@en ,
-                         "Datum der Ausstellung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateLicenseEnd
-ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
-                                      "La date à laquelle la licence de l'actif prend fin."@fr ,
-                                      "The date when the licence for the Asset ends."@en ;
-                  rdfs:label "Date de fin de licence"@fr ,
-                             "Enddatum der Lizenz"@de ,
-                             "Licence end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateMigrated
-ec:dateMigrated rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:hasDate ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
-                                    "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
-                                    "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
-                rdfs:label "Date de migration"@fr ,
-                           "Datum der Migration"@de ,
-                           "Migration date"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#date
+ec:date rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
@@ -1429,6 +1313,26 @@ ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
                                             "Kostenwährung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractLink
+ec:hasContractLink rdf:type owl:ObjectProperty ;
+                   dcterms:description "A link to a location where information can be found about a Contract."@en ,
+                                       "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
+                                       "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
+                   rdfs:label "Contract link"@en ,
+                              "Lien vers le contrat"@fr ,
+                              "Vertrag Link"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractRelatedCost
 ec:hasContractRelatedCost rdf:type owl:ObjectProperty ;
                           dcterms:description "Pour identifier les coûts liés au contrat."@fr ,
@@ -1616,6 +1520,116 @@ ec:hasDate rdf:type owl:ObjectProperty ;
            rdfs:label "Date"@en ,
                       "Date"@fr ,
                       "Datum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateArchived
+ec:hasDateArchived rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
+                                       "La date à laquelle l'actif a été archivé."@fr ,
+                                       "The date when the Asset was archived."@en ;
+                   rdfs:label "Archiving date"@en ,
+                              "Date d'archivage"@fr ,
+                              "Datum der Archivierung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateBroadcast
+ec:hasDateBroadcast rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
+                                        "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
+                                        "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
+                    rdfs:label "Broadcast date"@en ,
+                               "Date de diffusion"@fr ,
+                               "Datum der Ausstrahlung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateCreated
+ec:hasDateCreated rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum der Erstellung des Assets."@de ,
+                                      "La date de création de l'actif."@fr ,
+                                      "The date of creation of the Asset."@en ;
+                  rdfs:label "Creation date/time"@en ,
+                             "Date/heure de création"@fr ,
+                             "Erstellungsdatum/-zeit"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDeleted
+ec:hasDateDeleted rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
+                                      "La date à laquelle la ressource a été supprimée."@fr ,
+                                      "The date when the Resource was deleted."@en ;
+                  rdfs:label "Date de suppression"@fr ,
+                             "Datum der Löschung"@de ,
+                             "Deletion date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDigitised
+ec:hasDateDigitised rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
+                                        "La date à laquelle la ressource a été numérisée."@fr ,
+                                        "The date when the Resource was digitised."@en ;
+                    rdfs:label "Date de numérisation"@fr ,
+                               "Datum der Digitalisierung"@de ,
+                               "Digitisation date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDistributed
+ec:hasDateDistributed rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:hasDate ;
+                      rdfs:range time:Instant ;
+                      dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
+                                          "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
+                                          "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                      rdfs:label "Date de distribution"@fr ,
+                                 "Datum der Verteilung"@de ,
+                                 "Distribution date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIngested
+ec:hasDateIngested rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
+                                       "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
+                                       "The date when the Resource was ingested/acquired in institutional holdings."@en ;
+                   rdfs:label "Date d'ingestion"@fr ,
+                              "Ingest date"@en ,
+                              "Ingest-Datum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIssued
+ec:hasDateIssued rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:hasDate ;
+                 rdfs:range time:Instant ;
+                 dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
+                                     "La date à laquelle l'actif a été émis."@fr ,
+                                     "The date when the Asset was issued."@en ;
+                 rdfs:label "Date d'émission"@fr ,
+                            "Date issued"@en ,
+                            "Datum der Ausstellung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicenseEnd
+ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:hasDate ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
+                                         "La date à laquelle la licence de l'actif prend fin."@fr ,
+                                         "The date when the licence for the Asset ends."@en ;
+                     rdfs:label "Date de fin de licence"@fr ,
+                                "Enddatum der Lizenz"@de ,
+                                "Licence end date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicensedStart
 ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:date ;
@@ -1626,6 +1640,18 @@ ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
                         rdfs:label "Date de début de la licence"@fr ,
                                    "Licence start date"@en ,
                                    "Startdatum der Lizenz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateMigrated
+ec:hasDateMigrated rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
+                                       "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
+                                       "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
+                   rdfs:label "Date de migration"@fr ,
+                              "Datum der Migration"@de ,
+                              "Migration date"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateModified
@@ -8283,27 +8309,27 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateArchived ;
+                           owl:onProperty ec:hasDateArchived ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateCreated ;
+                           owl:onProperty ec:hasDateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDeleted ;
+                           owl:onProperty ec:hasDateDeleted ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDistributed ;
+                           owl:onProperty ec:hasDateDistributed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateLicenseEnd ;
+                           owl:onProperty ec:hasDateLicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -10472,16 +10498,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateBroadcast ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateIssued ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:duration ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
@@ -10490,6 +10506,16 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onProperty ec:end ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasDateBroadcast ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasDateIssued ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasLocation ;
@@ -11122,7 +11148,7 @@ ec:Identifier rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
                               ] ,
@@ -11759,21 +11785,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateDigitised ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateIngested ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateMigrated ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:displayAspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:ActiveFormatDescriptorCode
@@ -11817,6 +11828,21 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hasContainerMimeType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateDigitised ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateIngested ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateMigrated ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDateNormalized ;
@@ -12977,7 +13003,7 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
@@ -13978,7 +14004,7 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateDeleted ;
+                              owl:onProperty ec:hasDateDeleted ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
@@ -15302,8 +15328,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
