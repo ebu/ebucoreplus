@@ -1013,14 +1013,14 @@ ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
                                         "Kaufdatum des Artefakts"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSell
-ec:hasArtefactDateOfSell rdf:type owl:ObjectProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSale
+ec:hasArtefactDateOfSale rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ec:hasDate ;
                          rdfs:range time:Instant ;
                          dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
                                              "La date à laquelle un artefact a été vendu."@fr ,
                                              "The date when an Artefact was sold."@en ;
-                         rdfs:label "Artefact date of sell"@en ,
+                         rdfs:label "Artefact date of sale"@en ,
                                     "Date de vente de l'artefact"@fr ,
                                     "Verkaufsdatum des Artefakts"@de .
 
@@ -8046,7 +8046,7 @@ ec:Artefact rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasArtefactDateOfSell ;
+                              owl:onProperty ec:hasArtefactDateOfSale ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
