@@ -295,62 +295,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
                          "Agent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfPurchase
-ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf ec:date ;
-                          rdfs:range time:Instant ;
-                          dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
-                                              "La date à laquelle un artefact a été acheté. ."@fr ,
-                                              "The date when an Artefact was purchased. ."@en ;
-                          rdfs:label "Artefact date of purchase"@en ,
-                                     "Date d'achat de l'artefact"@fr ,
-                                     "Kaufdatum des Artefakts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfSell
-ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:date ;
-                      rdfs:range time:Instant ;
-                      dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
-                                          "La date à laquelle un artefact a été vendu."@fr ,
-                                          "The date when an Artefact was sold."@en ;
-                      rdfs:label "Artefact date of sell"@en ,
-                                 "Date de vente de l'artefact"@fr ,
-                                 "Verkaufsdatum des Artefakts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#assetValueCurrency
-ec:assetValueCurrency rdf:type owl:ObjectProperty ;
-                      dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
-                                          "To provide the currency in which the assetValue is given."@en ,
-                                          "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
-                      rdfs:label "Asset value currency"@en ,
-                                 "Devise de la valeur de l'actif"@fr ,
-                                 "Vermögenswert Währung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportDate
-ec:auditReportDate rdf:type owl:ObjectProperty ;
-                   dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
-                                       "La date de publication d'un rapport d'audit."@fr ,
-                                       "The date of release of an AuditReport."@en ;
-                   rdfs:label "Audit report date"@en ,
-                              "Date du rapport d'audit"@fr ,
-                              "Datum des Prüfungsberichts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#awardDate
-ec:awardDate rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf ec:date ;
-             rdfs:range time:Instant ;
-             dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
-                                 "To provide an date when an Award was delivered."@en ,
-                                 "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
-             rdfs:label "Award date"@en ,
-                        "Date d'attribution"@fr ,
-                        "Datum der Vergabe"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#basedOn
 ec:basedOn rdf:type owl:ObjectProperty ;
            dcterms:description "Pour identifier l'EditorialObject auquel se rapporte un ProductionJob à."@fr ,
@@ -439,47 +383,6 @@ ec:consumesEssence rdf:type owl:ObjectProperty ;
                               "Essence"@fr ,
                               "Essenz"@de .
 
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionDeviceManufacturer
-ec:consumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
-                                 dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
-                                                     "Le fabricant d'un ConsumptionDevice."@fr ,
-                                                     "The manufacturer of a ConsumptionDevice."@en ;
-                                 rdfs:label "Consumption device manufacturer"@en ,
-                                            "Fabricant de dispositifs de consommation"@fr ,
-                                            "Hersteller von Verbrauchsgeräten"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionEventResumePoint
-ec:consumptionEventResumePoint rdf:type owl:ObjectProperty ;
-                               dcterms:description "Das Datum und der Zeitpunkt, zu dem der Konsum wieder aufgenommen wurde wiederaufgenommen wurde."@de ,
-                                                   "La date et l'heure à laquelle la consommation a repris."@fr ,
-                                                   "The date and time point at which consumption has resumed."@en ;
-                               rdfs:label "Consumption event resume point"@en ,
-                                          "Point de reprise de l'événement de consommation"@fr ,
-                                          "Punkt für die Fortsetzung des Verbrauchsereignisses"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionLicenceLink
-ec:consumptionLicenceLink rdf:type owl:ObjectProperty ;
-                          dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
-                                              "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
-                                              "Un lien vers les conditions d'une licence de consommation."@fr ;
-                          rdfs:label "Consumption licence link"@en ,
-                                     "Lien vers le permis de consommation"@fr ,
-                                     "Link zur Verbrauchslizenz"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractLink
-ec:contractLink rdf:type owl:ObjectProperty ;
-                dcterms:description "A link to a location where information can be found about a Contract."@en ,
-                                    "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
-                                    "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
-                rdfs:label "Contract link"@en ,
-                           "Lien vers le contrat"@fr ,
-                           "Vertrag Link"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversConsumptionDevice
 ec:coversConsumptionDevice rdf:type owl:ObjectProperty ;
                            dcterms:description "Pour identifier un appareil compatible avec le licence de consommation."@fr ,
@@ -524,22 +427,9 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#date
-ec:date rdf:type owl:ObjectProperty ;
-        rdfs:range time:Instant ;
-        dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
-        dcterms:description "A date associated to an Asset. Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ,
-                            "Ein Datum, das mit einem Asset verbunden ist. Range: Litteral, auf Instanzebene kann dies auf dateTime, Datum oder ein anderes geeignetes Format beschränkt werden."@de ,
-                            "Une date associée à un actif. Range : Litteral, au niveau de l'instance, cela peut être limité à dateTime, date ou un autre format approprié."@fr ;
-        rdfs:isDefinedBy dc:date ;
-        rdfs:label "Date"@en ,
-                   "Date"@fr ,
-                   "Datum"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateArchived
 ec:dateArchived rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
+                rdfs:subPropertyOf ec:hasDate ;
                 rdfs:range time:Instant ;
                 dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
                                     "La date à laquelle l'actif a été archivé."@fr ,
@@ -551,7 +441,7 @@ ec:dateArchived rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateBroadcast
 ec:dateBroadcast rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
+                 rdfs:subPropertyOf ec:hasDate ;
                  rdfs:range time:Instant ;
                  dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
                                      "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
@@ -563,7 +453,7 @@ ec:dateBroadcast rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateCreated
 ec:dateCreated rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
+               rdfs:subPropertyOf ec:hasDate ;
                rdfs:range time:Instant ;
                dcterms:description "Das Datum der Erstellung des Assets."@de ,
                                    "La date de création de l'actif."@fr ,
@@ -575,7 +465,7 @@ ec:dateCreated rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDeleted
 ec:dateDeleted rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
+               rdfs:subPropertyOf ec:hasDate ;
                rdfs:range time:Instant ;
                dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
                                    "La date à laquelle la ressource a été supprimée."@fr ,
@@ -587,7 +477,7 @@ ec:dateDeleted rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDigitised
 ec:dateDigitised rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
+                 rdfs:subPropertyOf ec:hasDate ;
                  rdfs:range time:Instant ;
                  dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
                                      "La date à laquelle la ressource a été numérisée."@fr ,
@@ -599,7 +489,7 @@ ec:dateDigitised rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDistributed
 ec:dateDistributed rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
+                   rdfs:subPropertyOf ec:hasDate ;
                    rdfs:range time:Instant ;
                    dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
                                        "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
@@ -611,7 +501,7 @@ ec:dateDistributed rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIngested
 ec:dateIngested rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
+                rdfs:subPropertyOf ec:hasDate ;
                 rdfs:range time:Instant ;
                 dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
                                     "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
@@ -623,7 +513,7 @@ ec:dateIngested rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIssued
 ec:dateIssued rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf ec:date ;
+              rdfs:subPropertyOf ec:hasDate ;
               rdfs:range time:Instant ;
               dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
                                   "La date à laquelle l'actif a été émis."@fr ,
@@ -635,7 +525,7 @@ ec:dateIssued rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateLicenseEnd
 ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
+                  rdfs:subPropertyOf ec:hasDate ;
                   rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
                                       "La date à laquelle la licence de l'actif prend fin."@fr ,
@@ -647,7 +537,7 @@ ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateMigrated
 ec:dateMigrated rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
+                rdfs:subPropertyOf ec:hasDate ;
                 rdfs:range time:Instant ;
                 dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
                                     "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
@@ -704,7 +594,7 @@ ec:end rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#endDateTime
 ec:endDateTime rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
+               rdfs:subPropertyOf ec:hasDate ;
                rdfs:range time:Instant ;
                dcterms:description "Das Ende eines Intervalls beschreiben"@de ,
                                    "Describing an end of an interval"@en ,
@@ -980,6 +870,30 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                                "Käufer"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfPurchase
+ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf ec:hasDate ;
+                             rdfs:range time:Instant ;
+                             dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
+                                                 "La date à laquelle un artefact a été acheté. ."@fr ,
+                                                 "The date when an Artefact was purchased. ."@en ;
+                             rdfs:label "Artefact date of purchase"@en ,
+                                        "Date d'achat de l'artefact"@fr ,
+                                        "Kaufdatum des Artefakts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSale
+ec:hasArtefactDateOfSale rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ec:hasDate ;
+                         rdfs:range time:Instant ;
+                         dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
+                                             "La date à laquelle un artefact a été vendu."@fr ,
+                                             "The date when an Artefact was sold."@en ;
+                         rdfs:label "Artefact date of sale"@en ,
+                                    "Date de vente de l'artefact"@fr ,
+                                    "Verkaufsdatum des Artefakts"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactOwner
 ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Agent ;
@@ -1072,6 +986,16 @@ ec:hasAssetValue rdf:type owl:ObjectProperty ;
                  rdfs:label "Asset value"@en ,
                             "Valeur de l'actif"@fr ,
                             "Vermögenswert"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssetValueCurrency
+ec:hasAssetValueCurrency rdf:type owl:ObjectProperty ;
+                         dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
+                                             "To provide the currency in which the assetValue is given."@en ,
+                                             "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
+                         rdfs:label "Asset value currency"@en ,
+                                    "Devise de la valeur de l'actif"@fr ,
+                                    "Vermögenswert Währung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedArtefact
@@ -1208,6 +1132,28 @@ ec:hasAuditJobRelatedAuditReport rdf:type owl:ObjectProperty ;
                                  rdfs:label "Rapport d'audit connexe"@fr ,
                                             "Related audit report"@en ,
                                             "Zugehöriger Prüfbericht"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuditReportDate
+ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
+                      dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
+                                          "La date de publication d'un rapport d'audit."@fr ,
+                                          "The date of release of an AuditReport."@en ;
+                      rdfs:label "Audit report date"@en ,
+                                 "Date du rapport d'audit"@fr ,
+                                 "Datum des Prüfungsberichts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
+ec:hasAwardDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:hasDate ;
+                rdfs:range time:Instant ;
+                dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
+                                    "To provide an date when an Award was delivered."@en ,
+                                    "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
+                rdfs:label "Award date"@en ,
+                           "Date d'attribution"@fr ,
+                           "Datum der Vergabe"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBeenAwarded
@@ -1348,6 +1294,16 @@ ec:hasConsumptionCount rdf:type owl:ObjectProperty ;
                                   "hat den Verbrauch gezählt"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionDeviceManufacturer
+ec:hasConsumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
+                                    dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
+                                                        "Le fabricant d'un ConsumptionDevice."@fr ,
+                                                        "The manufacturer of a ConsumptionDevice."@en ;
+                                    rdfs:label "Consumption device manufacturer"@en ,
+                                               "Fabricant de dispositifs de consommation"@fr ,
+                                               "Hersteller von Verbrauchsgeräten"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionEvent
 ec:hasConsumptionEvent rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier un ConsumptionEvent lié à un PublicationEvent."@fr ,
@@ -1356,6 +1312,26 @@ ec:hasConsumptionEvent rdf:type owl:ObjectProperty ;
                        rdfs:label "Consumption event"@en ,
                                   "Verbrauchsereignis"@de ,
                                   "Événement de consommation"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionEventResumePoint
+ec:hasConsumptionEventResumePoint rdf:type owl:ObjectProperty ;
+                                  dcterms:description "Das Datum und der Zeitpunkt, zu dem der Konsum wieder aufgenommen wurde wiederaufgenommen wurde."@de ,
+                                                      "La date et l'heure à laquelle la consommation a repris."@fr ,
+                                                      "The date and time point at which consumption has resumed."@en ;
+                                  rdfs:label "Consumption event resume point"@en ,
+                                             "Point de reprise de l'événement de consommation"@fr ,
+                                             "Punkt für die Fortsetzung des Verbrauchsereignisses"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionLicenceLink
+ec:hasConsumptionLicenceLink rdf:type owl:ObjectProperty ;
+                             dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
+                                                 "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
+                                                 "Un lien vers les conditions d'une licence de consommation."@fr ;
+                             rdfs:label "Consumption licence link"@en ,
+                                        "Lien vers le permis de consommation"@fr ,
+                                        "Link zur Verbrauchslizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContact
@@ -1414,6 +1390,33 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
                              rdfs:label "Editorial format"@en ,
                                         "Format rédactionnel"@fr ,
                                         "Redaktionelles Format"@de .
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractLink
+ec:hasContractLink rdf:type owl:ObjectProperty ;
+                   dcterms:description "A link to a location where information can be found about a Contract."@en ,
+                                       "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
+                                       "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
+                   rdfs:label "Contract link"@en ,
+                              "Lien vers le contrat"@fr ,
+                              "Vertrag Link"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
@@ -1602,6 +1605,17 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
                            "Suivi des données"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDate
+ec:hasDate rdf:type owl:ObjectProperty ;
+           rdfs:range time:Instant ;
+           dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
+           dcterms:description "A date associated to an Asset. Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ,
+                               "Ein Datum, das mit einem Asset verbunden ist. Range: Litteral, auf Instanzebene kann dies auf dateTime, Datum oder ein anderes geeignetes Format beschränkt werden."@de ,
+                               "Une date associée à un actif. Range : Litteral, au niveau de l'instance, cela peut être limité à dateTime, date ou un autre format approprié."@fr ;
+           rdfs:isDefinedBy dc:date ;
+           rdfs:label "Date"@en ,
+                      "Date"@fr ,
+                      "Datum"@de .
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicensedStart
 ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:date ;
@@ -8041,12 +8055,12 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfPurchase ;
+                              owl:onProperty ec:hasArtefactDateOfPurchase ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:onProperty ec:hasArtefactDateOfSale ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
@@ -8363,7 +8377,7 @@ ec:Asset rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetValue
 ec:AssetValue rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:assetValueCurrency ;
+                                owl:onProperty ec:hasAssetValueCurrency ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -8787,7 +8801,7 @@ ec:AuditJob rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AuditReport
 ec:AuditReport rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:auditReportDate ;
+                                 owl:onProperty ec:hasAuditReportDate ;
                                  owl:allValuesFrom time:Instant
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -8868,7 +8882,7 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:awardDate ;
+                           owl:onProperty ec:hasAwardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -9396,7 +9410,7 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                                        owl:allValuesFrom ec:ConsumptionDeviceProfile
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ec:consumptionDeviceManufacturer ;
+                                       owl:onProperty ec:hasConsumptionDeviceManufacturer ;
                                        owl:allValuesFrom ec:Agent
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -9555,7 +9569,7 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Essence
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:consumptionEventResumePoint ;
+                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
                                       owl:allValuesFrom ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -9645,7 +9659,7 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                         owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:consumptionLicenceLink ;
+                                        owl:onProperty ec:hasConsumptionLicenceLink ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass ec:Contract
                                       ] ,
@@ -9772,7 +9786,7 @@ ec:ContentEditorialFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Contract
 ec:Contract rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:contractLink ;
+                              owl:onProperty ec:hasContractLink ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
