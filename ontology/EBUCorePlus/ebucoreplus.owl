@@ -1419,6 +1419,16 @@ ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
                                             "Kostenwährung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractRelatedCost
 ec:hasContractRelatedCost rdf:type owl:ObjectProperty ;
                           dcterms:description "Pour identifier les coûts liés au contrat."@fr ,
