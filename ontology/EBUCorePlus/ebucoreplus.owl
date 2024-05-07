@@ -427,10 +427,6 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#date
-ec:date rdf:type owl:ObjectProperty .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
@@ -1632,7 +1628,7 @@ ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicensedStart
 ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf ec:date ;
+                        rdfs:subPropertyOf ec:hasDate ;
                         rdfs:range time:Instant ;
                         dcterms:description "Das Datum, an dem die Lizenz für das Asset beginnt."@de ,
                                             "La date à laquelle la licence pour le bien commence."@fr ,
@@ -1656,7 +1652,7 @@ ec:hasDateMigrated rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateModified
 ec:hasDateModified rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
+                   rdfs:subPropertyOf ec:hasDate ;
                    rdfs:range time:Instant ;
                    dcterms:description "Pour indiquer la date à laquelle l'actif a été modifié."@fr ,
                                        "To indicate the date at which the Asset has been modified."@en ,
@@ -1668,7 +1664,7 @@ ec:hasDateModified rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateNormalized
 ec:hasDateNormalized rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ec:date ;
+                     rdfs:subPropertyOf ec:hasDate ;
                      rdfs:range time:Instant ;
                      dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
                                          "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
@@ -1680,7 +1676,7 @@ ec:hasDateNormalized rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfBirth
 ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
+                  rdfs:subPropertyOf ec:hasDate ;
                   rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
                                       "La date de naissance d'un contact/personne."@fr ,
@@ -1692,7 +1688,7 @@ ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfDeath
 ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
+                  rdfs:subPropertyOf ec:hasDate ;
                   rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
                                       "La date à laquelle un contact/personne est décédé."@fr ,
@@ -1704,7 +1700,7 @@ ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfRetirement
 ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf ec:date ;
+                       rdfs:subPropertyOf ec:hasDate ;
                        rdfs:range time:Instant ;
                        dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
                                            "La date à laquelle un contact/personne a pris sa retraite."@fr ,
@@ -1716,7 +1712,7 @@ ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateProduced
 ec:hasDateProduced rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
+                   rdfs:subPropertyOf ec:hasDate ;
                    rdfs:range time:Instant ;
                    dcterms:description "Das Datum der Produktion des Assets."@de ,
                                        "La date de production de l'actif."@fr ,
@@ -1728,7 +1724,7 @@ ec:hasDateProduced rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateReleased
 ec:hasDateReleased rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
+                   rdfs:subPropertyOf ec:hasDate ;
                    rdfs:range time:Instant ;
                    dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
                                        "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
@@ -1740,7 +1736,7 @@ ec:hasDateReleased rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateTransferred
 ec:hasDateTransferred rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:date ;
+                      rdfs:subPropertyOf ec:hasDate ;
                       rdfs:range time:Instant ;
                       dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
                                           "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
@@ -1752,7 +1748,7 @@ ec:hasDateTransferred rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateValidated
 ec:hasDateValidated rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf ec:date ;
+                    rdfs:subPropertyOf ec:hasDate ;
                     rdfs:range time:Instant ;
                     dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
                                         "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
@@ -3163,7 +3159,7 @@ ec:hasStart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStartDateTime
 ec:hasStartDateTime rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf ec:date ;
+                    rdfs:subPropertyOf ec:hasDate ;
                     rdfs:range time:Instant ;
                     dcterms:description "A point of time or start of an interval"@en ,
                                         "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
