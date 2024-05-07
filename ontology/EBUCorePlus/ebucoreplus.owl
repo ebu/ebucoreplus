@@ -383,7 +383,6 @@ ec:consumesEssence rdf:type owl:ObjectProperty ;
                               "Essence"@fr ,
                               "Essenz"@de .
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversConsumptionDevice
 ec:coversConsumptionDevice rdf:type owl:ObjectProperty ;
                            dcterms:description "Pour identifier un appareil compatible avec le licence de consommation."@fr ,
@@ -1275,6 +1274,43 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
                              rdfs:label "Editorial format"@en ,
                                         "Format rédactionnel"@fr ,
                                         "Redaktionelles Format"@de .
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractLink
+ec:hasContractLink rdf:type owl:ObjectProperty ;
+                   dcterms:description "A link to a location where information can be found about a Contract."@en ,
+                                       "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
+                                       "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
+                   rdfs:label "Contract link"@en ,
+                              "Lien vers le contrat"@fr ,
+                              "Vertrag Link"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
