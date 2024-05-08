@@ -251,17 +251,6 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#annotationCurationDateTime
-ec:annotationCurationDateTime rdf:type owl:ObjectProperty ;
-                              rdfs:range time:Instant ;
-                              dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
-                                                  "To provide the date and time when an Annotation has been reviewed."@en ,
-                                                  "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
-                              rdfs:label "Annotation curation date & time"@en ,
-                                         "Date et heure de la curation des annotations"@fr ,
-                                         "Datum und Uhrzeit der Kommentarkuration"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#appliesOutOf
 ec:appliesOutOf rdf:type owl:ObjectProperty ;
                 rdfs:range ec:CountryCode ;
@@ -304,62 +293,6 @@ ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:label "Agent"@de ,
                          "Agent"@en ,
                          "Agent"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfPurchase
-ec:artefactDateOfPurchase rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf ec:date ;
-                          rdfs:range time:Instant ;
-                          dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
-                                              "La date à laquelle un artefact a été acheté. ."@fr ,
-                                              "The date when an Artefact was purchased. ."@en ;
-                          rdfs:label "Artefact date of purchase"@en ,
-                                     "Date d'achat de l'artefact"@fr ,
-                                     "Kaufdatum des Artefakts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactDateOfSell
-ec:artefactDateOfSell rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:date ;
-                      rdfs:range time:Instant ;
-                      dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
-                                          "La date à laquelle un artefact a été vendu."@fr ,
-                                          "The date when an Artefact was sold."@en ;
-                      rdfs:label "Artefact date of sell"@en ,
-                                 "Date de vente de l'artefact"@fr ,
-                                 "Verkaufsdatum des Artefakts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#assetValueCurrency
-ec:assetValueCurrency rdf:type owl:ObjectProperty ;
-                      dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
-                                          "To provide the currency in which the assetValue is given."@en ,
-                                          "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
-                      rdfs:label "Asset value currency"@en ,
-                                 "Devise de la valeur de l'actif"@fr ,
-                                 "Vermögenswert Währung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportDate
-ec:auditReportDate rdf:type owl:ObjectProperty ;
-                   dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
-                                       "La date de publication d'un rapport d'audit."@fr ,
-                                       "The date of release of an AuditReport."@en ;
-                   rdfs:label "Audit report date"@en ,
-                              "Date du rapport d'audit"@fr ,
-                              "Datum des Prüfungsberichts"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#awardDate
-ec:awardDate rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf ec:date ;
-             rdfs:range time:Instant ;
-             dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
-                                 "To provide an date when an Award was delivered."@en ,
-                                 "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
-             rdfs:label "Award date"@en ,
-                        "Date d'attribution"@fr ,
-                        "Datum der Vergabe"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#basedOn
@@ -451,56 +384,6 @@ ec:consumesEssence rdf:type owl:ObjectProperty ;
                               "Essenz"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionDeviceManufacturer
-ec:consumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
-                                 dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
-                                                     "Le fabricant d'un ConsumptionDevice."@fr ,
-                                                     "The manufacturer of a ConsumptionDevice."@en ;
-                                 rdfs:label "Consumption device manufacturer"@en ,
-                                            "Fabricant de dispositifs de consommation"@fr ,
-                                            "Hersteller von Verbrauchsgeräten"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionEventResumePoint
-ec:consumptionEventResumePoint rdf:type owl:ObjectProperty ;
-                               dcterms:description "Das Datum und der Zeitpunkt, zu dem der Konsum wieder aufgenommen wurde wiederaufgenommen wurde."@de ,
-                                                   "La date et l'heure à laquelle la consommation a repris."@fr ,
-                                                   "The date and time point at which consumption has resumed."@en ;
-                               rdfs:label "Consumption event resume point"@en ,
-                                          "Point de reprise de l'événement de consommation"@fr ,
-                                          "Punkt für die Fortsetzung des Verbrauchsereignisses"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#consumptionLicenceLink
-ec:consumptionLicenceLink rdf:type owl:ObjectProperty ;
-                          dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
-                                              "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
-                                              "Un lien vers les conditions d'une licence de consommation."@fr ;
-                          rdfs:label "Consumption licence link"@en ,
-                                     "Lien vers le permis de consommation"@fr ,
-                                     "Link zur Verbrauchslizenz"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractCostAmountCurrency
-ec:contractCostAmountCurrency rdf:type owl:ObjectProperty ;
-                              dcterms:description "Die Währung des Betrags der ContractCost."@de ,
-                                                  "La devise du montant du ContractCost."@fr ,
-                                                  "The currency of the amount of the ContractCost."@en ;
-                              rdfs:label "Cost currency"@en ,
-                                         "Devise de coût"@fr ,
-                                         "Kostenwährung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contractLink
-ec:contractLink rdf:type owl:ObjectProperty ;
-                dcterms:description "A link to a location where information can be found about a Contract."@en ,
-                                    "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
-                                    "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
-                rdfs:label "Contract link"@en ,
-                           "Lien vers le contrat"@fr ,
-                           "Vertrag Link"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversConsumptionDevice
 ec:coversConsumptionDevice rdf:type owl:ObjectProperty ;
                            dcterms:description "Pour identifier un appareil compatible avec le licence de consommation."@fr ,
@@ -545,259 +428,6 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#date
-ec:date rdf:type owl:ObjectProperty ;
-        rdfs:range time:Instant ;
-        dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
-        dcterms:description "A date associated to an Asset. Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ,
-                            "Ein Datum, das mit einem Asset verbunden ist. Range: Litteral, auf Instanzebene kann dies auf dateTime, Datum oder ein anderes geeignetes Format beschränkt werden."@de ,
-                            "Une date associée à un actif. Range : Litteral, au niveau de l'instance, cela peut être limité à dateTime, date ou un autre format approprié."@fr ;
-        rdfs:isDefinedBy dc:date ;
-        rdfs:label "Date"@en ,
-                   "Date"@fr ,
-                   "Datum"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateArchived
-ec:dateArchived rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
-                                    "La date à laquelle l'actif a été archivé."@fr ,
-                                    "The date when the Asset was archived."@en ;
-                rdfs:label "Archiving date"@en ,
-                           "Date d'archivage"@fr ,
-                           "Datum der Archivierung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateBroadcast
-ec:dateBroadcast rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
-                                     "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
-                                     "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
-                 rdfs:label "Broadcast date"@en ,
-                            "Date de diffusion"@fr ,
-                            "Datum der Ausstrahlung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateCreated
-ec:dateCreated rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum der Erstellung des Assets."@de ,
-                                   "La date de création de l'actif."@fr ,
-                                   "The date of creation of the Asset."@en ;
-               rdfs:label "Creation date/time"@en ,
-                          "Date/heure de création"@fr ,
-                          "Erstellungsdatum/-zeit"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDeleted
-ec:dateDeleted rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
-                                   "La date à laquelle la ressource a été supprimée."@fr ,
-                                   "The date when the Resource was deleted."@en ;
-               rdfs:label "Date de suppression"@fr ,
-                          "Datum der Löschung"@de ,
-                          "Deletion date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDigitised
-ec:dateDigitised rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
-                                     "La date à laquelle la ressource a été numérisée."@fr ,
-                                     "The date when the Resource was digitised."@en ;
-                 rdfs:label "Date de numérisation"@fr ,
-                            "Datum der Digitalisierung"@de ,
-                            "Digitisation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateDistributed
-ec:dateDistributed rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:range time:Instant ;
-                   dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
-                                       "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
-                                       "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                   rdfs:label "Date de distribution"@fr ,
-                              "Datum der Verteilung"@de ,
-                              "Distribution date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIngested
-ec:dateIngested rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
-                                    "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
-                                    "The date when the Resource was ingested/acquired in institutional holdings."@en ;
-                rdfs:label "Date d'ingestion"@fr ,
-                           "Ingest date"@en ,
-                           "Ingest-Datum"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateIssued
-ec:dateIssued rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf ec:date ;
-              rdfs:range time:Instant ;
-              dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
-                                  "La date à laquelle l'actif a été émis."@fr ,
-                                  "The date when the Asset was issued."@en ;
-              rdfs:label "Date d'émission"@fr ,
-                         "Date issued"@en ,
-                         "Datum der Ausstellung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateLicenseEnd
-ec:dateLicenseEnd rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
-                                      "La date à laquelle la licence de l'actif prend fin."@fr ,
-                                      "The date when the licence for the Asset ends."@en ;
-                  rdfs:label "Date de fin de licence"@fr ,
-                             "Enddatum der Lizenz"@de ,
-                             "Licence end date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateMigrated
-ec:dateMigrated rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
-                                    "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
-                                    "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
-                rdfs:label "Date de migration"@fr ,
-                           "Datum der Migration"@de ,
-                           "Migration date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateModified
-ec:dateModified rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Pour indiquer la date à laquelle l'actif a été modifié."@fr ,
-                                    "To indicate the date at which the Asset has been modified."@en ,
-                                    "Zur Angabe des Datums, an dem das Asset geändert wurde."@de ;
-                rdfs:label "Date/heure de modification"@fr ,
-                           "Datum/Uhrzeit der Änderung"@de ,
-                           "Modification date/time"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateNormalized
-ec:dateNormalized rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:date ;
-                  rdfs:range time:Instant ;
-                  dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
-                                      "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
-                                      "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
-                  rdfs:label "Date de normalisation"@fr ,
-                             "Datum der Normalisierung"@de ,
-                             "Normalization date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfBirth
-ec:dateOfBirth rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
-                                   "La date de naissance d'un contact/personne."@fr ,
-                                   "The date when a Contact/Person is born."@en ;
-               rdfs:label "Date de naissance"@fr ,
-                          "Date of birth"@en ,
-                          "Geburtsdatum"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfDeath
-ec:dateOfDeath rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
-                                   "La date à laquelle un contact/personne est décédé."@fr ,
-                                   "The date when a Contact/Person has passed away."@en ;
-               rdfs:label "Date du décès"@fr ,
-                          "Date of death"@en ,
-                          "Datum des Todes"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateOfRetirement
-ec:dateOfRetirement rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf ec:date ;
-                    rdfs:range time:Instant ;
-                    dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
-                                        "La date à laquelle un contact/personne a pris sa retraite."@fr ,
-                                        "The date when a Contact/Person has retired."@en ;
-                    rdfs:label "Date de la retraite"@fr ,
-                               "Date of retirement"@en ,
-                               "Datum der Pensionierung"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateProduced
-ec:dateProduced rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum der Produktion des Assets."@de ,
-                                    "La date de production de l'actif."@fr ,
-                                    "The date of production of the Asset."@en ;
-                rdfs:label "Produktionsdatum"@de ,
-                           "date de production"@fr ,
-                           "production date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateReleased
-ec:dateReleased rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:date ;
-                rdfs:range time:Instant ;
-                dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
-                                    "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
-                                    "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
-                rdfs:label "Date de sortie"@fr ,
-                           "Datum der Veröffentlichung"@de ,
-                           "Release date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateTransferred
-ec:dateTransferred rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf ec:date ;
-                   rdfs:range time:Instant ;
-                   dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
-                                       "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
-                                       "The date when the Asset was moved from one digital or physical location to another."@en ;
-                   rdfs:label "Date de transfert"@fr ,
-                              "Datum der Übertragung"@de ,
-                              "Transfer date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dateValidated
-ec:dateValidated rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
-                                     "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
-                                     "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
-                 rdfs:label "Date de validation"@fr ,
-                            "Datum der Validierung"@de ,
-                            "Validation date"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#datelicensedStart
-ec:datelicensedStart rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ec:date ;
-                     rdfs:range time:Instant ;
-                     dcterms:description "Das Datum, an dem die Lizenz für das Asset beginnt."@de ,
-                                         "La date à laquelle la licence pour le bien commence."@fr ,
-                                         "The date when the licence for the Asset begins."@en ;
-                     rdfs:label "Date de début de la licence"@fr ,
-                                "Licence start date"@en ,
-                                "Startdatum der Lizenz"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
@@ -810,17 +440,6 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
                         "Objectif de dérivation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#displayAspectRatio
-ec:displayAspectRatio rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:ActiveFormatDescriptorCode ;
-                      dcterms:description "Das Seitenverhältnis bei der Anzeige."@de ,
-                                          "Le rapport d'aspect lors de l'affichage."@fr ,
-                                          "The aspect ratio when displayed."@en ;
-                      rdfs:label "Display aspect ratio"@en ,
-                                 "Rapport d'aspect de l'écran"@fr ,
-                                 "Seitenverhältnis der Anzeige"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dubbedTo
 ec:dubbedTo rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isDubbedFrom ;
@@ -831,28 +450,6 @@ ec:dubbedTo rdf:type owl:ObjectProperty ;
             rdfs:label "Doublé à"@fr ,
                        "Dubbed to"@en ,
                        "Synchronisiert auf"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#duration
-ec:duration rdf:type owl:ObjectProperty ;
-            rdfs:range ec:TimelinePoint .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#end
-ec:end rdf:type owl:ObjectProperty ;
-       rdfs:range ec:TimelinePoint .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#endDateTime
-ec:endDateTime rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf ec:date ;
-               rdfs:range time:Instant ;
-               dcterms:description "Das Ende eines Intervalls beschreiben"@de ,
-                                   "Describing an end of an interval"@en ,
-                                   "Décrit la fin d'un intervalle"@fr ;
-               rdfs:label "End date time"@en ,
-                          "Enddatum Uhrzeit"@de ,
-                          "Instant de fin"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#excludesAudience
@@ -873,39 +470,6 @@ ec:existsAs rdf:type owl:ObjectProperty ;
             rdfs:label "Editorial object"@en ,
                        "Objet de la rédaction"@fr ,
                        "Redaktionelles Objekt"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#formatVersionId
-ec:formatVersionId rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Identifier ;
-                   dcterms:description "A version identifier attributed to a Format."@en ,
-                                       "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
-                                       "Un identifiant de version attribué à un format."@fr ;
-                   rdfs:label "Format version identifier"@en ,
-                              "Identifiant de la version du format"@fr ,
-                              "Kennung der Formatversion"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#geoBlockingBlacklist
-ec:geoBlockingBlacklist rdf:type owl:ObjectProperty ;
-                        rdfs:range skos:Concept ;
-                        dcterms:description "checking a users IP-address against a blacklist"@en ,
-                                            "vérification de l'adresse IP d'un utilisateur par rapport à une liste noire"@fr ,
-                                            "Überprüfung der IP-Adresse eines Benutzers anhand einer schwarzen Liste"@de ;
-                        rdfs:label "Schwarze Liste für Geoblockierung"@de ,
-                                   "geo-blocking blacklist"@en ,
-                                   "liste noire de géoblocage"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#geoBlockingWhitelist
-ec:geoBlockingWhitelist rdf:type owl:ObjectProperty ;
-                        rdfs:range skos:Concept ;
-                        dcterms:description "checking a users IP-address against a whitelist"@en ,
-                                            "vérification de l'adresse IP d'un utilisateur par rapport à une liste blanche"@fr ,
-                                            "Überprüfung der IP-Adresse eines Benutzers anhand einer Whitelist"@de ;
-                        rdfs:label "Geoblocking-Whitelist"@de ,
-                                   "geo-blocking whitelist"@en ,
-                                   "liste blanche de géo-blocage"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
@@ -1088,6 +652,17 @@ ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
                                  "Annotation agent"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationCurationDateTime
+ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
+                                 rdfs:range time:Instant ;
+                                 dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
+                                                     "To provide the date and time when an Annotation has been reviewed."@en ,
+                                                     "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
+                                 rdfs:label "Annotation curation date & time"@en ,
+                                            "Date et heure de la curation des annotations"@fr ,
+                                            "Datum und Uhrzeit der Kommentarkuration"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
                        rdfs:range owl:Thing ;
@@ -1108,6 +683,30 @@ ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:label "Acheteur"@fr ,
                                "Buyer"@en ,
                                "Käufer"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfPurchase
+ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf ec:hasDate ;
+                             rdfs:range time:Instant ;
+                             dcterms:description "Das Datum, an dem ein Artefakt gekauft wurde. ."@de ,
+                                                 "La date à laquelle un artefact a été acheté. ."@fr ,
+                                                 "The date when an Artefact was purchased. ."@en ;
+                             rdfs:label "Artefact date of purchase"@en ,
+                                        "Date d'achat de l'artefact"@fr ,
+                                        "Kaufdatum des Artefakts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSale
+ec:hasArtefactDateOfSale rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ec:hasDate ;
+                         rdfs:range time:Instant ;
+                         dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
+                                             "La date à laquelle un artefact a été vendu."@fr ,
+                                             "The date when an Artefact was sold."@en ;
+                         rdfs:label "Artefact date of sale"@en ,
+                                    "Date de vente de l'artefact"@fr ,
+                                    "Verkaufsdatum des Artefakts"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactOwner
@@ -1202,6 +801,16 @@ ec:hasAssetValue rdf:type owl:ObjectProperty ;
                  rdfs:label "Asset value"@en ,
                             "Valeur de l'actif"@fr ,
                             "Vermögenswert"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssetValueCurrency
+ec:hasAssetValueCurrency rdf:type owl:ObjectProperty ;
+                         dcterms:description "Pour fournir la devise dans laquelle la valeur de l'actif est donnée."@fr ,
+                                             "To provide the currency in which the assetValue is given."@en ,
+                                             "Zur Angabe der Währung, in der der assetValue angegeben wird. gegeben ist."@de ;
+                         rdfs:label "Asset value currency"@en ,
+                                    "Devise de la valeur de l'actif"@fr ,
+                                    "Vermögenswert Währung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedArtefact
@@ -1338,6 +947,28 @@ ec:hasAuditJobRelatedAuditReport rdf:type owl:ObjectProperty ;
                                  rdfs:label "Rapport d'audit connexe"@fr ,
                                             "Related audit report"@en ,
                                             "Zugehöriger Prüfbericht"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuditReportDate
+ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
+                      dcterms:description "Das Datum der Veröffentlichung eines AuditReports."@de ,
+                                          "La date de publication d'un rapport d'audit."@fr ,
+                                          "The date of release of an AuditReport."@en ;
+                      rdfs:label "Audit report date"@en ,
+                                 "Date du rapport d'audit"@fr ,
+                                 "Datum des Prüfungsberichts"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
+ec:hasAwardDate rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ec:hasDate ;
+                rdfs:range time:Instant ;
+                dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
+                                    "To provide an date when an Award was delivered."@en ,
+                                    "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
+                rdfs:label "Award date"@en ,
+                           "Date d'attribution"@fr ,
+                           "Datum der Vergabe"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBeenAwarded
@@ -1478,6 +1109,16 @@ ec:hasConsumptionCount rdf:type owl:ObjectProperty ;
                                   "hat den Verbrauch gezählt"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionDeviceManufacturer
+ec:hasConsumptionDeviceManufacturer rdf:type owl:ObjectProperty ;
+                                    dcterms:description "Der Hersteller eines ConsumptionDevice."@de ,
+                                                        "Le fabricant d'un ConsumptionDevice."@fr ,
+                                                        "The manufacturer of a ConsumptionDevice."@en ;
+                                    rdfs:label "Consumption device manufacturer"@en ,
+                                               "Fabricant de dispositifs de consommation"@fr ,
+                                               "Hersteller von Verbrauchsgeräten"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionEvent
 ec:hasConsumptionEvent rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier un ConsumptionEvent lié à un PublicationEvent."@fr ,
@@ -1486,6 +1127,26 @@ ec:hasConsumptionEvent rdf:type owl:ObjectProperty ;
                        rdfs:label "Consumption event"@en ,
                                   "Verbrauchsereignis"@de ,
                                   "Événement de consommation"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionEventResumePoint
+ec:hasConsumptionEventResumePoint rdf:type owl:ObjectProperty ;
+                                  dcterms:description "Das Datum und der Zeitpunkt, zu dem der Konsum wieder aufgenommen wurde wiederaufgenommen wurde."@de ,
+                                                      "La date et l'heure à laquelle la consommation a repris."@fr ,
+                                                      "The date and time point at which consumption has resumed."@en ;
+                                  rdfs:label "Consumption event resume point"@en ,
+                                             "Point de reprise de l'événement de consommation"@fr ,
+                                             "Punkt für die Fortsetzung des Verbrauchsereignisses"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionLicenceLink
+ec:hasConsumptionLicenceLink rdf:type owl:ObjectProperty ;
+                             dcterms:description "A link to the terms of a ConsumptionLicence."@en ,
+                                                 "Ein Link zu den Bedingungen einer ConsumptionLicence."@de ,
+                                                 "Un lien vers les conditions d'une licence de consommation."@fr ;
+                             rdfs:label "Consumption licence link"@en ,
+                                        "Lien vers le permis de consommation"@fr ,
+                                        "Link zur Verbrauchslizenz"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContact
@@ -1544,6 +1205,26 @@ ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
                              rdfs:label "Editorial format"@en ,
                                         "Format rédactionnel"@fr ,
                                         "Redaktionelles Format"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractCostAmountCurrency
+ec:hasContractCostAmountCurrency rdf:type owl:ObjectProperty ;
+                                 dcterms:description "Die Währung des Betrags der ContractCost."@de ,
+                                                     "La devise du montant du ContractCost."@fr ,
+                                                     "The currency of the amount of the ContractCost."@en ;
+                                 rdfs:label "Cost currency"@en ,
+                                            "Devise de coût"@fr ,
+                                            "Kostenwährung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractLink
+ec:hasContractLink rdf:type owl:ObjectProperty ;
+                   dcterms:description "A link to a location where information can be found about a Contract."@en ,
+                                       "Ein Link zu einem Ort, an dem Sie Informationen über einen Vertrag."@de ,
+                                       "Un lien vers un emplacement où l'on peut trouver des informations sur un contrat."@fr ;
+                   rdfs:label "Contract link"@en ,
+                              "Lien vers le contrat"@fr ,
+                              "Vertrag Link"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContractRelatedCost
@@ -1722,6 +1403,259 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
                            "Suivi des données"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDate
+ec:hasDate rdf:type owl:ObjectProperty ;
+           rdfs:range time:Instant ;
+           dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
+           dcterms:description "A date associated to an Asset. Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ,
+                               "Ein Datum, das mit einem Asset verbunden ist. Range: Litteral, auf Instanzebene kann dies auf dateTime, Datum oder ein anderes geeignetes Format beschränkt werden."@de ,
+                               "Une date associée à un actif. Range : Litteral, au niveau de l'instance, cela peut être limité à dateTime, date ou un autre format approprié."@fr ;
+           rdfs:isDefinedBy dc:date ;
+           rdfs:label "Date"@en ,
+                      "Date"@fr ,
+                      "Datum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateArchived
+ec:hasDateArchived rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
+                                       "La date à laquelle l'actif a été archivé."@fr ,
+                                       "The date when the Asset was archived."@en ;
+                   rdfs:label "Archiving date"@en ,
+                              "Date d'archivage"@fr ,
+                              "Datum der Archivierung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateBroadcast
+ec:hasDateBroadcast rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
+                                        "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
+                                        "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
+                    rdfs:label "Broadcast date"@en ,
+                               "Date de diffusion"@fr ,
+                               "Datum der Ausstrahlung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateCreated
+ec:hasDateCreated rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum der Erstellung des Assets."@de ,
+                                      "La date de création de l'actif."@fr ,
+                                      "The date of creation of the Asset."@en ;
+                  rdfs:label "Creation date/time"@en ,
+                             "Date/heure de création"@fr ,
+                             "Erstellungsdatum/-zeit"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDeleted
+ec:hasDateDeleted rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
+                                      "La date à laquelle la ressource a été supprimée."@fr ,
+                                      "The date when the Resource was deleted."@en ;
+                  rdfs:label "Date de suppression"@fr ,
+                             "Datum der Löschung"@de ,
+                             "Deletion date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDigitised
+ec:hasDateDigitised rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
+                                        "La date à laquelle la ressource a été numérisée."@fr ,
+                                        "The date when the Resource was digitised."@en ;
+                    rdfs:label "Date de numérisation"@fr ,
+                               "Datum der Digitalisierung"@de ,
+                               "Digitisation date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDistributed
+ec:hasDateDistributed rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:hasDate ;
+                      rdfs:range time:Instant ;
+                      dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
+                                          "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
+                                          "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                      rdfs:label "Date de distribution"@fr ,
+                                 "Datum der Verteilung"@de ,
+                                 "Distribution date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIngested
+ec:hasDateIngested rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
+                                       "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
+                                       "The date when the Resource was ingested/acquired in institutional holdings."@en ;
+                   rdfs:label "Date d'ingestion"@fr ,
+                              "Ingest date"@en ,
+                              "Ingest-Datum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIssued
+ec:hasDateIssued rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ec:hasDate ;
+                 rdfs:range time:Instant ;
+                 dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
+                                     "La date à laquelle l'actif a été émis."@fr ,
+                                     "The date when the Asset was issued."@en ;
+                 rdfs:label "Date d'émission"@fr ,
+                            "Date issued"@en ,
+                            "Datum der Ausstellung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicenseEnd
+ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:hasDate ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
+                                         "La date à laquelle la licence de l'actif prend fin."@fr ,
+                                         "The date when the licence for the Asset ends."@en ;
+                     rdfs:label "Date de fin de licence"@fr ,
+                                "Enddatum der Lizenz"@de ,
+                                "Licence end date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicensedStart
+ec:hasDateLicensedStart rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf ec:hasDate ;
+                        rdfs:range time:Instant ;
+                        dcterms:description "Das Datum, an dem die Lizenz für das Asset beginnt."@de ,
+                                            "La date à laquelle la licence pour le bien commence."@fr ,
+                                            "The date when the licence for the Asset begins."@en ;
+                        rdfs:label "Date de début de la licence"@fr ,
+                                   "Licence start date"@en ,
+                                   "Startdatum der Lizenz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateMigrated
+ec:hasDateMigrated rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource kopiert oder von einem veralteten oder gefährdeten Originalformat in ein aktuelleres Format zur Aufbewahrung konvertiert wurde."@de ,
+                                       "La date à laquelle la ressource a été copiée ou convertie d'un format original obsolète ou menacé à un format plus actualisé pour la conservation."@fr ,
+                                       "The date when the Resource was copied or converted from an obsolete or endangered original format to a more updated format for preservation."@en ;
+                   rdfs:label "Date de migration"@fr ,
+                              "Datum der Migration"@de ,
+                              "Migration date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateModified
+ec:hasDateModified rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Pour indiquer la date à laquelle l'actif a été modifié."@fr ,
+                                       "To indicate the date at which the Asset has been modified."@en ,
+                                       "Zur Angabe des Datums, an dem das Asset geändert wurde."@de ;
+                   rdfs:label "Date/heure de modification"@fr ,
+                              "Datum/Uhrzeit der Änderung"@de ,
+                              "Modification date/time"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateNormalized
+ec:hasDateNormalized rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ec:hasDate ;
+                     rdfs:range time:Instant ;
+                     dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
+                                         "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
+                                         "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
+                     rdfs:label "Date de normalisation"@fr ,
+                                "Datum der Normalisierung"@de ,
+                                "Normalization date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfBirth
+ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
+                                      "La date de naissance d'un contact/personne."@fr ,
+                                      "The date when a Contact/Person is born."@en ;
+                  rdfs:label "Date de naissance"@fr ,
+                             "Date of birth"@en ,
+                             "Geburtsdatum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfDeath
+ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
+                                      "La date à laquelle un contact/personne est décédé."@fr ,
+                                      "The date when a Contact/Person has passed away."@en ;
+                  rdfs:label "Date du décès"@fr ,
+                             "Date of death"@en ,
+                             "Datum des Todes"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfRetirement
+ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ec:hasDate ;
+                       rdfs:range time:Instant ;
+                       dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
+                                           "La date à laquelle un contact/personne a pris sa retraite."@fr ,
+                                           "The date when a Contact/Person has retired."@en ;
+                       rdfs:label "Date de la retraite"@fr ,
+                                  "Date of retirement"@en ,
+                                  "Datum der Pensionierung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateProduced
+ec:hasDateProduced rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum der Produktion des Assets."@de ,
+                                       "La date de production de l'actif."@fr ,
+                                       "The date of production of the Asset."@en ;
+                   rdfs:label "Produktionsdatum"@de ,
+                              "date de production"@fr ,
+                              "production date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateReleased
+ec:hasDateReleased rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf ec:hasDate ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Das Datum, an dem die Ressource erstmals der Öffentlichkeit zum Kauf, Download oder Online-Zugriff zur Verfügung gestellt wurde."@de ,
+                                       "La date à laquelle la ressource a été mise pour la première fois à la disposition du public pour l'achat, le téléchargement ou l'accès en ligne."@fr ,
+                                       "The date when the Resource was first made available to the public for purchase, download, or online access."@en ;
+                   rdfs:label "Date de sortie"@fr ,
+                              "Datum der Veröffentlichung"@de ,
+                              "Release date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateTransferred
+ec:hasDateTransferred rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf ec:hasDate ;
+                      rdfs:range time:Instant ;
+                      dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
+                                          "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
+                                          "The date when the Asset was moved from one digital or physical location to another."@en ;
+                      rdfs:label "Date de transfert"@fr ,
+                                 "Datum der Übertragung"@de ,
+                                 "Transfer date"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateValidated
+ec:hasDateValidated rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
+                                        "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
+                                        "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
+                    rdfs:label "Date de validation"@fr ,
+                               "Datum der Validierung"@de ,
+                               "Validation date"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
 ec:hasDepartment rdf:type owl:ObjectProperty ;
                  rdfs:range ec:Department ;
@@ -1753,6 +1687,17 @@ ec:hasDisclaimer rdf:type owl:ObjectProperty ;
                  rdfs:label "Avis de non-responsabilité"@fr ,
                             "Disclaimer"@en ,
                             "Haftungsausschluss"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisplayAspectRatio
+ec:hasDisplayAspectRatio rdf:type owl:ObjectProperty ;
+                         rdfs:range ec:ActiveFormatDescriptorCode ;
+                         dcterms:description "Das Seitenverhältnis bei der Anzeige."@de ,
+                                             "Le rapport d'aspect lors de l'affichage."@fr ,
+                                             "The aspect ratio when displayed."@en ;
+                         rdfs:label "Display aspect ratio"@en ,
+                                    "Rapport d'aspect de l'écran"@fr ,
+                                    "Seitenverhältnis der Anzeige"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDocumentFormat
@@ -1790,6 +1735,11 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                                 "Synchronisierte Sprache"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDuration
+ec:hasDuration rdf:type owl:ObjectProperty ;
+               rdfs:range ec:TimelinePoint .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialGroup
 ec:hasEditorialGroup rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:isMemberOf ;
@@ -1816,6 +1766,23 @@ ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
                      rdfs:label "Encoding format"@en ,
                                 "Format de codage"@fr ,
                                 "Format der Kodierung"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEnd
+ec:hasEnd rdf:type owl:ObjectProperty ;
+          rdfs:range ec:TimelinePoint .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEndDateTime
+ec:hasEndDateTime rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ec:hasDate ;
+                  rdfs:range time:Instant ;
+                  dcterms:description "Das Ende eines Intervalls beschreiben"@de ,
+                                      "Describing an end of an interval"@en ,
+                                      "Décrit la fin d'un intervalle"@fr ;
+                  rdfs:label "End date time"@en ,
+                             "Enddatum Uhrzeit"@de ,
+                             "Instant de fin"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisode
@@ -1885,6 +1852,17 @@ ec:hasFormatId rdf:type owl:ObjectProperty ;
                           "Identificateur de format"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatVersionId
+ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:Identifier ;
+                      dcterms:description "A version identifier attributed to a Format."@en ,
+                                          "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
+                                          "Un identifiant de version attribué à un format."@fr ;
+                      rdfs:label "Format version identifier"@en ,
+                                 "Identifiant de la version du format"@fr ,
+                                 "Kennung der Formatversion"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeneration
 ec:hasGeneration rdf:type owl:ObjectProperty ;
                  rdfs:range ec:MediaResource ;
@@ -1904,6 +1882,28 @@ ec:hasGenre rdf:type owl:ObjectProperty ;
             rdfs:label "Genre"@de ,
                        "Genre"@en ,
                        "Genre"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingBlacklist
+ec:hasGeoBlockingBlacklist rdf:type owl:ObjectProperty ;
+                           rdfs:range skos:Concept ;
+                           dcterms:description "checking a users IP-address against a blacklist"@en ,
+                                               "vérification de l'adresse IP d'un utilisateur par rapport à une liste noire"@fr ,
+                                               "Überprüfung der IP-Adresse eines Benutzers anhand einer schwarzen Liste"@de ;
+                           rdfs:label "Schwarze Liste für Geoblockierung"@de ,
+                                      "geo-blocking blacklist"@en ,
+                                      "liste noire de géoblocage"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingWhitelist
+ec:hasGeoBlockingWhitelist rdf:type owl:ObjectProperty ;
+                           rdfs:range skos:Concept ;
+                           dcterms:description "checking a users IP-address against a whitelist"@en ,
+                                               "vérification de l'adresse IP d'un utilisateur par rapport à une liste blanche"@fr ,
+                                               "Überprüfung der IP-Adresse eines Benutzers anhand einer Whitelist"@de ;
+                           rdfs:label "Geoblocking-Whitelist"@de ,
+                                      "geo-blocking whitelist"@en ,
+                                      "liste blanche de géo-blocage"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoLocation
@@ -2063,6 +2063,28 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                            "Lizenzierung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToLogo
+ec:hasLinkToLogo rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:Logo ;
+                 dcterms:description "Pour fournir un lien vers un logo"@fr ,
+                                     "So erstellen Sie einen Link zu einem Logo"@de ,
+                                     "To provide a link to a Logo"@en ;
+                 rdfs:label "Lien vers le logo"@fr ,
+                            "Link to logo"@en ,
+                            "Link zum Logo"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToSticker
+ec:hasLinkToSticker rdf:type owl:ObjectProperty ;
+                    rdfs:range ec:Sticker ;
+                    dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
+                                        "So erstellen Sie einen Link zu einem Sticker"@de ,
+                                        "To provide a link to a Sticker"@en ;
+                    rdfs:label "Lien vers l'autocollant"@fr ,
+                               "Link to Sticker"@en ,
+                               "Link zum Aufkleber"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:range ec:Location ;
@@ -2097,6 +2119,17 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
                                  "Picture"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationRegion
+ec:hasLocationRegion rdf:type owl:ObjectProperty ;
+                     rdfs:range ec:RegionCode ;
+                     dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
+                                         "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
+                                         "To provide a description of a particular region assocoated to the Location."@en ;
+                     rdfs:label "Region"@de ,
+                                "Region"@en ,
+                                "Région"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:range ec:Locator ;
@@ -2106,12 +2139,6 @@ ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:label "Localisateur"@fr ,
                          "Locator"@de ,
                          "Locator"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLoggsPublicationEvent
-ec:hasLoggsPublicationEvent rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:PublicationEvent ;
-                            skos:note "loggs publication event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLogo
@@ -2145,16 +2172,6 @@ ec:hasMaster rdf:type owl:ObjectProperty ;
              rdfs:label "Master"@en ,
                         "Maître"@fr ,
                         "Meister"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasureValueUnit
-ec:hasMeasureValueUnit rdf:type owl:ObjectProperty ;
-                       dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
-                                           "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
-                                           "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
-                       rdfs:label "Einheit messen"@de ,
-                                  "Measure unit"@en ,
-                                  "Unité de mesure"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMediaFragment
@@ -2224,17 +2241,6 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:label "Mime type"@en ,
                           "Mime-Typ"@de ,
                           "Type Mime"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasObjectType
-ec:hasObjectType rdf:type owl:ObjectProperty ;
-                 rdfs:range skos:Concept ;
-                 dcterms:description "Die Art oder das Genre der Ressource."@de ,
-                                     "Le type ou le genre de la ressource."@fr ,
-                                     "The kind or genre of the resource."@en ;
-                 rdfs:label "Typ"@de ,
-                            "type"@en ,
-                            "type"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOrganisationStaff
@@ -2383,17 +2389,6 @@ ec:hasPost rdf:type owl:ObjectProperty ;
                       "hat Post"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelatedProductionJob
-ec:hasPreviousRelatedProductionJob rdf:type owl:ObjectProperty ;
-                                   rdfs:range ec:ProductionJob ;
-                                   dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
-                                                       "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
-                                                       "To identify a previous associated ProductionJob"@en ;
-                                   rdfs:label "Emploi précédent"@fr ,
-                                              "Previous job"@en ,
-                                              "Vorheriger Job"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:range ec:Agent ;
@@ -2474,13 +2469,9 @@ ec:hasPromotion rdf:type owl:ObjectProperty ;
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
                  rdfs:domain owl:Thing ;
-                 rdfs:range ec:Agent ,
-                            ec:Provenance ;
+                 rdfs:range ec:Provenance ;
                  dcterms:description "Bereich: String, anyURI oder Konzept."@de ,
-                                     "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
-                                     "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
                                      "Plage : chaîne, anyURI ou Concept."@fr ,
-                                     "The person or company that is providing the metadata."@en ,
                                      "To associate information on Provenance to an EBUCore class. Range: string, anyURI or Concept."@en ;
                  rdfs:label "Provenance"@en ,
                             "Provenance"@fr ,
@@ -2559,17 +2550,6 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
                                        "Publication plan member."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanStatus
-ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
-                            rdfs:range skos:Concept ;
-                            dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
-                                                "To provide a status regarding the PublicationPlan."@en ,
-                                                "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
-                            rdfs:label "PublicationPlan status"@en ,
-                                       "Statut du plan de publication"@fr ,
-                                       "VeröffentlichungPlan Status"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                         rdfs:range ec:Location ;
@@ -2579,17 +2559,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                         rdfs:label "Publication region"@en ,
                                    "Region der Veröffentlichung"@de ,
                                    "Région de publication"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationScheduleDate
-ec:hasPublicationScheduleDate rdf:type owl:ObjectProperty ;
-                              rdfs:range time:Instant ;
-                              dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
-                                                  "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
-                                                  "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
-                              rdfs:label "Date du calendrier"@fr ,
-                                         "Schedule date"@en ,
-                                         "Zeitplan Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
@@ -2941,17 +2910,6 @@ ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
                                  "Zugehörige Textzeile"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationLink
-ec:hasRelationLink rdf:type owl:ObjectProperty ;
-                   rdfs:range owl:Thing ;
-                   dcterms:description "Pour définir un lien dans une Relation."@fr ,
-                                       "So definieren Sie eine Verknüpfung in einer Relation."@de ,
-                                       "To define a link in a Relation."@en ;
-                   rdfs:label "Lien"@fr ,
-                              "Link"@de ,
-                              "Link"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationSource
 ec:hasRelationSource rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
@@ -2961,17 +2919,6 @@ ec:hasRelationSource rdf:type owl:ObjectProperty ;
                      rdfs:label "Relation Quelle"@de ,
                                 "Relation source"@en ,
                                 "Source de la relation"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasResourceOffset
-ec:hasResourceOffset rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TimelinePoint ;
-                     dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
-                                         "Le décalage de départ dans une ressource."@fr ,
-                                         "The start offset within a Resource."@en ;
-                     rdfs:label "Compensation des ressources"@fr ,
-                                "Resource offset"@en ,
-                                "Ressourcenausgleich"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRestrictedAudience
@@ -3029,15 +2976,35 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
                                      "Zielservice"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryExcludes
-ec:hasRightsTerritoryExcludes rdf:type owl:ObjectProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryIncludes
+ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                               rdfs:range ec:CountryCode ;
-                              dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
-                                                  "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
-                                                  "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
-                              rdfs:label "Ausgeschlossene Territorien"@de ,
-                                         "Excluded territories"@en ,
-                                         "Territoires exclus"@fr .
+                              dcterms:description "A list of country or region codes to which Rights apply."@en ,
+                                                  "Eine Liste der Länder- oder Regionencodes, für die Rechte gelten."@de ,
+                                                  "Une liste des codes de pays ou de région auxquels les droits s'appliquent."@fr ;
+                              rdfs:label "Enthaltene Territorien"@de ,
+                                         "Included territories"@en ,
+                                         "Territoires inclus"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRulePriority
+ec:hasRulePriority rdf:type owl:ObjectProperty ;
+                   dcterms:description "Pour définir la priorité associée à une règle."@fr ,
+                                       "To define the priority associated to a Rule."@en ,
+                                       "Um die Priorität einer Regel zu definieren."@de ;
+                   rdfs:label "Priorität der Regel"@de ,
+                              "Priorité de la règle"@fr ,
+                              "Rule priority"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRuleReference
+ec:hasRuleReference rdf:type owl:ObjectProperty ;
+                    dcterms:description "Pour fournir des références à une règle."@fr ,
+                                        "To provide references to a Rule."@en ,
+                                        "Um Hinweise auf eine Regel zu geben."@de ;
+                    rdfs:label "Regel-Referenz"@de ,
+                               "Rule reference"@en ,
+                               "Référence de la règle"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
@@ -3177,6 +3144,26 @@ ec:hasStandard rdf:type owl:ObjectProperty ;
                rdfs:label "Standard"@de ,
                           "Standard"@en ,
                           "Standard"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStart
+ec:hasStart rdf:type owl:ObjectProperty ;
+            rdfs:range ec:TimelinePoint ;
+            rdfs:label "Début"@fr ,
+                       "Start"@de ,
+                       "Start"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStartDateTime
+ec:hasStartDateTime rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ec:hasDate ;
+                    rdfs:range time:Instant ;
+                    dcterms:description "A point of time or start of an interval"@en ,
+                                        "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
+                                        "Un instant ou l'nstant de départ d'un intervalle"@fr ;
+                    rdfs:label "Date de début"@fr ,
+                               "Start date time"@en ,
+                               "Startdatum Uhrzeit"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
@@ -3475,6 +3462,16 @@ ec:hasVersion rdf:type owl:ObjectProperty ;
               rdfs:label "Version"@de ,
                          "Version"@en ,
                          "Version"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVersionType
+ec:hasVersionType rdf:type owl:ObjectProperty ;
+                  dcterms:description "Pour spécifier un type de version pour un EditorialObject."@fr ,
+                                      "To specify a type of version for an EditorialObject."@en ,
+                                      "Um eine Art von Version für ein EditorialObject anzugeben."@de ;
+                  rdfs:label "Type de version"@fr ,
+                             "Version Typ"@de ,
+                             "Version type"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoCodec
@@ -4164,37 +4161,20 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                           "Version von"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#linkToLogo
-ec:linkToLogo rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Logo ;
-              dcterms:description "Pour fournir un lien vers un logo"@fr ,
-                                  "So erstellen Sie einen Link zu einem Logo"@de ,
-                                  "To provide a link to a Logo"@en ;
-              rdfs:label "Lien vers le logo"@fr ,
-                         "Link to logo"@en ,
-                         "Link zum Logo"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#loggsPublicationEvent
+ec:loggsPublicationEvent rdf:type owl:ObjectProperty ;
+                         rdfs:range ec:PublicationEvent ;
+                         skos:note "loggs publication event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#linkToSticker
-ec:linkToSticker rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Sticker ;
-                 dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
-                                     "So erstellen Sie einen Link zu einem Sticker"@de ,
-                                     "To provide a link to a Sticker"@en ;
-                 rdfs:label "Lien vers l'autocollant"@fr ,
-                            "Link to Sticker"@en ,
-                            "Link zum Aufkleber"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationRegion
-ec:locationRegion rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:RegionCode ;
-                  dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
-                                      "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
-                                      "To provide a description of a particular region assocoated to the Location."@en ;
-                  rdfs:label "Region"@de ,
-                             "Region"@en ,
-                             "Région"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measureValueUnit
+ec:measureValueUnit rdf:type owl:ObjectProperty ;
+                    dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
+                                        "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
+                                        "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
+                    rdfs:label "Einheit messen"@de ,
+                               "Measure unit"@en ,
+                               "Unité de mesure"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
@@ -4205,6 +4185,17 @@ ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
                        rdfs:label "Related Rule"@en ,
                                   "Règle connexe"@fr ,
                                   "Verwandte Regel"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#objectType
+ec:objectType rdf:type owl:ObjectProperty ;
+              rdfs:range skos:Concept ;
+              dcterms:description "Die Art oder das Genre der Ressource."@de ,
+                                  "Le type ou le genre de la ressource."@fr ,
+                                  "The kind or genre of the resource."@en ;
+              rdfs:label "Typ"@de ,
+                         "type"@en ,
+                         "type"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#offers
@@ -4266,6 +4257,17 @@ ec:portrays rdf:type owl:ObjectProperty ;
                        "porträtiert"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#previousRelatedProductionJob
+ec:previousRelatedProductionJob rdf:type owl:ObjectProperty ;
+                                rdfs:range ec:ProductionJob ;
+                                dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
+                                                    "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
+                                                    "To identify a previous associated ProductionJob"@en ;
+                                rdfs:label "Emploi précédent"@fr ,
+                                           "Previous job"@en ,
+                                           "Vorheriger Job"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#promotes
 ec:promotes rdf:type owl:ObjectProperty ;
             dcterms:description "Der Inhalt wirbt für einen anderen Inhalt"@de ,
@@ -4274,6 +4276,40 @@ ec:promotes rdf:type owl:ObjectProperty ;
             rdfs:label "favorise"@fr ,
                        "fördert"@de ,
                        "promotes"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#provenance
+ec:provenance rdf:type owl:ObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range ec:Agent ;
+              dcterms:description "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
+                                  "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
+                                  "The person or company that is providing the metadata."@en ;
+              rdfs:label "Provenance"@en ,
+                         "Provenance"@fr ,
+                         "Provenienz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publicationPlanStatus
+ec:publicationPlanStatus rdf:type owl:ObjectProperty ;
+                         rdfs:range skos:Concept ;
+                         dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
+                                             "To provide a status regarding the PublicationPlan."@en ,
+                                             "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
+                         rdfs:label "PublicationPlan status"@en ,
+                                    "Statut du plan de publication"@fr ,
+                                    "VeröffentlichungPlan Status"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publicationScheduleDate
+ec:publicationScheduleDate rdf:type owl:ObjectProperty ;
+                           rdfs:range time:Instant ;
+                           dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
+                                               "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
+                                               "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
+                           rdfs:label "Date du calendrier"@fr ,
+                                      "Schedule date"@en ,
+                                      "Zeitplan Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publishes
@@ -4305,6 +4341,17 @@ ec:referencesRule rdf:type owl:ObjectProperty ;
                   rdfs:label "Referenced Rule"@en ,
                              "Referenzierte Regel"@de ,
                              "Règle référencée"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#relationLink
+ec:relationLink rdf:type owl:ObjectProperty ;
+                rdfs:range owl:Thing ;
+                dcterms:description "Pour définir un lien dans une Relation."@fr ,
+                                    "So definieren Sie eine Verknüpfung in einer Relation."@de ,
+                                    "To define a link in a Relation."@en ;
+                rdfs:label "Lien"@fr ,
+                           "Link"@de ,
+                           "Link"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#renders
@@ -4356,6 +4403,17 @@ ec:requiresLicence rdf:type owl:ObjectProperty ;
                               "Required licence"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#resourceOffset
+ec:resourceOffset rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:TimelinePoint ;
+                  dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
+                                      "Le décalage de départ dans une ressource."@fr ,
+                                      "The start offset within a Resource."@en ;
+                  rdfs:label "Compensation des ressources"@fr ,
+                             "Resource offset"@en ,
+                             "Ressourcenausgleich"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#resultsIn
 ec:resultsIn rdf:type owl:ObjectProperty ;
              dcterms:description "A link between a ResonanceEvent and a ConsumptionEvent."@en ,
@@ -4366,55 +4424,15 @@ ec:resultsIn rdf:type owl:ObjectProperty ;
                         "Événement de résonance"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rightsTerritoryIncludes
-ec:rightsTerritoryIncludes rdf:type owl:ObjectProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rightsTerritoryExcludes
+ec:rightsTerritoryExcludes rdf:type owl:ObjectProperty ;
                            rdfs:range ec:CountryCode ;
-                           dcterms:description "A list of country or region codes to which Rights apply."@en ,
-                                               "Eine Liste der Länder- oder Regionencodes, für die Rechte gelten."@de ,
-                                               "Une liste des codes de pays ou de région auxquels les droits s'appliquent."@fr ;
-                           rdfs:label "Enthaltene Territorien"@de ,
-                                      "Included territories"@en ,
-                                      "Territoires inclus"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#rulePriority
-ec:rulePriority rdf:type owl:ObjectProperty ;
-                dcterms:description "Pour définir la priorité associée à une règle."@fr ,
-                                    "To define the priority associated to a Rule."@en ,
-                                    "Um die Priorität einer Regel zu definieren."@de ;
-                rdfs:label "Priorität der Regel"@de ,
-                           "Priorité de la règle"@fr ,
-                           "Rule priority"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ruleReference
-ec:ruleReference rdf:type owl:ObjectProperty ;
-                 dcterms:description "Pour fournir des références à une règle."@fr ,
-                                     "To provide references to a Rule."@en ,
-                                     "Um Hinweise auf eine Regel zu geben."@de ;
-                 rdfs:label "Regel-Referenz"@de ,
-                            "Rule reference"@en ,
-                            "Référence de la règle"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#start
-ec:start rdf:type owl:ObjectProperty ;
-         rdfs:range ec:TimelinePoint ;
-         rdfs:label "Début"@fr ,
-                    "Start"@de ,
-                    "Start"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#startDateTime
-ec:startDateTime rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:date ;
-                 rdfs:range time:Instant ;
-                 dcterms:description "A point of time or start of an interval"@en ,
-                                     "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
-                                     "Un instant ou l'nstant de départ d'un intervalle"@fr ;
-                 rdfs:label "Date de début"@fr ,
-                            "Start date time"@en ,
-                            "Startdatum Uhrzeit"@de .
+                           dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
+                                               "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
+                                               "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
+                           rdfs:label "Ausgeschlossene Territorien"@de ,
+                                      "Excluded territories"@en ,
+                                      "Territoires exclus"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#supportsConsumptionDeviceProfile
@@ -4462,16 +4480,6 @@ ec:usesProductionDevice rdf:type owl:ObjectProperty ;
                         rdfs:label "Dispositif de production"@fr ,
                                    "Production device"@en ,
                                    "Produktionsgerät"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#versionType
-ec:versionType rdf:type owl:ObjectProperty ;
-               dcterms:description "Pour spécifier un type de version pour un EditorialObject."@fr ,
-                                   "To specify a type of version for an EditorialObject."@en ,
-                                   "Um eine Art von Version für ein EditorialObject anzugeben."@de ;
-               rdfs:label "Type de version"@fr ,
-                          "Version Typ"@de ,
-                          "Version type"@en .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#related
@@ -7341,11 +7349,11 @@ dc:Agent rdf:type owl:Class ;
 ec:AccessConditions rdf:type owl:Class ;
                     rdfs:subClassOf ec:Rights ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:geoBlockingBlacklist ;
+                                      owl:onProperty ec:hasGeoBlockingBlacklist ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:geoBlockingWhitelist ;
+                                      owl:onProperty ec:hasGeoBlockingWhitelist ;
                                       owl:allValuesFrom skos:Concept
                                     ] ;
                     dcterms:description "Die Bedingungen, unter denen auf Inhalte zugegriffen werden kann."@de ,
@@ -7367,16 +7375,16 @@ ec:Account rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
-                             owl:allValuesFrom skos:Concept
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedAccount ;
                              owl:allValuesFrom ec:Account
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:holdsLicence ;
                              owl:allValuesFrom ec:ConsumptionLicence
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
+                             owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:description ;
@@ -7410,10 +7418,6 @@ ec:Action rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasObjectType ;
-                            owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRelatedAgent ;
                             owl:allValuesFrom ec:Agent
                           ] ,
@@ -7422,12 +7426,16 @@ ec:Action rdf:type owl:Class ;
                             owl:allValuesFrom ec:Scene
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:start ;
+                            owl:onProperty ec:objectType ;
+                            owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasStart ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:TimelinePoint
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:end ;
+                            owl:onProperty ec:hasEnd ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:TimelinePoint
                           ] ,
@@ -7476,7 +7484,7 @@ ec:Affiliation rdf:type owl:Class ;
                                  owl:allValuesFrom ec:Identifier
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:hasObjectType ;
+                                 owl:onProperty ec:objectType ;
                                  owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -7485,12 +7493,12 @@ ec:Affiliation rdf:type owl:Class ;
                                  owl:onClass ec:Organisation
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:endDateTime ;
+                                 owl:onProperty ec:hasEndDateTime ;
                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass time:Instant
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:startDateTime ;
+                                 owl:onProperty ec:hasStartDateTime ;
                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass time:Instant
                                ] ,
@@ -7566,10 +7574,6 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
                          ] ,
@@ -7580,6 +7584,10 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isCharacter ;
                            owl:allValuesFrom ec:Character
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
@@ -7723,16 +7731,16 @@ ec:AlternativeTitle rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasObjectType ;
+                                      owl:onProperty ec:objectType ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:endDateTime ;
+                                      owl:onProperty ec:hasEndDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -7814,10 +7822,6 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasObjectType ;
-                            owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isAnimalGroom ;
                             owl:allValuesFrom ec:Agent
                           ] ,
@@ -7826,16 +7830,20 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:allValuesFrom skos:Concept
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:portrays ;
                             owl:allValuesFrom ec:Character
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfBirth ;
+                            owl:onProperty ec:hasDateOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfDeath ;
+                            owl:onProperty ec:hasDateOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
@@ -7908,10 +7916,6 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
-                                owl:allValuesFrom skos:Concept
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasRelatedAgent ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
@@ -7924,7 +7928,11 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Event
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:annotationCurationDateTime ;
+                                owl:onProperty ec:objectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAnnotationCurationDateTime ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
                               ] ,
@@ -8017,10 +8025,6 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedAgent ;
                               owl:allValuesFrom ec:Agent
                             ] ,
@@ -8033,12 +8037,16 @@ ec:Artefact rdf:type owl:Class ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfPurchase ;
+                              owl:onProperty ec:objectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasArtefactDateOfPurchase ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactDateOfSell ;
+                              owl:onProperty ec:hasArtefactDateOfSale ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
@@ -8261,59 +8269,59 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateArchived ;
+                           owl:onProperty ec:hasDateArchived ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateCreated ;
+                           owl:onProperty ec:hasDateCreated ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDeleted ;
+                           owl:onProperty ec:hasDateDeleted ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateDistributed ;
+                           owl:onProperty ec:hasDateDistributed ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateLicenseEnd ;
+                           owl:onProperty ec:hasDateLicenseEnd ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateModified ;
+                           owl:onProperty ec:hasDateLicensedStart ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateProduced ;
+                           owl:onProperty ec:hasDateModified ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:dateReleased ;
+                           owl:onProperty ec:hasDateProduced ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:datelicensedStart ;
+                           owl:onProperty ec:hasDateReleased ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isChildOf ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
@@ -8355,7 +8363,7 @@ ec:Asset rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetValue
 ec:AssetValue rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:assetValueCurrency ;
+                                owl:onProperty ec:hasAssetValueCurrency ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -8363,7 +8371,7 @@ ec:AssetValue rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
+                                owl:onProperty ec:objectType ;
                                 owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -8419,12 +8427,12 @@ ec:Audience rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:includesAudience ;
                               owl:allValuesFrom ec:Audience
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectType ;
+                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:audienceAgeHigh ;
@@ -8779,16 +8787,12 @@ ec:AuditJob rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AuditReport
 ec:AuditReport rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:auditReportDate ;
+                                 owl:onProperty ec:hasAuditReportDate ;
                                  owl:allValuesFrom time:Instant
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasIdentifier ;
                                  owl:allValuesFrom ec:Identifier
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:hasObjectType ;
-                                 owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasRelatedAuditJob ;
@@ -8797,6 +8801,10 @@ ec:AuditReport rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:isApprovedBy ;
                                  owl:allValuesFrom ec:Agent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:objectType ;
+                                 owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:referencesRule ;
@@ -8848,10 +8856,6 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom ec:Logo
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
@@ -8860,7 +8864,11 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom ec:Event
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:awardDate ;
+                           owl:onProperty ec:objectType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasAwardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -9035,16 +9043,16 @@ ec:Campaign rdf:type owl:Class ;
                               owl:allValuesFrom ec:ResonanceCount
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasPublicationPlan ;
                               owl:allValuesFrom ec:PublicationPlan
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTargetAudience ;
                               owl:allValuesFrom ec:Audience
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:objectType ;
+                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
@@ -9197,7 +9205,7 @@ ec:Codec rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
+                           owl:onProperty ec:objectType ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -9320,26 +9328,26 @@ ec:ConsumptionCount rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasObjectType ;
+                                      owl:onProperty ec:objectType ;
                                       owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:end ;
+                                      owl:onProperty ec:hasEnd ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:endDateTime ;
+                                      owl:onProperty ec:hasEndDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:start ;
+                                      owl:onProperty ec:hasStart ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -9388,7 +9396,7 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                                        owl:allValuesFrom ec:ConsumptionDeviceProfile
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ec:consumptionDeviceManufacturer ;
+                                       owl:onProperty ec:hasConsumptionDeviceManufacturer ;
                                        owl:allValuesFrom ec:Agent
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -9396,7 +9404,7 @@ ec:ConsumptionDevice rdf:type owl:Class ;
                                        owl:allValuesFrom ec:Identifier
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty ec:hasObjectType ;
+                                       owl:onProperty ec:objectType ;
                                        owl:allValuesFrom skos:Concept
                                      ] ,
                                      [ rdf:type owl:Restriction ;
@@ -9469,7 +9477,7 @@ ec:ConsumptionDeviceProfile rdf:type owl:Class ;
                                               owl:allValuesFrom ec:Identifier
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty ec:hasObjectType ;
+                                              owl:onProperty ec:objectType ;
                                               owl:allValuesFrom skos:Concept
                                             ] ,
                                             [ rdf:type owl:Restriction ;
@@ -9547,7 +9555,7 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Essence
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:consumptionEventResumePoint ;
+                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
                                       owl:allValuesFrom ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -9559,12 +9567,12 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasObjectType ;
-                                      owl:allValuesFrom skos:Concept
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasRelatedConsumptionEvent ;
                                       owl:allValuesFrom ec:ConsumptionEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:objectType ;
+                                      owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:requiresLicence ;
@@ -9575,22 +9583,22 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:ResonanceEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:end ;
+                                      owl:onProperty ec:hasEnd ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:endDateTime ;
+                                      owl:onProperty ec:hasEndDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:start ;
+                                      owl:onProperty ec:hasStart ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -9633,11 +9641,11 @@ ec:ConsumptionLicence rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Identifier
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasObjectType ;
+                                        owl:onProperty ec:objectType ;
                                         owl:allValuesFrom skos:Concept
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:consumptionLicenceLink ;
+                                        owl:onProperty ec:hasConsumptionLicenceLink ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass ec:Contract
                                       ] ,
@@ -9764,7 +9772,7 @@ ec:ContentEditorialFormat rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Contract
 ec:Contract rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:contractLink ;
+                              owl:onProperty ec:hasContractLink ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -9784,7 +9792,7 @@ ec:Contract rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
+                              owl:onProperty ec:objectType ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -9815,7 +9823,7 @@ ec:Contract rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ContractCost
 ec:ContractCost rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:contractCostAmountCurrency ;
+                                  owl:onProperty ec:hasContractCostAmountCurrency ;
                                   owl:allValuesFrom skos:Concept
                                 ] ,
                                 [ rdf:type owl:Restriction ;
@@ -9823,7 +9831,7 @@ ec:ContractCost rdf:type owl:Class ;
                                   owl:allValuesFrom ec:Identifier
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:hasObjectType ;
+                                  owl:onProperty ec:objectType ;
                                   owl:allValuesFrom skos:Concept
                                 ] ,
                                 [ rdf:type owl:Restriction ;
@@ -9872,11 +9880,11 @@ ec:Copyright rdf:type owl:Class ;
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:linkToLogo ;
+                             owl:onProperty ec:hasLinkToLogo ;
                              owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:linkToSticker ;
+                             owl:onProperty ec:hasLinkToSticker ;
                              owl:allValuesFrom ec:Sticker
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -10378,6 +10386,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasVersionType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isBrand ;
                                      owl:allValuesFrom ec:Brand
                                    ] ,
@@ -10446,26 +10458,22 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:versionType ;
-                                     owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateBroadcast ;
+                                     owl:onProperty ec:hasDateBroadcast ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:dateIssued ;
+                                     owl:onProperty ec:hasDateIssued ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:duration ;
+                                     owl:onProperty ec:hasDuration ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:end ;
+                                     owl:onProperty ec:hasEnd ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
@@ -10475,7 +10483,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass ec:Location
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasResourceOffset ;
+                                     owl:onProperty ec:hasStart ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
@@ -10490,7 +10498,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:onClass ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:start ;
+                                     owl:onProperty ec:resourceOffset ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass ec:TimelinePoint
                                    ] ,
@@ -10754,10 +10762,6 @@ ec:Emotion rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
-                             owl:allValuesFrom skos:Concept
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasRelatedAgent ;
                              owl:allValuesFrom ec:Agent
                            ] ,
@@ -10766,12 +10770,16 @@ ec:Emotion rdf:type owl:Class ;
                              owl:allValuesFrom ec:Scene
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:start ;
+                             owl:onProperty ec:objectType ;
+                             owl:allValuesFrom skos:Concept
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasStart ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass ec:TimelinePoint
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:end ;
+                             owl:onProperty ec:hasEnd ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass ec:TimelinePoint
                            ] ,
@@ -10849,10 +10857,6 @@ ec:Event rdf:type owl:Class ;
                            owl:allValuesFrom ec:Identifier
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
@@ -10869,7 +10873,11 @@ ec:Event rdf:type owl:Class ;
                            owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:endDateTime ;
+                           owl:onProperty ec:objectType ;
+                           owl:allValuesFrom skos:Concept
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasEndDateTime ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -10879,7 +10887,7 @@ ec:Event rdf:type owl:Class ;
                            owl:onClass ec:Location
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:startDateTime ;
+                           owl:onProperty ec:hasStartDateTime ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
                          ] ,
@@ -11039,12 +11047,12 @@ ec:Footage rdf:type owl:Class ;
 ec:Format rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:formatVersionId ;
+                            owl:onProperty ec:hasFormatId ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasFormatId ;
+                            owl:onProperty ec:hasFormatVersionId ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Identifier
                           ] ;
@@ -11092,15 +11100,15 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
-                                owl:allValuesFrom skos:Concept
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:isIssuedBy ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:objectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:Instant
                               ] ,
@@ -11201,12 +11209,12 @@ ec:Involvement rdf:type owl:Class ;
                                  owl:allValuesFrom ec:Identifier
                                ] ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:hasObjectType ;
-                                 owl:allValuesFrom skos:Concept
-                               ] ,
-                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasRelatedArtefact ;
                                  owl:allValuesFrom ec:Artefact
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:objectType ;
+                                 owl:allValuesFrom skos:Concept
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:playsCharacter ;
@@ -11371,10 +11379,6 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Picture
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelatedArtefact ;
                               owl:allValuesFrom ec:Artefact
                             ] ,
@@ -11387,7 +11391,11 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:locationRegion ;
+                              owl:onProperty ec:objectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasLocationRegion ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:RegionCode
                             ] ,
@@ -11497,7 +11505,7 @@ ec:Locator rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
+                             owl:onProperty ec:objectType ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -11559,16 +11567,16 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasMeasureValueUnit ;
-                             owl:allValuesFrom skos:Concept
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
+                             owl:onProperty ec:measureValueUnit ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:measuresAgainstRule ;
                              owl:allValuesFrom ec:Rule
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:objectType ;
+                             owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:description ;
@@ -11737,36 +11745,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateDigitised ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateIngested ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateMigrated ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateNormalized ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dateTransferred ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:displayAspectRatio ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ec:ActiveFormatDescriptorCode
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasAncillaryDataFormat ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:AncillaryDataFormat
@@ -11805,6 +11783,36 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:hasContainerMimeType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MimeType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateDigitised ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateIngested ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateMigrated ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateNormalized ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDateTransferred ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDisplayAspectRatio ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass ec:ActiveFormatDescriptorCode
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasFileFormat ;
@@ -12199,12 +12207,12 @@ ec:OnStagePosition rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasObjectType ;
-                                     owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedStage ;
                                      owl:allValuesFrom ec:Stage
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectType ;
+                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -12280,12 +12288,12 @@ ec:Organisation rdf:type owl:Class ;
                                   owl:allValuesFrom ec:StaffMember
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:endDateTime ;
+                                  owl:onProperty ec:hasEndDateTime ;
                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass time:Instant
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty ec:startDateTime ;
+                                  owl:onProperty ec:hasStartDateTime ;
                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass time:Instant
                                 ] ;
@@ -12374,21 +12382,6 @@ ec:Person rdf:type owl:Class ;
                             owl:allValuesFrom ec:KeyPersonalEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfBirth ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfDeath ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:dateOfRetirement ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass time:Instant
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasCountryOfBirth ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:CountryCode
@@ -12397,6 +12390,21 @@ ec:Person rdf:type owl:Class ;
                             owl:onProperty ec:hasCountryOfDeath ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfBirth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfDeath ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasDateOfRetirement ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasPlaceOfBirth ;
@@ -12642,16 +12650,16 @@ ec:ProductionDevice rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasObjectType ;
-                                      owl:allValuesFrom skos:Concept
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasProductionDeviceOnStagePosition ;
                                       owl:allValuesFrom ec:OnStagePosition
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasUsageContract ;
                                       owl:allValuesFrom ec:Contract
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:objectType ;
+                                      owl:allValuesFrom skos:Concept
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:description ;
@@ -12717,10 +12725,6 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasObjectType ;
-                                   owl:allValuesFrom skos:Concept
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasOutputEssence ;
                                    owl:allValuesFrom ec:Essence
                                  ] ,
@@ -12731,10 +12735,6 @@ ec:ProductionJob rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasOutputResource ;
                                    owl:allValuesFrom ec:Resource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasPreviousRelatedProductionJob ;
-                                   owl:allValuesFrom ec:ProductionJob
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasProductionJobEvent ;
@@ -12753,16 +12753,24 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Contract
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:objectType ;
+                                   owl:allValuesFrom skos:Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:previousRelatedProductionJob ;
+                                   owl:allValuesFrom ec:ProductionJob
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:usesProductionDevice ;
                                    owl:allValuesFrom ec:ProductionDevice
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:endDateTime ;
+                                   owl:onProperty ec:hasEndDateTime ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:startDateTime ;
+                                   owl:onProperty ec:hasStartDateTime ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
@@ -12801,12 +12809,12 @@ ec:ProductionOrder rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasObjectType ;
-                                     owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasProductionContract ;
                                      owl:allValuesFrom ec:Contract
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:objectType ;
+                                     owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -12943,10 +12951,6 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Identifier
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
-                                owl:allValuesFrom skos:Concept
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasProvenanceTarget ;
                                 owl:allValuesFrom owl:Thing
                               ] ,
@@ -12955,12 +12959,16 @@ ec:Provenance rdf:type owl:Class ;
                                 owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateCreated ;
+                                owl:onProperty ec:objectType ;
+                                owl:allValuesFrom skos:Concept
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasDateCreated ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:dateModified ;
+                                owl:onProperty ec:hasDateModified ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass time:DateTimeDescription
                               ] ,
@@ -13021,10 +13029,6 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Logo
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasObjectType ;
-                                        owl:allValuesFrom skos:Concept
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationChannel ;
                                         owl:allValuesFrom ec:PublicationChannel
                                       ] ,
@@ -13041,6 +13045,10 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Agent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:objectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:offers ;
                                         owl:allValuesFrom ec:PublicationEvent
                                       ] ,
@@ -13049,12 +13057,12 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:PublicationService
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:endDateTime ;
+                                        owl:onProperty ec:hasEndDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:startDateTime ;
+                                        owl:onProperty ec:hasStartDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
@@ -13130,10 +13138,6 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Identifier
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasObjectType ;
-                                      owl:allValuesFrom skos:Concept
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasPublicationChannel ;
                                       owl:allValuesFrom ec:PublicationChannel
                                     ] ,
@@ -13170,6 +13174,10 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:PublicationService
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:objectType ;
+                                      owl:allValuesFrom skos:Concept
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:playsOut ;
                                       owl:allValuesFrom ec:Essence
                                     ] ,
@@ -13178,22 +13186,22 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:EditorialObject
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:startDateTime ;
+                                      owl:onProperty ec:hasStartDateTime ;
                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:duration ;
+                                      owl:onProperty ec:hasDuration ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:endDateTime ;
+                                      owl:onProperty ec:hasEndDateTime ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:DateTimeDescription
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasPublicationScheduleDate ;
+                                      owl:onProperty ec:publicationScheduleDate ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -13279,26 +13287,26 @@ ec:PublicationHistory rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationLog
 ec:PublicationLog rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasResourceOffset ;
+                                    owl:onProperty ec:resourceOffset ;
                                     owl:someValuesFrom ec:TimelinePoint
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasLoggsPublicationEvent ;
+                                    owl:onProperty ec:hasStartDateTime ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:loggsPublicationEvent ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:PublicationEvent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:startDateTime ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass time:Instant
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:endDateTime ;
+                                    owl:onProperty ec:hasEndDateTime ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass time:Instant
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasObjectType ;
+                                    owl:onProperty ec:objectType ;
                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass skos:Concept
                                   ] ,
@@ -13352,10 +13360,6 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Identifier
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasObjectType ;
-                                     owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublicationPlanMember ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
@@ -13368,19 +13372,23 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:endDateTime ;
+                                     owl:onProperty ec:objectType ;
+                                     owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasEndDateTime ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasPublicationPlanStatus ;
+                                     owl:onProperty ec:hasStartDateTime ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass time:Instant
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:publicationPlanStatus ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass skos:Collection
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:startDateTime ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass time:Instant
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:description ;
@@ -13454,10 +13462,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:Logo
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:hasObjectType ;
-                                         owl:allValuesFrom skos:Concept
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:hasPublicationChannel ;
                                          owl:allValuesFrom ec:PublicationChannel
                                        ] ,
@@ -13474,6 +13478,10 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:Agent
                                        ] ,
                                        [ rdf:type owl:Restriction ;
+                                         owl:onProperty ec:objectType ;
+                                         owl:allValuesFrom skos:Concept
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:offers ;
                                          owl:allValuesFrom ec:PublicationEvent
                                        ] ,
@@ -13486,12 +13494,12 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:ConsumptionDeviceProfile
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:endDateTime ;
+                                         owl:onProperty ec:hasEndDateTime ;
                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass time:Instant
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:startDateTime ;
+                                         owl:onProperty ec:hasStartDateTime ;
                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                          owl:onClass time:Instant
                                        ] ,
@@ -13549,10 +13557,6 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Logo
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasObjectType ;
-                                        owl:allValuesFrom skos:Concept
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasRelatedPublicationService ;
                                         owl:allValuesFrom ec:PublicationService
                                       ] ,
@@ -13569,16 +13573,20 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Agent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty ec:objectType ;
+                                        owl:allValuesFrom skos:Concept
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:offers ;
                                         owl:allValuesFrom ec:PublicationEvent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:endDateTime ;
+                                        owl:onProperty ec:hasEndDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:startDateTime ;
+                                        owl:onProperty ec:hasStartDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
                                       ] ,
@@ -13634,12 +13642,12 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:Logo
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasObjectType ;
-                            owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasPictogram ;
                             owl:allValuesFrom ec:Picture
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:appliesTo ;
@@ -13725,17 +13733,17 @@ ec:Relation rdf:type owl:Class ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
+                              owl:onProperty ec:objectType ;
                               owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasRelationLink ;
-                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasRelationSource ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:relationLink ;
+                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
@@ -13816,12 +13824,12 @@ ec:ResonanceCount rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Locator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasObjectType ;
-                                    owl:allValuesFrom skos:Concept
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:isMeasuredBy ;
                                     owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:objectType ;
+                                    owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:description ;
@@ -13940,10 +13948,6 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Locator
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:allValuesFrom skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageId ;
                               owl:allValuesFrom ec:Identifier
                             ] ,
@@ -13956,17 +13960,21 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Contract
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateDeleted ;
+                              owl:onProperty ec:objectType ;
+                              owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasDateDeleted ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:dateValidated ;
+                              owl:onProperty ec:hasDateValidated ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
+                              owl:onProperty ec:objectType ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass skos:Concept
                             ] ,
@@ -14065,10 +14073,6 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasObjectType ;
-                            owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsHolder ;
                             owl:allValuesFrom ec:Agent
                           ] ,
@@ -14077,29 +14081,33 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:PublicationService
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasRightsTerritoryExcludes ;
+                            owl:onProperty ec:hasRightsTerritoryIncludes ;
                             owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:objectType ;
+                            owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:originateFrom ;
                             owl:allValuesFrom ec:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:rightsTerritoryIncludes ;
+                            owl:onProperty ec:rightsTerritoryExcludes ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:duration ;
+                            owl:onProperty ec:hasDuration ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:TimelinePoint
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:endDateTime ;
+                            owl:onProperty ec:hasEndDateTime ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:startDateTime ;
+                            owl:onProperty ec:hasStartDateTime ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass time:Instant
                           ] ,
@@ -14164,20 +14172,20 @@ ec:Rule rdf:type owl:Class ;
                           owl:allValuesFrom ec:Identifier
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasObjectType ;
+                          owl:onProperty ec:hasRulePriority ;
                           owl:allValuesFrom skos:Concept
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasRuleReference ;
+                          owl:allValuesFrom ec:Rule
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:isDefinedBy ;
                           owl:allValuesFrom ec:Contract
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:rulePriority ;
+                          owl:onProperty ec:objectType ;
                           owl:allValuesFrom skos:Concept
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:ruleReference ;
-                          owl:allValuesFrom ec:Rule
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:description ;
@@ -14441,12 +14449,12 @@ ec:Stage rdf:type owl:Class ;
                            owl:allValuesFrom ec:Locator
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasStageLocation ;
                            owl:allValuesFrom ec:Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:objectType ;
+                           owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:description ;
@@ -14666,14 +14674,14 @@ ec:TextLine rdf:type owl:Class ;
                               owl:allValuesFrom ec:Scene
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:end ;
+                              owl:onProperty ec:hasEnd ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:TimelinePoint
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
+                              owl:onProperty ec:hasStart ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass skos:Concept
+                              owl:onClass ec:TimelinePoint
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasTextLineSource ;
@@ -14681,9 +14689,9 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onClass ec:Agent
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:start ;
+                              owl:onProperty ec:objectType ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass ec:TimelinePoint
+                              owl:onClass skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:artefactBoxHeight ;
@@ -14879,12 +14887,12 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:allValuesFrom ec:EditorialObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:duration ;
+                                   owl:onProperty ec:hasDuration ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:TimelinePoint
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasObjectType ;
+                                   owl:onProperty ec:objectType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass skos:Concept
                                  ] ,
@@ -15015,19 +15023,19 @@ ec:Type rdf:type owl:Class ;
 ec:UncertainDate rdf:type owl:Class ;
                  rdfs:subClassOf time:Instant ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:endDateTime ;
+                                   owl:onProperty ec:hasEndDateTime ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasObjectType ;
+                                   owl:onProperty ec:hasStartDateTime ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:Instant
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:objectType ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass skos:Concept
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:startDateTime ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass time:Instant
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:description ;
