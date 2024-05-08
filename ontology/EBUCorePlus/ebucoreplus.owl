@@ -2152,12 +2152,6 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
                       "Logo"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLogsPublicationEvent
-ec:hasLogsPublicationEvent rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:PublicationEvent ;
-                           skos:note "logs publication event"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasManifestation
 ec:hasManifestation rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Resource ;
@@ -4256,6 +4250,12 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                rdfs:label "Version de"@fr ,
                           "Version of"@en ,
                           "Version von"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logsPublicationEvent
+ec:logsPublicationEvent rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:PublicationEvent ;
+                        skos:note "logs publication event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
@@ -13283,14 +13283,14 @@ ec:PublicationLog rdf:type owl:Class ;
                                     owl:someValuesFrom ec:TimelinePoint
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasLogsPublicationEvent ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass ec:PublicationEvent
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasStartDateTime ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass time:Instant
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:logsPublicationEvent ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass ec:PublicationEvent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasEndDateTime ;
