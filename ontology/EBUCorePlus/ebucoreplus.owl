@@ -573,6 +573,17 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
                                   "Farbcode für Tiere"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalGroom
+ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:Agent ;
+                  dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
+                                      "To identify the groom / care taker of an animal."@en ,
+                                      "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
+                  rdfs:label "Animal groom"@en ,
+                             "Tierpfleger"@de ,
+                             "Toilette pour animaux"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalRole
 ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                  rdfs:range ec:Involvement ;
@@ -3662,17 +3673,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "est affilié à"@fr ,
                              "is affiliated to"@en ,
                              "ist angegliedert an"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalGroom
-ec:isAnimalGroom rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Agent ;
-                 dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
-                                     "To identify the groom / care taker of an animal."@en ,
-                                     "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
-                 rdfs:label "Animal groom"@en ,
-                            "Tierpfleger"@de ,
-                            "Toilette pour animaux"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalOwner
@@ -7796,6 +7796,10 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:AnimalColourCode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAnimalGroom ;
+                            owl:allValuesFrom ec:Agent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasAnimalRole ;
                             owl:allValuesFrom ec:Involvement
                           ] ,
@@ -7806,10 +7810,6 @@ ec:Animal rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasObjectType ;
                             owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isAnimalGroom ;
-                            owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isAnimalOwner ;
