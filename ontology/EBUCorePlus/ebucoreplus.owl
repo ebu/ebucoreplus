@@ -1012,7 +1012,7 @@ ec:hasClip rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClone
 ec:hasClone rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isClonedFrom ;
+            owl:inverseOf ec:isCloneOf ;
             rdfs:range ec:MediaResource ;
             dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
                                 "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
@@ -3771,15 +3771,15 @@ ec:isChildOf rdf:type owl:ObjectProperty ;
                         "Parent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isClonedFrom
-ec:isClonedFrom rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "Pour identifier la source d'une MediaResource clonée"@fr ,
-                                    "So identifizieren Sie die Quelle einer geklonten MediaResource"@de ,
-                                    "To identify the source of a clone MediaResource"@en ;
-                rdfs:label "Clone source"@en ,
-                           "Cloner la source"@fr ,
-                           "Quelle klonen"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCloneOf
+ec:isCloneOf rdf:type owl:ObjectProperty ;
+             rdfs:range ec:MediaResource ;
+             dcterms:description "Pour identifier la source d'une MediaResource clonée"@fr ,
+                                 "So identifizieren Sie die Quelle einer geklonten MediaResource"@de ,
+                                 "To identify the source of a clone MediaResource"@en ;
+             rdfs:label "Clone source"@en ,
+                        "Cloner la source"@fr ,
+                        "Quelle klonen"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
@@ -11857,7 +11857,7 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass ec:EditorialObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:isClonedFrom ;
+                                   owl:onProperty ec:isCloneOf ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
                                  ] ,
