@@ -395,18 +395,6 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
                         "Objectif de dérivation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dubbedTo
-ec:dubbedTo rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isDubbedFrom ;
-            rdfs:range ec:MediaResource ;
-            dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
-                                "la ressource a une autre version linguistique"@fr ,
-                                "the resource have another languageversion"@en ;
-            rdfs:label "Doublé à"@fr ,
-                       "Dubbed to"@en ,
-                       "Synchronisiert auf"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#excludesAudience
 ec:excludesAudience rdf:type owl:ObjectProperty ;
                     dcterms:description "A defined audience group that is excluded from the audience"@en ,
@@ -1688,6 +1676,18 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
                 rdfs:label "Dopesheet"@de ,
                            "Dopesheet"@en ,
                            "Dopesheet"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDub
+ec:hasDub rdf:type owl:ObjectProperty ;
+          owl:inverseOf ec:isDubbedFrom ;
+          rdfs:range ec:MediaResource ;
+          dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
+                              "la ressource a une autre version linguistique"@fr ,
+                              "the resource have another languageversion"@en ;
+          rdfs:label "Doublé à"@fr ,
+                     "Dubbed to"@en ,
+                     "Synchronisiert auf"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDubbedLanguage
@@ -11628,10 +11628,6 @@ ec:MediaFragment rdf:type owl:Class ;
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dubbedTo ;
-                                   owl:allValuesFrom ec:MediaResource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasAudioTrack ;
                                    owl:allValuesFrom ec:AudioTrack
                                  ] ,
@@ -11650,6 +11646,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDataTrack ;
                                    owl:allValuesFrom ec:DataTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDub ;
+                                   owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasEncodingFormat ;
