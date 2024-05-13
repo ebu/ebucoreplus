@@ -309,18 +309,6 @@ platform"""@en ,
                                            "peut accéder à la plateforme de publication"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#clonedTo
-ec:clonedTo rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isClonedFrom ;
-            rdfs:range ec:MediaResource ;
-            dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
-                                "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
-                                "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
-            rdfs:label "Cloned to"@en ,
-                       "Cloné en"@fr ,
-                       "Geklont auf"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#compilesResonanceEvents
 ec:compilesResonanceEvents rdf:type owl:ObjectProperty ;
                            dcterms:description "Eines der ResonanceEvents, die zu einem aussagekräftigen Satz von Resonanzdaten."@de ,
@@ -1020,6 +1008,18 @@ ec:hasClip rdf:type owl:ObjectProperty ;
            rdfs:label "a un clip"@fr ,
                       "has clip"@en ,
                       "hat Clip"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClone
+ec:hasClone rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isClonedFrom ;
+            rdfs:range ec:MediaResource ;
+            dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
+                                "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
+                                "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
+            rdfs:label "Cloned to"@en ,
+                       "Cloné en"@fr ,
+                       "Geklont auf"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCodec
@@ -11628,10 +11628,6 @@ ec:MediaFragment rdf:type owl:Class ;
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:clonedTo ;
-                                   owl:allValuesFrom ec:MediaResource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:dubbedTo ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
@@ -11642,6 +11638,10 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasCaptioningSource ;
                                    owl:allValuesFrom ec:Agent
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasClone ;
+                                   owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasCodec ;
