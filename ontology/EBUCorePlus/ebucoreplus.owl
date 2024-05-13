@@ -417,7 +417,7 @@ ec:existsAs rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf ec:isCoveredBy ;
+                       rdfs:subPropertyOf ec:hasRights ;
                        rdfs:range ec:AccessConditions ;
                        dcterms:description "Pour exprimer les conditions/restrictions d'accès."@fr ,
                                            "To express access conditions/restrictions."@en ,
@@ -1225,7 +1225,7 @@ ec:hasContributor rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:isCoveredBy ;
+                rdfs:subPropertyOf ec:hasRights ;
                 rdfs:range ec:Copyright ;
                 dcterms:description "Pour exprimer le droit d'auteur."@fr ,
                                     "To express copyright."@en ,
@@ -1269,7 +1269,7 @@ ec:hasCoverage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCoverageRestrictions
 ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf ec:isCoveredBy ;
+                           rdfs:subPropertyOf ec:hasRights ;
                            rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "Pour exprimer les restrictions de couverture."@fr ,
                                                "To express coverage restrictions."@en ,
@@ -1281,7 +1281,7 @@ ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCreativeCommons
 ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:CreativeCommons ;
                       dcterms:description "Pour exprimer Creative Commons."@fr ,
                                           "To express Creative Commons."@en ,
@@ -1634,7 +1634,7 @@ ec:hasDevice rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisclaimer
 ec:hasDisclaimer rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:isCoveredBy ;
+                 rdfs:subPropertyOf ec:hasRights ;
                  rdfs:range ec:Disclaimer ;
                  dcterms:description "Pour exprimer le désistement."@fr ,
                                      "To express Disclaimer."@en ,
@@ -1765,7 +1765,7 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasExploitationIssues
 ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf ec:isCoveredBy ;
+                         rdfs:subPropertyOf ec:hasRights ;
                          rdfs:range ec:ExploitationIssues ;
                          dcterms:description "Pour exprimer les problèmes d'exploitation."@fr ,
                                              "To express Exploitation Issues."@en ,
@@ -1889,7 +1889,7 @@ ec:hasGroupMember rdf:type owl:ObjectProperty .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:IPRRestrictions ;
                       dcterms:description "Pour exprimer les restrictions en matière de DPI."@fr ,
                                           "To express IPR Restrictions."@en ,
@@ -2020,7 +2020,7 @@ ec:hasLanguage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLicensing
 ec:hasLicensing rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:isCoveredBy ;
+                rdfs:subPropertyOf ec:hasRights ;
                 rdfs:range ec:Licensing ;
                 dcterms:description "Pour exprimer l'autorisation."@fr ,
                                     "To express Licensing."@en ,
@@ -2989,9 +2989,17 @@ ec:hasReview rdf:type owl:ObjectProperty ;
                         "Überprüfung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRights
+ec:hasRights rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Rights ;
+             rdfs:label "Est couvert par"@fr ,
+                        "Is covered by"@en ,
+                        "Wird abgedeckt durch"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsClearance
 ec:hasRightsClearance rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:RightsClearance ;
                       dcterms:description "Pour exprimer l'autorisation des droits."@fr ,
                                           "To express Rights Clearance."@en ,
@@ -3516,7 +3524,7 @@ ec:hasUsageContract rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf ec:isCoveredBy ;
+                        rdfs:subPropertyOf ec:hasRights ;
                         rdfs:range ec:UsageRestrictions ;
                         dcterms:description "Pour exprimer des restrictions d'utilisation."@fr ,
                                             "To express usage restrictions."@en ,
@@ -3528,7 +3536,7 @@ ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRights
 ec:hasUsageRights rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:isCoveredBy ;
+                  rdfs:subPropertyOf ec:hasRights ;
                   rdfs:range ec:UsageRights ;
                   dcterms:description "Pour exprimer les droits d'utilisation."@fr ,
                                       "To express usage rights."@en ,
@@ -3801,14 +3809,6 @@ ec:isComposedOf rdf:type owl:ObjectProperty ;
                 rdfs:label "Media Resource"@en ,
                            "Medien Ressource"@de ,
                            "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCoveredBy
-ec:isCoveredBy rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Rights ;
-               rdfs:label "Est couvert par"@fr ,
-                          "Is covered by"@en ,
-                          "Wird abgedeckt durch"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDefinedBy
@@ -8224,6 +8224,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRights ;
+                           owl:allValuesFrom ec:Rights
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRightsClearance ;
                            owl:allValuesFrom ec:RightsClearance
                          ] ,
@@ -8234,10 +8238,6 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRights ;
                            owl:allValuesFrom ec:UsageRights
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isCoveredBy ;
-                           owl:allValuesFrom ec:Rights
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isDerivedFrom ;
@@ -13149,16 +13149,16 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasRights ;
+                                      owl:allValuesFrom ec:Rights
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasTargetAudience ;
                                       owl:allValuesFrom ec:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasUsageRestrictions ;
                                       owl:allValuesFrom ec:UsageRestrictions
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:isCoveredBy ;
-                                      owl:allValuesFrom ec:Rights
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
