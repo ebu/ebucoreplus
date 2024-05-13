@@ -1680,7 +1680,7 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDub
 ec:hasDub rdf:type owl:ObjectProperty ;
-          owl:inverseOf ec:isDubbedFrom ;
+          owl:inverseOf ec:isDubOf ;
           rdfs:range ec:MediaResource ;
           dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
                               "la ressource a une autre version linguistique"@fr ,
@@ -3843,15 +3843,15 @@ ec:isDistributedOn rdf:type owl:ObjectProperty ;
                               "Plattform/Dienstleistung/Veröffentlichungskanal"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubbedFrom
-ec:isDubbedFrom rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
-                                    "l'origine d'une MediaResource doublée."@fr ,
-                                    "the origin of a dubbed MediaResource."@en ;
-                rdfs:label "Doublé de"@fr ,
-                           "Dubbed from"@en ,
-                           "Synchronisiert von"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubOf
+ec:isDubOf rdf:type owl:ObjectProperty ;
+           rdfs:range ec:MediaResource ;
+           dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
+                               "l'origine d'une MediaResource doublée."@fr ,
+                               "the origin of a dubbed MediaResource."@en ;
+           rdfs:label "Doublé de"@fr ,
+                      "Dubbed from"@en ,
+                      "Synchronisiert von"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEditorialFormatOf
@@ -11862,7 +11862,7 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:isDubbedFrom ;
+                                   owl:onProperty ec:isDubOf ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
                                  ] ,
