@@ -2630,14 +2630,21 @@ ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAgent
-ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
+ec:hasRelatedAgent rdf:type owl:ObjectProperty ,
+                            owl:IrreflexiveProperty ;
                    rdfs:range ec:Agent ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
+                                       "Pour identifier un agent lié. C'est-à-dire une personne liée à un appel pour une fonction sur un plan de production. Plage : chaîne de caractères ou agent."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
-                                       "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
+                                       "To identify a related Agent. I.e. a person related to a call for a function on a production plan. Range: string or Agent."@en ,
+                                       "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ,
+                                       "Um einen verwandten Agenten zu identifizieren. D.h. eine Person, die mit einem Anruf für eine Funktion in einem Produktionsplan verbunden ist. Bereich: String oder Agent."@de ;
                    rdfs:label "Agent connexe"@fr ,
+                              "Est Agent"@fr ,
                               "Related agent"@en ,
-                              "Verwandter Agent"@de .
+                              "Verwandter Agent"@de ,
+                              "isAgent"@en ,
+                              "ist Agent"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAnimal
@@ -3655,18 +3662,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "est affilié à"@fr ,
                              "is affiliated to"@en ,
                              "ist angegliedert an"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAgent
-ec:isAgent rdf:type owl:ObjectProperty ,
-                    owl:IrreflexiveProperty ;
-           rdfs:range ec:Agent ;
-           dcterms:description "Pour identifier un agent lié. C'est-à-dire une personne liée à un appel pour une fonction sur un plan de production. Plage : chaîne de caractères ou agent."@fr ,
-                               "To identify a related Agent. I.e. a person related to a call for a function on a production plan. Range: string or Agent."@en ,
-                               "Um einen verwandten Agenten zu identifizieren. D.h. eine Person, die mit einem Anruf für eine Funktion in einem Produktionsplan verbunden ist. Bereich: String oder Agent."@de ;
-           rdfs:label "Est Agent"@fr ,
-                      "isAgent"@en ,
-                      "ist Agent"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalGroom
@@ -7565,12 +7560,12 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedPicture ;
-                           owl:allValuesFrom ec:Picture
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isAgent ;
-                           owl:allValuesFrom ec:Agent
+                           owl:onProperty ec:hasRelatedPicture ;
+                           owl:allValuesFrom ec:Picture
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isCharacter ;
