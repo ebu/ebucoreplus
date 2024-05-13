@@ -251,17 +251,6 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
-ec:applyTo rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Asset ;
-           dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
-                               "L'actif auquel les droits s'appliquent."@fr ,
-                               "The Asset to which Rights apply."@en ;
-           rdfs:label "Actif"@fr ,
-                      "Asset"@en ,
-                      "Vermögenswert"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#approvedBy
 ec:approvedBy rdf:type owl:ObjectProperty ;
               rdfs:range ec:Agent ;
@@ -3389,10 +3378,16 @@ ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryIncludes
 ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
                         rdfs:range ec:Asset ;
-                        dcterms:description "Identifier l'actif auquel le Rating s'applique."@fr ,
+                        dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
+                                            "Identifier l'actif auquel le Rating s'applique."@fr ,
+                                            "L'actif auquel les droits s'appliquent."@fr ,
+                                            "The Asset to which Rights apply."@en ,
                                             "To identify the asset to which the Rating applies."@en ,
                                             "Um den Vermögenswert zu identifizieren, für den das Rating gilt."@de ;
-                        rdfs:label "applies to"@en ,
+                        rdfs:label "Actif"@fr ,
+                                   "Asset"@en ,
+                                   "Vermögenswert"@de ,
+                                   "applies to"@en ,
                                    "gilt für"@de ,
                                    "s'applique à"@fr .
 
@@ -14053,10 +14048,6 @@ ec:Review rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rights
 ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:applyTo ;
-                            owl:allValuesFrom ec:Asset
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasContact ;
                             owl:allValuesFrom ec:Contact
                           ] ,
@@ -14083,6 +14074,10 @@ ec:Rights rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRightsTerritoryIncludes ;
                             owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasTerritoryIncludes ;
+                            owl:allValuesFrom ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:originateFrom ;
