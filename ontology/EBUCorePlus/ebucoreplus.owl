@@ -14052,6 +14052,10 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:applyTo ;
+                            owl:allValuesFrom ec:PublicationEvent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasContact ;
                             owl:allValuesFrom ec:Contact
                           ] ,
