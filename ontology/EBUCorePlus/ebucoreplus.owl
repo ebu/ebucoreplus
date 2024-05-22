@@ -251,30 +251,9 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#appliesOutOf
-ec:appliesOutOf rdf:type owl:ObjectProperty ;
-                rdfs:range ec:CountryCode ;
-                dcterms:description "Pour définir l'emplacement (par exemple, le pays, la région) auquel le classement et le public cible ne s'appliquent PAS."@fr ,
-                                    "To define the Location (e.g. country, region) to which Rating and TargetAudience do NOT apply."@en ,
-                                    "Zur Definition des Standorts (z.B. Land, Region), für den Rating und TargetAudience NICHT gelten."@de ;
-                rdfs:label "Ausschlussgebiet"@de ,
-                           "Exclusion area"@en ,
-                           "Zone d'exclusion"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#appliesTo
-ec:appliesTo rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Asset ;
-             dcterms:description "Identifier l'actif auquel le Rating s'applique."@fr ,
-                                 "To identify the asset to which the Rating applies."@en ,
-                                 "Um den Vermögenswert zu identifizieren, für den das Rating gilt."@de ;
-             rdfs:label "applies to"@en ,
-                        "gilt für"@de ,
-                        "s'applique à"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
+           owl:inverseOf ec:hasRights ;
            rdfs:range ec:Asset ;
            dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
                                "L'actif auquel les droits s'appliquent."@fr ,
@@ -340,18 +319,6 @@ access publication
 platform"""@en ,
                                            "kann auf die Publikationsplattform zugreifen"@de ,
                                            "peut accéder à la plateforme de publication"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#clonedTo
-ec:clonedTo rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isClonedFrom ;
-            rdfs:range ec:MediaResource ;
-            dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
-                                "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
-                                "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
-            rdfs:label "Cloned to"@en ,
-                       "Cloné en"@fr ,
-                       "Geklont auf"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#compilesResonanceEvents
@@ -440,18 +407,6 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
                         "Objectif de dérivation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#dubbedTo
-ec:dubbedTo rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isDubbedFrom ;
-            rdfs:range ec:MediaResource ;
-            dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
-                                "la ressource a une autre version linguistique"@fr ,
-                                "the resource have another languageversion"@en ;
-            rdfs:label "Doublé à"@fr ,
-                       "Dubbed to"@en ,
-                       "Synchronisiert auf"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#excludesAudience
 ec:excludesAudience rdf:type owl:ObjectProperty ;
                     dcterms:description "A defined audience group that is excluded from the audience"@en ,
@@ -474,7 +429,7 @@ ec:existsAs rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf ec:isCoveredBy ;
+                       rdfs:subPropertyOf ec:hasRights ;
                        rdfs:range ec:AccessConditions ;
                        dcterms:description "Pour exprimer les conditions/restrictions d'accès."@fr ,
                                            "To express access conditions/restrictions."@en ,
@@ -628,6 +583,17 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
                        rdfs:label "Animal colour code"@en ,
                                   "Code couleur des animaux"@fr ,
                                   "Farbcode für Tiere"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalGroom
+ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
+                  rdfs:range ec:Agent ;
+                  dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
+                                      "To identify the groom / care taker of an animal."@en ,
+                                      "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
+                  rdfs:label "Animal groom"@en ,
+                             "Tierpfleger"@de ,
+                             "Toilette pour animaux"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalRole
@@ -1055,6 +1021,18 @@ ec:hasClip rdf:type owl:ObjectProperty ;
                       "hat Clip"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClone
+ec:hasClone rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isCloneOf ;
+            rdfs:range ec:MediaResource ;
+            dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
+                                "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
+                                "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
+            rdfs:label "Cloned to"@en ,
+                       "Cloné en"@fr ,
+                       "Geklont auf"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCodec
 ec:hasCodec rdf:type owl:ObjectProperty ;
             rdfs:range ec:Codec ;
@@ -1270,7 +1248,7 @@ ec:hasContributor rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:isCoveredBy ;
+                rdfs:subPropertyOf ec:hasRights ;
                 rdfs:range ec:Copyright ;
                 dcterms:description "Pour exprimer le droit d'auteur."@fr ,
                                     "To express copyright."@en ,
@@ -1314,7 +1292,7 @@ ec:hasCoverage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCoverageRestrictions
 ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf ec:isCoveredBy ;
+                           rdfs:subPropertyOf ec:hasRights ;
                            rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "Pour exprimer les restrictions de couverture."@fr ,
                                                "To express coverage restrictions."@en ,
@@ -1326,7 +1304,7 @@ ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCreativeCommons
 ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:CreativeCommons ;
                       dcterms:description "Pour exprimer Creative Commons."@fr ,
                                           "To express Creative Commons."@en ,
@@ -1679,7 +1657,7 @@ ec:hasDevice rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisclaimer
 ec:hasDisclaimer rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf ec:isCoveredBy ;
+                 rdfs:subPropertyOf ec:hasRights ;
                  rdfs:range ec:Disclaimer ;
                  dcterms:description "Pour exprimer le désistement."@fr ,
                                      "To express Disclaimer."@en ,
@@ -1721,6 +1699,18 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
                 rdfs:label "Dopesheet"@de ,
                            "Dopesheet"@en ,
                            "Dopesheet"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDub
+ec:hasDub rdf:type owl:ObjectProperty ;
+          owl:inverseOf ec:isDubOf ;
+          rdfs:range ec:MediaResource ;
+          dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
+                              "la ressource a une autre version linguistique"@fr ,
+                              "the resource have another languageversion"@en ;
+          rdfs:label "Doublé à"@fr ,
+                     "Dubbed to"@en ,
+                     "Synchronisiert auf"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDubbedLanguage
@@ -1798,7 +1788,7 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasExploitationIssues
 ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf ec:isCoveredBy ;
+                         rdfs:subPropertyOf ec:hasRights ;
                          rdfs:range ec:ExploitationIssues ;
                          dcterms:description "Pour exprimer les problèmes d'exploitation."@fr ,
                                              "To express Exploitation Issues."@en ,
@@ -1922,7 +1912,7 @@ ec:hasGroupMember rdf:type owl:ObjectProperty .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:IPRRestrictions ;
                       dcterms:description "Pour exprimer les restrictions en matière de DPI."@fr ,
                                           "To express IPR Restrictions."@en ,
@@ -2053,7 +2043,7 @@ ec:hasLanguage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLicensing
 ec:hasLicensing rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf ec:isCoveredBy ;
+                rdfs:subPropertyOf ec:hasRights ;
                 rdfs:range ec:Licensing ;
                 dcterms:description "Pour exprimer l'autorisation."@fr ,
                                     "To express Licensing."@en ,
@@ -3022,9 +3012,17 @@ ec:hasReview rdf:type owl:ObjectProperty ;
                         "Überprüfung"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRights
+ec:hasRights rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Rights ;
+             rdfs:label "Est couvert par"@fr ,
+                        "Is covered by"@en ,
+                        "Wird abgedeckt durch"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsClearance
 ec:hasRightsClearance rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf ec:isCoveredBy ;
+                      rdfs:subPropertyOf ec:hasRights ;
                       rdfs:range ec:RightsClearance ;
                       dcterms:description "Pour exprimer l'autorisation des droits."@fr ,
                                           "To express Rights Clearance."@en ,
@@ -3397,6 +3395,28 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
                             "Teammitglied"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryExcludes
+ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:CountryCode ;
+                        dcterms:description "Pour définir l'emplacement (par exemple, le pays, la région) auquel le classement et le public cible ne s'appliquent PAS."@fr ,
+                                            "To define the Location (e.g. country, region) to which Rating and TargetAudience do NOT apply."@en ,
+                                            "Zur Definition des Standorts (z.B. Land, Region), für den Rating und TargetAudience NICHT gelten."@de ;
+                        rdfs:label "Ausschlussgebiet"@de ,
+                                   "Exclusion area"@en ,
+                                   "Zone d'exclusion"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryIncludes
+ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:Asset ;
+                        dcterms:description "Identifier l'actif auquel le Rating s'applique."@fr ,
+                                            "To identify the asset to which the Rating applies."@en ,
+                                            "Um den Vermögenswert zu identifizieren, für den das Rating gilt."@de ;
+                        rdfs:label "applies to"@en ,
+                                   "gilt für"@de ,
+                                   "s'applique à"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTextLineSource
 ec:hasTextLineSource rdf:type owl:ObjectProperty ;
                      rdfs:range ec:Agent ;
@@ -3521,7 +3541,7 @@ ec:hasUsageContract rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf ec:isCoveredBy ;
+                        rdfs:subPropertyOf ec:hasRights ;
                         rdfs:range ec:UsageRestrictions ;
                         dcterms:description "Pour exprimer des restrictions d'utilisation."@fr ,
                                             "To express usage restrictions."@en ,
@@ -3533,7 +3553,7 @@ ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRights
 ec:hasUsageRights rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf ec:isCoveredBy ;
+                  rdfs:subPropertyOf ec:hasRights ;
                   rdfs:range ec:UsageRights ;
                   dcterms:description "Pour exprimer les droits d'utilisation."@fr ,
                                       "To express usage rights."@en ,
@@ -3654,29 +3674,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                              "ist angegliedert an"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAgent
-ec:isAgent rdf:type owl:ObjectProperty ,
-                    owl:IrreflexiveProperty ;
-           rdfs:range ec:Agent ;
-           dcterms:description "Pour identifier un agent lié. C'est-à-dire une personne liée à un appel pour une fonction sur un plan de production. Plage : chaîne de caractères ou agent."@fr ,
-                               "To identify a related Agent. I.e. a person related to a call for a function on a production plan. Range: string or Agent."@en ,
-                               "Um einen verwandten Agenten zu identifizieren. D.h. eine Person, die mit einem Anruf für eine Funktion in einem Produktionsplan verbunden ist. Bereich: String oder Agent."@de ;
-           rdfs:label "Est Agent"@fr ,
-                      "isAgent"@en ,
-                      "ist Agent"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalGroom
-ec:isAnimalGroom rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Agent ;
-                 dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
-                                     "To identify the groom / care taker of an animal."@en ,
-                                     "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
-                 rdfs:label "Animal groom"@en ,
-                            "Tierpfleger"@de ,
-                            "Toilette pour animaux"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalOwner
 ec:isAnimalOwner rdf:type owl:ObjectProperty ;
                  rdfs:range ec:Agent ;
@@ -3776,15 +3773,15 @@ ec:isChildOf rdf:type owl:ObjectProperty ;
                         "Parent"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isClonedFrom
-ec:isClonedFrom rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "Pour identifier la source d'une MediaResource clonée"@fr ,
-                                    "So identifizieren Sie die Quelle einer geklonten MediaResource"@de ,
-                                    "To identify the source of a clone MediaResource"@en ;
-                rdfs:label "Clone source"@en ,
-                           "Cloner la source"@fr ,
-                           "Quelle klonen"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCloneOf
+ec:isCloneOf rdf:type owl:ObjectProperty ;
+             rdfs:range ec:MediaResource ;
+             dcterms:description "Pour identifier la source d'une MediaResource clonée"@fr ,
+                                 "So identifizieren Sie die Quelle einer geklonten MediaResource"@de ,
+                                 "To identify the source of a clone MediaResource"@en ;
+             rdfs:label "Clone source"@en ,
+                        "Cloner la source"@fr ,
+                        "Quelle klonen"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
@@ -3806,14 +3803,6 @@ ec:isComposedOf rdf:type owl:ObjectProperty ;
                 rdfs:label "Media Resource"@en ,
                            "Medien Ressource"@de ,
                            "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCoveredBy
-ec:isCoveredBy rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Rights ;
-               rdfs:label "Est couvert par"@fr ,
-                          "Is covered by"@en ,
-                          "Wird abgedeckt durch"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDefinedBy
@@ -3848,15 +3837,15 @@ ec:isDistributedOn rdf:type owl:ObjectProperty ;
                               "Plattform/Dienstleistung/Veröffentlichungskanal"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubbedFrom
-ec:isDubbedFrom rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
-                dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
-                                    "l'origine d'une MediaResource doublée."@fr ,
-                                    "the origin of a dubbed MediaResource."@en ;
-                rdfs:label "Doublé de"@fr ,
-                           "Dubbed from"@en ,
-                           "Synchronisiert von"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubOf
+ec:isDubOf rdf:type owl:ObjectProperty ;
+           rdfs:range ec:MediaResource ;
+           dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
+                               "l'origine d'une MediaResource doublée."@fr ,
+                               "the origin of a dubbed MediaResource."@en ;
+           rdfs:label "Doublé de"@fr ,
+                      "Dubbed from"@en ,
+                      "Synchronisiert von"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEditorialFormatOf
@@ -7570,12 +7559,12 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedPicture ;
-                           owl:allValuesFrom ec:Picture
+                           owl:onProperty ec:hasRelatedAgent ;
+                           owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isAgent ;
-                           owl:allValuesFrom ec:Agent
+                           owl:onProperty ec:hasRelatedPicture ;
+                           owl:allValuesFrom ec:Picture
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isCharacter ;
@@ -7806,6 +7795,10 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom ec:AnimalColourCode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasAnimalGroom ;
+                            owl:allValuesFrom ec:Agent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasAnimalRole ;
                             owl:allValuesFrom ec:Involvement
                           ] ,
@@ -7816,10 +7809,6 @@ ec:Animal rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasObjectType ;
                             owl:allValuesFrom skos:Concept
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isAnimalGroom ;
-                            owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:isAnimalOwner ;
@@ -8229,6 +8218,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Resource
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRights ;
+                           owl:allValuesFrom ec:Rights
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRightsClearance ;
                            owl:allValuesFrom ec:RightsClearance
                          ] ,
@@ -8239,10 +8232,6 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasUsageRights ;
                            owl:allValuesFrom ec:UsageRights
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isCoveredBy ;
-                           owl:allValuesFrom ec:Rights
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isDerivedFrom ;
@@ -11633,14 +11622,6 @@ ec:MediaFragment rdf:type owl:Class ;
 ec:MediaResource rdf:type owl:Class ;
                  rdfs:subClassOf ec:Resource ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:clonedTo ;
-                                   owl:allValuesFrom ec:MediaResource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:dubbedTo ;
-                                   owl:allValuesFrom ec:MediaResource
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasAudioTrack ;
                                    owl:allValuesFrom ec:AudioTrack
                                  ] ,
@@ -11649,12 +11630,20 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Agent
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasClone ;
+                                   owl:allValuesFrom ec:MediaResource
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasCodec ;
                                    owl:allValuesFrom ec:Codec
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasDataTrack ;
                                    owl:allValuesFrom ec:DataTrack
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasDub ;
+                                   owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasEncodingFormat ;
@@ -11862,12 +11851,12 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onClass ec:EditorialObject
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:isClonedFrom ;
+                                   owl:onProperty ec:isCloneOf ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:isDubbedFrom ;
+                                   owl:onProperty ec:isDubOf ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass ec:MediaResource
                                  ] ,
@@ -13154,16 +13143,16 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasRights ;
+                                      owl:allValuesFrom ec:Rights
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasTargetAudience ;
                                       owl:allValuesFrom ec:Audience
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasUsageRestrictions ;
                                       owl:allValuesFrom ec:UsageRestrictions
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:isCoveredBy ;
-                                      owl:allValuesFrom ec:Rights
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:isReleasedBy ;
@@ -13622,10 +13611,6 @@ ec:RadioProgramme rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rating
 ec:Rating rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:appliesOutOf ;
-                            owl:allValuesFrom ec:CountryCode
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasIdentifier ;
                             owl:allValuesFrom ec:Identifier
                           ] ,
@@ -13642,14 +13627,18 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:Picture
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:appliesTo ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass ec:Asset
+                            owl:onProperty ec:hasTerritoryExcludes ;
+                            owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRatingProvider ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Agent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasTerritoryIncludes ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:description ;
@@ -14055,6 +14044,10 @@ ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty ec:applyTo ;
                             owl:allValuesFrom ec:Asset
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:applyTo ;
+                            owl:allValuesFrom ec:PublicationEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasContact ;
