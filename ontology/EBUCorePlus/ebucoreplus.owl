@@ -2657,17 +2657,11 @@ ec:hasRelatedAgent rdf:type owl:ObjectProperty ,
                             owl:IrreflexiveProperty ;
                    rdfs:range ec:Agent ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
-                                       "Pour identifier un agent lié. C'est-à-dire une personne liée à un appel pour une fonction sur un plan de production. Plage : chaîne de caractères ou agent."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
-                                       "To identify a related Agent. I.e. a person related to a call for a function on a production plan. Range: string or Agent."@en ,
-                                       "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ,
-                                       "Um einen verwandten Agenten zu identifizieren. D.h. eine Person, die mit einem Anruf für eine Funktion in einem Produktionsplan verbunden ist. Bereich: String oder Agent."@de ;
+                                       "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
                    rdfs:label "Agent connexe"@fr ,
-                              "Est Agent"@fr ,
                               "Related agent"@en ,
-                              "Verwandter Agent"@de ,
-                              "isAgent"@en ,
-                              "ist Agent"@de .
+                              "Verwandter Agent"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAnimal
