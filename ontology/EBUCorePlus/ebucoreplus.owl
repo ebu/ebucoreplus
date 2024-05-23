@@ -1105,6 +1105,16 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
                              "Farbraum"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCommissioningContract
+ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
+                            dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
+                                                "Le contrat par lequel un objet éditorial est commissionné."@fr ,
+                                                "The Contract through which an EditorialObject is commissioned."@en ;
+                            rdfs:label "Contract"@en ,
+                                       "Contrat"@fr ,
+                                       "Vertrag"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
 ec:hasConsumptionContract rdf:type owl:ObjectProperty ;
                           dcterms:description "Pour identifier un ConsumptionContract lié à un compte."@fr ,
@@ -3777,16 +3787,6 @@ ec:isCloneOf rdf:type owl:ObjectProperty ;
              rdfs:label "Clone source"@en ,
                         "Cloner la source"@fr ,
                         "Quelle klonen"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
-ec:isCommissionedBy rdf:type owl:ObjectProperty ;
-                    dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
-                                        "Le contrat par lequel un objet éditorial est commissionné."@fr ,
-                                        "The Contract through which an EditorialObject is commissioned."@en ;
-                    rdfs:label "Contract"@en ,
-                               "Contrat"@fr ,
-                               "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
@@ -10198,6 +10198,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Character
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasCommissioningContract ;
+                                     owl:allValuesFrom ec:Contract
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasContentEditorialFormat ;
                                      owl:allValuesFrom ec:ContentEditorialFormat
                                    ] ,
@@ -10368,10 +10372,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasVersionType ;
                                      owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isCommissionedBy ;
-                                     owl:allValuesFrom ec:Contract
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
