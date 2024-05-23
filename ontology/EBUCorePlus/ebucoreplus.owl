@@ -969,6 +969,17 @@ ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
                              "Agent"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
+ec:hasBrand rdf:type owl:ObjectProperty ;
+            rdfs:range ec:Brand ;
+            dcterms:description "Pour identifier une Marque."@fr ,
+                                "To identify a Brand."@en ,
+                                "Um eine Marke zu identifizieren."@de ;
+            rdfs:label "Brand"@en ,
+                       "Marke"@de ,
+                       "Marque"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBusinessContract
 ec:hasBusinessContract rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier les Contrats associés à un Plan de publication."@fr ,
@@ -3737,17 +3748,6 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isBrand
-ec:isBrand rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Brand ;
-           dcterms:description "Pour identifier une Marque."@fr ,
-                               "To identify a Brand."@en ,
-                               "Um eine Marke zu identifizieren."@de ;
-           rdfs:label "Brand"@en ,
-                      "Marke"@de ,
-                      "Marque"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCharacter
@@ -10187,6 +10187,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:AudioDescription
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasBrand ;
+                                     owl:allValuesFrom ec:Brand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCaptioning ;
                                      owl:allValuesFrom ec:Captioning
                                    ] ,
@@ -10369,10 +10373,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasVersionType ;
                                      owl:allValuesFrom skos:Concept
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isBrand ;
-                                     owl:allValuesFrom ec:Brand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isCommissionedBy ;
