@@ -2307,6 +2307,17 @@ ec:hasOutputResource rdf:type owl:ObjectProperty ;
                                 "Ressource de sortie"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOwner
+ec:hasOwner rdf:type owl:ObjectProperty ;
+            rdfs:range ec:Agent ;
+            dcterms:description "Pour identifier le propriétaire d'un animal."@fr ,
+                                "To identify the owner of an animal."@en ,
+                                "Um den Besitzer eines Tieres zu identifizieren."@de ;
+            rdfs:label "Animal owner"@en ,
+                       "Propriétaire d'animaux"@fr ,
+                       "Tierhalter"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParentEditorialObject
 ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
                             rdfs:range ec:EditorialObject ;
@@ -3672,17 +3683,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "est affilié à"@fr ,
                              "is affiliated to"@en ,
                              "ist angegliedert an"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalOwner
-ec:isAnimalOwner rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Agent ;
-                 dcterms:description "Pour identifier le propriétaire d'un animal."@fr ,
-                                     "To identify the owner of an animal."@en ,
-                                     "Um den Besitzer eines Tieres zu identifizieren."@de ;
-                 rdfs:label "Animal owner"@en ,
-                            "Propriétaire d'animaux"@fr ,
-                            "Tierhalter"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
@@ -7811,7 +7811,7 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isAnimalOwner ;
+                            owl:onProperty ec:hasOwner ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
