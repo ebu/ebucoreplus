@@ -640,6 +640,16 @@ ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
                                   "Ziel der Annotation"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasApprover
+ec:hasApprover rdf:type owl:ObjectProperty ;
+               dcterms:description "Pour identifier un agent qui a approuvé un rapport d'audit."@fr ,
+                                   "To identify an Agent who approved an AuditReport."@en ,
+                                   "Um einen Agenten zu identifizieren, der einen AuditReport genehmigt hat."@de ;
+               rdfs:label "Approuvé par"@fr ,
+                          "Approved by"@en ,
+                          "Genehmigt von"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactBuyer
 ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Agent ;
@@ -3716,16 +3726,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                             rdfs:label "Media resource"@en ,
                                        "Medienressource"@de ,
                                        "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isApprovedBy
-ec:isApprovedBy rdf:type owl:ObjectProperty ;
-                dcterms:description "Pour identifier un agent qui a approuvé un rapport d'audit."@fr ,
-                                    "To identify an Agent who approved an AuditReport."@en ,
-                                    "Um einen Agenten zu identifizieren, der einen AuditReport genehmigt hat."@de ;
-                rdfs:label "Approuvé par"@fr ,
-                           "Approved by"@en ,
-                           "Genehmigt von"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAttributedTo
@@ -8768,6 +8768,10 @@ ec:AuditJob rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AuditReport
 ec:AuditReport rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasApprover ;
+                                 owl:allValuesFrom ec:Agent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasAuditReportDate ;
                                  owl:allValuesFrom time:Instant
                                ] ,
@@ -8782,10 +8786,6 @@ ec:AuditReport rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasRelatedAuditJob ;
                                  owl:allValuesFrom ec:AuditJob
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:isApprovedBy ;
-                                 owl:allValuesFrom ec:Agent
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:referencesRule ;
