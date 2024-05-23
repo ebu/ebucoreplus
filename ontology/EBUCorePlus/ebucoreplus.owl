@@ -1038,12 +1038,18 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Character ;
-                dcterms:description "Pour énumérer les personnages d'une fiction."@fr ,
+                dcterms:description "Pour identifier un personnage."@fr ,
+                                    "Pour énumérer les personnages d'une fiction."@fr ,
+                                    "To identify a character."@en ,
                                     "To list characters in a fiction."@en ,
+                                    "Um einen Charakter zu identifizieren."@de ,
                                     "Zum Auflisten von Figuren in einer Fiktion."@de ;
                 rdfs:label "Caractère"@fr ,
                            "Character"@en ,
-                           "Charakter"@de .
+                           "Charakter"@de ,
+                           "Fictional character."@en ,
+                           "Fiktiver Charakter."@de ,
+                           "Personnage fictif."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClip
@@ -3748,17 +3754,6 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCharacter
-ec:isCharacter rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Character ;
-               dcterms:description "Pour identifier un personnage."@fr ,
-                                   "To identify a character."@en ,
-                                   "Um einen Charakter zu identifizieren."@de ;
-               rdfs:label "Fictional character."@en ,
-                          "Fiktiver Charakter."@de ,
-                          "Personnage fictif."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
@@ -7543,6 +7538,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCharacter ;
+                           owl:allValuesFrom ec:Character
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -7565,10 +7564,6 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isCharacter ;
-                           owl:allValuesFrom ec:Character
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
