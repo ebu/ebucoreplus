@@ -1869,6 +1869,17 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                                     "Problèmes d'exploitation"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFictitiousPerson
+ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:Person ;
+                       dcterms:description "Pour identifier un contact/personne fictive."@fr ,
+                                           "To identify a Contact/Person being fictitious."@en ,
+                                           "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
+                       rdfs:label "Contact fictif"@fr ,
+                                  "Fictitious contact"@en ,
+                                  "Fiktiver Kontakt"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFileFormat
 ec:hasFileFormat rdf:type owl:ObjectProperty ;
                  rdfs:range ec:FileFormat ;
@@ -3914,17 +3925,6 @@ ec:isExtractOf rdf:type owl:ObjectProperty ;
                rdfs:label "est un extrait de"@fr ,
                           "is extract of"@en ,
                           "ist ein Auszug aus"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isFictitiousPerson
-ec:isFictitiousPerson rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Person ;
-                      dcterms:description "Pour identifier un contact/personne fictive."@fr ,
-                                          "To identify a Contact/Person being fictitious."@en ,
-                                          "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
-                      rdfs:label "Contact fictif"@fr ,
-                                 "Fictitious contact"@en ,
-                                 "Fiktiver Kontakt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isInstantiatedBy
@@ -9125,7 +9125,7 @@ ec:Character rdf:type owl:Class ;
                                owl:allValuesFrom ec:Animal
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isFictitiousPerson ;
+                               owl:onProperty ec:hasFictitiousPerson ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass ec:Person
                              ] ;
