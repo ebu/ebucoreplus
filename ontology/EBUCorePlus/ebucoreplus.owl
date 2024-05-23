@@ -925,6 +925,17 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
                                  "Datum des Prüfungsberichts"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
+ec:hasAuthor rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Agent ;
+             dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
+                                 "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
+                                 "To link an Annotation to an Agent who created it."@en ;
+             rdfs:label "Agent"@de ,
+                        "Agent"@en ,
+                        "Agent"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
 ec:hasAwardDate rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasDate ;
@@ -3705,17 +3716,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                             rdfs:label "Media resource"@en ,
                                        "Medienressource"@de ,
                                        "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotationBy
-ec:isAnnotationBy rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
-                  dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
-                                      "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
-                                      "To link an Annotation to an Agent who created it."@en ;
-                  rdfs:label "Agent"@de ,
-                             "Agent"@en ,
-                             "Agent"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isApprovedBy
@@ -7918,6 +7918,11 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onClass time:Instant
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAuthor ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasLocation ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:Location
@@ -7926,11 +7931,6 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onProperty ec:isAnnotatedMediaResource ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:MediaResource
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:isAnnotationBy ;
-                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:description ;
