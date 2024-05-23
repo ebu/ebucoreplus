@@ -1778,6 +1778,18 @@ ec:hasDuration rdf:type owl:ObjectProperty ;
                rdfs:range ec:TimelinePoint .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormatOf
+ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:EditorialObject ;
+                        dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
+                                            "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
+                                            "To identify an Editorial Object based on the same Editorial format"@en ;
+                        rdfs:comment "*** Bad description ***"@en ;
+                        rdfs:label "Gleiches redaktionelles Format"@de ,
+                                   "Même format éditorial"@fr ,
+                                   "Same editorial format"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialGroup
 ec:hasEditorialGroup rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:isMemberOf ;
@@ -3841,18 +3853,6 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
            rdfs:label "Doublé de"@fr ,
                       "Dubbed from"@en ,
                       "Synchronisiert von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEditorialFormatOf
-ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:EditorialObject ;
-                       dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
-                                           "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
-                                           "To identify an Editorial Object based on the same Editorial format"@en ;
-                       rdfs:comment "*** Bad description ***"@en ;
-                       rdfs:label "Gleiches redaktionelles Format"@de ,
-                                  "Même format éditorial"@fr ,
-                                  "Same editorial format"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEmbodiedBy
@@ -10226,6 +10226,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Language
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasEditorialFormatOf ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasGenre ;
                                      owl:allValuesFrom skos:Concept
                                    ] ,
@@ -10376,10 +10380,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
                                      owl:allValuesFrom ec:PublicationService
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isEditorialFormatOf ;
-                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isExtractOf ;
