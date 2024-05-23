@@ -1806,6 +1806,17 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
                                "hat redaktionelle Arbeit"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
+ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:Artefact ;
+                        dcterms:description "Character depicted by an Artifact"@en ,
+                                            "Personnage représenté par un artefact"@fr ,
+                                            "Von einem Artefakt dargestellter Charakter"@de ;
+                        rdfs:label "est incarné par"@fr ,
+                                   "is embodied by"@en ,
+                                   "wird verkörpert durch"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEncodingFormat
 ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
@@ -3853,17 +3864,6 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
            rdfs:label "Doublé de"@fr ,
                       "Dubbed from"@en ,
                       "Synchronisiert von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEmbodiedBy
-ec:isEmbodiedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Artefact ;
-                dcterms:description "Character depicted by an Artifact"@en ,
-                                    "Personnage représenté par un artefact"@fr ,
-                                    "Von einem Artefakt dargestellter Charakter"@de ;
-                rdfs:label "est incarné par"@fr ,
-                           "is embodied by"@en ,
-                           "wird verkörpert durch"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
@@ -9109,12 +9109,12 @@ ec:CastMember rdf:type owl:Class ;
 ec:Character rdf:type owl:Class ;
              rdfs:subClassOf ec:Person ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isAnimatedBy ;
-                               owl:allValuesFrom ec:Person
+                               owl:onProperty ec:hasEmbodyingArtefact ;
+                               owl:allValuesFrom ec:Artefact
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isEmbodiedBy ;
-                               owl:allValuesFrom ec:Artefact
+                               owl:onProperty ec:isAnimatedBy ;
+                               owl:allValuesFrom ec:Person
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPlayedBy ;
