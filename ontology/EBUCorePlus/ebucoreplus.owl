@@ -2078,6 +2078,17 @@ ec:hasInputResource rdf:type owl:ObjectProperty ;
                                "Ressourceneinsatz"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIssuer
+ec:hasIssuer rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Agent ;
+             dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
+                                 "To identify the issuer of an identifier."@en ,
+                                 "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
+             rdfs:label "Emittent"@de ,
+                        "Issuer"@en ,
+                        "Émetteur"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
                      rdfs:range ec:KeyCareerEvent ;
@@ -3936,17 +3947,6 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
                     rdfs:label "Media Resource"@en ,
                                "Medien Ressource"@de ,
                                "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isIssuedBy
-ec:isIssuedBy rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Agent ;
-              dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
-                                  "To identify the issuer of an identifier."@en ,
-                                  "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
-              rdfs:label "Emittent"@de ,
-                         "Issuer"@en ,
-                         "Émetteur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMasterOf
@@ -11076,12 +11076,12 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
-                                owl:allValuesFrom skos:Concept
+                                owl:onProperty ec:hasIssuer ;
+                                owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:isIssuedBy ;
-                                owl:allValuesFrom ec:Agent
+                                owl:onProperty ec:hasObjectType ;
+                                owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasDateCreated ;
