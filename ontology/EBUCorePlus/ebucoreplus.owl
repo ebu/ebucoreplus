@@ -1247,9 +1247,9 @@ ec:hasAssociatedProductionJob rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedProductionOrder
 ec:hasAssociatedProductionOrder rdf:type owl:ObjectProperty ;
-                                dcterms:description "Pour identifier les ProductionOrders associés à PublicationPlan."@fr ,
-                                                    "To identify the productionOrders associated with PublicationPlan."@en ,
-                                                    "Um die productionOrders zu identifizieren, die mit VeröffentlichungPlan."@de ;
+                                dcterms:description "Pour identifier les ProductionOrders associés à PublicationPan."@fr ,
+                                                    "To identify the productionOrders associated with PublicationPan."@en ,
+                                                    "Um die productionOrders zu identifizieren, die mit VeröffentlichungPan."@de ;
                                 rdfs:label "Ordre de production"@fr ,
                                            "Production order"@en ,
                                            "Produktionsauftrag"@de .
@@ -3058,9 +3058,9 @@ ec:hasStakeholder rdf:type owl:ObjectProperty ;
                   rdfs:range ec:Agent ;
                   dcterms:description "An Agent related to the PublicationPlan."@en ,
                                       "Ein Agent, der sich auf den PublicationPlan bezieht."@de ,
-                                      "Pour identifier les agents associés à un PublicationPlan."@fr ,
-                                      "To identify Agents associated with a PublicationPlan."@en ,
-                                      "Um Agenten zu identifizieren, die mit einem PublicationPlan verbunden sind."@de ,
+                                      "Pour identifier les agents associés à un PublicationPan."@fr ,
+                                      "To identify Agents associated with a PublicationPan."@en ,
+                                      "Um Agenten zu identifizieren, die mit einem PublicationPan verbunden sind."@de ,
                                       "Un agent lié au PublicationPlan."@fr ;
                   rdfs:label "Intervenant du plan de publication"@fr ,
                              "Parties prenantes"@fr ,
