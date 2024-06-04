@@ -2173,17 +2173,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
                                  "Picture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationRegion
-ec:hasLocationRegion rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:RegionCode ;
-                     dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
-                                         "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
-                                         "To provide a description of a particular region assocoated to the Location."@en ;
-                     rdfs:label "Region"@de ,
-                                "Region"@en ,
-                                "Région"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:range ec:Locator ;
@@ -2731,6 +2720,17 @@ ec:hasRatingProvider rdf:type owl:ObjectProperty ;
                      rdfs:label "Quelle der Bewertung / Agent"@de ,
                                 "Rating source / agent"@en ,
                                 "Source de notation / agent"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegionCode
+ec:hasRegionCode rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:RegionCode ;
+                 dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
+                                     "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
+                                     "To provide a description of a particular region assocoated to the Location."@en ;
+                 rdfs:label "Region"@de ,
+                            "Region"@en ,
+                            "Région"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAccount
@@ -11404,7 +11404,7 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasLocationRegion ;
+                              owl:onProperty ec:hasRegionCode ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:RegionCode
                             ] ,
