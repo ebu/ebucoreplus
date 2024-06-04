@@ -3853,6 +3853,16 @@ ec:isCloneOf rdf:type owl:ObjectProperty ;
                         "Quelle klonen"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
+ec:isCommissionedBy rdf:type owl:ObjectProperty ;
+                    dcterms:description "Der Vertrag, durch den eine Ressource in Auftrag gegeben wird."@de ,
+                                        "Le contrat par lequel une ressource est commandée."@fr ,
+                                        "The Contract through which a Resource is commissioned."@en ;
+                    rdfs:label "Contract"@en ,
+                               "Contrat"@fr ,
+                               "Vertrag"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
 ec:isComposedOf rdf:type owl:ObjectProperty ;
                 rdfs:range ec:MediaResource ;
@@ -4156,16 +4166,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
                 rdfs:label "Erforderlich"@de ,
                            "Required"@en ,
                            "Requis"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isResourceCommissionedBy
-ec:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
-                            dcterms:description "Der Vertrag, durch den eine Ressource in Auftrag gegeben wird."@de ,
-                                                "Le contrat par lequel une ressource est commandée."@fr ,
-                                                "The Contract through which a Resource is commissioned."@en ;
-                            rdfs:label "Contract"@en ,
-                                       "Contrat"@fr ,
-                                       "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isScheduledOn
@@ -13974,7 +13974,7 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:isResourceCommissionedBy ;
+                              owl:onProperty ec:isCommissionedBy ;
                               owl:allValuesFrom ec:Contract
                             ] ,
                             [ rdf:type owl:Restriction ;
