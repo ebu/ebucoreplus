@@ -2223,16 +2223,6 @@ ec:hasMaster rdf:type owl:ObjectProperty ;
                         "Meister"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasureValueUnit
-ec:hasMeasureValueUnit rdf:type owl:ObjectProperty ;
-                       dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
-                                           "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
-                                           "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
-                       rdfs:label "Einheit messen"@de ,
-                                  "Measure unit"@en ,
-                                  "Unité de mesure"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasurementAgent
 ec:hasMeasurementAgent rdf:type owl:ObjectProperty ;
                        dcterms:description "Der Agent, der Daten analysiert, um eine Resonanz zu definieren."@de ,
@@ -3629,6 +3619,16 @@ ec:hasTrackType rdf:type owl:ObjectProperty ;
                 rdfs:label "Name der Spur"@de ,
                            "Nom de la piste"@fr ,
                            "Track name"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUnit
+ec:hasUnit rdf:type owl:ObjectProperty ;
+           dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
+                               "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
+                               "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
+           rdfs:label "Einheit messen"@de ,
+                      "Measure unit"@en ,
+                      "Unité de mesure"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageContract
@@ -11576,11 +11576,11 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasMeasureValueUnit ;
+                             owl:onProperty ec:hasObjectType ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
+                             owl:onProperty ec:hasUnit ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
