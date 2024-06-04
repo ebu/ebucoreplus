@@ -4024,6 +4024,17 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
                                "Suivant"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOfferedBy
+ec:isOfferedBy rdf:type owl:ObjectProperty ;
+               rdfs:range ec:PublicationService ;
+               dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
+                                   "To identify a Service associated to a PublicationEvent."@en ,
+                                   "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
+               rdfs:label "Service"@de ,
+                          "Service"@en ,
+                          "Service"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOperatedBy
 ec:isOperatedBy rdf:type owl:ObjectProperty ;
                 rdfs:range ec:PublicationService ;
@@ -4122,17 +4133,6 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   rdfs:label "Reference source"@en ,
                              "Referenzquelle"@de ,
                              "Source de référence"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReleasedBy
-ec:isReleasedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:PublicationService ;
-                dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
-                                    "To identify a Service associated to a PublicationEvent."@en ,
-                                    "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
-                rdfs:label "Service"@de ,
-                           "Service"@en ,
-                           "Service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReplacedBy
@@ -13188,7 +13188,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:UsageRestrictions
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:isReleasedBy ;
+                                      owl:onProperty ec:isOfferedBy ;
                                       owl:allValuesFrom ec:PublicationService
                                     ] ,
                                     [ rdf:type owl:Restriction ;
