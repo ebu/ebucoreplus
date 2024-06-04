@@ -957,6 +957,7 @@ ec:hasAwardDate rdf:type owl:ObjectProperty ;
                            "Date d'attribution"@fr ,
                            "Datum der Vergabe"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
 ec:hasBrand rdf:type owl:ObjectProperty ;
             rdfs:range ec:Brand ;
@@ -1093,8 +1094,6 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
                              "Farbraum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
-ec:hasConsumer rdf:type owl:ObjectProperty .
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCommissioningContract
 ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                             dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
@@ -1103,6 +1102,10 @@ ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                             rdfs:label "Contract"@en ,
                                        "Contrat"@fr ,
                                        "Vertrag"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
+ec:hasConsumer rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
@@ -2255,6 +2258,16 @@ ec:hasMeasureValueUnit rdf:type owl:ObjectProperty ;
                        rdfs:label "Einheit messen"@de ,
                                   "Measure unit"@en ,
                                   "Unité de mesure"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasurementAgent
+ec:hasMeasurementAgent rdf:type owl:ObjectProperty ;
+                       dcterms:description "Der Agent, der Daten analysiert, um eine Resonanz zu definieren."@de ,
+                                           "L'agent qui analyse les données pour définir une résonance."@fr ,
+                                           "The Agent who analyses data to define a Resonance."@en ;
+                       rdfs:label "Gemessen an"@de ,
+                                  "Measured by"@en ,
+                                  "Mesuré par"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMediaFragment
@@ -3816,6 +3829,7 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
                           "décerné à"@fr ,
                           "verliehen an"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isParentOf ;
@@ -3963,16 +3977,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
               rdfs:label "Abgeleitete Medienressource"@de ,
                          "Derived media resource"@en ,
                          "Ressource média dérivée"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMeasuredBy
-ec:isMeasuredBy rdf:type owl:ObjectProperty ;
-                dcterms:description "Der Agent, der Daten analysiert, um eine Resonanz zu definieren."@de ,
-                                    "L'agent qui analyse les données pour définir une résonance."@fr ,
-                                    "The Agent who analyses data to define a Resonance."@en ;
-                rdfs:label "Gemessen an"@de ,
-                           "Measured by"@en ,
-                           "Mesuré par"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMediaFragmentOf
@@ -4255,6 +4259,7 @@ ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
                        rdfs:label "Related Rule"@en ,
                                   "Règle connexe"@fr ,
                                   "Verwandte Regel"@de .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursIn
 ec:occursIn rdf:type owl:ObjectProperty .
@@ -7566,16 +7571,16 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:holdsAward ;
-                           owl:allValuesFrom ec:Award
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:holdsAward ;
+                           owl:allValuesFrom ec:Award
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
@@ -8856,10 +8861,6 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAwardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -9547,12 +9548,12 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Essence
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
-                                      owl:allValuesFrom ec:TimelinePoint
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasConsumer ;
                                       owl:allValuesFrom ec:Consumer
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
+                                      owl:allValuesFrom ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasDevice ;
@@ -13837,12 +13838,12 @@ ec:ResonanceCount rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Locator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasObjectType ;
-                                    owl:allValuesFrom skos:Concept
+                                    owl:onProperty ec:hasMeasurementAgent ;
+                                    owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:isMeasuredBy ;
-                                    owl:allValuesFrom ec:Agent
+                                    owl:onProperty ec:hasObjectType ;
+                                    owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:description ;
@@ -15305,8 +15306,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
