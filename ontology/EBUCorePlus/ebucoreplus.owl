@@ -2139,17 +2139,6 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                            "Lizenzierung"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToLogo
-ec:hasLinkToLogo rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Logo ;
-                 dcterms:description "Pour fournir un lien vers un logo"@fr ,
-                                     "So erstellen Sie einen Link zu einem Logo"@de ,
-                                     "To provide a link to a Logo"@en ;
-                 rdfs:label "Lien vers le logo"@fr ,
-                            "Link to logo"@en ,
-                            "Link zum Logo"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToSticker
 ec:hasLinkToSticker rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Sticker ;
@@ -2222,8 +2211,14 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
            rdfs:range ec:Logo ;
            dcterms:description "Les logos peuvent être utilisés dans une variété de contextes. Le logo peut être associé à une organisation, un service ou un canal de publication."@fr ,
                                "Logos can be used in a variety of contexts. Logo can be associated with an Organisation or a Service or a PublicationChannel."@en ,
-                               "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ;
-           rdfs:label "Logo"@de ,
+                               "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ,
+                               "Pour fournir un lien vers un logo"@fr ,
+                               "So erstellen Sie einen Link zu einem Logo"@de ,
+                               "To provide a link to a Logo"@en ;
+           rdfs:label "Lien vers le logo"@fr ,
+                      "Link to logo"@en ,
+                      "Link zum Logo"@de ,
+                      "Logo"@de ,
                       "Logo"@en ,
                       "Logo"@fr .
 
@@ -9894,12 +9889,12 @@ ec:Copyright rdf:type owl:Class ;
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasLinkToLogo ;
-                             owl:allValuesFrom ec:Logo
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasLinkToSticker ;
                              owl:allValuesFrom ec:Sticker
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasLogo ;
+                             owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:costumeSizeInformation ;
