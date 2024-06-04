@@ -640,6 +640,16 @@ ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
                                   "Ziel der Annotation"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasApprover
+ec:hasApprover rdf:type owl:ObjectProperty ;
+               dcterms:description "Pour identifier un agent qui a approuvé un rapport d'audit."@fr ,
+                                   "To identify an Agent who approved an AuditReport."@en ,
+                                   "Um einen Agenten zu identifizieren, der einen AuditReport genehmigt hat."@de ;
+               rdfs:label "Approuvé par"@fr ,
+                          "Approved by"@en ,
+                          "Genehmigt von"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactBuyer
 ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
                     rdfs:range ec:Agent ;
@@ -925,6 +935,17 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
                                  "Datum des Prüfungsberichts"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
+ec:hasAuthor rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Agent ;
+             dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
+                                 "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
+                                 "To link an Annotation to an Agent who created it."@en ;
+             rdfs:label "Agent"@de ,
+                        "Agent"@en ,
+                        "Agent"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
 ec:hasAwardDate rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasDate ;
@@ -946,6 +967,17 @@ ec:hasBeenAwarded rdf:type owl:ObjectProperty ;
                   rdfs:label "Agent"@de ,
                              "Agent"@en ,
                              "Agent"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
+ec:hasBrand rdf:type owl:ObjectProperty ;
+            rdfs:range ec:Brand ;
+            dcterms:description "Pour identifier une Marque."@fr ,
+                                "To identify a Brand."@en ,
+                                "Um eine Marke zu identifizieren."@de ;
+            rdfs:label "Brand"@en ,
+                       "Marke"@de ,
+                       "Marque"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBusinessContract
@@ -1006,12 +1038,18 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Character ;
-                dcterms:description "Pour énumérer les personnages d'une fiction."@fr ,
+                dcterms:description "Pour identifier un personnage."@fr ,
+                                    "Pour énumérer les personnages d'une fiction."@fr ,
+                                    "To identify a character."@en ,
                                     "To list characters in a fiction."@en ,
+                                    "Um einen Charakter zu identifizieren."@de ,
                                     "Zum Auflisten von Figuren in einer Fiktion."@de ;
                 rdfs:label "Caractère"@fr ,
                            "Character"@en ,
-                           "Charakter"@de .
+                           "Charakter"@de ,
+                           "Fictional character."@en ,
+                           "Fiktiver Charakter."@de ,
+                           "Personnage fictif."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClip
@@ -1065,6 +1103,16 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
                   rdfs:label "Colour space"@en ,
                              "Espace couleur"@fr ,
                              "Farbraum"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCommissioningContract
+ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
+                            dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
+                                                "Le contrat par lequel un objet éditorial est commissionné."@fr ,
+                                                "The Contract through which an EditorialObject is commissioned."@en ;
+                            rdfs:label "Contract"@en ,
+                                       "Contrat"@fr ,
+                                       "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
@@ -1730,6 +1778,18 @@ ec:hasDuration rdf:type owl:ObjectProperty ;
                rdfs:range ec:TimelinePoint .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormatOf
+ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:EditorialObject ;
+                        dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
+                                            "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
+                                            "To identify an Editorial Object based on the same Editorial format"@en ;
+                        rdfs:comment "*** Bad description ***"@en ;
+                        rdfs:label "Gleiches redaktionelles Format"@de ,
+                                   "Même format éditorial"@fr ,
+                                   "Same editorial format"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialGroup
 ec:hasEditorialGroup rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:isMemberOf ;
@@ -1744,6 +1804,17 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
                     rdfs:label "a un travail éditorial"@fr ,
                                "has editorial work"@en ,
                                "hat redaktionelle Arbeit"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
+ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
+                        rdfs:range ec:Artefact ;
+                        dcterms:description "Character depicted by an Artifact"@en ,
+                                            "Personnage représenté par un artefact"@fr ,
+                                            "Von einem Artefakt dargestellter Charakter"@de ;
+                        rdfs:label "est incarné par"@fr ,
+                                   "is embodied by"@en ,
+                                   "wird verkörpert durch"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEncodingFormat
@@ -1796,6 +1867,17 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                          rdfs:label "Exploitation Issues"@en ,
                                     "Fragen der Ausbeutung"@de ,
                                     "Problèmes d'exploitation"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFictitiousPerson
+ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:Person ;
+                       dcterms:description "Pour identifier un contact/personne fictive."@fr ,
+                                           "To identify a Contact/Person being fictitious."@en ,
+                                           "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
+                       rdfs:label "Contact fictif"@fr ,
+                                  "Fictitious contact"@en ,
+                                  "Fiktiver Kontakt"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFileFormat
@@ -1994,6 +2076,17 @@ ec:hasInputResource rdf:type owl:ObjectProperty ;
                     rdfs:label "Entrée des ressources"@fr ,
                                "Resource input"@en ,
                                "Ressourceneinsatz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIssuer
+ec:hasIssuer rdf:type owl:ObjectProperty ;
+             rdfs:range ec:Agent ;
+             dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
+                                 "To identify the issuer of an identifier."@en ,
+                                 "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
+             rdfs:label "Emittent"@de ,
+                        "Issuer"@en ,
+                        "Émetteur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
@@ -2305,6 +2398,17 @@ ec:hasOutputResource rdf:type owl:ObjectProperty ;
                      rdfs:label "Output resource"@en ,
                                 "Ressource ausgeben"@de ,
                                 "Ressource de sortie"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOwner
+ec:hasOwner rdf:type owl:ObjectProperty ;
+            rdfs:range ec:Agent ;
+            dcterms:description "Pour identifier le propriétaire d'un animal."@fr ,
+                                "To identify the owner of an animal."@en ,
+                                "Um den Besitzer eines Tieres zu identifizieren."@de ;
+            rdfs:label "Animal owner"@en ,
+                       "Propriétaire d'animaux"@fr ,
+                       "Tierhalter"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParentEditorialObject
@@ -3674,17 +3778,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                              "ist angegliedert an"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalOwner
-ec:isAnimalOwner rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Agent ;
-                 dcterms:description "Pour identifier le propriétaire d'un animal."@fr ,
-                                     "To identify the owner of an animal."@en ,
-                                     "Um den Besitzer eines Tieres zu identifizieren."@de ;
-                 rdfs:label "Animal owner"@en ,
-                            "Propriétaire d'animaux"@fr ,
-                            "Tierhalter"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
 ec:isAnimatedBy rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Person ;
@@ -3707,27 +3800,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                                        "Ressource médiatique"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotationBy
-ec:isAnnotationBy rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
-                  dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
-                                      "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
-                                      "To link an Annotation to an Agent who created it."@en ;
-                  rdfs:label "Agent"@de ,
-                             "Agent"@en ,
-                             "Agent"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isApprovedBy
-ec:isApprovedBy rdf:type owl:ObjectProperty ;
-                dcterms:description "Pour identifier un agent qui a approuvé un rapport d'audit."@fr ,
-                                    "To identify an Agent who approved an AuditReport."@en ,
-                                    "Um einen Agenten zu identifizieren, der einen AuditReport genehmigt hat."@de ;
-                rdfs:label "Approuvé par"@fr ,
-                           "Approved by"@en ,
-                           "Genehmigt von"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAttributedTo
 ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:range ec:Agent ;
@@ -3737,28 +3809,6 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isBrand
-ec:isBrand rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Brand ;
-           dcterms:description "Pour identifier une Marque."@fr ,
-                               "To identify a Brand."@en ,
-                               "Um eine Marke zu identifizieren."@de ;
-           rdfs:label "Brand"@en ,
-                      "Marke"@de ,
-                      "Marque"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCharacter
-ec:isCharacter rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Character ;
-               dcterms:description "Pour identifier un personnage."@fr ,
-                                   "To identify a character."@en ,
-                                   "Um einen Charakter zu identifizieren."@de ;
-               rdfs:label "Fictional character."@en ,
-                          "Fiktiver Charakter."@de ,
-                          "Personnage fictif."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
@@ -3782,16 +3832,6 @@ ec:isCloneOf rdf:type owl:ObjectProperty ;
              rdfs:label "Clone source"@en ,
                         "Cloner la source"@fr ,
                         "Quelle klonen"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
-ec:isCommissionedBy rdf:type owl:ObjectProperty ;
-                    dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
-                                        "Le contrat par lequel un objet éditorial est commissionné."@fr ,
-                                        "The Contract through which an EditorialObject is commissioned."@en ;
-                    rdfs:label "Contract"@en ,
-                               "Contrat"@fr ,
-                               "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
@@ -3848,29 +3888,6 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
                       "Synchronisiert von"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEditorialFormatOf
-ec:isEditorialFormatOf rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:EditorialObject ;
-                       dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
-                                           "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
-                                           "To identify an Editorial Object based on the same Editorial format"@en ;
-                       rdfs:comment "*** Bad description ***"@en ;
-                       rdfs:label "Gleiches redaktionelles Format"@de ,
-                                  "Même format éditorial"@fr ,
-                                  "Same editorial format"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEmbodiedBy
-ec:isEmbodiedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Artefact ;
-                dcterms:description "Character depicted by an Artifact"@en ,
-                                    "Personnage représenté par un artefact"@fr ,
-                                    "Von einem Artefakt dargestellter Charakter"@de ;
-                rdfs:label "est incarné par"@fr ,
-                           "is embodied by"@en ,
-                           "wird verkörpert durch"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
 ec:isEpisodeOf rdf:type owl:ObjectProperty ;
                rdfs:range ec:EditorialGroup ;
@@ -3921,17 +3938,6 @@ ec:isExtractOf rdf:type owl:ObjectProperty ;
                           "ist ein Auszug aus"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isFictitiousPerson
-ec:isFictitiousPerson rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Person ;
-                      dcterms:description "Pour identifier un contact/personne fictive."@fr ,
-                                          "To identify a Contact/Person being fictitious."@en ,
-                                          "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
-                      rdfs:label "Contact fictif"@fr ,
-                                 "Fictitious contact"@en ,
-                                 "Fiktiver Kontakt"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isInstantiatedBy
 ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
                     rdfs:range ec:MediaResource ;
@@ -3941,17 +3947,6 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
                     rdfs:label "Media Resource"@en ,
                                "Medien Ressource"@de ,
                                "Ressource médiatique"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isIssuedBy
-ec:isIssuedBy rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Agent ;
-              dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
-                                  "To identify the issuer of an identifier."@en ,
-                                  "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
-              rdfs:label "Emittent"@de ,
-                         "Issuer"@en ,
-                         "Émetteur"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMasterOf
@@ -7543,6 +7538,10 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCharacter ;
+                           owl:allValuesFrom ec:Character
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -7565,10 +7564,6 @@ ec:Agent rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isCharacter ;
-                           owl:allValuesFrom ec:Character
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
@@ -7811,7 +7806,7 @@ ec:Animal rdf:type owl:Class ;
                             owl:allValuesFrom skos:Concept
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isAnimalOwner ;
+                            owl:onProperty ec:hasOwner ;
                             owl:allValuesFrom ec:Agent
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -7918,6 +7913,11 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onClass time:Instant
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:hasAuthor ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ec:Agent
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasLocation ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:Location
@@ -7926,11 +7926,6 @@ ec:Annotation rdf:type owl:Class ;
                                 owl:onProperty ec:isAnnotatedMediaResource ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onClass ec:MediaResource
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:isAnnotationBy ;
-                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:description ;
@@ -8768,6 +8763,10 @@ ec:AuditJob rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AuditReport
 ec:AuditReport rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasApprover ;
+                                 owl:allValuesFrom ec:Agent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasAuditReportDate ;
                                  owl:allValuesFrom time:Instant
                                ] ,
@@ -8782,10 +8781,6 @@ ec:AuditReport rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:hasRelatedAuditJob ;
                                  owl:allValuesFrom ec:AuditJob
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty ec:isApprovedBy ;
-                                 owl:allValuesFrom ec:Agent
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:referencesRule ;
@@ -9114,12 +9109,12 @@ ec:CastMember rdf:type owl:Class ;
 ec:Character rdf:type owl:Class ;
              rdfs:subClassOf ec:Person ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isAnimatedBy ;
-                               owl:allValuesFrom ec:Person
+                               owl:onProperty ec:hasEmbodyingArtefact ;
+                               owl:allValuesFrom ec:Artefact
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isEmbodiedBy ;
-                               owl:allValuesFrom ec:Artefact
+                               owl:onProperty ec:isAnimatedBy ;
+                               owl:allValuesFrom ec:Person
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPlayedBy ;
@@ -9130,7 +9125,7 @@ ec:Character rdf:type owl:Class ;
                                owl:allValuesFrom ec:Animal
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:isFictitiousPerson ;
+                               owl:onProperty ec:hasFictitiousPerson ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass ec:Person
                              ] ;
@@ -10187,6 +10182,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:AudioDescription
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasBrand ;
+                                     owl:allValuesFrom ec:Brand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCaptioning ;
                                      owl:allValuesFrom ec:Captioning
                                    ] ,
@@ -10197,6 +10196,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCharacter ;
                                      owl:allValuesFrom ec:Character
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasCommissioningContract ;
+                                     owl:allValuesFrom ec:Contract
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasContentEditorialFormat ;
@@ -10221,6 +10224,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasDubbedLanguage ;
                                      owl:allValuesFrom ec:Language
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasEditorialFormatOf ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasGenre ;
@@ -10371,20 +10378,8 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom skos:Concept
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isBrand ;
-                                     owl:allValuesFrom ec:Brand
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isCommissionedBy ;
-                                     owl:allValuesFrom ec:Contract
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
                                      owl:allValuesFrom ec:PublicationService
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isEditorialFormatOf ;
-                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isExtractOf ;
@@ -11081,12 +11076,12 @@ ec:IPRRestrictions rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Identifier
 ec:Identifier rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:hasObjectType ;
-                                owl:allValuesFrom skos:Concept
+                                owl:onProperty ec:hasIssuer ;
+                                owl:allValuesFrom ec:Agent
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty ec:isIssuedBy ;
-                                owl:allValuesFrom ec:Agent
+                                owl:onProperty ec:hasObjectType ;
+                                owl:allValuesFrom skos:Concept
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasDateCreated ;
