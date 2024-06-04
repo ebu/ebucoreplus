@@ -4230,10 +4230,10 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                           "Version von"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logsPublicationEvent
-ec:logsPublicationEvent rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:PublicationEvent ;
-                        skos:note "logs publication event"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logs
+ec:logs rdf:type owl:ObjectProperty ;
+        rdfs:range ec:PublicationEvent ;
+        skos:note "logs publication event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
@@ -13305,7 +13305,7 @@ ec:PublicationLog rdf:type owl:Class ;
                                     owl:onClass time:Instant
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:logsPublicationEvent ;
+                                    owl:onProperty ec:logs ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:PublicationEvent
                                   ] ,
