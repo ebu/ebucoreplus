@@ -2139,17 +2139,6 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                            "Lizenzierung"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToSticker
-ec:hasLinkToSticker rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Sticker ;
-                    dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
-                                        "So erstellen Sie einen Link zu einem Sticker"@de ,
-                                        "To provide a link to a Sticker"@en ;
-                    rdfs:label "Lien vers l'autocollant"@fr ,
-                               "Link to Sticker"@en ,
-                               "Link zum Aufkleber"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:range ec:Location ;
@@ -3355,6 +3344,17 @@ ec:hasStartDateTime rdf:type owl:ObjectProperty ;
                     rdfs:label "Date de début"@fr ,
                                "Start date time"@en ,
                                "Startdatum Uhrzeit"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSticker
+ec:hasSticker rdf:type owl:ObjectProperty ;
+              rdfs:range ec:Sticker ;
+              dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
+                                  "So erstellen Sie einen Link zu einem Sticker"@de ,
+                                  "To provide a link to a Sticker"@en ;
+              rdfs:label "Lien vers l'autocollant"@fr ,
+                         "Link to Sticker"@en ,
+                         "Link zum Aufkleber"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
@@ -9889,12 +9889,12 @@ ec:Copyright rdf:type owl:Class ;
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasLinkToSticker ;
-                             owl:allValuesFrom ec:Sticker
-                           ] ,
-                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:hasLogo ;
                              owl:allValuesFrom ec:Logo
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasSticker ;
+                             owl:allValuesFrom ec:Sticker
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:costumeSizeInformation ;
