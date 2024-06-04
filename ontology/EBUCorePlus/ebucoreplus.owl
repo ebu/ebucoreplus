@@ -4134,6 +4134,18 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
                                    "Vorangehend"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPublishedBy
+ec:isPublishedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf ec:publishes ;
+                 rdfs:range ec:PublicationEvent ;
+                 dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
+                                     "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
+                                     "To associatre a PublicationEvent with an EditorialObject."@en ;
+                 rdfs:label "Ereignis der Veröffentlichung"@de ,
+                            "Publication event"@en ,
+                            "Événement de publication"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReferencedBy
 ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf ec:references ;
@@ -4166,18 +4178,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
                 rdfs:label "Erforderlich"@de ,
                            "Required"@en ,
                            "Requis"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isScheduledOn
-ec:isScheduledOn rdf:type owl:ObjectProperty ;
-                 owl:inverseOf ec:publishes ;
-                 rdfs:range ec:PublicationEvent ;
-                 dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
-                                     "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
-                                     "To associatre a PublicationEvent with an EditorialObject."@en ;
-                 rdfs:label "Ereignis der Veröffentlichung"@de ,
-                            "Publication event"@en ,
-                            "Événement de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeasonOf
@@ -10432,6 +10432,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialGroup
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isPublishedBy ;
+                                     owl:allValuesFrom ec:PublicationEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isReferencedBy ;
                                      owl:allValuesFrom ec:BibliographicalObject
                                    ] ,
@@ -10442,10 +10446,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isRequiredBy ;
                                      owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isScheduledOn ;
-                                     owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isTimelineTrackPartOf ;
