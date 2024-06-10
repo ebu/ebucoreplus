@@ -2723,6 +2723,16 @@ ec:hasRegionCode rdf:type owl:ObjectProperty ;
                             "Région"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegistration
+ec:hasRegistration rdf:type owl:ObjectProperty ;
+                   dcterms:description "Pour fournir les détails du compte d'un consommateur."@fr ,
+                                       "To provide the Account details of a registered Consumer."@en ,
+                                       "Zur Angabe der Kontodaten eines registrierten Verbrauchers."@de ;
+                   rdfs:label "Anmeldung"@de ,
+                              "Inscription"@fr ,
+                              "Registration"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAccount
 ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
                      dcterms:description "Pour lier des comptes connexes."@fr ,
@@ -4428,16 +4438,6 @@ ec:transports rdf:type owl:ObjectProperty ;
               rdfs:label "Transporte"@de ,
                          "Transports"@en ,
                          "Transports"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#uses
-ec:uses rdf:type owl:ObjectProperty ;
-        dcterms:description "Pour fournir les détails du compte d'un consommateur."@fr ,
-                            "To provide the Account details of a registered Consumer."@en ,
-                            "Zur Angabe der Kontodaten eines registrierten Verbrauchers."@de ;
-        rdfs:label "Anmeldung"@de ,
-                   "Inscription"@fr ,
-                   "Registration"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#usesConsumptionDevice
@@ -9277,7 +9277,7 @@ ec:Consumer rdf:type owl:Class ;
                               owl:allValuesFrom ec:ConsumptionEvent
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:uses ;
+                              owl:onProperty ec:hasRegistration ;
                               owl:allValuesFrom ec:Account
                             ] ,
                             [ rdf:type owl:Restriction ;
