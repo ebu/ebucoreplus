@@ -957,6 +957,7 @@ ec:hasAwardDate rdf:type owl:ObjectProperty ;
                            "Date d'attribution"@fr ,
                            "Datum der Vergabe"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
 ec:hasBrand rdf:type owl:ObjectProperty ;
             rdfs:range ec:Brand ;
@@ -1093,8 +1094,6 @@ ec:hasColourSpace rdf:type owl:ObjectProperty ;
                              "Farbraum"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
-ec:hasConsumer rdf:type owl:ObjectProperty .
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCommissioningContract
 ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                             dcterms:description "Der Vertrag, durch den ein EditorialObject in Auftrag gegeben wird."@de ,
@@ -1103,6 +1102,10 @@ ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                             rdfs:label "Contract"@en ,
                                        "Contrat"@fr ,
                                        "Vertrag"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
+ec:hasConsumer rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
@@ -2136,28 +2139,6 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
                            "Lizenzierung"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToLogo
-ec:hasLinkToLogo rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Logo ;
-                 dcterms:description "Pour fournir un lien vers un logo"@fr ,
-                                     "So erstellen Sie einen Link zu einem Logo"@de ,
-                                     "To provide a link to a Logo"@en ;
-                 rdfs:label "Lien vers le logo"@fr ,
-                            "Link to logo"@en ,
-                            "Link zum Logo"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLinkToSticker
-ec:hasLinkToSticker rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Sticker ;
-                    dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
-                                        "So erstellen Sie einen Link zu einem Sticker"@de ,
-                                        "To provide a link to a Sticker"@en ;
-                    rdfs:label "Lien vers l'autocollant"@fr ,
-                               "Link to Sticker"@en ,
-                               "Link zum Aufkleber"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:range ec:Location ;
@@ -2192,17 +2173,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
                                  "Picture"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationRegion
-ec:hasLocationRegion rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:RegionCode ;
-                     dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
-                                         "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
-                                         "To provide a description of a particular region assocoated to the Location."@en ;
-                     rdfs:label "Region"@de ,
-                                "Region"@en ,
-                                "Région"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
               rdfs:range ec:Locator ;
@@ -2219,8 +2189,14 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
            rdfs:range ec:Logo ;
            dcterms:description "Les logos peuvent être utilisés dans une variété de contextes. Le logo peut être associé à une organisation, un service ou un canal de publication."@fr ,
                                "Logos can be used in a variety of contexts. Logo can be associated with an Organisation or a Service or a PublicationChannel."@en ,
-                               "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ;
-           rdfs:label "Logo"@de ,
+                               "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ,
+                               "Pour fournir un lien vers un logo"@fr ,
+                               "So erstellen Sie einen Link zu einem Logo"@de ,
+                               "To provide a link to a Logo"@en ;
+           rdfs:label "Lien vers le logo"@fr ,
+                      "Link to logo"@en ,
+                      "Link zum Logo"@de ,
+                      "Logo"@de ,
                       "Logo"@en ,
                       "Logo"@fr .
 
@@ -2247,14 +2223,14 @@ ec:hasMaster rdf:type owl:ObjectProperty ;
                         "Meister"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasureValueUnit
-ec:hasMeasureValueUnit rdf:type owl:ObjectProperty ;
-                       dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
-                                           "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
-                                           "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
-                       rdfs:label "Einheit messen"@de ,
-                                  "Measure unit"@en ,
-                                  "Unité de mesure"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMeasurementAgent
+ec:hasMeasurementAgent rdf:type owl:ObjectProperty ;
+                       dcterms:description "Der Agent, der Daten analysiert, um eine Resonanz zu definieren."@de ,
+                                           "L'agent qui analyse les données pour définir une résonance."@fr ,
+                                           "The Agent who analyses data to define a Resonance."@en ;
+                       rdfs:label "Gemessen an"@de ,
+                                  "Measured by"@en ,
+                                  "Mesuré par"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMediaFragment
@@ -2734,6 +2710,27 @@ ec:hasRatingProvider rdf:type owl:ObjectProperty ;
                      rdfs:label "Quelle der Bewertung / Agent"@de ,
                                 "Rating source / agent"@en ,
                                 "Source de notation / agent"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegionCode
+ec:hasRegionCode rdf:type owl:ObjectProperty ;
+                 rdfs:range ec:RegionCode ;
+                 dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
+                                     "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
+                                     "To provide a description of a particular region assocoated to the Location."@en ;
+                 rdfs:label "Region"@de ,
+                            "Region"@en ,
+                            "Région"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegistration
+ec:hasRegistration rdf:type owl:ObjectProperty ;
+                   dcterms:description "Pour fournir les détails du compte d'un consommateur."@fr ,
+                                       "To provide the Account details of a registered Consumer."@en ,
+                                       "Zur Angabe der Kontodaten eines registrierten Verbrauchers."@de ;
+                   rdfs:label "Anmeldung"@de ,
+                              "Inscription"@fr ,
+                              "Registration"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAccount
@@ -3349,6 +3346,17 @@ ec:hasStartDateTime rdf:type owl:ObjectProperty ;
                                "Startdatum Uhrzeit"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSticker
+ec:hasSticker rdf:type owl:ObjectProperty ;
+              rdfs:range ec:Sticker ;
+              dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
+                                  "So erstellen Sie einen Link zu einem Sticker"@de ,
+                                  "To provide a link to a Sticker"@en ;
+              rdfs:label "Lien vers l'autocollant"@fr ,
+                         "Link to Sticker"@en ,
+                         "Link zum Aufkleber"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
 ec:hasStorageId rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Identifier ;
@@ -3623,6 +3631,16 @@ ec:hasTrackType rdf:type owl:ObjectProperty ;
                            "Track name"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUnit
+ec:hasUnit rdf:type owl:ObjectProperty ;
+           dcterms:description "Pour définir l'unité dans laquelle la valeur d'une mesure est exprimée, le cas échéant."@fr ,
+                               "To define the unit in which the value of a Measure is expressed, when applicable."@en ,
+                               "Zur Festlegung der Einheit, in der der Wert einer Kennzahl ausgedrückt wird, falls zutreffend."@de ;
+           rdfs:label "Einheit messen"@de ,
+                      "Measure unit"@en ,
+                      "Unité de mesure"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageContract
 ec:hasUsageContract rdf:type owl:ObjectProperty ;
                     dcterms:description "Die Vertragsbedingungen, unter denen ein ProductionDevice verwendet werden soll verwendet wird."@de ,
@@ -3816,6 +3834,7 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
                           "décerné à"@fr ,
                           "verliehen an"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isParentOf ;
@@ -3837,6 +3856,16 @@ ec:isCloneOf rdf:type owl:ObjectProperty ;
              rdfs:label "Clone source"@en ,
                         "Cloner la source"@fr ,
                         "Quelle klonen"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCommissionedBy
+ec:isCommissionedBy rdf:type owl:ObjectProperty ;
+                    dcterms:description "Der Vertrag, durch den eine Ressource in Auftrag gegeben wird."@de ,
+                                        "Le contrat par lequel une ressource est commandée."@fr ,
+                                        "The Contract through which a Resource is commissioned."@en ;
+                    rdfs:label "Contract"@en ,
+                               "Contrat"@fr ,
+                               "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
@@ -3965,16 +3994,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
                          "Ressource média dérivée"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMeasuredBy
-ec:isMeasuredBy rdf:type owl:ObjectProperty ;
-                dcterms:description "Der Agent, der Daten analysiert, um eine Resonanz zu definieren."@de ,
-                                    "L'agent qui analyse les données pour définir une résonance."@fr ,
-                                    "The Agent who analyses data to define a Resonance."@en ;
-                rdfs:label "Gemessen an"@de ,
-                           "Measured by"@en ,
-                           "Mesuré par"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMediaFragmentOf
 ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
                      rdfs:range ec:MediaResource ;
@@ -4018,6 +4037,17 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
                     rdfs:label "Next"@en ,
                                "Nächste"@de ,
                                "Suivant"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOfferedBy
+ec:isOfferedBy rdf:type owl:ObjectProperty ;
+               rdfs:range ec:PublicationService ;
+               dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
+                                   "To identify a Service associated to a PublicationEvent."@en ,
+                                   "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
+               rdfs:label "Service"@de ,
+                          "Service"@en ,
+                          "Service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOperatedBy
@@ -4109,6 +4139,18 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
                                    "Vorangehend"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPublishedBy
+ec:isPublishedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf ec:publishes ;
+                 rdfs:range ec:PublicationEvent ;
+                 dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
+                                     "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
+                                     "To associatre a PublicationEvent with an EditorialObject."@en ;
+                 rdfs:label "Ereignis der Veröffentlichung"@de ,
+                            "Publication event"@en ,
+                            "Événement de publication"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReferencedBy
 ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf ec:references ;
@@ -4118,27 +4160,6 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   rdfs:label "Reference source"@en ,
                              "Referenzquelle"@de ,
                              "Source de référence"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isRegisteredAs
-ec:isRegisteredAs rdf:type owl:ObjectProperty ;
-                  dcterms:description "Pour fournir les détails du compte d'un consommateur."@fr ,
-                                      "To provide the Account details of a registered Consumer."@en ,
-                                      "Zur Angabe der Kontodaten eines registrierten Verbrauchers."@de ;
-                  rdfs:label "Anmeldung"@de ,
-                             "Inscription"@fr ,
-                             "Registration"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReleasedBy
-ec:isReleasedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:PublicationService ;
-                dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
-                                    "To identify a Service associated to a PublicationEvent."@en ,
-                                    "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
-                rdfs:label "Service"@de ,
-                           "Service"@en ,
-                           "Service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReplacedBy
@@ -4162,28 +4183,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
                 rdfs:label "Erforderlich"@de ,
                            "Required"@en ,
                            "Requis"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isResourceCommissionedBy
-ec:isResourceCommissionedBy rdf:type owl:ObjectProperty ;
-                            dcterms:description "Der Vertrag, durch den eine Ressource in Auftrag gegeben wird."@de ,
-                                                "Le contrat par lequel une ressource est commandée."@fr ,
-                                                "The Contract through which a Resource is commissioned."@en ;
-                            rdfs:label "Contract"@en ,
-                                       "Contrat"@fr ,
-                                       "Vertrag"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isScheduledOn
-ec:isScheduledOn rdf:type owl:ObjectProperty ;
-                 owl:inverseOf ec:publishes ;
-                 rdfs:range ec:PublicationEvent ;
-                 dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
-                                     "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
-                                     "To associatre a PublicationEvent with an EditorialObject."@en ;
-                 rdfs:label "Ereignis der Veröffentlichung"@de ,
-                            "Publication event"@en ,
-                            "Événement de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeasonOf
@@ -4241,10 +4240,10 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
                           "Version von"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logsPublicationEvent
-ec:logsPublicationEvent rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:PublicationEvent ;
-                        skos:note "logs publication event"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logs
+ec:logs rdf:type owl:ObjectProperty ;
+        rdfs:range ec:PublicationEvent ;
+        skos:note "logs publication event"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
@@ -4255,6 +4254,7 @@ ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
                        rdfs:label "Related Rule"@en ,
                                   "Règle connexe"@fr ,
                                   "Verwandte Regel"@de .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursIn
 ec:occursIn rdf:type owl:ObjectProperty .
@@ -7566,16 +7566,16 @@ ec:Agent rdf:type owl:Class ;
                            owl:allValuesFrom skos:Concept
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:holdsAward ;
-                           owl:allValuesFrom ec:Award
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedAgent ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:holdsAward ;
+                           owl:allValuesFrom ec:Award
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:agentDbpedia ;
@@ -8856,10 +8856,6 @@ ec:Award rdf:type owl:Class ;
                            owl:allValuesFrom ec:Agent
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasObjectType ;
-                           owl:allValuesFrom skos:Concept
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAwardDate ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass time:Instant
@@ -9281,7 +9277,7 @@ ec:Consumer rdf:type owl:Class ;
                               owl:allValuesFrom ec:ConsumptionEvent
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:isRegisteredAs ;
+                              owl:onProperty ec:hasRegistration ;
                               owl:allValuesFrom ec:Account
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -9547,12 +9543,12 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:Essence
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
-                                      owl:allValuesFrom ec:TimelinePoint
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasConsumer ;
                                       owl:allValuesFrom ec:Consumer
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasConsumptionEventResumePoint ;
+                                      owl:allValuesFrom ec:TimelinePoint
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasDevice ;
@@ -9893,11 +9889,11 @@ ec:Copyright rdf:type owl:Class ;
 ec:Costume rdf:type owl:Class ;
            rdfs:subClassOf ec:Artefact ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasLinkToLogo ;
+                             owl:onProperty ec:hasLogo ;
                              owl:allValuesFrom ec:Logo
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasLinkToSticker ;
+                             owl:onProperty ec:hasSticker ;
                              owl:allValuesFrom ec:Sticker
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -10431,6 +10427,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialGroup
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isPublishedBy ;
+                                     owl:allValuesFrom ec:PublicationEvent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isReferencedBy ;
                                      owl:allValuesFrom ec:BibliographicalObject
                                    ] ,
@@ -10441,10 +10441,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isRequiredBy ;
                                      owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isScheduledOn ;
-                                     owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isTimelineTrackPartOf ;
@@ -11408,7 +11404,7 @@ ec:Location rdf:type owl:Class ;
                               owl:allValuesFrom ec:Resource
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasLocationRegion ;
+                              owl:onProperty ec:hasRegionCode ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass ec:RegionCode
                             ] ,
@@ -11580,11 +11576,11 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom ec:Identifier
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasMeasureValueUnit ;
+                             owl:onProperty ec:hasObjectType ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:hasObjectType ;
+                             owl:onProperty ec:hasUnit ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -13187,7 +13183,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:UsageRestrictions
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:isReleasedBy ;
+                                      owl:onProperty ec:isOfferedBy ;
                                       owl:allValuesFrom ec:PublicationService
                                     ] ,
                                     [ rdf:type owl:Restriction ;
@@ -13309,7 +13305,7 @@ ec:PublicationLog rdf:type owl:Class ;
                                     owl:onClass time:Instant
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:logsPublicationEvent ;
+                                    owl:onProperty ec:logs ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onClass ec:PublicationEvent
                                   ] ,
@@ -13837,12 +13833,12 @@ ec:ResonanceCount rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Locator
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasObjectType ;
-                                    owl:allValuesFrom skos:Concept
+                                    owl:onProperty ec:hasMeasurementAgent ;
+                                    owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:isMeasuredBy ;
-                                    owl:allValuesFrom ec:Agent
+                                    owl:onProperty ec:hasObjectType ;
+                                    owl:allValuesFrom skos:Concept
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:description ;
@@ -13973,7 +13969,7 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:isResourceCommissionedBy ;
+                              owl:onProperty ec:isCommissionedBy ;
                               owl:allValuesFrom ec:Contract
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -15305,8 +15301,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
