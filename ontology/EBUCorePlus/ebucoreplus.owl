@@ -5753,7 +5753,7 @@ ec:frameHeightUnit rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#frameRate
 ec:frameRate rdf:type owl:DatatypeProperty ;
-             rdfs:range rdfs:Literal ;
+             rdfs:range ec:Ratio ;
              dcterms:description "Die Einheit, mit der die Bildrate einer MediaResource in Bildern/Sekunde ausgedrückt wird."@de ,
                                  "L'unité utilisée pour exprimer la fréquence d'images d'une MediaResource en images/seconde."@fr ,
                                  "The unit used to express the frame rate of a MediaResource in frames/second."@en ;
@@ -11970,6 +11970,7 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:frameRate ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   owl:onClass ec:Ratio
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:frameSizeUnit ;
