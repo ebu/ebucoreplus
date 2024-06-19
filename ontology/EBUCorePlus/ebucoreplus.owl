@@ -59,15 +59,15 @@
                                                                     "Valerie J. Miller, PBS"@en-us ,
                                                                     "Vincent Dabouineau"@fr ;
                                                      dc:creator "Jean Pierre Evain, EBU"@ch ;
-                                                     dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM. 
+                                                     dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM.
 
 EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced when using EBUCore and CCDM classes in one graph. It has its own, new name space therefore it is not backward compatible, but can be mapped to its predecessors. It provides complete documentation of all entities in English, French and German (English being normative).
 
-One major problem of EBUCore and CCDM was the use of ranges: semantically similar object properties needed to be defined in parallel for each class that the property referred to. Another case was the use of multi-range properties, leading to insufficient type safety. EBUCorePlus now uses class restrictions instead, leading to less and more coherent properties. 
+One major problem of EBUCore and CCDM was the use of ranges: semantically similar object properties needed to be defined in parallel for each class that the property referred to. Another case was the use of multi-range properties, leading to insufficient type safety. EBUCorePlus now uses class restrictions instead, leading to less and more coherent properties.
 
-EBUCorePlus aims to serve as a plug and play framework. It can be used out of the box, either in its entirety or just a subset of its elements. But it may also be adapted and extended to enterprise-specific needs. Especially for system integration tasks and defining requirements, projects benefit from EBUCorePlus as a business – not technology – oriented language. 
+EBUCorePlus aims to serve as a plug and play framework. It can be used out of the box, either in its entirety or just a subset of its elements. But it may also be adapted and extended to enterprise-specific needs. Especially for system integration tasks and defining requirements, projects benefit from EBUCorePlus as a business – not technology – oriented language.
 
-The ontology is developed by the EBU Metadata Modelling Working Group as an open source project on github. Requests for changes and improvements can be submitted by EBU Members, media organizations or anybody else from the media community. The EBUCorePlus Editorial Committee reviews requests and implements changes. 
+The ontology is developed by the EBU Metadata Modelling Working Group as an open source project on github. Requests for changes and improvements can be submitted by EBU Members, media organizations or anybody else from the media community. The EBUCorePlus Editorial Committee reviews requests and implements changes.
 
 The EBU Metadata Modelling Working Group provides access, upon request, to a cloud hosted demonstration kit to explore and better understand the whole EBUCorePlus model."""@en ;
                                                      dc:publisher "European Broadcasting Union (EBU)"@ch ;
@@ -3095,7 +3095,7 @@ ec:hasStorageId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageType
 ec:hasStorageType rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Storage_Type ;
+                  rdfs:range ec:StorageType ;
                   dcterms:description "Définir un type de stockage associé à un localisateur à partir duquel une ressource peut être accédée ou peut être récupérée."@fr ,
                                       "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ,
                                       "Zur Definition eines Speichertyps, der mit einem Locator verknüpft ist, von dem aus auf eine Ressource zugegriffen werden kann oder die abgerufen werden kann."@de ;
@@ -3325,7 +3325,7 @@ ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackType
 ec:hasTrackType rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Track_Type ;
+                rdfs:range ec:TrackType ;
                 dcterms:description "Der Typ, der einem Track zugeordnet ist."@de ,
                                     "Le type attribué à une piste."@fr ,
                                     "The type attributed to a Track."@en ;
@@ -7455,8 +7455,8 @@ ec:Action rdf:type owl:Class ;
                      "Aktion"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Action_Type
-ec:Action_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ActionType
+ec:ActionType rdf:type owl:Class ;
                rdfs:subClassOf skos:Concept ;
                dcterms:description "Pour définir un type d'action."@fr ,
                                    "To define a type of Action."@en ,
@@ -7979,8 +7979,8 @@ ec:Annotation rdf:type owl:Class ;
                          "Annotation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Annotation_Type
-ec:Annotation_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AnnotationType
+ec:AnnotationType rdf:type owl:Class ;
                    rdfs:subClassOf skos:Concept ;
                    dcterms:description "Pour définir un type d'Annotation."@fr ,
                                        "To define a type of Annotation."@en ,
@@ -8129,8 +8129,8 @@ ec:Artefact rdf:type owl:Class ;
 - the non-dynamic backdrop, chairs, table in a talk show"""@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Artefact_Type
-ec:Artefact_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ArtefactType
+ec:ArtefactType rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
                  dcterms:description "Pour définir un type d'artefact."@fr ,
                                      "To define a type of artefact."@en ,
@@ -8394,8 +8394,8 @@ ec:AssetValue rdf:type owl:Class ;
                          "Valeur d'un actif"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Asset_Type
-ec:Asset_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetType
+ec:AssetType rdf:type owl:Class ;
               rdfs:subClassOf skos:Concept ;
               dcterms:description "Pour définir un type d'actif."@fr ,
                                   "To define a type of asset."@en ,
@@ -8609,8 +8609,8 @@ ec:AudioContent rdf:type owl:Class ;
                 skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialSegment."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContent_Type
-ec:AudioContent_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContentType
+ec:AudioContentType rdf:type owl:Class ;
                      rdfs:subClassOf skos:Concept ;
                      dcterms:description "pour définir un type de AudioContent."@fr ,
                                          "to define a type of AudioContent."@en ,
@@ -8709,8 +8709,8 @@ ec:AudioProgramme rdf:type owl:Class ;
                   skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialWork."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme_Type
-ec:AudioProgramme_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgrammeType
+ec:AudioProgrammeType rdf:type owl:Class ;
                        rdfs:subClassOf skos:Concept ;
                        dcterms:description "pour définir un type d'AudioProgramme."@fr ,
                                            "to define a type of AudioProgramme."@en ,
@@ -8892,8 +8892,8 @@ ec:Award rdf:type owl:Class ;
                     "Prix"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Award_Type
-ec:Award_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AwardType
+ec:AwardType rdf:type owl:Class ;
               rdfs:subClassOf skos:Concept ;
               dcterms:description "Pour définir un type d'attribution."@fr ,
                                   "To define a type of Award."@en ,
@@ -10670,8 +10670,8 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
  ] .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObject_Type
-ec:EditorialObject_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObjectType
+ec:EditorialObjectType rdf:type owl:Class ;
                         rdfs:subClassOf skos:Concept ;
                         dcterms:description "Pour définir un type d'objet éditorial."@fr ,
                                             "To define a type of editorial object."@en ,
@@ -10799,8 +10799,8 @@ ec:Emotion rdf:type owl:Class ;
                       "Émotion"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Emotion_Type
-ec:Emotion_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EmotionType
+ec:EmotionType rdf:type owl:Class ;
                 rdfs:subClassOf skos:Concept ;
                 dcterms:description "Pour définir un type d'émotion."@fr ,
                                     "To define a type of emotion."@en ,
@@ -11714,7 +11714,7 @@ ec:MediaResource rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasStorageType ;
-                                   owl:allValuesFrom ec:Storage_Type
+                                   owl:allValuesFrom ec:StorageType
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasSubtitlingFormat ;
@@ -12116,8 +12116,8 @@ ec:MediaResource rdf:type owl:Class ;
 - un DVD vidéo"""@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaResource_Type
-ec:MediaResource_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaResourceType
+ec:MediaResourceType rdf:type owl:Class ;
                       rdfs:subClassOf skos:Concept ;
                       dcterms:description "Pour définir un type de MediaResource."@fr ,
                                           "To define a type of MediaResource."@en ,
@@ -12355,8 +12355,8 @@ ec:Outtakes rdf:type owl:Class ;
                          "- un clip avec une collection de chutes sur le DVD bonus d'un film"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Part_Type
-ec:Part_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PartType
+ec:PartType rdf:type owl:Class ;
              rdfs:subClassOf skos:Concept ;
              dcterms:description "Pour définir un type ou une pièce."@fr ,
                                  "To define a type or part."@en ,
@@ -13104,8 +13104,8 @@ ec:PublicationChannel rdf:type owl:Class ;
 - the channel @elonmusk on twitter for a social text service \"Elon Musk's Tweets\""""@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationChannel_Type
-ec:PublicationChannel_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationChannelType
+ec:PublicationChannelType rdf:type owl:Class ;
                            rdfs:subClassOf skos:Concept ;
                            dcterms:description "Pour définir un type de canal de publication."@fr ,
                                                "To define a type of publication channel."@en ,
@@ -13263,8 +13263,8 @@ ec:PublicationEvent rdf:type owl:Class ;
 - the posting of Elon Musk's text \"Next I'm buying Cocal Cola to put the cocaine back in\" on twitter, April 27, 2022, in his channel @elonmusk"""@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationEvent_Type
-ec:PublicationEvent_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationEventType
+ec:PublicationEventType rdf:type owl:Class ;
                          rdfs:subClassOf skos:Concept ;
                          dcterms:description "Pour définir un type d'événement de publication."@fr ,
                                              "To define a type of publication event."@en ,
@@ -13432,8 +13432,8 @@ Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiée
 - the planned dates, times and channels for a collection of content about a common theme"""@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationPlan_Type
-ec:PublicationPlan_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationPlanType
+ec:PublicationPlanType rdf:type owl:Class ;
                         rdfs:subClassOf skos:Concept ;
                         dcterms:description "Pour définir un type de plan de publication."@fr ,
                                             "To define a type of publication plan."@en ,
@@ -13780,8 +13780,8 @@ ec:Relation rdf:type owl:Class ;
                        "Relation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Relation_Type
-ec:Relation_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#RelationType
+ec:RelationType rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
                  dcterms:description "Pour spécifier un type de relation."@fr ,
                                      "To specify a type of relation."@en ,
@@ -14040,8 +14040,8 @@ ec:Resource rdf:type owl:Class ;
 - un dvd de film"""@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Resource_Type
-ec:Resource_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ResourceType
+ec:ResourceType rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
                  dcterms:description "Pour définir un type de ressource."@fr ,
                                      "To define a type of resource."@en ,
@@ -14344,8 +14344,8 @@ ec:Series rdf:type owl:Class ;
 - Tatort, le feuilleton du dimanche soir d'ARD"""@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Service_Type
-ec:Service_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ServiceType
+ec:ServiceType rdf:type owl:Class ;
                 rdfs:subClassOf skos:Concept ;
                 dcterms:description "Pour définir un type de service."@fr ,
                                     "To define a type of service."@en ,
@@ -14498,8 +14498,8 @@ ec:Sticker rdf:type owl:Class ;
                       "Sticker"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Storage_Type
-ec:Storage_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#StorageType
+ec:StorageType rdf:type owl:Class ;
                 rdfs:subClassOf skos:Concept ;
                 dcterms:description "Die Art der Speicherung, die für das Repository verwendet wird. Dies wird als freier Text in einer Beschriftung oder als Bezeichner angegeben, der auf einen Begriff in einem Klassifizierungsschema verweist."@de ,
                                     "Le type de stockage utilisé pour le référentiel. Il est fourni sous forme de texte libre dans une étiquette d'annotation ou sous forme d'identifiant pointant vers un terme dans un schéma de classification."@fr ,
@@ -14753,8 +14753,8 @@ ec:TextLine rdf:type owl:Class ;
                        "Textzeile"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TextLine_Type
-ec:TextLine_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TextLineType
+ec:TextLineType rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
                  dcterms:description "Pour définir un type TextLine."@fr ,
                                      "To define a TextLine type."@en ,
@@ -14917,8 +14917,8 @@ ec:TimelineTrack rdf:type owl:Class ;
                             "Zeitachse"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TimelineTrack_Type
-ec:TimelineTrack_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TimelineTrackType
+ec:TimelineTrackType rdf:type owl:Class ;
                       rdfs:subClassOf skos:Concept ;
                       dcterms:description "Pour spécifier un type ou un TimelineTrack."@fr ,
                                           "To specify a type or TimelineTrack."@en ,
@@ -14954,7 +14954,7 @@ ec:Track rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasTrackType ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                           owl:onClass ec:Track_Type
+                           owl:onClass ec:TrackType
                          ] ;
          dcterms:description "Cela peut être une piste audio ou video ou timecode ou data provenant de la resource médiatique, MediaResource."@fr ,
                              "E.g. audio, video, timcode and/or data Tracks forming the MediaResource."@en ,
@@ -14981,8 +14981,8 @@ ec:TrackPurpose rdf:type owl:Class ;
                            "Zweck der Spur"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Track_Type
-ec:Track_Type rdf:type owl:Class ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TrackType
+ec:TrackType rdf:type owl:Class ;
               rdfs:subClassOf skos:Concept ;
               dcterms:description "Pour définir un type de piste."@fr ,
                                   "To define a type of track."@en ,
