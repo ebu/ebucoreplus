@@ -59,15 +59,15 @@
                                                                     "Valerie J. Miller, PBS"@en-us ,
                                                                     "Vincent Dabouineau"@fr ;
                                                      dc:creator "Jean Pierre Evain, EBU"@ch ;
-                                                     dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM. 
+                                                     dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM.
 
 EBUCorePlus is strictly semantic. It avoids ambiguities that were introduced when using EBUCore and CCDM classes in one graph. It has its own, new name space therefore it is not backward compatible, but can be mapped to its predecessors. It provides complete documentation of all entities in English, French and German (English being normative).
 
-One major problem of EBUCore and CCDM was the use of ranges: semantically similar object properties needed to be defined in parallel for each class that the property referred to. Another case was the use of multi-range properties, leading to insufficient type safety. EBUCorePlus now uses class restrictions instead, leading to less and more coherent properties. 
+One major problem of EBUCore and CCDM was the use of ranges: semantically similar object properties needed to be defined in parallel for each class that the property referred to. Another case was the use of multi-range properties, leading to insufficient type safety. EBUCorePlus now uses class restrictions instead, leading to less and more coherent properties.
 
-EBUCorePlus aims to serve as a plug and play framework. It can be used out of the box, either in its entirety or just a subset of its elements. But it may also be adapted and extended to enterprise-specific needs. Especially for system integration tasks and defining requirements, projects benefit from EBUCorePlus as a business – not technology – oriented language. 
+EBUCorePlus aims to serve as a plug and play framework. It can be used out of the box, either in its entirety or just a subset of its elements. But it may also be adapted and extended to enterprise-specific needs. Especially for system integration tasks and defining requirements, projects benefit from EBUCorePlus as a business – not technology – oriented language.
 
-The ontology is developed by the EBU Metadata Modelling Working Group as an open source project on github. Requests for changes and improvements can be submitted by EBU Members, media organizations or anybody else from the media community. The EBUCorePlus Editorial Committee reviews requests and implements changes. 
+The ontology is developed by the EBU Metadata Modelling Working Group as an open source project on github. Requests for changes and improvements can be submitted by EBU Members, media organizations or anybody else from the media community. The EBUCorePlus Editorial Committee reviews requests and implements changes.
 
 The EBU Metadata Modelling Working Group provides access, upon request, to a cloud hosted demonstration kit to explore and better understand the whole EBUCorePlus model."""@en ;
                                                      dc:publisher "European Broadcasting Union (EBU)"@ch ;
@@ -812,7 +812,7 @@ ec:derivedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#displayAspectRatio
 ec:displayAspectRatio rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:ActiveFormatDescriptorCode ;
+                      rdfs:range ec:Ratio ;
                       dcterms:description "Das Seitenverhältnis bei der Anzeige."@de ,
                                           "Le rapport d'aspect lors de l'affichage."@fr ,
                                           "The aspect ratio when displayed."@en ;
@@ -5078,7 +5078,7 @@ ec:artefactWebsite rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#aspectRatio
 ec:aspectRatio rdf:type owl:DatatypeProperty ;
-               rdfs:range xsd:string ;
+               rdfs:range ec:Ratio ;
                dcterms:description "Pour spécifier le rapport d'aspect."@fr ,
                                    "To specify the aspect ratio."@en ,
                                    "Um das Seitenverhältnis festzulegen."@de ;
@@ -7464,17 +7464,6 @@ ec:Action_Type rdf:type owl:Class ;
                rdfs:label "Action type"@en ,
                           "Aktionstyp"@de ,
                           "Type d'action"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ActiveFormatDescriptorCode
-ec:ActiveFormatDescriptorCode rdf:type owl:Class ;
-                              rdfs:subClassOf ec:Format ;
-                              dcterms:description "Pour définir un code de format actif."@fr ,
-                                                  "So definieren Sie einen aktiven Formatcode."@de ,
-                                                  "To define an active format code."@en ;
-                              rdfs:label "Active format descriptor code"@en ,
-                                         "Aktiver Format-Deskriptor-Code"@de ,
-                                         "Code du descripteur de format actif"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Affiliation
@@ -11776,7 +11765,7 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:displayAspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass ec:ActiveFormatDescriptorCode
+                                   owl:onClass ec:Ratio
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasAncillaryDataFormat ;
@@ -11903,7 +11892,7 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:aspectRatio ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:string
+                                   owl:onClass ec:Ratio
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:audioBitRate ;
@@ -12575,8 +12564,7 @@ ec:Picture rdf:type owl:Class ;
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:aspectRatio ;
-                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onDataRange xsd:string
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty ec:frameHeight ;
@@ -13707,6 +13695,26 @@ ec:Rating rdf:type owl:Class ;
                      "Classement"@fr ,
                      "Rating"@en .
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Ratio
+ec:Ratio rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:numerator ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:integer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:denominator ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:integer ;
+                            xsd:minInclusive 1
+                          ] ;
+          dcterms:description "Represent a ratio of values."@en ,
+                              "Représente un rapport de valeurs."@fr ;
+          rdfs:label "Verhältnis"@de ,
+                     "Rapport"@fr ,
+                     "Ratio"@en .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Record
 ec:Record rdf:type owl:Class ;
