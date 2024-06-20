@@ -2668,17 +2668,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                                    "Région de publication"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationScheduleDate
-ec:hasPublicationScheduleDate rdf:type owl:ObjectProperty ;
-                              rdfs:range time:Instant ;
-                              dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
-                                                  "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
-                                                  "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
-                              rdfs:label "Date du calendrier"@fr ,
-                                         "Schedule date"@en ,
-                                         "Zeitplan Datum"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
                 rdfs:range ec:Involvement ;
@@ -3193,6 +3182,17 @@ ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:label "a une scène"@fr ,
                        "has scene"@en ,
                        "hat Szene"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScheduleDate
+ec:hasScheduleDate rdf:type owl:ObjectProperty ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
+                                       "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
+                                       "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
+                   rdfs:label "Date du calendrier"@fr ,
+                              "Schedule date"@en ,
+                              "Zeitplan Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSeason
@@ -13206,7 +13206,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onClass time:DateTimeDescription
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasPublicationScheduleDate ;
+                                      owl:onProperty ec:hasScheduleDate ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
