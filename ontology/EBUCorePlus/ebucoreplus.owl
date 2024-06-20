@@ -4269,16 +4269,12 @@ ec:offers rdf:type owl:ObjectProperty ;
           dcterms:description "Pour identifier les PublicationEvents disponibles via un service."@fr ,
                               "To identify the PublicationEvents available through a Service."@en ,
                               "Zur Identifizierung der PublicationEvents, die über einen Dienst."@de ;
-          rdfs:label "Publication events"@en ,
+          rdfs:label "Angebote Service"@de ,
+                     "Offers service"@en ,
+                     "Offres de service"@fr ,
+                     "Publication events"@en ,
                      "Veranstaltungen zur Veröffentlichung"@de ,
                      "Événements de publication"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#offersService
-ec:offersService rdf:type owl:ObjectProperty ;
-                 rdfs:label "Angebote Service"@de ,
-                            "Offers service"@en ,
-                            "Offres de service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#originateFrom
@@ -13495,7 +13491,7 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:PublicationEvent
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:offersService ;
+                                         owl:onProperty ec:offers ;
                                          owl:allValuesFrom ec:PublicationService
                                        ] ,
                                        [ rdf:type owl:Restriction ;
