@@ -4277,14 +4277,14 @@ ec:offers rdf:type owl:ObjectProperty ;
                      "Événements de publication"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#originateFrom
-ec:originateFrom rdf:type owl:ObjectProperty ;
-                 dcterms:description "Der Vertrag, aus dem die Rechte hervorgehen."@de ,
-                                     "Le contrat dont découlent les droits."@fr ,
-                                     "The Contract from which the Rights orginate."@en ;
-                 rdfs:label "Contract"@en ,
-                            "Contrat"@fr ,
-                            "Vertrag"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#originatesFrom
+ec:originatesFrom rdf:type owl:ObjectProperty ;
+                  dcterms:description "Der Vertrag, aus dem die Rechte hervorgehen."@de ,
+                                      "Le contrat dont découlent les droits."@fr ,
+                                      "The Contract from which the Rights orginate."@en ;
+                  rdfs:label "Contract"@en ,
+                             "Contrat"@fr ,
+                             "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
@@ -14102,7 +14102,7 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:originateFrom ;
+                            owl:onProperty ec:originatesFrom ;
                             owl:allValuesFrom ec:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
