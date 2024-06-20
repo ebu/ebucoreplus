@@ -2470,15 +2470,15 @@ ec:hasPost rdf:type owl:ObjectProperty ;
                       "hat Post"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelatedProductionJob
-ec:hasPreviousRelatedProductionJob rdf:type owl:ObjectProperty ;
-                                   rdfs:range ec:ProductionJob ;
-                                   dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
-                                                       "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
-                                                       "To identify a previous associated ProductionJob"@en ;
-                                   rdfs:label "Emploi précédent"@fr ,
-                                              "Previous job"@en ,
-                                              "Vorheriger Job"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelated
+ec:hasPreviousRelated rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:ProductionJob ;
+                      dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
+                                          "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
+                                          "To identify a previous associated ProductionJob"@en ;
+                      rdfs:label "Emploi précédent"@fr ,
+                                 "Previous job"@en ,
+                                 "Vorheriger Job"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
@@ -12746,7 +12746,7 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasPreviousRelatedProductionJob ;
+                                   owl:onProperty ec:hasPreviousRelated ;
                                    owl:allValuesFrom ec:ProductionJob
                                  ] ,
                                  [ rdf:type owl:Restriction ;
