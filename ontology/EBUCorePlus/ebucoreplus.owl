@@ -2711,6 +2711,16 @@ ec:hasRatingProvider rdf:type owl:ObjectProperty ;
                                 "Source de notation / agent"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasReferencesRule
+ec:hasReferencesRule rdf:type owl:ObjectProperty ;
+                     dcterms:description "Pour fournir des références à une règle."@fr ,
+                                         "To provide references to a Rule."@en ,
+                                         "Um Hinweise auf eine Regel zu geben."@de ;
+                     rdfs:label "Regel-Referenz"@de ,
+                                "Rule reference"@en ,
+                                "Référence de la règle"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegionCode
 ec:hasRegionCode rdf:type owl:ObjectProperty ;
                  rdfs:range ec:RegionCode ;
@@ -3164,16 +3174,6 @@ ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                               rdfs:label "Enthaltene Territorien"@de ,
                                          "Included territories"@en ,
                                          "Territoires inclus"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRuleReference
-ec:hasRuleReference rdf:type owl:ObjectProperty ;
-                    dcterms:description "Pour fournir des références à une règle."@fr ,
-                                        "To provide references to a Rule."@en ,
-                                        "Um Hinweise auf eine Regel zu geben."@de ;
-                    rdfs:label "Regel-Referenz"@de ,
-                               "Rule reference"@en ,
-                               "Référence de la règle"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
@@ -14189,7 +14189,7 @@ ec:Rule rdf:type owl:Class ;
                           owl:allValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasRuleReference ;
+                          owl:onProperty ec:hasReferencesRule ;
                           owl:allValuesFrom ec:Rule
                         ] ,
                         [ rdf:type owl:Restriction ;
