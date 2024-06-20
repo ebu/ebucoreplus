@@ -4246,14 +4246,14 @@ ec:logs rdf:type owl:ObjectProperty ;
         skos:note "logs publication event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
-ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
-                       dcterms:description "Pour associer une règle à une mesure."@fr ,
-                                           "So verknüpfen Sie eine Regel mit einer Kennzahl."@de ,
-                                           "To associate a Rule with a Measure."@en ;
-                       rdfs:label "Related Rule"@en ,
-                                  "Règle connexe"@fr ,
-                                  "Verwandte Regel"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measures
+ec:measures rdf:type owl:ObjectProperty ;
+            dcterms:description "Pour associer une règle à une mesure."@fr ,
+                                "So verknüpfen Sie eine Regel mit einer Kennzahl."@de ,
+                                "To associate a Rule with a Measure."@en ;
+            rdfs:label "Related Rule"@en ,
+                       "Règle connexe"@fr ,
+                       "Verwandte Regel"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursIn
@@ -11584,7 +11584,7 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:measuresAgainstRule ;
+                             owl:onProperty ec:measures ;
                              owl:allValuesFrom ec:Rule
                            ] ,
                            [ rdf:type owl:Restriction ;
