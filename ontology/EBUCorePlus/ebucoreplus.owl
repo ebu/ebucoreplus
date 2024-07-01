@@ -2470,15 +2470,25 @@ ec:hasPost rdf:type owl:ObjectProperty ;
                       "hat Post"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelatedProductionJob
-ec:hasPreviousRelatedProductionJob rdf:type owl:ObjectProperty ;
-                                   rdfs:range ec:ProductionJob ;
-                                   dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
-                                                       "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
-                                                       "To identify a previous associated ProductionJob"@en ;
-                                   rdfs:label "Emploi précédent"@fr ,
-                                              "Previous job"@en ,
-                                              "Vorheriger Job"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelated
+ec:hasPreviousRelated rdf:type owl:ObjectProperty ;
+                      rdfs:range ec:ProductionJob ;
+                      dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
+                                          "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
+                                          "To identify a previous associated ProductionJob"@en ;
+                      rdfs:label "Emploi précédent"@fr ,
+                                 "Previous job"@en ,
+                                 "Vorheriger Job"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPriority
+ec:hasPriority rdf:type owl:ObjectProperty ;
+               dcterms:description "Pour définir la priorité associée à une règle."@fr ,
+                                   "To define the priority associated to a Rule."@en ,
+                                   "Um die Priorität einer Regel zu definieren."@de ;
+               rdfs:label "Priorität der Regel"@de ,
+                          "Priorité de la règle"@fr ,
+                          "Rule priority"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
@@ -2666,17 +2676,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
                         rdfs:label "Publication region"@en ,
                                    "Region der Veröffentlichung"@de ,
                                    "Région de publication"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationScheduleDate
-ec:hasPublicationScheduleDate rdf:type owl:ObjectProperty ;
-                              rdfs:range time:Instant ;
-                              dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
-                                                  "To express specifically the schedule date to which a PublicationEvent is related in particular if the broacdast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
-                                                  "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
-                              rdfs:label "Date du calendrier"@fr ,
-                                         "Schedule date"@en ,
-                                         "Zeitplan Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
@@ -3017,6 +3016,16 @@ ec:hasRelatedResource rdf:type owl:ObjectProperty ;
                                  "Verwandte Ressource"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedRule
+ec:hasRelatedRule rdf:type owl:ObjectProperty ;
+                  dcterms:description "Pour fournir des références à une règle."@fr ,
+                                      "To provide references to a Rule."@en ,
+                                      "Um Hinweise auf eine Regel zu geben."@de ;
+                  rdfs:label "Regel-Referenz"@de ,
+                             "Rule reference"@en ,
+                             "Référence de la règle"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedScene
 ec:hasRelatedScene rdf:type owl:ObjectProperty ;
                    rdfs:range ec:Scene ;
@@ -3167,32 +3176,23 @@ ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
                                          "Territoires inclus"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRulePriority
-ec:hasRulePriority rdf:type owl:ObjectProperty ;
-                   dcterms:description "Pour définir la priorité associée à une règle."@fr ,
-                                       "To define the priority associated to a Rule."@en ,
-                                       "Um die Priorität einer Regel zu definieren."@de ;
-                   rdfs:label "Priorität der Regel"@de ,
-                              "Priorité de la règle"@fr ,
-                              "Rule priority"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRuleReference
-ec:hasRuleReference rdf:type owl:ObjectProperty ;
-                    dcterms:description "Pour fournir des références à une règle."@fr ,
-                                        "To provide references to a Rule."@en ,
-                                        "Um Hinweise auf eine Regel zu geben."@de ;
-                    rdfs:label "Regel-Referenz"@de ,
-                               "Rule reference"@en ,
-                               "Référence de la règle"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScene
 ec:hasScene rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasPart ;
             rdfs:label "a une scène"@fr ,
                        "has scene"@en ,
                        "hat Szene"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScheduleDate
+ec:hasScheduleDate rdf:type owl:ObjectProperty ;
+                   rdfs:range time:Instant ;
+                   dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
+                                       "To express specifically the schedule date to which a PublicationEvent is related in particular if the broadcast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
+                                       "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
+                   rdfs:label "Date du calendrier"@fr ,
+                              "Schedule date"@en ,
+                              "Zeitplan Datum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSeason
@@ -4246,14 +4246,14 @@ ec:logs rdf:type owl:ObjectProperty ;
         skos:note "logs publication event"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measuresAgainstRule
-ec:measuresAgainstRule rdf:type owl:ObjectProperty ;
-                       dcterms:description "Pour associer une règle à une mesure."@fr ,
-                                           "So verknüpfen Sie eine Regel mit einer Kennzahl."@de ,
-                                           "To associate a Rule with a Measure."@en ;
-                       rdfs:label "Related Rule"@en ,
-                                  "Règle connexe"@fr ,
-                                  "Verwandte Regel"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#measures
+ec:measures rdf:type owl:ObjectProperty ;
+            dcterms:description "Pour associer une règle à une mesure."@fr ,
+                                "So verknüpfen Sie eine Regel mit einer Kennzahl."@de ,
+                                "To associate a Rule with a Measure."@en ;
+            rdfs:label "Related Rule"@en ,
+                       "Règle connexe"@fr ,
+                       "Verwandte Regel"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occursIn
@@ -4269,26 +4269,22 @@ ec:offers rdf:type owl:ObjectProperty ;
           dcterms:description "Pour identifier les PublicationEvents disponibles via un service."@fr ,
                               "To identify the PublicationEvents available through a Service."@en ,
                               "Zur Identifizierung der PublicationEvents, die über einen Dienst."@de ;
-          rdfs:label "Publication events"@en ,
+          rdfs:label "Angebote Service"@de ,
+                     "Offers service"@en ,
+                     "Offres de service"@fr ,
+                     "Publication events"@en ,
                      "Veranstaltungen zur Veröffentlichung"@de ,
                      "Événements de publication"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#offersService
-ec:offersService rdf:type owl:ObjectProperty ;
-                 rdfs:label "Angebote Service"@de ,
-                            "Offers service"@en ,
-                            "Offres de service"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#originateFrom
-ec:originateFrom rdf:type owl:ObjectProperty ;
-                 dcterms:description "Der Vertrag, aus dem die Rechte hervorgehen."@de ,
-                                     "Le contrat dont découlent les droits."@fr ,
-                                     "The Contract from which the Rights orginate."@en ;
-                 rdfs:label "Contract"@en ,
-                            "Contrat"@fr ,
-                            "Vertrag"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#originatesFrom
+ec:originatesFrom rdf:type owl:ObjectProperty ;
+                  dcterms:description "Der Vertrag, aus dem die Rechte hervorgehen."@de ,
+                                      "Le contrat dont découlent les droits."@fr ,
+                                      "The Contract from which the Rights originate."@en ;
+                  rdfs:label "Contract"@en ,
+                             "Contrat"@fr ,
+                             "Vertrag"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
@@ -11584,7 +11580,7 @@ ec:Measure rdf:type owl:Class ;
                              owl:allValuesFrom skos:Concept
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty ec:measuresAgainstRule ;
+                             owl:onProperty ec:measures ;
                              owl:allValuesFrom ec:Rule
                            ] ,
                            [ rdf:type owl:Restriction ;
@@ -12750,7 +12746,7 @@ ec:ProductionJob rdf:type owl:Class ;
                                    owl:allValuesFrom ec:Resource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasPreviousRelatedProductionJob ;
+                                   owl:onProperty ec:hasPreviousRelated ;
                                    owl:allValuesFrom ec:ProductionJob
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -13210,7 +13206,7 @@ ec:PublicationEvent rdf:type owl:Class ;
                                       owl:onClass time:DateTimeDescription
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasPublicationScheduleDate ;
+                                      owl:onProperty ec:hasScheduleDate ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onClass time:Instant
                                     ] ,
@@ -13495,7 +13491,7 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:PublicationEvent
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:offersService ;
+                                         owl:onProperty ec:offers ;
                                          owl:allValuesFrom ec:PublicationService
                                        ] ,
                                        [ rdf:type owl:Restriction ;
@@ -14106,7 +14102,7 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:originateFrom ;
+                            owl:onProperty ec:originatesFrom ;
                             owl:allValuesFrom ec:Contract
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -14189,11 +14185,11 @@ ec:Rule rdf:type owl:Class ;
                           owl:allValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasRulePriority ;
+                          owl:onProperty ec:hasPriority ;
                           owl:allValuesFrom skos:Concept
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty ec:hasRuleReference ;
+                          owl:onProperty ec:hasRelatedRule ;
                           owl:allValuesFrom ec:Rule
                         ] ,
                         [ rdf:type owl:Restriction ;
