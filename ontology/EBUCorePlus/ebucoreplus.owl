@@ -396,7 +396,6 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
-             rdfs:range ec:Asset ;
              dcterms:description "Pour identifier une nouvelle version dérivée de l'original."@fr ,
                                  "To identify a new version derived from the original."@en ,
                                  "Um eine neue, vom Original abgeleitete Version zu identifizieren."@de ;
