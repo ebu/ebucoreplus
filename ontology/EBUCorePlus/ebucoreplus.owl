@@ -455,7 +455,6 @@ ec:hasAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentBiography
 ec:hasAgentBiography rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Biography ;
                      dcterms:description "Fournir la biographie d'un agent."@fr ,
                                          "To provide a biography of an Agent."@en ,
                                          "Um eine Biographie eines Agenten zu erstellen."@de ;
