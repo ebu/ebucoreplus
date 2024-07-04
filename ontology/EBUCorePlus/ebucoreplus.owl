@@ -495,7 +495,6 @@ ec:hasAgentMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentNationality
 ec:hasAgentNationality rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:CountryCode ;
                        dcterms:description "Pour fournir la nationalité d'un agent."@fr ,
                                            "To provide the nationality of an Agent."@en ,
                                            "Zur Angabe der Nationalität eines Agenten."@de ;
