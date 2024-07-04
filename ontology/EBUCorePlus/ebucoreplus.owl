@@ -438,7 +438,6 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Affiliation ;
                   dcterms:description "A property to establish the relation between a Contact/Person and an Organisation."@en ,
                                       "Eine Eigenschaft, die die Beziehung zwischen einem Kontakt/Person und einer Organisation."@de ,
                                       "Une propriété permettant d'établir la relation entre un contact/personne et une organisation."@fr ;
