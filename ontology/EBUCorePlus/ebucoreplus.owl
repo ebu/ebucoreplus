@@ -475,7 +475,6 @@ ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentLanguage
 ec:hasAgentLanguage rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Language ;
                     dcterms:description "Pour fournir la ou les langues d'un contact/personne."@fr ,
                                         "To provide the language(s) of a Contact/person."@en ,
                                         "Zur Angabe der Sprache(n) eines Kontakts/einer Person."@de ;
