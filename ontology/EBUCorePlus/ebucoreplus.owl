@@ -465,7 +465,6 @@ ec:hasAgentBiography rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentCountryOfResidence
 ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:CountryCode ;
                               dcterms:description "Pour indiquer le lieu de résidence d'un agent."@fr ,
                                                   "To indicate the place of residence of an Agent."@en ,
                                                   "Zur Angabe des Wohnsitzes eines Agenten."@de ;
