@@ -264,7 +264,6 @@ ec:applyTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#approvedBy
 ec:approvedBy rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Agent ;
               dcterms:description "Pour identifier l'agent qui a approuvé la publication de l'objet EditorialObject. La propriété, lorsqu'elle est présente, servira de déclencheur pour la publication de l'objet Editorial."@fr ,
                                   "To identify the Agent who approved the EditorialObject for publishing. The property, when present, will act as an trigger for the publishing of the Editorial object."@en ,
                                   "Zur Identifizierung des Agenten, der das EditorialObject zur Veröffentlichung freigegeben hat. Wenn diese Eigenschaft vorhanden ist, dient sie als Auslöser für die Veröffentlichung des Redaktionsobjekts."@de ;
