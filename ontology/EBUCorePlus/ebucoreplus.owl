@@ -5200,17 +5200,6 @@ ec:audioTrackConfiguration rdf:type owl:DatatypeProperty ;
                                       "Konfiguration der Audiospur"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#audioTrackNumber
-ec:audioTrackNumber rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger ;
-                    dcterms:description "Die Gesamtzahl der Audiospuren, die in der der MediaResource."@de ,
-                                        "Le nombre total de pistes audio contenues dans la MediaResource."@fr ,
-                                        "The total number of audio tracks contained in the MediaResource."@en ;
-                    rdfs:label "Nombre de pistes audio"@fr ,
-                               "Number of audio track"@en ,
-                               "Nummer der Audiospur"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportResults
 ec:auditReportResults rdf:type owl:DatatypeProperty ;
                       dcterms:description "Pour exprimer les résultats combinés d'un ou plusieurs AuditJobs."@fr ,
@@ -6291,7 +6280,7 @@ ec:notRated rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#numberOfAudioTracks
 ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
+                       rdfs:range xsd:nonNegativeInteger ;
                        dcterms:description "Pour fournir le nombre de pistes audio."@fr ,
                                            "To provide the number of audio tracks."@en ,
                                            "Zur Angabe der Anzahl der Audiospuren."@de ;
@@ -6302,7 +6291,7 @@ ec:numberOfAudioTracks rdf:type owl:DatatypeProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#numberOfVideoTracks
 ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
+                       rdfs:range xsd:nonNegativeInteger ;
                        dcterms:description "Pour fournir le nombre de pistes vidéo."@fr ,
                                            "To provide the number of video tracks."@en ,
                                            "Zur Angabe der Anzahl der Videospuren."@de ;
@@ -11938,11 +11927,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:audioTrackNumber ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:bitDepth ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:nonNegativeInteger
@@ -12019,12 +12003,12 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:numberOfAudioTracks ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
+                                   owl:onDataRange xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:numberOfVideoTracks ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
+                                   owl:onDataRange xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:packageByteSize ;
