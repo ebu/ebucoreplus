@@ -574,7 +574,6 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalGroom
 ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
                                       "To identify the groom / care taker of an animal."@en ,
                                       "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
