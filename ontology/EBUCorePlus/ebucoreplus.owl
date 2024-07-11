@@ -614,7 +614,6 @@ ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
-                       rdfs:range owl:Thing ;
                        dcterms:description "Pour définir l'objet cible auquel l'annotation s'applique."@fr ,
                                            "To define the target object to which the Annotation applies."@en ,
                                            "Zur Definition des Zielobjekts, auf das sich die Anmerkung bezieht."@de ;
