@@ -584,7 +584,6 @@ ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalRole
 ec:hasAnimalRole rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Involvement ;
                  dcterms:description "Die Rolle eines Tieres zu identifizieren."@de ,
                                      "Identifier le rôle d'un animal."@fr ,
                                      "To identify the role of an animal."@en ;
