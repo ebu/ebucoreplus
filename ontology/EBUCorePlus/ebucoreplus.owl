@@ -604,7 +604,6 @@ ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationCurationDateTime
 ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
-                                 rdfs:range time:Instant ;
                                  dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
                                                      "To provide the date and time when an Annotation has been reviewed."@en ,
                                                      "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
