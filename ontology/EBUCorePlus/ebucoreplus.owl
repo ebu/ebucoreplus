@@ -594,7 +594,6 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationAgent
 ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Agent ;
                       dcterms:description "Pour définir l'instance d'annotation d'un agent."@fr ,
                                           "So definieren Sie die Annotation-Instanz eines Agenten."@de ,
                                           "To define the Annotation instance of an Agent."@en ;
