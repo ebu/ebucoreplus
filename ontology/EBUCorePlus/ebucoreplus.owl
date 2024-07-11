@@ -254,7 +254,6 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:hasRights ;
-           rdfs:range ec:Asset ;
            dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
                                "L'actif auquel les droits s'appliquent."@fr ,
                                "The Asset to which Rights apply."@en ;
@@ -265,7 +264,6 @@ ec:applyTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#approvedBy
 ec:approvedBy rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Agent ;
               dcterms:description "Pour identifier l'agent qui a approuvé la publication de l'objet EditorialObject. La propriété, lorsqu'elle est présente, servira de déclencheur pour la publication de l'objet Editorial."@fr ,
                                   "To identify the Agent who approved the EditorialObject for publishing. The property, when present, will act as an trigger for the publishing of the Editorial object."@en ,
                                   "Zur Identifizierung des Agenten, der das EditorialObject zur Veröffentlichung freigegeben hat. Wenn diese Eigenschaft vorhanden ist, dient sie als Auslöser für die Veröffentlichung des Redaktionsobjekts."@de ;
@@ -398,7 +396,6 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
-             rdfs:range ec:Asset ;
              dcterms:description "Pour identifier une nouvelle version dérivée de l'original."@fr ,
                                  "To identify a new version derived from the original."@en ,
                                  "Um eine neue, vom Original abgeleitete Version zu identifizieren."@de ;
@@ -441,7 +438,6 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Affiliation ;
                   dcterms:description "A property to establish the relation between a Contact/Person and an Organisation."@en ,
                                       "Eine Eigenschaft, die die Beziehung zwischen einem Kontakt/Person und einer Organisation."@de ,
                                       "Une propriété permettant d'établir la relation entre un contact/personne et une organisation."@fr ;
@@ -459,7 +455,6 @@ ec:hasAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentBiography
 ec:hasAgentBiography rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Biography ;
                      dcterms:description "Fournir la biographie d'un agent."@fr ,
                                          "To provide a biography of an Agent."@en ,
                                          "Um eine Biographie eines Agenten zu erstellen."@de ;
@@ -470,7 +465,6 @@ ec:hasAgentBiography rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentCountryOfResidence
 ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:CountryCode ;
                               dcterms:description "Pour indiquer le lieu de résidence d'un agent."@fr ,
                                                   "To indicate the place of residence of an Agent."@en ,
                                                   "Zur Angabe des Wohnsitzes eines Agenten."@de ;
@@ -481,7 +475,6 @@ ec:hasAgentCountryOfResidence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentLanguage
 ec:hasAgentLanguage rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Language ;
                     dcterms:description "Pour fournir la ou les langues d'un contact/personne."@fr ,
                                         "To provide the language(s) of a Contact/person."@en ,
                                         "Zur Angabe der Sprache(n) eines Kontakts/einer Person."@de ;
@@ -492,7 +485,6 @@ ec:hasAgentLanguage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentMember
 ec:hasAgentMember rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Pour associer un agent à un autre agent, par exemple une équipe."@fr ,
                                       "So verknüpfen Sie einen Agenten mit einem anderen Agenten, z.B. einem Team."@de ,
                                       "To associate an Agent to another Agent e.g. a Team."@en ;
@@ -503,7 +495,6 @@ ec:hasAgentMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentNationality
 ec:hasAgentNationality rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:CountryCode ;
                        dcterms:description "Pour fournir la nationalité d'un agent."@fr ,
                                            "To provide the nationality of an Agent."@en ,
                                            "Zur Angabe der Nationalität eines Agenten."@de ;
@@ -524,7 +515,6 @@ ec:hasAgentOnStagePosition rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAgentPlaceOfResidence
 ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:Location ;
                             dcterms:description "Pour indiquer le lieu de résidence d'un agent."@fr ,
                                                 "To indicate the place of residence of an Agent."@en ,
                                                 "Zur Angabe des Wohnsitzes eines Agenten."@de ;
@@ -15297,8 +15287,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
