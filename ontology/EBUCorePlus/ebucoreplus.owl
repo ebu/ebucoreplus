@@ -564,7 +564,6 @@ ec:hasAnimalBreedCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalColourCode
 ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:AnimalColourCode ;
                        dcterms:description "Pour associer un code de couleur à un animal."@fr ,
                                            "To associate a colour code with an animal."@en ,
                                            "Um einen Farbcode mit einem Tier zu verbinden."@de ;
