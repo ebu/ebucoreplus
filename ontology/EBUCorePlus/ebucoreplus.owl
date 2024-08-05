@@ -532,7 +532,6 @@ ec:hasAlternativeTitle rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAncillaryData
 ec:hasAncillaryData rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:AncillaryData ;
                     dcterms:description "Pour identifier les données auxiliaires dans la ressource média."@fr ,
                                         "To identify ancillary data in the media resource."@en ,
                                         "Zur Identifizierung von Zusatzdaten in der Medienressource."@de ;
@@ -555,7 +554,6 @@ ec:hasAncillaryDataFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalBreedCode
 ec:hasAnimalBreedCode rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:AnimalBreedCode ;
                       dcterms:description "Pour associer un code de race à un animal."@fr ,
                                           "To associate a breed code with an animal."@en ,
                                           "Um einen Rassencode mit einem Tier zu verknüpfen."@de ;
@@ -566,7 +564,6 @@ ec:hasAnimalBreedCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalColourCode
 ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:AnimalColourCode ;
                        dcterms:description "Pour associer un code de couleur à un animal."@fr ,
                                            "To associate a colour code with an animal."@en ,
                                            "Um einen Farbcode mit einem Tier zu verbinden."@de ;
@@ -577,7 +574,6 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalGroom
 ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
                                       "To identify the groom / care taker of an animal."@en ,
                                       "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
@@ -588,7 +584,6 @@ ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalRole
 ec:hasAnimalRole rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Involvement ;
                  dcterms:description "Die Rolle eines Tieres zu identifizieren."@de ,
                                      "Identifier le rôle d'un animal."@fr ,
                                      "To identify the role of an animal."@en ;
@@ -599,7 +594,6 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationAgent
 ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Agent ;
                       dcterms:description "Pour définir l'instance d'annotation d'un agent."@fr ,
                                           "So definieren Sie die Annotation-Instanz eines Agenten."@de ,
                                           "To define the Annotation instance of an Agent."@en ;
@@ -610,7 +604,6 @@ ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationCurationDateTime
 ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
-                                 rdfs:range time:Instant ;
                                  dcterms:description "Pour fournir la date et l'heure auxquelles une Annotation a été révisée."@fr ,
                                                      "To provide the date and time when an Annotation has been reviewed."@en ,
                                                      "Um das Datum und die Uhrzeit anzugeben, zu der eine Anmerkung überprüft wurde."@de ;
@@ -621,7 +614,6 @@ ec:hasAnnotationCurationDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationTarget
 ec:hasAnnotationTarget rdf:type owl:ObjectProperty ;
-                       rdfs:range owl:Thing ;
                        dcterms:description "Pour définir l'objet cible auquel l'annotation s'applique."@fr ,
                                            "To define the target object to which the Annotation applies."@en ,
                                            "Zur Definition des Zielobjekts, auf das sich die Anmerkung bezieht."@de ;
@@ -642,7 +634,6 @@ ec:hasApprover rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactBuyer
 ec:hasArtefactBuyer rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Agent ;
                     dcterms:description "Der Agent, der das Artefakt gekauft hat."@de ,
                                         "L'agent qui a acheté l'Artefact."@fr ,
                                         "The Agent who bought the Artefact."@en ;
@@ -677,7 +668,6 @@ ec:hasArtefactDateOfSale rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactOwner
 ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Agent ;
                     dcterms:description "Pour identifier le propriétaire d'un artefact."@fr ,
                                         "To identify the owner of an Artefact."@en ,
                                         "Um den Besitzer eines Artefakts zu identifizieren."@de ;
@@ -7431,13 +7421,13 @@ ec:Action rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ActionType
 ec:ActionType rdf:type owl:Class ;
-               rdfs:subClassOf skos:Concept ;
-               dcterms:description "Pour définir un type d'action."@fr ,
-                                   "To define a type of Action."@en ,
-                                   "Um eine Art von Aktion zu definieren."@de ;
-               rdfs:label "Action type"@en ,
-                          "Aktionstyp"@de ,
-                          "Type d'action"@fr .
+              rdfs:subClassOf skos:Concept ;
+              dcterms:description "Pour définir un type d'action."@fr ,
+                                  "To define a type of Action."@en ,
+                                  "Um eine Art von Aktion zu definieren."@de ;
+              rdfs:label "Action type"@en ,
+                         "Aktionstyp"@de ,
+                         "Type d'action"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ActiveFormatDescriptorCode
@@ -7955,13 +7945,13 @@ ec:Annotation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AnnotationType
 ec:AnnotationType rdf:type owl:Class ;
-                   rdfs:subClassOf skos:Concept ;
-                   dcterms:description "Pour définir un type d'Annotation."@fr ,
-                                       "To define a type of Annotation."@en ,
-                                       "Um eine Art von Anmerkung zu definieren."@de ;
-                   rdfs:label "Annotation type"@en ,
-                              "Art der Annotation"@de ,
-                              "Type d'annotation"@fr .
+                  rdfs:subClassOf skos:Concept ;
+                  dcterms:description "Pour définir un type d'Annotation."@fr ,
+                                      "To define a type of Annotation."@en ,
+                                      "Um eine Art von Anmerkung zu definieren."@de ;
+                  rdfs:label "Annotation type"@en ,
+                             "Art der Annotation"@de ,
+                             "Type d'annotation"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Artefact
@@ -8105,13 +8095,13 @@ ec:Artefact rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ArtefactType
 ec:ArtefactType rdf:type owl:Class ;
-                 rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Pour définir un type d'artefact."@fr ,
-                                     "To define a type of artefact."@en ,
-                                     "Um eine Art von Artefakt zu definieren."@de ;
-                 rdfs:label "Artefact type"@en ,
-                            "Artefakt-Typ"@de ,
-                            "Type d'artefact"@fr .
+                rdfs:subClassOf skos:Concept ;
+                dcterms:description "Pour définir un type d'artefact."@fr ,
+                                    "To define a type of artefact."@en ,
+                                    "Um eine Art von Artefakt zu definieren."@de ;
+                rdfs:label "Artefact type"@en ,
+                           "Artefakt-Typ"@de ,
+                           "Type d'artefact"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Article
@@ -8334,6 +8324,17 @@ ec:Asset rdf:type owl:Class ;
 - une collection de livres"""@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetType
+ec:AssetType rdf:type owl:Class ;
+             rdfs:subClassOf skos:Concept ;
+             dcterms:description "Pour définir un type d'actif."@fr ,
+                                 "To define a type of asset."@en ,
+                                 "Um eine Art von Asset zu definieren."@de ;
+             rdfs:label "Asset type"@en ,
+                        "Asset-Typ"@de ,
+                        "Type d'actif"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetValue
 ec:AssetValue rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -8366,17 +8367,6 @@ ec:AssetValue rdf:type owl:Class ;
               rdfs:label "Asset value"@en ,
                          "Assetwert"@de ,
                          "Valeur d'un actif"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AssetType
-ec:AssetType rdf:type owl:Class ;
-              rdfs:subClassOf skos:Concept ;
-              dcterms:description "Pour définir un type d'actif."@fr ,
-                                  "To define a type of asset."@en ,
-                                  "Um eine Art von Asset zu definieren."@de ;
-              rdfs:label "Asset type"@en ,
-                         "Asset-Typ"@de ,
-                         "Type d'actif"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Atmosphere
@@ -8585,13 +8575,13 @@ ec:AudioContent rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContentType
 ec:AudioContentType rdf:type owl:Class ;
-                     rdfs:subClassOf skos:Concept ;
-                     dcterms:description "pour définir un type de AudioContent."@fr ,
-                                         "to define a type of AudioContent."@en ,
-                                         "um einen Typ von AudioContent zu definieren."@de ;
-                     rdfs:label "Audio content type"@en ,
-                                "Typ der Audio-Inhalte"@de ,
-                                "Type de contenu audio"@fr .
+                    rdfs:subClassOf skos:Concept ;
+                    dcterms:description "pour définir un type de AudioContent."@fr ,
+                                        "to define a type of AudioContent."@en ,
+                                        "um einen Typ von AudioContent zu definieren."@de ;
+                    rdfs:label "Audio content type"@en ,
+                               "Typ der Audio-Inhalte"@de ,
+                               "Type de contenu audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioDescription
@@ -8685,13 +8675,13 @@ ec:AudioProgramme rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgrammeType
 ec:AudioProgrammeType rdf:type owl:Class ;
-                       rdfs:subClassOf skos:Concept ;
-                       dcterms:description "pour définir un type d'AudioProgramme."@fr ,
-                                           "to define a type of AudioProgramme."@en ,
-                                           "um einen Typ von AudioProgrammen zu definieren."@de ;
-                       rdfs:label "Audio programme type"@en ,
-                                  "Typ des Audioprogramms"@de ,
-                                  "Type de programme audio"@fr .
+                      rdfs:subClassOf skos:Concept ;
+                      dcterms:description "pour définir un type d'AudioProgramme."@fr ,
+                                          "to define a type of AudioProgramme."@en ,
+                                          "um einen Typ von AudioProgrammen zu definieren."@de ;
+                      rdfs:label "Audio programme type"@en ,
+                                 "Typ des Audioprogramms"@de ,
+                                 "Type de programme audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioStream
@@ -8868,13 +8858,13 @@ ec:Award rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AwardType
 ec:AwardType rdf:type owl:Class ;
-              rdfs:subClassOf skos:Concept ;
-              dcterms:description "Pour définir un type d'attribution."@fr ,
-                                  "To define a type of Award."@en ,
-                                  "Um eine Art von Award zu definieren."@de ;
-              rdfs:label "Art der Auszeichnung"@de ,
-                         "Award type"@en ,
-                         "Type de prix"@fr .
+             rdfs:subClassOf skos:Concept ;
+             dcterms:description "Pour définir un type d'attribution."@fr ,
+                                 "To define a type of Award."@en ,
+                                 "Um eine Art von Award zu definieren."@de ;
+             rdfs:label "Art der Auszeichnung"@de ,
+                        "Award type"@en ,
+                        "Type de prix"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BMEssence
@@ -10667,13 +10657,13 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObjectType
 ec:EditorialObjectType rdf:type owl:Class ;
-                        rdfs:subClassOf skos:Concept ;
-                        dcterms:description "Pour définir un type d'objet éditorial."@fr ,
-                                            "To define a type of editorial object."@en ,
-                                            "Um einen Typ eines redaktionellen Objekts zu definieren."@de ;
-                        rdfs:label "Editorial object type"@en ,
-                                   "Redaktioneller Objekttyp"@de ,
-                                   "Type d'objet rédactionnel"@fr .
+                       rdfs:subClassOf skos:Concept ;
+                       dcterms:description "Pour définir un type d'objet éditorial."@fr ,
+                                           "To define a type of editorial object."@en ,
+                                           "Um einen Typ eines redaktionellen Objekts zu definieren."@de ;
+                       rdfs:label "Editorial object type"@en ,
+                                  "Redaktioneller Objekttyp"@de ,
+                                  "Type d'objet rédactionnel"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialSegment
@@ -10796,13 +10786,13 @@ ec:Emotion rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EmotionType
 ec:EmotionType rdf:type owl:Class ;
-                rdfs:subClassOf skos:Concept ;
-                dcterms:description "Pour définir un type d'émotion."@fr ,
-                                    "To define a type of emotion."@en ,
-                                    "Um eine Art von Emotion zu definieren."@de ;
-                rdfs:label "Emotion Typ"@de ,
-                           "Emotion type"@en ,
-                           "Type d'émotion"@fr .
+               rdfs:subClassOf skos:Concept ;
+               dcterms:description "Pour définir un type d'émotion."@fr ,
+                                   "To define a type of emotion."@en ,
+                                   "Um eine Art von Emotion zu definieren."@de ;
+               rdfs:label "Emotion Typ"@de ,
+                          "Emotion type"@en ,
+                          "Type d'émotion"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EncodingFormat
@@ -12109,13 +12099,13 @@ ec:MediaResource rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaResourceType
 ec:MediaResourceType rdf:type owl:Class ;
-                      rdfs:subClassOf skos:Concept ;
-                      dcterms:description "Pour définir un type de MediaResource."@fr ,
-                                          "To define a type of MediaResource."@en ,
-                                          "Um einen Typ von MediaResource zu definieren."@de ;
-                      rdfs:label "Media resource type"@en ,
-                                 "Typ der Medienressource"@de ,
-                                 "Type de ressource média"@fr .
+                     rdfs:subClassOf skos:Concept ;
+                     dcterms:description "Pour définir un type de MediaResource."@fr ,
+                                         "To define a type of MediaResource."@en ,
+                                         "Um einen Typ von MediaResource zu definieren."@de ;
+                     rdfs:label "Media resource type"@en ,
+                                "Typ der Medienressource"@de ,
+                                "Type de ressource média"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaType
@@ -12348,13 +12338,13 @@ ec:Outtakes rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PartType
 ec:PartType rdf:type owl:Class ;
-             rdfs:subClassOf skos:Concept ;
-             dcterms:description "Pour définir un type ou une pièce."@fr ,
-                                 "To define a type or part."@en ,
-                                 "Um einen Typ oder ein Teil zu definieren."@de ;
-             rdfs:label "Part type"@en ,
-                        "Teil Typ"@de ,
-                        "Type de pièce"@fr .
+            rdfs:subClassOf skos:Concept ;
+            dcterms:description "Pour définir un type ou une pièce."@fr ,
+                                "To define a type or part."@en ,
+                                "Um einen Typ oder ein Teil zu definieren."@de ;
+            rdfs:label "Part type"@en ,
+                       "Teil Typ"@de ,
+                       "Type de pièce"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Person
@@ -13097,13 +13087,13 @@ ec:PublicationChannel rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationChannelType
 ec:PublicationChannelType rdf:type owl:Class ;
-                           rdfs:subClassOf skos:Concept ;
-                           dcterms:description "Pour définir un type de canal de publication."@fr ,
-                                               "To define a type of publication channel."@en ,
-                                               "Um eine Art von Publikationskanal zu definieren."@de ;
-                           rdfs:label "Publication channel type"@en ,
-                                      "Publikationskanal-Typ"@de ,
-                                      "Type de canal de publication"@fr .
+                          rdfs:subClassOf skos:Concept ;
+                          dcterms:description "Pour définir un type de canal de publication."@fr ,
+                                              "To define a type of publication channel."@en ,
+                                              "Um eine Art von Publikationskanal zu definieren."@de ;
+                          rdfs:label "Publication channel type"@en ,
+                                     "Publikationskanal-Typ"@de ,
+                                     "Type de canal de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationEvent
@@ -13256,13 +13246,13 @@ ec:PublicationEvent rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationEventType
 ec:PublicationEventType rdf:type owl:Class ;
-                         rdfs:subClassOf skos:Concept ;
-                         dcterms:description "Pour définir un type d'événement de publication."@fr ,
-                                             "To define a type of publication event."@en ,
-                                             "Um eine Art von Publikationsereignis zu definieren."@de ;
-                         rdfs:label "Art der Veröffentlichung"@de ,
-                                    "Publication event type"@en ,
-                                    "Type d'événement de publication"@fr .
+                        rdfs:subClassOf skos:Concept ;
+                        dcterms:description "Pour définir un type d'événement de publication."@fr ,
+                                            "To define a type of publication event."@en ,
+                                            "Um eine Art von Publikationsereignis zu definieren."@de ;
+                        rdfs:label "Art der Veröffentlichung"@de ,
+                                   "Publication event type"@en ,
+                                   "Type d'événement de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationHistory
@@ -13425,13 +13415,13 @@ Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiée
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationPlanType
 ec:PublicationPlanType rdf:type owl:Class ;
-                        rdfs:subClassOf skos:Concept ;
-                        dcterms:description "Pour définir un type de plan de publication."@fr ,
-                                            "To define a type of publication plan."@en ,
-                                            "Um eine Art von Veröffentlichungsplan zu definieren."@de ;
-                        rdfs:label "Publication plan type"@en ,
-                                   "Publikationsplan Typ"@de ,
-                                   "Type de plan de publication"@fr .
+                       rdfs:subClassOf skos:Concept ;
+                       dcterms:description "Pour définir un type de plan de publication."@fr ,
+                                           "To define a type of publication plan."@en ,
+                                           "Um eine Art von Veröffentlichungsplan zu definieren."@de ;
+                       rdfs:label "Publication plan type"@en ,
+                                  "Publikationsplan Typ"@de ,
+                                  "Type de plan de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PublicationPlatform
@@ -13773,13 +13763,13 @@ ec:Relation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#RelationType
 ec:RelationType rdf:type owl:Class ;
-                 rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Pour spécifier un type de relation."@fr ,
-                                     "To specify a type of relation."@en ,
-                                     "Zur Angabe einer Art von Beziehung."@de ;
-                 rdfs:label "Beziehungstyp"@de ,
-                            "Relation type"@en ,
-                            "Type de relation"@fr .
+                rdfs:subClassOf skos:Concept ;
+                dcterms:description "Pour spécifier un type de relation."@fr ,
+                                    "To specify a type of relation."@en ,
+                                    "Zur Angabe einer Art von Beziehung."@de ;
+                rdfs:label "Beziehungstyp"@de ,
+                           "Relation type"@en ,
+                           "Type de relation"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Reminder
@@ -14033,13 +14023,13 @@ ec:Resource rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ResourceType
 ec:ResourceType rdf:type owl:Class ;
-                 rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Pour définir un type de ressource."@fr ,
-                                     "To define a type of resource."@en ,
-                                     "Um eine Art von Ressource zu definieren."@de ;
-                 rdfs:label "Resource type"@en ,
-                            "Ressourcentyp"@de ,
-                            "Type de ressource"@fr .
+                rdfs:subClassOf skos:Concept ;
+                dcterms:description "Pour définir un type de ressource."@fr ,
+                                    "To define a type of resource."@en ,
+                                    "Um eine Art von Ressource zu definieren."@de ;
+                rdfs:label "Resource type"@en ,
+                           "Ressourcentyp"@de ,
+                           "Type de ressource"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Review
@@ -14341,13 +14331,13 @@ ec:Series rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ServiceType
 ec:ServiceType rdf:type owl:Class ;
-                rdfs:subClassOf skos:Concept ;
-                dcterms:description "Pour définir un type de service."@fr ,
-                                    "To define a type of service."@en ,
-                                    "Um eine Art von Dienst zu definieren."@de ;
-                rdfs:label "Art der Dienstleistung"@de ,
-                           "Service type"@en ,
-                           "Type de service"@fr .
+               rdfs:subClassOf skos:Concept ;
+               dcterms:description "Pour définir un type de service."@fr ,
+                                   "To define a type of service."@en ,
+                                   "Um eine Art von Dienst zu definieren."@de ;
+               rdfs:label "Art der Dienstleistung"@de ,
+                          "Service type"@en ,
+                          "Type de service"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Shot
@@ -14495,13 +14485,13 @@ ec:Sticker rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#StorageType
 ec:StorageType rdf:type owl:Class ;
-                rdfs:subClassOf skos:Concept ;
-                dcterms:description "Die Art der Speicherung, die für das Repository verwendet wird. Dies wird als freier Text in einer Beschriftung oder als Bezeichner angegeben, der auf einen Begriff in einem Klassifizierungsschema verweist."@de ,
-                                    "Le type de stockage utilisé pour le référentiel. Il est fourni sous forme de texte libre dans une étiquette d'annotation ou sous forme d'identifiant pointant vers un terme dans un schéma de classification."@fr ,
-                                    "The type of storage used for the repository. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
-                rdfs:label "Art der Lagerung"@de ,
-                           "Storage type"@en ,
-                           "Type de stockage"@fr .
+               rdfs:subClassOf skos:Concept ;
+               dcterms:description "Die Art der Speicherung, die für das Repository verwendet wird. Dies wird als freier Text in einer Beschriftung oder als Bezeichner angegeben, der auf einen Begriff in einem Klassifizierungsschema verweist."@de ,
+                                   "Le type de stockage utilisé pour le référentiel. Il est fourni sous forme de texte libre dans une étiquette d'annotation ou sous forme d'identifiant pointant vers un terme dans un schéma de classification."@fr ,
+                                   "The type of storage used for the repository. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
+               rdfs:label "Art der Lagerung"@de ,
+                          "Storage type"@en ,
+                          "Type de stockage"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Stream
@@ -14750,13 +14740,13 @@ ec:TextLine rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TextLineType
 ec:TextLineType rdf:type owl:Class ;
-                 rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Pour définir un type TextLine."@fr ,
-                                     "To define a TextLine type."@en ,
-                                     "Um einen TextLine-Typ zu definieren."@de ;
-                 rdfs:label "Text line type"@en ,
-                            "Typ der Textzeile"@de ,
-                            "Type de ligne de texte"@fr .
+                rdfs:subClassOf skos:Concept ;
+                dcterms:description "Pour définir un type TextLine."@fr ,
+                                    "To define a TextLine type."@en ,
+                                    "Um einen TextLine-Typ zu definieren."@de ;
+                rdfs:label "Text line type"@en ,
+                           "Typ der Textzeile"@de ,
+                           "Type de ligne de texte"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TextUsageType
@@ -14914,13 +14904,13 @@ ec:TimelineTrack rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TimelineTrackType
 ec:TimelineTrackType rdf:type owl:Class ;
-                      rdfs:subClassOf skos:Concept ;
-                      dcterms:description "Pour spécifier un type ou un TimelineTrack."@fr ,
-                                          "To specify a type or TimelineTrack."@en ,
-                                          "Um einen Typ oder eine TimelineSpur anzugeben."@de ;
-                      rdfs:label "Timeline track type"@en ,
-                                 "Typ der Timeline-Spur"@de ,
-                                 "Type de piste de la ligne de temps"@fr .
+                     rdfs:subClassOf skos:Concept ;
+                     dcterms:description "Pour spécifier un type ou un TimelineTrack."@fr ,
+                                         "To specify a type or TimelineTrack."@en ,
+                                         "Um einen Typ oder eine TimelineSpur anzugeben."@de ;
+                     rdfs:label "Timeline track type"@en ,
+                                "Typ der Timeline-Spur"@de ,
+                                "Type de piste de la ligne de temps"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Topic
@@ -14978,13 +14968,13 @@ ec:TrackPurpose rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TrackType
 ec:TrackType rdf:type owl:Class ;
-              rdfs:subClassOf skos:Concept ;
-              dcterms:description "Pour définir un type de piste."@fr ,
-                                  "To define a type of track."@en ,
-                                  "Um eine Art von Track zu definieren."@de ;
-              rdfs:label "Spur Typ"@de ,
-                         "Track type"@en ,
-                         "Type de voie"@fr .
+             rdfs:subClassOf skos:Concept ;
+             dcterms:description "Pour définir un type de piste."@fr ,
+                                 "To define a type of track."@en ,
+                                 "Um eine Art von Track zu definieren."@de ;
+             rdfs:label "Spur Typ"@de ,
+                        "Track type"@en ,
+                        "Type de voie"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
