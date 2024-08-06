@@ -815,7 +815,6 @@ ec:hasAssociatedProductionOrder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedRelation
 ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:Relation ;
                          dcterms:description "Pour définir une Relation."@fr ,
                                              "To define a Relation."@en ,
                                              "Um eine Relation zu definieren."@de ;
