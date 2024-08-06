@@ -854,7 +854,6 @@ ec:hasAudioCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioDescription
 ec:hasAudioDescription rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:AudioDescription ;
                        dcterms:description "Pour signaler la présence de l'AudioDescription."@fr ,
                                            "To signal the presence of AudioDescription."@en ,
                                            "Um das Vorhandensein von AudioDescription zu signalisieren."@de ;
