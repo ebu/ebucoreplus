@@ -718,7 +718,6 @@ ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactSupplier
 ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Agent ;
                        dcterms:description "Pour identifier le fournisseur d'un artefact."@fr ,
                                            "To identify a supplier of an Artefact."@en ,
                                            "Um einen Anbieter eines Artefakts zu identifizieren."@de ;
