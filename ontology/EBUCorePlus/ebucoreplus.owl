@@ -832,7 +832,6 @@ ec:hasAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudienceScoreRecordingTechnique
 ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
-                                      rdfs:range skos:Concept ;
                                       dcterms:description "Die Technik zu identifizieren, die zur Messung eines Publikums verwendet wird."@de ,
                                                           "Identifier la technique utilisée pour mesurer une audience."@fr ,
                                                           "To identify the technique used to measure an audience."@en ;
