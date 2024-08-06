@@ -708,7 +708,6 @@ ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactRetailer
 ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Agent ;
                        dcterms:description "Identifier le détaillant d'un artefact."@fr ,
                                            "To identify the retailer of an Artefact."@en ,
                                            "Zur Identifizierung des Händlers eines Artefakts."@de ;
