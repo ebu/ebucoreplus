@@ -728,7 +728,6 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArticle
 ec:hasArticle rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Article ;
               rdfs:label "a article"@fr ,
                          "has article"@en ,
                          "hat Artikel"@de .
