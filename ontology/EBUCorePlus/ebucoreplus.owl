@@ -765,7 +765,6 @@ ec:hasAssetValueCurrency rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedArtefact
 ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:Artefact ;
                          dcterms:description "An Artefact related to an Agent."@en ,
                                              "Ein Artefakt, das mit einem Agent verbunden ist."@de ,
                                              "Un artefact lié à un agent."@fr ;
