@@ -678,6 +678,7 @@ ec:hasArtefactOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactPriceCurrency
 ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
+                            rdfs:range ec:CurrencyCode ;
                             dcterms:description "Pour spécifier la devise dans laquelle le prix d'un artefact est exprimé."@fr ,
                                                 "To specify the currency into which the price of an Artefact is expressed."@en ,
                                                 "Zur Angabe der Währung, in der der Preis eines Artefakts ausgedrückt wird."@de ;
@@ -688,6 +689,7 @@ ec:hasArtefactPriceCurrency rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactRelatedLocation
 ec:hasArtefactRelatedLocation rdf:type owl:ObjectProperty ;
+                              rdfs:range ec:Location ;
                               dcterms:description "Pour associer un Artefact/Prop ou autre à un Lieu."@fr ,
                                                   "To associate an Artefact/Prop or else with a Location."@en ,
                                                   "Um ein Artefakt/eine Requisite oder einen anderen Ort zuzuordnen."@de ;
@@ -698,6 +700,7 @@ ec:hasArtefactRelatedLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactRelatedPhysicalResource
 ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
+                                      rdfs:range ec:PhysicalResource ;
                                       dcterms:description "Pour associer un Artefact/Prop ou autre à une ressource physique."@fr ,
                                                           "To associate an Artefact/Prop or else with a physical resource."@en ,
                                                           "Um ein Artefakt/Prop oder eine andere physische Ressource zu verknüpfen."@de ;
@@ -708,6 +711,7 @@ ec:hasArtefactRelatedPhysicalResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactRetailer
 ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:Agent ;
                        dcterms:description "Identifier le détaillant d'un artefact."@fr ,
                                            "To identify the retailer of an Artefact."@en ,
                                            "Zur Identifizierung des Händlers eines Artefakts."@de ;
@@ -718,6 +722,7 @@ ec:hasArtefactRetailer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactSupplier
 ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:Agent ;
                        dcterms:description "Pour identifier le fournisseur d'un artefact."@fr ,
                                            "To identify a supplier of an Artefact."@en ,
                                            "Um einen Anbieter eines Artefakts zu identifizieren."@de ;
@@ -728,6 +733,7 @@ ec:hasArtefactSupplier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArticle
 ec:hasArticle rdf:type owl:ObjectProperty ;
+              rdfs:range ec:Article ;
               rdfs:label "a article"@fr ,
                          "has article"@en ,
                          "hat Artikel"@de .
@@ -765,6 +771,7 @@ ec:hasAssetValueCurrency rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedArtefact
 ec:hasAssociatedArtefact rdf:type owl:ObjectProperty ;
+                         rdfs:range ec:Artefact ;
                          dcterms:description "An Artefact related to an Agent."@en ,
                                              "Ein Artefakt, das mit einem Agent verbunden ist."@de ,
                                              "Un artefact lié à un agent."@fr ;
@@ -815,6 +822,7 @@ ec:hasAssociatedProductionOrder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAssociatedRelation
 ec:hasAssociatedRelation rdf:type owl:ObjectProperty ;
+                         rdfs:range ec:Relation ;
                          dcterms:description "Pour définir une Relation."@fr ,
                                              "To define a Relation."@en ,
                                              "Um eine Relation zu definieren."@de ;
@@ -832,6 +840,7 @@ ec:hasAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudienceScoreRecordingTechnique
 ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
+                                      rdfs:range skos:Concept ;
                                       dcterms:description "Die Technik zu identifizieren, die zur Messung eines Publikums verwendet wird."@de ,
                                                           "Identifier la technique utilisée pour mesurer une audience."@fr ,
                                                           "To identify the technique used to measure an audience."@en ;
@@ -854,6 +863,7 @@ ec:hasAudioCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioDescription
 ec:hasAudioDescription rdf:type owl:ObjectProperty ;
+                       rdfs:range ec:AudioDescription ;
                        dcterms:description "Pour signaler la présence de l'AudioDescription."@fr ,
                                            "To signal the presence of AudioDescription."@en ,
                                            "Um das Vorhandensein von AudioDescription zu signalisieren."@de ;
@@ -15267,8 +15277,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
