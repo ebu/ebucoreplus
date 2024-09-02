@@ -990,7 +990,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Character ;
                 dcterms:description "Pour identifier un personnage."@fr ,
                                     "Pour énumérer les personnages d'une fiction."@fr ,
                                     "To identify a character."@en ,
