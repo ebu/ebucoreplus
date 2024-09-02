@@ -948,7 +948,6 @@ ec:hasBusinessContract rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCaptioning
 ec:hasCaptioning rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Captioning ;
                  dcterms:description "Pour signaler la présence de sous-titres."@fr ,
                                      "To signal the presence of Captioning."@en ,
                                      "Zum Signalisieren der Anwesenheit von Untertitel."@de ;
