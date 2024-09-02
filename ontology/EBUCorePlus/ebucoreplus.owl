@@ -1014,7 +1014,6 @@ ec:hasClip rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClone
 ec:hasClone rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isCloneOf ;
-            rdfs:range ec:MediaResource ;
             dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
                                 "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
                                 "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
