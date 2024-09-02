@@ -980,7 +980,6 @@ ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCastMember
 ec:hasCastMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:CastMember ;
                  dcterms:description "A member of the cast."@en ,
                                      "Ein Mitglied der Besetzung."@de ,
                                      "Un membre de la distribution."@fr ;
