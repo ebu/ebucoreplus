@@ -906,7 +906,6 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
 ec:hasAuthor rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Agent ;
              dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
                                  "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
                                  "To link an Annotation to an Agent who created it."@en ;
