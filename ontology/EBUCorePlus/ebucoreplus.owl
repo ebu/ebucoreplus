@@ -928,7 +928,6 @@ ec:hasAwardDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
 ec:hasBrand rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Brand ;
             dcterms:description "Pour identifier une Marque."@fr ,
                                 "To identify a Brand."@en ,
                                 "Um eine Marke zu identifizieren."@de ;
