@@ -843,7 +843,6 @@ ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioCodec
 ec:hasAudioCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:range ec:AudioCodec ;
                  dcterms:description "Pour identifier le Codec audio"@fr ,
                                      "So identifizieren Sie den Audio Codec"@de ,
                                      "To identify the audio Codec"@en ;
