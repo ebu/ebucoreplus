@@ -843,7 +843,6 @@ ec:hasAudienceScoreRecordingTechnique rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioCodec
 ec:hasAudioCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:range ec:AudioCodec ;
                  dcterms:description "Pour identifier le Codec audio"@fr ,
                                      "So identifizieren Sie den Audio Codec"@de ,
                                      "To identify the audio Codec"@en ;
@@ -876,7 +875,6 @@ ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioTrack
 ec:hasAudioTrack rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:AudioTrack ;
                  dcterms:description "Pour identifier les AudioTracks dans la ressource."@fr ,
                                      "So identifizieren Sie Audiospuren in der Ressource."@de ,
                                      "To identify AudioTracks in the Resource."@en ;
@@ -907,7 +905,6 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
 ec:hasAuthor rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Agent ;
              dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
                                  "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
                                  "To link an Annotation to an Agent who created it."@en ;
@@ -930,7 +927,6 @@ ec:hasAwardDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasBrand
 ec:hasBrand rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Brand ;
             dcterms:description "Pour identifier une Marque."@fr ,
                                 "To identify a Brand."@en ,
                                 "Um eine Marke zu identifizieren."@de ;
@@ -951,7 +947,6 @@ ec:hasBusinessContract rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCaptioning
 ec:hasCaptioning rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Captioning ;
                  dcterms:description "Pour signaler la présence de sous-titres."@fr ,
                                      "To signal the presence of Captioning."@en ,
                                      "Zum Signalisieren der Anwesenheit von Untertitel."@de ;
@@ -974,7 +969,6 @@ ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCaptioningSource
 ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Agent ;
                        dcterms:description "Fournir des informations sur la source du sous-titrage."@fr ,
                                            "To provide information on the source of Captioning."@en ,
                                            "Um Informationen über die Quelle der Untertitelung bereitzustellen."@de ;
@@ -985,7 +979,6 @@ ec:hasCaptioningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCastMember
 ec:hasCastMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:CastMember ;
                  dcterms:description "A member of the cast."@en ,
                                      "Ein Mitglied der Besetzung."@de ,
                                      "Un membre de la distribution."@fr ;
@@ -996,7 +989,6 @@ ec:hasCastMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCharacter
 ec:hasCharacter rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Character ;
                 dcterms:description "Pour identifier un personnage."@fr ,
                                     "Pour énumérer les personnages d'une fiction."@fr ,
                                     "To identify a character."@en ,
@@ -1021,7 +1013,6 @@ ec:hasClip rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClone
 ec:hasClone rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isCloneOf ;
-            rdfs:range ec:MediaResource ;
             dcterms:description "Identifie la relation entre une instanciation numérique d'une MediaResource et sa copie directe, sans perte de génération."@fr ,
                                 "Identifies relationship between a digital instantiation of a MediaResource and its direct copy, with no generational loss."@en ,
                                 "Identifiziert die Beziehung zwischen einer digitalen Instanziierung einer MediaResource und ihrer direkten Kopie, ohne Generationsverlust."@de ;
@@ -1032,7 +1023,6 @@ ec:hasClone rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCodec
 ec:hasCodec rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Codec ;
             dcterms:description "Pour identifier un Codec utilisé pour créer une ressource."@fr ,
                                 "To identify a Codec used to create a resource."@en ,
                                 "Um einen Codec zu identifizieren, der zur Erstellung einer Ressource verwendet wird."@de ;
