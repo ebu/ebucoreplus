@@ -1129,7 +1129,6 @@ ec:hasConsumptionLicenceLink rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContact
 ec:hasContact rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Contact ;
               dcterms:description "Pour fournir des informations sur un contact pour une Organisation ou une personne physique (par exemple, l'agent d'un acteur)."@fr ,
                                   "To provide information on a Contact for an Organisation or a physical person (e.g. the agent of an actor)."@en ,
                                   "Zur Bereitstellung von Informationen über einen Kontakt für eine Organisation oder eine natürliche Person (z.B. den Agenten eines Schauspielers)."@de ;
