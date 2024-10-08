@@ -362,7 +362,6 @@ ec:coversConsumptionDevice rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversEvent
 ec:coversEvent rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasCoverage ;
-               rdfs:range ec:Event ;
                dcterms:description "A property to identify the Events, all real or fictional, covered by the EditorialObject"@en ,
                                    "Eine Eigenschaft zur Identifizierung der Ereignisse, alle real oder fiktiv, die vom EditorialObject abgedeckt werden"@de ,
                                    "Une propriété pour identifier les événements, tous réels ou fictifs, couverts par l'EditorialObject."@fr ;
