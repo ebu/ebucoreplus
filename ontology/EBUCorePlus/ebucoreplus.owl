@@ -1266,7 +1266,6 @@ ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCountryOfDeath
 ec:hasCountryOfDeath rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:CountryCode ;
                      dcterms:description "Das Land, in dem die Person gestorben ist"@de ,
                                          "Le pays où la personne est décédée"@fr ,
                                          "The country where the person died"@en ;
