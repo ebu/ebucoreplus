@@ -1256,7 +1256,6 @@ ec:hasCopyright rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCountryOfBirth
 ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:CountryCode ;
                      dcterms:description "Das Land, in dem eine Person geboren ist."@de ,
                                          "Le pays où une personne est née."@fr ,
                                          "The country where a person is born."@en ;
