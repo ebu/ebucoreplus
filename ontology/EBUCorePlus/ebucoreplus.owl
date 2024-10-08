@@ -1174,7 +1174,6 @@ ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContentEditorialFormat
 ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:ContentEditorialFormat ;
                              dcterms:description "Pour définir un format éditorial de contenu, par exemple un magazine."@fr ,
                                                  "To define a content editorial format e.g. magazine."@en ,
                                                  "Um ein redaktionelles Format zu definieren, z. B. ein Magazin."@de ;
