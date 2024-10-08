@@ -373,7 +373,6 @@ ec:coversEvent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversLocation
 ec:coversLocation rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasCoverage ;
-                  rdfs:range ec:Location ;
                   dcterms:description "A property to identify the Locations, all real or fictional, covered by the EditorialObject"@en ,
                                       "Eine Eigenschaft zur Identifizierung der realen oder fiktiven Orte, die von dem EditorialObject abgedeckt werden."@de ,
                                       "Une propriété pour identifier les lieux, tous réels ou fictifs, couverts par l'EditorialObject."@fr ;
