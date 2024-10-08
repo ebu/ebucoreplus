@@ -3659,7 +3659,6 @@ ec:hasVersionType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoCodec
 ec:hasVideoCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:range ec:VideoCodec ;
                  dcterms:description "Pour identifier un codec vidéo"@fr ,
                                      "So identifizieren Sie einen Videocodec"@de ,
                                      "To identify a video codec"@en ;
