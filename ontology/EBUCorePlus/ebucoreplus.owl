@@ -1033,7 +1033,6 @@ ec:hasCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCodecVendor
 ec:hasCodecVendor rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Pour fournir un nom pour le vendeur du Codec."@fr ,
                                       "To provide a name for the vendor of the Codec."@en ,
                                       "Um einen Namen für den Anbieter des Codecs anzugeben."@de ;
