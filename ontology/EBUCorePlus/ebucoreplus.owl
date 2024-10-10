@@ -362,7 +362,6 @@ ec:coversConsumptionDevice rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversEvent
 ec:coversEvent rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasCoverage ;
-               rdfs:range ec:Event ;
                dcterms:description "A property to identify the Events, all real or fictional, covered by the EditorialObject"@en ,
                                    "Eine Eigenschaft zur Identifizierung der Ereignisse, alle real oder fiktiv, die vom EditorialObject abgedeckt werden"@de ,
                                    "Une propriété pour identifier les événements, tous réels ou fictifs, couverts par l'EditorialObject."@fr ;
@@ -374,7 +373,6 @@ ec:coversEvent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#coversLocation
 ec:coversLocation rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasCoverage ;
-                  rdfs:range ec:Location ;
                   dcterms:description "A property to identify the Locations, all real or fictional, covered by the EditorialObject"@en ,
                                       "Eine Eigenschaft zur Identifizierung der realen oder fiktiven Orte, die von dem EditorialObject abgedeckt werden."@de ,
                                       "Une propriété pour identifier les lieux, tous réels ou fictifs, couverts par l'EditorialObject."@fr ;
@@ -1033,7 +1031,6 @@ ec:hasCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCodecVendor
 ec:hasCodecVendor rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Pour fournir un nom pour le vendeur du Codec."@fr ,
                                       "To provide a name for the vendor of the Codec."@en ,
                                       "Um einen Namen für den Anbieter des Codecs anzugeben."@de ;
@@ -1130,7 +1127,6 @@ ec:hasConsumptionLicenceLink rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContact
 ec:hasContact rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Contact ;
               dcterms:description "Pour fournir des informations sur un contact pour une Organisation ou une personne physique (par exemple, l'agent d'un acteur)."@fr ,
                                   "To provide information on a Contact for an Organisation or a physical person (e.g. the agent of an actor)."@en ,
                                   "Zur Bereitstellung von Informationen über einen Kontakt für eine Organisation oder eine natürliche Person (z.B. den Agenten eines Schauspielers)."@de ;
@@ -1142,7 +1138,6 @@ ec:hasContact rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContainerCodec
 ec:hasContainerCodec rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasCodec ;
-                     rdfs:range ec:ContainerCodec ;
                      dcterms:description "Pour identifier un codec de conteneur."@fr ,
                                          "To identify a container codec."@en ,
                                          "Um einen Container-Codec zu identifizieren."@de ;
@@ -1177,7 +1172,6 @@ ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContentEditorialFormat
 ec:hasContentEditorialFormat rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:ContentEditorialFormat ;
                              dcterms:description "Pour définir un format éditorial de contenu, par exemple un magazine."@fr ,
                                                  "To define a content editorial format e.g. magazine."@en ,
                                                  "Um ein redaktionelles Format zu definieren, z. B. ein Magazin."@de ;
@@ -1238,7 +1232,6 @@ ec:hasContractualParty rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContributor
 ec:hasContributor rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Involvement ;
                   dcterms:description "Pour identifier un contributeur à une Ressource, un EditorialObject, un Événement..."@fr ,
                                       "To identify a contributor to a Resource, a EditorialObject, an Event..."@en ,
                                       "Zur Identifizierung eines Mitwirkenden an einer Ressource, einem Redaktionsobjekt, einem Ereignis..."@de ;
@@ -1261,7 +1254,6 @@ ec:hasCopyright rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCountryOfBirth
 ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:CountryCode ;
                      dcterms:description "Das Land, in dem eine Person geboren ist."@de ,
                                          "Le pays où une personne est née."@fr ,
                                          "The country where a person is born."@en ;
@@ -1272,7 +1264,6 @@ ec:hasCountryOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCountryOfDeath
 ec:hasCountryOfDeath rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:CountryCode ;
                      dcterms:description "Das Land, in dem die Person gestorben ist"@de ,
                                          "Le pays où la personne est décédée"@fr ,
                                          "The country where the person died"@en ;
@@ -3660,7 +3651,6 @@ ec:hasVersionType rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoCodec
 ec:hasVideoCodec rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasCodec ;
-                 rdfs:range ec:VideoCodec ;
                  dcterms:description "Pour identifier un codec vidéo"@fr ,
                                      "So identifizieren Sie einen Videocodec"@de ,
                                      "To identify a video codec"@en ;
@@ -15257,8 +15247,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
