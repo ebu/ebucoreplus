@@ -1360,7 +1360,6 @@ ec:hasDataFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDataTrack
 ec:hasDataTrack rdf:type owl:ObjectProperty ;
-                rdfs:range ec:DataTrack ;
                 dcterms:description "Pour identifier les DataTracks dans la ressource."@fr ,
                                     "To identify DataTracks in the Resource."@en ,
                                     "Um DataTracks in der Ressource zu identifizieren."@de ;
