@@ -1380,7 +1380,6 @@ ec:hasDate rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateArchived
 ec:hasDateArchived rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:hasDate ;
-                   rdfs:range time:Instant ;
                    dcterms:description "Das Datum, an dem das Asset archiviert wurde."@de ,
                                        "La date à laquelle l'actif a été archivé."@fr ,
                                        "The date when the Asset was archived."@en ;
