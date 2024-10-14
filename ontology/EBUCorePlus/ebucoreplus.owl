@@ -1318,7 +1318,6 @@ ec:hasCreator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCrewMember
 ec:hasCrewMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:CrewMember ;
                  dcterms:description "A member of the crew."@en ,
                                      "Ein Mitglied der Besatzung."@de ,
                                      "Un membre de l'équipage."@fr ;
