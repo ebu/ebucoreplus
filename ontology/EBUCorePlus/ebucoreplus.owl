@@ -1370,7 +1370,6 @@ ec:hasDataTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDate
 ec:hasDate rdf:type owl:ObjectProperty ;
-           rdfs:range time:Instant ;
            dc:description "Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ;
            dcterms:description "A date associated to an Asset. Range: Litteral, on the instance level, this can be restricted to dateTime, date or another suitable format."@en ,
                                "Ein Datum, das mit einem Asset verbunden ist. Range: Litteral, auf Instanzebene kann dies auf dateTime, Datum oder ein anderes geeignetes Format beschränkt werden."@de ,
