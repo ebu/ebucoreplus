@@ -1328,7 +1328,6 @@ ec:hasCrewMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCuisineOrigin
 ec:hasCuisineOrigin rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:CountryCode ;
                     dcterms:description "Das Land/die Region, aus dem/der die Küche stammt"@de ,
                                         "Le pays/la région d'origine de la cuisine"@fr ,
                                         "The country/region of origin of the cuisine"@en ;
