@@ -912,7 +912,6 @@ ec:hasAuthor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAwardDate
 ec:hasAwardDate rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasDate ;
-                rdfs:range time:Instant ;
                 dcterms:description "Pour fournir une date à laquelle un prix a été livré."@fr ,
                                     "To provide an date when an Award was delivered."@en ,
                                     "Zur Angabe des Datums, an dem ein Award zugestellt wurde."@de ;
