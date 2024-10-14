@@ -654,7 +654,6 @@ ec:hasArtefactDateOfPurchase rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasArtefactDateOfSale
 ec:hasArtefactDateOfSale rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ec:hasDate ;
-                         rdfs:range time:Instant ;
                          dcterms:description "Das Datum, an dem ein Artefakt verkauft wurde."@de ,
                                              "La date à laquelle un artefact a été vendu."@fr ,
                                              "The date when an Artefact was sold."@en ;
