@@ -1413,7 +1413,6 @@ ec:hasDateCreated rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDeleted
 ec:hasDateDeleted rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem die Ressource gelöscht wurde."@de ,
                                       "La date à laquelle la ressource a été supprimée."@fr ,
                                       "The date when the Resource was deleted."@en ;
