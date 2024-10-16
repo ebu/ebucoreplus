@@ -1512,7 +1512,6 @@ ec:hasDateModified rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateNormalized
 ec:hasDateNormalized rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasDate ;
-                     rdfs:range time:Instant ;
                      dcterms:description "Das Datum, an dem die Ressource aus ihrem ursprünglichen Format in ein von der Institution für die Aufbewahrung ausgewähltes Format konvertiert wurde."@de ,
                                          "La date à laquelle la ressource a été convertie de son format original en un format présélectionné par l'institution pour la préservation."@fr ,
                                          "The date when the Resource was converted from its original format into a format pre-selected by the institution for preservation."@en ;
