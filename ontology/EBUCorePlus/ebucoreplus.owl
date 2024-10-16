@@ -1752,7 +1752,6 @@ ec:hasEnd rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEndDateTime
 ec:hasEndDateTime rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
                   dcterms:description "Das Ende eines Intervalls beschreiben"@de ,
                                       "Describing an end of an interval"@en ,
                                       "Décrit la fin d'un intervalle"@fr ;
