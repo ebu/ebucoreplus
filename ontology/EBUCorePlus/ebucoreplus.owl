@@ -1523,7 +1523,6 @@ ec:hasDateNormalized rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfBirth
 ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem ein Kontakt/eine Person geboren wird."@de ,
                                       "La date de naissance d'un contact/personne."@fr ,
                                       "The date when a Contact/Person is born."@en ;
