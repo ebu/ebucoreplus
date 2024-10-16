@@ -1501,7 +1501,6 @@ ec:hasDateMigrated rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateModified
 ec:hasDateModified rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:hasDate ;
-                   rdfs:range time:Instant ;
                    dcterms:description "Pour indiquer la date à laquelle l'actif a été modifié."@fr ,
                                        "To indicate the date at which the Asset has been modified."@en ,
                                        "Zur Angabe des Datums, an dem das Asset geändert wurde."@de ;
