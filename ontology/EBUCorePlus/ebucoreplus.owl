@@ -1402,7 +1402,6 @@ ec:hasDateBroadcast rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateCreated
 ec:hasDateCreated rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
                   dcterms:description "Das Datum der Erstellung des Assets."@de ,
                                       "La date de création de l'actif."@fr ,
                                       "The date of creation of the Asset."@en ;
