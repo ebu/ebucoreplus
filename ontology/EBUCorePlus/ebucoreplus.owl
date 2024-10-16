@@ -1589,7 +1589,6 @@ ec:hasDateTransferred rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateValidated
 ec:hasDateValidated rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf ec:hasDate ;
-                    rdfs:range time:Instant ;
                     dcterms:description "Das letzte Datum, an dem die Ressource durch manuelle oder digitale QC als gültig bestätigt wurde."@de ,
                                         "La date la plus récente à laquelle la validité de la ressource a été confirmée par un CQ manuel ou numérique."@fr ,
                                         "The most recent date when the Resource was confirmed to be valid through manual or digital QC."@en ;
