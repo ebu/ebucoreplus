@@ -1446,7 +1446,6 @@ ec:hasDateDistributed rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIngested
 ec:hasDateIngested rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:hasDate ;
-                   rdfs:range time:Instant ;
                    dcterms:description "Das Datum, an dem die Ressource in den institutionellen Bestand aufgenommen/erworben wurde."@de ,
                                        "La date à laquelle la ressource a été ingérée/acquise dans les fonds institutionnels."@fr ,
                                        "The date when the Resource was ingested/acquired in institutional holdings."@en ;
