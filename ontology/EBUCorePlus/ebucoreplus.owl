@@ -1424,7 +1424,6 @@ ec:hasDateDeleted rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateDigitised
 ec:hasDateDigitised rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf ec:hasDate ;
-                    rdfs:range time:Instant ;
                     dcterms:description "Das Datum, an dem die Ressource digitalisiert wurde."@de ,
                                         "La date à laquelle la ressource a été numérisée."@fr ,
                                         "The date when the Resource was digitised."@en ;
