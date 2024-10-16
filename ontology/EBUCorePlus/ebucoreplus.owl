@@ -1534,7 +1534,6 @@ ec:hasDateOfBirth rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfDeath
 ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasDate ;
-                  rdfs:range time:Instant ;
                   dcterms:description "Das Datum, an dem ein Kontakt/eine Person verstorben ist."@de ,
                                       "La date à laquelle un contact/personne est décédé."@fr ,
                                       "The date when a Contact/Person has passed away."@en ;
