@@ -1545,7 +1545,6 @@ ec:hasDateOfDeath rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateOfRetirement
 ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasDate ;
-                       rdfs:range time:Instant ;
                        dcterms:description "Das Datum, an dem ein Kontakt/eine Person in den Ruhestand getreten ist."@de ,
                                            "La date à laquelle un contact/personne a pris sa retraite."@fr ,
                                            "The date when a Contact/Person has retired."@en ;
