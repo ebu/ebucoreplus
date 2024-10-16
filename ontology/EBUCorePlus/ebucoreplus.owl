@@ -1391,7 +1391,6 @@ ec:hasDateArchived rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateBroadcast
 ec:hasDateBroadcast rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf ec:hasDate ;
-                    rdfs:range time:Instant ;
                     dcterms:description "Das Datum, an dem der Asset zum ersten Mal öffentlich im Fernsehen, Radio oder per Streaming ausgestrahlt wurde."@de ,
                                         "La date à laquelle l'actif a été diffusé pour la première fois en public à la télévision ou à la radio ou par streaming."@fr ,
                                         "The date when the Asset was first broadcast publicly on television or radio or via streaming."@en ;
