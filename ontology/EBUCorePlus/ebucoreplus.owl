@@ -1578,7 +1578,6 @@ ec:hasDateReleased rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateTransferred
 ec:hasDateTransferred rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasDate ;
-                      rdfs:range time:Instant ;
                       dcterms:description "Das Datum, an dem das Asset von einem digitalen oder physischen Ort zu einem anderen verschoben wurde."@de ,
                                           "La date à laquelle l'actif a été déplacé d'un emplacement numérique ou physique à un autre."@fr ,
                                           "The date when the Asset was moved from one digital or physical location to another."@en ;
