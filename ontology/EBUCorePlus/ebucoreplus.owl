@@ -1556,7 +1556,6 @@ ec:hasDateOfRetirement rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateProduced
 ec:hasDateProduced rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf ec:hasDate ;
-                   rdfs:range time:Instant ;
                    dcterms:description "Das Datum der Produktion des Assets."@de ,
                                        "La date de production de l'actif."@fr ,
                                        "The date of production of the Asset."@en ;
