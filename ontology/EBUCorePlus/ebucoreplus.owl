@@ -1468,7 +1468,6 @@ ec:hasDateIssued rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateLicenseEnd
 ec:hasDateLicenseEnd rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasDate ;
-                     rdfs:range time:Instant ;
                      dcterms:description "Das Datum, an dem die Lizenz für das Asset endet."@de ,
                                          "La date à laquelle la licence de l'actif prend fin."@fr ,
                                          "The date when the licence for the Asset ends."@en ;
