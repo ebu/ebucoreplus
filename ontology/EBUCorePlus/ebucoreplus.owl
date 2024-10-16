@@ -1457,7 +1457,6 @@ ec:hasDateIngested rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDateIssued
 ec:hasDateIssued rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasDate ;
-                 rdfs:range time:Instant ;
                  dcterms:description "Das Datum, an dem das Asset ausgegeben wurde."@de ,
                                      "La date à laquelle l'actif a été émis."@fr ,
                                      "The date when the Asset was issued."@en ;
