@@ -1786,7 +1786,6 @@ ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFileFormat
 ec:hasFileFormat rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:FileFormat ;
                  dcterms:description "Das Format einer Datei."@de ,
                                      "Le format d'un fichier."@fr ,
                                      "The format of a file."@en ;
