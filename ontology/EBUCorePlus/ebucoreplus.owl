@@ -3605,7 +3605,6 @@ ec:hasVideoCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoEncodingFormat
 ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:VideoEncodingFormat ;
                           dcterms:description "Pour spécifier le format d'encodage vidéo."@fr ,
                                               "To specify the video encoding format."@en ,
                                               "Zur Angabe des Videocodierungsformats."@de ;
