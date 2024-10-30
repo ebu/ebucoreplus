@@ -1776,7 +1776,6 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFictitiousPerson
 ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Person ;
                        dcterms:description "Pour identifier un contact/personne fictive."@fr ,
                                            "To identify a Contact/Person being fictitious."@en ,
                                            "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
