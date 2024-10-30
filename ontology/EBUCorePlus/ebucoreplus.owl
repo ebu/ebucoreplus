@@ -951,7 +951,6 @@ ec:hasCaptioning rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCaptioningFormat
 ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:range ec:CaptioningFormat ;
                        dcterms:description "Das Format der Untertitelung."@de ,
                                            "Le format du sous-titrage."@fr ,
                                            "The format of Captioning."@en ;
