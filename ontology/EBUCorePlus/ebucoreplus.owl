@@ -1817,7 +1817,6 @@ ec:hasFormatId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatVersionId
 ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Identifier ;
                       dcterms:description "A version identifier attributed to a Format."@en ,
                                           "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
                                           "Un identifiant de version attribué à un format."@fr ;
