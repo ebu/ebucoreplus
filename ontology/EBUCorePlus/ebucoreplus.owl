@@ -2191,7 +2191,6 @@ ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMimeType
 ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:range ec:MimeType ;
                dcterms:description "Pour spécifier le type Mime d'une ressource."@fr ,
                                    "To specify the Mime type of a Resource."@en ,
                                    "Um den Mime-Typ einer Ressource anzugeben."@de ;
