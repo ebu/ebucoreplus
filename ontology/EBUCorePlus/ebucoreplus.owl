@@ -1807,7 +1807,6 @@ ec:hasFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatId
 ec:hasFormatId rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Identifier ;
                dcterms:description "An identifier attributed to a Format."@en ,
                                    "Ein Identifikator, der einem Format zugeordnet ist."@de ,
                                    "Un identifiant attribué à un format."@fr ;
