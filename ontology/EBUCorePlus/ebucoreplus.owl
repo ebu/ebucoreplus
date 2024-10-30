@@ -1664,7 +1664,6 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDub
 ec:hasDub rdf:type owl:ObjectProperty ;
           owl:inverseOf ec:isDubOf ;
-          rdfs:range ec:MediaResource ;
           dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
                               "la ressource a une autre version linguistique"@fr ,
                               "the resource have another languageversion"@en ;
