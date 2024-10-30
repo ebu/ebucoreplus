@@ -859,7 +859,6 @@ ec:hasAudioDescription rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioEncodingFormat
 ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:AudioEncodingFormat ;
                           dcterms:description "Pour spécifier le format d'encodage audio."@fr ,
                                               "To specify the audio encoding format."@en ,
                                               "Zur Angabe des Audio-Codierungsformats."@de ;
