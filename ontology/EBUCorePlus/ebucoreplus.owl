@@ -1738,8 +1738,7 @@ ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEnd
-ec:hasEnd rdf:type owl:ObjectProperty ;
-          rdfs:range ec:TimelinePoint .
+ec:hasEnd rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEndDateTime
