@@ -1036,7 +1036,6 @@ ec:hasCodecVendor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasColourSpace
 ec:hasColourSpace rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasFormat ;
-                  rdfs:range ec:ColourSpace ;
                   dcterms:description "Pour décrire l'espace couleur."@fr ,
                                       "To describe the colour space."@en ,
                                       "Zur Beschreibung des Farbraums."@de ;
