@@ -2147,7 +2147,6 @@ ec:hasMediaFragment rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMedium
 ec:hasMedium rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ec:hasFormat ;
-             rdfs:range ec:Medium ;
              dcterms:description "Pour spécifier le support sur lequel la ressource est disponible."@fr ,
                                  "To specify the medium on which the Resource is available."@en ,
                                  "Zur Angabe des Mediums, auf dem die Ressource verfügbar ist."@de ;
