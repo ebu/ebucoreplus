@@ -1690,7 +1690,6 @@ ec:hasDuration rdf:type owl:ObjectProperty .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormatOf
 ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
                                             "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
                                             "To identify an Editorial Object based on the same Editorial format"@en ;
