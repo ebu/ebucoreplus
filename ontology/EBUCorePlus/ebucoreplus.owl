@@ -1340,7 +1340,6 @@ ec:hasCuisineStyle rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDataFormat
 ec:hasDataFormat rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasFormat ;
-                 rdfs:range ec:DataFormat ;
                  dcterms:description "Pour décrire le format des données transportées dans une ressource."@fr ,
                                      "To describe the format of data carried in a resource."@en ,
                                      "Zur Beschreibung des Formats der in einer Ressource enthaltenen Daten."@de ;
