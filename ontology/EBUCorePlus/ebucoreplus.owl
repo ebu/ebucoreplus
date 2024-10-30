@@ -1631,7 +1631,6 @@ ec:hasDisclaimer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisplayAspectRatio
 ec:hasDisplayAspectRatio rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:ActiveFormatDescriptorCode ;
                          dcterms:description "Das Seitenverhältnis bei der Anzeige."@de ,
                                              "Le rapport d'aspect lors de l'affichage."@fr ,
                                              "The aspect ratio when displayed."@en ;
