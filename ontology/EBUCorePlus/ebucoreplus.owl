@@ -1635,7 +1635,6 @@ ec:hasDisplayAspectRatio rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDocumentFormat
 ec:hasDocumentFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
-                     rdfs:range ec:DocumentFormat ;
                      dcterms:description "Pour décrire le format d'un document."@fr ,
                                          "To describe the format of a Document."@en ,
                                          "Zur Beschreibung des Formats eines Dokuments."@de ;
