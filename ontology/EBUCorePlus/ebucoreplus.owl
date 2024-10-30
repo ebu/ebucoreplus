@@ -1717,7 +1717,6 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
 ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Artefact ;
                         dcterms:description "Character depicted by an Artifact"@en ,
                                             "Personnage représenté par un artefact"@fr ,
                                             "Von einem Artefakt dargestellter Charakter"@de ;
