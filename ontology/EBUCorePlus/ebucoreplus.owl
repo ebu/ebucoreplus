@@ -541,7 +541,6 @@ ec:hasAncillaryData rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAncillaryDataFormat
 ec:hasAncillaryDataFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:AncillaryDataFormat ;
                           dcterms:description "das Format der Zusatzdaten."@de ,
                                               "le format des données auxiliaires."@fr ,
                                               "the format of ancillary data."@en ;
