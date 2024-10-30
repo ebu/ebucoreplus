@@ -1653,7 +1653,6 @@ ec:hasDocumentFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDopesheet
 ec:hasDopesheet rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Dopesheet ;
                 dcterms:description "Das Dossier eines NewsItems."@de ,
                                     "La feuille de dopage d'un NewsItem."@fr ,
                                     "The dopesheet of a NewsItem."@en ;
