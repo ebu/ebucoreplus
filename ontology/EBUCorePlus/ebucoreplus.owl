@@ -3214,7 +3214,6 @@ ec:hasStakeholder rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStandard
 ec:hasStandard rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:range ec:Standard ;
                dcterms:description "Identifie la norme vidéo technique d'une MediaResource, c'est-à-dire NTSC ou PAL."@fr ,
                                    "Identifies the technical video standard of a MediaResource, i.e. NTSC or PAL."@en ,
                                    "Identifiziert den technischen Videostandard einer MediaResource, d.h. NTSC oder PAL."@de ;
