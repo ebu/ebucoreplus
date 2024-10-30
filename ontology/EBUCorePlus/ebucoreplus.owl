@@ -1720,7 +1720,6 @@ ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEncodingFormat
 ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
-                     rdfs:range ec:EncodingFormat ;
                      dcterms:description "Pour décrire tout format d'encodage utilisé pour produire du contenu."@fr ,
                                          "To describe any encoding format use to produce content."@en ,
                                          "Zur Beschreibung eines beliebigen Kodierungsformats, das zur Erstellung von Inhalten verwendet wird."@de ;
