@@ -1153,7 +1153,6 @@ ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContainerMimeType
 ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:hasFormat ;
-                        rdfs:range ec:MimeType ;
                         dcterms:description "Pour fournir le type Mime de la ressource."@fr ,
                                             "To provide the Mime type of the Resource."@en ,
                                             "Zur Angabe des Mime-Typs der Ressource."@de ;
