@@ -1599,7 +1599,6 @@ ec:hasDateValidated rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
 ec:hasDepartment rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Department ;
                  dcterms:description "Pour identifier un département dans une organisation."@fr ,
                                      "To identify a department in an organisation."@en ,
                                      "Zur Identifizierung einer Abteilung in einer Organisation."@de ;
