@@ -1142,7 +1142,6 @@ ec:hasContainerCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContainerEncodingFormat
 ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf ec:hasFormat ;
-                              rdfs:range ec:ContainerEncodingFormat ;
                               dcterms:description "Pour décrire le format d'encodage du conteneur."@fr ,
                                                   "To describe the container encoding format."@en ,
                                                   "Zur Beschreibung des Container-Kodierungsformats."@de ;
