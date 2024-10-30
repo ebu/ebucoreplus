@@ -1796,7 +1796,6 @@ ec:hasFileFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFoodStyle
 ec:hasFoodStyle rdf:type owl:ObjectProperty ;
-                rdfs:range ec:FoodStyle ;
                 dcterms:description "Der Stil des Essens."@de ,
                                     "Le style de la nourriture."@fr ,
                                     "The style of Food."@en ;
