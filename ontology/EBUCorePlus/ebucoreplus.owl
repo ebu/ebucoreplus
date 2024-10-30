@@ -1806,7 +1806,6 @@ ec:hasFoodStyle rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormat
 ec:hasFormat rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Format ;
              dcterms:description "Pour identifier un format"@fr ,
                                  "So identifizieren Sie ein Format"@de ,
                                  "To identify a Format"@en ;
