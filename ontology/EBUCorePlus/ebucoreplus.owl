@@ -541,7 +541,6 @@ ec:hasAncillaryData rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAncillaryDataFormat
 ec:hasAncillaryDataFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:AncillaryDataFormat ;
                           dcterms:description "das Format der Zusatzdaten."@de ,
                                               "le format des données auxiliaires."@fr ,
                                               "the format of ancillary data."@en ;
@@ -860,7 +859,6 @@ ec:hasAudioDescription rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioEncodingFormat
 ec:hasAudioEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:AudioEncodingFormat ;
                           dcterms:description "Pour spécifier le format d'encodage audio."@fr ,
                                               "To specify the audio encoding format."@en ,
                                               "Zur Angabe des Audio-Codierungsformats."@de ;
@@ -953,7 +951,6 @@ ec:hasCaptioning rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCaptioningFormat
 ec:hasCaptioningFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:range ec:CaptioningFormat ;
                        dcterms:description "Das Format der Untertitelung."@de ,
                                            "Le format du sous-titrage."@fr ,
                                            "The format of Captioning."@en ;
@@ -1039,7 +1036,6 @@ ec:hasCodecVendor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasColourSpace
 ec:hasColourSpace rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasFormat ;
-                  rdfs:range ec:ColourSpace ;
                   dcterms:description "Pour décrire l'espace couleur."@fr ,
                                       "To describe the colour space."@en ,
                                       "Zur Beschreibung des Farbraums."@de ;
@@ -1146,7 +1142,6 @@ ec:hasContainerCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContainerEncodingFormat
 ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf ec:hasFormat ;
-                              rdfs:range ec:ContainerEncodingFormat ;
                               dcterms:description "Pour décrire le format d'encodage du conteneur."@fr ,
                                                   "To describe the container encoding format."@en ,
                                                   "Zur Beschreibung des Container-Kodierungsformats."@de ;
@@ -1158,7 +1153,6 @@ ec:hasContainerEncodingFormat rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasContainerMimeType
 ec:hasContainerMimeType rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:hasFormat ;
-                        rdfs:range ec:MimeType ;
                         dcterms:description "Pour fournir le type Mime de la ressource."@fr ,
                                             "To provide the Mime type of the Resource."@en ,
                                             "Zur Angabe des Mime-Typs der Ressource."@de ;
@@ -1346,7 +1340,6 @@ ec:hasCuisineStyle rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDataFormat
 ec:hasDataFormat rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasFormat ;
-                 rdfs:range ec:DataFormat ;
                  dcterms:description "Pour décrire le format des données transportées dans une ressource."@fr ,
                                      "To describe the format of data carried in a resource."@en ,
                                      "Zur Beschreibung des Formats der in einer Ressource enthaltenen Daten."@de ;
@@ -1599,7 +1592,6 @@ ec:hasDateValidated rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDepartment
 ec:hasDepartment rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Department ;
                  dcterms:description "Pour identifier un département dans une organisation."@fr ,
                                      "To identify a department in an organisation."@en ,
                                      "Zur Identifizierung einer Abteilung in einer Organisation."@de ;
@@ -1632,7 +1624,6 @@ ec:hasDisclaimer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisplayAspectRatio
 ec:hasDisplayAspectRatio rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:ActiveFormatDescriptorCode ;
                          dcterms:description "Das Seitenverhältnis bei der Anzeige."@de ,
                                              "Le rapport d'aspect lors de l'affichage."@fr ,
                                              "The aspect ratio when displayed."@en ;
@@ -1644,7 +1635,6 @@ ec:hasDisplayAspectRatio rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDocumentFormat
 ec:hasDocumentFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
-                     rdfs:range ec:DocumentFormat ;
                      dcterms:description "Pour décrire le format d'un document."@fr ,
                                          "To describe the format of a Document."@en ,
                                          "Zur Beschreibung des Formats eines Dokuments."@de ;
@@ -1655,7 +1645,6 @@ ec:hasDocumentFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDopesheet
 ec:hasDopesheet rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Dopesheet ;
                 dcterms:description "Das Dossier eines NewsItems."@de ,
                                     "La feuille de dopage d'un NewsItem."@fr ,
                                     "The dopesheet of a NewsItem."@en ;
@@ -1667,7 +1656,6 @@ ec:hasDopesheet rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDub
 ec:hasDub rdf:type owl:ObjectProperty ;
           owl:inverseOf ec:isDubOf ;
-          rdfs:range ec:MediaResource ;
           dcterms:description "die Ressource eine andere Sprachversion hat"@de ,
                               "la ressource a une autre version linguistique"@fr ,
                               "the resource have another languageversion"@en ;
@@ -1689,13 +1677,11 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDuration
-ec:hasDuration rdf:type owl:ObjectProperty ;
-               rdfs:range ec:TimelinePoint .
+ec:hasDuration rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormatOf
 ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
                                             "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
                                             "To identify an Editorial Object based on the same Editorial format"@en ;
@@ -1723,7 +1709,6 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
 ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Artefact ;
                         dcterms:description "Character depicted by an Artifact"@en ,
                                             "Personnage représenté par un artefact"@fr ,
                                             "Von einem Artefakt dargestellter Charakter"@de ;
@@ -1735,7 +1720,6 @@ ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEncodingFormat
 ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasFormat ;
-                     rdfs:range ec:EncodingFormat ;
                      dcterms:description "Pour décrire tout format d'encodage utilisé pour produire du contenu."@fr ,
                                          "To describe any encoding format use to produce content."@en ,
                                          "Zur Beschreibung eines beliebigen Kodierungsformats, das zur Erstellung von Inhalten verwendet wird."@de ;
@@ -1745,8 +1729,7 @@ ec:hasEncodingFormat rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEnd
-ec:hasEnd rdf:type owl:ObjectProperty ;
-          rdfs:range ec:TimelinePoint .
+ec:hasEnd rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEndDateTime
@@ -1762,7 +1745,6 @@ ec:hasEndDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisode
 ec:hasEpisode rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Programme ;
               dcterms:description "Pour identifier les épisodes d'une série"@fr ,
                                   "So identifizieren Sie Episoden einer Serie"@de ,
                                   "To identify Episodes in a Series"@en ;
@@ -1785,7 +1767,6 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFictitiousPerson
 ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Person ;
                        dcterms:description "Pour identifier un contact/personne fictive."@fr ,
                                            "To identify a Contact/Person being fictitious."@en ,
                                            "Um einen Kontakt/eine Person als fiktiv zu identifizieren."@de ;
@@ -1796,7 +1777,6 @@ ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFileFormat
 ec:hasFileFormat rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:FileFormat ;
                  dcterms:description "Das Format einer Datei."@de ,
                                      "Le format d'un fichier."@fr ,
                                      "The format of a file."@en ;
@@ -1807,7 +1787,6 @@ ec:hasFileFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFoodStyle
 ec:hasFoodStyle rdf:type owl:ObjectProperty ;
-                rdfs:range ec:FoodStyle ;
                 dcterms:description "Der Stil des Essens."@de ,
                                     "Le style de la nourriture."@fr ,
                                     "The style of Food."@en ;
@@ -1818,7 +1797,6 @@ ec:hasFoodStyle rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormat
 ec:hasFormat rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Format ;
              dcterms:description "Pour identifier un format"@fr ,
                                  "So identifizieren Sie ein Format"@de ,
                                  "To identify a Format"@en ;
@@ -1829,7 +1807,6 @@ ec:hasFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatId
 ec:hasFormatId rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Identifier ;
                dcterms:description "An identifier attributed to a Format."@en ,
                                    "Ein Identifikator, der einem Format zugeordnet ist."@de ,
                                    "Un identifiant attribué à un format."@fr ;
@@ -1840,7 +1817,6 @@ ec:hasFormatId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFormatVersionId
 ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Identifier ;
                       dcterms:description "A version identifier attributed to a Format."@en ,
                                           "Ein Versionsbezeichner, der einem Format zugeordnet ist."@de ,
                                           "Un identifiant de version attribué à un format."@fr ;
@@ -2169,7 +2145,6 @@ ec:hasMediaFragment rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMedium
 ec:hasMedium rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf ec:hasFormat ;
-             rdfs:range ec:Medium ;
              dcterms:description "Pour spécifier le support sur lequel la ressource est disponible."@fr ,
                                  "To specify the medium on which the Resource is available."@en ,
                                  "Zur Angabe des Mediums, auf dem die Ressource verfügbar ist."@de ;
@@ -2214,7 +2189,6 @@ ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMimeType
 ec:hasMimeType rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:range ec:MimeType ;
                dcterms:description "Pour spécifier le type Mime d'une ressource."@fr ,
                                    "To specify the Mime type of a Resource."@en ,
                                    "Um den Mime-Typ einer Ressource anzugeben."@de ;
@@ -3238,7 +3212,6 @@ ec:hasStakeholder rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStandard
 ec:hasStandard rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ec:hasFormat ;
-               rdfs:range ec:Standard ;
                dcterms:description "Identifie la norme vidéo technique d'une MediaResource, c'est-à-dire NTSC ou PAL."@fr ,
                                    "Identifies the technical video standard of a MediaResource, i.e. NTSC or PAL."@en ,
                                    "Identifiziert den technischen Videostandard einer MediaResource, d.h. NTSC oder PAL."@de ;
@@ -3258,7 +3231,6 @@ ec:hasStart rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStartDateTime
 ec:hasStartDateTime rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf ec:hasDate ;
-                    rdfs:range time:Instant ;
                     dcterms:description "A point of time or start of an interval"@en ,
                                         "Ein Zeitpunkt oder der Beginn eines Intervalls"@de ,
                                         "Un instant ou l'nstant de départ d'un intervalle"@fr ;
@@ -3335,7 +3307,6 @@ ec:hasSubtitling rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitlingFormat
 ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasFormat ;
-                       rdfs:range ec:SubtitlingFormat ;
                        dcterms:description "Das Format der Untertitelung."@de ,
                                            "Le format du sous-titrage."@fr ,
                                            "The format of Subtitling."@en ;
@@ -3632,7 +3603,6 @@ ec:hasVideoCodec rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoEncodingFormat
 ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ec:hasFormat ;
-                          rdfs:range ec:VideoEncodingFormat ;
                           dcterms:description "Pour spécifier le format d'encodage vidéo."@fr ,
                                               "To specify the video encoding format."@en ,
                                               "Zur Angabe des Videocodierungsformats."@de ;
@@ -15217,8 +15187,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
