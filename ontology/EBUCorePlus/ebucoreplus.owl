@@ -2047,7 +2047,6 @@ ec:hasLocationCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationPicture
 ec:hasLocationPicture rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Picture ;
                       dcterms:description "A picture associated with a Location."@en ,
                                           "Ein Bild, das mit einem Ort verbunden ist."@de ,
                                           "Une image associée à un emplacement."@fr ;
