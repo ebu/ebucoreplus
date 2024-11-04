@@ -2136,7 +2136,6 @@ ec:hasMedium rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMember
 ec:hasMember rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isMemberOf ;
-             rdfs:range ec:EditorialObject ;
              dcterms:description "Pour établir une relation de groupe/collection entre les EditorialObjects."@fr ,
                                  "To establish group/collection relationship between EditorialObjects."@en ,
                                  "Um eine Gruppen-/Sammlungsbeziehung zwischen EditorialObjects herzustellen."@de ;
