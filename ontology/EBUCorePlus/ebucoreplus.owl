@@ -2156,7 +2156,6 @@ ec:hasMemberAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMetadataTrack
 ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:MetadataTrack ;
                     dcterms:description "Pour identifier les MetadataTracks dans la ressource."@fr ,
                                         "So identifizieren Sie MetadataTracks in der Ressource."@de ,
                                         "To identify MetadataTracks in the Resource."@en ;
