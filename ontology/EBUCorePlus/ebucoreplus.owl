@@ -2114,7 +2114,6 @@ ec:hasMeasurementAgent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMediaFragment
 ec:hasMediaFragment rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isMediaFragmentOf ;
-                    rdfs:range ec:MediaFragment ;
                     dcterms:description "Pour définir la relation avec les MediaFragments au sein d'une MediaResource."@fr ,
                                         "So definieren Sie die Beziehung zu MediaFragmenten innerhalb einer MediaResource zu definieren."@de ,
                                         "To define relation to MediaFragments withiin a MediaResource."@en ;
