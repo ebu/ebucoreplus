@@ -2210,7 +2210,6 @@ ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOriginalLanguage
 ec:hasOriginalLanguage rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasLanguage ;
-                       rdfs:range ec:Language ;
                        dcterms:description "Pour définir la langue d'origine d'un actif."@fr ,
                                            "So definieren Sie die Originalsprache eines Assets."@de ,
                                            "To define the original language of an Asset."@en ;
