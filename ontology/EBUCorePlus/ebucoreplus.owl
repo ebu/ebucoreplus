@@ -2057,7 +2057,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Locator ;
               dcterms:description "A locator from where the Resource can be accessed."@en ,
                                   "Ein Locator, von dem aus auf die Ressource zugegriffen werden kann."@de ,
                                   "Un localisateur à partir duquel la ressource est accessible."@fr ;
