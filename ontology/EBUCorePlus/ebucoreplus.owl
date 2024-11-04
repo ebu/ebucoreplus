@@ -2177,7 +2177,6 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasObjectType
 ec:hasObjectType rdf:type owl:ObjectProperty ;
-                 rdfs:range skos:Concept ;
                  dcterms:description "Die Art oder das Genre der Ressource."@de ,
                                      "Le type ou le genre de la ressource."@fr ,
                                      "The kind or genre of the resource."@en ;
