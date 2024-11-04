@@ -1827,7 +1827,6 @@ ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeneration
 ec:hasGeneration rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:MediaResource ;
                  dcterms:description "Identifie la génération d'une version d'une ressource, c'est-à-dire master, maître de modification, copie de distribution, etc."@fr ,
                                      "Identifies the generation of a version of a resource, i.e. master, edit master, distribution copy, etc."@en ,
                                      "Identifiziert die Erzeugung einer Version einer Ressource, d.h. Master, Master bearbeiten, Verteilungskopie, etc."@de ;
