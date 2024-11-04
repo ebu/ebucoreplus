@@ -1893,7 +1893,6 @@ ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIdPicture
 ec:hasIdPicture rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Picture ;
                 dcterms:description "Fournir un lien vers une photo d'identification."@fr ,
                                     "To provide a link to an identification picture."@en ,
                                     "Um einen Link zu einem Identifikationsbild bereitzustellen."@de ;
