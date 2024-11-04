@@ -2026,7 +2026,6 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Location ;
                dcterms:description "A location assosiated with the object or consept"@en ,
                                    "Ein Ort, der mit dem Objekt oder Gegenstand verbunden ist"@de ,
                                    "Un emplacement associé à l'objet ou au consept."@fr ;
