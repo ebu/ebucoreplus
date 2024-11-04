@@ -1847,7 +1847,6 @@ ec:hasGenre rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingBlacklist
 ec:hasGeoBlockingBlacklist rdf:type owl:ObjectProperty ;
-                           rdfs:range skos:Concept ;
                            dcterms:description "checking a users IP-address against a blacklist"@en ,
                                                "vérification de l'adresse IP d'un utilisateur par rapport à une liste noire"@fr ,
                                                "Überprüfung der IP-Adresse eines Benutzers anhand einer schwarzen Liste"@de ;
