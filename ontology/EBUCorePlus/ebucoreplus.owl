@@ -1963,7 +1963,6 @@ ec:hasInputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIssuer
 ec:hasIssuer rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Agent ;
              dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
                                  "To identify the issuer of an identifier."@en ,
                                  "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
