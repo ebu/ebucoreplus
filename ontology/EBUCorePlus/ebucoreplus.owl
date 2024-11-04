@@ -2037,7 +2037,6 @@ ec:hasLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationCode
 ec:hasLocationCode rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:LocationCode ;
                    dcterms:description "Pour donner le code d'un emplacement."@fr ,
                                        "To give the code of a Location."@en ,
                                        "Um den Code eines Ortes anzugeben."@de ;
