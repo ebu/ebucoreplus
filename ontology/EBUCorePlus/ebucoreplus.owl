@@ -2276,7 +2276,6 @@ ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPart
 ec:hasPart rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:isPartOf ;
-           rdfs:range ec:EditorialSegment ;
            dcterms:description "Pour définir des parties (segments, fragments, plans, etc.) au sein d'un EditorialObject."@fr ,
                                "To define Parts (segments, fragments, shots, etc.) within an EditorialObject."@en ,
                                "Zur Definition von Teilen (Segmente, Fragmente, Aufnahmen usw.) innerhalb eines EditorialObjects."@de ;
