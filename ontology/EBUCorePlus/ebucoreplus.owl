@@ -1667,7 +1667,6 @@ ec:hasDub rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDubbedLanguage
 ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasLanguage ;
-                     rdfs:range ec:Language ;
                      dcterms:description "Pour identifier les langues doublées disponibles."@fr ,
                                          "To identify available dubbed languages."@en ,
                                          "Um die verfügbaren Synchronsprachen zu identifizieren."@de ;
