@@ -2248,7 +2248,6 @@ ec:hasOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParentEditorialObject
 ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:EditorialObject ;
                             dcterms:description "Pour lier un ÉditorialOject à un parent."@fr ,
                                                 "To link a EditorialOject to a parent."@en ,
                                                 "Um ein EditorialOject mit einem Parent zu verknüpfen."@de ;
