@@ -1983,7 +1983,6 @@ ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyPersonalEvent
 ec:hasKeyPersonalEvent rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:KeyPersonalEvent ;
                        dcterms:description "Identifier les événements personnels clés d'une personne."@fr ,
                                            "To identify the key personal events of a Person."@en ,
                                            "Um die wichtigsten persönlichen Ereignisse einer Person zu identifizieren."@de ;
