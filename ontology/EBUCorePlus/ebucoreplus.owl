@@ -2286,7 +2286,6 @@ ec:hasPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParticipatingAgent
 ec:hasParticipatingAgent rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:Agent ;
                          dcterms:description "Pour identifier les agents participants."@fr ,
                                              "To identify participating Agents."@en ,
                                              "Um teilnehmende Agenten zu identifizieren."@de ;
