@@ -2067,7 +2067,6 @@ ec:hasLocator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLogo
 ec:hasLogo rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Logo ;
            dcterms:description "Les logos peuvent être utilisés dans une variété de contextes. Le logo peut être associé à une organisation, un service ou un canal de publication."@fr ,
                                "Logos can be used in a variety of contexts. Logo can be associated with an Organisation or a Service or a PublicationChannel."@en ,
                                "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ,
