@@ -1904,7 +1904,6 @@ ec:hasIdPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIdentifier
 ec:hasIdentifier rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Identifier ;
                  dcterms:description "Pour associer un identifiant à un bien."@fr ,
                                      "So verknüpfen Sie einen Identifier mit einem Asset."@de ,
                                      "To associate an Identifier with an Asset."@en ;
