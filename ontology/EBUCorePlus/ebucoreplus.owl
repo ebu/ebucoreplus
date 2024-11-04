@@ -2093,7 +2093,6 @@ ec:hasManifestation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMaster
 ec:hasMaster rdf:type owl:ObjectProperty ;
-             rdfs:range ec:MediaResource ;
              dcterms:description "Pour identifier le maître d'une ressource"@fr ,
                                  "So identifizieren Sie den Master einer Ressource"@de ,
                                  "To identify the master of a Resource"@en ;
