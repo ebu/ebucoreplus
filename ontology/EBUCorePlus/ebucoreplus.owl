@@ -1913,7 +1913,6 @@ ec:hasIdentifier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasImageCodec
 ec:hasImageCodec rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:ImageCodec ;
                  dcterms:description "Pour spécifier le codec d'une image."@fr ,
                                      "To specify the codec of an Image."@en ,
                                      "Um den Codec eines Bildes anzugeben."@de ;
