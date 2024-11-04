@@ -2083,7 +2083,6 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasManifestation
 ec:hasManifestation rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Resource ;
                     dcterms:description "A manifestation is the physical embodiment of work e.g. a tape, a file..."@en ,
                                         "Eine Manifestation ist die physische Verkörperung der Arbeit, z. B. ein Band, eine Datei..."@de ,
                                         "Une manifestation est l'incarnation physique du travail, par exemple une bande, un fichier..."@fr ;
