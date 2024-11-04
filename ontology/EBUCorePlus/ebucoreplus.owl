@@ -1973,7 +1973,6 @@ ec:hasIssuer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:KeyCareerEvent ;
                      dcterms:description "Die wichtigsten Karriereereignisse einer Person zu identifizieren."@de ,
                                          "Identifier les événements clés de la carrière d'une personne."@fr ,
                                          "To identify the key career events of a Person."@en ;
