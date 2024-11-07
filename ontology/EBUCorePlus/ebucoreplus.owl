@@ -1667,7 +1667,6 @@ ec:hasDub rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDubbedLanguage
 ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf ec:hasLanguage ;
-                     rdfs:range ec:Language ;
                      dcterms:description "Pour identifier les langues doublées disponibles."@fr ,
                                          "To identify available dubbed languages."@en ,
                                          "Um die verfügbaren Synchronsprachen zu identifizieren."@de ;
@@ -1827,7 +1826,6 @@ ec:hasFormatVersionId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeneration
 ec:hasGeneration rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:MediaResource ;
                  dcterms:description "Identifie la génération d'une version d'une ressource, c'est-à-dire master, maître de modification, copie de distribution, etc."@fr ,
                                      "Identifies the generation of a version of a resource, i.e. master, edit master, distribution copy, etc."@en ,
                                      "Identifiziert die Erzeugung einer Version einer Ressource, d.h. Master, Master bearbeiten, Verteilungskopie, etc."@de ;
@@ -1848,7 +1846,6 @@ ec:hasGenre rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingBlacklist
 ec:hasGeoBlockingBlacklist rdf:type owl:ObjectProperty ;
-                           rdfs:range skos:Concept ;
                            dcterms:description "checking a users IP-address against a blacklist"@en ,
                                                "vérification de l'adresse IP d'un utilisateur par rapport à une liste noire"@fr ,
                                                "Überprüfung der IP-Adresse eines Benutzers anhand einer schwarzen Liste"@de ;
@@ -1859,7 +1856,6 @@ ec:hasGeoBlockingBlacklist rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasGeoBlockingWhitelist
 ec:hasGeoBlockingWhitelist rdf:type owl:ObjectProperty ;
-                           rdfs:range skos:Concept ;
                            dcterms:description "checking a users IP-address against a whitelist"@en ,
                                                "vérification de l'adresse IP d'un utilisateur par rapport à une liste blanche"@fr ,
                                                "Überprüfung der IP-Adresse eines Benutzers anhand einer Whitelist"@de ;
@@ -1896,7 +1892,6 @@ ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIdPicture
 ec:hasIdPicture rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Picture ;
                 dcterms:description "Fournir un lien vers une photo d'identification."@fr ,
                                     "To provide a link to an identification picture."@en ,
                                     "Um einen Link zu einem Identifikationsbild bereitzustellen."@de ;
@@ -1907,7 +1902,6 @@ ec:hasIdPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIdentifier
 ec:hasIdentifier rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Identifier ;
                  dcterms:description "Pour associer un identifiant à un bien."@fr ,
                                      "So verknüpfen Sie einen Identifier mit einem Asset."@de ,
                                      "To associate an Identifier with an Asset."@en ;
@@ -1918,7 +1912,6 @@ ec:hasIdentifier rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasImageCodec
 ec:hasImageCodec rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:ImageCodec ;
                  dcterms:description "Pour spécifier le codec d'une image."@fr ,
                                      "To specify the codec of an Image."@en ,
                                      "Um den Codec eines Bildes anzugeben."@de ;
@@ -1929,7 +1922,6 @@ ec:hasImageCodec rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasImageFormat
 ec:hasImageFormat rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:ImageFormat ;
                   dcterms:description "Pour spécifier le format d'une image."@fr ,
                                       "To specify the format of an Image."@en ,
                                       "Um das Format eines Bildes festzulegen."@de ;
@@ -1970,7 +1962,6 @@ ec:hasInputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIssuer
 ec:hasIssuer rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Agent ;
              dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
                                  "To identify the issuer of an identifier."@en ,
                                  "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
@@ -1981,7 +1972,6 @@ ec:hasIssuer rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:KeyCareerEvent ;
                      dcterms:description "Die wichtigsten Karriereereignisse einer Person zu identifizieren."@de ,
                                          "Identifier les événements clés de la carrière d'une personne."@fr ,
                                          "To identify the key career events of a Person."@en ;
@@ -1992,7 +1982,6 @@ ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyPersonalEvent
 ec:hasKeyPersonalEvent rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:KeyPersonalEvent ;
                        dcterms:description "Identifier les événements personnels clés d'une personne."@fr ,
                                            "To identify the key personal events of a Person."@en ,
                                            "Um die wichtigsten persönlichen Ereignisse einer Person zu identifizieren."@de ;
@@ -2015,7 +2004,6 @@ ec:hasKeyword rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLanguage
 ec:hasLanguage rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Language ;
                dcterms:description "Pour associer une langue à un actif. Un vocabulaire contrôlé basé sur le BCP 47 est recommandé. Cette propriété peut également être utilisée pour identifier la présence d'une langue des signes (RFC 5646). Par héritage, la propriété hasLanguage s'applique indifféremment aux niveaux MediaResource / Fragment / Piste aux niveaux desquels l'usage est défini. Les meilleures pratiques recommandent de d'utiliser le meilleur niveau de granularité possible pour décrire l'utilisation de la langue dans une ressource multimédia, y compris au niveau des fragments. MediaResource, y compris aux niveaux Fragment et Track."@fr ,
                                    "So verknüpfen Sie eine Sprache mit einem Asset. Es wird ein kontrolliertes Vokabular auf der Grundlage von BCP 47 empfohlen. Diese Eigenschaft kann auch verwendet werden, um das Vorhandensein von Zeichensprache zu identifizieren (RFC 5646). Durch Vererbung gilt die Eigenschaft hasLanguage gleichgültig auf den Ebenen MediaResource / Fragment / Track-Ebene, auf der die Verwendung definiert wird. Die beste Praxis empfiehlt, dass die bestmögliche Granularität zu verwenden, um die Verwendung der Sprache innerhalb einer MediaResource zu beschreiben, auch auf Fragment- und Trackebene."@de ,
                                    "To associate a Language to an Asset. A controlled vocabulary based on BCP 47 is recommended. This property can also be used to identify the presence of sign language (RFC 5646). By inheritance, the hasLanguage property applies indifferently at the MediaResource / Fragment / Track levels at which the usage is being defined. Best practice recommends to use to best possible level of granularity fo describe the usage of language within a MediaResource including at Fragment and Track levels."@en ;
@@ -2038,7 +2026,6 @@ ec:hasLicensing rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocation
 ec:hasLocation rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Location ;
                dcterms:description "A location assosiated with the object or consept"@en ,
                                    "Ein Ort, der mit dem Objekt oder Gegenstand verbunden ist"@de ,
                                    "Un emplacement associé à l'objet ou au consept."@fr ;
@@ -2050,7 +2037,6 @@ ec:hasLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationCode
 ec:hasLocationCode rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:LocationCode ;
                    dcterms:description "Pour donner le code d'un emplacement."@fr ,
                                        "To give the code of a Location."@en ,
                                        "Um den Code eines Ortes anzugeben."@de ;
@@ -2061,7 +2047,6 @@ ec:hasLocationCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocationPicture
 ec:hasLocationPicture rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Picture ;
                       dcterms:description "A picture associated with a Location."@en ,
                                           "Ein Bild, das mit einem Ort verbunden ist."@de ,
                                           "Une image associée à un emplacement."@fr ;
@@ -2072,7 +2057,6 @@ ec:hasLocationPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLocator
 ec:hasLocator rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Locator ;
               dcterms:description "A locator from where the Resource can be accessed."@en ,
                                   "Ein Locator, von dem aus auf die Ressource zugegriffen werden kann."@de ,
                                   "Un localisateur à partir duquel la ressource est accessible."@fr ;
@@ -2083,7 +2067,6 @@ ec:hasLocator rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLogo
 ec:hasLogo rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Logo ;
            dcterms:description "Les logos peuvent être utilisés dans une variété de contextes. Le logo peut être associé à une organisation, un service ou un canal de publication."@fr ,
                                "Logos can be used in a variety of contexts. Logo can be associated with an Organisation or a Service or a PublicationChannel."@en ,
                                "Logos können in einer Vielzahl von Kontexten verwendet werden. Ein Logo kann mit einer Organisation, einem Dienst oder einem Publikationskanal verbunden sein."@de ,
@@ -2100,7 +2083,6 @@ ec:hasLogo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasManifestation
 ec:hasManifestation rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Resource ;
                     dcterms:description "A manifestation is the physical embodiment of work e.g. a tape, a file..."@en ,
                                         "Eine Manifestation ist die physische Verkörperung der Arbeit, z. B. ein Band, eine Datei..."@de ,
                                         "Une manifestation est l'incarnation physique du travail, par exemple une bande, un fichier..."@fr ;
@@ -2111,7 +2093,6 @@ ec:hasManifestation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMaster
 ec:hasMaster rdf:type owl:ObjectProperty ;
-             rdfs:range ec:MediaResource ;
              dcterms:description "Pour identifier le maître d'une ressource"@fr ,
                                  "So identifizieren Sie den Master einer Ressource"@de ,
                                  "To identify the master of a Resource"@en ;
@@ -2133,7 +2114,6 @@ ec:hasMeasurementAgent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMediaFragment
 ec:hasMediaFragment rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isMediaFragmentOf ;
-                    rdfs:range ec:MediaFragment ;
                     dcterms:description "Pour définir la relation avec les MediaFragments au sein d'une MediaResource."@fr ,
                                         "So definieren Sie die Beziehung zu MediaFragmenten innerhalb einer MediaResource zu definieren."@de ,
                                         "To define relation to MediaFragments withiin a MediaResource."@en ;
@@ -2156,7 +2136,6 @@ ec:hasMedium rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMember
 ec:hasMember rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isMemberOf ;
-             rdfs:range ec:EditorialObject ;
              dcterms:description "Pour établir une relation de groupe/collection entre les EditorialObjects."@fr ,
                                  "To establish group/collection relationship between EditorialObjects."@en ,
                                  "Um eine Gruppen-/Sammlungsbeziehung zwischen EditorialObjects herzustellen."@de ;
@@ -2177,7 +2156,6 @@ ec:hasMemberAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMetadataTrack
 ec:hasMetadataTrack rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:MetadataTrack ;
                     dcterms:description "Pour identifier les MetadataTracks dans la ressource."@fr ,
                                         "So identifizieren Sie MetadataTracks in der Ressource."@de ,
                                         "To identify MetadataTracks in the Resource."@en ;
@@ -2199,7 +2177,6 @@ ec:hasMimeType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasObjectType
 ec:hasObjectType rdf:type owl:ObjectProperty ;
-                 rdfs:range skos:Concept ;
                  dcterms:description "Die Art oder das Genre der Ressource."@de ,
                                      "Le type ou le genre de la ressource."@fr ,
                                      "The kind or genre of the resource."@en ;
@@ -2210,7 +2187,6 @@ ec:hasObjectType rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOrganisationStaff
 ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:StaffMember ;
                         dcterms:description "Pour identifier les membres du personnel d'une organisation."@fr ,
                                             "To identify Staff members in an Organisation."@en ,
                                             "Zur Identifizierung von Mitarbeitern in einer Organisation."@de ;
@@ -2222,7 +2198,6 @@ ec:hasOrganisationStaff rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOriginalLanguage
 ec:hasOriginalLanguage rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasLanguage ;
-                       rdfs:range ec:Language ;
                        dcterms:description "Pour définir la langue d'origine d'un actif."@fr ,
                                            "So definieren Sie die Originalsprache eines Assets."@de ,
                                            "To define the original language of an Asset."@en ;
@@ -2263,7 +2238,6 @@ ec:hasOutputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasOwner
 ec:hasOwner rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Agent ;
             dcterms:description "Pour identifier le propriétaire d'un animal."@fr ,
                                 "To identify the owner of an animal."@en ,
                                 "Um den Besitzer eines Tieres zu identifizieren."@de ;
@@ -2274,7 +2248,6 @@ ec:hasOwner rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParentEditorialObject
 ec:hasParentEditorialObject rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:EditorialObject ;
                             dcterms:description "Pour lier un ÉditorialOject à un parent."@fr ,
                                                 "To link a EditorialOject to a parent."@en ,
                                                 "Um ein EditorialOject mit einem Parent zu verknüpfen."@de ;
@@ -2292,7 +2265,6 @@ ec:hasParentEditorialSegment rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParentMediaResource
 ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
-                          rdfs:range ec:MediaResource ;
                           dcterms:description "Pour lier une MediaResource à un parent."@fr ,
                                               "To link a MediaResource to a parent."@en ,
                                               "Um eine MediaResource mit einer übergeordneten Ressource zu verknüpfen."@de ;
@@ -2304,7 +2276,6 @@ ec:hasParentMediaResource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPart
 ec:hasPart rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:isPartOf ;
-           rdfs:range ec:EditorialSegment ;
            dcterms:description "Pour définir des parties (segments, fragments, plans, etc.) au sein d'un EditorialObject."@fr ,
                                "To define Parts (segments, fragments, shots, etc.) within an EditorialObject."@en ,
                                "Zur Definition von Teilen (Segmente, Fragmente, Aufnahmen usw.) innerhalb eines EditorialObjects."@de ;
@@ -2315,7 +2286,6 @@ ec:hasPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasParticipatingAgent
 ec:hasParticipatingAgent rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:Agent ;
                          dcterms:description "Pour identifier les agents participants."@fr ,
                                              "To identify participating Agents."@en ,
                                              "Um teilnehmende Agenten zu identifizieren."@de ;
