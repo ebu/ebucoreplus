@@ -2692,7 +2692,6 @@ ec:hasRelatedAuditReport rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAward
 ec:hasRelatedAward rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Award ;
                    dcterms:description "Pour identifier une récompense liée à EditorialObject."@fr ,
                                        "To identify an Award related to EditorialObject."@en ,
                                        "Um einen Award zu identifizieren, der sich auf EditorialObject bezieht."@de ;
