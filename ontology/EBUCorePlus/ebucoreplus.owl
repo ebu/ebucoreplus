@@ -2353,7 +2353,6 @@ ec:hasPriority rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Agent ;
                dcterms:description "Pour identifier un agent impliqué dans la production de la ressource ou de l'objet éditorial."@fr ,
                                    "To identify an Agent involved in the production of the Resource or EditorialObject."@en ,
                                    "Zur Identifizierung eines Agenten, der an der Produktion der Ressource oder des Redaktionsobjekts beteiligt ist."@de ;
