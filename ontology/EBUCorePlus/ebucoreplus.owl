@@ -2722,7 +2722,6 @@ ec:hasRelatedConsumptionEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEditorialObject
 ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:EditorialObject ;
                              dcterms:description "Pour identifier les EditorialObjects connexes."@fr ,
                                                  "To identify related EditorialObjects."@en ,
                                                  "Um verwandte EditorialObjects zu identifizieren."@de ;
