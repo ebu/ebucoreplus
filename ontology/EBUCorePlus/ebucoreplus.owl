@@ -2539,7 +2539,6 @@ ec:hasPublisher rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRating
 ec:hasRating rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Rating ;
              dcterms:description "Pour identifier la présence de Rating attribué à un EditorialObject."@fr ,
                                  "To identify the presence of Rating attributed to a EditorialObject."@en ,
                                  "Um das Vorhandensein von Bewertungen zu identifizieren, die einem EditorialObject zugeordnet sind."@de ;
