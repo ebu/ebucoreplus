@@ -2702,7 +2702,6 @@ ec:hasRelatedAward rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedCharacter
 ec:hasRelatedCharacter rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Character ;
                        dcterms:description "Pour identifier un caractère lié à un concept"@fr ,
                                            "So identifizieren Sie ein Zeichen, das mit einem Konzept verbunden ist"@de ,
                                            "To identify a Character related to a concept"@en ;
