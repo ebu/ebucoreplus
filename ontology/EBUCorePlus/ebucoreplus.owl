@@ -2469,7 +2469,6 @@ ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationHistory
 ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:PublicationHistory ;
                          dcterms:description "Pour fournir l'historique de publication d'un EditorailObject ou d'un MediaResource."@fr ,
                                              "To provide the history of publication of an EditorailObject or MediaResource."@en ,
                                              "Um den Verlauf der Veröffentlichung eines EditorailObjects oder einer MediaResource anzuzeigen."@de ;
