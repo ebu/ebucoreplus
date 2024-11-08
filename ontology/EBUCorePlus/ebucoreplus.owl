@@ -2529,7 +2529,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Involvement ;
                 dcterms:description "Pour identifier un agent impliqué dans la publication de l'EditorialObject."@fr ,
                                     "To identify an Agent involved in the publication of the EditorialObject."@en ,
                                     "Zur Identifizierung eines Agenten, der an der Veröffentlichung des EditorialObjects beteiligt ist."@de ;
