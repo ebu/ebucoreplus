@@ -2413,7 +2413,6 @@ ec:hasProductionJobLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProgramme
 ec:hasProgramme rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Programme ;
                 rdfs:label "a un programme"@fr ,
                            "has programme"@en ,
                            "hat Programm"@de .
