@@ -2499,7 +2499,6 @@ ec:hasPublicationPlan rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanMember
 ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:PublicationPlan ;
                             dcterms:description "Pour identifier un sous-plan d'un plan de publication."@fr ,
                                                 "To identify a subplan of a publication plan."@en ,
                                                 "Um einen Teilplan eines Veröffentlichungsplans zu identifizieren."@de ;
