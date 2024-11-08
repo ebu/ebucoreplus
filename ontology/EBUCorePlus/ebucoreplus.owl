@@ -2333,7 +2333,6 @@ ec:hasPost rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelated
 ec:hasPreviousRelated rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:ProductionJob ;
                       dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
                                           "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
                                           "To identify a previous associated ProductionJob"@en ;
