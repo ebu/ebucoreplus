@@ -2429,8 +2429,6 @@ ec:hasPromotion rdf:type owl:ObjectProperty ;
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
                  rdfs:domain owl:Thing ;
-                 rdfs:range ec:Agent ,
-                            ec:Provenance ;
                  dcterms:description "Bereich: String, anyURI oder Konzept."@de ,
                                      "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
                                      "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
