@@ -2459,7 +2459,6 @@ ec:hasPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:PublicationEvent ;
                        dcterms:description "Pour associer les PublicationEvents à canaux de publication ou en tant qu'éléments d'une PublicationHistory ou d'une PublicationPlanning."@fr ,
                                            "To associate PublicationEvents with PublicationChannels or as elements of a PublicationHistory or PublicationPlanning."@en ,
                                            "Um PublicationEvents zu verknüpfen mit PublicationChannels oder als Elemente einer PublicationHistory oder PublicationPlanning."@de ;
