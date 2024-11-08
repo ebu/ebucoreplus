@@ -2442,7 +2442,6 @@ ec:hasProvenance rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProvenanceTarget
 ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
-                       rdfs:range owl:Thing ;
                        dcterms:description "Die Instanz eines Objekts, das von der Provenance bezogen wird."@de ,
                                            "L'instance d'un objet sourcé par la Provenance."@fr ,
                                            "The instance of an object sourced by the Provenance."@en ;
