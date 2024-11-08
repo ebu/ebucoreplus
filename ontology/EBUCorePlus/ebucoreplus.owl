@@ -2609,7 +2609,6 @@ ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedArtefact
 ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Artefact ;
                       dcterms:description "Identifier un artefact lié à EditorialObject ou à un concept."@fr ,
                                           "Identifizieren eines Artefakts mit Bezug zu einem EditorialObject oder einem Konzept"@de ,
                                           "To identify and Artefact related to EditorialObject or a concept"@en ;
