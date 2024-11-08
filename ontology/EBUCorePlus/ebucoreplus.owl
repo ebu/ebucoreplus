@@ -2599,7 +2599,6 @@ ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAnimal
 ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Animal ;
                     dcterms:description "Identifier les animaux associés à un concept"@fr ,
                                         "Tiere identifizieren, die mit einem Konzept verbunden sind"@de ,
                                         "To identify animals associate with a concept"@en ;
