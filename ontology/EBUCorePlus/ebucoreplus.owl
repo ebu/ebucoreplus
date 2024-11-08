@@ -2559,7 +2559,6 @@ ec:hasRatingProvider rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegionCode
 ec:hasRegionCode rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:RegionCode ;
                  dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
                                      "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
                                      "To provide a description of a particular region assocoated to the Location."@en ;
