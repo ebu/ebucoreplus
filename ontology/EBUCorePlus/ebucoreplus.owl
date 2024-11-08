@@ -2479,7 +2479,6 @@ ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationMedium
 ec:hasPublicationMedium rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:PublicationMedium ;
                         dcterms:description "Pour identifier le support de publication."@fr ,
                                             "To identify the publication medium."@en ,
                                             "Um das Publikationsmedium zu identifizieren."@de ;
