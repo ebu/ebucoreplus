@@ -2519,7 +2519,6 @@ ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Location ;
                         dcterms:description "Die Region, in der die Veröffentlichung stattfindet."@de ,
                                             "La région où la publication a lieu."@fr ,
                                             "The region where the publication takes place."@en ;
