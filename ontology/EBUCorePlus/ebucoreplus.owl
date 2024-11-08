@@ -2619,7 +2619,6 @@ ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAsset
 ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Asset ;
                    dcterms:description "Pour identifier les actifs connexes."@fr ,
                                        "Pour lier les actifs connexes."@fr ,
                                        "To identify related Assets."@en ,
