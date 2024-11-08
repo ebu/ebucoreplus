@@ -2316,7 +2316,6 @@ ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPlaceOfDeath
 ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Location ;
                    dcterms:description "Pour identifier le lieu du décès."@fr ,
                                        "To identify the place of death."@en ,
                                        "Um den Ort des Todes zu identifizieren."@de ;
