@@ -2509,7 +2509,6 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanStatus
 ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
-                            rdfs:range skos:Concept ;
                             dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
                                                 "To provide a status regarding the PublicationPlan."@en ,
                                                 "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
