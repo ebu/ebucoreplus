@@ -2326,7 +2326,6 @@ ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPost
 ec:hasPost rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Post ;
            rdfs:label "a un poste"@fr ,
                       "has post"@en ,
                       "hat Post"@de .
