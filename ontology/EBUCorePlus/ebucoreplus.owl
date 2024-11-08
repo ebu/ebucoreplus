@@ -2589,7 +2589,6 @@ ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAgent
 ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Agent ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
                                        "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
