@@ -2306,7 +2306,6 @@ ec:hasPictogram rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPlaceOfBirth
 ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Location ;
                    dcterms:description "Pour identifier le lieu de naissance."@fr ,
                                        "To identify the place of birth."@en ,
                                        "Zur Identifizierung des Geburtsortes."@de ;
