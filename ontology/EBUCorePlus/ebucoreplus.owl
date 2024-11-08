@@ -2652,7 +2652,6 @@ ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioProgramme
 ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:AudioProgramme ;
                             dcterms:description "A related audio programme"@en ,
                                                 "Ein entsprechendes Audioprogramm"@de ,
                                                 "Un programme audio connexe"@fr ;
