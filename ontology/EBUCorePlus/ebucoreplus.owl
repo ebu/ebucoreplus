@@ -2642,7 +2642,6 @@ ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioObject
 ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:AudioObject ;
                          dcterms:description "Pour identifier les objets audio associés"@fr ,
                                              "To identify related Audio Objects"@en ,
                                              "Um verwandte Audio-Objekte zu identifizieren"@de ;
