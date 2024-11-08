@@ -2662,7 +2662,6 @@ ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioTrack
 ec:hasRelatedAudioTrack rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:AudioTrack ;
                         dcterms:description "Pour identifier les pistes audio liées"@fr ,
                                             "So identifizieren Sie verwandte Audiospuren"@de ,
                                             "To identify related Audio Tracks"@en ;
