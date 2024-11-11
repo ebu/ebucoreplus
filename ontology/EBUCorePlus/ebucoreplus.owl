@@ -2296,7 +2296,6 @@ ec:hasParticipatingAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPictogram
 ec:hasPictogram rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Picture ;
                 dcterms:description "Für eine visuelle Darstellung eines Ratings / AufdienceRating / AudienceLevel."@de ,
                                     "Pour fournir une représentation visuelle d'un Rating / AufdienceRating / AudienceLevel."@fr ,
                                     "To provide a visual representation of a Rating / AufdienceRating / AudienceLevel."@en ;
@@ -2307,7 +2306,6 @@ ec:hasPictogram rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPlaceOfBirth
 ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Location ;
                    dcterms:description "Pour identifier le lieu de naissance."@fr ,
                                        "To identify the place of birth."@en ,
                                        "Zur Identifizierung des Geburtsortes."@de ;
@@ -2318,7 +2316,6 @@ ec:hasPlaceOfBirth rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPlaceOfDeath
 ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Location ;
                    dcterms:description "Pour identifier le lieu du décès."@fr ,
                                        "To identify the place of death."@en ,
                                        "Um den Ort des Todes zu identifizieren."@de ;
@@ -2329,7 +2326,6 @@ ec:hasPlaceOfDeath rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPost
 ec:hasPost rdf:type owl:ObjectProperty ;
-           rdfs:range ec:Post ;
            rdfs:label "a un poste"@fr ,
                       "has post"@en ,
                       "hat Post"@de .
@@ -2337,7 +2333,6 @@ ec:hasPost rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPreviousRelated
 ec:hasPreviousRelated rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:ProductionJob ;
                       dcterms:description "Pour identifier un ProductionJob associé précédent"@fr ,
                                           "So identifizieren Sie einen früheren zugehörigen ProductionJob"@de ,
                                           "To identify a previous associated ProductionJob"@en ;
@@ -2358,7 +2353,6 @@ ec:hasPriority rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProducer
 ec:hasProducer rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Agent ;
                dcterms:description "Pour identifier un agent impliqué dans la production de la ressource ou de l'objet éditorial."@fr ,
                                    "To identify an Agent involved in the production of the Resource or EditorialObject."@en ,
                                    "Zur Identifizierung eines Agenten, der an der Produktion der Ressource oder des Redaktionsobjekts beteiligt ist."@de ;
@@ -2419,7 +2413,6 @@ ec:hasProductionJobLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProgramme
 ec:hasProgramme rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Programme ;
                 rdfs:label "a un programme"@fr ,
                            "has programme"@en ,
                            "hat Programm"@de .
@@ -2436,8 +2429,6 @@ ec:hasPromotion rdf:type owl:ObjectProperty ;
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
                  rdfs:domain owl:Thing ;
-                 rdfs:range ec:Agent ,
-                            ec:Provenance ;
                  dcterms:description "Bereich: String, anyURI oder Konzept."@de ,
                                      "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
                                      "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
@@ -2451,7 +2442,6 @@ ec:hasProvenance rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProvenanceTarget
 ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
-                       rdfs:range owl:Thing ;
                        dcterms:description "Die Instanz eines Objekts, das von der Provenance bezogen wird."@de ,
                                            "L'instance d'un objet sourcé par la Provenance."@fr ,
                                            "The instance of an object sourced by the Provenance."@en ;
@@ -2469,7 +2459,6 @@ ec:hasPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationEvent
 ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:PublicationEvent ;
                        dcterms:description "Pour associer les PublicationEvents à canaux de publication ou en tant qu'éléments d'une PublicationHistory ou d'une PublicationPlanning."@fr ,
                                            "To associate PublicationEvents with PublicationChannels or as elements of a PublicationHistory or PublicationPlanning."@en ,
                                            "Um PublicationEvents zu verknüpfen mit PublicationChannels oder als Elemente einer PublicationHistory oder PublicationPlanning."@de ;
@@ -2480,7 +2469,6 @@ ec:hasPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationHistory
 ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:PublicationHistory ;
                          dcterms:description "Pour fournir l'historique de publication d'un EditorailObject ou d'un MediaResource."@fr ,
                                              "To provide the history of publication of an EditorailObject or MediaResource."@en ,
                                              "Um den Verlauf der Veröffentlichung eines EditorailObjects oder einer MediaResource anzuzeigen."@de ;
@@ -2491,7 +2479,6 @@ ec:hasPublicationHistory rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationMedium
 ec:hasPublicationMedium rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:PublicationMedium ;
                         dcterms:description "Pour identifier le support de publication."@fr ,
                                             "To identify the publication medium."@en ,
                                             "Um das Publikationsmedium zu identifizieren."@de ;
@@ -2512,7 +2499,6 @@ ec:hasPublicationPlan rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanMember
 ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:PublicationPlan ;
                             dcterms:description "Pour identifier un sous-plan d'un plan de publication."@fr ,
                                                 "To identify a subplan of a publication plan."@en ,
                                                 "Um einen Teilplan eines Veröffentlichungsplans zu identifizieren."@de ;
@@ -2523,7 +2509,6 @@ ec:hasPublicationPlanMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationPlanStatus
 ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
-                            rdfs:range skos:Concept ;
                             dcterms:description "Pour fournir un statut concernant le PublicationPlan."@fr ,
                                                 "To provide a status regarding the PublicationPlan."@en ,
                                                 "Um einen Status bezüglich des PublicationPlan zu liefern."@de ;
@@ -2534,7 +2519,6 @@ ec:hasPublicationPlanStatus rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationRegion
 ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Location ;
                         dcterms:description "Die Region, in der die Veröffentlichung stattfindet."@de ,
                                             "La région où la publication a lieu."@fr ,
                                             "The region where the publication takes place."@en ;
@@ -2545,7 +2529,6 @@ ec:hasPublicationRegion rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublisher
 ec:hasPublisher rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Involvement ;
                 dcterms:description "Pour identifier un agent impliqué dans la publication de l'EditorialObject."@fr ,
                                     "To identify an Agent involved in the publication of the EditorialObject."@en ,
                                     "Zur Identifizierung eines Agenten, der an der Veröffentlichung des EditorialObjects beteiligt ist."@de ;
@@ -2556,7 +2539,6 @@ ec:hasPublisher rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRating
 ec:hasRating rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Rating ;
              dcterms:description "Pour identifier la présence de Rating attribué à un EditorialObject."@fr ,
                                  "To identify the presence of Rating attributed to a EditorialObject."@en ,
                                  "Um das Vorhandensein von Bewertungen zu identifizieren, die einem EditorialObject zugeordnet sind."@de ;
@@ -2567,7 +2549,6 @@ ec:hasRating rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRatingProvider
 ec:hasRatingProvider rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
                      dcterms:description "Pour identifier un agent qui a fourni un classement."@fr ,
                                          "To identify an Agent who has provided a Rating."@en ,
                                          "Zur Identifizierung eines Agenten, der eine Bewertung abgegeben hat."@de ;
@@ -2578,7 +2559,6 @@ ec:hasRatingProvider rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRegionCode
 ec:hasRegionCode rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:RegionCode ;
                  dcterms:description "Eine Beschreibung einer bestimmten Region, die mit dem Ort verbunden ist."@de ,
                                      "Fournir une description d'une région particulière associée à l'emplacement."@fr ,
                                      "To provide a description of a particular region assocoated to the Location."@en ;
@@ -2609,7 +2589,6 @@ ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAgent
 ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Agent ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
                                        "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
@@ -2620,7 +2599,6 @@ ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAnimal
 ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Animal ;
                     dcterms:description "Identifier les animaux associés à un concept"@fr ,
                                         "Tiere identifizieren, die mit einem Konzept verbunden sind"@de ,
                                         "To identify animals associate with a concept"@en ;
@@ -2631,7 +2609,6 @@ ec:hasRelatedAnimal rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedArtefact
 ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Artefact ;
                       dcterms:description "Identifier un artefact lié à EditorialObject ou à un concept."@fr ,
                                           "Identifizieren eines Artefakts mit Bezug zu einem EditorialObject oder einem Konzept"@de ,
                                           "To identify and Artefact related to EditorialObject or a concept"@en ;
@@ -2642,7 +2619,6 @@ ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAsset
 ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Asset ;
                    dcterms:description "Pour identifier les actifs connexes."@fr ,
                                        "Pour lier les actifs connexes."@fr ,
                                        "To identify related Assets."@en ,
@@ -2656,7 +2632,6 @@ ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioContent
 ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
-                          rdfs:range ec:AudioContent ;
                           dcterms:description "Pour identifier le contenu audio associé"@fr ,
                                               "So identifizieren Sie verwandte Audioinhalte"@de ,
                                               "To identify related Audio Content"@en ;
@@ -2667,7 +2642,6 @@ ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioObject
 ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:AudioObject ;
                          dcterms:description "Pour identifier les objets audio associés"@fr ,
                                              "To identify related Audio Objects"@en ,
                                              "Um verwandte Audio-Objekte zu identifizieren"@de ;
@@ -2678,7 +2652,6 @@ ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioProgramme
 ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:AudioProgramme ;
                             dcterms:description "A related audio programme"@en ,
                                                 "Ein entsprechendes Audioprogramm"@de ,
                                                 "Un programme audio connexe"@fr ;
@@ -2689,7 +2662,6 @@ ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioTrack
 ec:hasRelatedAudioTrack rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:AudioTrack ;
                         dcterms:description "Pour identifier les pistes audio liées"@fr ,
                                             "So identifizieren Sie verwandte Audiospuren"@de ,
                                             "To identify related Audio Tracks"@en ;
@@ -2720,7 +2692,6 @@ ec:hasRelatedAuditReport rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAward
 ec:hasRelatedAward rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Award ;
                    dcterms:description "Pour identifier une récompense liée à EditorialObject."@fr ,
                                        "To identify an Award related to EditorialObject."@en ,
                                        "Um einen Award zu identifizieren, der sich auf EditorialObject bezieht."@de ;
@@ -2731,7 +2702,6 @@ ec:hasRelatedAward rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedCharacter
 ec:hasRelatedCharacter rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Character ;
                        dcterms:description "Pour identifier un caractère lié à un concept"@fr ,
                                            "So identifizieren Sie ein Zeichen, das mit einem Konzept verbunden ist"@de ,
                                            "To identify a Character related to a concept"@en ;
@@ -2752,7 +2722,6 @@ ec:hasRelatedConsumptionEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEditorialObject
 ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:EditorialObject ;
                              dcterms:description "Pour identifier les EditorialObjects connexes."@fr ,
                                                  "To identify related EditorialObjects."@en ,
                                                  "Um verwandte EditorialObjects zu identifizieren."@de ;
@@ -15157,8 +15126,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
