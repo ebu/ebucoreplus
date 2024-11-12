@@ -1609,7 +1609,6 @@ ec:hasDevice rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisclaimer
 ec:hasDisclaimer rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasRights ;
-                 rdfs:range ec:Disclaimer ;
                  dcterms:description "Pour exprimer le désistement."@fr ,
                                      "To express Disclaimer."@en ,
                                      "Zum Ausdruck bringen Disclaimer."@de ;
