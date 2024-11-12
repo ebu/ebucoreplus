@@ -1750,7 +1750,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasExploitationIssues
 ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ec:hasRights ;
-                         rdfs:range ec:ExploitationIssues ;
                          dcterms:description "Pour exprimer les problèmes d'exploitation."@fr ,
                                              "To express Exploitation Issues."@en ,
                                              "Zum Ausdruck bringen von Ausbeutungsproblemen."@de ;
