@@ -2763,7 +2763,6 @@ ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedMediaResource
 ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:MediaResource ;
                            dcterms:description "Pour identifier une MediaResource associée à un concept"@fr ,
                                                "So identifizieren Sie eine mit einem Konzept verbundene MediaResource"@de ,
                                                "To identify a MediaResource associated with a concept"@en ;
