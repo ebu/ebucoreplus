@@ -2773,7 +2773,6 @@ ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPicture
 ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Picture ;
                      dcterms:description "Pour associer une image à un EditorialObject"@fr ,
                                          "So verknüpfen Sie ein Bild mit einem EditorialObject"@de ,
                                          "To associate a Picture with an EditorialObject"@en ;
