@@ -2903,7 +2903,6 @@ ec:hasRelationSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasResourceOffset
 ec:hasResourceOffset rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TimelinePoint ;
                      dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
                                          "Le décalage de départ dans une ressource."@fr ,
                                          "The start offset within a Resource."@en ;
