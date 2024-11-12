@@ -2883,7 +2883,6 @@ ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationLink
 ec:hasRelationLink rdf:type owl:ObjectProperty ;
-                   rdfs:range owl:Thing ;
                    dcterms:description "Pour définir un lien dans une Relation."@fr ,
                                        "So definieren Sie eine Verknüpfung in einer Relation."@de ,
                                        "To define a link in a Relation."@en ;
