@@ -3460,7 +3460,6 @@ ec:hasUsageContract rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:hasRights ;
-                        rdfs:range ec:UsageRestrictions ;
                         dcterms:description "Pour exprimer des restrictions d'utilisation."@fr ,
                                             "To express usage restrictions."@en ,
                                             "Um Nutzungseinschränkungen auszudrücken."@de ;
