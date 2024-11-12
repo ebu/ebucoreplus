@@ -1875,7 +1875,6 @@ ec:hasGroupMember rdf:type owl:ObjectProperty .
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:IPRRestrictions ;
                       dcterms:description "Pour exprimer les restrictions en matière de DPI."@fr ,
                                           "To express IPR Restrictions."@en ,
                                           "Um IPR-Einschränkungen auszudrücken."@de ;
