@@ -2873,7 +2873,6 @@ ec:hasRelatedStage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedTextLine
 ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:TextLine ;
                       dcterms:description "A TextLine or free text related to an EditorialObject."@en ,
                                           "Eine Textzeile oder ein freier Text, der sich auf ein EditorialObject bezieht."@de ,
                                           "Une TextLine ou un texte libre lié à un EditorialObject."@fr ;
