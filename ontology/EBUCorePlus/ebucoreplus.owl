@@ -2732,7 +2732,6 @@ ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEssence
 ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Essence ;
                      dcterms:description "Pour établir une relation entre une MediaResource et une Essence."@fr ,
                                          "To establish a relation between a MediaResource and an Essence."@en ,
                                          "Um eine Beziehung zwischen einer MediaResource und einer Essenz herzustellen."@de ;
