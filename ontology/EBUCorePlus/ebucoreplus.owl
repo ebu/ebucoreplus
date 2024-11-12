@@ -2833,7 +2833,6 @@ ec:hasRelatedResonanceEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedResource
 ec:hasRelatedResource rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Resource ;
                       dcterms:description "Pour identifier une ressource associée à un actif ou un EditorialObject ou un PublicationEvent ou une autre ressource."@fr ,
                                           "To identify a Resource associated with an Asset or an EditorialObject or a PublicationEvent or another Resource."@en ,
                                           "Um eine Ressource zu identifizieren, die mit einem Asset oder einem EditorialObject oder einem PublicationEvent oder einer anderen Ressource verbunden ist."@de ;
