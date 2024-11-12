@@ -2853,7 +2853,6 @@ ec:hasRelatedRule rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedScene
 ec:hasRelatedScene rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Scene ;
                    dcterms:description "Pour associer un concept à une Scène"@fr ,
                                        "So verknüpfen Sie ein Konzept mit einer Szene"@de ,
                                        "To associate a concept with a Scene"@en ;
