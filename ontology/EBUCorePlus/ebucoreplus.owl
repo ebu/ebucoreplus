@@ -425,7 +425,6 @@ ec:existsAs rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasRights ;
-                       rdfs:range ec:AccessConditions ;
                        dcterms:description "Pour exprimer les conditions/restrictions d'accès."@fr ,
                                            "To express access conditions/restrictions."@en ,
                                            "Um Zugangsbedingungen/Einschränkungen auszudrücken."@de ;
