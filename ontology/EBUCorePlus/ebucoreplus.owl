@@ -2893,7 +2893,6 @@ ec:hasRelationLink rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationSource
 ec:hasRelationSource rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
                      dcterms:description "Pour définir la source d'une Relation."@fr ,
                                          "To define source of a Relation."@en ,
                                          "Um die Quelle einer Relation zu definieren."@de ;
