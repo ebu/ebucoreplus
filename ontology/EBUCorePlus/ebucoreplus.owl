@@ -1233,7 +1233,6 @@ ec:hasContributor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasRights ;
-                rdfs:range ec:Copyright ;
                 dcterms:description "Pour exprimer le droit d'auteur."@fr ,
                                     "To express copyright."@en ,
                                     "Um das Urheberrecht auszudrücken."@de ;
