@@ -2963,7 +2963,6 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryExcludes
 ec:hasRightsTerritoryExcludes rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:CountryCode ;
                               dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
                                                   "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
                                                   "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
