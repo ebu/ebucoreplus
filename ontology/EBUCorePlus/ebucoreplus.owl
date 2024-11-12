@@ -2008,7 +2008,6 @@ ec:hasLanguage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLicensing
 ec:hasLicensing rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasRights ;
-                rdfs:range ec:Licensing ;
                 dcterms:description "Pour exprimer l'autorisation."@fr ,
                                     "To express Licensing."@en ,
                                     "Um die Lizenzierung auszudrücken."@de ;
