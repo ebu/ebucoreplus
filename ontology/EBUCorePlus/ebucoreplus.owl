@@ -1285,7 +1285,6 @@ ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCreativeCommons
 ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:CreativeCommons ;
                       dcterms:description "Pour exprimer Creative Commons."@fr ,
                                           "To express Creative Commons."@en ,
                                           "Um Creative Commons auszudrücken."@de ;
