@@ -2953,7 +2953,6 @@ ec:hasRightsHolder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTargetService
 ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
-                          rdfs:range ec:PublicationService ;
                           dcterms:description "Pour identifier un service associé à des droits."@fr ,
                                               "To identify a Service associated to Rights."@en ,
                                               "Um einen mit Rechten verbundenen Service zu identifizieren."@de ;
