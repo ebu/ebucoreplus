@@ -2793,7 +2793,6 @@ ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationEvent
 ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:PublicationEvent ;
                               dcterms:description "Pour identifier le PublicationEvent associé à une MediaResource (manifestation d'un EditorialObject)."@fr ,
                                                   "To identify the PublicationEvent associated with a MediaResource (manifestation of an EditorialObject)."@en ,
                                                   "Zur Identifizierung des mit einer MediaResource verbundenen PublicationEvent (Manifestation eines EditorialObjects)."@de ;
