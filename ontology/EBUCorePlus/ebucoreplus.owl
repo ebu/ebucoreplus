@@ -1274,7 +1274,6 @@ ec:hasCoverage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCoverageRestrictions
 ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf ec:hasRights ;
-                           rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "Pour exprimer les restrictions de couverture."@fr ,
                                                "To express coverage restrictions."@en ,
                                                "Um Einschränkungen der Deckung auszudrücken."@de ;
