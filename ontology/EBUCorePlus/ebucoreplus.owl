@@ -3471,7 +3471,6 @@ ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRights
 ec:hasUsageRights rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasRights ;
-                  rdfs:range ec:UsageRights ;
                   dcterms:description "Pour exprimer les droits d'utilisation."@fr ,
                                       "To express usage rights."@en ,
                                       "Um Nutzungsrechte auszudrücken."@de ;
