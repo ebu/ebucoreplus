@@ -2753,7 +2753,6 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedMediaFragment
 ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:MediaFragment ;
                            dcterms:description "Pour associer une partie d'un objet éditorial à un MediaFragment au sein de l'association MediaResource instanciant l'objet éditorial."@fr ,
                                                "So verknüpfen Sie einen Teil eines Redaktionsobjekts mit einem MediaFragment innerhalb der Assoziation MediaResource, die das Redaktionsobjekt instanziiert."@de ,
                                                "To associate a Part of an Editorial Object with a MediaFragment within the association MediaResource instantiating the Editrial Object."@en ;
