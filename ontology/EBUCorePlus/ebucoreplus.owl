@@ -2933,7 +2933,6 @@ ec:hasRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsClearance
 ec:hasRightsClearance rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:RightsClearance ;
                       dcterms:description "Pour exprimer l'autorisation des droits."@fr ,
                                           "To express Rights Clearance."@en ,
                                           "Zum Ausdruck bringen Rechte Clearance."@de ;
