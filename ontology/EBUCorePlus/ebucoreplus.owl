@@ -2923,7 +2923,6 @@ ec:hasRestrictedAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasReview
 ec:hasReview rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Review ;
              dcterms:description "Pour fournir une revue."@fr ,
                                  "To provide a review."@en ,
                                  "Um einen Überblick zu geben."@de ;
