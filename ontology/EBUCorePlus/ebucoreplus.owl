@@ -2933,7 +2933,6 @@ ec:hasReview rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRights
 ec:hasRights rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Rights ;
              rdfs:label "Est couvert par"@fr ,
                         "Is covered by"@en ,
                         "Wird abgedeckt durch"@de .
