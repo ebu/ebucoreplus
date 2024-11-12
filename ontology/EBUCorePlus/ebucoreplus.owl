@@ -2803,7 +2803,6 @@ ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationService
 ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
-                                rdfs:range ec:PublicationService ;
                                 dcterms:description "To establish a relation to publication services."@en ,
                                                     "Um eine Beziehung zu den Publikationsdiensten herzustellen."@de ,
                                                     "Établir une relation avec les services de publication."@fr ;
