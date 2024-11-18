@@ -425,7 +425,6 @@ ec:existsAs rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasRights ;
-                       rdfs:range ec:AccessConditions ;
                        dcterms:description "Pour exprimer les conditions/restrictions d'accès."@fr ,
                                            "To express access conditions/restrictions."@en ,
                                            "Um Zugangsbedingungen/Einschränkungen auszudrücken."@de ;
@@ -1234,7 +1233,6 @@ ec:hasContributor rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCopyright
 ec:hasCopyright rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasRights ;
-                rdfs:range ec:Copyright ;
                 dcterms:description "Pour exprimer le droit d'auteur."@fr ,
                                     "To express copyright."@en ,
                                     "Um das Urheberrecht auszudrücken."@de ;
@@ -1276,7 +1274,6 @@ ec:hasCoverage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCoverageRestrictions
 ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf ec:hasRights ;
-                           rdfs:range ec:CoverageRestrictions ;
                            dcterms:description "Pour exprimer les restrictions de couverture."@fr ,
                                                "To express coverage restrictions."@en ,
                                                "Um Einschränkungen der Deckung auszudrücken."@de ;
@@ -1288,7 +1285,6 @@ ec:hasCoverageRestrictions rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasCreativeCommons
 ec:hasCreativeCommons rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:CreativeCommons ;
                       dcterms:description "Pour exprimer Creative Commons."@fr ,
                                           "To express Creative Commons."@en ,
                                           "Um Creative Commons auszudrücken."@de ;
@@ -1613,7 +1609,6 @@ ec:hasDevice rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasDisclaimer
 ec:hasDisclaimer rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ec:hasRights ;
-                 rdfs:range ec:Disclaimer ;
                  dcterms:description "Pour exprimer le désistement."@fr ,
                                      "To express Disclaimer."@en ,
                                      "Zum Ausdruck bringen Disclaimer."@de ;
@@ -1755,7 +1750,6 @@ ec:hasEpisode rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasExploitationIssues
 ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf ec:hasRights ;
-                         rdfs:range ec:ExploitationIssues ;
                          dcterms:description "Pour exprimer les problèmes d'exploitation."@fr ,
                                              "To express Exploitation Issues."@en ,
                                              "Zum Ausdruck bringen von Ausbeutungsproblemen."@de ;
@@ -1881,7 +1875,6 @@ ec:hasGroupMember rdf:type owl:ObjectProperty .
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIPRRestrictions
 ec:hasIPRRestrictions rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:IPRRestrictions ;
                       dcterms:description "Pour exprimer les restrictions en matière de DPI."@fr ,
                                           "To express IPR Restrictions."@en ,
                                           "Um IPR-Einschränkungen auszudrücken."@de ;
@@ -2015,7 +2008,6 @@ ec:hasLanguage rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLicensing
 ec:hasLicensing rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf ec:hasRights ;
-                rdfs:range ec:Licensing ;
                 dcterms:description "Pour exprimer l'autorisation."@fr ,
                                     "To express Licensing."@en ,
                                     "Um die Lizenzierung auszudrücken."@de ;
@@ -2732,7 +2724,6 @@ ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEssence
 ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Essence ;
                      dcterms:description "Pour établir une relation entre une MediaResource et une Essence."@fr ,
                                          "To establish a relation between a MediaResource and an Essence."@en ,
                                          "Um eine Beziehung zwischen einer MediaResource und einer Essenz herzustellen."@de ;
@@ -2754,7 +2745,6 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedMediaFragment
 ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:MediaFragment ;
                            dcterms:description "Pour associer une partie d'un objet éditorial à un MediaFragment au sein de l'association MediaResource instanciant l'objet éditorial."@fr ,
                                                "So verknüpfen Sie einen Teil eines Redaktionsobjekts mit einem MediaFragment innerhalb der Assoziation MediaResource, die das Redaktionsobjekt instanziiert."@de ,
                                                "To associate a Part of an Editorial Object with a MediaFragment within the association MediaResource instantiating the Editrial Object."@en ;
@@ -2765,7 +2755,6 @@ ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedMediaResource
 ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
-                           rdfs:range ec:MediaResource ;
                            dcterms:description "Pour identifier une MediaResource associée à un concept"@fr ,
                                                "So identifizieren Sie eine mit einem Konzept verbundene MediaResource"@de ,
                                                "To identify a MediaResource associated with a concept"@en ;
@@ -2776,7 +2765,6 @@ ec:hasRelatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPicture
 ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Picture ;
                      dcterms:description "Pour associer une image à un EditorialObject"@fr ,
                                          "So verknüpfen Sie ein Bild mit einem EditorialObject"@de ,
                                          "To associate a Picture with an EditorialObject"@en ;
@@ -2787,7 +2775,6 @@ ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationChannel
 ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
-                                rdfs:range ec:PublicationChannel ;
                                 dcterms:description "Pour identifier un canal de publication"@fr ,
                                                     "So identifizieren Sie einen Publikationskanal"@de ,
                                                     "To identify a Publication Channel"@en ;
@@ -2798,7 +2785,6 @@ ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationEvent
 ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:PublicationEvent ;
                               dcterms:description "Pour identifier le PublicationEvent associé à une MediaResource (manifestation d'un EditorialObject)."@fr ,
                                                   "To identify the PublicationEvent associated with a MediaResource (manifestation of an EditorialObject)."@en ,
                                                   "Zur Identifizierung des mit einer MediaResource verbundenen PublicationEvent (Manifestation eines EditorialObjects)."@de ;
@@ -2809,7 +2795,6 @@ ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationService
 ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
-                                rdfs:range ec:PublicationService ;
                                 dcterms:description "To establish a relation to publication services."@en ,
                                                     "Um eine Beziehung zu den Publikationsdiensten herzustellen."@de ,
                                                     "Établir une relation avec les services de publication."@fr ;
@@ -2820,7 +2805,6 @@ ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedRecord
 ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Record ;
                     dcterms:description "Pour associer un Enregistrement à un Bien."@fr ,
                                         "So verknüpfen Sie einen Datensatz mit einem Asset."@de ,
                                         "To associate a Record with an Asset."@en ;
@@ -2841,7 +2825,6 @@ ec:hasRelatedResonanceEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedResource
 ec:hasRelatedResource rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:Resource ;
                       dcterms:description "Pour identifier une ressource associée à un actif ou un EditorialObject ou un PublicationEvent ou une autre ressource."@fr ,
                                           "To identify a Resource associated with an Asset or an EditorialObject or a PublicationEvent or another Resource."@en ,
                                           "Um eine Ressource zu identifizieren, die mit einem Asset oder einem EditorialObject oder einem PublicationEvent oder einer anderen Ressource verbunden ist."@de ;
@@ -2862,7 +2845,6 @@ ec:hasRelatedRule rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedScene
 ec:hasRelatedScene rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Scene ;
                    dcterms:description "Pour associer un concept à une Scène"@fr ,
                                        "So verknüpfen Sie ein Konzept mit einer Szene"@de ,
                                        "To associate a concept with a Scene"@en ;
@@ -2883,7 +2865,6 @@ ec:hasRelatedStage rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedTextLine
 ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
-                      rdfs:range ec:TextLine ;
                       dcterms:description "A TextLine or free text related to an EditorialObject."@en ,
                                           "Eine Textzeile oder ein freier Text, der sich auf ein EditorialObject bezieht."@de ,
                                           "Une TextLine ou un texte libre lié à un EditorialObject."@fr ;
@@ -2894,7 +2875,6 @@ ec:hasRelatedTextLine rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationLink
 ec:hasRelationLink rdf:type owl:ObjectProperty ;
-                   rdfs:range owl:Thing ;
                    dcterms:description "Pour définir un lien dans une Relation."@fr ,
                                        "So definieren Sie eine Verknüpfung in einer Relation."@de ,
                                        "To define a link in a Relation."@en ;
@@ -2905,7 +2885,6 @@ ec:hasRelationLink rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelationSource
 ec:hasRelationSource rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
                      dcterms:description "Pour définir la source d'une Relation."@fr ,
                                          "To define source of a Relation."@en ,
                                          "Um die Quelle einer Relation zu definieren."@de ;
@@ -2916,7 +2895,6 @@ ec:hasRelationSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasResourceOffset
 ec:hasResourceOffset rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:TimelinePoint ;
                      dcterms:description "Der Start-Offset innerhalb einer Ressource."@de ,
                                          "Le décalage de départ dans une ressource."@fr ,
                                          "The start offset within a Resource."@en ;
@@ -2937,7 +2915,6 @@ ec:hasRestrictedAudience rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasReview
 ec:hasReview rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Review ;
              dcterms:description "Pour fournir une revue."@fr ,
                                  "To provide a review."@en ,
                                  "Um einen Überblick zu geben."@de ;
@@ -2948,7 +2925,6 @@ ec:hasReview rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRights
 ec:hasRights rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Rights ;
              rdfs:label "Est couvert par"@fr ,
                         "Is covered by"@en ,
                         "Wird abgedeckt durch"@de .
@@ -2957,7 +2933,6 @@ ec:hasRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsClearance
 ec:hasRightsClearance rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf ec:hasRights ;
-                      rdfs:range ec:RightsClearance ;
                       dcterms:description "Pour exprimer l'autorisation des droits."@fr ,
                                           "To express Rights Clearance."@en ,
                                           "Zum Ausdruck bringen Rechte Clearance."@de ;
@@ -2968,7 +2943,6 @@ ec:hasRightsClearance rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsHolder
 ec:hasRightsHolder rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Agent ;
                    dcterms:description "Pour identifier un agent (contact/personne ou Organisation) ayant/gérant des droits."@fr ,
                                        "To identify an Agent (Contact/person or Organisation) having/managing Rights."@en ,
                                        "Zur Identifizierung eines Agenten (Kontaktperson/Person oder Organisation), der Rechte besitzt/verwaltet."@de ;
@@ -2979,7 +2953,6 @@ ec:hasRightsHolder rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTargetService
 ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
-                          rdfs:range ec:PublicationService ;
                           dcterms:description "Pour identifier un service associé à des droits."@fr ,
                                               "To identify a Service associated to Rights."@en ,
                                               "Um einen mit Rechten verbundenen Service zu identifizieren."@de ;
@@ -2990,7 +2963,6 @@ ec:hasRightsTargetService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryExcludes
 ec:hasRightsTerritoryExcludes rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:CountryCode ;
                               dcterms:description "A list of country or region codes to which Rights do not apply."@en ,
                                                   "Eine Liste von Länder- oder Regionencodes, für die die Rechte nicht gelten."@de ,
                                                   "Une liste de codes de pays ou de régions auxquels les droits ne s'appliquent pas."@fr ;
@@ -3485,7 +3457,6 @@ ec:hasUsageContract rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRestrictions
 ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ec:hasRights ;
-                        rdfs:range ec:UsageRestrictions ;
                         dcterms:description "Pour exprimer des restrictions d'utilisation."@fr ,
                                             "To express usage restrictions."@en ,
                                             "Um Nutzungseinschränkungen auszudrücken."@de ;
@@ -3497,7 +3468,6 @@ ec:hasUsageRestrictions rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasUsageRights
 ec:hasUsageRights rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ec:hasRights ;
-                  rdfs:range ec:UsageRights ;
                   dcterms:description "Pour exprimer les droits d'utilisation."@fr ,
                                       "To express usage rights."@en ,
                                       "Um Nutzungsrechte auszudrücken."@de ;
