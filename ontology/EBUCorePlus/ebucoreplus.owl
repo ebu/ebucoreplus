@@ -3018,7 +3018,6 @@ ec:hasSerial rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasServiceGenre
 ec:hasServiceGenre rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Genre ;
                    dcterms:description "Das Genre des mit dem Dienst verbundenen Inhalts."@de ,
                                        "Le genre de contenu associé au service."@fr ,
                                        "The genre of content associated with the Service."@en ;
