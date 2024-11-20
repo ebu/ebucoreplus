@@ -3056,7 +3056,6 @@ ec:hasSigningFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSigningSource
 ec:hasSigningSource rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Agent ;
                     dcterms:description "Pour spécifier la source de la signature."@fr ,
                                         "So geben Sie die Quelle der Signierung an."@de ,
                                         "To specify the source of signing."@en ;
