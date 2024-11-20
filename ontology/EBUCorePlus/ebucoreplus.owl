@@ -3282,7 +3282,6 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryExcludes
 ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:CountryCode ;
                         dcterms:description "Pour définir l'emplacement (par exemple, le pays, la région) auquel le classement et le public cible ne s'appliquent PAS."@fr ,
                                             "To define the Location (e.g. country, region) to which Rating and TargetAudience do NOT apply."@en ,
                                             "Zur Definition des Standorts (z.B. Land, Region), für den Rating und TargetAudience NICHT gelten."@de ;
