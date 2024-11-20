@@ -3066,7 +3066,6 @@ ec:hasSigningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSource
 ec:hasSource rdf:type owl:ObjectProperty ;
-             rdfs:range ec:MediaResource ;
              dcterms:description "Pour identifier la source d'une MediaResource."@fr ,
                                  "To identify the source of a MediaResource."@en ,
                                  "Um die Quelle einer MediaResource zu identifizieren."@de ;
