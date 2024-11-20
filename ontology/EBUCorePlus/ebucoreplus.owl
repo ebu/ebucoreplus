@@ -3096,7 +3096,6 @@ ec:hasStageLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStakeholder
 ec:hasStakeholder rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "An Agent related to the PublicationPlan."@en ,
                                       "Ein Agent, der sich auf den PublicationPlan bezieht."@de ,
                                       "Pour identifier les agents associés à un PublicationPan."@fr ,
