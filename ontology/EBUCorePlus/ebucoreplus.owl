@@ -3344,7 +3344,6 @@ ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimelineTrackPart
 ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
                         owl:inverseOf ec:isTimelineTrackPartOf ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "Pour associer un EditorialObject à une TimelineTrack en tant que TimelineTrackpart"@fr ,
                                             "So verknüpfen Sie ein EditorialObject mit einem TimelineTrack als TimelineTrackpart"@de ,
                                             "To associate an EditorialObject to a TimelineTrack as an TimelineTrackpart"@en ;
