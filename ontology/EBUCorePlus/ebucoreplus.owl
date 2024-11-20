@@ -3365,7 +3365,6 @@ ec:hasTopic rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrack
 ec:hasTrack rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Track ;
             dcterms:description "Pour associer des pistes audio/données/vidéo à une MediaResource."@fr ,
                                 "So verknüpfen Sie Audio-/Daten-/Videotracks mit einer MediaResource."@de ,
                                 "To associate audio/data/video tracks with a MediaResource."@en ;
