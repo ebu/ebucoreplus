@@ -3181,7 +3181,6 @@ ec:hasSubJob rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubject
 ec:hasSubject rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Subject ;
               dcterms:description "Cette propriété permet d'associer un actif à un sujet qui peut être une chaîne ou une URI pointant vers un terme d'un vocabulaire contrôlé."@fr ,
                                   "Diese Eigenschaft ermöglicht es, ein Asset mit einem Betreff zu verknüpfen, der eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist."@de ,
                                   "This property enables to associate an Asset with a subject which can be a string or a URI pointing to a term from a controlled vocabulary."@en ;
