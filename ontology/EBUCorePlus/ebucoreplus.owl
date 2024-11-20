@@ -3272,7 +3272,6 @@ ec:hasTargetService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTeamMember
 ec:hasTeamMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Person ;
                  dcterms:description "Pour identifier les membres d'une équipe"@fr ,
                                      "So identifizieren Sie die Mitglieder eines Teams"@de ,
                                      "To identify the members of a Team"@en ;
