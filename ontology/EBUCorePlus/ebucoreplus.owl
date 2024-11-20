@@ -3323,7 +3323,6 @@ ec:hasTheme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimecodeTrack
 ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:TimecodeTrack ;
                     dcterms:description "Pour identifier une piste de timecode avec une MediaResource."@fr ,
                                         "So identifizieren Sie eine Timecode-Spur mit einer MediaResource."@de ,
                                         "To identify a timecode track with a MediaResource."@en ;
