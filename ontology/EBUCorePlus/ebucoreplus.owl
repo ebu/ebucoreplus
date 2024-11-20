@@ -3292,7 +3292,6 @@ ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryIncludes
 ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Asset ;
                         dcterms:description "Identifier l'actif auquel le Rating s'applique."@fr ,
                                             "To identify the asset to which the Rating applies."@en ,
                                             "Um den Vermögenswert zu identifizieren, für den das Rating gilt."@de ;
