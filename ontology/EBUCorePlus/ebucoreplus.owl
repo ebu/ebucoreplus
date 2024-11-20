@@ -3252,7 +3252,6 @@ ec:hasTargetChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTargetPlatform
 ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:PublicationPlatform ;
                      dcterms:description "Pour spécifier une plate-forme cible."@fr ,
                                          "To specify a target platform."@en ,
                                          "Um eine Zielplattform anzugeben."@de ;
