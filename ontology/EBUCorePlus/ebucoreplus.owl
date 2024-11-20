@@ -3320,7 +3320,6 @@ ec:hasTextLineSource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTheme
 ec:hasTheme rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasSubject ;
-            rdfs:range ec:Theme ;
             dcterms:description "Cette propriété permet d'associer un actif à un thème qui peut être une chaîne ou un URI pointant vers un terme d'un vocabulaire contrôlé. Un exemple typique est la classification NACE d'Eurostats."@fr ,
                                 "Diese Eigenschaft ermöglicht es, ein Asset mit einem Thema zu verknüpfen, das eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist. Ein typisches Beispiel ist die NACE-Klassifizierung von Eurostats."@de ,
                                 "This property enables to associate an Asset with a theme which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is the Eurostats NACE classification."@en ;
