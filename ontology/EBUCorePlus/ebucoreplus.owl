@@ -3190,7 +3190,6 @@ ec:hasSubject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitling
 ec:hasSubtitling rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Subtitling ;
                  dcterms:description "Pour identifier le sous-titrage existant."@fr ,
                                      "To identify existing subtitling."@en ,
                                      "Um vorhandene Untertitel zu identifizieren."@de ;
