@@ -3151,7 +3151,6 @@ ec:hasSticker rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
 ec:hasStorageId rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Identifier ;
                 dcterms:description "Identifier le stockage associé à un localisateur à partir duquel une ressource peut être accédée ou peut être récupérée."@fr ,
                                     "To identify storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ,
                                     "Zur Identifizierung des mit einem Locator verbundenen Speichers, von dem aus auf eine Ressource zugegriffen werden kann oder die abgerufen werden kann."@de ;
