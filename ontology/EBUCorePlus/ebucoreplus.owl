@@ -3036,7 +3036,6 @@ ec:hasShot rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSigning
 ec:hasSigning rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Signing ;
               dcterms:description "Pour identifier la présence d'une signature associée à l'EditorialObject."@fr ,
                                   "To identify the presence of Signing associated to the EditorialObject."@en ,
                                   "Um das Vorhandensein von Signaturen im Zusammenhang mit dem EditorialObject festzustellen."@de ;
