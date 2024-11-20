@@ -3302,7 +3302,6 @@ ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTextLineSource
 ec:hasTextLineSource rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
                      dcterms:description "Pour identifier la source d'un TextLine."@fr ,
                                          "So identifizieren Sie die Quelle einer Textzeile."@de ,
                                          "To identify the source of a TextLine."@en ;
