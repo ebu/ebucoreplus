@@ -3001,7 +3001,6 @@ ec:hasScheduleDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSeason
 ec:hasSeason rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Season ;
              dcterms:description "Pour identifier les saisons d'une série."@fr ,
                                  "To identiify Seasons in a Series."@en ,
                                  "Zur Identifizierung von Jahreszeiten in einer Serie."@de ;
