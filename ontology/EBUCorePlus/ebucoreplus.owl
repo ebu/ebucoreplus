@@ -3076,7 +3076,6 @@ ec:hasSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStaffMember
 ec:hasStaffMember rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:StaffMember ;
                   dcterms:description "Pour identifier les membres du personnel d'une organisation."@fr ,
                                       "To identify members of staff in an organisation."@en ,
                                       "Zur Identifizierung von Mitarbeitern in einer Organisation."@de ;
