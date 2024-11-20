@@ -3375,7 +3375,6 @@ ec:hasTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackPart
 ec:hasTrackPart rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
                 dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destinationn."@en ,
                                     "Ein Element zur Identifizierung eines Teils eines Titels durch einen Titel, eine Startzeit und eine Endzeit sowohl in der Medienquelle als auch im Medienziel."@de ,
                                     "Un élément pour identifier une partie d'une piste par un titre, une heure de début et une heure de fin dans la source du média et la destination du médian."@fr ;
