@@ -3141,7 +3141,6 @@ ec:hasStartDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSticker
 ec:hasSticker rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Sticker ;
               dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
                                   "So erstellen Sie einen Link zu einem Sticker"@de ,
                                   "To provide a link to a Sticker"@en ;
