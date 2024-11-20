@@ -3123,7 +3123,6 @@ ec:hasStandard rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStart
 ec:hasStart rdf:type owl:ObjectProperty ;
-            rdfs:range ec:TimelinePoint ;
             rdfs:label "Début"@fr ,
                        "Start"@de ,
                        "Start"@en .
