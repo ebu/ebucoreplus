@@ -3385,7 +3385,6 @@ ec:hasTrackPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackPurpose
 ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:TrackPurpose ;
                    dcterms:description "Der Zweck, für den der Track bereitgestellt wird."@de ,
                                        "Le but pour lequel la piste est fournie."@fr ,
                                        "The purpose for which the Track is provided."@en ;
