@@ -3211,7 +3211,6 @@ ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitlingSource
 ec:hasSubtitlingSource rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Agent ;
                        dcterms:description "Pour identifier la source du sous-titrage de la ressource."@fr ,
                                            "To identify the source of the Subtitling resource."@en ,
                                            "Um die Quelle der Untertitelung zu identifizieren Ressource."@de ;
