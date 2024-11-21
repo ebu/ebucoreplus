@@ -1986,7 +1986,6 @@ ec:hasKeyPersonalEvent rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyword
 ec:hasKeyword rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf ec:hasSubject ;
-              rdfs:range ec:Keyword ;
               dcterms:description "Pour associer un concept, une phrase descriptive ou un mot-clé qui spécifie le sujet de l'EditorialObject."@fr ,
                                   "To associate a concept, descriptive phrase or Keyword that specifies the topic of the EditorialObject."@en ,
                                   "Um ein Konzept, eine beschreibende Phrase oder ein Schlüsselwort zuzuordnen, das das Thema des EditorialObjects angibt."@de ;
@@ -2973,7 +2972,6 @@ ec:hasRightsTerritoryExcludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRightsTerritoryIncludes
 ec:hasRightsTerritoryIncludes rdf:type owl:ObjectProperty ;
-                              rdfs:range ec:CountryCode ;
                               dcterms:description "A list of country or region codes to which Rights apply."@en ,
                                                   "Eine Liste der Länder- oder Regionencodes, für die Rechte gelten."@de ,
                                                   "Une liste des codes de pays ou de région auxquels les droits s'appliquent."@fr ;
@@ -2992,7 +2990,6 @@ ec:hasScene rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasScheduleDate
 ec:hasScheduleDate rdf:type owl:ObjectProperty ;
-                   rdfs:range time:Instant ;
                    dcterms:description "Pour exprimer spécifiquement la date d'horaire à laquelle un PublicationEvent est associé en particulier si l'heure de broacdast est après minuit. Par exemple, la date du planning serait le 29 mai et le programme est publié à 1 heure du matin le 30 mai, tout en restant associé dans le planning à la nuit du 29 mai."@fr ,
                                        "To express specifically the schedule date to which a PublicationEvent is related in particular if the broadcast time is after midnight. For example, the schedule date would be May 29th and the programme is published at 1 am on May 30th, while still associated in the schedule with the night of May 29th."@en ,
                                        "Zur Angabe des spezifischen Termindatums, auf das sich ein PublicationEvent bezieht, insbesondere wenn die Broacdast-Zeit nach Mitternacht liegt. Zum Beispiel wäre das Programmdatum der 29. Mai und die Sendung wird um 1 Uhr morgens am 30. Mai veröffentlicht, während sie im Programm noch mit der Nacht des 29. Mai verbunden ist."@de ;
@@ -3003,7 +3000,6 @@ ec:hasScheduleDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSeason
 ec:hasSeason rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Season ;
              dcterms:description "Pour identifier les saisons d'une série."@fr ,
                                  "To identiify Seasons in a Series."@en ,
                                  "Zur Identifizierung von Jahreszeiten in einer Serie."@de ;
@@ -3021,7 +3017,6 @@ ec:hasSerial rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasServiceGenre
 ec:hasServiceGenre rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:Genre ;
                    dcterms:description "Das Genre des mit dem Dienst verbundenen Inhalts."@de ,
                                        "Le genre de contenu associé au service."@fr ,
                                        "The genre of content associated with the Service."@en ;
@@ -3040,7 +3035,6 @@ ec:hasShot rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSigning
 ec:hasSigning rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Signing ;
               dcterms:description "Pour identifier la présence d'une signature associée à l'EditorialObject."@fr ,
                                   "To identify the presence of Signing associated to the EditorialObject."@en ,
                                   "Um das Vorhandensein von Signaturen im Zusammenhang mit dem EditorialObject festzustellen."@de ;
@@ -3051,7 +3045,6 @@ ec:hasSigning rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSigningFormat
 ec:hasSigningFormat rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:SigningFormat ;
                     dcterms:description "Pour spécifier le format utilisé pour la signature."@fr ,
                                         "To specify the format used for signing."@en ,
                                         "Zur Angabe des für die Unterzeichnung verwendeten Formats."@de ;
@@ -3062,7 +3055,6 @@ ec:hasSigningFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSigningSource
 ec:hasSigningSource rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:Agent ;
                     dcterms:description "Pour spécifier la source de la signature."@fr ,
                                         "So geben Sie die Quelle der Signierung an."@de ,
                                         "To specify the source of signing."@en ;
@@ -3073,7 +3065,6 @@ ec:hasSigningSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSource
 ec:hasSource rdf:type owl:ObjectProperty ;
-             rdfs:range ec:MediaResource ;
              dcterms:description "Pour identifier la source d'une MediaResource."@fr ,
                                  "To identify the source of a MediaResource."@en ,
                                  "Um die Quelle einer MediaResource zu identifizieren."@de ;
@@ -3084,7 +3075,6 @@ ec:hasSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStaffMember
 ec:hasStaffMember rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:StaffMember ;
                   dcterms:description "Pour identifier les membres du personnel d'une organisation."@fr ,
                                       "To identify members of staff in an organisation."@en ,
                                       "Zur Identifizierung von Mitarbeitern in einer Organisation."@de ;
@@ -3105,7 +3095,6 @@ ec:hasStageLocation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStakeholder
 ec:hasStakeholder rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "An Agent related to the PublicationPlan."@en ,
                                       "Ein Agent, der sich auf den PublicationPlan bezieht."@de ,
                                       "Pour identifier les agents associés à un PublicationPan."@fr ,
@@ -3133,7 +3122,6 @@ ec:hasStandard rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStart
 ec:hasStart rdf:type owl:ObjectProperty ;
-            rdfs:range ec:TimelinePoint ;
             rdfs:label "Début"@fr ,
                        "Start"@de ,
                        "Start"@en .
@@ -3152,7 +3140,6 @@ ec:hasStartDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSticker
 ec:hasSticker rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Sticker ;
               dcterms:description "Pour fournir un lien vers un autocollant"@fr ,
                                   "So erstellen Sie einen Link zu einem Sticker"@de ,
                                   "To provide a link to a Sticker"@en ;
@@ -3163,7 +3150,6 @@ ec:hasSticker rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageId
 ec:hasStorageId rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Identifier ;
                 dcterms:description "Identifier le stockage associé à un localisateur à partir duquel une ressource peut être accédée ou peut être récupérée."@fr ,
                                     "To identify storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ,
                                     "Zur Identifizierung des mit einem Locator verbundenen Speichers, von dem aus auf eine Ressource zugegriffen werden kann oder die abgerufen werden kann."@de ;
@@ -3174,7 +3160,6 @@ ec:hasStorageId rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasStorageType
 ec:hasStorageType rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:StorageType ;
                   dcterms:description "Définir un type de stockage associé à un localisateur à partir duquel une ressource peut être accédée ou peut être récupérée."@fr ,
                                       "To define a type of storage associated with a locator from which a Resource can be accessed or can be retrieved."@en ,
                                       "Zur Definition eines Speichertyps, der mit einem Locator verknüpft ist, von dem aus auf eine Ressource zugegriffen werden kann oder die abgerufen werden kann."@de ;
@@ -3195,7 +3180,6 @@ ec:hasSubJob rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubject
 ec:hasSubject rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Subject ;
               dcterms:description "Cette propriété permet d'associer un actif à un sujet qui peut être une chaîne ou une URI pointant vers un terme d'un vocabulaire contrôlé."@fr ,
                                   "Diese Eigenschaft ermöglicht es, ein Asset mit einem Betreff zu verknüpfen, der eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist."@de ,
                                   "This property enables to associate an Asset with a subject which can be a string or a URI pointing to a term from a controlled vocabulary."@en ;
@@ -3206,7 +3190,6 @@ ec:hasSubject rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitling
 ec:hasSubtitling rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Subtitling ;
                  dcterms:description "Pour identifier le sous-titrage existant."@fr ,
                                      "To identify existing subtitling."@en ,
                                      "Um vorhandene Untertitel zu identifizieren."@de ;
@@ -3228,7 +3211,6 @@ ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitlingSource
 ec:hasSubtitlingSource rdf:type owl:ObjectProperty ;
-                       rdfs:range ec:Agent ;
                        dcterms:description "Pour identifier la source du sous-titrage de la ressource."@fr ,
                                            "To identify the source of the Subtitling resource."@en ,
                                            "Um die Quelle der Untertitelung zu identifizieren Ressource."@de ;
@@ -3270,7 +3252,6 @@ ec:hasTargetChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTargetPlatform
 ec:hasTargetPlatform rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:PublicationPlatform ;
                      dcterms:description "Pour spécifier une plate-forme cible."@fr ,
                                          "To specify a target platform."@en ,
                                          "Um eine Zielplattform anzugeben."@de ;
@@ -3291,7 +3272,6 @@ ec:hasTargetService rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTeamMember
 ec:hasTeamMember rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Person ;
                  dcterms:description "Pour identifier les membres d'une équipe"@fr ,
                                      "So identifizieren Sie die Mitglieder eines Teams"@de ,
                                      "To identify the members of a Team"@en ;
@@ -3302,7 +3282,6 @@ ec:hasTeamMember rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryExcludes
 ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:CountryCode ;
                         dcterms:description "Pour définir l'emplacement (par exemple, le pays, la région) auquel le classement et le public cible ne s'appliquent PAS."@fr ,
                                             "To define the Location (e.g. country, region) to which Rating and TargetAudience do NOT apply."@en ,
                                             "Zur Definition des Standorts (z.B. Land, Region), für den Rating und TargetAudience NICHT gelten."@de ;
@@ -3313,7 +3292,6 @@ ec:hasTerritoryExcludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTerritoryIncludes
 ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:Asset ;
                         dcterms:description "Identifier l'actif auquel le Rating s'applique."@fr ,
                                             "To identify the asset to which the Rating applies."@en ,
                                             "Um den Vermögenswert zu identifizieren, für den das Rating gilt."@de ;
@@ -3324,7 +3302,6 @@ ec:hasTerritoryIncludes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTextLineSource
 ec:hasTextLineSource rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Agent ;
                      dcterms:description "Pour identifier la source d'un TextLine."@fr ,
                                          "So identifizieren Sie die Quelle einer Textzeile."@de ,
                                          "To identify the source of a TextLine."@en ;
@@ -3336,7 +3313,6 @@ ec:hasTextLineSource rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTheme
 ec:hasTheme rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf ec:hasSubject ;
-            rdfs:range ec:Theme ;
             dcterms:description "Cette propriété permet d'associer un actif à un thème qui peut être une chaîne ou un URI pointant vers un terme d'un vocabulaire contrôlé. Un exemple typique est la classification NACE d'Eurostats."@fr ,
                                 "Diese Eigenschaft ermöglicht es, ein Asset mit einem Thema zu verknüpfen, das eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist. Ein typisches Beispiel ist die NACE-Klassifizierung von Eurostats."@de ,
                                 "This property enables to associate an Asset with a theme which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is the Eurostats NACE classification."@en ;
@@ -3347,7 +3323,6 @@ ec:hasTheme rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimecodeTrack
 ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:TimecodeTrack ;
                     dcterms:description "Pour identifier une piste de timecode avec une MediaResource."@fr ,
                                         "So identifizieren Sie eine Timecode-Spur mit einer MediaResource."@de ,
                                         "To identify a timecode track with a MediaResource."@en ;
@@ -3358,7 +3333,6 @@ ec:hasTimecodeTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimelineTrack
 ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:TimelineTrack ;
                     dcterms:description "Pour associer un TimelineTrack à un EditorialObject"@fr ,
                                         "So verknüpfen Sie einen TimelineTrack mit einem EditorialObject"@de ,
                                         "To associate a TimelineTrack with an EditorialObject"@en ;
@@ -3370,7 +3344,6 @@ ec:hasTimelineTrack rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTimelineTrackPart
 ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
                         owl:inverseOf ec:isTimelineTrackPartOf ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "Pour associer un EditorialObject à une TimelineTrack en tant que TimelineTrackpart"@fr ,
                                             "So verknüpfen Sie ein EditorialObject mit einem TimelineTrack als TimelineTrackpart"@de ,
                                             "To associate an EditorialObject to a TimelineTrack as an TimelineTrackpart"@en ;
@@ -3392,7 +3365,6 @@ ec:hasTopic rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrack
 ec:hasTrack rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Track ;
             dcterms:description "Pour associer des pistes audio/données/vidéo à une MediaResource."@fr ,
                                 "So verknüpfen Sie Audio-/Daten-/Videotracks mit einer MediaResource."@de ,
                                 "To associate audio/data/video tracks with a MediaResource."@en ;
@@ -3403,7 +3375,6 @@ ec:hasTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackPart
 ec:hasTrackPart rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
                 dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destinationn."@en ,
                                     "Ein Element zur Identifizierung eines Teils eines Titels durch einen Titel, eine Startzeit und eine Endzeit sowohl in der Medienquelle als auch im Medienziel."@de ,
                                     "Un élément pour identifier une partie d'une piste par un titre, une heure de début et une heure de fin dans la source du média et la destination du médian."@fr ;
@@ -3414,7 +3385,6 @@ ec:hasTrackPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackPurpose
 ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:TrackPurpose ;
                    dcterms:description "Der Zweck, für den der Track bereitgestellt wird."@de ,
                                        "Le but pour lequel la piste est fournie."@fr ,
                                        "The purpose for which the Track is provided."@en ;
@@ -15096,8 +15066,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
