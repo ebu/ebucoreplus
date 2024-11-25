@@ -3704,7 +3704,6 @@ ec:isEpisodeOfSerial rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Series ;
                      dcterms:description "Die Episode einer Serie."@de ,
                                          "L'épisode d'une série."@fr ,
                                          "The Episode of a Series."@en ;
