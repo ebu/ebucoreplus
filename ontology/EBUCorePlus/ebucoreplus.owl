@@ -3764,7 +3764,6 @@ ec:isMemberOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOfPublicationPlan
 ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:PublicationPlan ;
                              dcterms:description "Identifier un parent Plan de publication"@fr ,
                                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
                                                  "To identify a parent Publication Plan"@en ;
