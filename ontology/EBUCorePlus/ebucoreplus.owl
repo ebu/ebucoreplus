@@ -3448,7 +3448,6 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVersion
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
-              rdfs:range ec:EditorialObject ;
               dcterms:description "Pour identifier une autre version d'un actif, d'un objet éditorial ou d'une ressource."@fr ,
                                   "To identify another version of an Asset, EditorialObject or Resource."@en ,
                                   "Um eine andere Version eines Assets, Redaktionsobjekts oder einer Ressource zu identifizieren."@de ;
