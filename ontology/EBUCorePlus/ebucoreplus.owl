@@ -3490,7 +3490,6 @@ ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoTrack
 ec:hasVideoTrack rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:VideoTrack ;
                  dcterms:description "Pour identifier les VideoTracks dans la ressource."@fr ,
                                      "So identifizieren Sie Videospuren in der Ressource."@de ,
                                      "To identify VideoTracks in the Resource."@en ;
