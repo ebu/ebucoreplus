@@ -3677,7 +3677,6 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
 ec:isEpisodeOf rdf:type owl:ObjectProperty ;
-               rdfs:range ec:EditorialGroup ;
                dcterms:description "Die Episode einer Serie oder einer Saison."@de ,
                                    "L'épisode d'une série ou d'une saison."@fr ,
                                    "The Episode of a Series or a Season."@en ;
