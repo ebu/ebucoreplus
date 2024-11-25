@@ -3785,7 +3785,6 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOfferedBy
 ec:isOfferedBy rdf:type owl:ObjectProperty ;
-               rdfs:range ec:PublicationService ;
                dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
                                    "To identify a Service associated to a PublicationEvent."@en ,
                                    "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
