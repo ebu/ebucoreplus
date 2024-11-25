@@ -3687,7 +3687,6 @@ ec:isEpisodeOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOfSeason
 ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Season ;
                      dcterms:description "Die Episode einer Saison."@de ,
                                          "L'épisode d'une saison."@fr ,
                                          "The Episode of a Season."@en ;
