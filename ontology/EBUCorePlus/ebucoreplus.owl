@@ -3724,7 +3724,6 @@ ec:isExtractOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isInstantiatedBy
 ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:MediaResource ;
                     dcterms:description "Pour identifier une MediaResource instanciant un EditorialObject."@fr ,
                                         "To identify a MediaResource instantiating an EditorialObject."@en ,
                                         "Um eine MediaResource zu identifizieren, die ein EditorialObject instanziiert."@de ;
