@@ -3754,7 +3754,6 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:EditorialGroup ;
               dcterms:description "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
                                   "To identify a Group to which an EditorialObject is a member of."@en ,
                                   "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
