@@ -3744,7 +3744,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMediaFragmentOf
 ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:MediaResource ;
                      dcterms:description "Pour identifier la ressource média à laquelle appartient un fragment de média"@fr ,
                                          "So identifizieren Sie die Medienressource, zu der ein Medienfragment gehört"@de ,
                                          "To identify the Media Resource to which a Media Fragment belongs to"@en ;
