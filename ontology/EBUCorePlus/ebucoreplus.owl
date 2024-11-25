@@ -3627,7 +3627,6 @@ ec:isCommissionedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
 ec:isComposedOf rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
                 dcterms:description "Identifier les mediaRessources utilisées pour composer une Essence."@fr ,
                                     "To identify mediaResources used to compose an Essence."@en ,
                                     "Zur Identifizierung von MedienRessourcen, die zur Erstellung einer Essenz verwendet werden."@de ;
