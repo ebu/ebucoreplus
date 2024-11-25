@@ -3589,7 +3589,6 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAwardedTo
 ec:isAwardedTo rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Award ;
                rdfs:label "awarded to"@en ,
                           "décerné à"@fr ,
                           "verliehen an"@de .
