@@ -3734,7 +3734,6 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMasterOf
 ec:isMasterOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:MediaResource ;
               dcterms:description "Pour identifier le maître d'une ressource média dérivée."@fr ,
                                   "To identify the master of a derived media resource."@en ,
                                   "Um den Master einer abgeleiteten Medienressource zu identifizieren."@de ;
