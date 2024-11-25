@@ -3667,7 +3667,6 @@ ec:isDistributedOn rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubOf
 ec:isDubOf rdf:type owl:ObjectProperty ;
-           rdfs:range ec:MediaResource ;
            dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
                                "l'origine d'une MediaResource doublée."@fr ,
                                "the origin of a dubbed MediaResource."@en ;
