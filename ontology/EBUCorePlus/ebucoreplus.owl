@@ -3569,7 +3569,6 @@ ec:isAnimatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotatedMediaResource
 ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:MediaResource ;
                             dcterms:description "Pour lier une Annotation à une MediaResource."@fr ,
                                                 "So verknüpfen Sie eine Anmerkung mit einer MediaResource."@de ,
                                                 "To link an Annotation to a MediaResource."@en ;
