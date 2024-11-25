@@ -3657,7 +3657,6 @@ ec:isDerivedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDistributedOn
 ec:isDistributedOn rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:PublicationService ;
                    dcterms:description "Pour identifier la plateforme sur laquelle le contenu est distribué."@fr ,
                                        "To identify the platform on which content is distributed."@en ,
                                        "Um die Plattform zu identifizieren, auf der die Inhalte verbreitet werden."@de ;
