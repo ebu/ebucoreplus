@@ -3835,7 +3835,6 @@ ec:isParentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
 ec:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:range ec:EditorialObject ;
             dcterms:description "Pour identifier l'objet éditorial auquel appartient une partie."@fr ,
                                 "To identify the editorial object to which belongs a part."@en ,
                                 "Um das redaktionelle Objekt zu identifizieren, zu dem ein Teil gehört."@de ;
