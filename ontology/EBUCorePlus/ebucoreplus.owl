@@ -3549,7 +3549,6 @@ ec:instantiates rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAffiliatedTo
 ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Organisation ;
                   dcterms:description "Beziehung zu der Organisation, die der Verband vertritt"@de ,
                                       "Relation avec l'organisation que l'affiliation représente"@fr ,
                                       "Relation to the organisation the affiliation represents"@en ;
