@@ -3775,7 +3775,6 @@ ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isNextInSequence
 ec:isNextInSequence rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isPreviousInSequence ;
-                    rdfs:range ec:EditorialObject ;
                     dcterms:description "A link to an Editorial Object following the current Editorial Object in an ordered sequence."@en ,
                                         "Ein Link zu einem redaktionellen Objekt, das dem aktuellen redaktionellen Objekt in einer geordneten Reihenfolge folgt."@de ,
                                         "Un lien vers un objet éditorial suivant l'objet éditorial actuel dans une séquence ordonnée."@fr ;
