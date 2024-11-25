@@ -3597,7 +3597,6 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isParentOf ;
-             rdfs:range ec:Asset ;
              dcterms:description "Pour lier un concept à un parent."@fr ,
                                  "To link a concept to a parent."@en ,
                                  "Um ein Konzept mit einem übergeordneten Konzept zu verknüpfen."@de ;
