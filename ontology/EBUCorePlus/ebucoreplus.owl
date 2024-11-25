@@ -3559,7 +3559,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
 ec:isAnimatedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Person ;
                 dcterms:description "Character, animated by a persion using an artifact"@en ,
                                     "Charakter, der von einer Persion mit Hilfe eines Artefakts animiert wird"@de ,
                                     "Personnage, animé par une persion utilisant un artefact"@fr ;
