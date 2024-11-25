@@ -3539,7 +3539,6 @@ ec:includesAudience rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
-                rdfs:range ec:EditorialObject ;
                 dcterms:description "Pour lier une manifestation particulière d'un objet éditorial à la ressource correspondante."@fr ,
                                     "To link a particular manifestation of an EditorialObject to the corresponding Resource."@en ,
                                     "Um eine bestimmte Manifestation eines EditorialObjects mit der entsprechenden Ressource zu verknüpfen."@de ;
