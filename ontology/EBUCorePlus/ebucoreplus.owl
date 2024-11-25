@@ -3647,7 +3647,6 @@ ec:isDefinedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDerivedFrom
 ec:isDerivedFrom rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Asset ;
                  dcterms:description "Identifie une relation basée sur le contenu entre deux ressources."@fr ,
                                      "Identifies a content-based relationship between two resources."@en ,
                                      "Identifiziert eine inhaltsbezogene Beziehung zwischen zwei Ressourcen."@de ;
