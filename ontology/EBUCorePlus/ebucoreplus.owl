@@ -3395,7 +3395,6 @@ ec:hasTrackPurpose rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackType
 ec:hasTrackType rdf:type owl:ObjectProperty ;
-                rdfs:range ec:TrackType ;
                 dcterms:description "Der Typ, der einem Track zugeordnet ist."@de ,
                                     "Le type attribué à une piste."@fr ,
                                     "The type attributed to a Track."@en ;
@@ -3449,7 +3448,6 @@ ec:hasUsageRights rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVersion
 ec:hasVersion rdf:type owl:ObjectProperty ;
               owl:inverseOf ec:isVersionOf ;
-              rdfs:range ec:EditorialObject ;
               dcterms:description "Pour identifier une autre version d'un actif, d'un objet éditorial ou d'une ressource."@fr ,
                                   "To identify another version of an Asset, EditorialObject or Resource."@en ,
                                   "Um eine andere Version eines Assets, Redaktionsobjekts oder einer Ressource zu identifizieren."@de ;
@@ -3492,7 +3490,6 @@ ec:hasVideoEncodingFormat rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasVideoTrack
 ec:hasVideoTrack rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:VideoTrack ;
                  dcterms:description "Pour identifier les VideoTracks dans la ressource."@fr ,
                                      "So identifizieren Sie Videospuren in der Ressource."@de ,
                                      "To identify VideoTracks in the Resource."@en ;
@@ -3503,7 +3500,6 @@ ec:hasVideoTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasWrappingType
 ec:hasWrappingType rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:WrappingType ;
                    dcterms:description "Pour spécifier le type d'emballage."@fr ,
                                        "To specify the type of wrapping."@en ,
                                        "Um die Art der Umhüllung festzulegen."@de ;
@@ -3543,7 +3539,6 @@ ec:includesAudience rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#instantiates
 ec:instantiates rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:isInstantiatedBy ;
-                rdfs:range ec:EditorialObject ;
                 dcterms:description "Pour lier une manifestation particulière d'un objet éditorial à la ressource correspondante."@fr ,
                                     "To link a particular manifestation of an EditorialObject to the corresponding Resource."@en ,
                                     "Um eine bestimmte Manifestation eines EditorialObjects mit der entsprechenden Ressource zu verknüpfen."@de ;
@@ -3554,7 +3549,6 @@ ec:instantiates rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAffiliatedTo
 ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Organisation ;
                   dcterms:description "Beziehung zu der Organisation, die der Verband vertritt"@de ,
                                       "Relation avec l'organisation que l'affiliation représente"@fr ,
                                       "Relation to the organisation the affiliation represents"@en ;
@@ -3565,7 +3559,6 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
 ec:isAnimatedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:Person ;
                 dcterms:description "Character, animated by a persion using an artifact"@en ,
                                     "Charakter, der von einer Persion mit Hilfe eines Artefakts animiert wird"@de ,
                                     "Personnage, animé par une persion utilisant un artefact"@fr ;
@@ -3576,7 +3569,6 @@ ec:isAnimatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotatedMediaResource
 ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
-                            rdfs:range ec:MediaResource ;
                             dcterms:description "Pour lier une Annotation à une MediaResource."@fr ,
                                                 "So verknüpfen Sie eine Anmerkung mit einer MediaResource."@de ,
                                                 "To link an Annotation to a MediaResource."@en ;
@@ -3587,7 +3579,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAttributedTo
 ec:isAttributedTo rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Agent ;
                   dcterms:description "Pour associer un agent à une instance de Provenance."@fr ,
                                       "So verknüpfen Sie einen Agenten mit einer Provenance-Instanz."@de ,
                                       "To associate an Agent with a Provenance instance."@en ;
@@ -3598,7 +3589,6 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAwardedTo
 ec:isAwardedTo rdf:type owl:ObjectProperty ;
-               rdfs:range ec:Award ;
                rdfs:label "awarded to"@en ,
                           "décerné à"@fr ,
                           "verliehen an"@de .
@@ -3607,7 +3597,6 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isParentOf ;
-             rdfs:range ec:Asset ;
              dcterms:description "Pour lier un concept à un parent."@fr ,
                                  "To link a concept to a parent."@en ,
                                  "Um ein Konzept mit einem übergeordneten Konzept zu verknüpfen."@de ;
@@ -3618,7 +3607,6 @@ ec:isChildOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isCloneOf
 ec:isCloneOf rdf:type owl:ObjectProperty ;
-             rdfs:range ec:MediaResource ;
              dcterms:description "Pour identifier la source d'une MediaResource clonée"@fr ,
                                  "So identifizieren Sie die Quelle einer geklonten MediaResource"@de ,
                                  "To identify the source of a clone MediaResource"@en ;
@@ -3639,7 +3627,6 @@ ec:isCommissionedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isComposedOf
 ec:isComposedOf rdf:type owl:ObjectProperty ;
-                rdfs:range ec:MediaResource ;
                 dcterms:description "Identifier les mediaRessources utilisées pour composer une Essence."@fr ,
                                     "To identify mediaResources used to compose an Essence."@en ,
                                     "Zur Identifizierung von MedienRessourcen, die zur Erstellung einer Essenz verwendet werden."@de ;
@@ -3660,7 +3647,6 @@ ec:isDefinedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDerivedFrom
 ec:isDerivedFrom rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Asset ;
                  dcterms:description "Identifie une relation basée sur le contenu entre deux ressources."@fr ,
                                      "Identifies a content-based relationship between two resources."@en ,
                                      "Identifiziert eine inhaltsbezogene Beziehung zwischen zwei Ressourcen."@de ;
@@ -3671,7 +3657,6 @@ ec:isDerivedFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDistributedOn
 ec:isDistributedOn rdf:type owl:ObjectProperty ;
-                   rdfs:range ec:PublicationService ;
                    dcterms:description "Pour identifier la plateforme sur laquelle le contenu est distribué."@fr ,
                                        "To identify the platform on which content is distributed."@en ,
                                        "Um die Plattform zu identifizieren, auf der die Inhalte verbreitet werden."@de ;
@@ -3682,7 +3667,6 @@ ec:isDistributedOn rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isDubOf
 ec:isDubOf rdf:type owl:ObjectProperty ;
-           rdfs:range ec:MediaResource ;
            dcterms:description "die Herkunft einer überspielten MediaResource."@de ,
                                "l'origine d'une MediaResource doublée."@fr ,
                                "the origin of a dubbed MediaResource."@en ;
@@ -3693,7 +3677,6 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
 ec:isEpisodeOf rdf:type owl:ObjectProperty ;
-               rdfs:range ec:EditorialGroup ;
                dcterms:description "Die Episode einer Serie oder einer Saison."@de ,
                                    "L'épisode d'une série ou d'une saison."@fr ,
                                    "The Episode of a Series or a Season."@en ;
@@ -3704,7 +3687,6 @@ ec:isEpisodeOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOfSeason
 ec:isEpisodeOfSeason rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Season ;
                      dcterms:description "Die Episode einer Saison."@de ,
                                          "L'épisode d'une saison."@fr ,
                                          "The Episode of a Season."@en ;
@@ -3722,7 +3704,6 @@ ec:isEpisodeOfSerial rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOfSeries
 ec:isEpisodeOfSeries rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:Series ;
                      dcterms:description "Die Episode einer Serie."@de ,
                                          "L'épisode d'une série."@fr ,
                                          "The Episode of a Series."@en ;
@@ -3743,7 +3724,6 @@ ec:isExtractOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isInstantiatedBy
 ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
-                    rdfs:range ec:MediaResource ;
                     dcterms:description "Pour identifier une MediaResource instanciant un EditorialObject."@fr ,
                                         "To identify a MediaResource instantiating an EditorialObject."@en ,
                                         "Um eine MediaResource zu identifizieren, die ein EditorialObject instanziiert."@de ;
@@ -3754,7 +3734,6 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMasterOf
 ec:isMasterOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:MediaResource ;
               dcterms:description "Pour identifier le maître d'une ressource média dérivée."@fr ,
                                   "To identify the master of a derived media resource."@en ,
                                   "Um den Master einer abgeleiteten Medienressource zu identifizieren."@de ;
@@ -3765,7 +3744,6 @@ ec:isMasterOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMediaFragmentOf
 ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
-                     rdfs:range ec:MediaResource ;
                      dcterms:description "Pour identifier la ressource média à laquelle appartient un fragment de média"@fr ,
                                          "So identifizieren Sie die Medienressource, zu der ein Medienfragment gehört"@de ,
                                          "To identify the Media Resource to which a Media Fragment belongs to"@en ;
@@ -3776,7 +3754,6 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:EditorialGroup ;
               dcterms:description "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
                                   "To identify a Group to which an EditorialObject is a member of."@en ,
                                   "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
@@ -3787,7 +3764,6 @@ ec:isMemberOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOfPublicationPlan
 ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
-                             rdfs:range ec:PublicationPlan ;
                              dcterms:description "Identifier un parent Plan de publication"@fr ,
                                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
                                                  "To identify a parent Publication Plan"@en ;
@@ -3799,7 +3775,6 @@ ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isNextInSequence
 ec:isNextInSequence rdf:type owl:ObjectProperty ;
                     owl:inverseOf ec:isPreviousInSequence ;
-                    rdfs:range ec:EditorialObject ;
                     dcterms:description "A link to an Editorial Object following the current Editorial Object in an ordered sequence."@en ,
                                         "Ein Link zu einem redaktionellen Objekt, das dem aktuellen redaktionellen Objekt in einer geordneten Reihenfolge folgt."@de ,
                                         "Un lien vers un objet éditorial suivant l'objet éditorial actuel dans une séquence ordonnée."@fr ;
@@ -3810,7 +3785,6 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOfferedBy
 ec:isOfferedBy rdf:type owl:ObjectProperty ;
-               rdfs:range ec:PublicationService ;
                dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
                                    "To identify a Service associated to a PublicationEvent."@en ,
                                    "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
@@ -3821,7 +3795,6 @@ ec:isOfferedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOperatedBy
 ec:isOperatedBy rdf:type owl:ObjectProperty ;
-                rdfs:range ec:PublicationService ;
                 dcterms:description "Pour identifier le service qui exploite le canal de publication."@fr ,
                                     "To identify the Service that operates the PublicationChannel."@en ,
                                     "Um den Dienst zu identifizieren, der den PublicationChannel."@de ;
@@ -3842,7 +3815,6 @@ ec:isOrderedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
-             rdfs:range ec:Agent ;
              dcterms:description "Pour identifier l'agent (contact/personne ou Organisation) qui possède un Service exploitant un PublicationChannel."@fr ,
                                  "To identify the Agent (Contact/person or Organisation) who owns a Service operating a PublicationChannel."@en ,
                                  "Zur Identifizierung des Agenten (Kontakt/Person oder Organisation), der Eigentümer eines Dienstes ist, der einen PublicationChannel betreibt."@de ;
@@ -3853,7 +3825,6 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isParentOf
 ec:isParentOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Asset ;
               dcterms:description "Pour lier un actif à un actif parent."@fr ,
                                   "So verknüpfen Sie ein Asset mit einem übergeordneten Asset."@de ,
                                   "To link a Asset to a parent Asset."@en ;
@@ -3864,7 +3835,6 @@ ec:isParentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
 ec:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:range ec:EditorialObject ;
             dcterms:description "Pour identifier l'objet éditorial auquel appartient une partie."@fr ,
                                 "To identify the editorial object to which belongs a part."@en ,
                                 "Um das redaktionelle Objekt zu identifizieren, zu dem ein Teil gehört."@de ;
@@ -15066,8 +15036,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
