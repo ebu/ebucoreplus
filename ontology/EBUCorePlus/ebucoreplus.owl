@@ -3931,7 +3931,6 @@ ec:isSeasonOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeriesOf
 ec:isSeriesOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Brand ;
               dcterms:description "Pour associer une série à une marque."@fr ,
                                   "So verknüpfen Sie eine Serie mit einer Marke."@de ,
                                   "To associate a Series with a Brand."@en ;
