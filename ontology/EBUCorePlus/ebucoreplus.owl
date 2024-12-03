@@ -4027,7 +4027,6 @@ ec:playsCharacter rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Essence ;
             dcterms:description "Pour identifier l'essence utilisée dans un PublicationEvent"@fr ,
                                 "So identifizieren Sie die in einem PublicationEvent verwendete Essenz"@de ,
                                 "To identify the Essence used in a PublicationEvent"@en ;
