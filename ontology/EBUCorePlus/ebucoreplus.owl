@@ -3867,7 +3867,6 @@ ec:isPortrayedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPreviousInSequence
 ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "A link to an Editorial Object precedinging the current Editorial Object in an ordered sequence."@en ,
                                             "Ein Link zu einem redaktionellen Objekt, das dem aktuellen redaktionellen Objekt in einer geordneten Reihenfolge vorausgeht."@de ,
                                             "Un lien vers un objet éditorial précédant l'objet éditorial actuel dans une séquence ordonnée."@fr ;
