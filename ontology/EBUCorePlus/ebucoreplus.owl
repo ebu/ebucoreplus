@@ -4104,7 +4104,6 @@ ec:replaces rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#represents
 ec:represents rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Asset ;
               dcterms:description "Pour établir une relation entre un EditorialObject et un Asset."@fr ,
                                   "To establish a relation between an EditorialObject and an Asset."@en ,
                                   "Um eine Beziehung zwischen einem EditorialObject und einem Asset herzustellen."@de ;
