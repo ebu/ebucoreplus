@@ -3971,7 +3971,6 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logs
 ec:logs rdf:type owl:ObjectProperty ;
-        rdfs:range ec:PublicationEvent ;
         skos:note "logs publication event"@en .
 
 
