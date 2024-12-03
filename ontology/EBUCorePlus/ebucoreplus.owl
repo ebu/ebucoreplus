@@ -3961,7 +3961,6 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
-               rdfs:range ec:EditorialObject ;
                dcterms:description "Pour identifier les versions connexes."@fr ,
                                    "To identify related versions."@en ,
                                    "Um verwandte Versionen zu identifizieren."@de ;
