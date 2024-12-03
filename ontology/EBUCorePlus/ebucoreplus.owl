@@ -4017,7 +4017,6 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
 ec:playsCharacter rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Character ;
                   dcterms:description "A character played by a person. The relationship implies that the person has intellectual rights to the performance of the character."@en ,
                                       "Eine Figur, die von einer Person gespielt wird. Die Beziehung impliziert, dass die Person die geistigen Rechte an der Darstellung der Figur hat."@de ,
                                       "Un personnage joué par une personne. La relation implique que la personne a des droits intellectuels sur l'interprétation du personnage."@fr ;
