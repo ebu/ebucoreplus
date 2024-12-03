@@ -3857,7 +3857,6 @@ ec:isPlayedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPortrayedBy
 ec:isPortrayedBy rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:portrays ;
-                 rdfs:range ec:Animal ;
                  dcterms:description "Beziehung zwischen einer fiktiven Figur und dem Tier, das in der Szene abgebildet ist."@de ,
                                      "Relation entre un personnage fictif et l'animal qui est représenté dans la scène."@fr ,
                                      "Relationship between a fictional character and the animal that is depicted in the scene."@en ;
