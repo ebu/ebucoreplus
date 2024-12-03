@@ -4057,7 +4057,6 @@ ec:promotes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publishes
 ec:publishes rdf:type owl:ObjectProperty ;
-             rdfs:range ec:EditorialObject ;
              dcterms:description "Das redaktionelle Objekt, das mit einem PublicationEvent verbunden ist."@de ,
                                  "L'objet éditorial associé à un PublicationEvent."@fr ,
                                  "The editorial object associated to a PublicationEvent."@en ;
