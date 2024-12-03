@@ -4094,7 +4094,6 @@ ec:renders rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#replaces
 ec:replaces rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Asset ;
             dcterms:description "Pour identifier la substitution."@fr ,
                                 "To identify substitution."@en ,
                                 "Um die Substitution zu identifizieren."@de ;
