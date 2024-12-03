@@ -3921,7 +3921,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeasonOf
 ec:isSeasonOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Series ;
               dcterms:description "Pour associer une Saison à une Série."@fr ,
                                   "So ordnen Sie eine Saison einer Serie zu."@de ,
                                   "To assoicate a Season with a Series."@en ;
