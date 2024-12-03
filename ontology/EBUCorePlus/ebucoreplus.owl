@@ -3900,7 +3900,6 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReplacedBy
 ec:isReplacedBy rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:replaces ;
-                rdfs:range ec:Asset ;
                 dcterms:description "Pour identifier les substitutions."@fr ,
                                     "To identify substitutions."@en ,
                                     "Um Substitutionen zu identifizieren."@de ;
