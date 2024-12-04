@@ -3845,7 +3845,6 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPlayedBy
 ec:isPlayedBy rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Agent ;
               owl:propertyDisjointWith ec:isPortrayedBy ;
               dcterms:description "Beziehung zwischen einer fiktiven Figur und dem Schauspieler, der die Rolle spielt."@de ,
                                   "Relation entre un personnage fictif et l'acteur qui joue le rôle."@fr ,
@@ -3858,7 +3857,6 @@ ec:isPlayedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPortrayedBy
 ec:isPortrayedBy rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:portrays ;
-                 rdfs:range ec:Animal ;
                  dcterms:description "Beziehung zwischen einer fiktiven Figur und dem Tier, das in der Szene abgebildet ist."@de ,
                                      "Relation entre un personnage fictif et l'animal qui est représenté dans la scène."@fr ,
                                      "Relationship between a fictional character and the animal that is depicted in the scene."@en ;
@@ -3869,7 +3867,6 @@ ec:isPortrayedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPreviousInSequence
 ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
-                        rdfs:range ec:EditorialObject ;
                         dcterms:description "A link to an Editorial Object precedinging the current Editorial Object in an ordered sequence."@en ,
                                             "Ein Link zu einem redaktionellen Objekt, das dem aktuellen redaktionellen Objekt in einer geordneten Reihenfolge vorausgeht."@de ,
                                             "Un lien vers un objet éditorial précédant l'objet éditorial actuel dans une séquence ordonnée."@fr ;
@@ -3881,7 +3878,6 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPublishedBy
 ec:isPublishedBy rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:publishes ;
-                 rdfs:range ec:PublicationEvent ;
                  dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
                                      "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
                                      "To associatre a PublicationEvent with an EditorialObject."@en ;
@@ -3904,7 +3900,6 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReplacedBy
 ec:isReplacedBy rdf:type owl:ObjectProperty ;
                 owl:inverseOf ec:replaces ;
-                rdfs:range ec:Asset ;
                 dcterms:description "Pour identifier les substitutions."@fr ,
                                     "To identify substitutions."@en ,
                                     "Um Substitutionen zu identifizieren."@de ;
@@ -3926,7 +3921,6 @@ ec:isRequiredBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeasonOf
 ec:isSeasonOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Series ;
               dcterms:description "Pour associer une Saison à une Série."@fr ,
                                   "So ordnen Sie eine Saison einer Serie zu."@de ,
                                   "To assoicate a Season with a Series."@en ;
@@ -3937,7 +3931,6 @@ ec:isSeasonOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeriesOf
 ec:isSeriesOf rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Brand ;
               dcterms:description "Pour associer une série à une marque."@fr ,
                                   "So verknüpfen Sie eine Serie mit einer Marke."@de ,
                                   "To associate a Series with a Brand."@en ;
@@ -3948,7 +3941,6 @@ ec:isSeriesOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isTimelineTrackPartOf
 ec:isTimelineTrackPartOf rdf:type owl:ObjectProperty ;
-                         rdfs:range ec:TimelineTrack ;
                          dcterms:description "Pour associer un EditorialObject à une partie de la TimelineTrack."@fr ,
                                              "So verknüpfen Sie ein EditorialObject mit einem Teil der TimelineTrack."@de ,
                                              "To associate an EditorialObject with a part of the TimelineTrack."@en ;
@@ -3959,7 +3951,6 @@ ec:isTimelineTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isTrackPartOf
 ec:isTrackPartOf rdf:type owl:ObjectProperty ;
-                 rdfs:range ec:Track ;
                  dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destination."@en ,
                                      "Ein Element zur Identifizierung eines Teils eines Titels durch einen Titel, eine Startzeit und eine Endzeit sowohl in der Medienquelle als auch im Medienziel."@de ,
                                      "Un élément pour identifier une partie d'une piste par un titre, une heure de début et une heure de fin dans la source et la destination du média."@fr ;
@@ -3970,7 +3961,6 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
-               rdfs:range ec:EditorialObject ;
                dcterms:description "Pour identifier les versions connexes."@fr ,
                                    "To identify related versions."@en ,
                                    "Um verwandte Versionen zu identifizieren."@de ;
@@ -3981,7 +3971,6 @@ ec:isVersionOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#logs
 ec:logs rdf:type owl:ObjectProperty ;
-        rdfs:range ec:PublicationEvent ;
         skos:note "logs publication event"@en .
 
 
@@ -4028,7 +4017,6 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
 ec:playsCharacter rdf:type owl:ObjectProperty ;
-                  rdfs:range ec:Character ;
                   dcterms:description "A character played by a person. The relationship implies that the person has intellectual rights to the performance of the character."@en ,
                                       "Eine Figur, die von einer Person gespielt wird. Die Beziehung impliziert, dass die Person die geistigen Rechte an der Darstellung der Figur hat."@de ,
                                       "Un personnage joué par une personne. La relation implique que la personne a des droits intellectuels sur l'interprétation du personnage."@fr ;
@@ -4039,7 +4027,6 @@ ec:playsCharacter rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsOut
 ec:playsOut rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Essence ;
             dcterms:description "Pour identifier l'essence utilisée dans un PublicationEvent"@fr ,
                                 "So identifizieren Sie die in einem PublicationEvent verwendete Essenz"@de ,
                                 "To identify the Essence used in a PublicationEvent"@en ;
@@ -4070,7 +4057,6 @@ ec:promotes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#publishes
 ec:publishes rdf:type owl:ObjectProperty ;
-             rdfs:range ec:EditorialObject ;
              dcterms:description "Das redaktionelle Objekt, das mit einem PublicationEvent verbunden ist."@de ,
                                  "L'objet éditorial associé à un PublicationEvent."@fr ,
                                  "The editorial object associated to a PublicationEvent."@en ;
@@ -4108,7 +4094,6 @@ ec:renders rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#replaces
 ec:replaces rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Asset ;
             dcterms:description "Pour identifier la substitution."@fr ,
                                 "To identify substitution."@en ,
                                 "Um die Substitution zu identifizieren."@de ;
@@ -4119,7 +4104,6 @@ ec:replaces rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#represents
 ec:represents rdf:type owl:ObjectProperty ;
-              rdfs:range ec:Asset ;
               dcterms:description "Pour établir une relation entre un EditorialObject et un Asset."@fr ,
                                   "To establish a relation between an EditorialObject and an Asset."@en ,
                                   "Um eine Beziehung zwischen einem EditorialObject und einem Asset herzustellen."@de ;
