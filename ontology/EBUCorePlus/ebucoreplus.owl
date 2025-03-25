@@ -435,6 +435,7 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:isAffiliationFor ;
                   dcterms:description "A property to establish the relation between a Contact/Person and an Organisation."@en ,
                                       "Eine Eigenschaft, die die Beziehung zwischen einem Kontakt/Person und einer Organisation."@de ,
                                       "Une propriété permettant d'établir la relation entre un contact/personne et une organisation."@fr ;
@@ -3555,6 +3556,10 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "est affilié à"@fr ,
                              "is affiliated to"@en ,
                              "ist angegliedert an"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAffiliationFor
+ec:isAffiliationFor rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
