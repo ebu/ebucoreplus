@@ -427,6 +427,11 @@ ec:existsAs rdf:type owl:ObjectProperty ;
                        "Redaktionelles Objekt"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#grantsApproval
+ec:grantsApproval rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:hasApprover .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasRights ;
