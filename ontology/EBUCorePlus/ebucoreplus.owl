@@ -1724,6 +1724,7 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
 ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
+                        owl:inverseOf ec:isEmbodiedBy ;
                         dcterms:description "Character depicted by an Artifact"@en ,
                                             "Personnage représenté par un artefact"@fr ,
                                             "Von einem Artefakt dargestellter Charakter"@de ;
@@ -3698,6 +3699,10 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
            rdfs:label "Doublé de"@fr ,
                       "Dubbed from"@en ,
                       "Synchronisiert von"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEmbodiedBy
+ec:isEmbodiedBy rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
