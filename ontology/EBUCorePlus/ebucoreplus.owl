@@ -251,6 +251,11 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates
+ec:animates rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isAnimatedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:hasRights ;
