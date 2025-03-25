@@ -401,6 +401,11 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#defines
+ec:defines rdf:type owl:ObjectProperty ;
+           owl:inverseOf ec:isDefinedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
