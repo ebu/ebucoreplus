@@ -1761,6 +1761,7 @@ ec:hasEndDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisode
 ec:hasEpisode rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:isEpisodeOf ;
               dcterms:description "Pour identifier les épisodes d'une série"@fr ,
                                   "So identifizieren Sie Episoden einer Serie"@de ,
                                   "To identify Episodes in a Series"@en ;
