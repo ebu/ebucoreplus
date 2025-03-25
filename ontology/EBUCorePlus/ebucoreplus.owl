@@ -324,6 +324,11 @@ platform"""@en ,
                                            "peut accéder à la plateforme de publication"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#commissions
+ec:commissions rdf:type owl:ObjectProperty ;
+               owl:inverseOf ec:hasCommissioningContract .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#compilesResonanceEvents
 ec:compilesResonanceEvents rdf:type owl:ObjectProperty ;
                            dcterms:description "Eines der ResonanceEvents, die zu einem aussagekräftigen Satz von Resonanzdaten."@de ,
