@@ -1983,6 +1983,7 @@ ec:hasInputResource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasIssuer
 ec:hasIssuer rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:isIssuedBy ;
              dcterms:description "Pour identifier l'émetteur d'un identifiant."@fr ,
                                  "To identify the issuer of an identifier."@en ,
                                  "Zur Identifizierung des Ausstellers eines Identifikators."@de ;
@@ -3766,6 +3767,10 @@ ec:isInstantiatedBy rdf:type owl:ObjectProperty ;
                     rdfs:label "Media Resource"@en ,
                                "Medien Ressource"@de ,
                                "Ressource médiatique"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isIssuedBy
+ec:isIssuedBy rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMasterOf
