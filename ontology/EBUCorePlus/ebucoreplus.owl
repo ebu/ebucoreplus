@@ -1781,11 +1781,6 @@ ec:hasExploitationIssues rdf:type owl:ObjectProperty ;
                                     "Problèmes d'exploitation"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasExtract
-ec:hasExtract rdf:type owl:ObjectProperty ;
-              owl:inverseOf ec:isExtractOf .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasFictitiousPerson
 ec:hasFictitiousPerson rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier un contact/personne fictive."@fr ,
