@@ -251,6 +251,11 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates
+ec:animates rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isAnimatedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
            owl:inverseOf ec:hasRights ;
@@ -317,6 +322,11 @@ access publication
 platform"""@en ,
                                            "kann auf die Publikationsplattform zugreifen"@de ,
                                            "peut accéder à la plateforme de publication"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#commissions
+ec:commissions rdf:type owl:ObjectProperty ;
+               owl:inverseOf ec:hasCommissioningContract .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#compilesResonanceEvents
@@ -391,6 +401,11 @@ ec:createsMetadata rdf:type owl:ObjectProperty ;
                               "erstellt Metadaten"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#defines
+ec:defines rdf:type owl:ObjectProperty ;
+           owl:inverseOf ec:isDefinedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#derivedTo
 ec:derivedTo rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:isDerivedFrom ;
@@ -422,6 +437,11 @@ ec:existsAs rdf:type owl:ObjectProperty ;
                        "Redaktionelles Objekt"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#grantsApproval
+ec:grantsApproval rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:hasApprover .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAccessConditions
 ec:hasAccessConditions rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf ec:hasRights ;
@@ -435,6 +455,7 @@ ec:hasAccessConditions rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAffiliation
 ec:hasAffiliation rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:isAffiliationFor ;
                   dcterms:description "A property to establish the relation between a Contact/Person and an Organisation."@en ,
                                       "Eine Eigenschaft, die die Beziehung zwischen einem Kontakt/Person und einer Organisation."@de ,
                                       "Une propriété permettant d'établir la relation entre un contact/personne et une organisation."@fr ;
@@ -1703,6 +1724,7 @@ ec:hasEditorialWork rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEmbodyingArtefact
 ec:hasEmbodyingArtefact rdf:type owl:ObjectProperty ;
+                        owl:inverseOf ec:isEmbodiedBy ;
                         dcterms:description "Character depicted by an Artifact"@en ,
                                             "Personnage représenté par un artefact"@fr ,
                                             "Von einem Artefakt dargestellter Charakter"@de ;
@@ -1739,6 +1761,7 @@ ec:hasEndDateTime rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisode
 ec:hasEpisode rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:isEpisodeOf ;
               dcterms:description "Pour identifier les épisodes d'une série"@fr ,
                                   "So identifizieren Sie Episoden einer Serie"@de ,
                                   "To identify Episodes in a Series"@en ;
@@ -2084,6 +2107,7 @@ ec:hasManifestation rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasMaster
 ec:hasMaster rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:isMasterOf ;
              dcterms:description "Pour identifier le maître d'une ressource"@fr ,
                                  "So identifizieren Sie den Master einer Ressource"@de ,
                                  "To identify the master of a Resource"@en ;
@@ -3557,6 +3581,10 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
                              "ist angegliedert an"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAffiliationFor
+ec:isAffiliationFor rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
 ec:isAnimatedBy rdf:type owl:ObjectProperty ;
                 dcterms:description "Character, animated by a persion using an artifact"@en ,
@@ -3673,6 +3701,10 @@ ec:isDubOf rdf:type owl:ObjectProperty ;
            rdfs:label "Doublé de"@fr ,
                       "Dubbed from"@en ,
                       "Synchronisiert von"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEmbodiedBy
+ec:isEmbodiedBy rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isEpisodeOf
