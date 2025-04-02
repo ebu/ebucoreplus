@@ -919,6 +919,7 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
 ec:hasAuthor rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:isAuthorOf ;
              dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
                                  "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
                                  "To link an Annotation to an Agent who created it."@en ;
@@ -3618,6 +3619,10 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAuthorOf
+ec:isAuthorOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAwardedTo
