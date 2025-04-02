@@ -3852,6 +3852,7 @@ ec:isOrderedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:owns ;
              dcterms:description "Pour identifier l'agent (contact/personne ou Organisation) qui possède un Service exploitant un PublicationChannel."@fr ,
                                  "To identify the Agent (Contact/person or Organisation) who owns a Service operating a PublicationChannel."@en ,
                                  "Zur Identifizierung des Agenten (Kontakt/Person oder Organisation), der Eigentümer eines Dienstes ist, der einen PublicationChannel betreibt."@de ;
@@ -4050,6 +4051,10 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
                   rdfs:label "Contract"@en ,
                              "Contrat"@fr ,
                              "Vertrag"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#owns
+ec:owns rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
