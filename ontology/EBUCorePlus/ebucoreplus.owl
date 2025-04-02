@@ -609,6 +609,11 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                             "Tierische Rolle"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotation
+ec:hasAnnotation rdf:type owl:ObjectProperty ;
+                 owl:inverseOf ec:isAnnotationFor .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationAgent
 ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
                       dcterms:description "Pour définir l'instance d'annotation d'un agent."@fr ,
@@ -3609,6 +3614,10 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                             rdfs:label "Media resource"@en ,
                                        "Medienressource"@de ,
                                        "Ressource médiatique"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotationFor
+ec:isAnnotationFor rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAttributedTo
