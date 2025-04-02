@@ -1986,6 +1986,11 @@ ec:hasIssuer rdf:type owl:ObjectProperty ;
                         "Émetteur"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasJob
+ec:hasJob rdf:type owl:ObjectProperty ;
+          owl:inverseOf ec:isOrderedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
                      dcterms:description "Die wichtigsten Karriereereignisse einer Person zu identifizieren."@de ,
