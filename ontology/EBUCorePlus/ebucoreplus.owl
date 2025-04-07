@@ -3905,6 +3905,7 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPlayedBy
 ec:isPlayedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:playsCharacter ;
               owl:propertyDisjointWith ec:isPortrayedBy ;
               dcterms:description "Beziehung zwischen einer fiktiven Figur und dem Schauspieler, der die Rolle spielt."@de ,
                                   "Relation entre un personnage fictif et l'acteur qui joue le rôle."@fr ,
