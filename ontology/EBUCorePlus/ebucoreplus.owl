@@ -8926,7 +8926,7 @@ ec:Character rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPlayedBy ;
-                               owl:allValuesFrom ec:Person
+                               owl:allValuesFrom ec:Involvement
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPortrayedBy ;
