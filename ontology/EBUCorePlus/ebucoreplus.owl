@@ -4219,10 +4219,6 @@ ec:transports rdf:type owl:ObjectProperty ;
                          "Transports"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#uses
-ec:uses rdf:type owl:ObjectProperty .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#usesConsumptionDevice
 ec:usesConsumptionDevice rdf:type owl:ObjectProperty ;
                          dcterms:description "Bereich: string oder ConsumptionDevice"@de ,
