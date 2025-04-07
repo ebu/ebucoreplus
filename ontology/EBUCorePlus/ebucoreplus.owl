@@ -610,11 +610,6 @@ ec:hasAnimalRole rdf:type owl:ObjectProperty ;
                             "Tierische Rolle"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotation
-ec:hasAnnotation rdf:type owl:ObjectProperty ;
-                 owl:inverseOf ec:isAnnotationFor .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnnotationAgent
 ec:hasAnnotationAgent rdf:type owl:ObjectProperty ;
                       dcterms:description "Pour définir l'instance d'annotation d'un agent."@fr ,
