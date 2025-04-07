@@ -3618,10 +3618,6 @@ ec:isAnnotatedMediaResource rdf:type owl:ObjectProperty ;
                                        "Ressource médiatique"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnnotationFor
-ec:isAnnotationFor rdf:type owl:ObjectProperty .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAttributedTo
 ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   dcterms:description "Pour associer un agent à une instance de Provenance."@fr ,
