@@ -4015,11 +4015,6 @@ ec:isTrackPartOf rdf:type owl:ObjectProperty ;
                             "Track part source"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isUsedBy
-ec:isUsedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:uses .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isVersionOf
 ec:isVersionOf rdf:type owl:ObjectProperty ;
                dcterms:description "Pour identifier les versions connexes."@fr ,
