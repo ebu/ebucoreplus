@@ -591,6 +591,7 @@ ec:hasAnimalColourCode rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAnimalGroom
 ec:hasAnimalGroom rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:isAnimalGroomFor ;
                   dcterms:description "Identifier le palefrenier / le soigneur d'un animal."@fr ,
                                       "To identify the groom / care taker of an animal."@en ,
                                       "Zur Identifizierung des Pflegers / Betreuers eines Tieres."@de ;
@@ -919,6 +920,7 @@ ec:hasAuditReportDate rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAuthor
 ec:hasAuthor rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:isAuthorOf ;
              dcterms:description "Pour lier une annotation à l'agent qui l'a créée."@fr ,
                                  "So verknüpfen Sie eine Anmerkung mit einem Agenten, der sie erstellt hat."@de ,
                                  "To link an Annotation to an Agent who created it."@en ;
@@ -1986,6 +1988,11 @@ ec:hasIssuer rdf:type owl:ObjectProperty ;
                         "Émetteur"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasJob
+ec:hasJob rdf:type owl:ObjectProperty ;
+          owl:inverseOf ec:isOrderedBy .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyCareerEvent
 ec:hasKeyCareerEvent rdf:type owl:ObjectProperty ;
                      dcterms:description "Die wichtigsten Karriereereignisse einer Person zu identifizieren."@de ,
@@ -2604,6 +2611,7 @@ ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAgent
 ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
+                   owl:inverseOf ec:isRelatedAgent ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
                                        "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
@@ -3399,6 +3407,7 @@ ec:hasTrack rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTrackPart
 ec:hasTrackPart rdf:type owl:ObjectProperty ;
+                owl:inverseOf ec:isTrackPartOf ;
                 dcterms:description "An element to identify a part of a track by a title, a start time and an end time in both the media source and media destinationn."@en ,
                                     "Ein Element zur Identifizierung eines Teils eines Titels durch einen Titel, eine Startzeit und eine Endzeit sowohl in der Medienquelle als auch im Medienziel."@de ,
                                     "Un élément pour identifier une partie d'une piste par un titre, une heure de début et une heure de fin dans la source du média et la destination du médian."@fr ;
@@ -3585,6 +3594,10 @@ ec:isAffiliatedTo rdf:type owl:ObjectProperty ;
 ec:isAffiliationFor rdf:type owl:ObjectProperty .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimalGroomFor
+ec:isAnimalGroomFor rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAnimatedBy
 ec:isAnimatedBy rdf:type owl:ObjectProperty ;
                 dcterms:description "Character, animated by a persion using an artifact"@en ,
@@ -3613,6 +3626,10 @@ ec:isAttributedTo rdf:type owl:ObjectProperty ;
                   rdfs:label "Cible de provenance"@fr ,
                              "Provenance target"@en ,
                              "Ziel Provenienz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAuthorOf
+ec:isAuthorOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAwardedTo
@@ -3817,6 +3834,7 @@ ec:isNextInSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOfferedBy
 ec:isOfferedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf ec:offers ;
                dcterms:description "Pour identifier un service associé à un PublicationEvent."@fr ,
                                    "To identify a Service associated to a PublicationEvent."@en ,
                                    "Um einen Dienst zu identifizieren, der einem PublicationEvent zugeordnet ist."@de ;
@@ -3847,6 +3865,7 @@ ec:isOrderedBy rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf ec:owns ;
              dcterms:description "Pour identifier l'agent (contact/personne ou Organisation) qui possède un Service exploitant un PublicationChannel."@fr ,
                                  "To identify the Agent (Contact/person or Organisation) who owns a Service operating a PublicationChannel."@en ,
                                  "Zur Identifizierung des Agenten (Kontakt/Person oder Organisation), der Eigentümer eines Dienstes ist, der einen PublicationChannel betreibt."@de ;
@@ -3877,6 +3896,7 @@ ec:isPartOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPlayedBy
 ec:isPlayedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:playsCharacter ;
               owl:propertyDisjointWith ec:isPortrayedBy ;
               dcterms:description "Beziehung zwischen einer fiktiven Figur und dem Schauspieler, der die Rolle spielt."@de ,
                                   "Relation entre un personnage fictif et l'acteur qui joue le rôle."@fr ,
@@ -3927,6 +3947,10 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   rdfs:label "Reference source"@en ,
                              "Referenzquelle"@de ,
                              "Source de référence"@fr .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isRelatedAgent
+ec:isRelatedAgent rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReplacedBy
@@ -4045,6 +4069,10 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
                   rdfs:label "Contract"@en ,
                              "Contrat"@fr ,
                              "Vertrag"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#owns
+ec:owns rdf:type owl:ObjectProperty .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
@@ -8881,7 +8909,7 @@ ec:Character rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPlayedBy ;
-                               owl:allValuesFrom ec:Person
+                               owl:allValuesFrom ec:Involvement
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty ec:isPortrayedBy ;
