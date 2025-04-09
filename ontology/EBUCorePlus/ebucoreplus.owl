@@ -13362,10 +13362,6 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Agent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:offers ;
-                                        owl:allValuesFrom ec:PublicationEvent
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasEndDateTime ;
                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass time:Instant
