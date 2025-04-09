@@ -13268,10 +13268,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:offers ;
-                                         owl:allValuesFrom ec:PublicationEvent
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:offers ;
                                          owl:allValuesFrom ec:PublicationService
                                        ] ,
                                        [ rdf:type owl:Restriction ;
