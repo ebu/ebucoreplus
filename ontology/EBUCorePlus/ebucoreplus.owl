@@ -10207,6 +10207,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialGroup
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isProductOf ;
+                                     owl:allValuesFrom ec:Brand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isPublishedBy ;
                                      owl:allValuesFrom ec:PublicationEvent
                                    ] ,
