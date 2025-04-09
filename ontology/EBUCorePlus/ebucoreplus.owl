@@ -14096,10 +14096,6 @@ ec:Series rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasSeason ;
                             owl:allValuesFrom ec:Season
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isProductOf ;
-                            owl:allValuesFrom ec:Brand
                           ] ;
           dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes. Les épisodes suivent souvent un schéma de publication régulier ou traitent de sujets similaires ou des mêmes personnages."@fr ,
                               "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden. Episoden folgen häufig einem Publikationsschema oder behandeln ähnliche Themen oder beinhalten dieselben Figuren."@de ,
