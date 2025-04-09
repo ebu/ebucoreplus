@@ -3818,22 +3818,18 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
+              dcterms:description "Identifier un parent Plan de publication"@fr ,
+                                  "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
+                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
                                   "To identify a Group to which an EditorialObject is a member of."@en ,
+                                  "To identify a parent Publication Plan"@en ,
                                   "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
-                         "Mitglied von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOfPublicationPlan
-ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
-                             dcterms:description "Identifier un parent Plan de publication"@fr ,
-                                                 "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
-                                                 "To identify a parent Publication Plan"@en ;
-                             rdfs:label "Parent publication  plan"@en ,
-                                        "Plan de publication des parents"@fr ,
-                                        "Veröffentlichungsplan der Eltern"@de .
+                         "Mitglied von"@de ,
+                         "Parent publication  plan"@en ,
+                         "Plan de publication des parents"@fr ,
+                         "Veröffentlichungsplan der Eltern"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isNextInSequence
@@ -13165,7 +13161,7 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Agent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isMemberOfPublicationPlan ;
+                                     owl:onProperty ec:isMemberOf ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
                                    [ rdf:type owl:Restriction ;
