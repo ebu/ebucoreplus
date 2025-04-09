@@ -1017,6 +1017,17 @@ ec:hasCharacter rdf:type owl:ObjectProperty ;
                            "Personnage fictif."@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasChild
+ec:hasChild rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isChildOf ;
+            dcterms:description "Pour lier un actif à un actif parent."@fr ,
+                                "So verknüpfen Sie ein Asset mit einem übergeordneten Asset."@de ,
+                                "To link a Asset to a parent Asset."@en ;
+            rdfs:label "Child"@en ,
+                       "Enfant"@fr ,
+                       "Kind"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClip
 ec:hasClip rdf:type owl:ObjectProperty ;
            rdfs:label "a un clip"@fr ,
@@ -3646,7 +3657,6 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
-             owl:inverseOf ec:isParentOf ;
              dcterms:description "Pour lier un concept à un parent."@fr ,
                                  "To link a concept to a parent."@en ,
                                  "Um ein Konzept mit einem übergeordneten Konzept zu verknüpfen."@de ;
@@ -3877,16 +3887,6 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
              rdfs:label "Eigentümer"@de ,
                         "Owner"@en ,
                         "Propriétaire"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isParentOf
-ec:isParentOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour lier un actif à un actif parent."@fr ,
-                                  "So verknüpfen Sie ein Asset mit einem übergeordneten Asset."@de ,
-                                  "To link a Asset to a parent Asset."@en ;
-              rdfs:label "Child"@en ,
-                         "Enfant"@fr ,
-                         "Kind"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
@@ -7941,6 +7941,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:AssetValue
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasChild ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -8026,10 +8030,6 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isDerivedFrom ;
-                           owl:allValuesFrom ec:Asset
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isParentOf ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
