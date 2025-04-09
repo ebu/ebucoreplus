@@ -2383,6 +2383,11 @@ ec:hasProducer rdf:type owl:ObjectProperty ;
                           "Produzent"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProduct
+ec:hasProduct rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:isProductOf .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProductionContract
 ec:hasProductionContract rdf:type owl:ObjectProperty ;
                          dcterms:description "Pour identifier les Contarcts associés à un ordre de production."@fr ,
