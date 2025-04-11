@@ -3826,10 +3826,7 @@ ec:isMemberOf rdf:type owl:ObjectProperty ;
                                   "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
-                         "Mitglied von"@de ,
-                         "Parent publication  plan"@en ,
-                         "Plan de publication des parents"@fr ,
-                         "Veröffentlichungsplan der Eltern"@de .
+                         "Mitglied von"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isNextInSequence
