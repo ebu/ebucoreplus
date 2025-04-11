@@ -3818,12 +3818,10 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Identifier un parent Plan de publication"@fr ,
+              dcterms:description 
                                   "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
                                   "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
-                                  "To identify a Group to which an EditorialObject is a member of."@en ,
-                                  "To identify a parent Publication Plan"@en ,
-                                  "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
+                                  "To identify a Group to which an EditorialObject is a member of."@en ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
                          "Mitglied von"@de .
