@@ -1017,6 +1017,17 @@ ec:hasCharacter rdf:type owl:ObjectProperty ;
                            "Personnage fictif."@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasChild
+ec:hasChild rdf:type owl:ObjectProperty ;
+            owl:inverseOf ec:isChildOf ;
+            dcterms:description "Pour lier un actif à un actif parent."@fr ,
+                                "So verknüpfen Sie ein Asset mit einem übergeordneten Asset."@de ,
+                                "To link a Asset to a parent Asset."@en ;
+            rdfs:label "Child"@en ,
+                       "Enfant"@fr ,
+                       "Kind"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasClip
 ec:hasClip rdf:type owl:ObjectProperty ;
            rdfs:label "a un clip"@fr ,
@@ -2383,6 +2394,11 @@ ec:hasProducer rdf:type owl:ObjectProperty ;
                           "Produzent"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProduct
+ec:hasProduct rdf:type owl:ObjectProperty ;
+              owl:inverseOf ec:isProductOf .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProductionContract
 ec:hasProductionContract rdf:type owl:ObjectProperty ;
                          dcterms:description "Pour identifier les Contarcts associés à un ordre de production."@fr ,
@@ -3641,7 +3657,6 @@ ec:isAwardedTo rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isChildOf
 ec:isChildOf rdf:type owl:ObjectProperty ;
-             owl:inverseOf ec:isParentOf ;
              dcterms:description "Pour lier un concept à un parent."@fr ,
                                  "To link a concept to a parent."@en ,
                                  "Um ein Konzept mit einem übergeordneten Konzept zu verknüpfen."@de ;
@@ -3803,22 +3818,13 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
-                                  "To identify a Group to which an EditorialObject is a member of."@en ,
-                                  "Um eine Gruppe zu identifizieren, in der ein EditorialObject Mitglied ist."@de ;
+              dcterms:description 
+                                  "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
+                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
+                                  "To identify a Group to which an EditorialObject is a member of."@en ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
                          "Mitglied von"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOfPublicationPlan
-ec:isMemberOfPublicationPlan rdf:type owl:ObjectProperty ;
-                             dcterms:description "Identifier un parent Plan de publication"@fr ,
-                                                 "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
-                                                 "To identify a parent Publication Plan"@en ;
-                             rdfs:label "Parent publication  plan"@en ,
-                                        "Plan de publication des parents"@fr ,
-                                        "Veröffentlichungsplan der Eltern"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isNextInSequence
@@ -3874,16 +3880,6 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
                         "Propriétaire"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isParentOf
-ec:isParentOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour lier un actif à un actif parent."@fr ,
-                                  "So verknüpfen Sie ein Asset mit einem übergeordneten Asset."@de ,
-                                  "To link a Asset to a parent Asset."@en ;
-              rdfs:label "Child"@en ,
-                         "Enfant"@fr ,
-                         "Kind"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
 ec:isPartOf rdf:type owl:ObjectProperty ;
             dcterms:description "Pour identifier l'objet éditorial auquel appartient une partie."@fr ,
@@ -3925,6 +3921,16 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
                         rdfs:label "Preceding"@en ,
                                    "Précédant"@fr ,
                                    "Vorangehend"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isProductOf
+ec:isProductOf rdf:type owl:ObjectProperty ;
+               dcterms:description "Pour associer une série à une marque."@fr ,
+                                   "So verknüpfen Sie eine Serie mit einer Marke."@de ,
+                                   "To associate a Series with a Brand."@en ;
+               rdfs:label "Brand"@en ,
+                          "Marke"@de ,
+                          "Marque"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPublishedBy
@@ -3983,16 +3989,6 @@ ec:isSeasonOf rdf:type owl:ObjectProperty ;
               rdfs:label "Serie"@de ,
                          "Series"@en ,
                          "Série"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isSeriesOf
-ec:isSeriesOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour associer une série à une marque."@fr ,
-                                  "So verknüpfen Sie eine Serie mit einer Marke."@de ,
-                                  "To associate a Series with a Brand."@en ;
-              rdfs:label "Brand"@en ,
-                         "Marke"@de ,
-                         "Marque"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isTimelineTrackPartOf
@@ -7936,6 +7932,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:AssetValue
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasChild ;
+                           owl:allValuesFrom ec:Asset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasContact ;
                            owl:allValuesFrom ec:Contact
                          ] ,
@@ -8021,10 +8021,6 @@ ec:Asset rdf:type owl:Class ;
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:isDerivedFrom ;
-                           owl:allValuesFrom ec:Asset
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:isParentOf ;
                            owl:allValuesFrom ec:Asset
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -10204,6 +10200,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isMemberOf ;
                                      owl:allValuesFrom ec:EditorialGroup
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isProductOf ;
+                                     owl:allValuesFrom ec:Brand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isPublishedBy ;
@@ -12837,10 +12837,6 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Agent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:offers ;
-                                        owl:allValuesFrom ec:PublicationEvent
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:transports ;
                                         owl:allValuesFrom ec:PublicationService
                                       ] ,
@@ -13160,7 +13156,7 @@ ec:PublicationPlan rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Agent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isMemberOfPublicationPlan ;
+                                     owl:onProperty ec:isMemberOf ;
                                      owl:allValuesFrom ec:PublicationPlan
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -13271,10 +13267,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:offers ;
-                                         owl:allValuesFrom ec:PublicationEvent
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:offers ;
                                          owl:allValuesFrom ec:PublicationService
                                        ] ,
                                        [ rdf:type owl:Restriction ;
@@ -13363,10 +13355,6 @@ ec:PublicationService rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:isOwnedBy ;
                                         owl:allValuesFrom ec:Agent
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:offers ;
-                                        owl:allValuesFrom ec:PublicationEvent
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasEndDateTime ;
@@ -14107,10 +14095,6 @@ ec:Series rdf:type owl:Class ;
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasSeason ;
                             owl:allValuesFrom ec:Season
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:isSeriesOf ;
-                            owl:allValuesFrom ec:Brand
                           ] ;
           dcterms:description "Les séries sont un type particulier de collection. TV ou radio sont composées d'épisodes. Les épisodes suivent souvent un schéma de publication régulier ou traitent de sujets similaires ou des mêmes personnages."@fr ,
                               "Serien sind eine besondere Art von Sammlungen. TV oder Radio-Serien bestehen aus Episoden. Episoden folgen häufig einem Publikationsschema oder behandeln ähnliche Themen oder beinhalten dieselben Figuren."@de ,
@@ -15080,8 +15064,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributeur"@fr ,
-                                "Contributor"@en .
+                     rdfs:label "Contributor"@en ,
+                                "Contributeur"@fr .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
