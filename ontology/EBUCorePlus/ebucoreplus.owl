@@ -2026,7 +2026,6 @@ ec:hasKeyPersonalEvent rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasKeyword
 ec:hasKeyword rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf ec:hasSubject ;
               dcterms:description "Pour associer un concept, une phrase descriptive ou un mot-clé qui spécifie le sujet de l'EditorialObject."@fr ,
                                   "To associate a concept, descriptive phrase or Keyword that specifies the topic of the EditorialObject."@en ,
                                   "Um ein Konzept, eine beschreibende Phrase oder ein Schlüsselwort zuzuordnen, das das Thema des EditorialObjects angibt."@de ;
@@ -3360,7 +3359,6 @@ ec:hasTextLineSource rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTheme
 ec:hasTheme rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf ec:hasSubject ;
             dcterms:description "Cette propriété permet d'associer un actif à un thème qui peut être une chaîne ou un URI pointant vers un terme d'un vocabulaire contrôlé. Un exemple typique est la classification NACE d'Eurostats."@fr ,
                                 "Diese Eigenschaft ermöglicht es, ein Asset mit einem Thema zu verknüpfen, das eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist. Ein typisches Beispiel ist die NACE-Klassifizierung von Eurostats."@de ,
                                 "This property enables to associate an Asset with a theme which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is the Eurostats NACE classification."@en ;
@@ -3402,7 +3400,7 @@ ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTopic
 ec:hasTopic rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf ec:hasSubject ;
+            rdfs:range ec:Topic ;
             dcterms:description "Cette propriété permet d'associer un actif à un sujet qui peut être une chaîne ou une URI pointant vers un terme d'un vocabulaire contrôlé. Un exemple typique est l'utilisation des sujets IPTC Media Topics définis sur http://cv.iptc.org/newscodes/mediatopic/."@fr ,
                                 "Mit dieser Eigenschaft können Sie ein Asset mit einem Thema verknüpfen, das eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist. Ein typisches Beispiel ist die Verwendung der IPTC-Medienthemen, die unter http://cv.iptc.org/newscodes/mediatopic/ definiert sind."@de ,
                                 "This property enables to associate an Asset with a topic which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is to make use of the IPTC Media Topics defined at http://cv.iptc.org/newscodes/mediatopic/."@en ;
@@ -3594,6 +3592,17 @@ ec:instantiates rdf:type owl:ObjectProperty ;
                 rdfs:label "Editorial object"@en ,
                            "Objet de la rédaction"@fr ,
                            "Redaktionelles Objekt"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAbout
+ec:isAbout rdf:type owl:ObjectProperty ;
+           rdfs:range ec:Asset ;
+           dcterms:description "Cette propriété est utilisée lorsqu'un autre objet éditorial, par exemple un livre, un film ou un programme, fait l'objet de l'objet éditorial."@fr ,
+                               "This property is used when another editorial object, e.g. a book, a movie or a programme is the topic of the editorial object."@en ,
+                               "Wird verwendet, wenn ein anderer Medieninhalt, z.b. ein Buch, ein Film oder eine Sendung das Thema des Medieninhaltes ist."@de ;
+           rdfs:label "est à propos"@fr ,
+                      "handelt von"@de ,
+                      "is about"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isAffiliatedTo
@@ -3818,10 +3827,9 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              dcterms:description 
-                                  "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
-                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
-                                  "To identify a Group to which an EditorialObject is a member of."@en ;
+              dcterms:description "Pour identifier un groupe dont un objet éditorial (ou un plan de publication) est membre."@fr ,
+                                  "So identifizieren Sie eine Gruppe, der ein Medieninhalt oder ein Veröffentlichungsplan zugeordnet ist."@de ,
+                                  "To identify a Group to which an EditorialObject or a PublicationPlan is a member of."@en ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
                          "Mitglied von"@de .
@@ -10171,10 +10179,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasTopic ;
-                                     owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasTopic ;
                                      owl:allValuesFrom ec:Topic
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -10184,6 +10188,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasVersionType ;
                                      owl:allValuesFrom skos:Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:isAbout ;
+                                     owl:allValuesFrom ec:Asset
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isDistributedOn ;
@@ -10446,16 +10454,6 @@ o Représentation de la segmentation : Les TimelineTracks sont préférés aux h
                                 """- un groupe d'EditorialObjects
 - une \"œuvre de l'esprit\" unique, un morceau
 - un segment d'une \"œuvre de l'esprit\"."""@fr .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ec:EditorialObject ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ec:hasTopic ;
-                         owl:allValuesFrom ec:EditorialObject
-                       ] ;
-   rdfs:comment "For expressing the case where an editorial object is about another editorisal object. I. e. \"the production of ...\""@en
- ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialObjectType
@@ -11329,11 +11327,7 @@ ec:Logo rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MakingOf
 ec:MakingOf rdf:type owl:Class ;
-            rdfs:subClassOf ec:EditorialExtra ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasTopic ;
-                              owl:allValuesFrom ec:EditorialObject
-                            ] ;
+            rdfs:subClassOf ec:EditorialExtra ;
             dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
                                 "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
                                 "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
@@ -15064,8 +15058,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
