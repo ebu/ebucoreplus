@@ -13737,11 +13737,6 @@ ec:Resource rdf:type owl:Class ;
                               owl:onClass time:Instant
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass skos:Concept
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
                               owl:allValuesFrom rdfs:Literal
                             ] ,
