@@ -13413,14 +13413,13 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasTerritoryIncludes ;
+                            owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRatingProvider ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Agent
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasTerritoryIncludes ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:description ;
