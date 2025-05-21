@@ -3400,7 +3400,6 @@ ec:hasTimelineTrackPart rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTopic
 ec:hasTopic rdf:type owl:ObjectProperty ;
-            rdfs:range ec:Topic ;
             dcterms:description "Cette propriété permet d'associer un actif à un sujet qui peut être une chaîne ou une URI pointant vers un terme d'un vocabulaire contrôlé. Un exemple typique est l'utilisation des sujets IPTC Media Topics définis sur http://cv.iptc.org/newscodes/mediatopic/."@fr ,
                                 "Mit dieser Eigenschaft können Sie ein Asset mit einem Thema verknüpfen, das eine Zeichenkette oder ein URI sein kann, der auf einen Begriff aus einem kontrollierten Vokabular verweist. Ein typisches Beispiel ist die Verwendung der IPTC-Medienthemen, die unter http://cv.iptc.org/newscodes/mediatopic/ definiert sind."@de ,
                                 "This property enables to associate an Asset with a topic which can be a string or a URI pointing to a term from a controlled vocabulary. A typical example is to make use of the IPTC Media Topics defined at http://cv.iptc.org/newscodes/mediatopic/."@en ;
