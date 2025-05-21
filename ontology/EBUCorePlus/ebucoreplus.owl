@@ -3826,9 +3826,9 @@ ec:isMediaFragmentOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isMemberOf
 ec:isMemberOf rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour identifier un groupe dont un objet éditorial (ou un plan de publication) est membre."@fr ,
-                                  "So identifizieren Sie eine Gruppe, der ein Medieninhalt oder ein Veröffentlichungsplan zugeordnet ist."@de ,
-                                  "To identify a Group to which an EditorialObject or a PublicationPlan is a member of."@en ;
+              dcterms:description "Pour identifier un groupe dont un objet éditorial est membre."@fr ,
+                                  "So identifizieren Sie einen übergeordneten Veröffentlichungsplan"@de ,
+                                  "To identify a Group to which an EditorialObject is a member of."@en ;
               rdfs:label "Member of"@en ,
                          "Membre de"@fr ,
                          "Mitglied von"@de .
@@ -8713,20 +8713,14 @@ ec:BehindTheScenes rdf:type owl:Class ;
 ec:BibliographicalObject rdf:type owl:Class ;
                          rdfs:subClassOf ec:Asset ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty ec:isReferencedBy ;
-                                           owl:allValuesFrom ec:BibliographicalObject
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ec:isReferencedBy ;
-                                           owl:allValuesFrom ec:EditorialObject
+                                           owl:onProperty ec:references ;
+                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                           owl:onClass ec:BibliographicalObject
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ec:references ;
-                                           owl:allValuesFrom ec:BibliographicalObject
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty ec:references ;
-                                           owl:allValuesFrom ec:EditorialObject
+                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                           owl:onClass ec:EditorialObject
                                          ] ;
                          dcterms:description "Documents de nature diverse."@fr ,
                                              "Documents of various nature."@en ,
@@ -10217,14 +10211,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isReferencedBy ;
-                                     owl:allValuesFrom ec:BibliographicalObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:isReferencedBy ;
-                                     owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isRequiredBy ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
@@ -10237,20 +10223,22 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:references ;
-                                     owl:allValuesFrom ec:BibliographicalObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:references ;
-                                     owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:represents ;
                                      owl:allValuesFrom ec:Asset
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:requires ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:BibliographicalObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                     owl:onClass ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasDateBroadcast ;
@@ -13419,14 +13407,13 @@ ec:Rating rdf:type owl:Class ;
                             owl:allValuesFrom ec:CountryCode
                           ] ,
                           [ rdf:type owl:Restriction ;
+                            owl:onProperty ec:hasTerritoryIncludes ;
+                            owl:allValuesFrom ec:CountryCode
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasRatingProvider ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass ec:Agent
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:hasTerritoryIncludes ;
-                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:description ;
@@ -13741,11 +13728,6 @@ ec:Resource rdf:type owl:Class ;
                               owl:onProperty ec:hasDateValidated ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasObjectType ;
-                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:description ;
