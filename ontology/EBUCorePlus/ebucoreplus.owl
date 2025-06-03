@@ -8577,6 +8577,10 @@ ec:AuditReport rdf:type owl:Class ;
                                  owl:allValuesFrom ec:AuditJob
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasRelatedResource ;
+                                 owl:allValuesFrom ec:Resource
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:referencesRule ;
                                  owl:allValuesFrom ec:Rule
                                ] ,
