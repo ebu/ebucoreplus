@@ -12835,10 +12835,6 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Account
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasAlternativeTitle ;
-                                        owl:allValuesFrom ec:AlternativeTitle
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasConsumptionCount ;
                                         owl:allValuesFrom ec:Audience
                                       ] ,
@@ -13261,10 +13257,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                        rdfs:subClassOf [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:accountingTo ;
                                          owl:allValuesFrom ec:Account
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:hasAlternativeTitle ;
-                                         owl:allValuesFrom ec:AlternativeTitle
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:hasConsumptionCount ;
