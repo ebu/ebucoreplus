@@ -3932,9 +3932,9 @@ ec:isPreviousInSequence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isProductOf
 ec:isProductOf rdf:type owl:ObjectProperty ;
-               dcterms:description "Pour associer une série à une marque."@fr ,
-                                   "So verknüpfen Sie eine Serie mit einer Marke."@de ,
-                                   "To associate a Series with a Brand."@en ;
+               dcterms:description "Pour associer une EditorialObject à une MarketingBrand."@fr ,
+                                   "So verknüpfen Sie ein EditorialObject mit einer MarketingBrand."@de ,
+                                   "To associate an EditorialObject with a MarketingBrand."@en ;
                rdfs:label "Brand"@en ,
                           "Marke"@de ,
                           "Marque"@fr .
@@ -8731,32 +8731,6 @@ ec:Biography rdf:type owl:Class ;
                         "Biography"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Brand
-ec:Brand rdf:type owl:Class ;
-         rdfs:subClassOf ec:EditorialGroup ;
-         dcterms:description "A group of EditorialObjects having a Brand as a common denominator."@en ,
-                             "Eine Gruppe von EditorialObjects mit einer Marke als gemeinsamen Nenner haben."@de ,
-                             "Un groupe d'EditorialObjects ayant une marque comme dénominateur commun."@fr ;
-         rdfs:label "Brand"@en ,
-                    "Marke"@de ,
-                    "Marque"@fr ;
-         skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ,
-                         "ein Name, oft zusammen mit einem Logo, der einem Vermögenswert oder einer Dienstleistung oder einer Gruppe davon gegeben wird, um sie von Vermögenswerten oder Dienstleistungen anderer Hersteller oder Händler zu unterscheiden."@de ,
-                         "un nom, souvent accompagné d'un logo, et donné à un bien ou à un service ou à un groupe de ceux-ci pour les distinguer des biens ou des services fournis par d'autres fabricants ou commerçants."@fr ;
-         skos:example """- der Name einer PSM-Organisation: \"BBC\"
-- der Name eines Medienkanals: \"BBC4\"
-- der Name einer Serie: \"Downton Abbey\"
-- der Name einer Serie: \"BBC Nachrichten\""""@de ,
-                      """- le nom d'une organisation PSM : \"BBC\"
-- le nom d'une chaîne média : \"BBC4\"
-- le nom d'une série : \"Downton Abbey\"
-- le nom d'une série : \"BBC News\""""@fr ,
-                      """- the name of a PSM organization: \"BBC\"
-- the name of a media channel: \"BBC4\"
-- the name of a series: \"Downton Abbey\"
-- the name of a serial: \"BBC News\""""@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Campaign
 ec:Campaign rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -9960,6 +9934,33 @@ Trailer:
 - eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
 - ein Promo-Clip für ein Sport-Pokal-Finale heute Abend"""@de .
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialFormat
+ec:EditorialFormat rdf:type owl:Class ;
+                   rdfs:subClassOf ec:EditorialGroup ;
+                   rdfs:label "Format"@en ,
+                              "Format"@de ,
+                              "Format"@fr ;
+							  
+				   skos:definition "An EditorialGroup, developed with a specific editorial style, content layout, anchor-host, etc. to address a target audience. Most often used in the assessment of current offerings or in the development of new offerings."@en ,
+                                   "Eine EditorialGroup, die mit einem spezifischen redaktionellen Stil, Inhaltslayout, Moderator usw. entwickelt wurde, um eine Zielgruppe anzusprechen. Wird meist bei der Klassifizierung bestehender Angebote oder der Entwicklung neuer Angebote verwendet."@de ,
+                                   "Un groupe éditorial développé avec un style éditorial, une mise en page de contenu, un modérateur, etc. spécifiques, pour cibler un public spécifique. Généralement utilisé pour classer les offres existantes ou en développer de nouvelles."@fr ;
+         
+         
+         skos:example """- eine Spiel-Show mit einem bestimmten Gastgeber: \"Rudis Raterunde\"
+- eine Journalsendung zu Themen aus Asien: \"Asienreport\"
+- eine abendliche Hauptnachrichtensendung: \"Tagesschau Hauptausgabe um 20:00\"
+- eine im Internet gestreamte Diskussionsendung für Jugendliche mit live zugeschalteten Gästen aus dem Publikum und Kommentarfunktion: \"MixTalk\""""@de ,
+
+                      """- Un jeu télévisé animé par un animateur spécifique: \"Rudis Raterunde\"
+- Un journal télévisé sur l'Asie: \"Asia Report\"
+- Un journal télévisé du soir: \"Tagesschau Main Edition à 20h\"
+- Une émission de débat en ligne pour les jeunes, avec des spectateurs en direct et un commentaire: \"MixTalk\""""@fr ,
+
+                      """- A game show with a specific host: \"Rudis Raterunde\"
+- A journal show on Asian topics: \"Asia Report\"
+- An evening news program: \"Tagesschau Main Edition at 8:00 PM\"
+- An online-streamed discussion show for young people with live audience members and a commentary feature: \"MixTalk\""""@en .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialGroup
 ec:EditorialGroup rdf:type owl:Class ;
@@ -10021,7 +10022,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasBrand ;
-                                     owl:allValuesFrom ec:Brand
+                                     owl:allValuesFrom ec:MarketingBrand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCaptioning ;
@@ -10066,6 +10067,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasEditorialFormatOf ;
                                      owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasEditorialFormat ;
+                                     owl:allValuesFrom ec:EditorialFormat
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasGenre ;
@@ -10233,7 +10238,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isProductOf ;
-                                     owl:allValuesFrom ec:Brand
+                                     owl:allValuesFrom ec:MarketingBrand
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublication ;
@@ -11331,6 +11336,47 @@ ec:Logo rdf:type owl:Class ;
         rdfs:label "Logo"@de ,
                    "Logo"@en ,
                    "Logo"@fr .
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MarketingBrand
+ec:MarketingBrand rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:name ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+							      [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasLogo ;
+                                    owl:allValuesFrom ec:Logo
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:isOwnedBy ;
+                                    owl:allValuesFrom ec:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:hasIdentifier ;
+                                    owl:allValuesFrom ec:Identifier
+                                  ] ;
+                 rdfs:label "Brand"@en ,
+                            "Marke"@de ,
+                            "Marque"@fr ;
+                 skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ,
+                                 "ein Name, oft zusammen mit einem Logo, der einem Vermögenswert oder einer Dienstleistung oder einer Gruppe davon gegeben wird, um sie von Vermögenswerten oder Dienstleistungen anderer Hersteller oder Händler zu unterscheiden."@de ,
+                                 "un nom, souvent accompagné d'un logo, et donné à un bien ou à un service ou à un groupe de ceux-ci pour les distinguer des biens ou des services fournis par d'autres fabricants ou commerçants."@fr ;
+                 skos:example """- der Name einer PSM-Organisation: \"BBC\"
+- der Name eines Medienkanals: \"BBC4\"
+- der Name einer Serie: \"Downton Abbey\"
+- der Name einer Serie: \"BBC Nachrichten\""""@de ,
+                      """- le nom d'une organisation PSM : \"BBC\"
+- le nom d'une chaîne média : \"BBC4\"
+- le nom d'une série : \"Downton Abbey\"
+- le nom d'une série : \"BBC News\""""@fr ,
+                      """- the name of a PSM organization: \"BBC\"
+- the name of a media channel: \"BBC4\"
+- the name of a series: \"Downton Abbey\"
+- the name of a serial: \"BBC News\""""@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Measure
@@ -12756,10 +12802,6 @@ ec:PublicationChannel rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Account
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasAlternativeTitle ;
-                                        owl:allValuesFrom ec:AlternativeTitle
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasConsumptionCount ;
                                         owl:allValuesFrom ec:Audience
                                       ] ,
@@ -13184,10 +13226,6 @@ ec:PublicationPlatform rdf:type owl:Class ;
                                          owl:allValuesFrom ec:Account
                                        ] ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty ec:hasAlternativeTitle ;
-                                         owl:allValuesFrom ec:AlternativeTitle
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
                                          owl:onProperty ec:hasConsumptionCount ;
                                          owl:allValuesFrom ec:Audience
                                        ] ,
@@ -13275,8 +13313,8 @@ ec:PublicationService rdf:type owl:Class ;
                                         owl:allValuesFrom ec:Account
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty ec:hasAlternativeTitle ;
-                                        owl:allValuesFrom ec:AlternativeTitle
+                                        owl:onProperty ec:hasBrand ;
+                                        owl:allValuesFrom ec:MarketingBrand
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty ec:hasConsumptionCount ;
