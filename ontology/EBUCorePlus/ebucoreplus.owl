@@ -8340,7 +8340,7 @@ ec:AudioCodec rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContent
 ec:AudioContent rdf:type owl:Class ;
-                rdfs:subClassOf ec:Programme ,
+                rdfs:subClassOf ec:EditorialSegment ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty ec:loudnessIntegratedLoudness ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8699,20 +8699,6 @@ ec:BMTemplate rdf:type owl:Class ;
                          "BMVorlage"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BehindTheScenes
-ec:BehindTheScenes rdf:type owl:Class ;
-                   rdfs:subClassOf ec:EditorialExtra ;
-                   rdfs:label "BehindTheScenes"@de ,
-                              "BehindTheScenes"@en ,
-                              "BehindTheScenes"@fr ;
-                   skos:definition "Ein Editorial Extra, das eine Geschichte über Szenen des Werkes erzählt."@de ,
-                                   "Un éditorial extra qui rapport une histoire sur scenes de l'œuvre."@fr ,
-                                   "an editorial extra that provides a story about scenes of the EditorialWork"@en ;
-                   skos:example "- Kurzfilm mit Erklärungen zu den Stunts in einem Actionfilm"@de ,
-                                "- petit film expliquant les scènes de cascades d'un film d'action"@fr ,
-                                "- short film with explanations on the stunt scenes in an action movie"@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
                          rdfs:subClassOf ec:Asset ,
@@ -8745,20 +8731,6 @@ ec:Biography rdf:type owl:Class ;
                         "Biography"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Bonus
-ec:Bonus rdf:type owl:Class ;
-         rdfs:subClassOf ec:EditorialExtra ;
-         rdfs:label "Bonus"@de ,
-                    "Bonus"@en ,
-                    "Bonus"@fr ;
-         skos:definition "an Editorial Extra intended as an enhancing content of a main EditorialWork."@en ,
-                         "ein Editorial Extra, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist."@de ,
-                         "un Éditorial Extra destiné à enrichir le contenu d'une œuvre principal."@fr ;
-         skos:example "- Additional content for a movie to be consumed separately as an enhancement"@en ,
-                      "- Contenu additionnel pour un film à consommer séparément en tant que complément."@fr ,
-                      "- Zusätzliche Inhalte für einen Film, die separat als Erweiterung konsumiert werden können"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Brand
 ec:Brand rdf:type owl:Class ;
          rdfs:subClassOf ec:EditorialGroup ;
@@ -8783,17 +8755,6 @@ ec:Brand rdf:type owl:Class ;
 - the name of a media channel: \"BBC4\"
 - the name of a series: \"Downton Abbey\"
 - the name of a serial: \"BBC News\""""@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BreakingNewsItem
-ec:BreakingNewsItem rdf:type owl:Class ;
-                    rdfs:subClassOf ec:Item ;
-                    dcterms:description "Pour décrire une nouvelle de dernière minute."@fr ,
-                                        "To describe a breaking news."@en ,
-                                        "Um eine Eilmeldung zu beschreiben."@de ;
-                    rdfs:label "Breaking news item"@en ,
-                               "Dernières nouvelles"@fr ,
-                               "Eilmeldung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Campaign
@@ -9931,9 +9892,73 @@ ec:EditorialExtra rdf:type owl:Class ;
                   skos:definition "Ein Werk, das ein optionale Ergänzung zu einem anderen Werk ist und dazu dient zu erklären, zu unterhalten, zu werben oder ähnliches."@de ,
                                   "an EditiorialWork that serves as an optional addition to a main EditorialWork and intends  to explain, entertain, advertise or similar."@en ,
                                   "une œuvre qui sert de complément facultatif à une œuvre principal et qui vise à expliquer, à divertir, à faire de la publicité ou autre."@fr ;
-                  skos:example "Contenu supplémentaire pour un film de cinéma: bande-annonce, making of, bonus, outtakes, ..."@fr ,
-                               "Extra content for a movie: trailer, making of, bonus material, outtakes, ..."@en ,
-                               "Extra-Inhalte für einen Kinofilm: Trailer, Making of, Bonus-Material, Outtakes, ..."@de .
+                  skos:example """Contenu supplémentaire pour un film de cinéma: bande-annonce, making of, bonus, outtakes, ...
+
+\"BehindTheScenes\":
+- Un éditorial extra qui rapport une histoire sur scenes de l'œuvre.
+- petit film expliquant les scènes de cascades d'un film d'action
+
+\"Bonus\":
+- un Éditorial Extra destiné à enrichir le contenu d'une œuvre principal.
+- Contenu additionnel pour un film à consommer séparément en tant que complément.
+
+\"Making of\":
+- Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple).
+
+\"Outtakes\":
+- un Éditorial Extra rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc.
+- un clip avec une collection de chutes sur le DVD bonus d'un film
+
+Bande annonce:
+- une Éditorial Extra avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur.
+- Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision.
+- un aperçu d'une minute de l'épisode de dimanche prochain de la série allemande \"Tatort\".
+- un clip promotionnel pour la finale de la coupe du sport qui aura lieu ce soir"""@fr ,
+                               """Extra content for a movie: trailer, making of, bonus material, outtakes ...
+
+Behind the scenes:
+- an editorial extra that provides a story about scenes of the EditorialWork
+- short film with explanations on the stunt scenes in an action movie
+
+Bonus:
+- an Editorial Extra intended as an enhancing content of a main EditorialWork.
+- Additional content for a movie to be consumed separately as an enhancement
+
+Making of:
+- an EditorialExtra about the making of a film or a Programme
+- A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip).
+
+Outtakes:
+- an Editorial Extra collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc
+- a clip with a collection of outtakes on a bonus DVD of a film
+
+Trailer:
+-an Editorial Extra with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future
+- An AV sequence promoting a film, series or television programme.
+- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
+- a promo-clip for a sports-cup-final later tonight"""@en ,
+                               """Extra-Inhalte für einen Kinofilm: Trailer, Making of, Bonus-Material, Outtakes, ...
+
+\"BehindTheScenes\"
+- Ein Editorial Extra, das eine Geschichte über Szenen des Werkes erzählt.
+- Kurzfilm mit Erklärungen zu den Stunts in einem Actionfilm
+
+\"Bonus\":
+- ein Editorial Extra, das als erweiternder Inhalt eines Haupt-Werkes gedacht ist.
+- Zusätzliche Inhalte für einen Film, die separat als Erweiterung konsumiert werden können
+
+\"MakingOf\":
+- Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic).
+
+\"Outtakes\":
+-ein Editorial Extra, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen
+- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film
+
+\"Trailer\":
+- ein Editorial Extra mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll
+- AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt.
+- eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
+- ein Promo-Clip für ein Sport-Pokal-Finale heute Abend"""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialGroup
@@ -10808,23 +10833,6 @@ ec:FoodStyle rdf:type owl:Class ;
                         "Style alimentaire"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Footage
-ec:Footage rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialExtra ;
-           rdfs:label "Footage"@en ,
-                      "Matériel Enregistrement"@fr ,
-                      "Rohmaterial"@de ;
-           skos:definition "Audio or video recordings (to be) used in editing for a work"@en ,
-                           "Audio- oder Videoaufnahmen, aus denen ein Werk entstanden ist bzw. entstehen soll."@de ,
-                           "Enregistrements audio ou vidéo pour la réalisation d'une œuvre"@fr ;
-           skos:example """- Rohmaterial zur Herstellung eines Kinofilms
-- Rohmaterial zur Herstellung eines Nachrichtenbeitrages"""@de ,
-                        """- enregistrement audio-visuel pour créer un film
-- enregistrement audio-visuel pour créer un article d'actualité"""@fr ,
-                        """- video recordings to create a movie
-- video recordings to create a news item"""@en .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Format
 ec:Format rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ,
@@ -11043,6 +11051,10 @@ ec:Item rdf:type owl:Class ;
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasArticle ;
                           owl:allValuesFrom ec:Article
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty ec:hasDopesheet ;
+                          owl:allValuesFrom ec:Dopesheet
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty ec:hasPost ;
@@ -11319,23 +11331,6 @@ ec:Logo rdf:type owl:Class ;
         rdfs:label "Logo"@de ,
                    "Logo"@en ,
                    "Logo"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MakingOf
-ec:MakingOf rdf:type owl:Class ;
-            rdfs:subClassOf ec:EditorialExtra ;
-            dcterms:description "A documentary film about the shooting or production of a film or audiovisual work (TV film, TV series, etc.), or even another artistic production (e.g. comic strip)."@en ,
-                                "Ein Dokumentarfilm über die Dreharbeiten oder die Produktion eines Films oder eines audiovisuellen Werks (Fernsehfilm, Fernsehserie usw.) oder einer anderen künstlerischen Produktion (z. B. Comic)."@de ,
-                                "Un film documentaire relatant le tournage ou la production d'un film ou d'une œuvre audiovisuelle (téléfilm, série télévisée…), voire d'une autre production artistique (bande dessinée par exemple)."@fr ;
-            rdfs:label "Making-of"@de ,
-                       "Making-of"@en ,
-                       "Making-of"@fr ;
-            skos:definition "an EditorialExtra about the making of a film or a Programme"@en ,
-                            "ein EditorialExtra, das von der Entstehung eines Films oder einer Sendung handelt"@de ,
-                            "un éditorial extra sur la réalisation d'un film ou d'un programme"@fr ;
-            skos:example "- Das Making-of eines Films oder einer Serie"@de ,
-                         "- le making-of d'un film ou une serié"@fr ,
-                         "- the making of a movie or a serial"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Measure
@@ -11945,21 +11940,6 @@ ec:MimeType rdf:type owl:Class ;
                        "Type Mime"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#NewsItem
-ec:NewsItem rdf:type owl:Class ;
-            rdfs:subClassOf ec:Item ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:hasDopesheet ;
-                              owl:allValuesFrom ec:Dopesheet
-                            ] ;
-            dcterms:description "A NewsItem aggregates all information about a particular news event."@en ,
-                                "Ein NewsItem fasst alle Informationen über ein bestimmtes Nachrichtenereignis zusammen."@de ,
-                                "Un NewsItem regroupe toutes les informations sur un événement d'actualité particulier."@fr ;
-            rdfs:label "Nachrichtenbeitrag"@de ,
-                       "News Item"@en ,
-                       "Nouvelles"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#NormalPlayTime
 ec:NormalPlayTime rdf:type owl:Class ;
                   rdfs:subClassOf ec:TimelinePoint ,
@@ -12113,20 +12093,6 @@ ec:OriginalLanguage rdf:type owl:Class ;
                     rdfs:label "Language"@en ,
                                "Langue"@fr ,
                                "Sprache"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Outtakes
-ec:Outtakes rdf:type owl:Class ;
-            rdfs:subClassOf ec:EditorialExtra ;
-            rdfs:label "Outtakes"@de ,
-                       "Outtakes"@en ,
-                       "Outtakes"@fr ;
-            skos:definition "an Editorial Extra collecting Shots or Scenes that were sorted out during post-production, but still appeal to consumers for fun, curiosity, etc"@en ,
-                            "ein Editorial Extra, in dem aussortierte Aufnahmen oder Szenen einer Produktion gesammelt werden, die den Nutzer aus Spaß, Neugier o.ä. ansprechen sollen"@de ,
-                            "un Éditorial Extra rassemblant des prises de vue ou des scènes qui ont été triées en post-production, mais qui intéressent toujours les consommateurs pour le plaisir, la curiosité, etc."@fr ;
-            skos:example "- a clip with a collection of outtakes on a bonus DVD of a film"@en ,
-                         "- ein Clip mit einer Sammlung von Outtakes auf einer Bonus-DVD zu einem Film"@de ,
-                         "- un clip avec une collection de chutes sur le DVD bonus d'un film"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#PartType
@@ -13380,17 +13346,6 @@ ec:PublicationService rdf:type owl:Class ;
 - the video on demand service of Netflix"""@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#RadioProgramme
-ec:RadioProgramme rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Programme ;
-                  dcterms:description "A programme for distribution on radio channels."@en ,
-                                      "Ein Sendung zur Verbreitung in einem Radiokanal."@de ,
-                                      "Un programme pour la distribution sur les chaînes."@fr ;
-                  rdfs:label "Programme radio"@fr ,
-                             "Radio Programme"@en ,
-                             "Radiosendung"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Rating
 ec:Rating rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -14178,17 +14133,6 @@ ec:SigningFormat rdf:type owl:Class ;
                             "Signing format"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#SportItem
-ec:SportItem rdf:type owl:Class ;
-             rdfs:subClassOf ec:Item ;
-             dcterms:description "A SportItem aggregates all information about a sport event."@en ,
-                                 "Ein SportItem fasst alle Informationen über ein Sportereignis zusammen."@de ,
-                                 "Un SportItem regroupe toutes les informations sur un événement sportif."@fr ;
-             rdfs:label "Article de sport"@fr ,
-                        "Sport item"@en ,
-                        "Sportbeitrag"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#StaffMember
 ec:StaffMember rdf:type owl:Class ;
                rdfs:subClassOf ec:Person ;
@@ -14318,17 +14262,6 @@ ec:SubtitlingFormat rdf:type owl:Class ;
                     rdfs:label "Format de sous-titrage"@fr ,
                                "Format der Untertitelung"@de ,
                                "Subtitling format"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TVProgramme
-ec:TVProgramme rdf:type owl:Class ;
-               rdfs:subClassOf ec:Programme ;
-               dcterms:description "A programme for distribution on television channels."@en ,
-                                   "Ein Programm für die Ausstrahlung im Fernsehen Kanäle."@de ,
-                                   "Un programme destiné à être distribué sur les chaînes."@fr ;
-               rdfs:label "Programme TV"@fr ,
-                          "TV Programme"@en ,
-                          "TV-Sendung"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Take
@@ -14746,26 +14679,6 @@ ec:TrackType rdf:type owl:Class ;
                         "Type de voie"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Trailer
-ec:Trailer rdf:type owl:Class ;
-           rdfs:subClassOf ec:EditorialExtra ;
-           dcterms:description "AV-Sequenz, die einen Film, eine Serie oder eine Fernsehsendung bewirbt."@de ,
-                               "An AV sequence promoting a film, series or television programme."@en ,
-                               "Séquence AV faisant la promotion d’un film, d'une série ou d’une émission de télévision."@fr ;
-           rdfs:label "Bande annonce"@fr ,
-                      "Trailer"@de ,
-                      "Trailer"@en ;
-           skos:definition "an Editorial Extra with typical promotion lenght of up to 2 minutes, promoting a Programme, a Serial or a Series to be published in the future"@en ,
-                           "ein Editorial Extra mit einer typischen Werbelänge von bis zu 2 Minuten, die eine Sendung, eine Serie oder eine Reihe bewirbt, die in Zukunft veröffentlicht werden soll"@de ,
-                           "une Éditorial Extra avec une durée de promotion typique de 2 minutes maximum, promouvant un programme, un feuilleton ou une série à publier dans le futur."@fr ;
-           skos:example """- a 1-minute-preview for next Sunday's episode of German Series \"Tatort\"
-- a promo-clip for a sports-cup-final later tonight"""@en ,
-                        """- eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
-- ein Promo-Clip für ein Sport-Pokal-Finale heute Abend"""@de ,
-                        """- un aperçu d'une minute de l'épisode de dimanche prochain de la série allemande \"Tatort\".
-- un clip promotionnel pour la finale de la coupe du sport qui aura lieu ce soir"""@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Type
 ec:Type rdf:type owl:Class ;
         rdfs:subClassOf skos:Concept ;
@@ -15046,8 +14959,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
