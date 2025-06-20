@@ -73,7 +73,7 @@ The EBU Metadata Modelling Working Group provides access, upon request, to a clo
                                                      dc:publisher "European Broadcasting Union (EBU)"@ch ;
                                                      dc:rights "Copyright 2023 EBU"@en ;
                                                      vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucoreplus#" ;
-                                                     owl:versionInfo "Version 1.0.0"@en ;
+                                                     owl:versionInfo "Version 2.0.0"@en ;
                                                      vs:term_status "stable"@en .
 
 #################################################################
