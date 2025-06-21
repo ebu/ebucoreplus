@@ -1708,6 +1708,10 @@ ec:hasDubbedLanguage rdf:type owl:ObjectProperty ;
 ec:hasDuration rdf:type owl:ObjectProperty .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormat
+ec:hasEditorialFormat rdf:type owl:ObjectProperty .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEditorialFormatOf
 ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
@@ -2485,6 +2489,17 @@ ec:hasProvenanceTarget rdf:type owl:ObjectProperty ;
                        rdfs:label "Cible de provenance"@fr ,
                                   "Provenance target"@en ,
                                   "Ziel Provenienz"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublication
+ec:hasPublication rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:publishes ;
+                  dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
+                                      "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
+                                      "To associatre a PublicationEvent with an EditorialObject."@en ;
+                  rdfs:label "Ereignis der Veröffentlichung"@de ,
+                             "Publication event"@en ,
+                             "Événement de publication"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublicationChannel
@@ -3940,23 +3955,12 @@ ec:isProductOf rdf:type owl:ObjectProperty ;
                           "Marque"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublication
-ec:hasPublication rdf:type owl:ObjectProperty ;
-                 owl:inverseOf ec:publishes ;
-                 dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
-                                     "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
-                                     "To associatre a PublicationEvent with an EditorialObject."@en ;
-                 rdfs:label "Ereignis der Veröffentlichung"@de ,
-                            "Publication event"@en ,
-                            "Événement de publication"@fr .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReferencedBy
 ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf ec:references ;
-                  dcterms:description "Décrire les références entre une source et un objet éditorial ou bibliographique"@fr ,
-                                      "To described references between a source and a editorial or bibliografical object"@en ,
-                                      "Zur Beschreibung von Referenzen zwischen einer Quelle und einem redaktionellen oder bibliografischen Objekt"@de ;
+                  dcterms:description "A related resource that references, cites, or otherwise points to the described resource."@en ,
+                                      "Eine verwandte Ressource, die auf die beschriebene Ressource verweist, sie zitiert oder anderweitig darauf verweist."@de ,
+                                      "Une ressource connexe qui fait référence, cite ou pointe d’une autre manière vers la ressource décrite."@fr ;
                   rdfs:label "Reference source"@en ,
                              "Referenzquelle"@de ,
                              "Source de référence"@fr .
@@ -4130,9 +4134,9 @@ ec:publishes rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#references
 ec:references rdf:type owl:ObjectProperty ;
-              dcterms:description "Pour exprimer une référence entre un objet éditorial ou bibliographique et sa source"@fr ,
-                                  "To express a reference between an editorial or bibliographical object and its source"@en ,
-                                  "Um eine Referenz zwischen einem redaktionellen oder bibliografischen Objekt und seiner Quelle auszudrücken"@de ;
+              dcterms:description "A related resource that is referenced, cited, or otherwise pointed to by the described resource."@en ,
+                                  "Eine verwandte Ressource, auf die von der beschriebenen Ressource verwiesen, die sie zitiert oder auf die sie auf andere Weise verweist."@de ,
+                                  "Une ressource connexe qui est référencée, citée ou autrement pointée par la ressource décrite."@fr ;
               rdfs:label "References"@en ,
                          "Referenzen"@de ,
                          "Références"@fr .
@@ -9934,32 +9938,28 @@ Trailer:
 - eine 1-Minuten-Vorschau auf die Folge der deutschen Serie \"Tatort\" vom kommenden Sonntag
 - ein Promo-Clip für ein Sport-Pokal-Finale heute Abend"""@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialFormat
 ec:EditorialFormat rdf:type owl:Class ;
                    rdfs:subClassOf ec:EditorialGroup ;
-                   rdfs:label "Format"@en ,
-                              "Format"@de ,
+                   rdfs:label "Format"@de ,
+                              "Format"@en ,
                               "Format"@fr ;
-							  
-				   skos:definition "An EditorialGroup, developed with a specific editorial style, content layout, anchor-host, etc. to address a target audience. Most often used in the assessment of current offerings or in the development of new offerings."@en ,
+                   skos:definition "An EditorialGroup, developed with a specific editorial style, content layout, anchor-host, etc. to address a target audience. Most often used in the assessment of current offerings or in the development of new offerings."@en ,
                                    "Eine EditorialGroup, die mit einem spezifischen redaktionellen Stil, Inhaltslayout, Moderator usw. entwickelt wurde, um eine Zielgruppe anzusprechen. Wird meist bei der Klassifizierung bestehender Angebote oder der Entwicklung neuer Angebote verwendet."@de ,
                                    "Un groupe éditorial développé avec un style éditorial, une mise en page de contenu, un modérateur, etc. spécifiques, pour cibler un public spécifique. Généralement utilisé pour classer les offres existantes ou en développer de nouvelles."@fr ;
-         
-         
-         skos:example """- eine Spiel-Show mit einem bestimmten Gastgeber: \"Rudis Raterunde\"
-- eine Journalsendung zu Themen aus Asien: \"Asienreport\"
-- eine abendliche Hauptnachrichtensendung: \"Tagesschau Hauptausgabe um 20:00\"
-- eine im Internet gestreamte Diskussionsendung für Jugendliche mit live zugeschalteten Gästen aus dem Publikum und Kommentarfunktion: \"MixTalk\""""@de ,
-
-                      """- Un jeu télévisé animé par un animateur spécifique: \"Rudis Raterunde\"
+                   skos:example """- A game show with a specific host: \"Rudis Raterunde\"
+- A journal show on Asian topics: \"Asia Report\"
+- An evening news program: \"Tagesschau Main Edition at 8:00 PM\"
+- An online-streamed discussion show for young people with live audience members and a commentary feature: \"MixTalk\""""@en ,
+                                """- Un jeu télévisé animé par un animateur spécifique: \"Rudis Raterunde\"
 - Un journal télévisé sur l'Asie: \"Asia Report\"
 - Un journal télévisé du soir: \"Tagesschau Main Edition à 20h\"
 - Une émission de débat en ligne pour les jeunes, avec des spectateurs en direct et un commentaire: \"MixTalk\""""@fr ,
-
-                      """- A game show with a specific host: \"Rudis Raterunde\"
-- A journal show on Asian topics: \"Asia Report\"
-- An evening news program: \"Tagesschau Main Edition at 8:00 PM\"
-- An online-streamed discussion show for young people with live audience members and a commentary feature: \"MixTalk\""""@en .
+                                """- eine Spiel-Show mit einem bestimmten Gastgeber: \"Rudis Raterunde\"
+- eine Journalsendung zu Themen aus Asien: \"Asienreport\"
+- eine abendliche Hauptnachrichtensendung: \"Tagesschau Hauptausgabe um 20:00\"
+- eine im Internet gestreamte Diskussionsendung für Jugendliche mit live zugeschalteten Gästen aus dem Publikum und Kommentarfunktion: \"MixTalk\""""@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#EditorialGroup
@@ -10065,12 +10065,12 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Language
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasEditorialFormatOf ;
-                                     owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasEditorialFormat ;
                                      owl:allValuesFrom ec:EditorialFormat
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasEditorialFormatOf ;
+                                     owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasGenre ;
@@ -10107,6 +10107,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasProducer ;
                                      owl:allValuesFrom ec:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasPublication ;
+                                     owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublicationHistory ;
@@ -10151,10 +10155,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
                                      owl:allValuesFrom ec:MediaResource
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasRelatedResonanceEvent ;
-                                     owl:allValuesFrom ec:ResonanceEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedResource ;
@@ -10239,10 +10239,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isProductOf ;
                                      owl:allValuesFrom ec:MarketingBrand
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasPublication ;
-                                     owl:allValuesFrom ec:PublicationEvent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:isRequiredBy ;
@@ -11337,15 +11333,12 @@ ec:Logo rdf:type owl:Class ;
                    "Logo"@en ,
                    "Logo"@fr .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MarketingBrand
 ec:MarketingBrand rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:name ;
-                                    owl:allValuesFrom rdfs:Literal
-                                  ] ,
-							      [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:description ;
-                                    owl:allValuesFrom rdfs:Literal
+                                    owl:onProperty ec:hasIdentifier ;
+                                    owl:allValuesFrom ec:Identifier
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasLogo ;
@@ -11356,24 +11349,28 @@ ec:MarketingBrand rdf:type owl:Class ;
                                     owl:allValuesFrom ec:Agent
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:hasIdentifier ;
-                                    owl:allValuesFrom ec:Identifier
+                                    owl:onProperty ec:description ;
+                                    owl:allValuesFrom rdfs:Literal
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:name ;
+                                    owl:allValuesFrom rdfs:Literal
                                   ] ;
-                 rdfs:label "Brand"@en ,
-                            "Marke"@de ,
-                            "Marque"@fr ;
-                 skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ,
-                                 "ein Name, oft zusammen mit einem Logo, der einem Vermögenswert oder einer Dienstleistung oder einer Gruppe davon gegeben wird, um sie von Vermögenswerten oder Dienstleistungen anderer Hersteller oder Händler zu unterscheiden."@de ,
-                                 "un nom, souvent accompagné d'un logo, et donné à un bien ou à un service ou à un groupe de ceux-ci pour les distinguer des biens ou des services fournis par d'autres fabricants ou commerçants."@fr ;
-                 skos:example """- der Name einer PSM-Organisation: \"BBC\"
+                  rdfs:label "Brand"@en ,
+                             "Marke"@de ,
+                             "Marque"@fr ;
+                  skos:definition "a name, often accompanied by a logo, and given to an Asset or a Service or a group thereof to distinguish them from Assets or services provided by other manufacturer's or merchant's."@en ,
+                                  "ein Name, oft zusammen mit einem Logo, der einem Vermögenswert oder einer Dienstleistung oder einer Gruppe davon gegeben wird, um sie von Vermögenswerten oder Dienstleistungen anderer Hersteller oder Händler zu unterscheiden."@de ,
+                                  "un nom, souvent accompagné d'un logo, et donné à un bien ou à un service ou à un groupe de ceux-ci pour les distinguer des biens ou des services fournis par d'autres fabricants ou commerçants."@fr ;
+                  skos:example """- der Name einer PSM-Organisation: \"BBC\"
 - der Name eines Medienkanals: \"BBC4\"
 - der Name einer Serie: \"Downton Abbey\"
 - der Name einer Serie: \"BBC Nachrichten\""""@de ,
-                      """- le nom d'une organisation PSM : \"BBC\"
+                               """- le nom d'une organisation PSM : \"BBC\"
 - le nom d'une chaîne média : \"BBC4\"
 - le nom d'une série : \"Downton Abbey\"
 - le nom d'une série : \"BBC News\""""@fr ,
-                      """- the name of a PSM organization: \"BBC\"
+                               """- the name of a PSM organization: \"BBC\"
 - the name of a media channel: \"BBC4\"
 - the name of a series: \"Downton Abbey\"
 - the name of a serial: \"BBC News\""""@en .
@@ -13624,6 +13621,30 @@ ec:ResonanceCount rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#ResonanceEvent
 ec:ResonanceEvent rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:ConsumptionEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:EditorialObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:PublicationChannel
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:PublicationEvent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:PublicationPlatform
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ec:references ;
+                                    owl:someValuesFrom ec:PublicationService
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:hasAssociatedConsumer ;
                                     owl:allValuesFrom ec:Consumer
                                   ] ,
