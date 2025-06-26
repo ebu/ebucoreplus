@@ -28,39 +28,62 @@ with col2:
 # ---------- Streamlit UI ---------------------------------------------
 
 
-default_old = "example_data/ebucoreplus-1-07.ttl"
-default_new = "example_data/ebucoreplus-2-0.ttl"
+default_old = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-1-07.ttl")
+default_new = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-2-0.ttl")
 
-# Try to open default files as fallback
-def get_default_file_bytes(filepath):
-    with open(filepath, "rb") as f:
-        return f.read()
+def read_ttl_file(f):
+    if f is None:
+        return None
+    if hasattr(f, "read"):
+        try:
+            f.seek(0)
+        except Exception:
+            pass  # Some file objects may not support seek
+        return f.read().decode("utf-8")
+    elif isinstance(f, bytes):
+        return f.decode("utf-8")
+    elif isinstance(f, str):
+        return f
+    return None
 
 # Sidebar
 st.sidebar.markdown("### Upload ontology versions (optional)")
 file_old = st.sidebar.file_uploader("Old version ", type=["ttl"])
 file_new = st.sidebar.file_uploader("New version ", type=["ttl"])
 
+def get_default_file_obj(filepath):
+    # Returns bytes, which our helper can handle
+    try:
+        with open(filepath, "rb") as f:
+            return f.read()
+    except Exception:
+        return None
+
 if not file_old:
-    if os.path.exists(default_old):
-        file_old = get_default_file_bytes(default_old)
-        #st.sidebar.info(f"Loaded default: {default_old}")
+    file_old = get_default_file_obj(default_old)
 if not file_new:
-    if os.path.exists(default_new):
-        file_new = get_default_file_bytes(default_new)
-        #st.sidebar.info(f"Loaded default: {default_new}")
-
-
+    file_new = get_default_file_obj(default_new)
 
 g_old = Graph()
-g_old.parse(data=file_old, format="turtle")
 g_new = Graph()
-g_new.parse(data=file_new, format="turtle")
+data_old = read_ttl_file(file_old)
+data_new = read_ttl_file(file_new)
+if data_old is None or data_new is None:
+    st.error("Could not load ontology files. Make sure example files exist, or upload two files.")
+    st.stop()
+else:
+    g_old.parse(data=data_old, format="turtle")
+    g_new.parse(data=data_new, format="turtle")
+
+
+def get_filename(file_like, default_name):
+    if hasattr(file_like, "name"):
+        return file_like.name
+    return os.path.basename(default_name)
 
 st.sidebar.write("### Loaded files:")
-st.sidebar.write(f"Old: {getattr(file_old, 'name', default_old)}")
-st.sidebar.write(f"New: {getattr(file_new, 'name', default_new)}")
-
+st.sidebar.write(f"Old: {get_filename(file_old, default_old)}")
+st.sidebar.write(f"New: {get_filename(file_new, default_new)}")
 
 df_old = build_class_stats(g_old)
 df_new = build_class_stats(g_new)
