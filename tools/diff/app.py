@@ -7,14 +7,21 @@ import math
 from helpers import pretty, build_class_stats, extract_edges, class_nice_view, compare_object_properties
 from PIL import Image
 
-logo_path = "static/ebu_logo.svg"  # or your logo path
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(CURRENT_DIR, "static", "ebu_logo.svg")
+
 logo_width_px = 120
 
 col1, col2 = st.columns([0.25, 0.75])
+
 with col1:
-    st.image(logo_path, width=logo_width_px)
+    try:
+        st.image(logo_path, width=logo_width_px)
+    except Exception:
+        st.write("EBU Logo")
 with col2:
-    st.markdown("<br>", unsafe_allow_html=True)  # Add vertical spacing to align with the logo
+    st.markdown("<br>", unsafe_allow_html=True)  
     st.title("Ontology Diff Analyzer")
 
 
