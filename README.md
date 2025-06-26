@@ -24,6 +24,7 @@ The ontology is developed by the EBU Metadata Modelling Working Group as an open
 </p>
 <p >
 The <a href="https://tech.ebu.ch/groups/mm"> EBU Metadata Modelling Working Group </a> provides access, <a href="mailto:rouxel@ebu.ch"> upon request </a> to a cloud hosted demonstration kit to explore and better understand the whole EBUCorePlus model.
+An open-source visualization tool, <b>Ontology Diff Analyzer</b>, is available in the repository <a href="https://github.com/ebu/ebucoreplus/tree/main/tools/diff">here</a> to explore changes and updates in EBUCorePlus.
 </p>
 
 # How we use annotation properties for definition, examples and description
