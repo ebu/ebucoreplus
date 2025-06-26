@@ -2,7 +2,7 @@
 
 Visualize and compare two ontology versions, highlighting changes in classes and relations.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ebu-oda.streamlit.app.app)
 
 ---
 
@@ -14,7 +14,7 @@ Visualize and compare two ontology versions, highlighting changes in classes and
 
 ## 🚀 Try it Live
 
-**[Launch the app →](https://your-app-url.streamlit.app)**
+**[Launch the app →](https://ebu-oda.streamlit.app)**
 
 ---
 
