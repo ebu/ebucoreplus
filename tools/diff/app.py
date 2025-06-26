@@ -7,7 +7,7 @@ import math
 from helpers import pretty, build_class_stats, extract_edges, class_nice_view, compare_object_properties
 from PIL import Image
 
-logo_path = "./static/ebu_logo.svg"  # or your logo path
+logo_path = "static/ebu_logo.svg"  # or your logo path
 logo_width_px = 120
 
 col1, col2 = st.columns([0.25, 0.75])
@@ -21,8 +21,8 @@ with col2:
 # ---------- Streamlit UI ---------------------------------------------
 
 
-default_old = "./example_data/ebucoreplus-1-07.ttl"
-default_new = "./example_data/ebucoreplus-2-0.ttl"
+default_old = "example_data/ebucoreplus-1-07.ttl"
+default_new = "example_data/ebucoreplus-2-0.ttl"
 
 # Try to open default files as fallback
 def get_default_file_bytes(filepath):
