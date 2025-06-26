@@ -4,6 +4,5 @@ watchdog
 rapidfuzz
 pyvis
 jinja2
-pygraphviz
 matplotlib
 networkx
