@@ -2,7 +2,7 @@
 
 Visualize and compare two ontology versions, highlighting changes in classes and relations.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ebu-oda.streamlit.app.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ebu-oda.streamlit.app)
 
 ---
 
@@ -23,3 +23,5 @@ Visualize and compare two ontology versions, highlighting changes in classes and
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
+
