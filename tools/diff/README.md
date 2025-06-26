@@ -18,7 +18,7 @@ Visualize and compare two ontology versions, highlighting changes in classes and
 
 ---
 
-## 📦 How to Run Locally
+## How to Run Locally
 
 ```bash
 pip install -r requirements.txt
