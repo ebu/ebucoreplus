@@ -1,4 +1,3 @@
-```markdown
 <p align="center">
   <img src="static/ebu_logo.svg" alt="EBU logo" width="160">
 </p>
@@ -21,71 +20,49 @@
 
 ## ✨ Features
 
-- 🔍 Fuzzy search with autocomplete (`streamlit-searchbox`)
-- 🧭 Class selection by domain (e.g., Editorial, Distribution, Participation…)
-- 🧱 Visual semantic graph using `pyvis`
-- 🔗 Displays: subclasses, superclasses, restrictions, reverse properties
-- 📦 Loads `.ttl` and `.owl` ontologies (RDF/XML, Turtle)
-- ⚡ Automatically expands graph when a new class is selected
+- 🔍 Fuzzy search with autocomplete
+- 🧭 Class selection by functional domain
+- 🧠 Interactive semantic graph using `pyvis`
+- 🔗 Displays subclasses, superclasses, restrictions, reverse links, and SKOS info
 
 ---
 
-## 📁 Project Structure
-
-```
-
-OntologyExplorer/
-├── main.py                   # Main Streamlit app
-├── ontology\_helpers.py      # RDF helper functions
-├── graph\_helpers.py         # Graph building logic
-├── config.py                 # Class groupings & colors
-├── static/
-│   ├── demo.gif              # UI animation for README/Streamlit Cloud
-│   ├── OntoExplorer.png      # Static screenshot
-│   └── ebu\_logo.svg         # EBU branding
-├── requirements.txt          # Dependencies
-└── README.md
-
-````
-
----
-
-## 🚀 Get Started - local installation 
+## 🚀 Getting Started
 
 ```bash
 git clone https://github.com/yourusername/OntologyExplorer.git
 cd OntologyExplorer
 python -m venv venv
-source venv/bin/activate    # or venv\Scripts\activate on Windows
+source venv/bin/activate        # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run main.py
-````
+```
 
-Then open your browser to `http://localhost:8501`
+Then open your browser at [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## ☁️ Streamlit Cloud
+## ☁️ Run it on Streamlit Cloud
 
-You can deploy directly to Streamlit Cloud:
-
-1. Push the repo to GitHub
-2. Go to [streamlit.io/cloud](https://streamlit.io/cloud)
-3. Connect your repo, set `main.py` as the app entry point
-4. Upload your ontology `.ttl` file in the interface
-
-⚠️ Make sure `demo.gif` and `ebu_logo.svg` are in `static/` folder.
-
-
+...
 ---
 
 ## 📄 License
 
-MIT License © 
+MIT License © Alexandre Rouxel
+
+---
+
+## 🙌 Acknowledgements
+
+- [EBU](https://tech.ebu.ch/metadata/ebucoreplus) — for the EBUCorePlus ontology
+- [rdflib](https://rdflib.readthedocs.io/) — for semantic RDF parsing
+- [pyvis](https://pyvis.readthedocs.io/) — for graph visualization
+- [streamlit](https://streamlit.io/) — for building this web UI
 
 ---
 
 ## 💬 Feedback
 
-Feature ideas, bugs, or contributions? Open a GitHub issue
-
+Found a bug? Want to contribute?  
+Open an issue or pull request — feedback is always welcome!
