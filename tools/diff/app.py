@@ -11,18 +11,27 @@ from PIL import Image
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 logo_path = os.path.join(CURRENT_DIR, "static", "ebu_logo.svg")
 
-logo_width_px = 120
+# Show EBU logo in the left sidebar
+try:
+    st.sidebar.image(logo_path, width=150)
+except Exception:
+    st.sidebar.markdown("### EBU")
 
-col1, col2 = st.columns([0.25, 0.75])
+# Main app title
+st.title("Ontology Diff Analyzer")
 
-with col1:
-    try:
-        st.image(logo_path, width=logo_width_px)
-    except Exception:
-        st.write("EBU Logo")
-with col2:
-    st.markdown("<br>", unsafe_allow_html=True)  
-    st.title("Ontology Diff Analyzer")
+# logo_width_px = 120
+
+# col1, col2 = st.columns([0.25, 0.75])
+
+# with col1:
+#     try:
+#         st.image(logo_path, width=logo_width_px)
+#     except Exception:
+#         st.write("EBU Logo")
+# with col2:
+#     st.markdown("<br>", unsafe_allow_html=True)  
+#     st.title("Ontology Diff Analyzer")
 
 
 # ---------- Streamlit UI ---------------------------------------------
@@ -135,33 +144,36 @@ d2.metric("➖ Relations", removed_edges)
 
 # ----------- Grouped domains and domain mapping -----------
 grouped_main_classes = {
-    "Content & Editorial Structure": [
-        "Asset", "EditorialObject", "EditorialSegment", "Picture", "Essence", "TimelineTrack"
+    "Audit": [
+        "AuditJob", "AuditReport", "Measure"
     ],
-    "Audience & Analytics": [
-        "Audience", "Consumer", "ConsumptionEvent", "ConsumptionCount",
-        "ConsumptionDevice", "ConsumptionDeviceProfile", "ResonanceEvent", "ResonanceCount"
+    "Commercial": [
+        "Asset", "Contract", "Rights", "Rule"
     ],
-    "Production & Workflow": [
-        "ProductionJob", "ProductionDevice", "ProductionOrder", "AudioProgramme"
+    "Consumption": [
+        "Account", "ConsumptionDevice", "ConsumptionEvent", "ConsumptionLicence", "Consumer", "ResonanceEvent"
     ],
-    "Rights & Legal": [
-        "Contract", "Licence", "Rights"
+    "Distribution": [
+        "ConsumptionDeviceProfile", "PublicationEvent", "PublicationService"
     ],
-    "Publication & Distribution": [
-        "PublicationPlan", "PublicationChannel", "PublicationPlatform",
-        "PublicationEvent", "PublicationService"
+    "Editorial": [
+        "EditorialObject", "Event", "Location", "TimelineTrack"
     ],
-    "Marketing & Engagement": [
-        "Campaign"
+    "Financial": [
+        "AssetValue", "ContractCost"
     ],
-    "Actors & Agents": [
-        "Account", "Agent"
+    "Participation": [
+        "Agent", "Crew", "Involvement", "Organisation", "Person"
     ],
-    "Concepts & Semantics": [
-        "Concept", "Resource"
+    "Planning": [
+        "Audience", "Campaign", "ProductionOrder", "PublicationPlan"
+    ],
+    "Production": [
+        "Artefact", "Essence", "Format", "MediaResource", "OnStagePosition", "PhysicalResource",
+        "ProductionDevice", "ProductionJob", "Resource", "Track"
     ]
 }
+
 label2dom = {}
 ns = "http://www.ebu.ch/metadata/ontologies/ebucoreplus#"
 for dom, labels in grouped_main_classes.items():
