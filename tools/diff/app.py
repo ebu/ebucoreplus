@@ -20,20 +20,6 @@ except Exception:
 # Main app title
 st.title("Ontology Diff Analyzer")
 
-# logo_width_px = 120
-
-# col1, col2 = st.columns([0.25, 0.75])
-
-# with col1:
-#     try:
-#         st.image(logo_path, width=logo_width_px)
-#     except Exception:
-#         st.write("EBU Logo")
-# with col2:
-#     st.markdown("<br>", unsafe_allow_html=True)  
-#     st.title("Ontology Diff Analyzer")
-
-
 # ---------- Streamlit UI ---------------------------------------------
 
 
