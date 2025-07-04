@@ -23,8 +23,14 @@ def main():
     else:
         st.sidebar.markdown("### Ontology Explorer")
 
-    st.sidebar.subheader("Step 1: Upload Ontology")
-    uploaded_file = st.sidebar.file_uploader("Upload your Turtle (.ttl) file", type=["ttl", "owl"])
+    st.sidebar.subheader("Step 1: Load Ontology")
+
+    # Load pre-uploaded default file from example_data
+    default_ontology_path = os.path.join(os.path.dirname(__file__), "example_data", "ebucoreplus-2-0.owl")
+    uploaded_file = st.sidebar.file_uploader("Upload your Turtle (.ttl) or OWL file", type=["ttl", "owl"])
+
+    if uploaded_file is None and os.path.exists(default_ontology_path):
+        uploaded_file = default_ontology_path
 
     if uploaded_file is not None:
         try:
