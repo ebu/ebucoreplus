@@ -1,0 +1,5 @@
+streamlit
+rdflib
+pyvis
+pandas
+rapidfuzz
