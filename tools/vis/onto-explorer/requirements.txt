@@ -1,5 +1,5 @@
 streamlit
 rdflib
 pyvis
-pandas
 rapidfuzz
+streamlit-searchbox
