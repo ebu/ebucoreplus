@@ -5,15 +5,21 @@
 <h1 align="center">Ontology Explorer</h1>
 
 <p align="center">
-  A user-friendly tool to explore RDF/OWL ontologies like <strong>EBUCorePlus</strong> using fuzzy search, semantic graph visualization, and domain-aware class navigation.
+  A user-friendly tool to explore and understand RDF/OWL ontologies.
 </p>
 
 ---
 
-## 🎬 Live Demo
+## 🎬 Demo
 
 <p align="center">
-  <img src="static/demo.gif" alt="Ontology Explorer UI Demo" width="800">
+  <a href="https://onto-explorer.streamlit.app/" target="_blank">
+    <img src="static/OntoExplorer.png" alt="Ontology Explorer Screenshot" width="800">
+  </a>
+</p>
+
+<p align="center">
+  👉 Try it live now: <strong><a href="https://onto-explorer.streamlit.app/">onto-explorer.streamlit.app</a></strong>
 </p>
 
 ---
@@ -27,7 +33,7 @@
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Run the Explorer Locally
 
 ```bash
 git clone https://github.com/yourusername/OntologyExplorer.git
@@ -44,12 +50,15 @@ Then open your browser at [http://localhost:8501](http://localhost:8501)
 
 ## ☁️ Run it on Streamlit Cloud
 
-...
+No setup needed — just click and try:
+
+👉 https://onto-explorer.streamlit.app/
+
 ---
 
 ## 📄 License
 
-MIT License © Alexandre Rouxel
+MIT License © 
 
 ---
 
