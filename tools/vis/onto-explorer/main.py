@@ -1,3 +1,5 @@
+
+import os 
 import streamlit as st
 from rdflib import Graph, RDF, RDFS, OWL, URIRef, Literal
 from ontology_helpers import *
@@ -15,8 +17,12 @@ def load_ontology(uploaded_file):
 
 def main():
     st.title("EBU Ontology Explorer")
+    logo_path = os.path.join(os.path.dirname(__file__), "static", "ebu_logo.svg")
+    if os.path.exists(logo_path):
+        st.sidebar.image(logo_path, width=150)
+    else:
+        st.sidebar.markdown("### Ontology Explorer")
 
-    st.sidebar.image("static/ebu_logo.svg", width=150)
     st.sidebar.subheader("Step 1: Upload Ontology")
     uploaded_file = st.sidebar.file_uploader("Upload your Turtle (.ttl) file", type=["ttl", "owl"])
 
