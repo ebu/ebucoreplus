@@ -8708,13 +8708,11 @@ ec:BibliographicalObject rdf:type owl:Class ;
                          rdfs:subClassOf ec:Asset ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ec:references ;
-                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                           owl:onClass ec:BibliographicalObject
+                                           owl:allValuesFrom ec:BibliographicalObject
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty ec:references ;
-                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                           owl:onClass ec:EditorialObject
+                                           owl:allValuesFrom ec:EditorialObject
                                          ] ;
                          dcterms:description "Documents de nature diverse."@fr ,
                                              "Documents of various nature."@en ,
@@ -10253,22 +10251,20 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:allValuesFrom ec:BibliographicalObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:references ;
+                                     owl:allValuesFrom ec:EditorialObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:represents ;
                                      owl:allValuesFrom ec:Asset
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:requires ;
                                      owl:allValuesFrom ec:EditorialObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:references ;
-                                     owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:BibliographicalObject
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:references ;
-                                     owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                     owl:onClass ec:EditorialObject
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasDateBroadcast ;
