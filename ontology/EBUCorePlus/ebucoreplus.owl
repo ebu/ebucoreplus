@@ -7303,7 +7303,8 @@ ec:Affiliation rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Agent
 ec:Agent rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
+         rdfs:subClassOf dc:Agent ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasAgentBiography ;
                            owl:allValuesFrom ec:Biography
                          ] ,
@@ -7462,7 +7463,6 @@ ec:Agent rdf:type owl:Class ;
          dcterms:description "An «Agent» is either a Contact/Person or Organisation to which is associated a Role corresponding to the contribution the «Agent» brings to the realisation of a MediaResource or EditorialObject."@en ,
                              "Ein Akteur ist entweder eine Kontaktperson oder eine Organisation, deren Beitrag zur Realisierung eines Inhaltsobjektes oder eines Medienobjektes durch eine Rolle beschrieben wird."@de ,
                              "Un acteur est un terme général, soit un contact ou une personne ou une organisation à laquelle est associé un rôle correspondant à la contribution que l'acteur apporte à la réalisation d'une MediaResource ou d'un EditorialObject."@fr ;
-         rdfs:isDefinedBy dc:Agent ;
          rdfs:label "Agent"@en ,
                     "Akteur"@de ,
                     "Un acteur"@fr ;
