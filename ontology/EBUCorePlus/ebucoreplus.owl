@@ -8681,27 +8681,6 @@ ec:AwardType rdf:type owl:Class ;
                         "Type de prix"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BMEssence
-ec:BMEssence rdf:type owl:Class ;
-             rdfs:subClassOf ec:Essence ;
-             dcterms:description "Die FIMS-Essenz"@de ,
-                                 "L'essence du FIMS"@fr ,
-                                 "The FIMS Essence"@en ;
-             rdfs:label "BMEssence"@de ,
-                        "BMEssence"@en ,
-                        "BMEssence"@fr .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BMTemplate
-ec:BMTemplate rdf:type owl:Class ;
-              rdfs:subClassOf ec:Template ;
-              dcterms:description "A template describe as a BMEssence."@en ,
-                                  "Eine Vorlage, die als BMEssenz beschrieben wird."@de ,
-                                  "Un modèle décrit comme une BMEssence."@fr ;
-              rdfs:label "BMTemplate"@en ,
-                         "BMTemplate"@fr ,
-                         "BMVorlage"@de .
-
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
