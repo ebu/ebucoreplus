@@ -10504,6 +10504,9 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
                                     ] ;
+                    rdfs:label "Editorial Segment"@en ,
+                                "Segment éditorial"@fr ,
+                                "Redaktioneller Abschnitt"@de ;
                     skos:definition "Ein Medieninhalt, der einen Ausschnitt eines anderen Medieninhaltes darstellt"@de ,
                                     "an EditorialObject representing a fraction of an EditorialObject"@en ,
                                     "un objet éditorial représentant une fraction d'un objet éditorial"@fr ;
