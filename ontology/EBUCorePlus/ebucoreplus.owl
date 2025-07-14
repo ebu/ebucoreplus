@@ -10534,11 +10534,11 @@ ec:EditorialWork rdf:type owl:Class ;
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:promotes ;
-                                   owl:allValuesFrom [ rdf:type owl:Class ;
-                                                       owl:unionOf ( ec:EditorialGroup
-                                                                     ec:EditorialWork
-                                                                   )
-                                                     ]
+                                   owl:allValuesFrom ec:EditorialGroup
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:promotes ;
+                                   owl:allValuesFrom ec:EditorialWork
                                  ] ;
                  rdfs:label "Editorial work"@en ,
                             "Werk"@de ,
