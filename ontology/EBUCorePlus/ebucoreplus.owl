@@ -2846,9 +2846,9 @@ ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationEvent
 ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
-                              dcterms:description "Pour identifier le PublicationEvent associé à une MediaResource (manifestation d'un EditorialObject)."@fr ,
-                                                  "To identify the PublicationEvent associated with a MediaResource (manifestation of an EditorialObject)."@en ,
-                                                  "Zur Identifizierung des mit einer MediaResource verbundenen PublicationEvent (Manifestation eines EditorialObjects)."@de ;
+                              dcterms:description "Pour identifier le PublicationEvent associé à la ressource."@fr ,
+                                                  "To identify the PublicationEvent associated with the resource."@en ,
+                                                  "Um das mit der Ressource verknüpfte Publikationsereignis zu identifizieren."@de ;
                               rdfs:label "Ereignis der Veröffentlichung"@de ,
                                          "Publication event"@en ,
                                          "Événement de publication"@fr .
@@ -9284,6 +9284,10 @@ ec:ConsumptionEvent rdf:type owl:Class ;
                                       owl:allValuesFrom ec:ConsumptionEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
+                                      owl:onProperty ec:hasRelatedPublicationEvent ;
+                                      owl:allValuesFrom ec:PublicationEvent
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:occursIn ;
                                       owl:allValuesFrom ec:PublicationChannel
                                     ] ,
@@ -12898,10 +12902,6 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasConsumptionCount ;
                                       owl:allValuesFrom ec:ConsumptionCount
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasConsumptionEvent ;
-                                      owl:allValuesFrom ec:ConsumptionEvent
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasCoverageRestrictions ;
