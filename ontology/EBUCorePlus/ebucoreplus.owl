@@ -14937,11 +14937,11 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
                         "et annet merke (some tag)"@nb .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#abrigedTitle
-ec:abrigedTitle rdf:type owl:NamedIndividual ,
-                         skos:Concept ;
-                skos:inScheme ec:alternativeTitleTypes ;
-                skos:prefLabel "Abriged title"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#abridgedTitle
+ec:abridgedTitle rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:inScheme ec:alternativeTitleTypes ;
+                 skos:prefLabel "Abridged title"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#alternativeTitleTypes
