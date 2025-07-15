@@ -9746,9 +9746,9 @@ ec:DataTrack rdf:type owl:Class ;
                                owl:onProperty ec:hasDataFormat ;
                                owl:allValuesFrom ec:DataFormat
                              ] ;
-             dcterms:description "Ancillary data track e.g. Â¨captioning\" or \"subtitling\" in addition to video and audio tracks."@en ,
+             dcterms:description "Ancillary data track e.g. \"captioning\" or \"subtitling\" in addition to video and audio tracks."@en ,
                                  "Piste de données auxiliaires, par exemple le \"sous-titrage\" ou le \"captioning\". ou \"sous-titrage\" en plus des pistes vidéo et audio."@fr ,
-                                 "Zusatzdatenspur z.B. Â¨Captioning\" oder \"Untertitelung\" zusätzlich zu den Video- und Audiospuren."@de ;
+                                 "Zusatzdatenspur z.B. \"Captioning\" oder \"Untertitelung\" zusätzlich zu den Video- und Audiospuren."@de ;
              rdfs:label "Data track"@en ,
                         "Daten verfolgen"@de ,
                         "Suivi des données"@fr .
