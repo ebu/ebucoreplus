@@ -14925,7 +14925,7 @@ ec:SOMEPROGRAMME rdf:type owl:NamedIndividual ,
 ec:abridgedTitle rdf:type owl:NamedIndividual ,
                           skos:Concept ;
                  skos:inScheme ec:alternativeTitleTypes ;
-                 skos:prefLabel "Abriged title"@en .
+                 skos:prefLabel "Abridged title"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#alternativeTitleTypes
