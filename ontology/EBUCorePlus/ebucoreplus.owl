@@ -3952,6 +3952,17 @@ ec:isProductOf rdf:type owl:ObjectProperty ;
                           "Marque"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasPublication
+ec:hasPublication rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ec:publishes ;
+                  dcterms:description "Pour associer un PublicationEvent à un EditorialObject."@fr ,
+                                      "So assoziieren Sie ein PublicationEvent mit einem EditorialObject."@de ,
+                                      "To associate a PublicationEvent with an EditorialObject."@en ;
+                  rdfs:label "Ereignis der Veröffentlichung"@de ,
+                             "Publication event"@en ,
+                             "Événement de publication"@fr .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isReferencedBy
 ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf ec:references ;
