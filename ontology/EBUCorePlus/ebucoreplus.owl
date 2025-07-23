@@ -8441,7 +8441,7 @@ ec:AudioObject rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme
 ec:AudioProgramme rdf:type owl:Class ;
-                  rdfs:subClassOf ec:Programme ,
+                  rdfs:subClassOf ec:EditorialWork ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty ec:loudnessIntegratedLoudness ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -8471,13 +8471,15 @@ ec:AudioProgramme rdf:type owl:Class ;
                                     owl:onProperty ec:loudnessMethod ;
                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                   ] ;
-                  dcterms:description "A set of one or more audioContent that derive from the same material, i.e. an audioMultiplex, and the definition of its multiplexed audioContents (e.g. foreground and commentary, background music)."@en ,
-                                      "Ein Satz von einem oder mehreren audioContents, die aus demselben Material stammen, d.h. ein audioMultiplex, und die Definition seiner gemultiplexten audioContents (z.B. Vordergrund und Kommentar, Hintergrundmusik)."@de ,
-                                      "Un ensemble d'un ou plusieurs contenus audio qui dérivent du même matériel, c'est-à-dire un audioMultiplex, et la définition de sesContenus audio multiplexés (par ex. avant-plan et commentaire, musique de fond)."@fr ;
+                  rdfs:isDefinedBy <https://tech.ebu.ch/docs/r/r128.pdf> ;
                   rdfs:label "Audio Programm"@de ,
                              "Audio programme"@en ,
                              "Programme audio"@fr ;
-                  skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialWork."@en .
+                  skos:definition """An individual, self-contained audio-visual or audio-only item to be presented in Radio, Television or other electronic media. An advertisement (commercial), trailer, promotional item (‘promo’),
+interstitial or similar item (“Short-form Content”) shall also be
+considered to be an (Audio)programme in this context."""@en ,
+                                  "Ein einzelner, in sich geschlossener audiovisueller oder reiner Audiobeitrag, der im Radio, Fernsehen oder anderen elektronischen Medien präsentiert wird. Auch Werbung (Werbespot), Trailer, Werbebeiträge („Promo“), Interstitials oder ähnliche Beiträge („Kurzformat-Inhalte“) gelten in diesem Zusammenhang als \"AudioProgramme\"."@de ,
+                                  "Un élément audiovisuel individuel et autonome, ou uniquement audio, destiné à être diffusé à la radio, à la télévision ou sur d'autres supports électroniques. Une publicité (annonce), une bande-annonce, un élément promotionnel (promo), un interstitiel ou un élément similaire (le « contenu court ») est également considéré comme un \"AudioProgramme\" dans ce contexte."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgrammeType
