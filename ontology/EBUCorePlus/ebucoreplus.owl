@@ -3957,7 +3957,7 @@ ec:isReferencedBy rdf:type owl:ObjectProperty ;
                   owl:inverseOf ec:references ;
                   dcterms:description "A related resource that references, cites, or otherwise points to the described resource."@en ,
                                       "Eine verwandte Ressource, die auf die beschriebene Ressource verweist, sie zitiert oder anderweitig darauf verweist."@de ,
-                                      "Une ressource connexe qui fait référence, cite ou pointe d’une autre manière vers la ressource décrite.
+                                      "Une ressource connexe qui fait référence, cite ou pointe d’une autre manière vers la ressource décrite."@fr ;
                   rdfs:label "Reference source"@en ,
                              "Referenzquelle"@de ,
                              "Source de référence"@fr .
