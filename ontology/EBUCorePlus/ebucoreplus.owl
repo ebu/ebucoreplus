@@ -7996,10 +7996,6 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty ec:hasRelatedEditorialObject ;
-                           owl:allValuesFrom ec:EditorialObject
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
                          ] ,
@@ -10109,10 +10105,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:Animal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasRelatedArtefact ;
-                                     owl:allValuesFrom ec:Artefact
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedAudioContent ;
                                      owl:allValuesFrom ec:AudioContent
                                    ] ,
@@ -10135,10 +10127,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedMediaResource ;
                                      owl:allValuesFrom ec:MediaResource
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasRelatedResource ;
-                                     owl:allValuesFrom ec:Resource
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRelatedTextLine ;
@@ -10326,10 +10314,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:orderedFlag ;
-                                     owl:allValuesFrom xsd:boolean
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:playlist ;
                                      owl:allValuesFrom rdfs:Literal
                                    ] ,
@@ -10371,11 +10355,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:midRollAdAllowed ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onDataRange xsd:boolean
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:orderedFlag ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:boolean
                                    ] ,
