@@ -14970,6 +14970,7 @@ ec:translationTitle rdf:type owl:NamedIndividual ,
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#versionTitle
 ec:versionTitle rdf:type owl:NamedIndividual ,
                          skos:Concept ;
+                skos:inScheme ec:alternativeTitleTypes ;
                 skos:prefLabel "Version title"@en .
 
 
