@@ -7996,6 +7996,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:AuditReport
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasRelatedEditorialObject ;
+                           owl:allValuesFrom ec:EditorialObject
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedPicture ;
                            owl:allValuesFrom ec:Picture
                          ] ,
