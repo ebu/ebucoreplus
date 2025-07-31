@@ -11445,10 +11445,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:allValuesFrom ec:EncodingFormat
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasFormat ;
-                                   owl:allValuesFrom ec:Format
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasGeneration ;
                                    owl:allValuesFrom ec:MediaResource
                                  ] ,
@@ -11479,10 +11475,6 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasRelatedEssence ;
                                    owl:allValuesFrom ec:Essence
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasSource ;
-                                   owl:allValuesFrom ec:MediaResource
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hasStandard ;
