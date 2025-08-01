@@ -2627,7 +2627,8 @@ ec:hasRegistration rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAccount
-ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
+ec:hasRelatedAccount rdf:type owl:ObjectProperty ,
+                              owl:IrreflexiveProperty ;
                      dcterms:description "Pour lier des comptes connexes."@fr ,
                                          "To link related Accounts."@en ,
                                          "Um verwandte Konten zu verknüpfen."@de ;
@@ -2639,6 +2640,7 @@ ec:hasRelatedAccount rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAgent
 ec:hasRelatedAgent rdf:type owl:ObjectProperty ;
                    owl:inverseOf ec:isRelatedAgent ;
+                   rdf:type owl:IrreflexiveProperty ;
                    dcterms:description "Pour associer un concept à un agent (par exemple, une personne ou un personnage)."@fr ,
                                        "To associate a concept with an Agent (e.g. Person or Character)."@en ,
                                        "Um ein Konzept mit einem Agenten (z.B. einer Person oder einem Charakter) zu verknüpfen."@de ;
@@ -2668,7 +2670,8 @@ ec:hasRelatedArtefact rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAsset
-ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
+ec:hasRelatedAsset rdf:type owl:ObjectProperty ,
+                            owl:IrreflexiveProperty ;
                    dcterms:description "Pour identifier les actifs connexes."@fr ,
                                        "Pour lier les actifs connexes."@fr ,
                                        "To identify related Assets."@en ,
@@ -2681,7 +2684,8 @@ ec:hasRelatedAsset rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioContent
-ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ;
+ec:hasRelatedAudioContent rdf:type owl:ObjectProperty ,
+                                   owl:IrreflexiveProperty ;
                           dcterms:description "Pour identifier le contenu audio associé"@fr ,
                                               "So identifizieren Sie verwandte Audioinhalte"@de ,
                                               "To identify related Audio Content"@en ;
@@ -2701,7 +2705,8 @@ ec:hasRelatedAudioObject rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedAudioProgramme
-ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ;
+ec:hasRelatedAudioProgramme rdf:type owl:ObjectProperty ,
+                                     owl:IrreflexiveProperty ;
                             dcterms:description "A related audio programme"@en ,
                                                 "Ein entsprechendes Audioprogramm"@de ,
                                                 "Un programme audio connexe"@fr ;
@@ -2761,7 +2766,8 @@ ec:hasRelatedCharacter rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedConsumptionEvent
-ec:hasRelatedConsumptionEvent rdf:type owl:ObjectProperty ;
+ec:hasRelatedConsumptionEvent rdf:type owl:ObjectProperty ,
+                                       owl:IrreflexiveProperty ;
                               dcterms:description "Pour identifier les ConsumptionEvents liés."@fr ,
                                                   "To identify related ConsumptionEvents."@en ,
                                                   "Um verwandte ConsumptionEvents zu identifizieren."@de ;
@@ -2771,7 +2777,8 @@ ec:hasRelatedConsumptionEvent rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEditorialObject
-ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
+ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ,
+                                      owl:IrreflexiveProperty ;
                              dcterms:description "Pour identifier les EditorialObjects connexes."@fr ,
                                                  "To identify related EditorialObjects."@en ,
                                                  "Um verwandte EditorialObjects zu identifizieren."@de ;
@@ -2781,7 +2788,8 @@ ec:hasRelatedEditorialObject rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedEssence
-ec:hasRelatedEssence rdf:type owl:ObjectProperty ;
+ec:hasRelatedEssence rdf:type owl:ObjectProperty ,
+                              owl:IrreflexiveProperty ;
                      dcterms:description "Pour établir une relation entre une MediaResource et une Essence."@fr ,
                                          "To establish a relation between a MediaResource and an Essence."@en ,
                                          "Um eine Beziehung zwischen einer MediaResource und einer Essenz herzustellen."@de ;
@@ -2802,7 +2810,8 @@ ec:hasRelatedEvent rdf:type owl:ObjectProperty ,
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedMediaFragment
-ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ;
+ec:hasRelatedMediaFragment rdf:type owl:ObjectProperty ,
+                                    owl:IrreflexiveProperty ;
                            dcterms:description "Pour associer une partie d'un objet éditorial à un MediaFragment au sein de l'association MediaResource instanciant l'objet éditorial."@fr ,
                                                "So verknüpfen Sie einen Teil eines Redaktionsobjekts mit einem MediaFragment innerhalb der Assoziation MediaResource, die das Redaktionsobjekt instanziiert."@de ,
                                                "To associate a Part of an Editorial Object with a MediaFragment within the association MediaResource instantiating the Editrial Object."@en ;
@@ -2832,7 +2841,8 @@ ec:hasRelatedPicture rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationChannel
-ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ;
+ec:hasRelatedPublicationChannel rdf:type owl:ObjectProperty ,
+                                         owl:IrreflexiveProperty ;
                                 dcterms:description "Pour identifier un canal de publication"@fr ,
                                                     "So identifizieren Sie einen Publikationskanal"@de ,
                                                     "To identify a Publication Channel"@en ;
@@ -2852,7 +2862,8 @@ ec:hasRelatedPublicationEvent rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedPublicationService
-ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
+ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ,
+                                         owl:IrreflexiveProperty ;
                                 dcterms:description "To establish a relation to publication services."@en ,
                                                     "Um eine Beziehung zu den Publikationsdiensten herzustellen."@de ,
                                                     "Établir une relation avec les services de publication."@fr ;
@@ -2862,7 +2873,8 @@ ec:hasRelatedPublicationService rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasRelatedRecord
-ec:hasRelatedRecord rdf:type owl:ObjectProperty ;
+ec:hasRelatedRecord rdf:type owl:ObjectProperty ,
+                             owl:IrreflexiveProperty ;
                     dcterms:description "Pour associer un Enregistrement à un Bien."@fr ,
                                         "So verknüpfen Sie einen Datensatz mit einem Asset."@de ,
                                         "To associate a Record with an Asset."@en ;
@@ -10614,6 +10626,10 @@ ec:EncodingFormat rdf:type owl:Class ;
 ec:Essence rdf:type owl:Class ;
            rdfs:subClassOf ec:MediaResource ,
                            [ rdf:type owl:Restriction ;
+                             owl:onProperty ec:hasRelatedPublicationEvent ;
+                             owl:allValuesFrom ec:PublicationEvent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
                              owl:onProperty ec:isComposedOf ;
                              owl:allValuesFrom ec:MediaResource
                            ] ,
@@ -13704,6 +13720,10 @@ ec:Resource rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasObjectType ;
                               owl:allValuesFrom skos:Concept
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRelatedMediaFragment ;
+                              owl:allValuesFrom ec:MediaFragment
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasStorageId ;
