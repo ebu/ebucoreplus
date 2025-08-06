@@ -250,10 +250,15 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Compte"@fr ,
                            "Konto"@de .
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates
 ec:animates rdf:type owl:ObjectProperty ;
-            owl:inverseOf ec:isAnimatedBy .
+            owl:inverseOf ec:isAnimatedBy ;
+            rdfs:label "animates"@en ,
+                       "anime"@fr ,
+                       "animiert"@de ;
+            dcterms:description "Person animating a character using an artefact."@en ,
+                                "Personne animant un personnage à l’aide d’un artefact."@fr ,
+                                "Person, die eine Figur mithilfe eines Artefakts animiert."@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
@@ -1083,9 +1088,14 @@ ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                                        "Contrat"@fr ,
                                        "Vertrag"@de .
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
-ec:hasConsumer rdf:type owl:ObjectProperty .
+ec:hasConsumer rdf:type owl:ObjectProperty ;
+               rdfs:label "has consumer"@en ,
+                          "a un consommateur"@fr ,
+                          "hat Nutzer"@de ;
+               rdfs:comment "Links a ConsumptionEvent to the consumer."@en ,
+                            "Relie un ConsumptionEvent au consommateur."@fr ,
+                            "Verknüpft ein ConsumptionEvent mit dem Nutzer."@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
@@ -3888,16 +3898,18 @@ ec:isOrderedBy rdf:type owl:ObjectProperty ;
                           "Contrat"@fr ,
                           "Vertrag"@de .
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:owns ;
-             dcterms:description "Pour identifier l'agent (contact/personne ou Organisation) qui possède un Service exploitant un PublicationChannel."@fr ,
-                                 "To identify the Agent (Contact/person or Organisation) who owns a Service operating a PublicationChannel."@en ,
-                                 "Zur Identifizierung des Agenten (Kontakt/Person oder Organisation), der Eigentümer eines Dienstes ist, der einen PublicationChannel betreibt."@de ;
-             rdfs:label "Eigentümer"@de ,
-                        "Owner"@en ,
-                        "Propriétaire"@fr .
+             rdfs:label "is owned by"@en ,
+                        "est possédé par"@fr ,
+                        "ist Eigentum von"@de ;
+             rdfs:comment "Indicates that a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService is owned by an agent or organization."@en ,
+                          "Indique qu’une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication est possédé par un agent ou une organisation."@fr ,
+                          "Bezeichnet, dass eine Marke, ein Veröffentlichungskanal, eine Veröffentlichungsplattform oder ein Veröffentlichungsdienst Eigentum eines Akteurs oder einer Organisation ist."@de ;
+             dcterms:description "To identify the Agent (Contact, Person, or Organisation) who owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
+                                "Pour identifier l’Agent (Contact, Personne ou Organisation) qui possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
+                                "Zur Identifizierung des Agenten (Kontakt, Person oder Organisation), der Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
@@ -4075,9 +4087,18 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
                              "Contrat"@fr ,
                              "Vertrag"@de .
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#owns
-ec:owns rdf:type owl:ObjectProperty .
+ec:owns rdf:type owl:ObjectProperty ;
+        owl:inverseOf ec:isOwnedBy ;
+        rdfs:label "owns"@en ,
+                   "possède"@fr ,
+                   "besitzt"@de ;
+        rdfs:comment "Indicates that an agent or organization owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
+                     "Indique qu’un agent ou une organisation possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
+                     "Bezeichnet, dass ein Akteur oder eine Organisation Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de ;
+        dcterms:description "To identify the MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService owned by a given Agent (Contact, Person, or Organisation)."@en ,
+                           "Pour identifier la Marque, le Canal de publication, la Plateforme de publication ou le Service de publication possédé par un Agent (Contact, Personne ou Organisation)."@fr ,
+                           "Zur Identifizierung der Marke, des Veröffentlichungskanals, der Veröffentlichungsplattform oder des Veröffentlichungsdienstes, die einem Agenten (Kontakt, Person oder Organisation) gehören."@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
