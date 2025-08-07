@@ -250,15 +250,17 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Compte"@fr ,
                            "Konto"@de .
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates 
 ec:animates rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isAnimatedBy ;
             rdfs:label "animates"@en ,
                        "anime"@fr ,
                        "animiert"@de ;
-            dcterms:description "Person animating a character using an artefact."@en ,
-                                "Personne animant un personnage à l’aide d’un artefact."@fr ,
-                                "Person, die eine Figur mithilfe eines Artefakts animiert."@de .
+            dcterms:description "Indicates that a person animates a character through the use of an artefact, such as a puppet or animation rig."@en ,
+                                "Indique qu'une personne anime un personnage à l’aide d’un artefact, comme une marionnette ou un dispositif d’animation."@fr ,
+                                "Gibt an, dass eine Person eine Figur mithilfe eines Artefakts animiert, etwa einer Puppe oder einem Animationsgerät."@de .
+
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
@@ -1093,7 +1095,7 @@ ec:hasConsumer rdf:type owl:ObjectProperty ;
                rdfs:label "has consumer"@en ,
                           "a un consommateur"@fr ,
                           "hat Nutzer"@de ;
-               rdfs:comment "Links a ConsumptionEvent to the consumer."@en ,
+               dcterms:description "Links a ConsumptionEvent to the consumer."@en ,
                             "Relie un ConsumptionEvent au consommateur."@fr ,
                             "Verknüpft ein ConsumptionEvent mit dem Nutzer."@de .
 
@@ -3904,10 +3906,7 @@ ec:isOwnedBy rdf:type owl:ObjectProperty ;
              rdfs:label "is owned by"@en ,
                         "est possédé par"@fr ,
                         "ist Eigentum von"@de ;
-             rdfs:comment "Indicates that a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService is owned by an agent or organization."@en ,
-                          "Indique qu’une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication est possédé par un agent ou une organisation."@fr ,
-                          "Bezeichnet, dass eine Marke, ein Veröffentlichungskanal, eine Veröffentlichungsplattform oder ein Veröffentlichungsdienst Eigentum eines Akteurs oder einer Organisation ist."@de ;
-             dcterms:description "To identify the Agent (Contact, Person, or Organisation) who owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
+              dcterms:description "To identify the Agent (Contact, Person, or Organisation) who owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
                                 "Pour identifier l’Agent (Contact, Personne ou Organisation) qui possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
                                 "Zur Identifizierung des Agenten (Kontakt, Person oder Organisation), der Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de .
 
@@ -4093,9 +4092,6 @@ ec:owns rdf:type owl:ObjectProperty ;
         rdfs:label "owns"@en ,
                    "possède"@fr ,
                    "besitzt"@de ;
-        rdfs:comment "Indicates that an agent or organization owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
-                     "Indique qu’un agent ou une organisation possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
-                     "Bezeichnet, dass ein Akteur oder eine Organisation Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de ;
         dcterms:description "To identify the MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService owned by a given Agent (Contact, Person, or Organisation)."@en ,
                            "Pour identifier la Marque, le Canal de publication, la Plateforme de publication ou le Service de publication possédé par un Agent (Contact, Personne ou Organisation)."@fr ,
                            "Zur Identifizierung der Marke, des Veröffentlichungskanals, der Veröffentlichungsplattform oder des Veröffentlichungsdienstes, die einem Agenten (Kontakt, Person oder Organisation) gehören."@de .
