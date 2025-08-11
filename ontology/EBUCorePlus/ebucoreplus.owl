@@ -8294,8 +8294,7 @@ ec:AudienceLevel rdf:type owl:Class ;
                                      "The target audience (target region, target audience category but also parental guidance recommendation) for which the media resource is intended. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
                  rdfs:label "Public cible"@fr ,
                             "Target audience"@en ,
-                            "Zielpublikum"@de ;
-                 skos:editorialNote "2023-04-05: the existence of this class needs to be discussed" .
+                            "Zielpublikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceRating
@@ -8394,8 +8393,7 @@ ec:AudioContent rdf:type owl:Class ;
                                     "Un AudioContent définit un composant d'un programme (par exemple, une musique de fond musique), son association avec un audioGroup (par exemple, un 2.0 audioPackFormat de audioChannelFormats pour la reproduction stéréo), son association avec un audioStreamFormat, et son ensemble de paramètres d'intensité sonore."@fr ;
                 rdfs:label "Audio content"@en ,
                            "Audio-inhalt"@de ,
-                           "Contenu audio"@fr ;
-                skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialSegment."@en .
+                           "Contenu audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContentType
@@ -8453,8 +8451,7 @@ ec:AudioObject rdf:type owl:Class ;
                           "Objet audio"@fr ;
                skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ,
                                "eine MedienResource in Form eines Objektes wie es im Audio Definition Model (ADM) beschrieben ist"@de ,
-                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr ;
-               skos:editorialNote "2023-02-14: one or more examples for AudioObject are needed"@en .
+                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme
@@ -11424,8 +11421,7 @@ ec:MediaFragment rdf:type owl:Class ;
                             "Medienfragment"@de ;
                  skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as defined by the MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ,
                                  "eine MedienResource, die ein zeitliches oder räumliches Segment einer Resource ist, das wie in MediaFragment-URI  (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/) beschrieben ist"@de ,
-                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
-                 skos:editorialNote "2023-02-14: examples need to be added"@en .
+                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaResource
@@ -12290,8 +12286,7 @@ ec:PhysicalResource rdf:type owl:Class ;
                                         "To describe a physical resource e.g. a tape."@en ;
                     rdfs:label "Physical resource"@en ,
                                "Physische Resource"@de ,
-                               "Resource physique"@fr ;
-                    skos:editorialNote "2023-02-14: the need for this class must be reviewed"@en .
+                               "Resource physique"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Pictogram
@@ -14330,16 +14325,14 @@ ec:Team rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Template
 ec:Template rdf:type owl:Class ;
-            rdfs:subClassOf ec:MediaResource ;
+            rdfs:subClassOf ec:Essence ;
             dcterms:description "An Essence defined as a Template with all associated technical parameters."@en ,
                                 "Eine Essenz, die als Vorlage mit allen zugehörigen technischen Parametern definiert ist."@de ,
                                 "Une essence définie comme un modèle avec tous les paramètres techniques associés."@fr ;
             rdfs:label "Modèle"@fr ,
                        "Template"@en ,
                        "Vorlage"@de ;
-            skos:definition "An Essence in the form of a template for Essences with all associated technical parameters"@en ;
-            skos:editorialNote """2023-02-14: following the definition, this class should be a subclass of Essence.
-2023-02-14: examples need to be added"""@en .
+            skos:definition "An Essence in the form of a template for Essences with all associated technical parameters"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TerritoryCode
