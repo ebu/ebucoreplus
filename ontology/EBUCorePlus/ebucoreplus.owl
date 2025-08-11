@@ -251,16 +251,15 @@ ec:accountingTo rdf:type owl:ObjectProperty ;
                            "Konto"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#animates
 ec:animates rdf:type owl:ObjectProperty ;
             owl:inverseOf ec:isAnimatedBy ;
+            dcterms:description "Gibt an, dass eine Person eine Figur mithilfe eines Artefakts animiert, etwa einer Puppe oder einem Animationsgerät."@de ,
+                                "Indicates that a person animates a character through the use of an artefact, such as a puppet or animation rig."@en ,
+                                "Indique qu'une personne anime un personnage à l’aide d’un artefact, comme une marionnette ou un dispositif d’animation."@fr ;
             rdfs:label "animates"@en ,
                        "anime"@fr ,
-                       "animiert"@de ;
-            dcterms:description "Indicates that a person animates a character through the use of an artefact, such as a puppet or animation rig."@en ,
-                                "Indique qu'une personne anime un personnage à l’aide d’un artefact, comme une marionnette ou un dispositif d’animation."@fr ,
-                                "Gibt an, dass eine Person eine Figur mithilfe eines Artefakts animiert, etwa einer Puppe oder einem Animationsgerät."@de .
-
+                       "animiert"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
@@ -1090,14 +1089,15 @@ ec:hasCommissioningContract rdf:type owl:ObjectProperty ;
                                        "Contrat"@fr ,
                                        "Vertrag"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumer
 ec:hasConsumer rdf:type owl:ObjectProperty ;
-               rdfs:label "has consumer"@en ,
-                          "a un consommateur"@fr ,
-                          "hat Nutzer"@de ;
                dcterms:description "Links a ConsumptionEvent to the consumer."@en ,
-                            "Relie un ConsumptionEvent au consommateur."@fr ,
-                            "Verknüpft ein ConsumptionEvent mit dem Nutzer."@de .
+                                   "Relie un ConsumptionEvent au consommateur."@fr ,
+                                   "Verknüpft ein ConsumptionEvent mit dem Nutzer."@de ;
+               rdfs:label "a un consommateur"@fr ,
+                          "has consumer"@en ,
+                          "hat Nutzer"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasConsumptionContract
@@ -1725,8 +1725,7 @@ ec:hasEditorialFormat rdf:type owl:ObjectProperty .
 ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
                                             "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
-                                            "To identify an Editorial Object based on the same Editorial format"@en ;
-                        rdfs:comment "*** Bad description ***"@en ;
+                                            "To identify an Editorial Object with a formatdifferens from the source EditorialObject"@en ;
                         rdfs:label "Gleiches redaktionelles Format"@de ,
                                    "Même format éditorial"@fr ,
                                    "Same editorial format"@en .
@@ -3900,15 +3899,16 @@ ec:isOrderedBy rdf:type owl:ObjectProperty ;
                           "Contrat"@fr ,
                           "Vertrag"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isOwnedBy
 ec:isOwnedBy rdf:type owl:ObjectProperty ;
              owl:inverseOf ec:owns ;
-             rdfs:label "is owned by"@en ,
-                        "est possédé par"@fr ,
-                        "ist Eigentum von"@de ;
-              dcterms:description "To identify the Agent (Contact, Person, or Organisation) who owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
-                                "Pour identifier l’Agent (Contact, Personne ou Organisation) qui possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
-                                "Zur Identifizierung des Agenten (Kontakt, Person oder Organisation), der Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de .
+             dcterms:description "Pour identifier l’Agent (Contact, Personne ou Organisation) qui possède une Marque, un Canal de publication, une Plateforme de publication ou un Service de publication."@fr ,
+                                 "To identify the Agent (Contact, Person, or Organisation) who owns a MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService."@en ,
+                                 "Zur Identifizierung des Agenten (Kontakt, Person oder Organisation), der Eigentümer einer Marke, eines Veröffentlichungskanals, einer Veröffentlichungsplattform oder eines Veröffentlichungsdienstes ist."@de ;
+             rdfs:label "est possédé par"@fr ,
+                        "is owned by"@en ,
+                        "ist Eigentum von"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#isPartOf
@@ -4086,15 +4086,15 @@ ec:originatesFrom rdf:type owl:ObjectProperty ;
                              "Contrat"@fr ,
                              "Vertrag"@de .
 
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#owns
 ec:owns rdf:type owl:ObjectProperty ;
-        owl:inverseOf ec:isOwnedBy ;
-        rdfs:label "owns"@en ,
-                   "possède"@fr ,
-                   "besitzt"@de ;
-        dcterms:description "To identify the MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService owned by a given Agent (Contact, Person, or Organisation)."@en ,
-                           "Pour identifier la Marque, le Canal de publication, la Plateforme de publication ou le Service de publication possédé par un Agent (Contact, Personne ou Organisation)."@fr ,
-                           "Zur Identifizierung der Marke, des Veröffentlichungskanals, der Veröffentlichungsplattform oder des Veröffentlichungsdienstes, die einem Agenten (Kontakt, Person oder Organisation) gehören."@de .
+        dcterms:description "Pour identifier la Marque, le Canal de publication, la Plateforme de publication ou le Service de publication possédé par un Agent (Contact, Personne ou Organisation)."@fr ,
+                            "To identify the MarketingBrand, PublicationChannel, PublicationPlatform, or PublicationService owned by a given Agent (Contact, Person, or Organisation)."@en ,
+                            "Zur Identifizierung der Marke, des Veröffentlichungskanals, der Veröffentlichungsplattform oder des Veröffentlichungsdienstes, die einem Agenten (Kontakt, Person oder Organisation) gehören."@de ;
+        rdfs:label "besitzt"@de ,
+                   "owns"@en ,
+                   "possède"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#playsCharacter
@@ -5461,9 +5461,9 @@ ec:firstShowing rdf:type owl:DatatypeProperty ,
 ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:range xsd:boolean ;
-                           dcterms:description "Um zu kennzeichnen das dies das erste PublicationEvent ist, das in diesem Dienst angezeigt wird."@de ,
-                                               "Pour notifier, il s'agit d'un premier événement de publication sur ce service."@fr ,
-                                               "To flag this is a first showing PublicationEvent on this service."@en ;
+                           dcterms:description "Pour notifier, il s'agit d'un premier événement de publication sur ce service."@fr ,
+                                               "To flag this is a first showing PublicationEvent on this service."@en ,
+                                               "Um zu kennzeichnen das dies das erste PublicationEvent ist, das in diesem Dienst angezeigt wird."@de ;
                            rdfs:label "Drapeau pour la première apparition en service"@fr ,
                                       "Erste Anzeige auf der Serviceflagge"@de ,
                                       "First showing on service flag"@en .
@@ -5758,13 +5758,13 @@ ec:live rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationAddressApartmentNumber
 ec:locationAddressApartmentNumber rdf:type owl:DatatypeProperty ;
-                                   rdfs:range xsd:string ;
-                                   dcterms:description "Die Nummer, die eine Wohnung in einem Haus identifiziert."@de ,
-                                                       "Le numéro identifiant un appartement dans une maison."@fr ,
-                                                       "The number identifying an apartment in a house."@en ;
-                                   rdfs:label "Appartmentnummer"@de ,
-                                              "apartment number"@en ,
-                                              "numéro de l'appartement"@fr .
+                                  rdfs:range xsd:string ;
+                                  dcterms:description "Die Nummer, die eine Wohnung in einem Haus identifiziert."@de ,
+                                                      "Le numéro identifiant un appartement dans une maison."@fr ,
+                                                      "The number identifying an apartment in a house."@en ;
+                                  rdfs:label "Appartmentnummer"@de ,
+                                             "apartment number"@en ,
+                                             "numéro de l'appartement"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationAddressArea
@@ -5982,7 +5982,6 @@ ec:measureValue rdf:type owl:DatatypeProperty ;
                 dcterms:description "Pour fournir la valeur d'une mesure."@fr ,
                                     "To provide the value of a Measure."@en ,
                                     "Um den Wert einer Maßnahme anzugeben."@de ;
-                rdfs:comment "The range is Literal. A more specific range can be used for a specific measurement."@en ;
                 rdfs:label "Measure value"@en ,
                            "Valeur de mesure"@fr ,
                            "Wert messen"@de .
@@ -8626,16 +8625,6 @@ ec:AuditReport rdf:type owl:Class ;
                           "Rapport d'audit"@fr ;
                skos:definition "a report on aggregated results from auditing"@en .
 
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ec:AuditReport ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ec:auditReportResults ;
-                         owl:allValuesFrom rdfs:Literal
-                       ] ;
-   rdfs:comment "Or is the result a Recource?"@en
- ] .
-
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Award
 ec:Award rdf:type owl:Class ;
@@ -8697,7 +8686,6 @@ ec:AwardType rdf:type owl:Class ;
              rdfs:label "Art der Auszeichnung"@de ,
                         "Award type"@en ,
                         "Type de prix"@fr .
-
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
@@ -10485,8 +10473,8 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:onDataRange xsd:integer
                                     ] ;
                     rdfs:label "Editorial Segment"@en ,
-                                "Segment éditorial"@fr ,
-                                "Redaktioneller Abschnitt"@de ;
+                               "Redaktioneller Abschnitt"@de ,
+                               "Segment éditorial"@fr ;
                     skos:definition "Ein Medieninhalt, der einen Ausschnitt eines anderen Medieninhaltes darstellt"@de ,
                                     "an EditorialObject representing a fraction of an EditorialObject"@en ,
                                     "un objet éditorial représentant une fraction d'un objet éditorial"@fr ;
@@ -12273,8 +12261,7 @@ ec:Person rdf:type owl:Class ;
                           ] ;
           dcterms:description "A Person."@en ,
                               "Eine Person."@de ,
-                              "Une personne."@fr ;
-          rdfs:comment "Une personne physique."@fr ;
+                              "Une personne.(physique)"@fr ;
           rdfs:label "Person"@de ,
                      "Person"@en ,
                      "Personne"@fr ;
@@ -13337,7 +13324,6 @@ ec:PublicationService rdf:type owl:Class ;
                       dcterms:description "A publication service is a channel or publishing platform that releases the content to a given Audience."@en ,
                                           "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ,
                                           "Un service de publication est un canal ou une plate-forme de publication qui diffuse le contenu à une audience donnée."@fr ;
-                      rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
                       rdfs:label "Medienservice"@de ,
                                  "Publication service"@en ,
                                  "Service"@fr ;
@@ -13751,8 +13737,8 @@ ec:Resource rdf:type owl:Class ;
             dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Resource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Resource). Die Resource hat einen Locator, der angibt, wo auf die Resource zugegriffen werden kann."@de ,
                                 "une ressource utilisée ou à laquelle il est fait référence dans le workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de Resource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée."@fr ;
-            rdfs:label "Resource"@en ,
-                       "Resource"@de ,
+            rdfs:label "Resource"@de ,
+                       "Resource"@en ,
                        "Resource"@fr ;
             skos:definition "a Thing that is created, published, distributed and consumed in a media related workflow"@en ,
                             "eine Sache, die in einem medienbezogenen Arbeitsablauf erstellt, veröffentlicht, verbreitet und konsumiert wird"@de ,
@@ -14638,9 +14624,8 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ;
                  dcterms:description "Definiert den zeitlichen Ablauf von Medieninhalten."@de ,
-                                     "Definiert den zeitlichen Ablauf von Medieninhalten."@fr ,
+                                     "Permet de définir une séquence temporelle d'EditorialObjects."@fr ,
                                      "To define a timed sequence of EditorialObjects."@en ;
-                 rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
                  rdfs:label "Piste chronologique"@fr ,
                             "Timeline track"@en ,
                             "Zeitachse"@de .
@@ -15002,8 +14987,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
