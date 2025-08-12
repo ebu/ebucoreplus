@@ -1725,7 +1725,7 @@ ec:hasEditorialFormat rdf:type owl:ObjectProperty .
 ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
                                             "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
-                                            "To identify an Editorial Object with a formatdifferens from the source EditorialObject"@en ;
+                                            "To identify an Editorial Object based on the same Editorial format"@en ;
                         rdfs:label "Gleiches redaktionelles Format"@de ,
                                    "Même format éditorial"@fr ,
                                    "Same editorial format"@en .
