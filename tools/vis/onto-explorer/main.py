@@ -9,6 +9,7 @@ from config import grouped_main_classes, group_colors, get_class_color
 from streamlit_searchbox import st_searchbox
 from rapidfuzz import process
 
+
 @st.cache_data
 def load_ontology(uploaded_file):
     g = Graph()
@@ -19,7 +20,6 @@ def main():
 
     st.set_page_config(page_title="EBU Ontology Explorer", layout="wide", initial_sidebar_state="expanded")
 
-    #st.title("EBU Ontology Explorer")
     logo_path = os.path.join(os.path.dirname(__file__), "static", "ebu_logo.svg")
     if os.path.exists(logo_path):
         st.sidebar.image(logo_path, width=150)
