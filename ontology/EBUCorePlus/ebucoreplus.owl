@@ -5461,9 +5461,9 @@ ec:firstShowing rdf:type owl:DatatypeProperty ,
 ec:firstShowingThisService rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:range xsd:boolean ;
-                           dcterms:description "Um zu kennzeichnen das dies das erste PublicationEvent ist, das in diesem Dienst angezeigt wird."@de ,
-                                               "Pour notifier, il s'agit d'un premier événement de publication sur ce service."@fr ,
-                                               "To flag this is a first showing PublicationEvent on this service."@en ;
+                           dcterms:description "Pour notifier, il s'agit d'un premier événement de publication sur ce service."@fr ,
+                                               "To flag this is a first showing PublicationEvent on this service."@en ,
+                                               "Um zu kennzeichnen das dies das erste PublicationEvent ist, das in diesem Dienst angezeigt wird."@de ;
                            rdfs:label "Drapeau pour la première apparition en service"@fr ,
                                       "Erste Anzeige auf der Serviceflagge"@de ,
                                       "First showing on service flag"@en .
@@ -5758,13 +5758,13 @@ ec:live rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationAddressApartmentNumber
 ec:locationAddressApartmentNumber rdf:type owl:DatatypeProperty ;
-                                   rdfs:range xsd:string ;
-                                   dcterms:description "Die Nummer, die eine Wohnung in einem Haus identifiziert."@de ,
-                                                       "Le numéro identifiant un appartement dans une maison."@fr ,
-                                                       "The number identifying an apartment in a house."@en ;
-                                   rdfs:label "Appartmentnummer"@de ,
-                                              "apartment number"@en ,
-                                              "numéro de l'appartement"@fr .
+                                  rdfs:range xsd:string ;
+                                  dcterms:description "Die Nummer, die eine Wohnung in einem Haus identifiziert."@de ,
+                                                      "Le numéro identifiant un appartement dans une maison."@fr ,
+                                                      "The number identifying an apartment in a house."@en ;
+                                  rdfs:label "Appartmentnummer"@de ,
+                                             "apartment number"@en ,
+                                             "numéro de l'appartement"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#locationAddressArea
@@ -6209,17 +6209,11 @@ ec:orderedFlag rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
                rdfs:range xsd:boolean ;
                dcterms:description "A flag to indicate that a EditorialObject is member of an ordered group or is an ordered group (e.g. Series)"@en ,
-                                   "A flag to signal that a Collection/Group of EditorialObject, itself an EditorialObject, is ordered."@en ,
                                    "Ein Flag, das anzeigt, dass ein EditorialObject Mitglied einer geordneten Gruppe ist oder eine geordnete Gruppe ist (z.B. Serie)"@de ,
-                                   "Ein Flag, das signalisiert, dass eine Sammlung/Gruppe von EditorialObject, selbst ein EditorialObject, geordnet ist."@de ,
-                                   "Un drapeau pour indiquer qu'un ÉditorialObject est membre d'un groupe ordonné ou est un groupe ordonné (par ex. Série)"@fr ,
-                                   "Un indicateur pour signaler qu'une Collection/Groupe d'EditorialObject, lui même un EditorialObject, est commandé."@fr ;
-               rdfs:label "Bestellt"@de ,
-                          "Bestellte Flagge"@de ,
-                          "Commandé"@fr ,
-                          "Drapeau commandé"@fr ,
+                                   "Un indicateur pour indiquer qu'un ÉditorialObject est membre d'un groupe ordonné ou est un groupe ordonné (par ex. Série)"@fr ;
+               rdfs:label "Geordnet"@de ,
                           "Ordered"@en ,
-                          "Ordered flag"@en .
+                          "Ordonné"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#orientation
@@ -8699,7 +8693,6 @@ ec:AwardType rdf:type owl:Class ;
                         "Type de prix"@fr .
 
 
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#BibliographicalObject
 ec:BibliographicalObject rdf:type owl:Class ;
                          rdfs:subClassOf ec:Asset ,
@@ -10485,8 +10478,8 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:onDataRange xsd:integer
                                     ] ;
                     rdfs:label "Editorial Segment"@en ,
-                                "Segment éditorial"@fr ,
-                                "Redaktioneller Abschnitt"@de ;
+                               "Redaktioneller Abschnitt"@de ,
+                               "Segment éditorial"@fr ;
                     skos:definition "Ein Medieninhalt, der einen Ausschnitt eines anderen Medieninhaltes darstellt"@de ,
                                     "an EditorialObject representing a fraction of an EditorialObject"@en ,
                                     "un objet éditorial représentant une fraction d'un objet éditorial"@fr ;
@@ -13751,8 +13744,8 @@ ec:Resource rdf:type owl:Class ;
             dcterms:description "A resource used or referred to in the workflow (e.g. a document or image or any objects defined as sub-classes of Resource). It has a locator indicating from where the Resource can be retrieved."@en ,
                                 "Eine Resource, die in einem Arbeitsablauf genutzt oder referenziert wird, z.B. ein Dokument, ein Bild, oder ein beliebiges Objekt einer Sub-Klasse von Resource). Die Resource hat einen Locator, der angibt, wo auf die Resource zugegriffen werden kann."@de ,
                                 "une ressource utilisée ou à laquelle il est fait référence dans le workflow (par exemple, un document ou une image ou tout objet défini comme sous-classe de Resource). Elle possède un localisateur indiquant l'endroit où la ressource peut être récupérée."@fr ;
-            rdfs:label "Resource"@en ,
-                       "Resource"@de ,
+            rdfs:label "Resource"@de ,
+                       "Resource"@en ,
                        "Resource"@fr ;
             skos:definition "a Thing that is created, published, distributed and consumed in a media related workflow"@en ,
                             "eine Sache, die in einem medienbezogenen Arbeitsablauf erstellt, veröffentlicht, verbreitet und konsumiert wird"@de ,
