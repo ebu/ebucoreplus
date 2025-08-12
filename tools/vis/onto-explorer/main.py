@@ -16,12 +16,16 @@ def load_ontology(uploaded_file):
     return g
 
 def main():
-    st.title("EBU Ontology Explorer")
+
+    st.set_page_config(page_title="EBU Ontology Explorer", layout="wide", initial_sidebar_state="expanded")
+
+    #st.title("EBU Ontology Explorer")
     logo_path = os.path.join(os.path.dirname(__file__), "static", "ebu_logo.svg")
     if os.path.exists(logo_path):
         st.sidebar.image(logo_path, width=150)
     else:
         st.sidebar.markdown("### Ontology Explorer")
+
 
     st.sidebar.subheader("Step 1: Load Ontology")
 
@@ -181,7 +185,7 @@ def main():
                    
                     net.save_graph(tmp_file.name)
                     patch_html_for_pinning(tmp_file.name)
-                    st.components.v1.html(open(tmp_file.name, 'r', encoding='utf-8').read(), height=650, scrolling=True)
+                    st.components.v1.html(open(tmp_file.name, 'r', encoding='utf-8').read(), height=800, width=1600, scrolling=True)
 
                     # ---- Legend ----
                     st.markdown("### Main Classes Legend")
@@ -240,7 +244,7 @@ def main():
                     # Render graph
                     tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".html")
                     net.save_graph(tmp_file.name)
-                    st.components.v1.html(open(tmp_file.name, 'r', encoding='utf-8').read(), height=650, scrolling=True)
+                    st.components.v1.html(open(tmp_file.name, 'r', encoding='utf-8').read(), height=800, width=1600, scrolling=True)
 
                     # ---- Legend ----
                     st.markdown("### Main Classes Legend")

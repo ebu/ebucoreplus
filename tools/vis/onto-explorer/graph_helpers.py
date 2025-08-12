@@ -17,7 +17,7 @@ def build_graph_base(
     expand_all=False,              
     show_reverse_links=False       
 ):
-    net = Network(height="700px", width="100%", notebook=False, directed=True)
+    net = Network(height="800px", width="100%", notebook=False, directed=True)
     net.set_options("""
         {
           "interaction": {
