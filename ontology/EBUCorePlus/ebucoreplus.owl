@@ -1726,7 +1726,6 @@ ec:hasEditorialFormatOf rdf:type owl:ObjectProperty ;
                         dcterms:description "Pour identifier un objet éditorial basé sur le même format éditorial"@fr ,
                                             "So identifizieren Sie ein redaktionelles Objekt, das auf demselben redaktionellen Format basiert"@de ,
                                             "To identify an Editorial Object based on the same Editorial format"@en ;
-                        rdfs:comment "*** Bad description ***"@en ;
                         rdfs:label "Gleiches redaktionelles Format"@de ,
                                    "Même format éditorial"@fr ,
                                    "Same editorial format"@en .
@@ -5984,7 +5983,6 @@ ec:measureValue rdf:type owl:DatatypeProperty ;
                 dcterms:description "Pour fournir la valeur d'une mesure."@fr ,
                                     "To provide the value of a Measure."@en ,
                                     "Um den Wert einer Maßnahme anzugeben."@de ;
-                rdfs:comment "The range is Literal. A more specific range can be used for a specific measurement."@en ;
                 rdfs:label "Measure value"@en ,
                            "Valeur de mesure"@fr ,
                            "Wert messen"@de .
@@ -8291,8 +8289,7 @@ ec:AudienceLevel rdf:type owl:Class ;
                                      "The target audience (target region, target audience category but also parental guidance recommendation) for which the media resource is intended. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ;
                  rdfs:label "Public cible"@fr ,
                             "Target audience"@en ,
-                            "Zielpublikum"@de ;
-                 skos:editorialNote "2023-04-05: the existence of this class needs to be discussed" .
+                            "Zielpublikum"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudienceRating
@@ -8391,8 +8388,7 @@ ec:AudioContent rdf:type owl:Class ;
                                     "Un AudioContent définit un composant d'un programme (par exemple, une musique de fond musique), son association avec un audioGroup (par exemple, un 2.0 audioPackFormat de audioChannelFormats pour la reproduction stéréo), son association avec un audioStreamFormat, et son ensemble de paramètres d'intensité sonore."@fr ;
                 rdfs:label "Audio content"@en ,
                            "Audio-inhalt"@de ,
-                           "Contenu audio"@fr ;
-                skos:editorialNote "2023-04-04: This class should probably become a subclass of EditorialSegment."@en .
+                           "Contenu audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioContentType
@@ -8450,8 +8446,7 @@ ec:AudioObject rdf:type owl:Class ;
                           "Objet audio"@fr ;
                skos:definition "a MediaResource in the form of an object in reference to the Audio Definition Model (ADM)"@en ,
                                "eine MedienResource in Form eines Objektes wie es im Audio Definition Model (ADM) beschrieben ist"@de ,
-                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr ;
-               skos:editorialNote "2023-02-14: one or more examples for AudioObject are needed"@en .
+                               "une ressource média sous la forme d'un objet tel que décrit dans le modèle de définition audio (ADM)"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AudioProgramme
@@ -8621,16 +8616,6 @@ ec:AuditReport rdf:type owl:Class ;
                           "Prüfbericht"@de ,
                           "Rapport d'audit"@fr ;
                skos:definition "a report on aggregated results from auditing"@en .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource ec:AuditReport ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget [ rdf:type owl:Restriction ;
-                         owl:onProperty ec:auditReportResults ;
-                         owl:allValuesFrom rdfs:Literal
-                       ] ;
-   rdfs:comment "Or is the result a Recource?"@en
- ] .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Award
@@ -11431,8 +11416,7 @@ ec:MediaFragment rdf:type owl:Class ;
                             "Medienfragment"@de ;
                  skos:definition "a MediaResource that is a temporal or spatial segment of a Resource as defined by the MediaFragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)"@en ,
                                  "eine MedienResource, die ein zeitliches oder räumliches Segment einer Resource ist, das wie in MediaFragment-URI  (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/) beschrieben ist"@de ,
-                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr ;
-                 skos:editorialNote "2023-02-14: examples need to be added"@en .
+                                 "une ressource média qui est un segment temporel ou spatial d'une ressource telle que définie par un URI MediaFragment (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/)."@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#MediaResource
@@ -12268,8 +12252,7 @@ ec:Person rdf:type owl:Class ;
                           ] ;
           dcterms:description "A Person."@en ,
                               "Eine Person."@de ,
-                              "Une personne."@fr ;
-          rdfs:comment "Une personne physique."@fr ;
+                              "Une personne.(physique)"@fr ;
           rdfs:label "Person"@de ,
                      "Person"@en ,
                      "Personne"@fr ;
@@ -12298,8 +12281,7 @@ ec:PhysicalResource rdf:type owl:Class ;
                                         "To describe a physical resource e.g. a tape."@en ;
                     rdfs:label "Physical resource"@en ,
                                "Physische Resource"@de ,
-                               "Resource physique"@fr ;
-                    skos:editorialNote "2023-02-14: the need for this class must be reviewed"@en .
+                               "Resource physique"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Pictogram
@@ -13332,7 +13314,6 @@ ec:PublicationService rdf:type owl:Class ;
                       dcterms:description "A publication service is a channel or publishing platform that releases the content to a given Audience."@en ,
                                           "Ein Service ist ein Kanal oder eine Publikationsplattform die einem Publikum den Zugriff auf Medienprodukte erlaubt."@de ,
                                           "Un service de publication est un canal ou une plate-forme de publication qui diffuse le contenu à une audience donnée."@fr ;
-                      rdfs:comment "Un Service est un canal ou une plateforme de publication qui diffuse le contenu à un public donné."@fr ;
                       rdfs:label "Medienservice"@de ,
                                  "Publication service"@en ,
                                  "Service"@fr ;
@@ -14339,16 +14320,14 @@ ec:Team rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Template
 ec:Template rdf:type owl:Class ;
-            rdfs:subClassOf ec:MediaResource ;
+            rdfs:subClassOf ec:Essence ;
             dcterms:description "An Essence defined as a Template with all associated technical parameters."@en ,
                                 "Eine Essenz, die als Vorlage mit allen zugehörigen technischen Parametern definiert ist."@de ,
                                 "Une essence définie comme un modèle avec tous les paramètres techniques associés."@fr ;
             rdfs:label "Modèle"@fr ,
                        "Template"@en ,
                        "Vorlage"@de ;
-            skos:definition "An Essence in the form of a template for Essences with all associated technical parameters"@en ;
-            skos:editorialNote """2023-02-14: following the definition, this class should be a subclass of Essence.
-2023-02-14: examples need to be added"""@en .
+            skos:definition "An Essence in the form of a template for Essences with all associated technical parameters"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#TerritoryCode
@@ -14633,9 +14612,8 @@ ec:TimelineTrack rdf:type owl:Class ;
                                    owl:allValuesFrom rdfs:Literal
                                  ] ;
                  dcterms:description "Definiert den zeitlichen Ablauf von Medieninhalten."@de ,
-                                     "Definiert den zeitlichen Ablauf von Medieninhalten."@fr ,
+                                     "Permet de définir une séquence temporelle d'EditorialObjects."@fr ,
                                      "To define a timed sequence of EditorialObjects."@en ;
-                 rdfs:comment "Permet de définir une séquence temporelle d'EditorialObjects."@fr ;
                  rdfs:label "Piste chronologique"@fr ,
                             "Timeline track"@en ,
                             "Zeitachse"@de .
