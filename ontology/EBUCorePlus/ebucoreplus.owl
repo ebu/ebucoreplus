@@ -5214,9 +5214,9 @@ ec:consumptionLicenceText rdf:type owl:DatatypeProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#contentDescription
 ec:contentDescription rdf:type owl:DatatypeProperty ;
                       rdfs:range rdfs:Literal ;
-                      dcterms:description "Ceci peut être spécialisé en utilisant des sous-propriétés comme celles définies dans http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm mises en œuvre à titre d'exemple, comme par exemple \"summary\" ou \"script\"."@fr ,
-                                          "Dies kann durch die Verwendung von Untereigenschaften spezialisiert werden wie in http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm definiert als Beispiele implementiert sind, wie z.B. 'summary' oder 'Skript'."@de ,
-                                          "This can be specialised by using sub-properties like defined in http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm implemented as examples as e.g. 'summary' or 'script'."@en ;
+                      dcterms:description "Ceci peut être spécialisé en utilisant des sous-propriétés comme celles définies dans https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_DescriptionTypeCodeCS.xml mises en œuvre à titre d'exemple, comme par exemple \"summary\" ou \"script\"."@fr ,
+                                          "Dies kann durch die Verwendung von Untereigenschaften spezialisiert werden wie in https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_DescriptionTypeCodeCS.xml definiert als Beispiele implementiert sind, wie z.B. 'summary' oder 'Skript'."@de ,
+                                          "This can be specialised by using sub-properties like defined in https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_DescriptionTypeCodeCS.xml implemented as examples as e.g. 'summary' or 'script'."@en ;
                       rdfs:isDefinedBy <dc:description> ;
                       rdfs:label "Beschreibung des Inhalts"@de ,
                                  "Content description"@en ,
@@ -6922,9 +6922,9 @@ ec:timeshift rdf:type owl:DatatypeProperty ,
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#title
 ec:title rdf:type owl:DatatypeProperty ;
          rdfs:range rdfs:Literal ;
-         dcterms:description "Alle Werte des EBU-Titelstatus-Klassifizierungsschemas (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) sind Kandidaten Untereigenschaften der Eigenschaft title, wie sie zum Beispiel mit alternativeTitel."@de ,
-                             "Specifies the title or name given to the resource. A root for the definition of subproperties defining ebucore titles of different types. The ebucore title type can be used to define sub-properties to optionally refine the category of the title. All value of the EBU title status classification scheme (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) are candidates subproperties of the title property as implemented for an example with alternativeTitle."@en ,
-                             "Toutes les valeurs du système de classification du statut du titre de l'UER (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) sont des candidats sous-propriétés de la propriété title comme implémenté par exemple avec alternativeTitle."@fr ;
+         dcterms:description "Alle Werte des EBU-Titelstatus-Klassifizierungsschemas (https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_TitleStatusCodeCS.xml) sind Kandidaten Untereigenschaften der Eigenschaft title, wie sie zum Beispiel mit alternativeTitel."@de ,
+                             "Specifies the title or name given to the resource. A root for the definition of subproperties defining ebucore titles of different types. The ebucore title type can be used to define sub-properties to optionally refine the category of the title. All value of the EBU title status classification scheme (https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_TitleStatusCodeCS.xml) are candidates subproperties of the title property as implemented for an example with alternativeTitle."@en ,
+                             "Toutes les valeurs du système de classification du statut du titre de l'UER (https://github.com/ebu/ebu_cs/blob/main/metadata/cs/ebu_TitleStatusCodeCS.xml) sont des candidats sous-propriétés de la propriété title comme implémenté par exemple avec alternativeTitle."@fr ;
          rdfs:label "Titel"@de ,
                     "Title"@en ,
                     "Titre"@fr .
