@@ -4723,8 +4723,8 @@ ec:artefactBoxHeight rdf:type owl:DatatypeProperty ;
                                 "Höhe der Artefaktbox."@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactBoxTopLeftCornerLineNumber
-ec:artefactBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#artefactBoxTopLeftCornerLineIndex
+ec:artefactBoxTopLeftCornerLineIndex rdf:type owl:DatatypeProperty ;
                                       rdfs:range xsd:nonNegativeInteger ;
                                       dcterms:description "Die Koordinaten auf einer vertikalen Achse für die Position der linken oberen Ecke der Box, die das Artefakt enthält."@de ,
                                                           "Les coordonnées sur un axe vertical de la position du coin supérieur gauche de la boîte contenant l'Artefact."@fr ,
@@ -5351,45 +5351,56 @@ ec:encodingProfile rdf:type owl:DatatypeProperty ;
                               "Profil d'encodage"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#episodeNumber
-ec:episodeNumber rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:integer ;
-                 dcterms:description "Die Episodennummer"@de ,
-                                     "Le numéro de l'épisode"@fr ,
-                                     "The Episode Number"@en ;
-                 rdfs:label "Episode number"@en ,
-                            "Folge Nummer"@de ,
-                            "Numéro d'épisode"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisodeIndex
+ec:hasEpisodeIndex rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index permettant d’identifier un épisode."@fr ,
+        "Index used to identify an episode."@en ,
+        "Index zur Identifizierung einer Episode."@de ;
+    rdfs:label 
+        "Index d'épisode"@fr ,
+        "Episode Index"@en ,
+        "Episodenindex"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#episodeNumberInSeason
-ec:episodeNumberInSeason rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:integer ;
-                         dcterms:description "Die Episodennummer in einer Staffel"@de ,
-                                             "Le numéro d'épisode dans une saison"@fr ,
-                                             "The Episode Number in a season"@en ;
-                         rdfs:label "Episode number in season"@en ,
-                                    "Nummer der Episode in der Staffel"@de ,
-                                    "Numéro d'épisode dans la saison"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisodeIndexInSeason
+ec:hasEpisodeIndexInSeason rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index permettant d’identifier un épisode dans une saison."@fr ,
+        "Index used to identify an episode within a season."@en ,
+        "Index zur Identifizierung einer Episode innerhalb einer Staffel."@de ;
+    rdfs:label 
+        "Index d'épisode dans la saison"@fr ,
+        "Episode Index in Season"@en ,
+        "Episodenindex in Staffel"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#episodeNumberInSerial
-ec:episodeNumberInSerial rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:integer ;
-                         rdfs:label "Episodennummer der Serie"@de ,
-                                    "episode number of serial"@en ,
-                                    "numéro d'épisode de la série"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisodeIndexInSerial
+ec:hasEpisodeIndexInSerial rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index permettant d’identifier un épisode dans un feuilleton."@fr ,
+        "Index used to identify an episode within a serial."@en ,
+        "Index zur Identifizierung einer Episode innerhalb eines Mehrteilers/Feuilletons."@de ;
+    rdfs:label 
+        "Index d'épisode dans le feuilleton"@fr ,
+        "Episode Index in Serial"@en ,
+        "Episodenindex in Mehrteiler"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#episodeNumberInSeries
-ec:episodeNumberInSeries rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:integer ;
-                         dcterms:description "Die Episodennummer in einer Serie"@de ,
-                                             "Le numéro de l'épisode dans une série"@fr ,
-                                             "The Episode Number in a series"@en ;
-                         rdfs:label "Episode number in series"@en ,
-                                    "Nummer der Episode in der Serie"@de ,
-                                    "Numéro d'épisode dans la série"@fr .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasEpisodeIndexInSeries
+ec:hasEpisodeIndexInSeries rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Numéro identifiant un épisode dans une série."@fr ,
+        "Number identifying an episode within a series."@en ,
+        "Nummer zur Identifizierung einer Episode innerhalb einer Serie."@de ;
+    rdfs:label 
+        "Numéro d'épisode dans la série"@fr ,
+        "Episode Number in Series"@en ,
+        "Episodennummer in Serie"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#equivalentTime
@@ -5734,15 +5745,17 @@ ec:isoDuration rdf:type owl:DatatypeProperty ;
                           "ISO-Dauer"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#lineNumber
-ec:lineNumber rdf:type owl:DatatypeProperty ;
-              rdfs:range xsd:integer ;
-              dcterms:description "Ppur fournir le numéro de la ligne sur laquelle les données auxiliaires sont transportées et l'équivalent dans le domaine numérique."@fr ,
-                                  "To provide the number of the line on which ancillary data is being carried and the equivalent in the digital domain."@en ,
-                                  "Zur Angabe der Nummer der Leitung, auf der Zusatzdaten übertragen werden, und die Entsprechung im digitalen Bereich."@de ;
-              rdfs:label "Line number"@en ,
-                         "Numéro de ligne"@fr ,
-                         "Zeilennummer"@de .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasLineIndex
+ec:hasLineIndex rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index de la ligne sur laquelle sont transportées des données auxiliaires, avec son équivalent dans le domaine numérique."@fr ,
+        "Index of the line carrying ancillary data, with its equivalent in the digital domain."@en ,
+        "Index der Zeile, auf der Zusatzdaten übertragen werden, einschließlich der Entsprechung im digitalen Bereich."@de ;
+    rdfs:label 
+        "Index de ligne"@fr ,
+        "Line Index"@en ,
+        "Zeilenindex"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#live
@@ -6249,8 +6262,8 @@ ec:packageName rdf:type owl:DatatypeProperty ;
                           "Package name"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#partTotalNumber
-ec:partTotalNumber rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfParts
+ec:hasTotalNumberOfParts rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:integer ;
                    dcterms:description "Die Gesamtzahl der Teile, die mit einem EditorialObject verbunden sind."@de ,
                                        "Le nombre total de Parts associées à un EditorialObject."@fr ,
@@ -6693,27 +6706,30 @@ ec:script rdf:type owl:DatatypeProperty ;
                      "Script"@fr ,
                      "Skript"@de .
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSeasonIndex
+ec:hasSeasonIndex rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index permettant d’identifier une saison."@fr ,
+        "Index used to identify a season."@en ,
+        "Index zur Identifizierung einer Saison."@de ;
+    rdfs:label 
+        "Numéro de la saison"@fr ,
+        "Saisonnummer"@de ,
+        "Season Index"@en .
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#seasonNumber
-ec:seasonNumber rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:integer ;
-                dcterms:description "Pour fournir un numéro de saison."@fr ,
-                                    "To provide a Season number."@en ,
-                                    "Um eine Saisonnummer anzugeben."@de ;
-                rdfs:label "Numéro de la saison"@fr ,
-                           "Saison Nummer"@de ,
-                           "Season number"@en .
 
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#segmentNumber
-ec:segmentNumber rdf:type owl:DatatypeProperty ;
-                 rdfs:range xsd:integer ;
-                 dcterms:description "Die Nummer, die einem Segment als eines unter vielen zugeordnet ist. vielen."@de ,
-                                     "Le nombre associé à un affaissement comme un parmi plusieurs."@fr ,
-                                     "The number associated with a segment as one among many."@en ;
-                 rdfs:label "Numéro de segment"@fr ,
-                            "Segment Nummer"@de ,
-                            "Segment number"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSegmentIndex
+ec:hasSegmentIndex rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Index identifiant un segment parmi plusieurs."@fr ,
+        "Index zur Identifizierung eines Segments innerhalb einer Menge."@de ,
+        "Index identifying a segment as one among many."@en ;
+    rdfs:label 
+        "Index de segment"@fr ,
+        "Segmentindex"@de ,
+        "Segment Index"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#shotLog
@@ -6831,8 +6847,8 @@ ec:textLineBoxHeight rdf:type owl:DatatypeProperty ;
                                 "Text line box height."@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#textLineBoxTopLeftCornerLineNumber
-ec:textLineBoxTopLeftCornerLineNumber rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#textLineBoxTopLeftCornerLineIndex
+ec:textLineBoxTopLeftCornerLineIndex rdf:type owl:DatatypeProperty ;
                                       rdfs:range xsd:nonNegativeInteger ;
                                       dcterms:description "Die Koordinaten auf einer vertikalen Achse für die Position der linken oberen Ecke des Textfeldes, das die TextLine enthält."@de ,
                                                           "Les coordonnées sur un axe vertical de la position du coin supérieur gauche de la zone de texte contenant la TextLine."@fr ,
@@ -6930,26 +6946,29 @@ ec:title rdf:type owl:DatatypeProperty ;
                     "Titre"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfEpisodes
-ec:totalNumberOfEpisodes rdf:type owl:DatatypeProperty ;
-                         rdfs:range xsd:integer ;
-                         dcterms:description "Pour fournir le nombre total d'épisodes d'une série ou d'une saison."@fr ,
-                                             "To provide the total number of episodes in a Series or a Season."@en ,
-                                             "Zur Angabe der Gesamtzahl der Episoden einer Serie oder einer Staffel."@de ;
-                         rdfs:label "Gesamtzahl der Episoden"@de ,
-                                    "Nombre total d'épisodes"@fr ,
-                                    "Total number of episodes"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfEpisodes
+ec:hasTotalNumberOfEpisodes rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Nombre total d'épisodes dans une série ou une saison."@fr ,
+        "Total number of episodes in a series or season."@en ,
+        "Gesamtzahl der Episoden in einer Serie oder Staffel."@de ;
+    rdfs:label 
+        "Nombre total d'épisodes"@fr ,
+        "Total Number of Episodes"@en ,
+        "Gesamtzahl der Episoden"@de .
 
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfGroupMembers
-ec:totalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
-                             rdfs:range xsd:integer ;
-                             dcterms:description "Pour fournir le nombre total de membres dans un groupe."@fr ,
-                                                 "To provide the total number of members in a Group."@en ,
-                                                 "Zur Angabe der Gesamtzahl der Mitglieder einer Gruppe."@de ;
-                             rdfs:label "Gesamtzahl der Gruppenmitglieder"@de ,
-                                        "Nombre total de membres du groupe"@fr ,
-                                        "Total number of Group members"@en .
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfGroupMembers
+ec:hasTotalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:integer ;
+    dcterms:description 
+        "Nombre total de membres dans un groupe."@fr ,
+        "Total number of members in a group."@en ,
+        "Gesamtzahl der Mitglieder in einer Gruppe."@de ;
+    rdfs:label 
+        "Nombre total de membres du groupe"@fr ,
+        "Total Number of Group Members"@en ,
+        "Gesamtzahl der Gruppenmitglieder"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#username
@@ -7564,7 +7583,7 @@ ec:AncillaryData rdf:type owl:Class ;
                                    owl:onDataRange xsd:integer
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:lineNumber ;
+                                   owl:onProperty ec:hasLineIndex ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:integer
                                  ] ;
@@ -9953,11 +9972,11 @@ ec:EditorialGroup rdf:type owl:Class ;
                                     owl:allValuesFrom ec:EditorialObject
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:totalNumberOfEpisodes ;
+                                    owl:onProperty ec:hasTotalNumberOfEpisodes ;
                                     owl:allValuesFrom xsd:integer
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty ec:totalNumberOfGroupMembers ;
+                                    owl:onProperty ec:hasTotalNumberOfGroupMembers ;
                                     owl:allValuesFrom xsd:integer
                                   ] ;
                   dcterms:description "Pour définir une collection / un groupe de médias ressources, par exemple une série composée d'épisodes."@fr ,
@@ -10366,7 +10385,7 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:partTotalNumber ;
+                                     owl:onProperty ec:hasTotalNumberOfParts ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:integer
                                    ] ,
@@ -10460,7 +10479,7 @@ ec:EditorialSegment rdf:type owl:Class ;
                                       owl:allValuesFrom ec:EditorialWork
                                     ] ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:segmentNumber ;
+                                      owl:onProperty ec:hasSegmentIndex ;
                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                       owl:onDataRange xsd:integer
                                     ] ;
@@ -12594,22 +12613,22 @@ ec:Programme rdf:type owl:Class ;
                                owl:onClass ec:Series
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:episodeNumber ;
+                               owl:onProperty ec:hasEpisodeIndex ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:integer
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:episodeNumberInSeason ;
+                               owl:onProperty ec:hasEpisodeIndexInSeason ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:integer
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:episodeNumberInSerial ;
+                               owl:onProperty ec:hasEpisodeIndexInSerial ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:integer
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty ec:episodeNumberInSeries ;
+                               owl:onProperty ec:hasEpisodeIndexInSeries ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:integer
                              ] ;
@@ -13994,7 +14013,7 @@ ec:Season rdf:type owl:Class ;
                             owl:allValuesFrom ec:Series
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:seasonNumber ;
+                            owl:onProperty ec:hasSeasonIndex ;
                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:integer
                           ] ;
@@ -14406,7 +14425,7 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onDataRange xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:artefactBoxTopLeftCornerLineNumber ;
+                              owl:onProperty ec:artefactBoxTopLeftCornerLineIndex ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:nonNegativeInteger
                             ] ,
@@ -14426,7 +14445,7 @@ ec:TextLine rdf:type owl:Class ;
                               owl:onDataRange xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty ec:textLineBoxTopLeftCornerLineNumber ;
+                              owl:onProperty ec:textLineBoxTopLeftCornerLineIndex ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onDataRange xsd:nonNegativeInteger
                             ] ,
