@@ -5437,7 +5437,7 @@ ec:fileName rdf:type owl:DatatypeProperty ,
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#fileSize
 ec:fileSize rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:double ;
+            rdfs:range xsd:nonNegativeInteger ;
             dcterms:description "Fournit la taille d'une ressource en octets."@fr ,
                                 "Gibt die Größe einer Resource in Bytes an."@de ,
                                 "Provides the size of a Resource in bytes."@en ;
