@@ -11870,11 +11870,8 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingProfile ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:videoTrackNumber ;
-                                   owl:allValuesFrom xsd:nonNegativeInteger
-                                 ] ;
+                                 ] 
+                                ;
 
                  owl:disjointWith ec:Rating ;
                  dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
@@ -14149,6 +14146,7 @@ ec:Signing rdf:type owl:Class ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass ec:Agent
                            ] ;
+
            dcterms:description "Pour signaler la présence de la signalisation pour les utilisateurs malentendants. utilisateurs malentendants. Le type de Signing (par ex. incursion ou autre) ou la langue de Signing peuvent être spécifiés à l'aide des propriétés appropriées."@fr ,
                                "To signal the presence of Signing for hard of hearing users. The type of Signing (e.g. incursted in or else) or language of Signing can be specified using the appropriate properties."@en ,
                                "Um die Anwesenheit von Signing für schwerhörige hörende Benutzer. Die Art der Gebärde (z.B. eingeblendet oder nicht) oder die Sprache der Gebärde kann über die entsprechenden Eigenschaften festgelegt werden."@de ;
@@ -14825,14 +14823,20 @@ ec:VideoStream rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#VideoTrack
 ec:VideoTrack rdf:type owl:Class ;
-              rdfs:subClassOf ec:Track ;
-              dcterms:description "A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specific VideoTracks such as Signing can be defined as sub VideoTracks.. In advanced systems, different VideoTracks can be used to provide e.g. different viewing angles."@en ,
-                                  "Eine Spezialisierung von Track for Video zur Bereitstellung eine Verknüpfung zu bestimmten Dateneigenschaften wie FrameRate usw. Signieren ist ein weiteres mögliches Beispiel für eine Videospur. Spezifische VideoTracks wie Signing können als Sub definiert werden VideoTracks definiert werden. In fortgeschrittenen Systemen können verschiedene VideoTracks verwendet werden, um z.B. unterschiedliche Blickwinkel zu bieten."@de ,
-                                  "Une spécialisation de Track for Video pour fournir un lien vers des propriétés de données spécifiques telles que le frameRate, etc. La signature est un autre exemple possible exemple possible de piste vidéo. Des VideoTracks spécifiques tels que Signing peuvent être définis en tant que sub VideoTracks . Dans les systèmes avancés, différents VideoTracks peuvent être utilisés pour fournir par exemple différents angles de vue."@fr ;
-              rdfs:label "Piste vidéo"@fr ,
-                         "Video track"@en ,
-                         "Video-Spur"@de .
-
+    rdfs:subClassOf ec:Track ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty ec:videoTrackNumber ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange xsd:nonNegativeInteger
+        ] ;
+    dcterms:description 
+        "A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specific VideoTracks such as Signing can be defined as sub VideoTracks. In advanced systems, different VideoTracks can be used to provide e.g. different viewing angles."@en ,
+        "Eine Spezialisierung von Track für Video zur Bereitstellung einer Verknüpfung zu bestimmten Dateneigenschaften wie FrameRate usw. Gebärdensprache ist ein weiteres mögliches Beispiel für eine Videospur. Spezifische VideoTracks wie Signing können als Unterklassen definiert werden. In fortgeschrittenen Systemen können verschiedene VideoTracks verwendet werden, um z.B. unterschiedliche Blickwinkel zu bieten."@de ,
+        "Une spécialisation de Track pour la vidéo afin de fournir un lien vers des propriétés de données spécifiques telles que le frameRate, etc. La langue des signes est un autre exemple possible de piste vidéo. Des VideoTracks spécifiques tels que Signing peuvent être définis comme sous-classes. Dans les systèmes avancés, différents VideoTracks peuvent être utilisés pour fournir par exemple différents angles de vue."@fr ;
+    rdfs:label 
+        "Piste vidéo"@fr ,
+        "Video track"@en ,
+        "Videospur"@de .
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#WrappingType
 ec:WrappingType rdf:type owl:Class ;
