@@ -6116,7 +6116,7 @@ ec:numberOfVideoTracks rdf:type owl:DatatypeProperty ;
                                   "Nombre de pistes vidéo"@fr ,
                                   "Number of video tracks"@en .
 
-
+        
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occupation
 ec:occupation rdf:type owl:DatatypeProperty ;
               rdfs:range rdfs:Literal ;
@@ -7040,6 +7040,18 @@ ec:videoEncodingProfile rdf:type owl:DatatypeProperty ;
                         rdfs:label "Profil d'encodage vidéo"@fr ,
                                    "Video encoding profile"@en ,
                                    "Video-Kodierungsprofil"@de .
+
+##  http://www.ebu.ch/metadata/ontologies/ebucoreplus#videoTrackNumber
+ec:videoTrackNumber rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:nonNegativeInteger ;
+    dcterms:description 
+        "Permet d’identifier une piste vidéo parmi plusieurs dans une MediaResource."@fr ,
+        "To identify a video track among multiple tracks in a MediaResource."@en ,
+        "Zur Identifizierung einer Videospur innerhalb einer MediaResource."@de ;
+    rdfs:label 
+        "Numéro de piste vidéo"@fr ,
+        "Video Track Number"@en ,
+        "Videospurnummer"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#webcam
@@ -11858,7 +11870,12 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingProfile ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:videoTrackNumber ;
+                                   owl:allValuesFrom xsd:nonNegativeInteger
                                  ] ;
+
                  owl:disjointWith ec:Rating ;
                  dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
                                      "Eine audiovisuelle MedienResource, die aus einer oder mehreren Spuren bestehen kann. Die MedienResource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ,
