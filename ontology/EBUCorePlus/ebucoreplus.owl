@@ -2476,7 +2476,6 @@ ec:hasPromotion rdf:type owl:ObjectProperty ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasProvenance
 ec:hasProvenance rdf:type owl:ObjectProperty ;
                  owl:inverseOf ec:hasProvenanceTarget ;
-                 rdfs:domain owl:Thing ;
                  dcterms:description "Bereich: String, anyURI oder Konzept."@de ,
                                      "Die Person oder Firma, die die Metadaten zur Verfügung stellt."@de ,
                                      "La personne ou l'entreprise qui fournit les métadonnées."@fr ,
@@ -4960,17 +4959,6 @@ ec:audioBitRateMode rdf:type owl:DatatypeProperty ;
                                "Mode de débit binaire audio"@fr .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfAudioChannel
-ec:hasTotalNumberOfAudioChannel rdf:type owl:DatatypeProperty ;
-                      rdfs:range xsd:nonNegativeInteger ;
-                      dcterms:description "Die Gesamtzahl der Audiokanäle, die in der der MediaResource."@de ,
-                                          "Le nombre total de canaux audio contenus dans la MediaResource."@fr ,
-                                          "The total number of audio channels contained in the MediaResource."@en ;
-                      rdfs:label "Nombre de canal audio"@fr ,
-                                 "Number of audio channel"@en ,
-                                 "Nummer des Audiokanals"@de .
-
-
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#audioEncodingLevel
 ec:audioEncodingLevel rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf ec:encodingLevel ;
@@ -5004,17 +4992,6 @@ ec:audioTrackConfiguration rdf:type owl:DatatypeProperty ;
                            rdfs:label "Audio track configuration"@en ,
                                       "Configuration des pistes audio"@fr ,
                                       "Konfiguration der Audiospur"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioTrackIndex
-ec:hasAudioTrackIndex rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger ;
-                    dcterms:description "Der Index einer AudioTrack in den MediaResource.."@de ,
-                                        "Donne l'index d'une piste audio dans la MediaResource."@fr ,
-                                        "The index of an audio track in the MediaResource."@en ;
-                    rdfs:label "Index de pistes audio"@fr ,
-                               "Index of audio track"@en ,
-                               "Index der Audiospur"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportResults
@@ -5622,6 +5599,50 @@ ec:givenName rdf:type owl:DatatypeProperty ;
                         "Vorname"@de .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAudioTrackIndex
+ec:hasAudioTrackIndex rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:nonNegativeInteger ;
+                      dcterms:description "Der Index einer AudioTrack in den MediaResource.."@de ,
+                                          "Donne l'index d'une piste audio dans la MediaResource."@fr ,
+                                          "The index of an audio track in the MediaResource."@en ;
+                      rdfs:label "Index de pistes audio"@fr ,
+                                 "Index der Audiospur"@de ,
+                                 "Index of audio track"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfAudioChannel
+ec:hasTotalNumberOfAudioChannel rdf:type owl:DatatypeProperty ;
+                                rdfs:range xsd:nonNegativeInteger ;
+                                dcterms:description "Die Gesamtzahl der Audiokanäle, die in der der MediaResource."@de ,
+                                                    "Le nombre total de canaux audio contenus dans la MediaResource."@fr ,
+                                                    "The total number of audio channels contained in the MediaResource."@en ;
+                                rdfs:label "Nombre de canal audio"@fr ,
+                                           "Number of audio channel"@en ,
+                                           "Nummer des Audiokanals"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfAudioTracks
+ec:hasTotalNumberOfAudioTracks rdf:type owl:DatatypeProperty ;
+                               rdfs:range xsd:integer ;
+                               dcterms:description "Die Gesamtzahl der Audiospuren angeben.."@de ,
+                                                   "Pour fournir le nombre total de pistes audio."@fr ,
+                                                   "To provide the total number of audio tracks."@en ;
+                               rdfs:label "Anzahl der Audiospuren"@de ,
+                                          "Nombre de pistes audio"@fr ,
+                                          "Number of audio tracks"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfVideoTracks
+ec:hasTotalNumberOfVideoTracks rdf:type owl:DatatypeProperty ;
+                               rdfs:range xsd:integer ;
+                               dcterms:description "Die Gesamtzahl der Videospuren angeben."@de ,
+                                                   "Pour fournir le nombre total de pistes vidéo."@fr ,
+                                                   "To provide the total number of video tracks."@en ;
+                               rdfs:label "Anzahl der Videospuren"@de ,
+                                          "Nombre de pistes vidéo"@fr ,
+                                          "Number of video tracks"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hashValue
 ec:hashValue rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string ;
@@ -6093,28 +6114,6 @@ ec:notRated rdf:type owl:DatatypeProperty ;
             rdfs:label "Nicht bewertet"@de ,
                        "Non évalué"@fr ,
                        "Not rated"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfAudioTracks
-ec:hasTotalNumberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
-                       dcterms:description "Pour fournir le nombre total de pistes audio."@fr ,
-                                           "To provide the total number of audio tracks."@en ,
-                                           "Die Gesamtzahl der Audiospuren angeben.."@de ;
-                       rdfs:label "Anzahl der Audiospuren"@de ,
-                                  "Nombre de pistes audio"@fr ,
-                                  "Number of audio tracks"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasTotalNumberOfVideoTracks
-ec:hasTotalNumberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
-                       dcterms:description "Pour fournir le nombre total de pistes vidéo."@fr ,
-                                           "To provide the total number of video tracks."@en ,
-                                           "Die Gesamtzahl der Videospuren angeben."@de ;
-                       rdfs:label "Anzahl der Videospuren"@de ,
-                                  "Nombre de pistes vidéo"@fr ,
-                                  "Number of video tracks"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occupation
@@ -11701,11 +11700,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasTotalNumberOfAudioChannel ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:audioEncodingLevel ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
@@ -11716,11 +11710,6 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:audioTrackConfiguration ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasAudioTrackIndex ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:bitDepth ;
@@ -11777,6 +11766,26 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasAudioTrackIndex ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTotalNumberOfAudioChannel ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTotalNumberOfAudioTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:hasTotalNumberOfVideoTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:hashValue ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:string
@@ -11795,16 +11804,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onProperty ec:noiseFilter ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:boolean
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasTotalNumberOfAudioTracks ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:hasTotalNumberOfVideoTracks ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:packageByteSize ;
@@ -14997,8 +14996,8 @@ dcterms:contributor dcterms:description "Dans le contexte d'EBUCore, réservé �
                      rdfs:label "Beitragender"@de ;
                      dcterms:description "In the context of EBUCore, reserved for the annotation of RDF properties."@en ,
                                          "Im Kontext von EBUCore für die Annotation von RDF-Eigenschaften reserviert."@de ;
-                     rdfs:label "Contributor"@en ,
-                                "Contributeur"@fr .
+                     rdfs:label "Contributeur"@fr ,
+                                "Contributor"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
