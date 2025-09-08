@@ -1,0 +1,46 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Jupyter & Streamlit artifacts
+.ipynb_checkpoints/
+.streamlit/config.toml
+.streamlit/credentials.toml
+
+# Streamlit component cache
+lib/
+bindings/
+tom-select/
+visd-*/
+.streamlit/components/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+
+# VSCode settings (optional)
+.vscode/
+
+# Virtual environment folders (optional)
+venv/
+env/
+.venv/
+ENV/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment config
+.env
+.env.*
+
+# pipenv files 
+Pipfile
+Pipfile.*
