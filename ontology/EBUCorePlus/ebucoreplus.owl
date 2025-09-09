@@ -264,7 +264,6 @@ ec:animates rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
-           owl:inverseOf ec:hasRights ;
            dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
                                "L'actif auquel les droits s'appliquent."@fr ,
                                "The Asset to which Rights apply."@en ;
@@ -4959,29 +4958,6 @@ ec:audioBitRateMode rdf:type owl:DatatypeProperty ;
                                "Audio-Bitrate-Modus"@de ,
                                "Mode de débit binaire audio"@fr .
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#audioTrackNumber
-ec:audioTrackNumber rdf:type owl:DatatypeProperty ;
-    rdfs:range xsd:nonNegativeInteger ;
-    dcterms:description 
-        "Permet d’identifier une piste audio parmi plusieurs dans une MediaResource."@fr ,
-        "To identify an audio track among multiple tracks in a MediaResource."@en ,
-        "Zur Identifizierung einer Audiospur innerhalb einer MediaResource."@de ;
-    rdfs:label 
-        "Numéro de piste audio"@fr ,
-        "Audio Track Number"@en ,
-        "Audiospurnummer"@de .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioChannels
-ec:totalNumberOfAudioChannels rdf:type owl:DatatypeProperty ;
-                      rdfs:range xsd:nonNegativeInteger ;
-                      dcterms:description "Die Gesamtzahl der Audiokanäle, die in der der MediaResource."@de ,
-                                          "Le nombre total de canaux audio contenus dans la MediaResource."@fr ,
-                                          "The total number of audio channels contained in the MediaResource."@en ;
-                      rdfs:label "Nombre de canal audio"@fr ,
-                                 "Number of audio channel"@en ,
-                                 "Nummer des Audiokanals"@de .
-
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#audioEncodingLevel
 ec:audioEncodingLevel rdf:type owl:DatatypeProperty ;
@@ -5016,6 +4992,17 @@ ec:audioTrackConfiguration rdf:type owl:DatatypeProperty ;
                            rdfs:label "Audio track configuration"@en ,
                                       "Configuration des pistes audio"@fr ,
                                       "Konfiguration der Audiospur"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#audioTrackNumber
+ec:audioTrackNumber rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger ;
+                    dcterms:description "Permet d’identifier une piste audio parmi plusieurs dans une MediaResource."@fr ,
+                                        "To identify an audio track among multiple tracks in a MediaResource."@en ,
+                                        "Zur Identifizierung einer Audiospur innerhalb einer MediaResource."@de ;
+                    rdfs:label "Audio Track Number"@en ,
+                               "Audiospurnummer"@de ,
+                               "Numéro de piste audio"@fr .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#auditReportResults
@@ -6096,28 +6083,6 @@ ec:notRated rdf:type owl:DatatypeProperty ;
                        "Not rated"@en .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioTracks
-ec:totalNumberOfAudioTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
-                       dcterms:description "Pour fournir le nombre total de pistes audio."@fr ,
-                                           "To provide the total number of audio tracks."@en ,
-                                           "Die Gesamtzahl der Audiospuren angeben.."@de ;
-                       rdfs:label "Anzahl der Audiospuren"@de ,
-                                  "Nombre de pistes audio"@fr ,
-                                  "Number of audio tracks"@en .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfVideoTracks
-ec:totalNumberOfVideoTracks rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:integer ;
-                       dcterms:description "Pour fournir le nombre total de pistes vidéo."@fr ,
-                                           "To provide the total number of video tracks."@en ,
-                                           "Die Gesamtzahl der Videospuren angeben."@de ;
-                       rdfs:label "Anzahl der Videospuren"@de ,
-                                  "Nombre de pistes vidéo"@fr ,
-                                  "Number of video tracks"@en .
-
-        
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#occupation
 ec:occupation rdf:type owl:DatatypeProperty ;
               rdfs:range rdfs:Literal ;
@@ -6931,6 +6896,28 @@ ec:title rdf:type owl:DatatypeProperty ;
                     "Titre"@fr .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioChannels
+ec:totalNumberOfAudioChannels rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:nonNegativeInteger ;
+                              dcterms:description "Die Gesamtzahl der Audiokanäle, die in der der MediaResource."@de ,
+                                                  "Le nombre total de canaux audio contenus dans la MediaResource."@fr ,
+                                                  "The total number of audio channels contained in the MediaResource."@en ;
+                              rdfs:label "Nombre de canal audio"@fr ,
+                                         "Number of audio channel"@en ,
+                                         "Nummer des Audiokanals"@de .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioTracks
+ec:totalNumberOfAudioTracks rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:integer ;
+                            dcterms:description "Die Gesamtzahl der Audiospuren angeben.."@de ,
+                                                "Pour fournir le nombre total de pistes audio."@fr ,
+                                                "To provide the total number of audio tracks."@en ;
+                            rdfs:label "Anzahl der Audiospuren"@de ,
+                                       "Nombre de pistes audio"@fr ,
+                                       "Number of audio tracks"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfEpisodes
 ec:totalNumberOfEpisodes rdf:type owl:DatatypeProperty ;
                          rdfs:range xsd:integer ;
@@ -6951,6 +6938,17 @@ ec:totalNumberOfGroupMembers rdf:type owl:DatatypeProperty ;
                              rdfs:label "Gesamtzahl der Gruppenmitglieder"@de ,
                                         "Nombre total de membres du groupe"@fr ,
                                         "Total number of Group members"@en .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfVideoTracks
+ec:totalNumberOfVideoTracks rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:integer ;
+                            dcterms:description "Die Gesamtzahl der Videospuren angeben."@de ,
+                                                "Pour fournir le nombre total de pistes vidéo."@fr ,
+                                                "To provide the total number of video tracks."@en ;
+                            rdfs:label "Anzahl der Videospuren"@de ,
+                                       "Nombre de pistes vidéo"@fr ,
+                                       "Number of video tracks"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#username
@@ -7042,17 +7040,16 @@ ec:videoEncodingProfile rdf:type owl:DatatypeProperty ;
                                    "Video encoding profile"@en ,
                                    "Video-Kodierungsprofil"@de .
 
-##  http://www.ebu.ch/metadata/ontologies/ebucoreplus#videoTrackNumber
+
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#videoTrackNumber
 ec:videoTrackNumber rdf:type owl:DatatypeProperty ;
-    rdfs:range xsd:nonNegativeInteger ;
-    dcterms:description 
-        "Permet d’identifier une piste vidéo parmi plusieurs dans une MediaResource."@fr ,
-        "To identify a video track among multiple tracks in a MediaResource."@en ,
-        "Zur Identifizierung einer Videospur innerhalb einer MediaResource."@de ;
-    rdfs:label 
-        "Numéro de piste vidéo"@fr ,
-        "Video Track Number"@en ,
-        "Videospurnummer"@de .
+                    rdfs:range xsd:nonNegativeInteger ;
+                    dcterms:description "Permet d’identifier une piste vidéo parmi plusieurs dans une MediaResource."@fr ,
+                                        "To identify a video track among multiple tracks in a MediaResource."@en ,
+                                        "Zur Identifizierung einer Videospur innerhalb einer MediaResource."@de ;
+                    rdfs:label "Numéro de piste vidéo"@fr ,
+                               "Video Track Number"@en ,
+                               "Videospurnummer"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#webcam
@@ -11714,11 +11711,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:totalNumberOfAudioChannels ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:nonNegativeInteger
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:audioEncodingLevel ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
@@ -11810,16 +11802,6 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:onDataRange xsd:boolean
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:totalNumberOfAudioTracks ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:totalNumberOfVideoTracks ;
-                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:integer
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:packageByteSize ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:long
@@ -11862,6 +11844,21 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:totalNumberOfAudioChannels ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:totalNumberOfAudioTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ec:totalNumberOfVideoTracks ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoBitRate ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:nonNegativeInteger
@@ -11882,9 +11879,7 @@ ec:MediaResource rdf:type owl:Class ;
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ec:videoEncodingProfile ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                 ] 
-                                ;
-
+                                 ] ;
                  owl:disjointWith ec:Rating ;
                  dcterms:description "An audiovisual MediaResource, which can be composed of one or more Tracks. A MediaResource is defined by an EditorialObject (Editorial Domain), which can be realised in Essences in one or more Formats for different delivery medias or platforms."@en ,
                                      "Eine audiovisuelle MedienResource, die aus einer oder mehreren Spuren bestehen kann. Die MedienResource ist durch einen Medieninhalt definiert und kann durch Essenzen in einem oder mehreren Formaten für verschiedene Medien oder Plattformen realisiert werden."@de ,
@@ -13825,10 +13820,6 @@ ec:Rights rdf:type owl:Class ;
                             owl:allValuesFrom ec:Asset
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:applyTo ;
-                            owl:allValuesFrom ec:PublicationEvent
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasContact ;
                             owl:allValuesFrom ec:Contact
                           ] ,
@@ -14169,22 +14160,20 @@ ec:Signing rdf:type owl:Class ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass ec:Agent
                            ] ;
-
            dcterms:description "Indicates the presence of sign language interpretation for deaf and hard-of-hearing users. The type and the sign language can be specified using the appropriate properties."@en ,
                                "Indique la présence d’une interprétation en langue des signes dans le contenu audiovisuel (pour les personnes sourdes et malentendantes). Le type (p. ex. incrustation/in-vision) et la langue des signes peuvent être précisés via les propriétés appropriées."@fr ,
                                "Kennzeichnet die Präsenz von Gebärdensprachdolmetschen im audiovisuellen Inhalt (für gehörlose und schwerhörige Nutzer*innen). Typ (z. B. In-Vision/Einblendung) und Gebärdensprache können über entsprechende Eigenschaften angegeben werden."@de ;
-           rdfs:label "Signing"@en ,
+           rdfs:label "Gebärdensprache"@de ,
                       "Langue des signes"@fr ,
-                      "Gebärdensprache"@de .
-
+                      "Signing"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#SigningFormat
 ec:SigningFormat rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Represents the format of sign language interpretation in audiovisual media (e.g., in-vision/inset, full-screen, overlay, avatar)."@en ,
-                                     "Représente le format de l’interprétation en langue des signes dans un contenu audiovisuel (p. ex. incrustation/in-vision, plein écran, superposition, avatar)."@fr ,
-                                     "Beschreibt das Format der Gebärdensprachdolmetschung in audiovisuellen Inhalten (z. B. In-Vision/Einblendung, Vollbild, Overlay, Avatar)."@de ;
+                 dcterms:description "Beschreibt das Format der Gebärdensprachdolmetschung in audiovisuellen Inhalten (z. B. In-Vision/Einblendung, Vollbild, Overlay, Avatar)."@de ,
+                                     "Represents the format of sign language interpretation in audiovisual media (e.g., in-vision/inset, full-screen, overlay, avatar)."@en ,
+                                     "Représente le format de l’interprétation en langue des signes dans un contenu audiovisuel (p. ex. incrustation/in-vision, plein écran, superposition, avatar)."@fr ;
                  rdfs:label "Format de langue des signes"@fr ,
                             "Gebärdensprachformat"@de ,
                             "Signing format"@en .
@@ -14847,20 +14836,19 @@ ec:VideoStream rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#VideoTrack
 ec:VideoTrack rdf:type owl:Class ;
-    rdfs:subClassOf ec:Track ,
-        [ rdf:type owl:Restriction ;
-          owl:onProperty ec:videoTrackNumber ;
-          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-          owl:onDataRange xsd:nonNegativeInteger
-        ] ;
-    dcterms:description 
-        "A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specific VideoTracks such as Signing can be defined as sub VideoTracks. In advanced systems, different VideoTracks can be used to provide e.g. different viewing angles."@en ,
-        "Eine Spezialisierung von Track für Video zur Bereitstellung einer Verknüpfung zu bestimmten Dateneigenschaften wie FrameRate usw. Gebärdensprache ist ein weiteres mögliches Beispiel für eine Videospur. Spezifische VideoTracks wie Signing können als Unterklassen definiert werden. In fortgeschrittenen Systemen können verschiedene VideoTracks verwendet werden, um z.B. unterschiedliche Blickwinkel zu bieten."@de ,
-        "Une spécialisation de Track pour la vidéo afin de fournir un lien vers des propriétés de données spécifiques telles que le frameRate, etc. La langue des signes est un autre exemple possible de piste vidéo. Des VideoTracks spécifiques tels que Signing peuvent être définis comme sous-classes. Dans les systèmes avancés, différents VideoTracks peuvent être utilisés pour fournir par exemple différents angles de vue."@fr ;
-    rdfs:label 
-        "Piste vidéo"@fr ,
-        "Video track"@en ,
-        "Videospur"@de .
+              rdfs:subClassOf ec:Track ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ec:videoTrackNumber ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:nonNegativeInteger
+                              ] ;
+              dcterms:description "A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specific VideoTracks such as Signing can be defined as sub VideoTracks. In advanced systems, different VideoTracks can be used to provide e.g. different viewing angles."@en ,
+                                  "Eine Spezialisierung von Track für Video zur Bereitstellung einer Verknüpfung zu bestimmten Dateneigenschaften wie FrameRate usw. Gebärdensprache ist ein weiteres mögliches Beispiel für eine Videospur. Spezifische VideoTracks wie Signing können als Unterklassen definiert werden. In fortgeschrittenen Systemen können verschiedene VideoTracks verwendet werden, um z.B. unterschiedliche Blickwinkel zu bieten."@de ,
+                                  "Une spécialisation de Track pour la vidéo afin de fournir un lien vers des propriétés de données spécifiques telles que le frameRate, etc. La langue des signes est un autre exemple possible de piste vidéo. Des VideoTracks spécifiques tels que Signing peuvent être définis comme sous-classes. Dans les systèmes avancés, différents VideoTracks peuvent être utilisés pour fournir par exemple différents angles de vue."@fr ;
+              rdfs:label "Piste vidéo"@fr ,
+                         "Video track"@en ,
+                         "Videospur"@de .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#WrappingType
 ec:WrappingType rdf:type owl:Class ;
