@@ -14272,7 +14272,7 @@ ec:Subject rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Subtitling
 ec:Subtitling rdf:type owl:Class ;
-              rdfs:subClassOf ec:VideoTrack ,
+              rdfs:subClassOf ec:Track ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasSubtitlingSource ;
                                 owl:allValuesFrom ec:Agent
