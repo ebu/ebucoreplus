@@ -14146,23 +14146,22 @@ ec:Signing rdf:type owl:Class ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass ec:Agent
                            ] ;
-
-           dcterms:description "Pour signaler la présence de la signalisation pour les utilisateurs malentendants. utilisateurs malentendants. Le type de Signing (par ex. incursion ou autre) ou la langue de Signing peuvent être spécifiés à l'aide des propriétés appropriées."@fr ,
-                               "To signal the presence of Signing for hard of hearing users. The type of Signing (e.g. incursted in or else) or language of Signing can be specified using the appropriate properties."@en ,
-                               "Um die Anwesenheit von Signing für schwerhörige hörende Benutzer. Die Art der Gebärde (z.B. eingeblendet oder nicht) oder die Sprache der Gebärde kann über die entsprechenden Eigenschaften festgelegt werden."@de ;
-           rdfs:label "Signer"@fr ,
-                      "Signing"@en ,
-                      "Unterzeichnung"@de .
+           dcterms:description "Indicates the presence of sign language interpretation or deaf and hard-of-hearing users. The type and the sign language can be specified using the appropriate properties."@en ,
+                               "Indique la présence d’une interprétation en langue des signes dans le contenu audiovisuel (pour les personnes sourdes et malentendantes). Le type (p. ex. incrustation/in-vision) et la langue des signes peuvent être précisés via les propriétés appropriées."@fr ,
+                               "Kennzeichnet die Präsenz von Gebärdensprachdolmetschen im audiovisuellen Inhalt (für gehörlose und schwerhörige Nutzer*innen). Typ (z. B. In-Vision/Einblendung) und Gebärdensprache können über entsprechende Eigenschaften angegeben werden."@de ;
+           rdfs:label "Signing"@en ,
+                      "Langue des signes"@fr ,
+                      "Gebärdensprache"@de .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#SigningFormat
 ec:SigningFormat rdf:type owl:Class ;
                  rdfs:subClassOf skos:Concept ;
-                 dcterms:description "Pour fournir des informations supplémentaires sur le format de signature. Ces informations sont fournies sous forme de texte libre dans une étiquette d'annotation ou d'un identifiant pointant vers un terme dans un schéma de classification."@fr ,
-                                     "To provide additional information on the signing format. This is provided as free text in an annotation label or as an identifier pointing to a term in a classification scheme."@en ,
-                                     "Um zusätzliche Informationen über das Format der Unterschrift. Diese werden als freier Text in einer Beschriftung oder als Bezeichner der auf einen Begriff in einem Klassifizierungsschema verweist."@de ;
-                 rdfs:label "Format de signature"@fr ,
-                            "Format der Unterschrift"@de ,
+                 dcterms:description "Represents the format of sign language interpretation in audiovisual media (e.g., in-vision/inset, full-screen, overlay, avatar)."@en ,
+                                     "Représente le format de l’interprétation en langue des signes dans un contenu audiovisuel (p. ex. incrustation/in-vision, plein écran, superposition, avatar)."@fr ,
+                                     "Beschreibt das Format der Gebärdensprachdolmetschung in audiovisuellen Inhalten (z. B. In-Vision/Einblendung, Vollbild, Overlay, Avatar)."@de ;
+                 rdfs:label "Format de langue des signes"@fr ,
+                            "Gebärdensprachformat"@de ,
                             "Signing format"@en .
 
 
@@ -14273,7 +14272,7 @@ ec:Subject rdf:type owl:Class ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#Subtitling
 ec:Subtitling rdf:type owl:Class ;
-              rdfs:subClassOf ec:Track ,
+              rdfs:subClassOf ec:VideoTrack ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty ec:hasSubtitlingSource ;
                                 owl:allValuesFrom ec:Agent
