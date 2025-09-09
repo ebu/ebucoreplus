@@ -4972,8 +4972,8 @@ ec:audioTrackNumber rdf:type owl:DatatypeProperty ;
         "Audiospurnummer"@de .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioChannel
-ec:totalNumberOfAudioChannel rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#totalNumberOfAudioChannels
+ec:totalNumberOfAudioChannels rdf:type owl:DatatypeProperty ;
                       rdfs:range xsd:nonNegativeInteger ;
                       dcterms:description "Die Gesamtzahl der Audiokanäle, die in der der MediaResource."@de ,
                                           "Le nombre total de canaux audio contenus dans la MediaResource."@fr ,
@@ -11702,7 +11702,7 @@ ec:MediaResource rdf:type owl:Class ;
                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty ec:totalNumberOfAudioChannel ;
+                                   owl:onProperty ec:totalNumberOfAudioChannels ;
                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onDataRange xsd:nonNegativeInteger
                                  ] ,
