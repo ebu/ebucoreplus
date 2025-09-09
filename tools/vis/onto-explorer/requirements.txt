@@ -1,0 +1,5 @@
+streamlit
+rdflib
+pyvis
+rapidfuzz
+streamlit-searchbox

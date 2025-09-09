@@ -1,0 +1,16 @@
+# Normalize line endings
+* text=auto
+
+# Treat images and assets correctly
+*.png binary
+*.gif binary
+*.svg text
+
+# Improve GitHub language stats
+static/* linguist-vendored
+example_data/* linguist-documentation
+
+# Force Turtle language highlighting for .owl files written in Turtle
+*.owl linguist-language=Turtle
+*.ttl linguist-language=Turtle
+*.rq linguist-language=SPARQL

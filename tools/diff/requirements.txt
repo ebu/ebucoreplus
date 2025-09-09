@@ -1,0 +1,8 @@
+rdflib
+streamlit
+watchdog
+rapidfuzz
+pyvis
+jinja2
+matplotlib
+networkx
