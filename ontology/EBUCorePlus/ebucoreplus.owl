@@ -264,7 +264,6 @@ ec:animates rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#applyTo
 ec:applyTo rdf:type owl:ObjectProperty ;
-           owl:inverseOf ec:hasRights ;
            dcterms:description "Das Asset, auf das sich die Rechte beziehen."@de ,
                                "L'actif auquel les droits s'appliquent."@fr ,
                                "The Asset to which Rights apply."@en ;
@@ -13818,10 +13817,6 @@ ec:Rights rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty ec:applyTo ;
                             owl:allValuesFrom ec:Asset
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty ec:applyTo ;
-                            owl:allValuesFrom ec:PublicationEvent
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty ec:hasContact ;
