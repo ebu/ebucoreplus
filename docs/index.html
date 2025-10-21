@@ -5,6 +5,15 @@
     targetPage = "" + window.location.search;
     if (targetPage != "" && targetPage != "undefined")
         targetPage = targetPage.substring(1);
+    
+    // NOUVEAU : Gestion des fragments (#Agent, #hasRights, etc.)
+    var hash = window.location.hash;
+    if (hash && hash.length > 1) {
+        // Enlever le # et construire le nom du fichier
+        var fragmentName = hash.substring(1);
+        targetPage = "ec_" + fragmentName + ".html";
+    }
+    
     function loadFrames() {
         if (targetPage != "" && targetPage != "undefined")
             top.mainFrame.location = top.targetPage;
