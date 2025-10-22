@@ -23,8 +23,8 @@ st.title("Ontology Diff Analyzer")
 # ---------- Streamlit UI ---------------------------------------------
 
 
-default_old = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-1-07.ttl")
-default_new = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-2-0.ttl")
+default_old = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-1.owl")
+default_new = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-2.owl")
 
 def read_ttl_file(f):
     if f is None:
@@ -41,10 +41,24 @@ def read_ttl_file(f):
         return f
     return None
 
+def parse_graph_from_data(data):
+    g = Graph()
+    try:
+        g.parse(data=data, format="turtle")
+    except Exception:
+        try:
+            g.parse(data=data, format="xml")  # fallback for RDF/XML (.owl)
+        except Exception:
+            st.error("Could not parse file: unsupported RDF format (expected TTL or RDF/XML)")
+            st.stop()
+    return g
+
 # Sidebar
 st.sidebar.markdown("### Upload ontology versions (optional)")
-file_old = st.sidebar.file_uploader("Old version ", type=["ttl"])
-file_new = st.sidebar.file_uploader("New version ", type=["ttl"])
+
+file_old = st.sidebar.file_uploader("Old version ", type=["ttl", "owl"])
+file_new = st.sidebar.file_uploader("New version ", type=["ttl", "owl"])
+
 
 def get_default_file_obj(filepath):
     # Returns bytes, which our helper can handle
@@ -59,17 +73,15 @@ if not file_old:
 if not file_new:
     file_new = get_default_file_obj(default_new)
 
-g_old = Graph()
-g_new = Graph()
+
 data_old = read_ttl_file(file_old)
 data_new = read_ttl_file(file_new)
 if data_old is None or data_new is None:
-    st.error("Could not load ontology files. Make sure example files exist, or upload two files.")
+    st.error("❌ Could not parse ontology file. Please upload a valid TTL or RDF/XML (.owl) file.")
     st.stop()
 else:
-    g_old.parse(data=data_old, format="turtle")
-    g_new.parse(data=data_new, format="turtle")
-
+    g_old = parse_graph_from_data(data_old)
+    g_new = parse_graph_from_data(data_new)
 
 def get_filename(file_like, default_name):
     if hasattr(file_like, "name"):
