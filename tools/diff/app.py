@@ -43,29 +43,26 @@ def read_ttl_file(f):
 
 def parse_graph_from_data(data, filename_hint=None):
     g = Graph()
-    # rdflib can auto-detect format from extension if you use `source=`
-    try:
-        # If you have a filename (uploaded or default), use it directly
-        if filename_hint and os.path.exists(filename_hint):
-            g.parse(filename_hint)
-        else:
-            # Try to parse Turtle first
-            try:
-                g.parse(data=data, format="turtle")
-            except Exception:
-                # Try RDF/XML fallback (some .owl use XML syntax)
-                try:
-                    # RDF/XML expects bytes, not str
-                    if isinstance(data, str):
-                        data = data.encode("utf-8")
-                    g.parse(data=data, format="xml")
-                except Exception as e:
-                    st.error(f"❌ Could not parse file as TTL or RDF/XML: {e}")
-                    st.stop()
-    except Exception as e:
-        st.error(f"❌ Parsing failed: {e}")
-        st.stop()
-    return g
+    ext = os.path.splitext(filename_hint or "")[1].lower()
+    formats_to_try = ["turtle", "xml"] if ext != ".owl" else ["xml", "turtle"]
+
+    for fmt in formats_to_try:
+        try:
+            if fmt == "xml" and isinstance(data, str):
+                data = data.encode("utf-8")
+            g.parse(data=data, format=fmt)
+            return g
+        except Exception:
+            continue
+
+    st.error("Could not parse file: unsupported RDF format (expected TTL or RDF/XML)")
+    st.stop()
+
+
+def get_filename(file_like, default_name):
+    if hasattr(file_like, "name"):
+        return file_like.name
+    return os.path.basename(default_name)
 
 
 # Sidebar
@@ -92,17 +89,13 @@ if not file_new:
 data_old = read_ttl_file(file_old)
 data_new = read_ttl_file(file_new)
 if data_old is None or data_new is None:
-    st.error("❌ Could not parse ontology file. Please upload a valid TTL or RDF/XML (.owl) file.")
+    st.warning("Please upload or include both ontology versions (.ttl or .owl).")
     st.stop()
 else:
     g_old = parse_graph_from_data(data_old, get_filename(file_old, default_old))
     g_new = parse_graph_from_data(data_new, get_filename(file_new, default_new))
 
 
-def get_filename(file_like, default_name):
-    if hasattr(file_like, "name"):
-        return file_like.name
-    return os.path.basename(default_name)
 
 st.sidebar.write("### Loaded files:")
 st.sidebar.write(f"Old: {get_filename(file_old, default_old)}")
