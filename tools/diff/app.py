@@ -22,18 +22,17 @@ st.title("Ontology Diff Analyzer")
 
 # ---------- Streamlit UI ---------------------------------------------
 
+default_old = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus_1.owl")
+default_new = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus_2.owl")
 
-default_old = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-1.owl")
-default_new = os.path.join(CURRENT_DIR, "example_data", "ebucoreplus-2.owl")
-
-def read_ttl_file(f):
+def read_ontology_file(f):
     if f is None:
         return None
     if hasattr(f, "read"):
         try:
             f.seek(0)
         except Exception:
-            pass  # Some file objects may not support seek
+            pass
         return f.read().decode("utf-8")
     elif isinstance(f, bytes):
         return f.decode("utf-8")
@@ -41,10 +40,23 @@ def read_ttl_file(f):
         return f
     return None
 
+def get_default_file_obj(filepath):
+    try:
+        with open(filepath, "rb") as f:
+            return f.read()
+    except Exception:
+        return None
+
+def get_filename(file_like, default_name):
+    if hasattr(file_like, "name"):
+        return os.path.basename(file_like.name)
+    return os.path.basename(default_name)
+
 def parse_graph_from_data(data, filename_hint=None):
     g = Graph()
     ext = os.path.splitext(filename_hint or "")[1].lower()
-    formats_to_try = ["turtle", "xml"] if ext != ".owl" else ["xml", "turtle"]
+    formats_to_try = ["turtle", "xml"]
+
 
     for fmt in formats_to_try:
         try:
@@ -55,48 +67,33 @@ def parse_graph_from_data(data, filename_hint=None):
         except Exception:
             continue
 
-    st.error("Could not parse file: unsupported RDF format (expected TTL or RDF/XML)")
+    st.error("❌ Could not parse file: unsupported RDF format (expected TTL or RDF/XML)")
     st.stop()
-
-
-def get_filename(file_like, default_name):
-    if hasattr(file_like, "name"):
-        return file_like.name
-    return os.path.basename(default_name)
-
 
 # Sidebar
 st.sidebar.markdown("### Upload ontology versions (optional)")
 
-file_old = st.sidebar.file_uploader("Old version ", type=["ttl", "owl"])
-file_new = st.sidebar.file_uploader("New version ", type=["ttl", "owl"])
+file_old = st.sidebar.file_uploader("Old version", type=["ttl", "owl"])
+file_new = st.sidebar.file_uploader("New version", type=["ttl", "owl"])
 
-
-def get_default_file_obj(filepath):
-    # Returns bytes, which our helper can handle
-    try:
-        with open(filepath, "rb") as f:
-            return f.read()
-    except Exception:
-        return None
-
+# Fallback to defaults if nothing is uploaded
 if not file_old:
     file_old = get_default_file_obj(default_old)
 if not file_new:
     file_new = get_default_file_obj(default_new)
 
+# Read and parse files
+data_old = read_ontology_file(file_old)
+data_new = read_ontology_file(file_new)
 
-data_old = read_ttl_file(file_old)
-data_new = read_ttl_file(file_new)
 if data_old is None or data_new is None:
-    st.warning("Please upload or include both ontology versions (.ttl or .owl).")
+    st.error("Failed to load ontology files. Please ensure example_data/ebucoreplus_1.owl and ebucoreplus_2.owl exist.")
     st.stop()
-else:
-    g_old = parse_graph_from_data(data_old, get_filename(file_old, default_old))
-    g_new = parse_graph_from_data(data_new, get_filename(file_new, default_new))
 
+g_old = parse_graph_from_data(data_old, default_old)
+g_new = parse_graph_from_data(data_new, default_new)
 
-
+# Sidebar confirmation of loaded files
 st.sidebar.write("### Loaded files:")
 st.sidebar.write(f"Old: {get_filename(file_old, default_old)}")
 st.sidebar.write(f"New: {get_filename(file_new, default_new)}")
