@@ -13704,6 +13704,14 @@ ec:Resource rdf:type owl:Class ;
                               owl:allValuesFrom ec:Contract
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasCopyright ;
+                              owl:allValuesFrom ec:Copyright
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty ec:hasRights ;
+                              owl:allValuesFrom ec:Rights
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty ec:hasDateDeleted ;
                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass time:Instant
