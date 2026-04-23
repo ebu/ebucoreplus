@@ -3284,6 +3284,17 @@ ec:hasSubtitlingFormat rdf:type owl:ObjectProperty ;
                                   "Subtitling format"@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitlingLanguage
+ec:hasSubtitlingLanguage rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ec:hasLanguage ;
+                         dcterms:description "Identifier les langues de sous-titrage disponibles."@fr ,
+                                             "To identify available subtitling languages."@en ,
+                                             "Um die verfügbaren Untertitelsprachen zu ermitteln."@de ;
+                         rdfs:label "Subtitling language"@en ,
+                                    "Langue des sous-titres"@fr ,
+                                    "Untertitelungssprache"@de .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitlingSource
 ec:hasSubtitlingSource rdf:type owl:ObjectProperty ;
                        dcterms:description "Pour identifier la source du sous-titrage de la ressource."@fr ,
@@ -14665,6 +14676,10 @@ ec:Track rdf:type owl:Class ;
                            owl:onProperty ec:hasTrackType ;
                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass ec:TrackType
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasSubtitlingLanguage ;
+                           owl:allValuesFrom ec:Language
                          ] ;
          dcterms:description "Cela peut être une piste audio ou video ou timecode ou data provenant de la ressource médiatique, MediaResource."@fr ,
                              "E.g. audio, video, timcode and/or data Tracks forming the MediaResource."@en ,
