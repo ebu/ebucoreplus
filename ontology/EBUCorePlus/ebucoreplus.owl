@@ -435,9 +435,9 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAlternativeContentDescription
 ec:hasAlternativeContentDescription rdf:type owl:ObjectProperty ;
-                                    rdfs:label "contient une description de contenu alternative"@fr ,
-                                               "has alternative content description"@en ,
-                                               "hat eine alternative Inhaltsbeschreibung"@de .
+                                    dcterms:description "Links an editorial object to one of its alternative content descriptions."@en ;
+                                    rdfs:label "Has alternative content description"@en ;
+                                    skos:definition "an owl:ObjectProperty relating an ec:EditorialObject to an ec:AlternativeContentDescription"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAlternativeTitle
@@ -5356,30 +5356,16 @@ ec:Agent rdf:type owl:Class ;
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AlternativeContentDescription
 ec:AlternativeContentDescription rdf:type owl:Class ;
                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                   owl:onProperty ec:hasIdentifier ;
-                                                   owl:allValuesFrom ec:Identifier
-                                                 ] ,
-                                                 [ rdf:type owl:Restriction ;
                                                    owl:onProperty ec:hasObjectType ;
                                                    owl:allValuesFrom skos:Concept
-                                                 ] ,
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty ec:hasEndDateTime ;
-                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                   owl:onClass time:Instant
-                                                 ] ,
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty ec:hasStartDateTime ;
-                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                   owl:onClass time:Instant
                                                  ] ,
                                                  [ rdf:type owl:Restriction ;
                                                    owl:onProperty ec:contentDescription ;
                                                    owl:allValuesFrom rdfs:Literal
                                                  ] ;
-                                 rdfs:label "Alternative content description"@en ,
-                                            "Alternativer Inhaltstext"@de ,
-                                            "Description alternative du contenu"@fr .
+                                 dcterms:description "A content description is a description for a piece or a group of content."@en ;
+                                 rdfs:label "Alternative content description"@en ;
+                                 skos:definition "a description of a certain type given to an ec:EditorialObject"@en .
 
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AlternativeTitle
@@ -9806,10 +9792,6 @@ ec:PublicationEvent rdf:type owl:Class ;
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasAlternativeTitle ;
                                       owl:allValuesFrom ec:AlternativeTitle
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ec:hasAlternativeContentDescription ;
-                                      owl:allValuesFrom ec:AlternativeContentDescription
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty ec:hasConsumptionCount ;
