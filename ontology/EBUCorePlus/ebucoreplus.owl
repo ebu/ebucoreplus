@@ -433,6 +433,12 @@ ec:hasAgentPlaceOfResidence rdf:type owl:ObjectProperty ;
                             rdfs:label "Place of residence"@en ;
                             skos:definition "an owl:ObjectProperty relating an ec:Agent to an ec:Location"@en .
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAlternativeContentDescription
+ec:hasAlternativeContentDescription rdf:type owl:ObjectProperty ;
+                                    dcterms:description "Links an editorial object to one of its alternative content descriptions."@en ;
+                                    rdfs:label "Has alternative content description"@en ;
+                                    skos:definition "an owl:ObjectProperty relating an ec:EditorialObject to an ec:AlternativeContentDescription"@en .
+
 
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasAlternativeTitle
 ec:hasAlternativeTitle rdf:type owl:ObjectProperty ;
@@ -5347,6 +5353,21 @@ ec:Agent rdf:type owl:Class ;
 - a consumption device manufacturing enterprise"""@en .
 
 
+###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AlternativeContentDescription
+ec:AlternativeContentDescription rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ec:hasObjectType ;
+                                                   owl:allValuesFrom skos:Concept
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ec:contentDescription ;
+                                                   owl:allValuesFrom rdfs:Literal
+                                                 ] ;
+                                 dcterms:description "A content description is a description for a piece or a group of content."@en ;
+                                 rdfs:label "Alternative content description"@en ;
+                                 skos:definition "a description of a certain type given to an ec:EditorialObject"@en .
+
+
 ###  http://www.ebu.ch/metadata/ontologies/ebucoreplus#AlternativeTitle
 ec:AlternativeTitle rdf:type owl:Class ;
                     rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -7369,6 +7390,10 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasAlternativeTitle ;
                                      owl:allValuesFrom ec:AlternativeTitle
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty ec:hasAlternativeContentDescription ;
+                                     owl:allValuesFrom ec:AlternativeContentDescription
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasAssociatedProductionJob ;
