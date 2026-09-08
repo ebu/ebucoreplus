@@ -23,7 +23,7 @@ EBUCorePlus aims to serve as a plug and play framework. It can be used out of th
 The ontology is developed by the EBU Metadata Modelling Working Group as an open source project on github. Requests for changes and improvements can be submitted by EBU Members, media organizations or anybody else from the media community. The EBUCorePlus Editorial Committee reviews requests and implements changes. 
 </p>
 <p >
-The <a href="https://tech.ebu.ch/groups/mm"> EBU Metadata Modelling Working Group </a> have regular meetings to discuss the updates, you can contact , <a href="mailto:rouxel@ebu.ch"> to set-up a dedicated meeting.
+The <a href="https://tech.ebu.ch/groups/mm"> EBU Metadata Modelling Working Group </a> have regular meetings to discuss the updates, you can contact , <a href="mailto:rouxel@ebu.ch"> me </a> to set-up a dedicated meeting.
 </p>
 <p>
 The <a href="https://github.com/ebu/ebucoreplus/tree/main/tools/vis/onto-explorer">Ontology Explorer</a> is a Streamlit-based web app that allows users to explore the EBUCorePlus ontology through an interactive interface combining fuzzy search, domain-based browsing, and semantic graph visualization.
