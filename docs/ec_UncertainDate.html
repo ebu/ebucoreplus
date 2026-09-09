@@ -14,51 +14,27 @@ Class 'Uncertain date'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-La date exprimée sous la forme d'un intervalle entre le début et la fin, pour les dates incertaines. Des informations supplémentaires peuvent être écrites dans la propriété description.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Das Datum, ausgedrückt als Intervall zwischen Start und Ende, für unsichere Daten. Zusätzliche Informationen können in der Eigenschaft Beschreibung angegeben werden
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-The date expressed as an interval between start and end, for uncertain dates. Aditional infomation can be written in the description property
+A time stamp that is lacking exactness can be expressed by the following scheme: omit information from small to large time units: omit seconds, then minutes, then hours, then days, then months, then years. To express a period of time with lacking exactness, define a start and end time stamp using the described uncertainty scheme.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ungewisses Datum
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Date incertaine
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -69,14 +45,8 @@ Uncertain date
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -85,37 +55,55 @@ Anything that
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at most one <A href="ec_period.html">period</A>
+<A href="ec_period.html">Period</A> max 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasEndDateTime.html">End date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> max 1 <A href="skos_Concept.html">Concept</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasStartDateTime.html">Start date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="owl_disjointWith.html">disjointWith</A></FONT></B>
+<B><FONT size="-1">disjointWith</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.gif" width="16" height="16"></TD><TD><FONT size="-1">
 <A href="time_DateTimeDescription.html">Date-time description</A></FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+a time:Instant that can express missing exactness of a time stamp or a period of time
+</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>

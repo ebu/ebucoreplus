@@ -14,41 +14,26 @@ Class 'Publication plan  [ec:PublicationPlan]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Un PublicationPlan décrit un calendrier de PublicationEvents ainsi que leurs audiences. La réalisation d'un plan de publication, PublicationPlan, peut nécessiter l'acquisition ou la création spécifique d'un contenu défini comme une paire d'objets éditoriaux, EditorialObjects, et d'essences, d'Essence. Ceci se produit par le biais d'ordres de production, ProductionOrders.
-Un plan de publication peut être le résultat de plans ou sous plans de publication associés.
-Exemple 1 : Une campagne publicitaire pour un produit consiste en un ensemble d'événements de publication, PublicationPlan, planifiée.
-Exemple 2 : Un film de fiction est promu avec plusieurs bandes annonces publiées avant la publication du film.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-A PublicationPlan describes a schedule of PublicationEvents (and their Audiences). The realisation of a PublicationPlan may require the specific acquisition or creation of content defined as a pair of EditorialObjects and Essence, which occurs through ProductionOrders. A PublicationPlan can be the result of associated Publication(sub)Plans. Examples: Example 1: A campaign of commercials for a product, consists of set of planned PublicationEvents. Example 2: A fiction film is promoted with several trailers published before the publication of the film.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ein Publikationsplan beschreibt eine Zeitplan von Publikationsereignissen und ihre Publika. Die Realisierung eines Publikationsplan erfordert möglicherweise den Einkauf oder die Herstellung von Medienprodukten (Medieninhalt mit Essenz), ausgelöst durch einen Produktionsauftrag. Ein Publikationsplan kann aus mehreren Publikationsplänen zusammengesetzt werden. Beispiele 1: Eine Werbekampagne für ein neues Produkt besteht aus einer Reihe geplanter Veröffentlichungsereignisse. Beispiel 2: Ein Film wird durch mehrere Trailer beworben, bevor er veröffentlicht wird.
+A collection of scheduled publication events related to a targeted audience (e.g. a list of publications for sports lovers), promotion material for a content (e.g. a campaign of several commercials for a product), a time span in a media service (e.g. a full day's programme in a linear service), or other useful criteria.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -56,118 +41,106 @@ Ein Publikationsplan beschreibt eine Zeitplan von Publikationsereignissen und ih
 Publication plan
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Plan de publication
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Publikationsplan
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasPublicationPlanMember.html">Publication plan member.s</A> that are a <A href="ec_PublicationPlan.html">Publication plan</A>
+<A href="ec_hasAsset.html">Asset  [ec:hasAsset]</A> only <A href="ec_Asset.html">Asset  [ec:Asset]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasStakeholder.html">stakeholders</A> that are an <A href="ec_Agent.html">Agent</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAssociatedProductionOrder.html">associated production orders</A> that are a <A href="ec_ProductionOrder.html">Production order</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isMemberOf.html">is member ofs</A> that are a <A href="ec_PublicationPlan.html">Publication plan</A>
+<A href="ec_hasPublicationPlanMember.html">Publication plan member</A> only <A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAsset.html">assets</A> that are an <A href="ec_Asset.html">Asset</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasBusinessContract.html">business contracts</A> that are a <A href="ec_Contract.html">Contract</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasEndDateTime.html">End date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasStartDateTime.html">Start date time</A> max 1 <A href="time_Instant.html">Time instant</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_publicationPlanTitle.html">Publication plan title</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasAssociatedProductionOrder.html">Production order  [ec:hasAssociatedProductionOrder]</A> only <A href="ec_ProductionOrder.html">Production order  [ec:ProductionOrder]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasStakeholder.html">Publication plan stakeholder</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isMemberOf.html">Member of</A> only <A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasPublicationPlanStatus.html">PublicationPlan status</A> max 1 <A href="skos_Collection.html">Collection  [skos:Collection]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLSomeValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at least one <A href="ec_hasPublicationEvent.html">publication event</A> that is a <A href="ec_PublicationEvent.html">Publication event</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasPublicationEvent.html">Publication event  [ec:hasPublicationEvent]</A> some <A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasBusinessContract.html">Business contract</A> only <A href="ec_Contract.html">Contract  [ec:Contract]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_publicationPlanTitle.html">publication plan titles</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -178,19 +151,7 @@ Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are 
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-a schedule for one or many PublicationEvents to address a target audience, or a hierarchy of PublicationPlans
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-ein Zeitplan für eine oder mehrere Publikationsereignissen, um eine Zielgruppe anzusprechen, oder eine Hierarchie von Publikationsereignissen
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cible, ou une hiérarchie de PublicationPlans
+a collection of scheduled ec:PublicationEvents related to a targeted ec:Audience, promotion material for an ec:EditorialObject, a time span in a ec:PublicationService or other useful criteria
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -199,24 +160,6 @@ un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cibl
 <TD>
 <B><FONT size="-1"><A href="skos_example.html">example</A></FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- das geplante Datum, die Uhrzeit und den Kanal für die Veröffentlichung eines Films
-- die geplanten Daten, Uhrzeiten und Kanäle für die Veröffentlichung der Episoden einer Serie
-- das geplante Programm eines Senders für einen Tag
-- die geplanten Daten, Uhrzeiten und Kanäle für eine Sammlung von Inhalten zu einem gemeinsamen Thema
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- la date, l'heure et le canal prévus pour la publication d'un film
-- les dates, heures et chaînes prévues pour la publication des épisodes d'un feuilleton
-- l'horaire prévu pour une chaîne pendant une journée
-- les dates, heures et canaux prévus pour une collection de contenus sur un thème commun
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -234,7 +177,7 @@ un plan pour un ou plusieurs PublicationEvents pour s'adresser à un public cibl
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>,&nbsp;<A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>,&nbsp;<A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>,&nbsp;<A href="ec_PublicationPlan.html">Publication plan  [ec:PublicationPlan]</A>,&nbsp;<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

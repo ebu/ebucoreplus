@@ -14,38 +14,26 @@ Class 'Character  [ec:Character]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Par exemple, un contact / une personne fictive.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-E.g. a fictitious contact / person.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Z.B. ein fiktiver Kontakt / eine fiktive Person.
+A character is played by an actor in a screenplay or drama.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -53,40 +41,28 @@ Z.B. ein fiktiver Kontakt / eine fiktive Person.
 Character
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Rolle
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Caractère
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasEmbodyingArtefact.html">embodying artefacts</A> that are an <A href="ec_Artefact.html">Artefact</A>
+<A href="ec_hasEmbodyingArtefact.html">Is embodied by  [ec:hasEmbodyingArtefact]</A> only <A href="ec_Artefact.html">Artefact [ec:Artefact]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isPlayedBy.html">is played bies</A> that are an <A href="ec_Involvement.html">Involvement</A>
+<A href="ec_isPortrayedBy.html">Is portrayed by</A> only <A href="ec_Animal.html">Animal [ec:Animal]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isPlayedBy.html">Is played by</A> only <A href="ec_Involvement.html">Involvement [ec:Involvement]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
@@ -96,14 +72,26 @@ Anything that
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isPortrayedBy.html">is portrayed bies</A> that are an <A href="ec_Animal.html">Animal</A>
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasFictitiousPerson.html">Fictitious contact</A> max 1 <A href="ec_Person.html">Person [ec:Person]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isAnimatedBy.html">is animated bies</A> that are a <A href="ec_Person.html">Person</A>
+<A href="ec_isAnimatedBy.html">Is animated by</A> only <A href="ec_Person.html">Person [ec:Person]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+a fictitious ec:Person in a screenplay or drama
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -114,7 +102,7 @@ Anything that has only <A href="ec_isAnimatedBy.html">is animated bies</A> that 
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_Involvement.html">Involvement [ec:Involvement]</A>,&nbsp;<A href="ec_TextLine.html">Text line  [ec:TextLine]</A>,&nbsp;<A href="ec_Animal.html">Animal [ec:Animal]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Agent.html">Agent  [ec:Agent]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_TextLine.html">Text line  [ec:TextLine]</A>,&nbsp;<A href="ec_Involvement.html">Involvement [ec:Involvement]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Animal.html">Animal [ec:Animal]</A>,&nbsp;<A href="ec_Agent.html">Agent  [ec:Agent]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

@@ -10,18 +10,30 @@ Class 'Audio programme  [ec:AudioProgramme]'</H2>
 <HR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1"><A href="dcterms_description.html">dcterms:description</A></FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+A whole programme with its descriptive metadata according to the EBU R128 loudness standard and its set of loudness parameters.
+</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_isDefinedBy.html">isDefinedBy [rdfs:isDefinedBy]</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+Class  [owl:Class]</FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1">isDefinedBy [rdfs:isDefinedBy]</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -33,38 +45,20 @@ Class 'Audio programme  [ec:AudioProgramme]'</H2>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Programme audio
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
 Audio programme
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Audio Programm
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at most one <A href="ec_loudnessMethod.html">loudness method</A>
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -73,31 +67,37 @@ Anything that has at most one <A href="ec_loudnessMethod.html">loudness method</
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_loudnessRange.html">Loudness range</A> exactly 1 float
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_loudnessMaxTruepeak.html">Max true peak loudness</A> exactly 1 float
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_loudnessMethod.html">Loudness method</A> max 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_loudnessIntegratedLoudness.html">Integrated loudness</A> exactly 1 float
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_loudnessMaxMomentary.html">Max momentary loudness</A> exactly 1 float
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_loudnessMaxShortTerm.html">Max short term loudness</A> exactly 1 float
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -108,22 +108,8 @@ Anything that
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ein einzelner, in sich geschlossener audiovisueller oder reiner Audiobeitrag, der im Radio, Fernsehen oder anderen elektronischen Medien präsentiert wird. Auch Werbung (Werbespot), Trailer, Werbebeiträge („Promo“), Interstitials oder ähnliche Beiträge („Kurzformat-Inhalte“) gelten in diesem Zusammenhang als "AudioProgramme".
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-An individual, self-contained audio-visual or audio-only item to be presented in Radio, Television or other electronic media. An advertisement (commercial), trailer, promotional item (‘promo’),
-interstitial or similar item (“Short-form Content”) shall also be
-considered to be an (Audio)programme in this context.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Un élément audiovisuel individuel et autonome, ou uniquement audio, destiné à être diffusé à la radio, à la télévision ou sur d'autres supports électroniques. Une publicité (annonce), une bande-annonce, un élément promotionnel (promo), un interstitiel ou un élément similaire (le « contenu court ») est également considéré comme un "AudioProgramme" dans ce contexte.
+an ec:EditorialWork of audio signals that are described according to the EBU R128 loudness standard
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -134,7 +120,7 @@ Un élément audiovisuel individuel et autonome, ou uniquement audio, destiné �
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

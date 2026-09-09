@@ -15,50 +15,26 @@ Class 'Track  [ec:Track]'</H2>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-E.g. audio, video, timcode and/or data Tracks forming the MediaResource.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-z.B. Audio-, Video-, Timecode- und/oder Datenspuren bilden eine MedienResource.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Cela peut être une piste audio ou video ou timecode ou data provenant de la ressource médiatique, MediaResource.
+E.g. audio, video, timecode and/or data Tracks forming the MediaResource.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Piste
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Spur
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -69,30 +45,30 @@ Track
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasTrackType.html">Track name</A> max 1 <A href="ec_TrackType.html">Track type</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasTrackPurpose.html">Track purpose  [ec:hasTrackPurpose]</A> max 1 <A href="ec_TrackPurpose.html">Track purpose  [ec:TrackPurpose]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasTrackPart.html">Track part source  [ec:hasTrackPart]</A> only <A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.gif" width="16" height="16"></TD><TD><FONT size="-1">
 <A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A></FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTrackPart.html">Track part sources</A> that are a <A href="ec_MediaResource.html">Media resource</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -102,20 +78,8 @@ Anything that
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-une MediaResource sous forme d'éléments temporels pour l'audio, la vidéo ou les données ("piste") comprise dans une MediaResource "agrégée".
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-a MediaResource in the form of time-based elements for audio, video or data ("track") comprised in an "aggregated" MediaResource.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-eine MedienResource in Form von zeitbasierten Elementen für Audio, Video oder Daten ("Track"), die in einer "aggregierten" MedienResource enthalten sind.
+a MediaResource in the form of time-based elements for audio, video or data ("track") comprised in an "aggregated" MediaResource
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -126,20 +90,8 @@ eine MedienResource in Form von zeitbasierten Elementen für Audio, Video oder D
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- l'audio dans un fichier vidéo MPEG4
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
 - the audio in a MPEG4 video file
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- das Audio in einer MPEG4-Videodatei
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -150,7 +102,7 @@ eine MedienResource in Form von zeitbasierten Elementen für Audio, Video oder D
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_VideoTrack.html">Video track  [ec:VideoTrack]</A>,&nbsp;<A href="ec_DataTrack.html">Data track  [ec:DataTrack]</A>,&nbsp;<A href="ec_Captioning.html">Captioning  [ec:Captioning]</A>,&nbsp;<A href="ec_Signing.html">Signing [ec:Signing]</A>,&nbsp;<A href="ec_Subtitling.html">Subtitling  [ec:Subtitling]</A>,&nbsp;<A href="ec_TimecodeTrack.html">Timecode track  [ec:TimecodeTrack]</A>,&nbsp;<A href="ec_MetadataTrack.html">Metadata track  [ec:MetadataTrack]</A>,&nbsp;<A href="ec_AudioTrack.html">Audio track  [ec:AudioTrack]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_VideoTrack.html">Video track  [ec:VideoTrack]</A>,&nbsp;<A href="ec_DataTrack.html">Data track  [ec:DataTrack]</A>,&nbsp;<A href="ec_Captioning.html">Captioning  [ec:Captioning]</A>,&nbsp;<A href="ec_Signing.html">Signing [ec:Signing]</A>,&nbsp;<A href="ec_Subtitling.html">Subtitling  [ec:Subtitling]</A>,&nbsp;<A href="ec_TimecodeTrack.html">Timecode track  [ec:TimecodeTrack]</A>,&nbsp;<A href="ec_MetadataTrack.html">Metadata track  [ec:MetadataTrack]</A>,&nbsp;<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_AudioTrack.html">Audio track  [ec:AudioTrack]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

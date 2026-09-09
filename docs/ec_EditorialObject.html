@@ -14,80 +14,27 @@ Class 'Editorial object  [ec:EditorialObject]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Un EditorialObject rassemble toutes les informations descriptives d'un objet à réaliser comme une MediaResource ou une collection de MediaResource. Un EditorialObject décrit une idée, une histoire. Il est utilisé pour transformer un concept en une définition éditoriale, une MediaResource avant sa fabrication (domaine de la production) et sa distribution (domaine de la distribution).
-Un EditorialObject est un ensemble de métadonnées descriptives résumant, par exemple, les décisions d'édition. Un EditorialObject peut être un groupe d'EditorialObjects. Un EditorialObject peut également faire partie d'un autre EditorialObject, qui est défini par son heure de début et sa durée.
-Les objets éditoriaux peuvent être ordonnés soit en tant que groupes, soit en tant qu'éléments sur une ligne de temps.
- Exemples d'EditorialObjects simples : Programme, Article, Une prise de vue, Une Partie, etc.
-Exemples de groupes d'EditorialObjects : Marque, Série, Collection, etc.
-
-Un cas d'utilisation simplifié :
-------------------------
-Un journal télévisé se compose de deux éléments d'information. L'un d'entre eux contient les dix dernières secondes d'une interview d'une minute provenant d'une autre source (c'est-à-dire entre la seconde 50 et la seconde 60).
-Cette situation pourrait être modélisée comme suit :
-o NewsBroadcast est lié à un MediaResource à l'aide de la propriété instantiates.
-o NewsItems sont liés au NewsBroadcast à l'aide d'un TimelineTrack. Tech 3351 EBU CCDM 13
-o L'InterviewPart est liée au NewsItem à l'aide de la propriété hasMember. Start et Duration sont des propriétés de l'InterviewPart qui indiquent son apparence dans le NewsItem.
-o L'InterviewPart est liée à sa source originale à l'aide de la propriété existsAs.
-o L'interview instancie une MediaResource, qui à son tour est liée à la MediaResource du NewsBroadcast à l'aide de la propriété hasSource.
-o Représentation de la segmentation : Les TimelineTracks sont préférés aux hasPart-properties, lorsqu'un récapitulatif est nécessaire, par exemple pour la diffusion.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ein Medieninhalt versammelt sämtliche deskriptiven informationen über ein Objekt, das als Resource (oder eine Menge davon) realisiert werden soll. Der Medieninhalt beschreibt eine Idee, eine Geschichte und wird benutzt, um ein Konzept in eine inhaltliche Festlegung einer Resource zu erreichen, und zwar vor der Herstellung und der Verbreitung.
-
-Ein Medieninhalt besteht aus einer Menge beschreibender Metadaten, z.B. Schnittlisten. Ein Medieninhalt kann eine Gruppe von anderen Medieninhalten sein. Ein Medieninhalt kann auch Teil eines anderen Medieninhalts sein, was durch den Zeitpunkt des Beginns und die Dauer dafiniert wird. Medieninhalte können gruppiert werden or entlang einer Zeitachse angeordnet werden.
-
-Beispiele für einfache Medieninhalte: Sendung, Beitrag, Szene
-Beispiele für Gruppierungen: Marke, Serie, Reihe, Sammlung
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain). An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline. Examples of simple EditorialObjects: Programme, Item, Shot,Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc.
-
-A simplifieduse-case:
-A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50">60" ). This could be modelled as follows:
-• The NewsBroadcast is linked to a MediaResource using the instantiates-property
-• The NewsItems are linked to the NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13
-• The InterviewPart is linked to the NewsItem using the hasMember-property. Start and Duration are properties within the InterviewPart indicating its appearance within the NewsItem2.
-• The InterviewPart is linked to its original source using the existsAs-property
-• The Interview instantiates a MediaResource, which in turn is linked from the MediaResource of the NewsBroadcast using the hasSource-property
-• Representation of segmentation: TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for playout.
+An EditorialObject collects all the descriptive information about an object to be realised as a single MediaResource or a collection thereof. An «EditorialObject» describes any idea, any story and will be used to transform a concept into an editorial definition of a MediaResource before fabrication (Production Domain) and Distribution (Distribution Domain). An «EditorialObject» is a set of descriptive metadata summarising e.g. editing decisions. An «EditorialObject» can be a group of EditorialObjects. An «EditorialObject» can also be a part of another «EditorialObject», which is defined by its start time and duration. EditorialObjects can be ordered either as groups or as items on a timeline. Examples of simple EditorialObjects: Programme, Item, Shot, Part, etc. Examples of Groups: Brand, Series, Serial, Collection, etc. A simplified use-case: A news broadcast consists of two news items. One news item contains the last ten seconds of a one minute long interview taken from another source (i.e. 50">60" ). This could be modelled as follows: • The NewsBroadcast is linked to a MediaResource using the instantiates-property • The NewsItems are linked to the NewsBroadcast using a TimelineTrack. Tech 3351 EBU CCDM 13 • The InterviewPart is linked to the NewsItem using the hasMember-property. Start and Duration are properties within the InterviewPart indicating its appearance within the NewsItem2. • The InterviewPart is linked to its original source using the existsAs-property • The Interview instantiates a MediaResource, which in turn is linked from the MediaResource of the NewsBroadcast using the hasSource-property • Representation of segmentation: TimelineTracks are preferred over hasPart-properties, when a rundown is needed, e.g. for playout.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Objet éditorial
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Medieninhalt
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -98,402 +45,348 @@ Editorial object
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_contentDescription.html">content descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasBrand.html">Brand  [ec:hasBrand]</A> only <A href="ec_MarketingBrand.html">Brand  [ec:MarketingBrand]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isVersionOf.html">is version ofs</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
+<A href="ec_hasTimelineTrack.html">Timeline track  [ec:hasTimelineTrack]</A> only <A href="ec_TimelineTrack.html">Timeline track  [ec:TimelineTrack]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_log.html">logs</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasTargetChannel.html">Has target channel</A> only <A href="ec_PublicationChannel.html">Publication channel  [ec:PublicationChannel]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasPublisher.html">Publishers</A> that are an <A href="ec_Involvement.html">Involvement</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isMemberOf.html">is member ofs</A> that are an <A href="ec_EditorialGroup.html">Editorial group</A>
+<A href="ec_hasCommissioningContract.html">Contract  [ec:hasCommissioningContract]</A> only <A href="ec_Contract.html">Contract  [ec:Contract]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasParentEditorialObject.html">parent editorial objects</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCrewMember.html">crew members</A> that are a <A href="ec_CrewMember.html">Crew member</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasOriginalLanguage.html">original languages</A> that are a <A href="ec_Language.html">Language</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasVersion.html">versions</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAudioDescription.html">audio descriptions</A> that are an <A href="ec_AudioDescription.html">Audio description</A>
+<A href="ec_hasDuration.html">Has duration</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasDateBroadcast.html">Broadcast date</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_shotLog.html">Shot logs</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_pubStatus.html">Publication status</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_abstract.html">Abstract</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasDateIssued.html">Date issued</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAssociatedProductionJob.html">Production jobs</A> that are a <A href="ec_ProductionJob.html">Production job</A>
+<A href="ec_comments.html">Comments</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isAbout.html">Is about</A> only <A href="ec_Asset.html">Asset  [ec:Asset]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasCreator.html">Creator  [ec:hasCreator]</A> only <A href="ec_Involvement.html">Involvement [ec:Involvement]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_summary.html">Summary</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasTargetAudience.html">Target audience  [ec:hasTargetAudience]</A> only <A href="ec_Audience.html">Audience [ec:Audience]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_isNextInSequence.html">Next</A> max 1 <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasEditorialFormat.html">editorial formats</A> that are an <A href="ec_EditorialFormat.html">Editorial format</A>
+<A href="ec_hasOriginalLanguage.html">Original language</A> only <A href="ec_Language.html">Language  [ec:Language]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_log.html">Log</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTargetChannel.html">target channels</A> that are a <A href="ec_PublicationChannel.html">Publication channel</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasManifestation.html">manifestations</A> that are a <A href="ec_Resource.html">Resource</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_promotionalInformation.html">Promotional informations</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_folksonomy.html">Folksonomies</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_tableOfContent.html">Table of contents</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isDistributedOn.html">is distributed ons</A> that are a <A href="ec_PublicationService.html">Publication service</A>
+<A href="ec_orientation.html">Orientation</A> max 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasSigning.html">signings</A> that are a <A href="ec_Signing.html">Signing</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasPublication.html">publications</A> that are a <A href="ec_PublicationEvent.html">Publication event</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTargetPlatform.html">target platforms</A> that are a <A href="ec_PublicationPlatform.html">Publication platform</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasKeyword.html">keywords</A> that are a <A href="ec_Keyword.html">Keyword</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_tag.html">tags</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasLocation.html">Location  [ec:hasLocation]</A> max 1 <A href="ec_Location.html">Location  [ec:Location]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_partTotalNumber.html">Part total number</A> max 1 integer
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedEvent.html">related events</A> that are an <A href="ec_Event.html">Event</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAlternativeTitle.html">alternative titles</A> that are an <A href="ec_AlternativeTitle.html">Alternative title</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isExtractOf.html">is extract ofs</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasEditorialFormatOf.html">Same editorial formats</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_requires.html">Requires</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_references.html">references</A> that are a <A href="ec_BibliographicalObject.html">Bibliographical object</A>
+<A href="ec_hasRelatedEvent.html">Related event</A> only <A href="ec_Event.html">Event [ec:Event]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_isPreviousInSequence.html">Preceding</A> max 1 <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isInstantiatedBy.html">is instantiated bies</A> that are a <A href="ec_MediaResource.html">Media resource</A>
+<A href="ec_hasGenre.html">Genre  [ec:hasGenre]</A> only <A href="skos_Concept.html">Concept</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_playlist.html">playlists</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasVersion.html">Version  [ec:hasVersion]</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedAudioProgramme.html">related audio programmes</A> that are an <A href="ec_AudioProgramme.html">Audio programme</A>
+<A href="ec_playlist.html">Playlist</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_bookmark.html">bookmarks</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasCoverage.html">Coverage</A> only Thing
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedEditorialObject.html">related editorial objects</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
+<A href="ec_represents.html">Related asset  [ec:represents]</A> only <A href="ec_Asset.html">Asset  [ec:Asset]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedMediaResource.html">related media resources</A> that are a <A href="ec_MediaResource.html">Media resource</A>
+<A href="ec_hasRelatedMediaResource.html">Related media resource</A> only <A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRating.html">Ratings</A> that are a <A href="ec_Rating.html">Rating</A>
+<A href="ec_hasRating.html">Rating  [ec:hasRating]</A> only <A href="ec_Rating.html">Rating  [ec:Rating]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedAward.html">related awards</A> that are an <A href="ec_Award.html">Award</A>
+<A href="ec_promotionalInformation.html">Promotional information</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_coversLocation.html">covers locations</A> that are a <A href="ec_Location.html">Location</A>
+<A href="ec_hasTopic.html">Topic  [ec:hasTopic]</A> only <A href="ec_Topic.html">Topic  [ec:Topic]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_represents.html">represents</A> that are an <A href="ec_Asset.html">Asset</A>
+<A href="ec_contentDescription.html">Content description</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasEditorialFormatOf.html">Same editorial format</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasAlternativeTitle.html">Has alternative title</A> only <A href="ec_AlternativeTitle.html">Alternative title</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasTargetService.html">Has target service</A> only <A href="ec_PublicationService.html">Publication service</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasManifestation.html">Manifestation</A> only <A href="ec_Resource.html">Resource  [ec:Resource]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isRequiredBy.html">Required</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasContentEditorialFormat.html">Editorial format  [ec:hasContentEditorialFormat]</A> only <A href="ec_ContentEditorialFormat.html">Editorial format  [ec:ContentEditorialFormat]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_productionSynopsis.html">Production synopsis</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_references.html">References</A> only <A href="ec_BibliographicalObject.html">Bibliographical object</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_requires.html">Requires</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_resolution.html">Resolution</A> max 1 string
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_coversEvent.html">Covers event</A> only <A href="ec_Event.html">Event [ec:Event]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedAudioProgramme.html">Audio programme  [ec:hasRelatedAudioProgramme]</A> only <A href="ec_AudioProgramme.html">Audio programme  [ec:AudioProgramme]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasKeyword.html">Keyword  [ec:hasKeyword]</A> only <A href="ec_Keyword.html">Keyword  [ec:Keyword]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasAudioDescription.html">Audio description  [ec:hasAudioDescription]</A> only <A href="ec_AudioDescription.html">Audio description  [ec:AudioDescription]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_shotLog.html">Shot log</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasPublisher.html">Publisher  [ec:hasPublisher]</A> only <A href="ec_Involvement.html">Involvement [ec:Involvement]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasContributor.html">Contributor  [ec:hasContributor]</A> only <A href="ec_Involvement.html">Involvement [ec:Involvement]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_tableOfContent.html">Table of content</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasSubject.html">Subject  [ec:hasSubject]</A> only <A href="ec_Subject.html">Subject  [ec:Subject]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasPart.html">Part</A> only <A href="ec_EditorialSegment.html">Editorial segment</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLSomeValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at least one <A href="ec_title.html">title</A> that is a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_title.html">Title  [ec:title]</A> some Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_summary.html">summaries</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasPublication.html">Publication event  [ec:hasPublication]</A> only <A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isAbout.html">is abouts</A> that are an <A href="ec_Asset.html">Asset</A>
+<A href="ec_hasSigning.html">Accessibility - signing</A> only <A href="ec_Signing.html">Signing [ec:Signing]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTheme.html">themes</A> that are a <A href="ec_Theme.html">Theme</A>
+<A href="ec_hasReview.html">Review  [ec:hasReview]</A> only <A href="ec_Review.html">Review  [ec:Review]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isTimelineTrackPartOf.html">is timeline track part ofs</A> that are a <A href="ec_TimelineTrack.html">Timeline track</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasSubtitling.html">subtitlings</A> that are a <A href="ec_Subtitling.html">Subtitling</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasPublicationHistory.html">Publication histories</A> that are a <A href="ec_PublicationHistory.html">Publication History</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasContentEditorialFormat.html">content editorial formats</A> that are a <A href="ec_ContentEditorialFormat.html">Content editorial format</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCoverage.html">coverages</A> that are a <A href="owl_Thing.html">Thing</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_existsAs.html">exists as</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTargetAudience.html">target audiences</A> that are an <A href="ec_Audience.html">Audience</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedTextLine.html">related text lines</A> that are a <A href="ec_TextLine.html">Text line</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_highlights.html">highlights</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCastMember.html">cast members</A> that are a <A href="ec_CastMember.html">Cast member</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_pubStatus.html">pub status</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isRequiredBy.html">is required bies</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCommissioningContract.html">commissioning contracts</A> that are a <A href="ec_Contract.html">Contract</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_references.html">References</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
@@ -504,193 +397,247 @@ Anything that
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedAudioContent.html">related audio contents</A> that are an <A href="ec_AudioContent.html">Audio content</A>
+<A href="ec_isExtractOf.html">Is extract of</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasProducer.html">producers</A> that are an <A href="ec_Agent.html">Agent</A>
+<A href="ec_isDistributedOn.html">Platform/service/publication channel</A> only <A href="ec_PublicationService.html">Publication service</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCreator.html">creators</A> that are an <A href="ec_Involvement.html">Involvement</A>
+<A href="ec_isInstantiatedBy.html">Media resource  [ec:isInstantiatedBy]</A> only <A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasSubject.html">subjects</A> that are a <A href="ec_Subject.html">Subject</A>
+<A href="ec_hasProducer.html">Producer</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_coversEvent.html">covers events</A> that are an <A href="ec_Event.html">Event</A>
+<A href="ec_approvedBy.html">Agent  [ec:approvedBy]</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasGenre.html">genres</A> that are a <A href="skos_Concept.html">Concept</A>
+<A href="ec_hasTheme.html">Theme  [ec:hasTheme]</A> only <A href="ec_Theme.html">Theme  [ec:Theme]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasPart.html">parts</A> that are an <A href="ec_EditorialSegment.html">Editorial Segment</A>
+<A href="ec_hasRelatedEditorialObject.html">Related editorial object  [ec:hasRelatedEditorialObject]</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at most one <A href="ec_position.html">position</A>
+<A href="ec_hasEnd.html">Has end</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_synopsis.html">synopsis</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasLanguage.html">Language  [ec:hasLanguage]</A> only <A href="ec_Language.html">Language  [ec:Language]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_abstract.html">abstracts</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasParentEditorialObject.html">Parent editorial object</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_productionSynopsis.html">production synopsis</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasCharacter.html">Character  [ec:hasCharacter]</A> only <A href="ec_Character.html">Character  [ec:Character]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasBrand.html">brands</A> that are a <A href="ec_MarketingBrand.html">Marketing brand</A>
+<A href="ec_isVersionOf.html">Version of</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasReview.html">reviews</A> that are a <A href="ec_Review.html">Review</A>
+<A href="ec_hasSubtitling.html">Subtitling  [ec:hasSubtitling]</A> only <A href="ec_Subtitling.html">Subtitling  [ec:Subtitling]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTimelineTrack.html">timeline tracks</A> that are a <A href="ec_TimelineTrack.html">Timeline track</A>
+<A href="ec_hasRelatedAward.html">Related award</A> only <A href="ec_Award.html">Award [ec:Award]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasCastMember.html">Cast member  [ec:hasCastMember]</A> only <A href="ec_CastMember.html">Cast member  [ec:CastMember]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isMemberOf.html">Member of</A> only <A href="ec_EditorialGroup.html">Editorial group</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_coversLocation.html">Covers location</A> only <A href="ec_Location.html">Location  [ec:Location]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasPublicationHistory.html">Publication history  [ec:hasPublicationHistory]</A> only <A href="ec_PublicationHistory.html">Publication history  [ec:PublicationHistory]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasVersionType.html">Version type</A> only <A href="skos_Concept.html">Concept</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_script.html">Script</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_tag.html">Tag</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedAudioContent.html">Audio content  [ec:hasRelatedAudioContent]</A> only <A href="ec_AudioContent.html">Audio content  [ec:AudioContent]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_isTimelineTrackPartOf.html">Timeline track part  [ec:isTimelineTrackPartOf]</A> only <A href="ec_TimelineTrack.html">Timeline track  [ec:TimelineTrack]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasVersionType.html">Version types</A> that are a <A href="skos_Concept.html">Concept</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedAnimal.html">related animals</A> that are an <A href="ec_Animal.html">Animal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCaptioning.html">captionings</A> that are a <A href="ec_Captioning.html">Captioning</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasContributor.html">Contributors</A> that are an <A href="ec_Involvement.html">Involvement</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTopic.html">Topics</A> that are a <A href="ec_Topic.html">Topic</A>
+<A href="ec_position.html">Position</A> max 1
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_rightsClearanceFlag.html">Rights clearance flag</A> max 1 boolean
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedAnimal.html">Related animal</A> only <A href="ec_Animal.html">Animal [ec:Animal]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_highlights.html">Highlights</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasCrewMember.html">Crew member</A> only <A href="ec_CrewMember.html">Crew</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_synopsis.html">Synopsis</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has at most one <A href="ec_orientation.html">orientation</A>
+<A href="ec_hasStart.html">Start</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_references.html">references</A> that are an <A href="ec_EditorialObject.html">Editorial object</A>
+<A href="ec_existsAs.html">Editorial object  [ec:existsAs]</A> only <A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_comments.html">comments</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasRelatedTextLine.html">Related text line</A> only <A href="ec_TextLine.html">Text line  [ec:TextLine]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCharacter.html">Characters</A> that are a <A href="ec_Character.html">Character</A>
+<A href="ec_hasCaptioning.html">Captioning  [ec:hasCaptioning]</A> only <A href="ec_Captioning.html">Captioning  [ec:Captioning]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_approvedBy.html">approved bies</A> that are an <A href="ec_Agent.html">Agent</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasLanguage.html">languages</A> that are a <A href="ec_Language.html">Language</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_script.html">scripts</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasTargetService.html">target services</A> that are a <A href="ec_PublicationService.html">Publication service</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasDubbedLanguage.html">dubbed languages</A> that are a <A href="ec_Language.html">Language</A>
+<A href="ec_bookmark.html">Bookmark</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_midRollAdAllowed.html">Midroll ad allowed</A> max 1 boolean
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_folksonomy.html">Folksonomy</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasDubbedLanguage.html">Dubbed language</A> only <A href="ec_Language.html">Language  [ec:Language]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasAssociatedProductionJob.html">Production job  [ec:hasAssociatedProductionJob]</A> only <A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasEditorialFormat.html">Has editorial format</A> only <A href="ec_EditorialFormat.html">Format  [ec:EditorialFormat]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasResourceOffset.html">Resource offset</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasTargetPlatform.html">Target platform</A> only <A href="ec_PublicationPlatform.html">Publication platform</A>
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -701,20 +648,8 @@ Anything that
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-un actif sous forme d'informations liées au contenu d'une MediaResource qui peut ou non exister.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-an Asset in the form of content related information about a MediaResource that may or may not exist.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-ein Asset in Form von inhaltsbezogenen Informationen über eine MediaResource, die existieren kann oder auch nicht.
+an Asset in the form of content related information about a MediaResource that may or may not exist
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -725,26 +660,10 @@ ein Asset in Form von inhaltsbezogenen Informationen über eine MediaResource, d
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- un groupe d'EditorialObjects
-- une "œuvre de l'esprit" unique, un morceau
-- un segment d'une "œuvre de l'esprit".
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
 - a group of EditorialObjects
 - a single "work of the mind", a piece
 - a segment of a "work of the mind"
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- eine Gruppe von EditorialObjects
-- ein einzelnes "Werk des Geistes", ein Stück
-- ein Segment eines "geistigen Werks"
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -762,7 +681,7 @@ ein Asset in Form von inhaltsbezogenen Informationen über eine MediaResource, d
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialGroup.html">Editorial group</A>,&nbsp;<A href="ec_EditorialWork.html">Editorial work</A>,&nbsp;<A href="ec_EditorialGroup.html">Editorial group</A>,&nbsp;<A href="ec_Artefact.html">Artefact [ec:Artefact]</A>,&nbsp;<A href="ec_EditorialSegment.html">Editorial Segment</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication Event</A>,&nbsp;<A href="ec_Asset.html">Asset  [ec:Asset]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_ResonanceEvent.html">Resonance event  [ec:ResonanceEvent]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialSegment.html">Editorial Segment</A>,&nbsp;<A href="ec_BibliographicalObject.html">Bibliographical object</A>,&nbsp;<A href="ec_TimelineTrack.html">Timeline track  [ec:TimelineTrack]</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_MediaResource.html">Media resource  [ec:MediaResource]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialGroup.html">Editorial group</A>,&nbsp;<A href="ec_TimelineTrack.html">Timeline track  [ec:TimelineTrack]</A>,&nbsp;<A href="ec_EditorialGroup.html">Editorial group</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Asset.html">Asset  [ec:Asset]</A>,&nbsp;<A href="ec_EditorialWork.html">Editorial work</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialSegment.html">Editorial segment</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_ResonanceEvent.html">Resonance event  [ec:ResonanceEvent]</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_BibliographicalObject.html">Bibliographical object</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Artefact.html">Artefact [ec:Artefact]</A>,&nbsp;<A href="ec_EditorialSegment.html">Editorial segment</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

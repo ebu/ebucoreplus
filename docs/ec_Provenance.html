@@ -10,18 +10,30 @@ Class 'Provenance  [ec:Provenance]'</H2>
 <HR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1"><A href="dcterms_description.html">dcterms:description</A></FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+Provenance records can identify the data object whose history is described, the agent to which it is attributed, and relevant creation or modification dates.
+</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
+Class  [owl:Class]</FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1">label</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -29,76 +41,64 @@ Class 'Provenance  [ec:Provenance]'</H2>
 Provenance
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Herkunft
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Origine
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
+<A href="ec_hasProvenanceTarget.html">Provenance target  [ec:hasProvenanceTarget]</A> only Thing
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_isAttributedTo.html">is attributed tos</A> that are an <A href="ec_Agent.html">Agent</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_isAttributedTo.html">Provenance target  [ec:isAttributedTo]</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasDateCreated.html">Creation date/time</A> max 1 <A href="time_DateTimeDescription.html">Date-time description</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasProvenanceTarget.html">provenance targets</A> that are a <A href="owl_Thing.html">Thing</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasDateModified.html">Modification date/time</A> max 1 <A href="time_DateTimeDescription.html">Date-time description</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -108,20 +108,8 @@ Anything that
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-une chaîne de caractères unique associée à une entité
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-a set of properties describing the origin and lifecycle of a data object
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-une Reihe von Eigenschaften, welche die Herkunft und den Lebenszyklus eines Datenobjektes beschreiben
+a set of properties describing the origin and life cycle of a data object
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -130,20 +118,6 @@ une Reihe von Eigenschaften, welche die Herkunft und den Lebenszyklus eines Date
 <TD>
 <B><FONT size="-1"><A href="skos_example.html">example</A></FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- la date de création d'un objet de données
-- le système à partir duquel l'objet de données a été récupéré à l'origine
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- das Erzeugungsdatum eines Datenobjektes
-- das System, aus welchem das Datenobjekt ursprünglich stammt
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">

@@ -14,51 +14,27 @@ Class 'Event [ec:Event]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Un événement lié à une ressource, par exemple tel qu'il est décrit dans la ressource. Ainsi cet évènement peut être décrit comme réel ou fictif dans la ressource.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ein Ereignis, das mit einem Medieninhalt verknüpft ist, z.B. dargestellt in einer Resource (real oder fiktional), etc.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-An Event related to a Resource, e.g. as depicted in the Resource (real or fictional), etc.
+A real or fictional happening that is covered in some content.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Ereignis
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Événement
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -69,78 +45,90 @@ Event
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedArtefact.html">related artefacts</A> that are an <A href="ec_Artefact.html">Artefact</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedEvent.html">related events</A> that are an <A href="ec_Event.html">Event</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedResource.html">related resources</A> that are a <A href="ec_Resource.html">Resource</A>
+<A href="ec_hasStartDateTime.html">Start date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasEndDateTime.html">End date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedResource.html">Related resource</A> only <A href="ec_Resource.html">Resource  [ec:Resource]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedArtefact.html">Related artefact  [ec:hasRelatedArtefact]</A> only <A href="ec_Artefact.html">Artefact [ec:Artefact]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRelatedEvent.html">Related event</A> only <A href="ec_Event.html">Event [ec:Event]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasLocation.html">Location  [ec:hasLocation]</A> max 1 <A href="ec_Location.html">Location  [ec:Location]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRelatedAgent.html">related agents</A> that are an <A href="ec_Agent.html">Agent</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasRelatedAgent.html">Related agent  [ec:hasRelatedAgent]</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+a real or fictional happening covered in some content
+</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -150,7 +138,7 @@ Anything that has only <A href="ec_description.html">descriptions</A> that are a
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_DepictedEvent.html">Depicted Event</A>,&nbsp;<A href="ec_Event.html">Event [ec:Event]</A>,&nbsp;<A href="ec_KeyEvent.html">Key event</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_Award.html">Award [ec:Award]</A>,&nbsp;<A href="ec_Annotation.html">Annotation  [ec:Annotation]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_FictionalEvent.html">Fictional event</A>,&nbsp;<A href="ec_Location.html">Location  [ec:Location]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_DepictedEvent.html">Depicted event</A>,&nbsp;<A href="ec_KeyEvent.html">Key event</A>,&nbsp;<A href="ec_Location.html">Location  [ec:Location]</A>,&nbsp;<A href="ec_Award.html">Award [ec:Award]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Annotation.html">Annotation  [ec:Annotation]</A>,&nbsp;<A href="ec_FictionalEvent.html">Fictional event</A>,&nbsp;<A href="ec_Event.html">Event [ec:Event]</A>,&nbsp;<A href="ec_ProductionJob.html">Production job  [ec:ProductionJob]</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

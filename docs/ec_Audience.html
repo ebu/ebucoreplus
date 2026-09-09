@@ -14,51 +14,27 @@ Class 'Audience [ec:Audience]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Un groupe de consommateurs ou une aggrégation de groupes de consommateurs. Par exemple, un groupe peut correspondre à un ensemble de consommateurs d'une même tranche d'âges ou d'une même catégorie socioprofessionnelle.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Eine Gruppe von Nutzern oder eine Aggregation von Nutzergruppen gebildet durch z.B. Altersklasse, soziale Kategorien o.ä.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-A group of Consumers or an aggregation of groups of Consumers clustered e.g. by class of age , social categories or else.
+A group of potential media consumers clustered by age, interest, social categories, or similar. Audience descriptions are used to characterize the intended or observed population for editorial or service analysis.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Publikum
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Audience
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -69,72 +45,72 @@ Audience
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_audienceInterest.html">audience interests</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_includesAudience.html">Includes audience</A> only <A href="ec_Audience.html">Audience [ec:Audience]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_includesAudience.html">includes audiences</A> that are an <A href="ec_Audience.html">Audience</A>
+<A href="ec_audienceInterest.html">Audience interest</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_audienceAgeHigh.html">Audience age highs</A> that are an <A href="xsd_integer.html">integer</A>
+<A href="ec_audienceCount.html">Audience number</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_audienceCount.html">audience counts</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_audienceAgeLow.html">audience age lows</A> that are an <A href="xsd_integer.html">integer</A>
+<A href="ec_audienceAgeHigh.html">Audience age high</A> only integer
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_excludesAudience.html">excludes audiences</A> that are an <A href="ec_Audience.html">Audience</A>
+<A href="ec_audienceAgeLow.html">Audience age low</A> only integer
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_excludesAudience.html">Excludes audience</A> only <A href="ec_Audience.html">Audience [ec:Audience]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -144,20 +120,8 @@ Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-ein Segment der potenziellen Konsumenten von Mediendiensten, das sich durch Kriterien wie Alter, Bildung, Geschlecht, sozialer Status, Wohnort, Einstellungen usw. auszeichnet, die ihr Konsumverhalten beeinflussen
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-a segment of the potential consumers of media services distinguished by criteria that shape their consumption behaviour, like age, education, sex, social status, residence, attitudes, etc
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-un segment de consommateurs potentiels de services de médias qui se distingue par des critères qui déterminent son comportement de consommation, comme l'âge, l'éducation, le sexe, le statut social, le lieu de résidence, les attitudes, etc.
+a group of potential media consumers clustered by age, interest, social categories, or similar
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -166,32 +130,6 @@ un segment de consommateurs potentiels de services de médias qui se distingue p
 <TD>
 <B><FONT size="-1"><A href="skos_example.html">example</A></FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- de 14 à 29 ans
-- les jeunes ruraux
-- les hommes de plus de 70 ans
-- personnes orientées vers la culture
-- personnes orientées vers le divertissement
-- parents d'écoliers
-- hommes peu instruits de moins de 25 ans
-- jeunes progressistes
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- 14 bis 29 Jahre
-- Landjugend
-- Männer über 70
-- kulturinteressierte Menschen
-- Spaßorientierte Menschen
-- Eltern von Schulkindern
-- Gering gebildete Männer unter 25
-- junge progressive Menschen
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
@@ -213,7 +151,7 @@ un segment de consommateurs potentiels de services de médias qui se distingue p
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_Consumer.html">Consumer [ec:Consumer]</A>,&nbsp;<A href="ec_Audience.html">Audience [ec:Audience]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication Event</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication Event</A>,&nbsp;<A href="ec_ConsumptionCount.html">Consumption count</A>,&nbsp;<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>,&nbsp;<A href="ec_Audience.html">Audience [ec:Audience]</A>,&nbsp;<A href="ec_PublicationPlatform.html">Publication platform</A>,&nbsp;<A href="ec_PublicationPlatform.html">Publication platform</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_PublicationService.html">Publication service</A>,&nbsp;<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>,&nbsp;<A href="ec_PublicationChannel.html">Publication channel  [ec:PublicationChannel]</A>,&nbsp;<A href="ec_PublicationService.html">Publication service</A>,&nbsp;<A href="ec_PublicationChannel.html">Publication channel  [ec:PublicationChannel]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_Audience.html">Audience [ec:Audience]</A>,&nbsp;<A href="ec_PublicationService.html">Publication service</A>,&nbsp;<A href="ec_Consumer.html">Consumer [ec:Consumer]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>,&nbsp;<A href="ec_ConsumptionCount.html">Consumption count</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>,&nbsp;<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>,&nbsp;<A href="ec_PublicationService.html">Publication service</A>,&nbsp;<A href="ec_PublicationChannel.html">Publication channel  [ec:PublicationChannel]</A>,&nbsp;<A href="ec_Campaign.html">Campaign [ec:Campaign]</A>,&nbsp;<A href="ec_Audience.html">Audience [ec:Audience]</A>,&nbsp;<A href="ec_PublicationPlatform.html">Publication platform</A>,&nbsp;<A href="ec_PublicationChannel.html">Publication channel  [ec:PublicationChannel]</A>,&nbsp;<A href="ec_PublicationPlatform.html">Publication platform</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

@@ -14,38 +14,26 @@ Class 'Signing [ec:Signing]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Indique la présence d’une interprétation en langue des signes dans le contenu audiovisuel (pour les personnes sourdes et malentendantes). Le type (p. ex. incrustation/in-vision) et la langue des signes peuvent être précisés via les propriétés appropriées.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Kennzeichnet die Präsenz von Gebärdensprachdolmetschen im audiovisuellen Inhalt (für gehörlose und schwerhörige Nutzer*innen). Typ (z. B. In-Vision/Einblendung) und Gebärdensprache können über entsprechende Eigenschaften angegeben werden.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Indicates the presence of sign language interpretation for deaf and hard-of-hearing users. The type and the sign language can be specified using the appropriate properties.
+A track containing sign language.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -53,28 +41,22 @@ Indicates the presence of sign language interpretation for deaf and hard-of-hear
 Signing
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Langue des signes
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Gebärdensprache
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasSigningSource.html">Signing source</A> max 1 <A href="ec_Agent.html">Agent  [ec:Agent]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasSigningFormat.html">Signing format  [ec:hasSigningFormat]</A> max 1 <A href="ec_SigningFormat.html">Signing format  [ec:SigningFormat]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
@@ -82,10 +64,16 @@ Anything that
 <IMG border="0" src="icons/OWLNamedClassPrimitive.gif" width="16" height="16"></TD><TD><FONT size="-1">
 <A href="ec_Track.html">Track  [ec:Track]</A></FONT></TD></TR></TABLE>
 </DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+a ec:Track containing sign language for deaf and hard of hearing
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -96,7 +84,7 @@ Anything that
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_OpenSigning.html">Open signing</A>,&nbsp;<A href="ec_ClosedSigning.html">Closed signing</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_OpenSigning.html">Open signing</A>,&nbsp;<A href="ec_EditorialObject.html">Editorial object  [ec:EditorialObject]</A>,&nbsp;<A href="ec_ClosedSigning.html">Closed signing</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

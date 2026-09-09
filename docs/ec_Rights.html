@@ -15,174 +15,162 @@ Class 'Rights  [ec:Rights]'</H2>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-The intellectual property or other contractual (e.g. publication) Rights associated with an Asset, a Contract, or a PublicationEvent. Rights originate from a Contract. Rights are associated with EditorialObjects, MediaResource or Essences through the definition of an Asset. Rights have associated RightsHolders.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Urheber- oder vertragliches Verwertungsrecht an einem Asset, einem Vertrag oder einem Publikationsereignis. Rechte entstammen einem Vertrag. Rechte sind gebunden an einen Medieninhalt, eine MedienResource oder eine Essenz durch die Definition des Assets. Rechte haben zugeordnete Rechteinhaber.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Les droits, Rights, de propriété intellectuelle ou autres droits contractuels (par exemple, de publication) associés à un actif, un contrat ou un PublicationEvent. Les droits proviennent d'un contrat, Contract. Les droits sont associés à des EditorialObjects, MediaResource ou Essences par la définition d'un actif, Asset. Les droits sont liés à des détenteurs de droits, RightsHolders.
+The entitlement of rights holders to use or publish works as defined by intellectual property legislation or by contracts.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Recht
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
 Rights
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Droits
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRightsHolder.html">rights holders</A> that are an <A href="ec_Agent.html">Agent</A>
+<A href="ec_hasRightsTargetService.html">Target service</A> only <A href="ec_PublicationService.html">Publication service</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRightsTerritoryExcludes.html">Excluded territories</A> only <A href="ec_CountryCode.html">Country code</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasEndDateTime.html">End date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasContact.html">contacts</A> that are a <A href="ec_Contact.html">Contact</A>
+<A href="ec_rightsLink.html">Rights web resource</A> only anyURI
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRightsTerritoryIncludes.html">rights territory includes</A> that are a <A href="ec_CountryCode.html">Country code</A>
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_originatesFrom.html">originates froms</A> that are a <A href="ec_Contract.html">Contract</A>
+<A href="ec_hasRightsHolder.html">Rights holder</A> only <A href="ec_Agent.html">Agent  [ec:Agent]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_publishingEventsLeft.html">publishing events lefts</A> that are an <A href="xsd_integer.html">integer</A>
+<A href="ec_rightsExpression.html">Rights  [ec:rightsExpression]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_rightsUsageRestrictions.html">Usage restrictions  [ec:rightsUsageRestrictions]</A> only Literal
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasRightsTerritoryIncludes.html">Included territories</A> only <A href="ec_CountryCode.html">Country code</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasDuration.html">Has duration</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_rightsLink.html">Rights web resources</A> that are an <A href="xsd_anyURI.html">anyURI</A>
+<A href="ec_hasContact.html">Contact  [ec:hasContact]</A> only <A href="ec_Contact.html">Contact  [ec:Contact]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_publishingEventsLeft.html">Publishing events left</A> only integer
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRightsTargetService.html">rights target services</A> that are a <A href="ec_PublicationService.html">Publication service</A>
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_rightsUsageRestrictions.html">Usage restrictions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_originatesFrom.html">Contract  [ec:originatesFrom]</A> only <A href="ec_Contract.html">Contract  [ec:Contract]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasRightsTerritoryExcludes.html">rights territory excludes</A> that are a <A href="ec_CountryCode.html">Country code</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_rightsExpression.html">Rights</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_applyTo.html">Asset  [ec:applyTo]</A> only <A href="ec_Asset.html">Asset  [ec:Asset]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_applyTo.html">apply tos</A> that are an <A href="ec_Asset.html">Asset</A>
+<A href="ec_hasStartDateTime.html">Start date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
+</DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+an entitlement of a ec:RightsHolder to use or publish an ec:Asset according to a ec:Contract
+</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -192,7 +180,7 @@ Anything that has only <A href="ec_applyTo.html">apply tos</A> that are an <A hr
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_CoverageRestrictions.html">Coverage restrictions  [ec:CoverageRestrictions]</A>,&nbsp;<A href="ec_IPRRestrictions.html">IPR restrictions  [ec:IPRRestrictions]</A>,&nbsp;<A href="ec_RightsClearance.html">Rights Clearance</A>,&nbsp;<A href="ec_AccessConditions.html">Access conditions  [ec:AccessConditions]</A>,&nbsp;<A href="ec_Disclaimer.html">Disclaimer  [ec:Disclaimer]</A>,&nbsp;<A href="ec_Involvement.html">Involvement [ec:Involvement]</A>,&nbsp;<A href="ec_ExploitationIssues.html">Exploitation issues</A>,&nbsp;<A href="ec_CreativeCommons.html">Creative commons</A>,&nbsp;<A href="ec_Copyright.html">Copyright  [ec:Copyright]</A>,&nbsp;<A href="ec_UsageRights.html">Usage rights  [ec:UsageRights]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication Event</A>,&nbsp;<A href="ec_Asset.html">Asset  [ec:Asset]</A>,&nbsp;<A href="ec_UsageRestrictions.html">Usage restrictions  [ec:UsageRestrictions]</A>,&nbsp;<A href="ec_Licensing.html">Licensing  [ec:Licensing]</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_CoverageRestrictions.html">Coverage restrictions  [ec:CoverageRestrictions]</A>,&nbsp;<A href="ec_Involvement.html">Involvement [ec:Involvement]</A>,&nbsp;<A href="ec_IPRRestrictions.html">IPR restrictions  [ec:IPRRestrictions]</A>,&nbsp;<A href="ec_RightsClearance.html">Rights clearance  [ec:RightsClearance]</A>,&nbsp;<A href="ec_AccessConditions.html">Access conditions  [ec:AccessConditions]</A>,&nbsp;<A href="ec_Disclaimer.html">Disclaimer  [ec:Disclaimer]</A>,&nbsp;<A href="ec_ExploitationIssues.html">Exploitation issues  [ec:ExploitationIssues]</A>,&nbsp;<A href="ec_CreativeCommons.html">Creative commons  [ec:CreativeCommons]</A>,&nbsp;<A href="ec_Copyright.html">Copyright  [ec:Copyright]</A>,&nbsp;<A href="ec_UsageRights.html">Usage rights  [ec:UsageRights]</A>,&nbsp;<A href="ec_Asset.html">Asset  [ec:Asset]</A>,&nbsp;<A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>,&nbsp;<A href="ec_UsageRestrictions.html">Usage restrictions  [ec:UsageRestrictions]</A>,&nbsp;<A href="ec_Licensing.html">Licensing  [ec:Licensing]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

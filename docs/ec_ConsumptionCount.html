@@ -14,133 +14,109 @@ Class 'Consumption count'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Eine Ansammlung von Gruppen von gezählten Verbrauchern
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-An aggregation of groups of counted Consumers
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Une agrégation de groupes de Consommateurs comptés
+A count of consumption events aggregated by one or more attributed properties, e.g. start time, end time, duration, publication event, service, platform, channel, device, account, consumer, resonance event, essence (stream or file), content, content genre, serial/series/season, and so on. Consumption counts are used to answer analytical questions and to compare answers over periods of time. Standardized counts ("consumptions on our platform in July") can be defined as subclasses and be stored and reused for comparison.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Nutzungszahl/-anteil
-</FONT></TD></TR></TABLE>
-</DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
 Consumption count
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Comptage des consommations
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasObjectType.html">object types</A> that are a <A href="skos_Concept.html">Concept</A>
+<A href="ec_name.html">Name  [ec:name]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasIdentifier.html">identifiers</A> that are an <A href="ec_Identifier.html">Identifier</A>
+<A href="ec_description.html">Description  [ec:description]</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasStartDateTime.html">Start date time</A> max 1 <A href="time_Instant.html">Time instant</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasConsumptionEvent.html">consumption events</A> that are a <A href="ec_ConsumptionEvent.html">Consumption event</A>
+<A href="ec_hasConsumptionEvent.html">Consumption event  [ec:hasConsumptionEvent]</A> only <A href="ec_ConsumptionEvent.html">Consumption event  [ec:ConsumptionEvent]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasAudience.html">Has audience</A> only <A href="ec_Audience.html">Audience [ec:Audience]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasEnd.html">Has end</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_name.html">names</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasObjectType.html">Type  [ec:hasObjectType]</A> only <A href="skos_Concept.html">Concept</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_audienceCount.html">audience counts</A> that are a <A href="rdfs_Literal.html">Literal</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasAudience.html">audiences</A> that are an <A href="ec_Audience.html">Audience</A>
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_description.html">descriptions</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_audienceCount.html">Audience number</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasStart.html">Start</A> max 1 <A href="ec_TimelinePoint.html">Timeline point</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLMaxCardinality.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that 
+<A href="ec_hasEndDateTime.html">End date time</A> max 1 <A href="time_Instant.html">Time instant</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasIdentifier.html">Identifier  [ec:hasIdentifier]</A> only <A href="ec_Identifier.html">Identifier  [ec:Identifier]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLNamedClassPrimitive.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Thing.html">Thing</A></FONT></TD></TR></TABLE>
+Thing</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
@@ -151,19 +127,7 @@ Anything that
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-the actual number and circumstances of ConsumptionEvents for a single PublicationEvent
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-le nombre réel et les circonstances des ConsumptionEvents pour un seul PublicationEvent
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzelnes PublicationEvent
+a count of ec:ConsumptionEvents aggregated by one or more attributed properties
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
@@ -182,26 +146,6 @@ die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzel
 - 2080 attendees at Stuttgart Liederhalle for a live concert of SWR's symphonic orchestra on April 8, 2022
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- einen Marktanteil von 46 % bei den französischen Zuschauern für das Endspiel der Fußballweltmeisterschaft 2022
-- 72 % Marktanteil bei den französischen Zuschauern zwischen 14 und 29 Jahren für das Endspiel der Fußballweltmeisterschaft 2022
-- 18,7 Millionen Live-Stream-Zugriffe auf die Beerdigung des ehemaligen Papstes Benedikt in Europa
-- 36973 Aufrufe des youtube-Videos "Tom Hanks had an ICONIC chat with the Queen" von BBC's "The One Show" 6 Monate aber Veröffentlichung
-- 2080 Besucher in der Stuttgarter Liederhalle bei einem Live-Konzert des SWR-Sinfonieorchesters am 8. April 2022
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-- 46% de part de marché des téléspectateurs français pour la finale de la coupe du monde de football 2022
-- 72% de part de marché des téléspectateurs français âgés de 14 à 29 ans pour la finale de la coupe du monde de football 2022
-- 18,7 millions de vues en direct des funérailles de l'ancien pape Benoît XVI en Europe
-- 36973 vues de la vidéo youtube "Tom Hanks had an ICONIC chat with the Queen" de l'émission "The One Show" de la BBC publiée 6 mois plus tôt
-- 2080 personnes présentes à la Liederhalle de Stuttgart pour un concert en direct de l'orchestre symphonique du SWR le 8 avril 2022
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
@@ -210,7 +154,7 @@ die tatsächliche Anzahl und die Umstände von ConsumptionEvents für ein einzel
 <B>References</B></FONT></TH>
 </TR>
 <TR><TD><FONT size="-1"><UL>
-<LI>as <A href="rdfs_subClassOf.html">subClassOf</A> (<A href="ec_PublicationEvent.html">Publication Event</A>)</LI></UL></FONT></TABLE><P>
+<LI>as subClassOf (<A href="ec_PublicationEvent.html">Publication event  [ec:PublicationEvent]</A>)</LI></UL></FONT></TABLE><P>
 </FONT>
 <P align="right"><FONT size="-1" face="Verdana, Helvetica, sans-serif">Generated with <A href="http://www.topbraidcomposer.com" target="_top">TopBraid Composer</A>
  by <A href="http://www.topquadrant.com" target="_top">TopQuadrant, Inc.</A></P>

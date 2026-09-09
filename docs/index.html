@@ -5,15 +5,18 @@
     targetPage = "" + window.location.search;
     if (targetPage != "" && targetPage != "undefined")
         targetPage = targetPage.substring(1);
-    
-    // NOUVEAU : Gestion des fragments (#Agent, #hasRights, etc.)
+
+    // Fragment handling (#Agent, #hasRights, etc.)
+    // Maps a fragment to its resource page: #Agent -> ec_Agent.html
     var hash = window.location.hash;
     if (hash && hash.length > 1) {
-        // Enlever le # et construire le nom du fichier
         var fragmentName = hash.substring(1);
-        targetPage = "ec_" + fragmentName + ".html";
+        // Keep only safe characters to avoid loading unintended URLs
+        fragmentName = fragmentName.replace(/[^A-Za-z0-9_\-]/g, "");
+        if (fragmentName != "")
+            targetPage = "ec_" + fragmentName + ".html";
     }
-    
+
     function loadFrames() {
         if (targetPage != "" && targetPage != "undefined")
             top.mainFrame.location = top.targetPage;

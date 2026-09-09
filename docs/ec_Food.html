@@ -14,38 +14,26 @@ Class 'Food [ec:Food]'</H2>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Pour décrire les aliments montrés ou consommés dans les productions.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Zur Beschreibung von Lebensmitteln, die in Produktionen gezeigt oder konsumiert werden.
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
-To describe Food shown or consumed in productions.
+Provisions that are shown or consumed in a scene, such as an apple, a bottle of beer, etc.
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdf_type.html">type</A></FONT></B>
+<B><FONT size="-1">type</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/RDFSClass.greyed.gif" width="16" height="16"></TD><TD><FONT size="-1">
-<A href="owl_Class.html">Class  [owl:Class]</A></FONT></TD></TR></TABLE>
+Class  [owl:Class]</FONT></TD></TR></TABLE>
 </DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_label.html">label</A></FONT></B>
+<B><FONT size="-1">label</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
@@ -53,40 +41,34 @@ To describe Food shown or consumed in productions.
 Food
 </FONT></TD></TR></TABLE>
 </DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/de.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Essen
-</FONT></TD></TR></TABLE>
-</DD>
-<DD>
-<TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/fr.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Alimentation
-</FONT></TD></TR></TABLE>
-</DD>
 </DL>
 </TD></TR>
 <TR BGCOLOR="white">
 <TD>
-<B><FONT size="-1"><A href="rdfs_subClassOf.html">subClassOf</A></FONT></B>
+<B><FONT size="-1">subClassOf</FONT></B>
 <DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_foodIngredient.html">food ingredients</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasCuisineOrigin.html">Cuisine origin</A> only <A href="ec_CountryCode.html">Country code</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCuisineStyle.html">cuisine styles</A> that are a <A href="ec_CuisineStyle.html">Cuisine style</A>
+<A href="ec_foodCategory.html">Food category</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_foodCategory.html">food categories</A> that are a <A href="rdfs_Literal.html">Literal</A>
+<A href="ec_hasCuisineStyle.html">Cuisine style  [ec:hasCuisineStyle]</A> only <A href="ec_CuisineStyle.html">Cuisine style  [ec:CuisineStyle]</A>
+</FONT></TD></TR></TABLE>
+</DD>
+<DD>
+<TABLE><TR><TD VALIGN="TOP">
+<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
+<A href="ec_hasFoodStyle.html">Food style  [ec:hasFoodStyle]</A> only <A href="ec_FoodStyle.html">Food style  [ec:FoodStyle]</A>
 </FONT></TD></TR></TABLE>
 </DD>
 <DD>
@@ -97,13 +79,19 @@ Anything that has only <A href="ec_foodCategory.html">food categories</A> that a
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
 <IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasCuisineOrigin.html">cuisine origins</A> that are a <A href="ec_CountryCode.html">Country code</A>
+<A href="ec_foodIngredient.html">Food ingredient</A> only Literal
 </FONT></TD></TR></TABLE>
 </DD>
+</DL>
+</TD></TR>
+<TR BGCOLOR="white">
+<TD>
+<B><FONT size="-1"><A href="skos_definition.html">definition</A></FONT></B>
+<DL>
 <DD>
 <TABLE><TR><TD VALIGN="TOP">
-<IMG border="0" src="icons/OWLAllValuesFrom.gif" width="16" height="16"></TD><TD><FONT size="-1">
-Anything that has only <A href="ec_hasFoodStyle.html">food styles</A> that are a <A href="ec_FoodStyle.html">Food style</A>
+<IMG border="0" src="icons/gb.gif" width="16" height="16"></TD><TD><FONT size="-1">
+an edible item shown or consumed in a scene of the ec:EditorialObject
 </FONT></TD></TR></TABLE>
 </DD>
 </DL>
