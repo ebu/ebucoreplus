@@ -57,7 +57,8 @@
                                                                     "Tormod Vævågen, GluonMedia"@no ,
                                                                     "Valentine Charles, Europeana"@nl ,
                                                                     "Valerie J. Miller, PBS"@en-us ,
-                                                                    "Vincent Dabouineau"@fr ;
+                                                                    "Vincent Dabouineau"@fr,
+                                                                    "Winfred van Kuijk, MobiNat"@nl;
                                                      dc:creator "Jean Pierre Evain, EBU"@ch ;
                                                      dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM.
 
@@ -73,7 +74,7 @@ The EBU Metadata Modelling Working Group provides access, upon request, to a clo
                                                      dc:publisher "European Broadcasting Union (EBU)"@ch ;
                                                      dc:rights "Copyright 2023 EBU"@en ;
                                                      vann:preferredNamespaceUri "http://www.ebu.ch/metadata/ontologies/ebucoreplus#" ;
-                                                     owl:versionInfo "Version 2.0.0"@en ;
+                                                     owl:versionInfo "Version 2.1.0"@en ;
                                                      vs:term_status "stable"@en .
 
 #################################################################
