@@ -14,7 +14,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xkos: <https://rdf-vocabulary.ddialliance.org/xkos/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.ebu.ch/metadata/ontologies/ebucoreplus> .
+@base <http://www.ebu.ch/metadata/ontologies/ebucoreplus#> .
 
 <http://www.ebu.ch/metadata/ontologies/ebucoreplus> rdf:type owl:Ontology ;
                                                      owl:versionIRI <http://www.ebu.ch/metadata/ontologies/ebucoreplus/2.0.0> ;
@@ -57,8 +57,8 @@
                                                                     "Tormod Vævågen, GluonMedia"@no ,
                                                                     "Valentine Charles, Europeana"@nl ,
                                                                     "Valerie J. Miller, PBS"@en-us ,
-                                                                    "Vincent Dabouineau"@fr,
-                                                                    "Winfred van Kuijk, MobiNat"@nl;
+                                                                    "Vincent Dabouineau"@fr ,
+                                                                    "Winfred van Kuijk, MobiNat"@nl ;
                                                      dc:creator "Jean Pierre Evain, EBU"@ch ;
                                                      dc:description """EBUCorePlus is an ontology for media enterprises, developed as an open source project. It follows-up on two long-standing EBU ontologies: EBUCore and CCDM (Class Conceptual Data Model). The two were merged and thoroughly revisioned. The result is EBUCorePlus, the new standard that can fully replace its predecessors. It inherits both the long-lasting reliability of EBUCore and the end-to-end coverage of the media value chain of CCDM.
 
@@ -3159,7 +3159,7 @@ time:hasTRS rdf:type owl:ObjectProperty ;
 <http://www.w3.org/ns/ma-ont#hasPermissions> rdf:type owl:ObjectProperty ;
                                              dcterms:description "To set permissions as defined in the W3C Media Ontology (ma-ont)."@en ;
                                              rdfs:label "Permissions"@en ;
-                                             skos:prefLabel "Permissions"^^xsd:string .
+                                             skos:prefLabel "Permissions" .
 
 
 ###  https://rdf-vocabulary.ddialliance.org/xkos/after
@@ -5762,6 +5762,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Contact
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasContributor ;
+                           owl:allValuesFrom ec:Involvement
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCopyright ;
                            owl:allValuesFrom ec:Copyright
                          ] ,
@@ -5772,6 +5776,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCreativeCommons ;
                            owl:allValuesFrom ec:CreativeCommons
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCreator ;
+                           owl:allValuesFrom ec:Involvement
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDisclaimer ;
@@ -5796,6 +5804,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasParticipatingAgent ;
                            owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasPublisher ;
+                           owl:allValuesFrom ec:Involvement
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedArtefact ;
@@ -7404,16 +7416,8 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:ContentEditorialFormat
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasContributor ;
-                                     owl:allValuesFrom ec:Involvement
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCoverage ;
                                      owl:allValuesFrom owl:Thing
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasCreator ;
-                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCrewMember ;
@@ -7470,10 +7474,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublicationHistory ;
                                      owl:allValuesFrom ec:PublicationHistory
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasPublisher ;
-                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRating ;
@@ -11512,4 +11512,4 @@ dcterms:contributor dcterms:description "In the context of EBUCore, reserved for
                      rdfs:label "Contributor"@en .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
