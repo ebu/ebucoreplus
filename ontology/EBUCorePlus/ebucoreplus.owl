@@ -5762,6 +5762,10 @@ ec:Asset rdf:type owl:Class ;
                            owl:allValuesFrom ec:Contact
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasContributor ;
+                           owl:allValuesFrom ec:Involvement
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCopyright ;
                            owl:allValuesFrom ec:Copyright
                          ] ,
@@ -5772,6 +5776,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasCreativeCommons ;
                            owl:allValuesFrom ec:CreativeCommons
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasCreator ;
+                           owl:allValuesFrom ec:Involvement
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasDisclaimer ;
@@ -5796,6 +5804,10 @@ ec:Asset rdf:type owl:Class ;
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasParticipatingAgent ;
                            owl:allValuesFrom ec:Agent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ec:hasPublisher ;
+                           owl:allValuesFrom ec:Involvement
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty ec:hasRelatedArtefact ;
@@ -7404,16 +7416,8 @@ ec:EditorialObject rdf:type owl:Class ;
                                      owl:allValuesFrom ec:ContentEditorialFormat
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasContributor ;
-                                     owl:allValuesFrom ec:Involvement
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCoverage ;
                                      owl:allValuesFrom owl:Thing
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasCreator ;
-                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasCrewMember ;
@@ -7470,10 +7474,6 @@ ec:EditorialObject rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasPublicationHistory ;
                                      owl:allValuesFrom ec:PublicationHistory
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty ec:hasPublisher ;
-                                     owl:allValuesFrom ec:Involvement
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty ec:hasRating ;
