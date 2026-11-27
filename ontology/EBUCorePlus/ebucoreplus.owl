@@ -8204,6 +8204,16 @@ ec:Involvement rdf:type owl:Class ;
                                  owl:allValuesFrom ec:ProductionDevice
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasEndDateTime ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass time:Instant
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ec:hasStartDateTime ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass time:Instant
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty ec:description ;
                                  owl:allValuesFrom rdfs:Literal
                                ] ,
@@ -11404,6 +11414,11 @@ time:Instant rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty time:hasTRS ;
                                owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ec:hasStartDateTime ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass time:Instant
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty time:inXSDDateTimeStamp ;
